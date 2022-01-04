@@ -45,4 +45,23 @@ public class Factor : Control
         GetNode<SpinBox>(totalSpinPath).Value = finalValue;
         GetNode<SpinBox>(actualSpinPath).Value = finalValue;
     }
+
+
+
+
+
+    public SpinBox GetActualSpin()
+    {
+        return GetNode<SpinBox>(actualSpinPath);
+    }
+
+    public SpinBox GetTotalSpin()
+    {
+        return GetNode<SpinBox>(totalSpinPath);
+    }
+
+    public SpinBox GetModSpin()
+    {
+        return GetNode<SpinBox>(modSpinPath);
+    }
 }
