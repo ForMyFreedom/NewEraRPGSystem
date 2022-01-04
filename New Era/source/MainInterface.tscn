@@ -1,0 +1,434 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
+[ext_resource path="res://source/Melissa.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/VSStyle.tres" type="StyleBox" id=3]
+[ext_resource path="res://source/Atribute.tscn" type="PackedScene" id=4]
+[ext_resource path="res://source/Factor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/calibrib.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/calibri.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/banner.png" type="Texture" id=8]
+[ext_resource path="res://assets/TEST.png" type="Texture" id=9]
+[ext_resource path="res://assets/HSStyle.tres" type="StyleBox" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 6 )
+
+[node name="MainInterface" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+playerScene = ExtResource( 2 )
+sheetOpenButtonPath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/OpenSheetButton")
+
+[node name="BGRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShadeBGColorRect" type="ColorRect" parent="."]
+modulate = Color( 0.784314, 1, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Control" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="PrincipalColorRect" type="ColorRect" parent="VBoxContainer/Info"]
+modulate = Color( 0.784314, 1, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Info"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_right = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Info/MarginContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 984.0
+margin_bottom = 35.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Info/MarginContainer"]
+margin_right = 984.0
+margin_bottom = 35.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerLabel" type="Label" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
+margin_top = 7.0
+margin_right = 325.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "Jogador: João"
+align = 1
+__meta__ = {
+"_editor_description_": "Jogador: "
+}
+
+[node name="CharacterLabel" type="Label" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
+margin_left = 329.0
+margin_top = 7.0
+margin_right = 654.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "Personagem: Melissa"
+align = 1
+__meta__ = {
+"_editor_description_": "Personagem: "
+}
+
+[node name="OpenSheetButton" type="Button" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
+margin_left = 781.0
+margin_right = 861.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 80, 0 )
+size_flags_horizontal = 6
+text = "Abrir Ficha"
+
+[node name="CombatFactors" type="Control" parent="VBoxContainer"]
+margin_top = 39.0
+margin_right = 1024.0
+margin_bottom = 218.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CombatFactors"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Life" parent="VBoxContainer/CombatFactors/HBoxContainer" instance=ExtResource( 5 )]
+margin_bottom = 179.0
+
+[node name="Label" parent="VBoxContainer/CombatFactors/HBoxContainer/Life/VBoxContainer" index="0"]
+margin_top = 42.0
+margin_bottom = 74.0
+text = "Vida"
+
+[node name="HBoxContainer" parent="VBoxContainer/CombatFactors/HBoxContainer/Life/VBoxContainer" index="1"]
+margin_top = 78.0
+margin_bottom = 78.0
+
+[node name="Control" parent="VBoxContainer/CombatFactors/HBoxContainer/Life/VBoxContainer" index="2"]
+margin_top = 104.0
+margin_bottom = 179.0
+
+[node name="Label" parent="VBoxContainer/CombatFactors/HBoxContainer/Life/VBoxContainer/Control/VBoxContainer" index="0"]
+margin_top = 16.0
+margin_bottom = 35.0
+
+[node name="ModSpinBox" parent="VBoxContainer/CombatFactors/HBoxContainer/Life/VBoxContainer/Control/VBoxContainer" index="1"]
+margin_top = 39.0
+margin_bottom = 63.0
+
+[node name="VS1" type="VSeparator" parent="VBoxContainer/CombatFactors/HBoxContainer"]
+margin_left = 251.0
+margin_right = 255.0
+margin_bottom = 179.0
+custom_styles/separator = ExtResource( 3 )
+
+[node name="ActionSurge" parent="VBoxContainer/CombatFactors/HBoxContainer" instance=ExtResource( 5 )]
+margin_left = 259.0
+margin_right = 506.0
+margin_bottom = 179.0
+
+[node name="Label" parent="VBoxContainer/CombatFactors/HBoxContainer/ActionSurge/VBoxContainer" index="0"]
+margin_top = 42.0
+margin_bottom = 74.0
+text = "Surto de Ação"
+
+[node name="HBoxContainer" parent="VBoxContainer/CombatFactors/HBoxContainer/ActionSurge/VBoxContainer" index="1"]
+margin_top = 78.0
+margin_bottom = 78.0
+
+[node name="Control" parent="VBoxContainer/CombatFactors/HBoxContainer/ActionSurge/VBoxContainer" index="2"]
+margin_top = 104.0
+margin_bottom = 179.0
+
+[node name="Label" parent="VBoxContainer/CombatFactors/HBoxContainer/ActionSurge/VBoxContainer/Control/VBoxContainer" index="0"]
+margin_top = 16.0
+margin_bottom = 35.0
+
+[node name="ModSpinBox" parent="VBoxContainer/CombatFactors/HBoxContainer/ActionSurge/VBoxContainer/Control/VBoxContainer" index="1"]
+margin_top = 39.0
+margin_bottom = 63.0
+
+[node name="VS2" type="VSeparator" parent="VBoxContainer/CombatFactors/HBoxContainer"]
+margin_left = 510.0
+margin_right = 514.0
+margin_bottom = 179.0
+custom_styles/separator = ExtResource( 3 )
+
+[node name="AgilityDefense" parent="VBoxContainer/CombatFactors/HBoxContainer" instance=ExtResource( 5 )]
+margin_left = 518.0
+margin_right = 765.0
+margin_bottom = 179.0
+relatedAtributePath = NodePath("../../../Atributes/HBoxContainer/AgilityAtribute")
+relatedAtributeRelevance = 3.0
+bonusInCalculus = 10
+
+[node name="Label" parent="VBoxContainer/CombatFactors/HBoxContainer/AgilityDefense/VBoxContainer" index="0"]
+margin_top = 42.0
+margin_bottom = 74.0
+text = "Defesa Agilidade"
+
+[node name="HBoxContainer" parent="VBoxContainer/CombatFactors/HBoxContainer/AgilityDefense/VBoxContainer" index="1"]
+margin_top = 78.0
+margin_bottom = 78.0
+
+[node name="Control" parent="VBoxContainer/CombatFactors/HBoxContainer/AgilityDefense/VBoxContainer" index="2"]
+margin_top = 104.0
+margin_bottom = 179.0
+
+[node name="Label" parent="VBoxContainer/CombatFactors/HBoxContainer/AgilityDefense/VBoxContainer/Control/VBoxContainer" index="0"]
+margin_top = 16.0
+margin_bottom = 35.0
+
+[node name="ModSpinBox" parent="VBoxContainer/CombatFactors/HBoxContainer/AgilityDefense/VBoxContainer/Control/VBoxContainer" index="1"]
+margin_top = 39.0
+margin_bottom = 63.0
+
+[node name="VS3" type="VSeparator" parent="VBoxContainer/CombatFactors/HBoxContainer"]
+margin_left = 769.0
+margin_right = 773.0
+margin_bottom = 179.0
+custom_styles/separator = ExtResource( 3 )
+
+[node name="StrengthDefense" parent="VBoxContainer/CombatFactors/HBoxContainer" instance=ExtResource( 5 )]
+margin_left = 777.0
+margin_right = 1024.0
+margin_bottom = 179.0
+relatedAtributePath = NodePath("../../../Atributes/HBoxContainer/StrengthAtribute")
+relatedAtributeRelevance = 2.0
+bonusInCalculus = 10
+
+[node name="Label" parent="VBoxContainer/CombatFactors/HBoxContainer/StrengthDefense/VBoxContainer" index="0"]
+margin_top = 42.0
+margin_bottom = 74.0
+text = "Defesa Força"
+
+[node name="HBoxContainer" parent="VBoxContainer/CombatFactors/HBoxContainer/StrengthDefense/VBoxContainer" index="1"]
+margin_top = 78.0
+margin_bottom = 78.0
+
+[node name="Control" parent="VBoxContainer/CombatFactors/HBoxContainer/StrengthDefense/VBoxContainer" index="2"]
+margin_top = 104.0
+margin_bottom = 179.0
+
+[node name="Label" parent="VBoxContainer/CombatFactors/HBoxContainer/StrengthDefense/VBoxContainer/Control/VBoxContainer" index="0"]
+margin_top = 16.0
+margin_bottom = 35.0
+
+[node name="ModSpinBox" parent="VBoxContainer/CombatFactors/HBoxContainer/StrengthDefense/VBoxContainer/Control/VBoxContainer" index="1"]
+margin_top = 39.0
+margin_bottom = 63.0
+
+[node name="HS1" type="HSeparator" parent="VBoxContainer"]
+margin_top = 222.0
+margin_right = 1024.0
+margin_bottom = 226.0
+custom_styles/separator = ExtResource( 10 )
+
+[node name="Atributes" type="Control" parent="VBoxContainer"]
+margin_top = 230.0
+margin_right = 1024.0
+margin_bottom = 409.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Atributes"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StrengthAtribute" parent="VBoxContainer/Atributes/HBoxContainer" instance=ExtResource( 4 )]
+margin_bottom = 179.0
+atributeName = "Força"
+
+[node name="VS1" type="VSeparator" parent="VBoxContainer/Atributes/HBoxContainer"]
+margin_left = 199.0
+margin_right = 203.0
+margin_bottom = 179.0
+custom_styles/separator = ExtResource( 3 )
+
+[node name="AgilityAtribute" parent="VBoxContainer/Atributes/HBoxContainer" instance=ExtResource( 4 )]
+margin_left = 207.0
+margin_right = 402.0
+margin_bottom = 179.0
+atributeName = "Agilidade"
+
+[node name="VS2" type="VSeparator" parent="VBoxContainer/Atributes/HBoxContainer"]
+margin_left = 406.0
+margin_right = 410.0
+margin_bottom = 179.0
+custom_styles/separator = ExtResource( 3 )
+
+[node name="SensesAtribute" parent="VBoxContainer/Atributes/HBoxContainer" instance=ExtResource( 4 )]
+margin_left = 414.0
+margin_right = 609.0
+margin_bottom = 179.0
+atributeName = "Sentidos"
+
+[node name="VS3" type="VSeparator" parent="VBoxContainer/Atributes/HBoxContainer"]
+margin_left = 613.0
+margin_right = 617.0
+margin_bottom = 179.0
+custom_styles/separator = ExtResource( 3 )
+
+[node name="MindAtribute" parent="VBoxContainer/Atributes/HBoxContainer" instance=ExtResource( 4 )]
+margin_left = 621.0
+margin_right = 816.0
+margin_bottom = 179.0
+atributeName = "Mente"
+
+[node name="VS4" type="VSeparator" parent="VBoxContainer/Atributes/HBoxContainer"]
+margin_left = 820.0
+margin_right = 824.0
+margin_bottom = 179.0
+custom_styles/separator = ExtResource( 3 )
+
+[node name="CharismaAtribute" parent="VBoxContainer/Atributes/HBoxContainer" instance=ExtResource( 4 )]
+margin_left = 828.0
+margin_right = 1024.0
+margin_bottom = 179.0
+atributeName = "Carisma"
+
+[node name="HS2" type="HSeparator" parent="VBoxContainer"]
+margin_top = 413.0
+margin_right = 1024.0
+margin_bottom = 417.0
+custom_styles/separator = ExtResource( 10 )
+
+[node name="General" type="Control" parent="VBoxContainer"]
+margin_top = 421.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/General"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="VBoxContainer/General/HBoxContainer"]
+margin_right = 506.0
+margin_bottom = 179.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/General/HBoxContainer/Control"]
+margin_left = 4.0
+margin_right = 508.0
+margin_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="VBoxContainer/General/HBoxContainer/Control/VBoxContainer"]
+margin_right = 504.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/font = SubResource( 2 )
+text = "Ofícios / Perícias e Mecânicas"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VS1" type="VSeparator" parent="VBoxContainer/General/HBoxContainer"]
+margin_left = 510.0
+margin_right = 514.0
+margin_bottom = 179.0
+custom_styles/separator = ExtResource( 3 )
+
+[node name="Control2" type="Control" parent="VBoxContainer/General/HBoxContainer"]
+margin_left = 518.0
+margin_right = 1024.0
+margin_bottom = 179.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/General/HBoxContainer/Control2"]
+margin_left = 4.0
+margin_right = 508.0
+margin_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="VBoxContainer/General/HBoxContainer/Control2/VBoxContainer"]
+margin_right = 504.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/font = SubResource( 2 )
+text = "Técnicas"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[editable path="VBoxContainer/CombatFactors/HBoxContainer/Life"]
+[editable path="VBoxContainer/CombatFactors/HBoxContainer/ActionSurge"]
+[editable path="VBoxContainer/CombatFactors/HBoxContainer/AgilityDefense"]
+[editable path="VBoxContainer/CombatFactors/HBoxContainer/StrengthDefense"]
