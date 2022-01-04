@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Player : Node
+public class Player : Node, CharacterDataBank
 {
     [Export]
     private String playerName;
@@ -62,12 +62,12 @@ public class Player : Node
     }
 
 
-    public Texture GetPersonalBG()
+    public Texture GetBGTexture()
     {
         return personalBG;
     }
 
-    public void SetPersonalBG(Texture BG)
+    public void SetBGTexture(Texture BG)
     {
         personalBG = BG;
     }

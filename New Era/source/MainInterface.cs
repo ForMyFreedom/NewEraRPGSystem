@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Text;
 
-public class MainInterface : Control
+public class MainInterface : Control, CharacterDataBank
 {
     [Export]
     private PackedScene playerScene;
@@ -28,6 +28,16 @@ public class MainInterface : Control
     private NodePath agiDefenseFactorPath;
     [Export]
     private NodePath strDefenseFactorPath;
+    [Export]
+    private NodePath strAtributePath;
+    [Export]
+    private NodePath agiAtributePath;
+    [Export]
+    private NodePath senAtributePath;
+    [Export]
+    private NodePath minAtributePath;
+    [Export]
+    private NodePath chaAtributePath;
 
     private Player player;
     private Color[] colors = new Color[2];
@@ -37,48 +47,57 @@ public class MainInterface : Control
         player = playerScene.Instance<Player>();
         GetNode(sheetOpenButtonPath).Connect("button_up", this, "_OnOpenSheet");
         Connect("tree_exiting", this, "RegisterAllData");
-        InitializeData();
+        RegistryData(player, this);
     }
 
 
-    private void InitializeData()
+    private void RegistryData(CharacterDataBank sender, CharacterDataBank reciver)
     {
-        SetPlayerName(player.GetPlayerName());
-        SetCharacterName(player.GetCharacterName());
+        reciver.SetPlayerName(sender.GetPlayerName());
+        reciver.SetCharacterName(sender.GetCharacterName());
 
-        SetBGTexture(player.GetPersonalBG());
-        SetFirstColor(player.GetFirstColor());
-        SetSecondColor(player.GetSecondColor());
+        reciver.SetBGTexture(sender.GetBGTexture());
+        reciver.SetFirstColor(sender.GetFirstColor());
+        reciver.SetSecondColor(sender.GetSecondColor());
 
-        SetTotalLife(player.GetTotalLife());
-        SetActualLife(player.GetActualLife());
-        SetModLife(player.GetModLife());
+        reciver.SetTotalLife(sender.GetTotalLife());
+        reciver.SetActualLife(sender.GetActualLife());
+        reciver.SetModLife(sender.GetModLife());
 
-        SetTotalSurge(player.GetTotalSurge());
-        SetActualSurge(player.GetActualSurge());
-        SetModSurge(player.GetModSurge());
+        reciver.SetTotalSurge(sender.GetTotalSurge());
+        reciver.SetActualSurge(sender.GetActualSurge());
+        reciver.SetModSurge(sender.GetModSurge());
 
-        SetTotalAgilityDefense(player.GetTotalAgiDefense());
-        SetActualAgilityDefense(player.GetActualAgiDefense());
-        SetModAgilityDefense(player.GetModAgiDefense());
+        reciver.SetTotalAgiDefense(sender.GetTotalAgiDefense());
+        reciver.SetActualAgiDefense(sender.GetActualAgiDefense());
+        reciver.SetModAgiDefense(sender.GetModAgiDefense());
 
-        SetTotalStrengthDefense(player.GetTotalStrDefense());
-        SetActualStrengthDefense(player.GetActualStrDefense());
-        SetModStrengthDefense(player.GetModStrDefense());
+        reciver.SetTotalStrDefense(sender.GetTotalStrDefense());
+        reciver.SetActualStrDefense(sender.GetActualStrDefense());
+        reciver.SetModStrDefense(sender.GetModStrDefense());
+
+        reciver.SetStrength(sender.GetStrength());
+        reciver.SetAgility(sender.GetAgility());
+        reciver.SetMind(sender.GetMind());
+        reciver.SetSenses(sender.GetSenses());
+        reciver.SetCharisma(sender.GetCharisma());
+
+        reciver.SetModStrength(sender.GetModStrength());
+        reciver.SetModAgility(sender.GetModAgility());
+        reciver.SetModMind(sender.GetModMind());
+        reciver.SetModSenses(sender.GetModSenses());
+        reciver.SetModCharisma(sender.GetModCharisma());
     }
 
     private void RegisterAllData()
     {
-        PassAllDataToPlayer();
+        RegistryData(this, player);
         var packedScene = new PackedScene();
         packedScene.Pack(player);
-        ResourceSaver.Save("res://test.tscn", packedScene);
+        GD.Print(playerScene.ResourcePath);
+        ResourceSaver.Save(playerScene.ResourcePath, packedScene);
     }
 
-    private void PassAllDataToPlayer()
-    {
-        //@
-    }
 
 
 
@@ -99,6 +118,9 @@ public class MainInterface : Control
 
     public Texture GetBGTexture() { return GetNode<TextureRect>(bgTexturePath).Texture; }
     public void SetBGTexture(Texture text) { GetNode<TextureRect>(bgTexturePath).Texture = text; }
+
+    public String GetSheetURL() { return player.GetSheetURL(); }
+    public void SetSheetURL(String URL) { player.SetSheetURL(URL); }
 
 
     public Color GetFirstColor() { return colors[0]; }
@@ -123,7 +145,7 @@ public class MainInterface : Control
 
     public int GetActualLife()
     {
-        return player.GetActualLife();
+        return (int) GetFactorActualSpin(lifeFactorPath).Value;
     }
     
     public void SetActualLife(int value)
@@ -142,7 +164,7 @@ public class MainInterface : Control
 
     public int GetTotalLife()
     {
-        return player.GetTotalLife();
+        return (int)GetFactorTotalSpin(lifeFactorPath).Value;
     }
 
     public void SetTotalLife(int value)
@@ -161,7 +183,7 @@ public class MainInterface : Control
 
     public int GetModLife()
     {
-        return player.GetModLife();
+        return (int)GetFactorModSpin(lifeFactorPath).Value;
     }
 
     public void SetModLife(int value)
@@ -181,7 +203,7 @@ public class MainInterface : Control
 
     public int GetActualSurge()
     {
-        return player.GetActualSurge();
+        return (int)GetFactorActualSpin(surgeFactorPath).Value;
     }
 
     public void SetActualSurge(int value)
@@ -200,7 +222,7 @@ public class MainInterface : Control
 
     public int GetTotalSurge()
     {
-        return player.GetTotalSurge();
+        return (int)GetFactorTotalSpin(surgeFactorPath).Value;
     }
 
     public void SetTotalSurge(int value)
@@ -219,7 +241,7 @@ public class MainInterface : Control
 
     public int GetModSurge()
     {
-        return player.GetModSurge();
+        return (int)GetFactorModSpin(surgeFactorPath).Value;
     }
 
     public void SetModSurge(int value)
@@ -237,18 +259,18 @@ public class MainInterface : Control
 
 
 
-    public int GetActualAgilityDefense()
+    public int GetActualAgiDefense()
     {
-        return player.GetActualAgiDefense();
+        return (int)GetFactorActualSpin(agiDefenseFactorPath).Value;
     }
 
-    public void SetActualAgilityDefense(int value)
+    public void SetActualAgiDefense(int value)
     {
         player.SetActualAgiDefense(value);
         GetFactorActualSpin(agiDefenseFactorPath).Value = value;
     }
 
-    public void AddActualAgilityDefense(int sum)
+    public void AddActualAgiDefense(int sum)
     {
         player.SetActualAgiDefense(player.GetActualAgiDefense() + sum);
         GetFactorActualSpin(agiDefenseFactorPath).Value += sum;
@@ -256,18 +278,18 @@ public class MainInterface : Control
 
 
 
-    public int GetTotalAgilityDefense()
+    public int GetTotalAgiDefense()
     {
-        return player.GetTotalAgiDefense();
+        return (int)GetFactorTotalSpin(agiDefenseFactorPath).Value;
     }
 
-    public void SetTotalAgilityDefense(int value)
+    public void SetTotalAgiDefense(int value)
     {
         player.SetTotalAgiDefense(value);
         GetFactorTotalSpin(agiDefenseFactorPath).Value = value;
     }
 
-    public void AddTotalAgilityDefense(int sum)
+    public void AddTotalAgiDefense(int sum)
     {
         player.SetTotalAgiDefense(player.GetTotalAgiDefense() + sum);
         GetFactorTotalSpin(agiDefenseFactorPath).Value += sum;
@@ -275,18 +297,18 @@ public class MainInterface : Control
 
 
 
-    public int GetModAgilityDefense()
+    public int GetModAgiDefense()
     {
-        return player.GetModAgiDefense();
+        return (int)GetFactorModSpin(agiDefenseFactorPath).Value;
     }
 
-    public void SetModAgilityDefense(int value)
+    public void SetModAgiDefense(int value)
     {
         player.SetModAgiDefense(value);
         GetFactorModSpin(agiDefenseFactorPath).Value = value;
     }
 
-    public void AddModAgilityDefense(int sum)
+    public void AddModAgiDefense(int sum)
     {
         player.SetModAgiDefense(player.GetModAgiDefense() + sum);
         GetFactorModSpin(agiDefenseFactorPath).Value += sum;
@@ -295,18 +317,18 @@ public class MainInterface : Control
 
 
 
-    public int GetActualStrengthDefense()
+    public int GetActualStrDefense()
     {
-        return player.GetActualStrDefense();
+        return (int)GetFactorActualSpin(strDefenseFactorPath).Value;
     }
 
-    public void SetActualStrengthDefense(int value)
+    public void SetActualStrDefense(int value)
     {
         player.SetActualStrDefense(value);
         GetFactorActualSpin(strDefenseFactorPath).Value = value;
     }
 
-    public void AddActualStrengthDefense(int sum)
+    public void AddActualStrDefense(int sum)
     {
         player.SetActualStrDefense(player.GetActualStrDefense() + sum);
         GetFactorActualSpin(strDefenseFactorPath).Value += sum;
@@ -314,18 +336,18 @@ public class MainInterface : Control
 
 
 
-    public int GetTotalStrengthDefense()
+    public int GetTotalStrDefense()
     {
-        return player.GetTotalStrDefense();
+        return (int)GetFactorTotalSpin(strDefenseFactorPath).Value;
     }
 
-    public void SetTotalStrengthDefense(int value)
+    public void SetTotalStrDefense(int value)
     {
         player.SetTotalStrDefense(value);
         GetFactorTotalSpin(strDefenseFactorPath).Value = value;
     }
 
-    public void AddTotalStrengthDefense(int sum)
+    public void AddTotalStrDefense(int sum)
     {
         player.SetTotalStrDefense(player.GetTotalStrDefense() + sum);
         GetFactorTotalSpin(strDefenseFactorPath).Value += sum;
@@ -333,18 +355,18 @@ public class MainInterface : Control
 
 
 
-    public int GetModStrengthDefense()
+    public int GetModStrDefense()
     {
-        return player.GetModStrDefense();
+        return (int)GetFactorModSpin(strDefenseFactorPath).Value;
     }
 
-    public void SetModStrengthDefense(int value)
+    public void SetModStrDefense(int value)
     {
         player.SetModStrDefense(value);
         GetFactorModSpin(strDefenseFactorPath).Value = value;
     }
 
-    public void AddModStrengthDefense(int sum)
+    public void AddModStrDefense(int sum)
     {
         player.SetModStrDefense(player.GetModStrDefense() + sum);
         GetFactorModSpin(strDefenseFactorPath).Value += sum;
