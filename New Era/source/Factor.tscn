@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/BaseMajorFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/BaseMinorFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://source/Factor.cs" type="Script" id=3]
+[ext_resource path="res://assets/updown.png" type="Texture" id=4]
 
 [node name="Factor" type="Control"]
 margin_right = 247.0
@@ -71,12 +72,13 @@ align = 1
 valign = 1
 
 [node name="TotalSpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer/Control/VBoxContainer"]
-margin_left = 23.0
+margin_left = 24.0
 margin_top = 23.0
 margin_right = 97.0
 margin_bottom = 47.0
 size_flags_horizontal = 6
 size_flags_vertical = 2
+custom_icons/updown = ExtResource( 4 )
 max_value = 1000.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -110,10 +112,11 @@ valign = 1
 [node name="ActualSpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer/Control2/VBoxContainer"]
 margin_left = 24.0
 margin_top = 23.0
-margin_right = 98.0
+margin_right = 97.0
 margin_bottom = 47.0
 size_flags_horizontal = 6
 size_flags_vertical = 2
+custom_icons/updown = ExtResource( 4 )
 max_value = 1000.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -146,12 +149,13 @@ align = 1
 valign = 1
 
 [node name="ModSpinBox" type="SpinBox" parent="VBoxContainer/Control/VBoxContainer"]
-margin_left = 86.0
+margin_left = 87.0
 margin_top = 43.0
 margin_right = 160.0
 margin_bottom = 67.0
 size_flags_horizontal = 6
 size_flags_vertical = 2
+custom_icons/updown = ExtResource( 4 )
 min_value = -1000.0
 max_value = 1000.0
 __meta__ = {

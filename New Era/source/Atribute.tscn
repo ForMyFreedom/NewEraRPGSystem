@@ -1,18 +1,19 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/calibrib.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://source/Atribute.cs" type="Script" id=2]
 [ext_resource path="res://assets/BaseMajorFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/calibriz.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/updown.png" type="Texture" id=5]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 14
 font_data = ExtResource( 4 )
 
-[sub_resource type="Theme" id=4]
-default_font = SubResource( 3 )
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 18
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -57,12 +58,13 @@ align = 1
 valign = 1
 
 [node name="SpinBox" type="SpinBox" parent="VBoxContainer"]
-margin_left = 60.0
+margin_left = 61.0
 margin_top = 66.0
 margin_right = 134.0
 margin_bottom = 90.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
+custom_icons/updown = ExtResource( 5 )
 max_value = 1000.0
 align = 1
 __meta__ = {
@@ -89,7 +91,8 @@ margin_left = 115.0
 margin_right = 195.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 80, 0 )
-theme = SubResource( 4 )
+theme = SubResource( 2 )
+custom_icons/updown = ExtResource( 5 )
 min_value = -100.0
 prefix = "Mod:"
 
@@ -114,7 +117,7 @@ margin_right = 97.0
 margin_bottom = 186.0
 size_flags_horizontal = 6
 size_flags_vertical = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 align = 1
 valign = 1
 __meta__ = {
