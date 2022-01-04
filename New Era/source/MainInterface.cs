@@ -36,8 +36,10 @@ public class MainInterface : Control
     {
         player = playerScene.Instance<Player>();
         GetNode(sheetOpenButtonPath).Connect("button_up", this, "_OnOpenSheet");
+        Connect("tree_exiting", this, "RegisterAllData");
         InitializeData();
     }
+
 
     private void InitializeData()
     {
@@ -65,8 +67,18 @@ public class MainInterface : Control
         SetModStrengthDefense(player.GetModStrDefense());
     }
 
+    private void RegisterAllData()
+    {
+        PassAllDataToPlayer();
+        var packedScene = new PackedScene();
+        packedScene.Pack(player);
+        ResourceSaver.Save("res://test.tscn", packedScene);
+    }
 
-
+    private void PassAllDataToPlayer()
+    {
+        //@
+    }
 
 
 
