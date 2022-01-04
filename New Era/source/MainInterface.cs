@@ -353,6 +353,204 @@ public class MainInterface : Control
 
 
 
+
+    public int GetStrength()
+    {
+        return (int) GetAtributeMajorSpin(strAtributePath).Value;
+    }
+
+    public void SetStrength(int value)
+    {
+        player.SetStrength(value);
+        GetAtributeMajorSpin(strAtributePath).Value = value;
+    }
+
+    public void AddStrength(int sum)
+    {
+        player.SetStrength(player.GetStrength()+sum);
+        GetAtributeMajorSpin(strAtributePath).Value += sum;
+    }
+
+
+
+    public int GetAgility()
+    {
+        return (int) GetAtributeMajorSpin(agiAtributePath).Value;
+    }
+
+    public void SetAgility(int value)
+    {
+        player.SetAgility(value);
+        GetAtributeMajorSpin(agiAtributePath).Value = value;
+    }
+
+    public void AddAgility(int sum)
+    {
+        player.SetAgility(player.GetAgility() + sum);
+        GetAtributeMajorSpin(agiAtributePath).Value += sum;
+    }
+
+
+
+    public int GetSenses()
+    {
+        return (int) GetAtributeMajorSpin(senAtributePath).Value;
+    }
+
+    public void SetSenses(int value)
+    {
+        player.SetSenses(value);
+        GetAtributeMajorSpin(senAtributePath).Value = value;
+    }
+
+    public void AddSenses(int sum)
+    {
+        player.SetSenses(player.GetSenses() + sum);
+        GetAtributeMajorSpin(senAtributePath).Value += sum;
+    }
+
+
+
+    public int GetMind()
+    {
+        return (int) GetAtributeMajorSpin(minAtributePath).Value;
+    }
+
+    public void SetMind(int value)
+    {
+        player.SetMind(value);
+        GetAtributeMajorSpin(minAtributePath).Value = value;
+    }
+
+    public void AddMind(int sum)
+    {
+        player.SetMind(player.GetMind() + sum);
+        GetAtributeMajorSpin(minAtributePath).Value += sum;
+    }
+
+
+
+    public int GetCharisma()
+    {
+        return (int) GetAtributeMajorSpin(chaAtributePath).Value;
+    }
+
+    public void SetCharisma(int value)
+    {
+        player.SetCharisma(value);
+        GetAtributeMajorSpin(chaAtributePath).Value = value;
+    }
+
+    public void AddCharisma(int sum)
+    {
+        player.SetCharisma(player.GetCharisma() + sum);
+        GetAtributeMajorSpin(chaAtributePath).Value += sum;
+    }
+
+
+
+
+
+    public int GetModStrength()
+    {
+        return (int)GetAtributeModSpin(strAtributePath).Value;
+    }
+
+    public void SetModStrength(int value)
+    {
+        player.SetModStrength(value);
+        GetAtributeModSpin(strAtributePath).Value = value;
+    }
+
+    public void AddModStrength(int sum)
+    {
+        player.SetModStrength(player.GetModStrength() + sum);
+        GetAtributeModSpin(strAtributePath).Value += sum;
+    }
+
+
+
+    public int GetModAgility()
+    {
+        return (int) GetAtributeModSpin(agiAtributePath).Value;
+    }
+
+    public void SetModAgility(int value)
+    {
+        player.SetModAgility(value);
+        GetAtributeModSpin(agiAtributePath).Value = value;
+    }
+
+    public void AddModAgility(int sum)
+    {
+        player.SetModAgility(player.GetModAgility() + sum);
+        GetAtributeModSpin(agiAtributePath).Value += sum;
+    }
+
+
+
+    public int GetModSenses()
+    {
+        return (int) GetAtributeModSpin(senAtributePath).Value;
+    }
+
+    public void SetModSenses(int value)
+    {
+        player.SetModSenses(value);
+        GetAtributeModSpin(senAtributePath).Value = value;
+    }
+
+    public void AddModSenses(int sum)
+    {
+        player.SetModSenses(player.GetModSenses() + sum);
+        GetAtributeModSpin(senAtributePath).Value += sum;
+    }
+
+
+
+    public int GetModMind()
+    {
+        return (int) GetAtributeModSpin(minAtributePath).Value;
+    }
+
+    public void SetModMind(int value)
+    {
+        player.SetModMind(value);
+        GetAtributeModSpin(minAtributePath).Value = value;
+    }
+
+    public void AddModMind(int sum)
+    {
+        player.SetModMind(player.GetModMind() + sum);
+        GetAtributeModSpin(minAtributePath).Value += sum;
+    }
+
+
+
+    public int GetModCharisma()
+    {
+        return (int) GetAtributeModSpin(chaAtributePath).Value;
+    }
+
+    public void SetModCharisma(int value)
+    {
+        player.SetModCharisma(value);
+        GetAtributeModSpin(chaAtributePath).Value = value;
+    }
+
+    public void AddModCharisma(int sum)
+    {
+        player.SetModCharisma(player.GetModCharisma() + sum);
+        GetAtributeModSpin(chaAtributePath).Value += sum;
+    }
+
+
+
+
+
+
+
+
     public void SetShadeColor(Color color) { GetNode<Control>(shadeColorRectPath).Modulate = color; }
     public void SetFirstColorInRect(Color color) { GetNode<Control>(firstColorRectPath).Modulate = color; }
     public void SetSecondColorInRect(Color color) { GetNode<Control>(secondColorRectPath).Modulate = color; }
@@ -375,5 +573,15 @@ public class MainInterface : Control
     }
 
 
+
+    private SpinBox GetAtributeMajorSpin(NodePath path)
+    {
+        return GetNode<Atribute>(path).GetMajorSpin();
+    }
+
+    private SpinBox GetAtributeModSpin(NodePath path)
+    {
+        return GetNode<Atribute>(path).GetModSpin();
+    }
 }
 

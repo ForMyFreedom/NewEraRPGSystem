@@ -233,4 +233,104 @@ public class Player : Node
     {
         modFactors[(int)MyEnum.Factor.STR_DEF] = value;
     }
+
+    public int GetStrength()
+    {
+        return totalAtributes[(int)MyEnum.Atribute.STR];
+    }
+
+    public void SetStrength(int value)
+    {
+        totalAtributes[(int)MyEnum.Atribute.STR] = value;
+    }
+
+    public int GetAgility()
+    {
+        return totalAtributes[(int)MyEnum.Atribute.AGI];
+    }
+
+    public void SetAgility(int value)
+    {
+        totalAtributes[(int)MyEnum.Atribute.AGI] = value;
+    }
+
+    public int GetSenses()
+    {
+        return totalAtributes[(int)MyEnum.Atribute.SEN];
+    }
+
+    public void SetSenses(int value)
+    {
+        totalAtributes[(int)MyEnum.Atribute.SEN] = value;
+    }
+
+    public int GetMind()
+    {
+        return totalAtributes[(int)MyEnum.Atribute.MIN];
+    }
+
+    public void SetMind(int value)
+    {
+        totalAtributes[(int)MyEnum.Atribute.MIN] = value;
+    }
+
+    public int GetCharisma()
+    {
+        return totalAtributes[(int)MyEnum.Atribute.CHA];
+    }
+
+    public void SetCharisma(int value)
+    {
+        totalAtributes[(int)MyEnum.Atribute.CHA] = value;
+    }
+
+    public int GetModStrength()
+    {
+        return modAtributes[(int)MyEnum.Atribute.STR];
+    }
+
+    public void SetModStrength(int value)
+    {
+        modAtributes[(int)MyEnum.Atribute.STR] = value;
+    }
+
+    public int GetModAgility()
+    {
+        return modAtributes[(int)MyEnum.Atribute.AGI];
+    }
+
+    public void SetModAgility(int value)
+    {
+        modAtributes[(int)MyEnum.Atribute.AGI] = value;
+    }
+
+    public int GetModSenses()
+    {
+        return modAtributes[(int)MyEnum.Atribute.SEN];
+    }
+
+    public void SetModSenses(int value)
+    {
+        modAtributes[(int)MyEnum.Atribute.SEN] = value;
+    }
+
+    public int GetModMind()
+    {
+        return modAtributes[(int)MyEnum.Atribute.MIN];
+    }
+
+    public void SetModMind(int value)
+    {
+        modAtributes[(int)MyEnum.Atribute.MIN] = value;
+    }
+
+    public int GetModCharisma()
+    {
+        return modAtributes[(int)MyEnum.Atribute.CHA];
+    }
+
+    public void SetModCharisma(int value)
+    {
+        modAtributes[(int)MyEnum.Atribute.CHA] = value;
+    }
 }

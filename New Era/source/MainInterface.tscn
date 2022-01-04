@@ -42,6 +42,11 @@ lifeFactorPath = NodePath("VBoxContainer/CombatFactors/HBoxContainer/Life")
 surgeFactorPath = NodePath("VBoxContainer/CombatFactors/HBoxContainer/ActionSurge")
 agiDefenseFactorPath = NodePath("VBoxContainer/CombatFactors/HBoxContainer/AgilityDefense")
 strDefenseFactorPath = NodePath("VBoxContainer/CombatFactors/HBoxContainer/StrengthDefense")
+strAtributePath = NodePath("VBoxContainer/Atributes/HBoxContainer/StrengthAtribute")
+agiAtributePath = NodePath("VBoxContainer/Atributes/HBoxContainer/AgilityAtribute")
+senAtributePath = NodePath("VBoxContainer/Atributes/HBoxContainer/SensesAtribute")
+minAtributePath = NodePath("VBoxContainer/Atributes/HBoxContainer/MindAtribute")
+chaAtributePath = NodePath("VBoxContainer/Atributes/HBoxContainer/CharismaAtribute")
 
 [node name="BGRect" type="TextureRect" parent="."]
 anchor_right = 1.0
