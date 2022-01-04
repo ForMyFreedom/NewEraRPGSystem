@@ -13,6 +13,14 @@ public class MainInterface : Control
     [Export]
     private NodePath sheetOpenButtonPath;
     [Export]
+    private NodePath bgTexturePath;
+    [Export]
+    private NodePath shadeColorRectPath;
+    [Export]
+    private NodePath firstColorRectPath;
+    [Export]
+    private NodePath secondColorRectPath;
+    [Export]
     private NodePath lifeFactorPath;
     [Export]
     private NodePath surgeFactorPath;
@@ -22,6 +30,7 @@ public class MainInterface : Control
     private NodePath strDefenseFactorPath;
 
     private Player player;
+    private Color[] colors = new Color[2];
 
     public override void _Ready()
     {
@@ -34,6 +43,10 @@ public class MainInterface : Control
     {
         SetPlayerName(player.GetPlayerName());
         SetCharacterName(player.GetCharacterName());
+
+        SetBGTexture(player.GetPersonalBG());
+        SetFirstColor(player.GetFirstColor());
+        SetSecondColor(player.GetSecondColor());
 
         SetTotalLife(player.GetTotalLife());
         SetActualLife(player.GetActualLife());
@@ -72,6 +85,26 @@ public class MainInterface : Control
     public String GetCharacterName() { return GetNode<MyLabel>(characterNamePath).GetTextData(); }
     public void SetCharacterName(String str) { GetNode<MyLabel>(characterNamePath).SetText(str); }
 
+    public Texture GetBGTexture() { return GetNode<TextureRect>(bgTexturePath).Texture; }
+    public void SetBGTexture(Texture text) { GetNode<TextureRect>(bgTexturePath).Texture = text; }
+
+
+    public Color GetFirstColor() { return colors[0]; }
+
+    public void SetFirstColor(Color color)
+    {
+        colors[0] = color;
+        SetShadeColor(color);   SetFirstColorInRect(color);
+    }
+
+
+    public Color GetSecondColor() { return colors[1]; }
+
+    public void SetSecondColor(Color color)
+    {
+        colors[1] = color;
+        SetSecondColorInRect(color);
+    }
 
 
     public int GetActualLife() { return (int) GetFactorActualSpin(lifeFactorPath).Value; }
@@ -131,6 +164,10 @@ public class MainInterface : Control
 
 
 
+
+    public void SetShadeColor(Color color) { GetNode<Control>(shadeColorRectPath).Modulate = color; }
+    public void SetFirstColorInRect(Color color) { GetNode<Control>(firstColorRectPath).Modulate = color; }
+    public void SetSecondColorInRect(Color color) { GetNode<Control>(secondColorRectPath).Modulate = color; }
 
 
 

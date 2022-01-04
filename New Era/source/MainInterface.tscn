@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/Melissa.tscn" type="PackedScene" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://assets/calibrib.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/calibri.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://assets/banner.png" type="Texture" id=8]
-[ext_resource path="res://assets/TEST.png" type="Texture" id=9]
+[ext_resource path="res://assets/default_bg.jpg" type="Texture" id=9]
 [ext_resource path="res://assets/HSStyle.tres" type="StyleBox" id=10]
+[ext_resource path="res://source/MyLabel.cs" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -30,7 +31,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 playerScene = ExtResource( 2 )
+playerNamePath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/PlayerLabel")
+characterNamePath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/CharacterLabel")
 sheetOpenButtonPath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/OpenSheetButton")
+bgTexturePath = NodePath("BGRect")
+shadeColorRectPath = NodePath("ShadeBGColorRect")
+firstColorRectPath = NodePath("VBoxContainer/Info/PrincipalColorRect")
+secondColorRectPath = NodePath("VBoxContainer/Info/MarginContainer/SecondaryColorRect")
+lifeFactorPath = NodePath("VBoxContainer/CombatFactors/HBoxContainer/Life")
+surgeFactorPath = NodePath("VBoxContainer/CombatFactors/HBoxContainer/ActionSurge")
+agiDefenseFactorPath = NodePath("VBoxContainer/CombatFactors/HBoxContainer/AgilityDefense")
+strDefenseFactorPath = NodePath("VBoxContainer/CombatFactors/HBoxContainer/StrengthDefense")
 
 [node name="BGRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -38,13 +49,11 @@ anchor_bottom = 1.0
 mouse_filter = 2
 texture = ExtResource( 9 )
 expand = true
-stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ShadeBGColorRect" type="ColorRect" parent="."]
-modulate = Color( 0.784314, 1, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 1, 1, 1, 0.392157 )
@@ -67,7 +76,6 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
 
 [node name="PrincipalColorRect" type="ColorRect" parent="VBoxContainer/Info"]
-modulate = Color( 0.784314, 1, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -83,7 +91,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Info/MarginContainer"]
+[node name="SecondaryColorRect" type="TextureRect" parent="VBoxContainer/Info/MarginContainer"]
 modulate = Color( 0, 0, 0, 1 )
 margin_right = 984.0
 margin_bottom = 35.0
@@ -104,11 +112,13 @@ margin_right = 325.0
 margin_bottom = 27.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
-text = "Jogador: João"
+text = "Jogador: JOGADOR"
 align = 1
+script = ExtResource( 11 )
 __meta__ = {
 "_editor_description_": "Jogador: "
 }
+textBase = "Jogador: "
 
 [node name="CharacterLabel" type="Label" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
 margin_left = 329.0
@@ -117,11 +127,13 @@ margin_right = 654.0
 margin_bottom = 27.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
-text = "Personagem: Melissa"
+text = "Personagem: PERSONAGEM"
 align = 1
+script = ExtResource( 11 )
 __meta__ = {
 "_editor_description_": "Personagem: "
 }
+textBase = "Personagem: "
 
 [node name="OpenSheetButton" type="Button" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
 margin_left = 781.0
@@ -421,7 +433,7 @@ margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 2
 custom_fonts/font = SubResource( 2 )
-text = "Técnicas"
+text = "Técnicas e Usos de Crítico"
 align = 1
 valign = 1
 __meta__ = {
