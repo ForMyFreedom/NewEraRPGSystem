@@ -107,60 +107,236 @@ public class MainInterface : Control
     }
 
 
-    public int GetActualLife() { return (int) GetFactorActualSpin(lifeFactorPath).Value; }
-    public void SetActualLife(int value) { GetFactorActualSpin(lifeFactorPath).Value = value; }
-    public void AddActualLife(int sum) { GetFactorActualSpin(lifeFactorPath).Value += sum; }
-
-    public int GetTotalLife() { return (int)GetFactorTotalSpin(lifeFactorPath).Value; }
-    public void SetTotalLife(int value) { GetFactorTotalSpin(lifeFactorPath).Value = value; }
-    public void AddTotalLife(int sum) { GetFactorTotalSpin(lifeFactorPath).Value += sum; }
-
-    public int GetModLife() { return (int)GetFactorModSpin(lifeFactorPath).Value; }
-    public void SetModLife(int value) { GetFactorModSpin(lifeFactorPath).Value = value; }
-    public void AddModLife(int sum) { GetFactorModSpin(lifeFactorPath).Value += sum; }
 
 
+    public int GetActualLife()
+    {
+        return player.GetActualLife();
+    }
+    
+    public void SetActualLife(int value)
+    {
+        player.SetActualLife(value);
+        GetFactorActualSpin(lifeFactorPath).Value = value;
+    }
 
-    public int GetActualSurge() { return (int)GetFactorActualSpin(surgeFactorPath).Value; }
-    public void SetActualSurge(int value) { GetFactorActualSpin(surgeFactorPath).Value = value; }
-    public void AddActualSurge(int sum) { GetFactorActualSpin(surgeFactorPath).Value += sum; }
-
-    public int GetTotalSurge() { return (int)GetFactorTotalSpin(surgeFactorPath).Value; }
-    public void SetTotalSurge(int value) { GetFactorTotalSpin(surgeFactorPath).Value = value; }
-    public void AddTotalSurge(int sum) { GetFactorTotalSpin(surgeFactorPath).Value += sum; }
-
-    public int GetModSurge() { return (int)GetFactorModSpin(surgeFactorPath).Value; }
-    public void SetModSurge(int value) { GetFactorModSpin(surgeFactorPath).Value = value; }
-    public void AddModSurge(int sum) { GetFactorModSpin(surgeFactorPath).Value += sum; }
+    public void AddActualLife(int sum)
+    {
+        player.SetActualLife(player.GetActualLife() + sum);
+        GetFactorActualSpin(lifeFactorPath).Value += sum;
+    }
 
 
 
-    public int GetActualAgilityDefense() { return (int)GetFactorActualSpin(agiDefenseFactorPath).Value; }
-    public void SetActualAgilityDefense(int value) { GetFactorActualSpin(agiDefenseFactorPath).Value = value; }
-    public void AddActualAgilityDefense(int sum) { GetFactorActualSpin(agiDefenseFactorPath).Value += sum; }
+    public int GetTotalLife()
+    {
+        return player.GetTotalLife();
+    }
 
-    public int GetTotalAgilityDefense() { return (int)GetFactorTotalSpin(agiDefenseFactorPath).Value; }
-    public void SetTotalAgilityDefense(int value) { GetFactorTotalSpin(agiDefenseFactorPath).Value = value; }
-    public void AddTotalAgilityDefense(int sum) { GetFactorTotalSpin(agiDefenseFactorPath).Value += sum; }
+    public void SetTotalLife(int value)
+    {
+        player.SetTotalLife(value);
+        GetFactorTotalSpin(lifeFactorPath).Value = value;
+    }
 
-    public int GetModAgilityDefense() { return (int)GetFactorModSpin(agiDefenseFactorPath).Value; }
-    public void SetModAgilityDefense(int value) { GetFactorModSpin(agiDefenseFactorPath).Value = value; }
-    public void AddModAgilityDefense(int sum) { GetFactorModSpin(agiDefenseFactorPath).Value += sum; }
+    public void AddTotalLife(int sum)
+    {
+        player.SetTotalLife(player.GetTotalLife() + sum);
+        GetFactorTotalSpin(lifeFactorPath).Value += sum;
+    }
 
 
 
-    public int GetActualStrengthDefense() { return (int)GetFactorActualSpin(strDefenseFactorPath).Value; }
-    public void SetActualStrengthDefense(int value) { GetFactorActualSpin(strDefenseFactorPath).Value = value; }
-    public void AddActualStrengthDefense(int sum) { GetFactorActualSpin(strDefenseFactorPath).Value += sum; }
+    public int GetModLife()
+    {
+        return player.GetModLife();
+    }
 
-    public int GetTotalStrengthDefense() { return (int)GetFactorTotalSpin(strDefenseFactorPath).Value; }
-    public void SetTotalStrengthDefense(int value) { GetFactorTotalSpin(strDefenseFactorPath).Value = value; }
-    public void AddTotalStrengthDefense(int sum) { GetFactorTotalSpin(strDefenseFactorPath).Value += sum; }
+    public void SetModLife(int value)
+    {
+        player.SetModLife(value);
+        GetFactorModSpin(lifeFactorPath).Value = value;
+    }
 
-    public int GetModStrengthDefense() { return (int)GetFactorModSpin(strDefenseFactorPath).Value; }
-    public void SetModStrengthDefense(int value) { GetFactorModSpin(strDefenseFactorPath).Value = value; }
-    public void AddModStrengthDefense(int sum) { GetFactorModSpin(strDefenseFactorPath).Value += sum; }
+    public void AddModLife(int sum)
+    {
+        player.SetModLife(player.GetModLife() + sum);
+        GetFactorModSpin(lifeFactorPath).Value += sum;
+    }
 
+
+
+
+    public int GetActualSurge()
+    {
+        return player.GetActualSurge();
+    }
+
+    public void SetActualSurge(int value)
+    {
+        player.SetActualSurge(value);
+        GetFactorActualSpin(surgeFactorPath).Value = value;
+    }
+
+    public void AddActualSurge(int sum)
+    {
+        player.SetActualSurge(player.GetActualSurge() + sum);
+        GetFactorActualSpin(surgeFactorPath).Value += sum;
+    }
+
+
+
+    public int GetTotalSurge()
+    {
+        return player.GetTotalSurge();
+    }
+
+    public void SetTotalSurge(int value)
+    {
+        player.SetTotalSurge(value);
+        GetFactorTotalSpin(surgeFactorPath).Value = value;
+    }
+
+    public void AddTotalSurge(int sum)
+    {
+        player.SetTotalSurge(player.GetTotalSurge() + sum);
+        GetFactorTotalSpin(surgeFactorPath).Value += sum;
+    }
+
+
+
+    public int GetModSurge()
+    {
+        return player.GetModSurge();
+    }
+
+    public void SetModSurge(int value)
+    {
+        player.SetModSurge(value);
+        GetFactorModSpin(surgeFactorPath).Value = value;
+    }
+
+    public void AddModSurge(int sum)
+    {
+        player.SetModSurge(player.GetModSurge() + sum);
+        GetFactorModSpin(surgeFactorPath).Value += sum;
+    }
+
+
+
+
+    public int GetActualAgilityDefense()
+    {
+        return player.GetActualAgiDefense();
+    }
+
+    public void SetActualAgilityDefense(int value)
+    {
+        player.SetActualAgiDefense(value);
+        GetFactorActualSpin(agiDefenseFactorPath).Value = value;
+    }
+
+    public void AddActualAgilityDefense(int sum)
+    {
+        player.SetActualAgiDefense(player.GetActualAgiDefense() + sum);
+        GetFactorActualSpin(agiDefenseFactorPath).Value += sum;
+    }
+
+
+
+    public int GetTotalAgilityDefense()
+    {
+        return player.GetTotalAgiDefense();
+    }
+
+    public void SetTotalAgilityDefense(int value)
+    {
+        player.SetTotalAgiDefense(value);
+        GetFactorTotalSpin(agiDefenseFactorPath).Value = value;
+    }
+
+    public void AddTotalAgilityDefense(int sum)
+    {
+        player.SetTotalAgiDefense(player.GetTotalAgiDefense() + sum);
+        GetFactorTotalSpin(agiDefenseFactorPath).Value += sum;
+    }
+
+
+
+    public int GetModAgilityDefense()
+    {
+        return player.GetModAgiDefense();
+    }
+
+    public void SetModAgilityDefense(int value)
+    {
+        player.SetModAgiDefense(value);
+        GetFactorModSpin(agiDefenseFactorPath).Value = value;
+    }
+
+    public void AddModAgilityDefense(int sum)
+    {
+        player.SetModAgiDefense(player.GetModAgiDefense() + sum);
+        GetFactorModSpin(agiDefenseFactorPath).Value += sum;
+    }
+
+
+
+
+    public int GetActualStrengthDefense()
+    {
+        return player.GetActualStrDefense();
+    }
+
+    public void SetActualStrengthDefense(int value)
+    {
+        player.SetActualStrDefense(value);
+        GetFactorActualSpin(strDefenseFactorPath).Value = value;
+    }
+
+    public void AddActualStrengthDefense(int sum)
+    {
+        player.SetActualStrDefense(player.GetActualStrDefense() + sum);
+        GetFactorActualSpin(strDefenseFactorPath).Value += sum;
+    }
+
+
+
+    public int GetTotalStrengthDefense()
+    {
+        return player.GetTotalStrDefense();
+    }
+
+    public void SetTotalStrengthDefense(int value)
+    {
+        player.SetTotalStrDefense(value);
+        GetFactorTotalSpin(strDefenseFactorPath).Value = value;
+    }
+
+    public void AddTotalStrengthDefense(int sum)
+    {
+        player.SetTotalStrDefense(player.GetTotalStrDefense() + sum);
+        GetFactorTotalSpin(strDefenseFactorPath).Value += sum;
+    }
+
+
+
+    public int GetModStrengthDefense()
+    {
+        return player.GetModStrDefense();
+    }
+
+    public void SetModStrengthDefense(int value)
+    {
+        player.SetModStrDefense(value);
+        GetFactorModSpin(strDefenseFactorPath).Value = value;
+    }
+
+    public void AddModStrengthDefense(int sum)
+    {
+        player.SetModStrDefense(player.GetModStrDefense() + sum);
+        GetFactorModSpin(strDefenseFactorPath).Value += sum;
+    }
 
 
 
