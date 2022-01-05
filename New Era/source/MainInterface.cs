@@ -94,7 +94,6 @@ public class MainInterface : Control, CharacterDataBank
         RegistryData(this, player);
         var packedScene = new PackedScene();
         packedScene.Pack(player);
-        GD.Print(playerScene.ResourcePath);
         ResourceSaver.Save(playerScene.ResourcePath, packedScene);
     }
 
