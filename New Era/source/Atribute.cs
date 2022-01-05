@@ -66,4 +66,15 @@ public class Atribute : Control
         atributeValue = (int) value;
         EmitSignal(nameof(atribute_change), new object[] { atributeValue });
     }
+
+
+    public SpinBox GetMajorSpin()
+    {
+        return GetNode<SpinBox>(spinValuePath);
+    }
+
+    public SpinBox GetModSpin()
+    {
+        return GetNode<SpinBox>(modSpinPath);
+    }
 }
