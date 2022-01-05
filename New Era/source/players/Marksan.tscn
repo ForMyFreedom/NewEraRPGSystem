@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://source/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/default_bg.jpg" type="Texture" id=2]
+
+[node name="Marksan" instance=ExtResource( 1 )]
+playerName = "Gustavo"
+characterName = "Marksan"
+sheetURL = "https://1drv.ms/w/s!Ar3mdnwNQxPdd2U8dndKdsTWmko?e=NccZfh"
+personalBG = ExtResource( 2 )
+firstColor = Color( 0.172549, 0, 1, 1 )
+secondColor = Color( 0.239216, 1, 0.858824, 1 )
+totalFactors = PoolIntArray( 47, 39, 42, 76 )
+actualFactors = PoolIntArray( 21, 39, 42, 76 )
+modFactors = PoolIntArray( 0, 0, 0, 0 )
+totalAtributes = PoolIntArray( 16, 22, 4, 7, 2 )
+modAtributes = PoolIntArray( 0, 0, 0, 0, 0 )
