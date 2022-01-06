@@ -27,9 +27,7 @@ public class Factor : Control
     public override void _Ready()
     {
         actualMod = (int) GetNode<SpinBox>(modSpinPath).Value;
-        GetNode(modSpinPath).Connect("value_changed", this, "_OnModSpinChanged");
         GetNode(applyButtonPath).Connect("button_up", this, "_OnApplyButtonUp");
-
         GetTree().CurrentScene.Connect("ready", this, "_OnTreeReady");
     }
 
@@ -39,21 +37,22 @@ public class Factor : Control
         GetNode(modSpinPath).Connect("value_changed", this, "_OnModSpinChanged");
         
         if (relatedAtributePath != null)
-            GetNode(relatedAtributePath).Connect("ready", this, "_OnReleatedAtributeReady");
+        {
+            GetNode(relatedAtributePath).Connect("atribute_change", this, "_OnReleatedAtributeChanged");
+        }
     }
 
 
 
     private void _OnModSpinChanged(float value)
     {
-        int modification = (int)value - actualMod;
+        int modification = (int) value - actualMod;
         GetNode<SpinBox>(totalSpinPath).Value += modification;
-        GetNode<SpinBox>(actualSpinPath).Value += modification;
         actualMod = (int) value;
     }
 
 
-    private void _OnRelatedAtributeChanged(int value)
+    private void _OnReleatedAtributeChanged(int value)
     {
         int finalValue = (int)(value*relatedAtributeRelevance) + bonusInCalculus;
         finalValue += (int) GetNode<SpinBox>(modSpinPath).Value;
