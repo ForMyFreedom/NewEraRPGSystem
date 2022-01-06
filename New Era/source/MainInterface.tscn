@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Mallory.tscn" type="PackedScene" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://assets/default_bg.jpg" type="Texture" id=9]
 [ext_resource path="res://assets/HSStyle.tres" type="StyleBox" id=10]
 [ext_resource path="res://source/MyLabel.cs" type="Script" id=11]
+[ext_resource path="res://assets/skills/medic.png" type="Texture" id=12]
+[ext_resource path="res://source/WorkTree.cs" type="Script" id=13]
+[ext_resource path="res://assets/skills/arrow.png" type="Texture" id=14]
+[ext_resource path="res://assets/skills/assasim.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -579,21 +583,30 @@ margin_bottom = 179.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/General/HBOX/WorkControl"]
-margin_left = 4.0
-margin_right = 508.0
-margin_bottom = 192.0
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/General/HBOX/WorkControl"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_bottom = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBOX" type="VBoxContainer" parent="VBoxContainer/General/HBOX/WorkControl/MarginContainer"]
+margin_right = 501.0
+margin_bottom = 174.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Name" type="Label" parent="VBoxContainer/General/HBOX/WorkControl/VBoxContainer"]
-margin_right = 504.0
+[node name="Name" type="Label" parent="VBoxContainer/General/HBOX/WorkControl/MarginContainer/VBOX"]
+margin_right = 501.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
-size_flags_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
 custom_fonts/font = ExtResource( 6 )
 text = "Ofícios / Perícias e Mecânicas"
 align = 1
@@ -601,6 +614,21 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="WorkTree" type="Tree" parent="VBoxContainer/General/HBOX/WorkControl/MarginContainer/VBOX"]
+margin_top = 36.0
+margin_right = 501.0
+margin_bottom = 174.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+test1Texture = ExtResource( 12 )
+test2Texture = ExtResource( 15 )
+arrowTexture = ExtResource( 14 )
 
 [node name="VS1" type="VSeparator" parent="VBoxContainer/General/HBOX"]
 margin_left = 510.0
@@ -615,7 +643,7 @@ margin_bottom = 179.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HBOX" type="VBoxContainer" parent="VBoxContainer/General/HBOX/HabilityControl"]
+[node name="VBOX" type="VBoxContainer" parent="VBoxContainer/General/HBOX/HabilityControl"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -624,7 +652,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Name" type="Label" parent="VBoxContainer/General/HBOX/HabilityControl/HBOX"]
+[node name="Name" type="Label" parent="VBoxContainer/General/HBOX/HabilityControl/VBOX"]
 margin_right = 506.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
