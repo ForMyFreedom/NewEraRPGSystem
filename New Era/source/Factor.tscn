@@ -207,6 +207,7 @@ size_flags_vertical = 3
 [node name="ApplySpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer2/Control2/VBoxContainer2/HBoxContainer"]
 margin_right = 73.0
 margin_bottom = 24.0
+focus_next = NodePath("../ApplyButton")
 size_flags_horizontal = 5
 size_flags_vertical = 2
 custom_icons/updown = ExtResource( 4 )

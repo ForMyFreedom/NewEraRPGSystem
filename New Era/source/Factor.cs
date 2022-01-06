@@ -21,6 +21,11 @@ public class Factor : Control
     [Export]
     private NodePath applyButtonPath;
 
+    [Signal]
+    public delegate void total_factor_change(int value);
+    [Signal]
+    public delegate void actual_factor_change(int value);
+
     int actualMod;
 
 
@@ -47,8 +52,13 @@ public class Factor : Control
     private void _OnModSpinChanged(float value)
     {
         int modification = (int) value - actualMod;
-        GetNode<SpinBox>(totalSpinPath).Value += modification;
         actualMod = (int) value;
+
+        GetNode<SpinBox>(totalSpinPath).Value += modification;
+        GetNode<SpinBox>(actualSpinPath).Value += modification;
+
+        EmitSpinSignal(totalSpinPath, nameof(total_factor_change));
+        EmitSpinSignal(actualSpinPath, nameof(actual_factor_change));
     }
 
 
@@ -57,7 +67,8 @@ public class Factor : Control
         int finalValue = (int)(value*relatedAtributeRelevance) + bonusInCalculus;
         finalValue += (int) GetNode<SpinBox>(modSpinPath).Value;
         GetNode<SpinBox>(totalSpinPath).Value = finalValue;
-        GetNode<SpinBox>(actualSpinPath).Value = finalValue;
+
+        EmitSpinSignal(totalSpinPath, nameof(total_factor_change));
     }
 
 
@@ -65,8 +76,16 @@ public class Factor : Control
     {
         int applyValue = (int) GetNode<SpinBox>(applySpinPath).Value;
         GetNode<SpinBox>(actualSpinPath).Value += applyValue;
+
+        EmitSpinSignal(actualSpinPath, nameof(actual_factor_change));
     }
 
+
+
+    private void EmitSpinSignal(NodePath path, String signal)
+    {
+        EmitSignal(signal, new object[] { GetNode<SpinBox>(path).Value });
+    }
 
 
 
