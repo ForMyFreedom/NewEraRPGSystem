@@ -66,7 +66,6 @@ __meta__ = {
 margin_top = 10.0
 margin_right = 121.0
 margin_bottom = 29.0
-size_flags_horizontal = 3
 size_flags_vertical = 10
 custom_fonts/font = ExtResource( 2 )
 text = "Total  "

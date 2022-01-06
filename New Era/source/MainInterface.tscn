@@ -1,11 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Mallory.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/VSStyle.tres" type="StyleBox" id=3]
 [ext_resource path="res://source/Atribute.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/Factor.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/calibrib.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/BaseMajorFont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://assets/calibri.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://assets/banner.png" type="Texture" id=8]
 [ext_resource path="res://assets/default_bg.jpg" type="Texture" id=9]
@@ -17,10 +17,6 @@ size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 32
-font_data = ExtResource( 6 )
 
 [node name="MainInterface" type="Control"]
 anchor_right = 1.0
@@ -210,6 +206,7 @@ custom_styles/separator = ExtResource( 3 )
 margin_left = 259.0
 margin_right = 506.0
 margin_bottom = 179.0
+defaultApplyValue = -10.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/HBoxContainer/ActionSurge/VBoxContainer" index="0"]
 margin_top = 25.0
@@ -457,7 +454,7 @@ margin_right = 504.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 6 )
 text = "Ofícios / Perícias e Mecânicas"
 align = 1
 valign = 1
@@ -493,7 +490,7 @@ margin_right = 504.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 6 )
 text = "Técnicas e Usos de Crítico"
 align = 1
 valign = 1

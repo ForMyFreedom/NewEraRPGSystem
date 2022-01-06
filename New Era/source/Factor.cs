@@ -9,6 +9,8 @@ public class Factor : Control
     public float relatedAtributeRelevance;
     [Export]
     public int bonusInCalculus;
+    [Export]
+    public double defaultApplyValue;
 
     [Export]
     private NodePath totalSpinPath;
@@ -33,6 +35,7 @@ public class Factor : Control
     {
         actualMod = (int) GetNode<SpinBox>(modSpinPath).Value;
         GetNode(applyButtonPath).Connect("button_up", this, "_OnApplyButtonUp");
+        GetNode<SpinBox>(applySpinPath).Value = defaultApplyValue;
         GetTree().CurrentScene.Connect("ready", this, "_OnTreeReady");
     }
 
@@ -40,7 +43,7 @@ public class Factor : Control
     private void _OnTreeReady()
     {
         GetNode(modSpinPath).Connect("value_changed", this, "_OnModSpinChanged");
-        
+
         if (relatedAtributePath != null)
         {
             GetNode(relatedAtributePath).Connect("atribute_change", this, "_OnReleatedAtributeChanged");
