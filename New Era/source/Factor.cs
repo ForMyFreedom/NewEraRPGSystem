@@ -16,12 +16,20 @@ public class Factor : Control
     private NodePath actualSpinPath;
     [Export]
     private NodePath modSpinPath;
+    [Export]
+    private NodePath applySpinPath;
+    [Export]
+    private NodePath applyButtonPath;
 
     int actualMod;
+
 
     public override void _Ready()
     {
         actualMod = (int) GetNode<SpinBox>(modSpinPath).Value;
+        GetNode(modSpinPath).Connect("value_changed", this, "_OnModSpinChanged");
+        GetNode(applyButtonPath).Connect("button_up", this, "_OnApplyButtonUp");
+
         GetTree().CurrentScene.Connect("ready", this, "_OnTreeReady");
     }
 
@@ -41,7 +49,7 @@ public class Factor : Control
         int modification = (int)value - actualMod;
         GetNode<SpinBox>(totalSpinPath).Value += modification;
         GetNode<SpinBox>(actualSpinPath).Value += modification;
-        actualMod = (int)value;
+        actualMod = (int) value;
     }
 
 
@@ -53,6 +61,12 @@ public class Factor : Control
         GetNode<SpinBox>(actualSpinPath).Value = finalValue;
     }
 
+
+    private void _OnApplyButtonUp()
+    {
+        int applyValue = (int) GetNode<SpinBox>(applySpinPath).Value;
+        GetNode<SpinBox>(actualSpinPath).Value += applyValue;
+    }
 
 
 
