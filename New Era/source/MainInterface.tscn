@@ -162,6 +162,7 @@ margin_bottom = 29.0
 size_flags_horizontal = 2
 size_flags_vertical = 6
 custom_icons/updown = ExtResource( 12 )
+min_value = -1000.0
 max_value = 1000.0
 align = 1
 __meta__ = {
