@@ -30,6 +30,8 @@ public class Player : Node, CharacterDataBank
     private int[] totalAtributes;
     [Export]
     private int[] modAtributes;
+    [Export]
+    private int[] trainingAtributes;
 
 
     public String GetPlayerName()
@@ -338,6 +340,17 @@ public class Player : Node, CharacterDataBank
     }
 
 
+
+    public int[] GetTrainingAtributes()
+    {
+        return trainingAtributes;
+    }
+
+    public void SetTrainingAtributes(int[] value)
+    {
+        trainingAtributes = value;
+    }
+
     public int GetInspiration()
     {
         return inspiration;
@@ -347,4 +360,5 @@ public class Player : Node, CharacterDataBank
     {
         inspiration = value;
     }
+
 }

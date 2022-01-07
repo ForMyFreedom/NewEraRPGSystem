@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Mallory.tscn" type="PackedScene" id=2]
@@ -16,6 +16,11 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
@@ -45,7 +50,8 @@ agiAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContaine
 senAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/SensesAtribute")
 minAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/MindAtribute")
 chaAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/CharismaAtribute")
-inspirationSpinPath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX/SpinBox")
+inspirationSpinPath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX/InspirationSpinBox")
+trainingButtonPath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/TrainingButton")
 
 [node name="BGRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -112,7 +118,7 @@ __meta__ = {
 
 [node name="PlayerLabel" type="Label" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
 margin_top = 7.0
-margin_right = 243.0
+margin_right = 250.0
 margin_bottom = 27.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
@@ -125,9 +131,9 @@ __meta__ = {
 textBase = "Jogador: "
 
 [node name="CharacterLabel" type="Label" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
-margin_left = 247.0
+margin_left = 254.0
 margin_top = 7.0
-margin_right = 490.0
+margin_right = 504.0
 margin_bottom = 27.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 14 )
@@ -140,24 +146,24 @@ __meta__ = {
 textBase = "Personagem: "
 
 [node name="HBOX" type="HBoxContainer" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
-margin_left = 494.0
-margin_right = 737.0
+margin_left = 508.0
+margin_right = 758.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX"]
+[node name="InspirationLabel" type="Label" parent="VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX"]
 margin_top = 7.0
-margin_right = 119.0
+margin_right = 123.0
 margin_bottom = 27.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 14 )
 text = "Inspiração "
 align = 2
 
-[node name="SpinBox" type="SpinBox" parent="VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX"]
-margin_left = 123.0
+[node name="InspirationSpinBox" type="SpinBox" parent="VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX"]
+margin_left = 127.0
 margin_top = 5.0
-margin_right = 196.0
+margin_right = 200.0
 margin_bottom = 29.0
 size_flags_horizontal = 2
 size_flags_vertical = 6
@@ -169,12 +175,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OpenSheetButton" type="Button" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
-margin_left = 822.0
-margin_right = 902.0
+[node name="TrainingButton" type="Button" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
+margin_left = 762.0
+margin_right = 842.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 80, 0 )
 size_flags_horizontal = 6
+size_flags_stretch_ratio = 0.1
+custom_fonts/font = ExtResource( 14 )
+text = "Treinar"
+
+[node name="OpenSheetButton" type="Button" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
+margin_left = 874.0
+margin_right = 955.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 80, 0 )
+size_flags_horizontal = 6
+size_flags_stretch_ratio = 0.55
+custom_fonts/font = SubResource( 2 )
 text = "Abrir Ficha"
 
 [node name="CombatFactors" type="Control" parent="VBoxContainer"]

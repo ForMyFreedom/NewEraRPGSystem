@@ -40,6 +40,8 @@ public class MainInterface : Control, CharacterDataBank
     private NodePath chaAtributePath;
     [Export]
     private NodePath inspirationSpinPath;
+    [Export]
+    private NodePath trainingButtonPath;
 
     private Player player;
     private Color[] colors = new Color[2];
@@ -48,6 +50,7 @@ public class MainInterface : Control, CharacterDataBank
     {
         player = playerScene.Instance<Player>();
         GetNode(sheetOpenButtonPath).Connect("button_up", this, "_OnOpenSheet");
+        GetNode(trainingButtonPath).Connect("button_up", this, "_OnTraining");
         Connect("tree_exiting", this, "RegisterAllData");
         RegistryData(player, this);
     }
@@ -108,6 +111,11 @@ public class MainInterface : Control, CharacterDataBank
     public void _OnOpenSheet()
     {
         OS.ShellOpen(player.GetSheetURL());
+    }
+
+    public void _OnTraining()
+    {
+        GD.Print("Issue #5");
     }
 
 
@@ -525,6 +533,18 @@ public class MainInterface : Control, CharacterDataBank
         GetAtributeModSpin(chaAtributePath).Value += sum;
     }
 
+
+
+    public int[] GetTrainingAtributes()
+    {
+        GD.Print("Issue #5");
+        return new int[] { };
+    }
+
+    public void SetTrainingAtributes(int[] value)
+    {
+        GD.Print("Issue #5");
+    }
 
 
     public int GetInspiration()
