@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Mallory.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://assets/default_bg.jpg" type="Texture" id=9]
 [ext_resource path="res://assets/HSStyle.tres" type="StyleBox" id=10]
 [ext_resource path="res://source/MyLabel.cs" type="Script" id=11]
+[ext_resource path="res://assets/updown.png" type="Texture" id=12]
+[ext_resource path="res://assets/BaseMediumFont.tres" type="DynamicFont" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -43,6 +45,7 @@ agiAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContaine
 senAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/SensesAtribute")
 minAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/MindAtribute")
 chaAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/CharismaAtribute")
+inspirationSpinPath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX/SpinBox")
 
 [node name="BGRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -109,7 +112,7 @@ __meta__ = {
 
 [node name="PlayerLabel" type="Label" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
 margin_top = 7.0
-margin_right = 325.0
+margin_right = 243.0
 margin_bottom = 27.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
@@ -122,12 +125,12 @@ __meta__ = {
 textBase = "Jogador: "
 
 [node name="CharacterLabel" type="Label" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
-margin_left = 329.0
+margin_left = 247.0
 margin_top = 7.0
-margin_right = 654.0
+margin_right = 490.0
 margin_bottom = 27.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 14 )
 text = "Personagem: PERSONAGEM"
 align = 1
 script = ExtResource( 11 )
@@ -136,9 +139,38 @@ __meta__ = {
 }
 textBase = "Personagem: "
 
+[node name="HBOX" type="HBoxContainer" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
+margin_left = 494.0
+margin_right = 737.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX"]
+margin_top = 7.0
+margin_right = 119.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 14 )
+text = "Inspiração "
+align = 2
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX"]
+margin_left = 123.0
+margin_top = 5.0
+margin_right = 196.0
+margin_bottom = 29.0
+size_flags_horizontal = 2
+size_flags_vertical = 6
+custom_icons/updown = ExtResource( 12 )
+max_value = 1000.0
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="OpenSheetButton" type="Button" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
-margin_left = 781.0
-margin_right = 861.0
+margin_left = 822.0
+margin_right = 902.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 80, 0 )
 size_flags_horizontal = 6

@@ -86,4 +86,7 @@ public interface CharacterDataBank
 
     int GetModCharisma();
     void SetModCharisma(int value);
+
+    int GetInspiration();
+    void SetInspiration(int value);
 }

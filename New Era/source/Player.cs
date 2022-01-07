@@ -16,6 +16,9 @@ public class Player : Node, CharacterDataBank
     private Color firstColor;
     [Export]
     private Color secondColor;
+
+    [Export]
+    private int inspiration;
     
     [Export]
     private int[] totalFactors;
@@ -332,5 +335,16 @@ public class Player : Node, CharacterDataBank
     public void SetModCharisma(int value)
     {
         modAtributes[(int)MyEnum.Atribute.CHA] = value;
+    }
+
+
+    public int GetInspiration()
+    {
+        return inspiration;
+    }
+
+    public void SetInspiration(int value)
+    {
+        inspiration = value;
     }
 }

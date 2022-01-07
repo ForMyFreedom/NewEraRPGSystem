@@ -38,6 +38,8 @@ public class MainInterface : Control, CharacterDataBank
     private NodePath minAtributePath;
     [Export]
     private NodePath chaAtributePath;
+    [Export]
+    private NodePath inspirationSpinPath;
 
     private Player player;
     private Color[] colors = new Color[2];
@@ -87,6 +89,8 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetModMind(sender.GetModMind());
         reciver.SetModSenses(sender.GetModSenses());
         reciver.SetModCharisma(sender.GetModCharisma());
+
+        reciver.SetInspiration(sender.GetInspiration());
     }
 
     private void RegisterAllData()
@@ -519,6 +523,18 @@ public class MainInterface : Control, CharacterDataBank
     public void AddModCharisma(int sum)
     {
         GetAtributeModSpin(chaAtributePath).Value += sum;
+    }
+
+
+
+    public int GetInspiration()
+    {
+        return (int) GetNode<SpinBox>(inspirationSpinPath).Value;
+    }
+
+    public void SetInspiration(int value)
+    {
+        GetNode<SpinBox>(inspirationSpinPath).Value = value;
     }
 
 
