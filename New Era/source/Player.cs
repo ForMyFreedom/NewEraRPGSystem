@@ -9,6 +9,8 @@ public class Player : Node, CharacterDataBank
     private String characterName;
     [Export]
     private String sheetURL;
+    [Export(PropertyHint.MultilineText)]
+    private String trivia;
 
     [Export]
     private Texture personalBG;
@@ -361,4 +363,13 @@ public class Player : Node, CharacterDataBank
         inspiration = value;
     }
 
+    public string GetTrivia()
+    {
+        return trivia;
+    }
+
+    public void SetTrivia(string text)
+    {
+        trivia = text;
+    }
 }

@@ -42,6 +42,8 @@ public class MainInterface : Control, CharacterDataBank
     private NodePath inspirationSpinPath;
     [Export]
     private NodePath trainingButtonPath;
+    [Export]
+    private NodePath triviaButtonPath;
 
     private Player player;
     private Color[] colors = new Color[2];
@@ -49,10 +51,16 @@ public class MainInterface : Control, CharacterDataBank
     public override void _Ready()
     {
         player = playerScene.Instance<Player>();
-        GetNode(sheetOpenButtonPath).Connect("button_up", this, "_OnOpenSheet");
-        GetNode(trainingButtonPath).Connect("button_up", this, "_OnTraining");
+        ConnectAllButtons();
         Connect("tree_exiting", this, "RegisterAllData");
         RegistryData(player, this);
+    }
+
+    private void ConnectAllButtons()
+    {
+        GetNode(sheetOpenButtonPath).Connect("button_up", this, "_OnOpenSheet");
+        GetNode(trainingButtonPath).Connect("button_up", this, "_OnTraining");
+        GetNode(triviaButtonPath).Connect("button_up", this, "_OnTrivia");
     }
 
 
@@ -94,6 +102,7 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetModCharisma(sender.GetModCharisma());
 
         reciver.SetInspiration(sender.GetInspiration());
+        reciver.SetTrivia(sender.GetTrivia());
     }
 
     private void RegisterAllData()
@@ -116,6 +125,11 @@ public class MainInterface : Control, CharacterDataBank
     public void _OnTraining()
     {
         GD.Print("Issue #5");
+    }
+
+    public void _OnTrivia()
+    {
+        GetNode<GeneralButton>(triviaButtonPath).CreatePopup(this);
     }
 
 
@@ -544,6 +558,17 @@ public class MainInterface : Control, CharacterDataBank
     public void SetTrainingAtributes(int[] value)
     {
         GD.Print("Issue #5");
+    }
+
+    public string GetTrivia()
+    {
+        object data = GetNode<GeneralButton>(triviaButtonPath).GetData();
+        return (String) data;
+    }
+
+    public void SetTrivia(string text)
+    {
+        GetNode<GeneralButton>(triviaButtonPath).SetData(new[] { text });
     }
 
 

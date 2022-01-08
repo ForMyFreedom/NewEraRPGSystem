@@ -92,4 +92,7 @@ public interface CharacterDataBank
 
     int GetInspiration();
     void SetInspiration(int value);
+
+    String GetTrivia();
+    void SetTrivia(String text);
 }
