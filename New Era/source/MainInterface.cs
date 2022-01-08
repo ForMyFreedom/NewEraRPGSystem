@@ -17,9 +17,13 @@ public class MainInterface : Control, CharacterDataBank
     [Export]
     private NodePath shadeColorRectPath;
     [Export]
-    private NodePath firstColorRectPath;
+    private NodePath upFirstColorRectPath;
     [Export]
-    private NodePath secondColorRectPath;
+    private NodePath upSecondColorRectPath;
+    [Export]
+    private NodePath downFirstColorRectPath;
+    [Export]
+    private NodePath downSecondColorRectPath;
     [Export]
     private NodePath lifeFactorPath;
     [Export]
@@ -102,6 +106,7 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetModCharisma(sender.GetModCharisma());
 
         reciver.SetInspiration(sender.GetInspiration());
+        reciver.SetTrainingAtributes(sender.GetTrainingAtributes());
         reciver.SetTrivia(sender.GetTrivia());
     }
 
@@ -589,9 +594,23 @@ public class MainInterface : Control, CharacterDataBank
 
 
 
-    public void SetShadeColor(Color color) { GetNode<Control>(shadeColorRectPath).Modulate = color; }
-    public void SetFirstColorInRect(Color color) { GetNode<Control>(firstColorRectPath).Modulate = color; }
-    public void SetSecondColorInRect(Color color) { GetNode<Control>(secondColorRectPath).Modulate = color; }
+
+    public void SetShadeColor(Color color)
+    {
+        GetNode<Control>(shadeColorRectPath).Modulate = color;
+    }
+
+    public void SetFirstColorInRect(Color color)
+    {
+        GetNode<Control>(upFirstColorRectPath).Modulate = color;
+        GetNode<Control>(downFirstColorRectPath).Modulate = color;
+    }
+
+    public void SetSecondColorInRect(Color color)
+    {
+        GetNode<Control>(upSecondColorRectPath).Modulate = color;
+        GetNode<Control>(downSecondColorRectPath).Modulate = color;
+    }
 
 
 
