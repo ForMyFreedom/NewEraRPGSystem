@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Mallory.tscn" type="PackedScene" id=2]
@@ -11,10 +11,8 @@
 [ext_resource path="res://assets/default_bg.jpg" type="Texture" id=9]
 [ext_resource path="res://assets/HSStyle.tres" type="StyleBox" id=10]
 [ext_resource path="res://source/MyLabel.cs" type="Script" id=11]
-[ext_resource path="res://assets/skills/medic.png" type="Texture" id=12]
+[ext_resource path="res://source/AllWorks.tscn" type="PackedScene" id=12]
 [ext_resource path="res://source/WorkTree.cs" type="Script" id=13]
-[ext_resource path="res://assets/skills/arrow.png" type="Texture" id=14]
-[ext_resource path="res://assets/skills/assasim.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -47,6 +45,7 @@ agiAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContaine
 senAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/SensesAtribute")
 minAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/MindAtribute")
 chaAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/CharismaAtribute")
+worksTreePath = NodePath("VBoxContainer/General/HBOX/WorkControl/MarginContainer/VBOX/WorkTree")
 
 [node name="BGRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -626,9 +625,7 @@ script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-test1Texture = ExtResource( 12 )
-test2Texture = ExtResource( 15 )
-arrowTexture = ExtResource( 14 )
+allWorksPackedScene = ExtResource( 12 )
 
 [node name="VS1" type="VSeparator" parent="VBoxContainer/General/HBOX"]
 margin_left = 510.0

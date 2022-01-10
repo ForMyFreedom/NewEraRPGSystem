@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using System;
 using System.Text;
 
@@ -38,6 +39,8 @@ public class MainInterface : Control, CharacterDataBank
     private NodePath minAtributePath;
     [Export]
     private NodePath chaAtributePath;
+    [Export]
+    private NodePath worksTreePath;
 
     private Player player;
     private Color[] colors = new Color[2];
@@ -87,6 +90,10 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetModMind(sender.GetModMind());
         reciver.SetModSenses(sender.GetModSenses());
         reciver.SetModCharisma(sender.GetModCharisma());
+
+        reciver.SetWorks(sender.GetWorks());
+        reciver.SetWorksLevel(sender.GetWorksLevel());
+        reciver.SetSkillsLevel(sender.GetSkillsLevel());
     }
 
     private void RegisterAllData()
@@ -566,8 +573,35 @@ public class MainInterface : Control, CharacterDataBank
     }
 
 
+    public Array<MyEnum.Work> GetWorks()
+    {
+        return GetNode<WorkTree>(worksTreePath).GetWorks();
+    }
 
+    public void SetWorks(Array<MyEnum.Work> _works)
+    {
+        GetNode<WorkTree>(worksTreePath).SetWorks(_works);
+    }
 
+    public int[] GetWorksLevel()
+    {
+        return GetNode<WorkTree>(worksTreePath).GetWorksLevel();
+    }
+
+    public void SetWorksLevel(int[] level)
+    {
+        GetNode<WorkTree>(worksTreePath).SetWorksLevel(level);
+    }
+
+    public int[,] GetSkillsLevel()
+    {
+        return GetNode<WorkTree>(worksTreePath).GetSkillLevel();
+    }
+
+    public void SetSkillsLevel(int[,] level)
+    {
+        GetNode<WorkTree>(worksTreePath).SetSkillLevel(level);
+    }
 
 
 

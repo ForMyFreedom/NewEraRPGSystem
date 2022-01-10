@@ -5,14 +5,17 @@
 
 [node name="Mallory" type="Node"]
 script = ExtResource( 1 )
-personalBG = ExtResource( 2 )
-modAtributes = PoolIntArray( 0, 0, 0, 2, -4 )
-secondColor = Color( 0, 0, 0, 1 )
-firstColor = Color( 0.0196078, 0, 0.572549, 1 )
-totalAtributes = PoolIntArray( 4, 13, 18, 2, 2 )
 playerName = "Afonso"
-sheetURL = "https://1drv.ms/w/s!Ar3mdnwNQxPdelhRut7zKa1OElY?e=bYHPnC"
-totalFactors = PoolIntArray( 33, 56, 57, 44 )
-modFactors = PoolIntArray( -2, 6, 8, 6 )
 characterName = "Mallory"
-actualFactors = PoolIntArray( 12, 53, 74, 33 )
+sheetURL = "https://1drv.ms/w/s!Ar3mdnwNQxPdelhRut7zKa1OElY?e=bYHPnC"
+personalBG = ExtResource( 2 )
+firstColor = Color( 0.0196078, 0, 0.572549, 1 )
+secondColor = Color( 0, 0, 0, 1 )
+totalFactors = PoolIntArray( 33, 65, 57, 22 )
+actualFactors = PoolIntArray( 13, 52, 74, 33 )
+modFactors = PoolIntArray( -2, 9, 8, 6 )
+totalAtributes = PoolIntArray( 3, 13, 18, 2, 2 )
+modAtributes = PoolIntArray( 0, 0, 0, 2, -4 )
+works = [ 1, 9 ]
+worksLevel = PoolIntArray( 20, 10 )
+skillsLevel = PoolIntArray( 0, 0 )

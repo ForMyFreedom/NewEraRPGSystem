@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class ConcreteSkill : Skill
+public class Medicine : Skill
 {
     public override void DoMechanic()
     {
@@ -10,6 +10,11 @@ public class ConcreteSkill : Skill
 
     public override string GetSkillName()
     {
-        return "Skill";
+        return "Medicina";
+    }
+
+    public override void _Ready()
+    {
+        
     }
 }

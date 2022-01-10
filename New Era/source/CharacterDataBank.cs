@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using System;
 
 public interface CharacterDataBank
@@ -86,4 +87,13 @@ public interface CharacterDataBank
 
     int GetModCharisma();
     void SetModCharisma(int value);
+
+    Array<MyEnum.Work> GetWorks();
+    void SetWorks(Array<MyEnum.Work> _works);
+
+    int[] GetWorksLevel();
+    void SetWorksLevel(int[] level);
+
+    int[,] GetSkillsLevel();
+    void SetSkillsLevel(int[,] level);
 }

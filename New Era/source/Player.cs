@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using System;
 
 public class Player : Node, CharacterDataBank
@@ -27,6 +28,13 @@ public class Player : Node, CharacterDataBank
     private int[] totalAtributes;
     [Export]
     private int[] modAtributes;
+
+    [Export]
+    private Array<MyEnum.Work> works;
+    [Export]
+    private int[] worksLevel;
+    [Export(PropertyHint.None)]
+    private int[,] skillsLevel = new int[1,1];
 
 
     public String GetPlayerName()
@@ -332,5 +340,36 @@ public class Player : Node, CharacterDataBank
     public void SetModCharisma(int value)
     {
         modAtributes[(int)MyEnum.Atribute.CHA] = value;
+    }
+
+
+    public Array<MyEnum.Work> GetWorks()
+    {
+        return works;
+    }
+
+    public void SetWorks(Array<MyEnum.Work> _works)
+    {
+        works = _works;
+    }
+
+    public int[] GetWorksLevel()
+    {
+        return worksLevel;
+    }
+
+    public void SetWorksLevel(int[] level)
+    {
+        worksLevel = level;
+    }
+
+    public int[,] GetSkillsLevel()
+    {
+        return skillsLevel;
+    }
+
+    public void SetSkillsLevel(int[,] level)
+    {
+        skillsLevel = level;
     }
 }
