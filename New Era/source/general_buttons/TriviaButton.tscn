@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://source/general_buttons/GeneralButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/pop_up_general_interface/TriviaPopup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/general_buttons/TriviaButton.cs" type="Script" id=3]
+
+[node name="TriviaButton" instance=ExtResource( 1 )]
+text = "Trivia"
+script = ExtResource( 3 )
+packedPopup = ExtResource( 2 )

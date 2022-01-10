@@ -17,9 +17,13 @@ public class MainInterface : Control, CharacterDataBank
     [Export]
     private NodePath shadeColorRectPath;
     [Export]
-    private NodePath firstColorRectPath;
+    private NodePath upFirstColorRectPath;
     [Export]
-    private NodePath secondColorRectPath;
+    private NodePath upSecondColorRectPath;
+    [Export]
+    private NodePath downFirstColorRectPath;
+    [Export]
+    private NodePath downSecondColorRectPath;
     [Export]
     private NodePath lifeFactorPath;
     [Export]
@@ -38,6 +42,12 @@ public class MainInterface : Control, CharacterDataBank
     private NodePath minAtributePath;
     [Export]
     private NodePath chaAtributePath;
+    [Export]
+    private NodePath inspirationSpinPath;
+    [Export]
+    private NodePath trainingButtonPath;
+    [Export]
+    private NodePath triviaButtonPath;
 
     private Player player;
     private Color[] colors = new Color[2];
@@ -45,9 +55,16 @@ public class MainInterface : Control, CharacterDataBank
     public override void _Ready()
     {
         player = playerScene.Instance<Player>();
-        GetNode(sheetOpenButtonPath).Connect("button_up", this, "_OnOpenSheet");
+        ConnectAllButtons();
         Connect("tree_exiting", this, "RegisterAllData");
         RegistryData(player, this);
+    }
+
+    private void ConnectAllButtons()
+    {
+        GetNode(sheetOpenButtonPath).Connect("button_up", this, "_OnOpenSheet");
+        GetNode(trainingButtonPath).Connect("button_up", this, "_OnTraining");
+        GetNode(triviaButtonPath).Connect("button_up", this, "_OnTrivia");
     }
 
 
@@ -87,6 +104,10 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetModMind(sender.GetModMind());
         reciver.SetModSenses(sender.GetModSenses());
         reciver.SetModCharisma(sender.GetModCharisma());
+
+        reciver.SetInspiration(sender.GetInspiration());
+        reciver.SetTrainingAtributes(sender.GetTrainingAtributes());
+        reciver.SetTrivia(sender.GetTrivia());
     }
 
     private void RegisterAllData()
@@ -104,6 +125,16 @@ public class MainInterface : Control, CharacterDataBank
     public void _OnOpenSheet()
     {
         OS.ShellOpen(player.GetSheetURL());
+    }
+
+    public void _OnTraining()
+    {
+        GD.Print("Issue #5");
+    }
+
+    public void _OnTrivia()
+    {
+        GetNode<GeneralButton>(triviaButtonPath).CreatePopup(this);
     }
 
 
@@ -149,13 +180,11 @@ public class MainInterface : Control, CharacterDataBank
     
     public void SetActualLife(int value)
     {
-        player.SetActualLife(value);
         GetFactorActualSpin(lifeFactorPath).Value = value;
     }
 
     public void AddActualLife(int sum)
     {
-        player.SetActualLife(player.GetActualLife() + sum);
         GetFactorActualSpin(lifeFactorPath).Value += sum;
     }
 
@@ -168,13 +197,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetTotalLife(int value)
     {
-        player.SetTotalLife(value);
         GetFactorTotalSpin(lifeFactorPath).Value = value;
     }
 
     public void AddTotalLife(int sum)
     {
-        player.SetTotalLife(player.GetTotalLife() + sum);
         GetFactorTotalSpin(lifeFactorPath).Value += sum;
     }
 
@@ -187,13 +214,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModLife(int value)
     {
-        player.SetModLife(value);
         GetFactorModSpin(lifeFactorPath).Value = value;
     }
 
     public void AddModLife(int sum)
     {
-        player.SetModLife(player.GetModLife() + sum);
         GetFactorModSpin(lifeFactorPath).Value += sum;
     }
 
@@ -207,13 +232,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetActualSurge(int value)
     {
-        player.SetActualSurge(value);
         GetFactorActualSpin(surgeFactorPath).Value = value;
     }
 
     public void AddActualSurge(int sum)
     {
-        player.SetActualSurge(player.GetActualSurge() + sum);
         GetFactorActualSpin(surgeFactorPath).Value += sum;
     }
 
@@ -226,13 +249,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetTotalSurge(int value)
     {
-        player.SetTotalSurge(value);
         GetFactorTotalSpin(surgeFactorPath).Value = value;
     }
 
     public void AddTotalSurge(int sum)
     {
-        player.SetTotalSurge(player.GetTotalSurge() + sum);
         GetFactorTotalSpin(surgeFactorPath).Value += sum;
     }
 
@@ -245,13 +266,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModSurge(int value)
     {
-        player.SetModSurge(value);
         GetFactorModSpin(surgeFactorPath).Value = value;
     }
 
     public void AddModSurge(int sum)
     {
-        player.SetModSurge(player.GetModSurge() + sum);
         GetFactorModSpin(surgeFactorPath).Value += sum;
     }
 
@@ -265,13 +284,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetActualAgiDefense(int value)
     {
-        player.SetActualAgiDefense(value);
         GetFactorActualSpin(agiDefenseFactorPath).Value = value;
     }
 
     public void AddActualAgiDefense(int sum)
     {
-        player.SetActualAgiDefense(player.GetActualAgiDefense() + sum);
         GetFactorActualSpin(agiDefenseFactorPath).Value += sum;
     }
 
@@ -284,13 +301,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetTotalAgiDefense(int value)
     {
-        player.SetTotalAgiDefense(value);
         GetFactorTotalSpin(agiDefenseFactorPath).Value = value;
     }
 
     public void AddTotalAgiDefense(int sum)
     {
-        player.SetTotalAgiDefense(player.GetTotalAgiDefense() + sum);
         GetFactorTotalSpin(agiDefenseFactorPath).Value += sum;
     }
 
@@ -303,13 +318,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModAgiDefense(int value)
     {
-        player.SetModAgiDefense(value);
         GetFactorModSpin(agiDefenseFactorPath).Value = value;
     }
 
     public void AddModAgiDefense(int sum)
     {
-        player.SetModAgiDefense(player.GetModAgiDefense() + sum);
         GetFactorModSpin(agiDefenseFactorPath).Value += sum;
     }
 
@@ -323,13 +336,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetActualStrDefense(int value)
     {
-        player.SetActualStrDefense(value);
         GetFactorActualSpin(strDefenseFactorPath).Value = value;
     }
 
     public void AddActualStrDefense(int sum)
     {
-        player.SetActualStrDefense(player.GetActualStrDefense() + sum);
         GetFactorActualSpin(strDefenseFactorPath).Value += sum;
     }
 
@@ -342,13 +353,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetTotalStrDefense(int value)
     {
-        player.SetTotalStrDefense(value);
         GetFactorTotalSpin(strDefenseFactorPath).Value = value;
     }
 
     public void AddTotalStrDefense(int sum)
     {
-        player.SetTotalStrDefense(player.GetTotalStrDefense() + sum);
         GetFactorTotalSpin(strDefenseFactorPath).Value += sum;
     }
 
@@ -361,13 +370,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModStrDefense(int value)
     {
-        player.SetModStrDefense(value);
         GetFactorModSpin(strDefenseFactorPath).Value = value;
     }
 
     public void AddModStrDefense(int sum)
     {
-        player.SetModStrDefense(player.GetModStrDefense() + sum);
         GetFactorModSpin(strDefenseFactorPath).Value += sum;
     }
 
@@ -382,13 +389,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetStrength(int value)
     {
-        player.SetStrength(value);
         GetAtributeMajorSpin(strAtributePath).Value = value;
     }
 
     public void AddStrength(int sum)
     {
-        player.SetStrength(player.GetStrength()+sum);
         GetAtributeMajorSpin(strAtributePath).Value += sum;
     }
 
@@ -401,13 +406,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetAgility(int value)
     {
-        player.SetAgility(value);
         GetAtributeMajorSpin(agiAtributePath).Value = value;
     }
 
     public void AddAgility(int sum)
     {
-        player.SetAgility(player.GetAgility() + sum);
         GetAtributeMajorSpin(agiAtributePath).Value += sum;
     }
 
@@ -420,13 +423,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetSenses(int value)
     {
-        player.SetSenses(value);
         GetAtributeMajorSpin(senAtributePath).Value = value;
     }
 
     public void AddSenses(int sum)
     {
-        player.SetSenses(player.GetSenses() + sum);
         GetAtributeMajorSpin(senAtributePath).Value += sum;
     }
 
@@ -439,13 +440,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetMind(int value)
     {
-        player.SetMind(value);
         GetAtributeMajorSpin(minAtributePath).Value = value;
     }
 
     public void AddMind(int sum)
     {
-        player.SetMind(player.GetMind() + sum);
         GetAtributeMajorSpin(minAtributePath).Value += sum;
     }
 
@@ -458,13 +457,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetCharisma(int value)
     {
-        player.SetCharisma(value);
         GetAtributeMajorSpin(chaAtributePath).Value = value;
     }
 
     public void AddCharisma(int sum)
     {
-        player.SetCharisma(player.GetCharisma() + sum);
         GetAtributeMajorSpin(chaAtributePath).Value += sum;
     }
 
@@ -479,13 +476,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModStrength(int value)
     {
-        player.SetModStrength(value);
         GetAtributeModSpin(strAtributePath).Value = value;
     }
 
     public void AddModStrength(int sum)
     {
-        player.SetModStrength(player.GetModStrength() + sum);
         GetAtributeModSpin(strAtributePath).Value += sum;
     }
 
@@ -498,13 +493,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModAgility(int value)
     {
-        player.SetModAgility(value);
         GetAtributeModSpin(agiAtributePath).Value = value;
     }
 
     public void AddModAgility(int sum)
     {
-        player.SetModAgility(player.GetModAgility() + sum);
         GetAtributeModSpin(agiAtributePath).Value += sum;
     }
 
@@ -517,13 +510,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModSenses(int value)
     {
-        player.SetModSenses(value);
         GetAtributeModSpin(senAtributePath).Value = value;
     }
 
     public void AddModSenses(int sum)
     {
-        player.SetModSenses(player.GetModSenses() + sum);
         GetAtributeModSpin(senAtributePath).Value += sum;
     }
 
@@ -536,13 +527,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModMind(int value)
     {
-        player.SetModMind(value);
         GetAtributeModSpin(minAtributePath).Value = value;
     }
 
     public void AddModMind(int sum)
     {
-        player.SetModMind(player.GetModMind() + sum);
         GetAtributeModSpin(minAtributePath).Value += sum;
     }
 
@@ -555,14 +544,47 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModCharisma(int value)
     {
-        player.SetModCharisma(value);
         GetAtributeModSpin(chaAtributePath).Value = value;
     }
 
     public void AddModCharisma(int sum)
     {
-        player.SetModCharisma(player.GetModCharisma() + sum);
         GetAtributeModSpin(chaAtributePath).Value += sum;
+    }
+
+
+
+    public int[] GetTrainingAtributes()
+    {
+        GD.Print("Issue #5");
+        return new int[] { };
+    }
+
+    public void SetTrainingAtributes(int[] value)
+    {
+        GD.Print("Issue #5");
+    }
+
+    public string GetTrivia()
+    {
+        object data = GetNode<GeneralButton>(triviaButtonPath).GetData();
+        return (String) data;
+    }
+
+    public void SetTrivia(string text)
+    {
+        GetNode<GeneralButton>(triviaButtonPath).SetData(new[] { text });
+    }
+
+
+    public int GetInspiration()
+    {
+        return (int) GetNode<SpinBox>(inspirationSpinPath).Value;
+    }
+
+    public void SetInspiration(int value)
+    {
+        GetNode<SpinBox>(inspirationSpinPath).Value = value;
     }
 
 
@@ -572,9 +594,23 @@ public class MainInterface : Control, CharacterDataBank
 
 
 
-    public void SetShadeColor(Color color) { GetNode<Control>(shadeColorRectPath).Modulate = color; }
-    public void SetFirstColorInRect(Color color) { GetNode<Control>(firstColorRectPath).Modulate = color; }
-    public void SetSecondColorInRect(Color color) { GetNode<Control>(secondColorRectPath).Modulate = color; }
+
+    public void SetShadeColor(Color color)
+    {
+        GetNode<Control>(shadeColorRectPath).Modulate = color;
+    }
+
+    public void SetFirstColorInRect(Color color)
+    {
+        GetNode<Control>(upFirstColorRectPath).Modulate = color;
+        GetNode<Control>(downFirstColorRectPath).Modulate = color;
+    }
+
+    public void SetSecondColorInRect(Color color)
+    {
+        GetNode<Control>(upSecondColorRectPath).Modulate = color;
+        GetNode<Control>(downSecondColorRectPath).Modulate = color;
+    }
 
 
 
