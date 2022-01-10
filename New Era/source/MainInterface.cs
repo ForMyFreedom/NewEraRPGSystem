@@ -48,6 +48,10 @@ public class MainInterface : Control, CharacterDataBank
     private NodePath trainingButtonPath;
     [Export]
     private NodePath triviaButtonPath;
+    [Export]
+    private NodePath equipamentsButtonPath;
+    [Export]
+    private NodePath tracesButtonPath;
 
     private Player player;
     private Color[] colors = new Color[2];
@@ -65,6 +69,8 @@ public class MainInterface : Control, CharacterDataBank
         GetNode(sheetOpenButtonPath).Connect("button_up", this, "_OnOpenSheet");
         GetNode(trainingButtonPath).Connect("button_up", this, "_OnTraining");
         GetNode(triviaButtonPath).Connect("button_up", this, "_OnTrivia");
+        GetNode(equipamentsButtonPath).Connect("button_up", this, "_OnEquipaments");
+        GetNode(tracesButtonPath).Connect("button_up", this, "_OnTraces");
     }
 
 
@@ -121,10 +127,14 @@ public class MainInterface : Control, CharacterDataBank
 
 
 
-
     public void _OnOpenSheet()
     {
         OS.ShellOpen(player.GetSheetURL());
+    }
+
+    public void _OnTrivia()
+    {
+        GetNode<GeneralButton>(triviaButtonPath).CreatePopup(this);
     }
 
     public void _OnTraining()
@@ -132,9 +142,14 @@ public class MainInterface : Control, CharacterDataBank
         GD.Print("Issue #5");
     }
 
-    public void _OnTrivia()
+    public void _OnEquipaments()
     {
-        GetNode<GeneralButton>(triviaButtonPath).CreatePopup(this);
+        GD.Print("Issue #7");
+    }
+
+    public void _OnTraces()
+    {
+        GD.Print("Issue #6");
     }
 
 

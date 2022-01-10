@@ -61,6 +61,8 @@ chaAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContaine
 inspirationSpinPath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX/Control/InspirationSpinBox")
 trainingButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TrainingButton")
 triviaButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton")
+equipamentsButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/EquipamentsButton")
+tracesButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TracesButton")
 
 [node name="BGRect" type="TextureRect" parent="."]
 anchor_right = 1.0
