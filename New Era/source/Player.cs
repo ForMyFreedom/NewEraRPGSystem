@@ -33,8 +33,12 @@ public class Player : Node, CharacterDataBank
     private Array<MyEnum.Work> works;
     [Export]
     private int[] worksLevel;
-    [Export(PropertyHint.None)]
-    private int[,] skillsLevel = new int[1,1];
+    [Export]
+    private Array<Array<int>> skillsLevel;
+
+
+    private int maxSkill = 3; //@
+
 
 
     public String GetPlayerName()
@@ -365,11 +369,36 @@ public class Player : Node, CharacterDataBank
 
     public int[,] GetSkillsLevel()
     {
-        return skillsLevel;
+
+        int[,] level = new int[skillsLevel.Count, maxSkill];
+        
+        for(int i=0 ; i<skillsLevel.Count ; i++)
+        {
+            for(int j=0; j<maxSkill ; j++)
+            {
+                try
+                {
+                    level[i, j] = skillsLevel[i][j];
+                } catch (Exception){ }
+            }
+        }
+        
+        return level;
     }
+
 
     public void SetSkillsLevel(int[,] level)
     {
-        skillsLevel = level;
+        for (int i = 0; i < skillsLevel.Count; i++)
+        {
+            for (int j = 0; j < maxSkill; j++)
+            {
+                try
+                {
+                    skillsLevel[i][j] = level[i, j];
+                }
+                catch (Exception) { }
+            }
+        }
     }
 }

@@ -6,4 +6,6 @@
 
 [node name="Assasin" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+workName = "Assasino"
 baseImage = ExtResource( 3 )
+description = "Especialista no uso de métodos indiretos"

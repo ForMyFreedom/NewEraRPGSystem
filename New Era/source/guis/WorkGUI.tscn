@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://source/guis/WorkGUI.cs" type="Script" id=1]
+[ext_resource path="res://source/guis/filhodaputa.cs" type="Script" id=2]
+[ext_resource path="res://source/works/Medic.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/BaseMinorFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/updown.png" type="Texture" id=5]
+
+[node name="WorkGUi" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_rotation = -0.214049
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WorkGUI" type="WindowDialog" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -285.0
+margin_top = -162.0
+margin_right = 285.0
+margin_bottom = 162.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+popup_exclusive = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+workPackedScene = ExtResource( 3 )
+descriptionLabelPath = NodePath("MarginContainer/VBoxContainer/General/DescriptionLabel")
+
+[node name="MarginContainer" type="MarginContainer" parent="WorkGUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -15.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WorkGUI/MarginContainer"]
+margin_right = 540.0
+margin_bottom = 294.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="General" type="VBoxContainer" parent="WorkGUI/MarginContainer/VBoxContainer"]
+margin_right = 540.0
+margin_bottom = 95.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DescriptionLabel" type="Label" parent="WorkGUI/MarginContainer/VBoxContainer/General"]
+margin_right = 540.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 4 )
+text = "Descrição do Ofício"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="WorkGUI/MarginContainer/VBoxContainer/General"]
+margin_top = 38.0
+margin_right = 540.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 4 )
+text = "Valor"
+align = 1
+
+[node name="Control" type="Control" parent="WorkGUI/MarginContainer/VBoxContainer/General"]
+margin_top = 61.0
+margin_right = 540.0
+margin_bottom = 95.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpinBox" type="SpinBox" parent="WorkGUI/MarginContainer/VBoxContainer/General/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.0
+margin_top = -12.0
+margin_right = 37.0
+margin_bottom = 12.0
+custom_icons/updown = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skills" type="Control" parent="WorkGUI/MarginContainer/VBoxContainer"]
+margin_top = 99.0
+margin_right = 540.0
+margin_bottom = 194.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control3" type="Control" parent="WorkGUI/MarginContainer/VBoxContainer"]
+margin_top = 198.0
+margin_right = 540.0
+margin_bottom = 294.0
+size_flags_horizontal = 3
+size_flags_vertical = 3

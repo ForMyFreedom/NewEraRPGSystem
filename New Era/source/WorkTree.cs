@@ -18,6 +18,7 @@ public class WorkTree : Tree
     {
         allWorks = allWorksPackedScene.Instance<AllWorks>();
         GetTree().CurrentScene.Connect("ready", this, "_OnTreeReady");
+        Connect("gui_input", this, "_OnGuiInput");
     }
 
     private void _OnTreeReady()
@@ -35,7 +36,8 @@ public class WorkTree : Tree
             itens[i] = CreateItem(root);
             itens[i].SetIcon(0, currentWork.GetBaseImage());
             itens[i].SetText(0, currentWork.GetWorkName()+" "+worksLevel[i]);
-
+            itens[i].SetMetadata(0, currentWork);
+                
             i++;
 
             for (int j = 0; j < skillList.Length; j++)
@@ -44,8 +46,8 @@ public class WorkTree : Tree
                 if (j==0)
                     itens[i] = CreateItem(itens[i-1]);
 
-                //itens[i].SetText(j, skillList[j].GetSkillName()+" "+skillsLevel[i-1][j]);
-                //itens[i].SetIcon(j, @texture);
+                itens[i].SetText(j, skillList[j].GetSkillName()+" "+skillsLevel[i-1,j]);
+                itens[i].SetMetadata(j, skillList[j]);
 
                 if (j == skillList.Length - 1)
                     i++;
@@ -54,6 +56,40 @@ public class WorkTree : Tree
 
         MakeBlankUnselected(new[] { root });
         MakeBlankUnselected(itens);
+    }
+
+
+    private void _OnGuiInput(InputEvent @event)
+    {
+        if (! (@event is InputEventMouseButton)) return;
+        var mouseEvent = (InputEventMouseButton) @event;
+        if (mouseEvent.Doubleclick && this.GetSelected()!=null)
+        {
+            OpenGui();
+        }
+    }
+
+
+    private void OpenGui()
+    {
+        TreeItem currentItem = GetSelected();
+        object skillWork = currentItem.GetMetadata(this.GetSelectedColumn());
+        if (skillWork is Work)
+            OpenWorkGui((Work) skillWork);
+        else
+            OpenSkillGui((Skill) skillWork);
+    }
+
+
+    private void OpenWorkGui(Work work)
+    {
+        GD.Print("trabajo");
+    }
+
+    
+    private void OpenSkillGui(Skill skill)
+    {
+        GD.Print("tecnika");
     }
 
 

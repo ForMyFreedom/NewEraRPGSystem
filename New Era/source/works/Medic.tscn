@@ -7,5 +7,7 @@
 
 [node name="Medic" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
+workName = "Médico"
 baseImage = ExtResource( 3 )
 skills = [ ExtResource( 4 ) ]
+description = "Mestre no tratamento e socorro de vidas"

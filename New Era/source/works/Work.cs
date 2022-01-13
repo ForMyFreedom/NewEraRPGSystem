@@ -4,12 +4,19 @@ using System;
 public abstract class Work : Node
 {
     [Export]
+    private string workName;
+    [Export]
     private Texture baseImage;
     [Export]
     private PackedScene[] skills = { };
+    [Export(PropertyHint.MultilineText)]
+    private string description;
 
 
-    public abstract String GetWorkName();
+    public String GetWorkName()
+    {
+        return workName;
+    }
 
     public Texture GetBaseImage()
     {
@@ -26,5 +33,10 @@ public abstract class Work : Node
         }
 
         return trueSkillList;
+    }
+
+    public string GetDescription()
+    {
+        return description;
     }
 }
