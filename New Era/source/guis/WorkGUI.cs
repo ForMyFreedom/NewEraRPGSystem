@@ -8,10 +8,10 @@ public class WorkGUI : WindowDialog
     [Export]
     private NodePath descriptionLabelPath;
     [Export]
-    private NodePath valueSpinPath;
+    private NodePath rollBoxPath;
 
     private Work work;
-    private int[,] worksLevel;
+    private int workLevel;
 
 
     public override void _Ready()
@@ -21,6 +21,32 @@ public class WorkGUI : WindowDialog
         WindowTitle = work.GetWorkName();
 
         GetNode<Label>(descriptionLabelPath).Text = work.GetDescription();
-        GetNode<SpinBox>(valueSpinPath).Value = 
+        GetNode(rollBoxPath).Connect("roll_maded", this, "_OnRollMaded");
+        GetNode(rollBoxPath).Connect("value_changed", this, "_OnValueChanged");
+    }
+
+
+    private void _OnRollMaded(int result)
+    {
+
+    }
+
+    private void _OnValueChanged(int value)
+    {
+
+    }
+
+
+
+
+
+    public int GetLevelValue()
+    {
+        return workLevel;
+    }
+
+    public void SetLevelValue(int value)
+    {
+        workLevel = value;
     }
 }
