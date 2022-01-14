@@ -24,34 +24,36 @@ public class WorkTree : Tree
     private void _OnTreeReady()
     {
         TreeItem root = CreateItem();
-        TreeItem[] itens = new TreeItem[works.Count+1];
+        TreeItem[] itens = new TreeItem[works.Count+skillsLevel.GetLength(0)]; //@?
 
-        int i = 0;
+        int workIndex = 0;
+        int itemIndex = 0;
 
         foreach(MyEnum.Work workEnum in works)
         {
             Work currentWork = allWorks.GetWork(workEnum);
             Skill[] skillList = currentWork.GetSkillList();
 
-            itens[i] = CreateItem(root);
-            itens[i].SetIcon(0, currentWork.GetBaseImage());
-            itens[i].SetText(0, currentWork.GetWorkName()+" "+worksLevel[i]);
-            itens[i].SetMetadata(0, currentWork);
-                
-            i++;
+            itens[itemIndex] = CreateItem(root);
+            itens[itemIndex].SetIcon(0, currentWork.GetBaseImage());
+            itens[itemIndex].SetText(0, currentWork.GetWorkName()+" "+worksLevel[workIndex]);
+            itens[itemIndex].SetMetadata(0, currentWork);
+
+            itemIndex++;
 
             for (int j = 0; j < skillList.Length; j++)
             {
-
                 if (j==0)
-                    itens[i] = CreateItem(itens[i-1]);
+                    itens[itemIndex] = CreateItem(itens[itemIndex-1]);
 
-                itens[i].SetText(j, skillList[j].GetSkillName()+" "+skillsLevel[i-1,j]);
-                itens[i].SetMetadata(j, skillList[j]);
+                itens[itemIndex].SetText(j, skillList[j].GetSkillName()+" "+skillsLevel[workIndex,j]);
+                itens[itemIndex].SetMetadata(j, skillList[j]);
 
                 if (j == skillList.Length - 1)
-                    i++;
+                    itemIndex++;
             }
+
+            workIndex++;
         }
 
         MakeBlankUnselected(new[] { root });
@@ -81,7 +83,7 @@ public class WorkTree : Tree
     }
 
 
-    private void OpenWorkGui(Work work)
+    private void OpenWorkGui(Work work) 
     {
         GD.Print("trabajo");
     }
