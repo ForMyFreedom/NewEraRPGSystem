@@ -87,7 +87,7 @@ public class Factor : Control
 
     private void EmitSpinSignal(NodePath path, String signal)
     {
-        EmitSignal(signal, new object[] { GetNode<SpinBox>(path).Value });
+        EmitSignal(signal, GetNode<SpinBox>(path).Value);
     }
 
 
