@@ -6,75 +6,54 @@ public class Atribute : Control
     [Export]
     public String atributeName;
     [Export]
-    public int atributeValue;
-
-    [Export]
     private NodePath nameLabelPath;
     [Export]
-    private NodePath rollButtonPath;
-    [Export]
-    private NodePath spinValuePath;
-    [Export]
-    private NodePath resultLabelPath;
-    [Export]
-    private NodePath criticLabelPath;
-    [Export]
-    private NodePath modSpinPath;
+    private NodePath rollBoxPath;
 
     [Signal]
     public delegate void atribute_change(int value);
 
-    private Random rgn;
 
     public override void _Ready()
     {
-        rgn = new Random();
-
         GetNode<Label>(nameLabelPath).Text = atributeName;
-        GetNode<SpinBox>(spinValuePath).Value = atributeValue;
-        GetNode(rollButtonPath).Connect("button_up", this, "_OnRoll");
-        GetNode(spinValuePath).Connect("value_changed", this, "_OnAtributeChanged");
+        GetNode<RollBox>(rollBoxPath).Connect("roll_maded", this, "_OnRollMaded");
+        GetNode<RollBox>(rollBoxPath).Connect("value_changed", this, "_OnValueChanged");
     }
 
 
-    private void _OnRoll()
+    private void _OnRollMaded(int result)
     {
-        int value = atributeValue + (int) GetNode<SpinBox>(modSpinPath).Value;
-        int result = GetRandomRoll(value);
-
-        GetNode<Label>(resultLabelPath).Text = result.ToString();
-        GetNode<Label>(criticLabelPath).Text = (result / 10).ToString()+" Criticos";
+        //emitsignal?
     }
 
 
-
-
-    private int GetRandomRoll(int value)
+    private void _OnValueChanged(int value)
     {
-        int sum = value;
-        int effect = (value > 0) ? 1 : -1;
-
-        for (int i = 0; i < Math.Abs(value); i++)
-            sum+=rgn.Next(1, 7)*effect;
-
-        return sum;
+        EmitSignal(nameof(atribute_change), value);
     }
 
 
-    private void _OnAtributeChanged(float value)
+
+
+    public int GetAtributeValue()
     {
-        atributeValue = (int) value;
-        EmitSignal(nameof(atribute_change), new object[] { atributeValue });
+        return GetNode<RollBox>(rollBoxPath).GetRollValue();
     }
 
-
-    public SpinBox GetMajorSpin()
+    public void SetAtributeValue(int value)
     {
-        return GetNode<SpinBox>(spinValuePath);
+        GetNode<RollBox>(rollBoxPath).SetRollValue(value);
     }
 
-    public SpinBox GetModSpin()
+    public int GetModValue()
     {
-        return GetNode<SpinBox>(modSpinPath);
+        return GetNode<RollBox>(rollBoxPath).GetModValue();
     }
+
+    public void SetModValue(int value)
+    {
+        GetNode<RollBox>(rollBoxPath).SetModValue(value);
+    }
+
 }
