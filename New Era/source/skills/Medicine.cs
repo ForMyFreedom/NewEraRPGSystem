@@ -8,10 +8,6 @@ public class Medicine : Skill
         throw new NotImplementedException();
     }
 
-    public override string GetSkillName()
-    {
-        return "Medicina";
-    }
 
     public override void _Ready()
     {

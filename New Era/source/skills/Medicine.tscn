@@ -5,3 +5,4 @@
 
 [node name="Medicine" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+skillName = "Medicina"
