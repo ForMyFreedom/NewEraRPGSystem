@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Mallory.tscn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://source/MyLabel.cs" type="Script" id=11]
 [ext_resource path="res://source/AllWorks.tscn" type="PackedScene" id=12]
 [ext_resource path="res://source/WorkTree.cs" type="Script" id=13]
+[ext_resource path="res://source/guis/WorkGUI.tscn" type="PackedScene" id=14]
+[ext_resource path="res://source/guis/SkillGUI.tscn" type="PackedScene" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -626,6 +628,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 allWorksPackedScene = ExtResource( 12 )
+workGuiPackedScene = ExtResource( 14 )
+skillGuiPackedScene = ExtResource( 15 )
 
 [node name="VS1" type="VSeparator" parent="VBoxContainer/General/HBOX"]
 margin_left = 510.0

@@ -8,11 +8,17 @@ public class WorkTree : Tree
     public int COLUMNS_LENGTH = 3;
     [Export]
     private PackedScene allWorksPackedScene;
+    [Export]
+    private PackedScene workGuiPackedScene;
+    [Export]
+    private PackedScene skillGuiPackedScene;
+
 
     private Array<MyEnum.Work> works;
     private int[] worksLevel;
     private int[,] skillsLevel;
     private AllWorks allWorks;
+    private TreeItem[] itens = { };
 
     public override void _Ready()
     {
@@ -24,7 +30,7 @@ public class WorkTree : Tree
     private void _OnTreeReady()
     {
         TreeItem root = CreateItem();
-        TreeItem[] itens = new TreeItem[works.Count+skillsLevel.GetLength(0)]; //@?
+        itens = new TreeItem[works.Count+skillsLevel.GetLength(0)]; //@?
 
         int workIndex = 0;
         int itemIndex = 0;
@@ -85,15 +91,61 @@ public class WorkTree : Tree
 
     private void OpenWorkGui(Work work) 
     {
-        GD.Print("trabajo");
+        int workIndex = GetIndexOfWork(work);
+        WorkGUI workGui = workGuiPackedScene.Instance<WorkGUI>();
+
+        workGui.SetLevelValue(worksLevel[workIndex]);
+        workGui.SetWork(work);
+        workGui.SetWorkIndex(workIndex);
+        workGui.ConnectAllSignals(this);
+
+        GetTree().CurrentScene.AddChild(workGui);
+        workGui.PopupIt();
     }
 
     
     private void OpenSkillGui(Skill skill)
     {
-        GD.Print("tecnika");
+        SkillGUI skillGui = skillGuiPackedScene.Instance<SkillGUI>();
+
+        GetTree().CurrentScene.AddChild(skillGui);
+        skillGui.PopupIt();
     }
 
+
+    private void ActualizeLevelLabels()
+    {
+        foreach(TreeItem item in itens)
+        {
+            for(int i = 0; i < COLUMNS_LENGTH; i++)
+            {
+                object data = item.GetMetadata(i);
+                if (data is Work)
+                    ActualizeWorkLabel(item, i, (Work) data);
+
+                if (data is Skill)
+                    ActualizeSkillLabel(item, i,(Skill) data);
+            }
+        }
+    }
+
+    private void ActualizeWorkLabel(TreeItem item, int i, Work data)
+    {
+        item.SetText(i, $"{data.GetWorkName()} {worksLevel[GetIndexOfWork(data)]}");
+    }
+
+    private void ActualizeSkillLabel(TreeItem item, int i, Skill data)
+    {
+        item.SetText(i, $"{data.GetSkillName()} "+
+            $"{skillsLevel[GetSkillOwner(item, i),GetSkillOrder(item,i,data)]}");
+    }
+
+
+
+    public void _OnWorkValueChanged(int index, int value)
+    {
+        SetAnWorkLevel(index, value);
+    }
 
 
     private void MakeBlankUnselected(TreeItem[] itens)
@@ -112,6 +164,37 @@ public class WorkTree : Tree
 
 
 
+
+    private int GetIndexOfWork(Work w)
+    {
+        return works.IndexOf(w.GetEnumWork());
+    }
+
+    private int GetSkillOwner(TreeItem item, int i)
+    {
+        Work owner = (Work) item.GetParent().GetMetadata(i);
+        return GetIndexOfWork(owner);
+    }
+
+    private int GetSkillOrder(TreeItem item, int id, Skill skill)
+    {
+        Work owner = (Work)item.GetParent().GetMetadata(id);
+        Skill[] skillList = owner.GetSkillList();
+
+        for (int i=0 ; i<skillList.Length ; i++)
+        {
+            if(skillList[i].GetSkillName() == skill.GetSkillName())
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+
+
+
     public void SetWorks(Array<MyEnum.Work> _works)
     {
         works = _works;
@@ -126,6 +209,13 @@ public class WorkTree : Tree
     public void SetWorksLevel(int[] level)
     {
         worksLevel = level;
+        ActualizeLevelLabels();
+    }
+
+    public void SetAnWorkLevel(int index, int level)
+    {
+        worksLevel[index] = level;
+        ActualizeLevelLabels();
     }
 
     public int[] GetWorksLevel()
