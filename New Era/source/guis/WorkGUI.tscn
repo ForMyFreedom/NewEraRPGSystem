@@ -1,22 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://source/guis/WorkGUI.cs" type="Script" id=1]
-[ext_resource path="res://source/guis/start_popup.cs" type="Script" id=2]
-[ext_resource path="res://source/works/Medic.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/BaseMinorFont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://source/RollBox.tscn" type="PackedScene" id=5]
 
-[node name="WorkGUi" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_rotation = -0.214049
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="WorkGUI" type="WindowDialog" parent="."]
-visible = true
+[node name="WorkGUI" type="WindowDialog"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -33,11 +21,11 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-workPackedScene = ExtResource( 3 )
 descriptionLabelPath = NodePath("MarginContainer/VBoxContainer/General/DescriptionLabel")
 rollBoxPath = NodePath("MarginContainer/VBoxContainer/General/RollBox")
+workTexture = NodePath("MarginContainer/VBoxContainer/General/WorkTexture")
 
-[node name="MarginContainer" type="MarginContainer" parent="WorkGUI"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 15.0
@@ -45,20 +33,20 @@ margin_top = 15.0
 margin_right = -15.0
 margin_bottom = -15.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="WorkGUI/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 margin_right = 540.0
 margin_bottom = 294.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="General" type="VBoxContainer" parent="WorkGUI/MarginContainer/VBoxContainer"]
+[node name="General" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_right = 540.0
-margin_bottom = 166.0
+margin_bottom = 170.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="DescriptionLabel" type="Label" parent="WorkGUI/MarginContainer/VBoxContainer/General"]
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/VBoxContainer/General"]
 margin_right = 540.0
 margin_bottom = 19.0
 size_flags_horizontal = 3
@@ -71,15 +59,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HS" type="HSeparator" parent="WorkGUI/MarginContainer/VBoxContainer/General"]
+[node name="WorkTexture" type="TextureRect" parent="MarginContainer/VBoxContainer/General"]
+margin_left = 270.0
 margin_top = 23.0
-margin_right = 540.0
-margin_bottom = 27.0
+margin_right = 270.0
+margin_bottom = 23.0
+size_flags_horizontal = 6
+size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="WorkGUI/MarginContainer/VBoxContainer/General"]
-margin_top = 31.0
+[node name="HS" type="HSeparator" parent="MarginContainer/VBoxContainer/General"]
+margin_top = 27.0
 margin_right = 540.0
-margin_bottom = 50.0
+margin_bottom = 31.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/General"]
+margin_top = 35.0
+margin_right = 540.0
+margin_bottom = 54.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 custom_fonts/font = ExtResource( 4 )
@@ -89,21 +85,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RollBox" parent="WorkGUI/MarginContainer/VBoxContainer/General" instance=ExtResource( 5 )]
+[node name="RollBox" parent="MarginContainer/VBoxContainer/General" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 54.0
+margin_top = 58.0
 margin_right = 540.0
-margin_bottom = 166.0
+margin_bottom = 170.0
 size_flags_vertical = 2
 
-[node name="HS2" type="HSeparator" parent="WorkGUI/MarginContainer/VBoxContainer"]
-margin_top = 170.0
+[node name="HS2" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+margin_top = 174.0
 margin_right = 540.0
-margin_bottom = 174.0
+margin_bottom = 178.0
 
-[node name="Something" type="VBoxContainer" parent="WorkGUI/MarginContainer/VBoxContainer"]
-margin_top = 178.0
+[node name="Something" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 182.0
 margin_right = 540.0
 margin_bottom = 294.0
 size_flags_horizontal = 3
