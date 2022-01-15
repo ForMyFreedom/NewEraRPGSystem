@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class filhodaputa : Control
+public class start_popup : Control
 {
     public override void _Ready()
     {

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://source/guis/WorkGUI.cs" type="Script" id=1]
-[ext_resource path="res://source/guis/filhodaputa.cs" type="Script" id=2]
+[ext_resource path="res://source/guis/start_popup.cs" type="Script" id=2]
 [ext_resource path="res://source/works/Medic.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/BaseMinorFont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://source/RollBox.tscn" type="PackedScene" id=5]
