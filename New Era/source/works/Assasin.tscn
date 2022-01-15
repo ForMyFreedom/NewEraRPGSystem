@@ -11,3 +11,4 @@ workName = "Assasino"
 baseImage = ExtResource( 3 )
 skills = [ ExtResource( 4 ) ]
 description = "Especialista no uso de métodos indiretos"
+enumWork = 1

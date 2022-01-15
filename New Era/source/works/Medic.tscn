@@ -11,3 +11,4 @@ workName = "Médico"
 baseImage = ExtResource( 3 )
 skills = [ ExtResource( 4 ) ]
 description = "Mestre no tratamento e socorro de vidas"
+enumWork = 9

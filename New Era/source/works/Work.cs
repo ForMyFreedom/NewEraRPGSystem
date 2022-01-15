@@ -11,7 +11,8 @@ public abstract class Work : Node
     private PackedScene[] skills = { };
     [Export(PropertyHint.MultilineText)]
     private string description;
-
+    [Export]
+    private MyEnum.Work enumWork;
 
     public String GetWorkName()
     {
@@ -38,5 +39,10 @@ public abstract class Work : Node
     public string GetDescription()
     {
         return description;
+    }
+
+    public MyEnum.Work GetEnumWork()
+    {
+        return enumWork;
     }
 }
