@@ -3,6 +3,7 @@
 [ext_resource path="res://source/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/default_bg.jpg" type="Texture" id=2]
 
+
 [node name="Marksan" instance=ExtResource( 1 )]
 playerName = "Gustavo"
 characterName = "Marksan"
