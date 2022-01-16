@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Atribute : Control
+public class Atributo : Control
 {
     [Export]
     public String atributeName;
@@ -11,7 +11,7 @@ public class Atribute : Control
     private NodePath rollBoxPath;
 
     [Signal]
-    public delegate void atribute_change(int value);
+    public delegate void atribute_changed(int value);
 
 
     public override void _Ready()
@@ -19,6 +19,7 @@ public class Atribute : Control
         GetNode<Label>(nameLabelPath).Text = atributeName;
         GetNode<RollBox>(rollBoxPath).Connect("roll_maded", this, "_OnRollMaded");
         GetNode<RollBox>(rollBoxPath).Connect("value_changed", this, "_OnValueChanged");
+        GetNode<RollBox>(rollBoxPath).SetRelationedSum(this, nameof(atribute_changed));
     }
 
 
@@ -30,7 +31,7 @@ public class Atribute : Control
 
     private void _OnValueChanged(int value)
     {
-        EmitSignal(nameof(atribute_change), value);
+        EmitSignal(nameof(atribute_changed), value);
     }
 
 

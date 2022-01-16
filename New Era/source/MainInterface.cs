@@ -631,12 +631,12 @@ public class MainInterface : Control, CharacterDataBank
 
     private void SetAtributeMajor(NodePath path, int value)
     {
-        GetNode<Atribute>(path).SetAtributeValue(value);
+        GetNode<Atributo>(path).SetAtributeValue(value);
     }
 
     private void SetAtributeMod(NodePath path, int value)
     {
-        GetNode<Atribute>(path).SetModValue(value);
+        GetNode<Atributo>(path).SetModValue(value);
     }
 
     private void AddAtributeMajor(NodePath path, int value)
@@ -651,12 +651,13 @@ public class MainInterface : Control, CharacterDataBank
 
     private int GetAtributeMajor(NodePath path)
     {
-        return GetNode<Atribute>(path).GetAtributeValue();
+        return GetNode<Atributo>(path).GetAtributeValue();
     }
 
     private int GetAtributeMod(NodePath path)
     {
-        return GetNode<Atribute>(path).GetModValue();
+        return GetNode<Atributo>(path).GetModValue();
     }
+
 }
 

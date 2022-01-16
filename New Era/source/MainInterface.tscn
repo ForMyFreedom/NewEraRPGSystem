@@ -3,7 +3,7 @@
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Mallory.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/VSStyle.tres" type="StyleBox" id=3]
-[ext_resource path="res://source/Atribute.tscn" type="PackedScene" id=4]
+[ext_resource path="res://source/Atributo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/Factor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/BaseMajorFont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://assets/calibri.ttf" type="DynamicFontData" id=7]
@@ -254,7 +254,6 @@ custom_styles/separator = ExtResource( 3 )
 margin_left = 256.0
 margin_right = 501.0
 margin_bottom = 179.0
-defaultApplyValue = -10.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer" index="0"]
 margin_top = 25.0
@@ -506,8 +505,11 @@ __meta__ = {
 }
 
 [node name="StrengthAtribute" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 193.0
 margin_bottom = 179.0
+size_flags_horizontal = 3
 atributeName = "Força"
 
 [node name="VS1" type="VSeparator" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer"]
@@ -517,9 +519,12 @@ margin_bottom = 179.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="AgilityAtribute" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 205.0
 margin_right = 398.0
 margin_bottom = 179.0
+size_flags_horizontal = 3
 atributeName = "Agilidade"
 
 [node name="VS2" type="VSeparator" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer"]
@@ -529,9 +534,12 @@ margin_bottom = 179.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="SensesAtribute" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 410.0
 margin_right = 603.0
 margin_bottom = 179.0
+size_flags_horizontal = 3
 atributeName = "Sentidos"
 
 [node name="VS3" type="VSeparator" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer"]
@@ -541,9 +549,12 @@ margin_bottom = 179.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="MindAtribute" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 615.0
 margin_right = 808.0
 margin_bottom = 179.0
+size_flags_horizontal = 3
 atributeName = "Mente"
 
 [node name="VS4" type="VSeparator" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer"]
@@ -553,9 +564,12 @@ margin_bottom = 179.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="CharismaAtribute" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 820.0
 margin_right = 1014.0
 margin_bottom = 179.0
+size_flags_horizontal = 3
 atributeName = "Carisma"
 
 [node name="HS2" type="HSeparator" parent="VBoxContainer"]
