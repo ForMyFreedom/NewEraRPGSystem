@@ -7,12 +7,19 @@ public abstract class Work : Node
     private string workName;
     [Export]
     private Texture baseImage;
+    [Export(PropertyHint.MultilineText)]
+    private string pathDescription;
     [Export]
     private PackedScene[] skills = { };
     [Export(PropertyHint.MultilineText)]
     private string description;
     [Export]
     private MyEnum.Work enumWork;
+    [Export]
+    private MyEnum.Atribute relationedAtribute;
+
+
+
 
     public String GetWorkName()
     {
@@ -44,5 +51,15 @@ public abstract class Work : Node
     public MyEnum.Work GetEnumWork()
     {
         return enumWork;
+    }
+
+    public string GetPathDescription()
+    {
+        return pathDescription;
+    }
+    
+    public MyEnum.Atribute GetRelationedAtribute()
+    {
+        return relationedAtribute;
     }
 }

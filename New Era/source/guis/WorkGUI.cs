@@ -9,6 +9,8 @@ public class WorkGUI : WindowDialog
     private NodePath rollBoxPath;
     [Export]
     private NodePath workTexture;
+    [Export]
+    private NodePath journeyLabel;
 
     [Signal]
     public delegate void value_changed(int index, int value);
@@ -16,6 +18,7 @@ public class WorkGUI : WindowDialog
     private Work work = null;
     private int workIndex;
     
+    private Atributo relatedAtribute;
 
     public override void _Ready()
     {
@@ -23,10 +26,18 @@ public class WorkGUI : WindowDialog
 
         GetNode<Label>(descriptionLabelPath).Text = work.GetDescription();
         GetNode<TextureRect>(workTexture).Texture = work.GetBaseImage();
+        relatedAtribute = GetInterfaceAtributeByEnum(work.GetRelationedAtribute());
+        PassDataToRollBox();
 
         GetNode(rollBoxPath).Connect("roll_maded", this, "_OnRollMaded");
         GetNode(rollBoxPath).Connect("value_changed", this, "_OnValueChanged");
         Connect("popup_hide", this, "_OnPopupHide");
+    }
+
+    private void PassDataToRollBox()
+    {
+        GetNode<RollBox>(rollBoxPath).SetRelationedSum(relatedAtribute, "atribute_changed");
+        GetNode<RollBox>(rollBoxPath).SetSumValue(relatedAtribute.GetAtributeValue());
     }
 
 
@@ -63,6 +74,7 @@ public class WorkGUI : WindowDialog
     public void SetWork(Work w)
     {
         work = w;
+        GetNode<RichTextLabel>(journeyLabel).BbcodeText += work.GetPathDescription();
     }
 
     public int GetWorkIndex()

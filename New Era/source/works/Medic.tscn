@@ -9,6 +9,10 @@
 script = ExtResource( 1 )
 workName = "Médico"
 baseImage = ExtResource( 3 )
+pathDescription = "A cada 5 de Médico, +5 em Medicina | +1 Mente
+A cada 15 de Médico, +1 Uso de Crítico [Médico]
+A cada 30 de Médico, Bônus de Maestria"
 skills = [ ExtResource( 4 ) ]
 description = "Mestre no tratamento e socorro de vidas"
 enumWork = 9
+relationedAtribute = 3

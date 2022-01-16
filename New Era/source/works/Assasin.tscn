@@ -9,6 +9,10 @@
 script = ExtResource( 2 )
 workName = "Assasino"
 baseImage = ExtResource( 3 )
+pathDescription = "A cada 5, +1 Agilidade
+A cada 10, +1 Técnica [Assasino] e +1 Uso de Crítico [Assasino]
+A cada 50, Bônus de Maestria e +2 Letalidade"
 skills = [ ExtResource( 4 ) ]
 description = "Especialista no uso de métodos indiretos"
 enumWork = 1
+relationedAtribute = 1

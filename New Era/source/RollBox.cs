@@ -15,6 +15,9 @@ public class RollBox : VBoxContainer
     private NodePath criticLabelPath;
 
     private Random rgn;
+    private int diceValue = 0;
+    private int sumValue = 0;
+    private int modValue = 0;
 
     [Signal]
     public delegate void roll_maded(int result);
@@ -28,12 +31,14 @@ public class RollBox : VBoxContainer
         rgn = new Random();
         GetNode(rollButtonPath).Connect("button_up", this, "_OnRoll");
         GetNode(spinValuePath).Connect("value_changed", this, "_OnRollValueChanged");
+        GetNode(modSpinPath).Connect("value_changed", this, "_OnModValueChanged");
     }
 
 
     private void _OnRoll()
     {
-        int result = GetRandomRoll(GetRollValue() + GetModValue());
+        int result = GetRandomRoll(diceValue+modValue);
+        result = result + sumValue + modValue;
         ChangeLabels(result);
         EmitSignal(nameof(roll_maded), result); 
     }
@@ -41,7 +46,18 @@ public class RollBox : VBoxContainer
 
     private void _OnRollValueChanged(float value)
     {
-        EmitSignal(nameof(value_changed), value);
+        diceValue = (int) value;
+        EmitSignal(nameof(value_changed), (int) value);
+    }
+
+    private void _OnModValueChanged(float value)
+    {
+        modValue = (int) value;
+    }
+
+    private void _OnSumValueChanged(float value)
+    {
+        sumValue = (int) value;
     }
 
 
@@ -55,7 +71,7 @@ public class RollBox : VBoxContainer
 
     private int GetRandomRoll(int value)
     {
-        int sum = value;
+        int sum = 0;
         int effect = (value > 0) ? 1 : -1;
 
         for (int i = 0; i < Math.Abs(value); i++)
@@ -64,6 +80,7 @@ public class RollBox : VBoxContainer
         return sum;
     }
 
+
     private int GetValueFromSpin(NodePath path)
     {
         return (int) GetNode<SpinBox>(path).Value;
@@ -71,14 +88,32 @@ public class RollBox : VBoxContainer
 
 
 
+    public void SetRelationedSum(Node node, String signalName)
+    {
+        node.Connect(signalName, this, "_OnSumValueChanged");
+    }
+
+
     public int GetRollValue()
     {
-        return GetValueFromSpin(spinValuePath);
+        return diceValue;
     }
 
     public void SetRollValue(int value)
     {
+        diceValue = value;
         GetNode<SpinBox>(spinValuePath).Value = value;
+    }
+
+
+    public int GetSumValue()
+    {
+        return sumValue;
+    }
+
+    public void SetSumValue(int value)
+    {
+        sumValue = value;
     }
 
 
