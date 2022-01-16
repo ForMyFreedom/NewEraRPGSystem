@@ -19,6 +19,7 @@ public class WorkTree : Tree
     private int[,] skillsLevel;
     private AllWorks allWorks;
     private TreeItem[] itens = { };
+    private Array<Array<int>> worksUps;
 
     public override void _Ready()
     {
@@ -26,6 +27,7 @@ public class WorkTree : Tree
         GetTree().CurrentScene.Connect("ready", this, "_OnTreeReady");
         Connect("gui_input", this, "_OnGuiInput");
     }
+
 
     private void _OnTreeReady()
     {
@@ -97,6 +99,7 @@ public class WorkTree : Tree
         workGui.SetLevelValue(worksLevel[workIndex]);
         workGui.SetWork(work);
         workGui.SetWorkIndex(workIndex);
+        workGui.SetWorksUps(worksUps[workIndex]);
         workGui.ConnectAllSignals(this);
 
         GetTree().CurrentScene.AddChild(workGui);
@@ -232,5 +235,16 @@ public class WorkTree : Tree
     public int[,] GetSkillLevel()
     {
         return skillsLevel;
+    }
+
+
+    public Array<Array<int>> GetWorksUps()
+    {
+        return worksUps;
+    }
+
+    public void SetWorksUps(Array<Array<int>> value)
+    {
+        worksUps = value;
     }
 }

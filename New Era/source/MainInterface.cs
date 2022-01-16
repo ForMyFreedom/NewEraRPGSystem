@@ -94,6 +94,7 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetWorks(sender.GetWorks());
         reciver.SetWorksLevel(sender.GetWorksLevel());
         reciver.SetSkillsLevel(sender.GetSkillsLevel());
+        reciver.SetQuantOfWorksUp(sender.GetQuantOfWorksUp());
     }
 
     private void RegisterAllData()
@@ -114,6 +115,23 @@ public class MainInterface : Control, CharacterDataBank
     }
 
 
+    public Atributo GetAtributeNodeByEnum(MyEnum.Atribute atribute)
+    {
+        switch (atribute)
+        {
+            case MyEnum.Atribute.STR:
+                return GetNode<Atributo>(strAtributePath);
+            case MyEnum.Atribute.AGI:
+                return GetNode<Atributo>(agiAtributePath);
+            case MyEnum.Atribute.SEN:
+                return GetNode<Atributo>(senAtributePath);
+            case MyEnum.Atribute.MIN:
+                return GetNode<Atributo>(minAtributePath);
+            case MyEnum.Atribute.CHA:
+                return GetNode<Atributo>(chaAtributePath);
+        }
+        return null;
+    }
 
 
     public String GetPlayerName() { return GetNode<MyLabel>(playerNamePath).GetTextData(); }
@@ -601,6 +619,16 @@ public class MainInterface : Control, CharacterDataBank
     public void SetSkillsLevel(int[,] level)
     {
         GetNode<WorkTree>(worksTreePath).SetSkillLevel(level);
+    }
+
+    public Array<Array<int>> GetQuantOfWorksUp()
+    {
+        return GetNode<WorkTree>(worksTreePath).GetWorksUps();
+    }
+
+    public void SetQuantOfWorksUp(Array<Array<int>> ups)
+    {
+        GetNode<WorkTree>(worksTreePath).SetWorksUps(ups);
     }
 
 

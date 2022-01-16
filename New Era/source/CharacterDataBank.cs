@@ -96,4 +96,7 @@ public interface CharacterDataBank
 
     int[,] GetSkillsLevel();
     void SetSkillsLevel(int[,] level);
+
+    Array<Array<int>> GetQuantOfWorksUp();
+    void SetQuantOfWorksUp(Array<Array<int>> ups);
 }

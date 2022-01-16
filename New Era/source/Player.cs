@@ -36,6 +36,8 @@ public class Player : Node, CharacterDataBank
     [Export]
     private Array<Array<int>> skillsLevel;
 
+    [Export]
+    private Array<Array<int>> worksUps;
 
     private int maxSkill = 3; //@
 
@@ -369,7 +371,6 @@ public class Player : Node, CharacterDataBank
 
     public int[,] GetSkillsLevel()
     {
-
         int[,] level = new int[skillsLevel.Count, maxSkill];
         
         for(int i=0 ; i<skillsLevel.Count ; i++)
@@ -400,5 +401,15 @@ public class Player : Node, CharacterDataBank
                 catch (Exception) { }
             }
         }
+    }
+
+    public Array<Array<int>> GetQuantOfWorksUp()
+    {
+        return worksUps;
+    }
+
+    public void SetQuantOfWorksUp(Array<Array<int>> ups)
+    {
+        worksUps = ups;
     }
 }

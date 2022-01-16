@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using System;
 
 public class WorkGUI : WindowDialog
@@ -17,8 +18,9 @@ public class WorkGUI : WindowDialog
 
     private Work work = null;
     private int workIndex;
-    
     private Atributo relatedAtribute;
+    private Array<int> worksUps;
+    private int lastWorkValue;
 
     public override void _Ready()
     {
@@ -48,6 +50,7 @@ public class WorkGUI : WindowDialog
 
     private void _OnValueChanged(int value)
     {
+        VerifyTheMaestryPath(value);
         EmitSignal(nameof(value_changed), workIndex, value);
     }
 
@@ -63,6 +66,72 @@ public class WorkGUI : WindowDialog
         QueueFree();
     }
 
+    private Atributo GetInterfaceAtributeByEnum(MyEnum.Atribute atribute)
+    {
+        MainInterface main = (MainInterface) GetTree().CurrentScene;
+        return main.GetAtributeNodeByEnum(atribute);
+    }
+
+
+    private void VerifyTheMaestryPath(int value) //@ what about lose work? [maybe cant lose]
+                                                 //@ what about pass workup when close?
+    {
+        Array<int> newWorkUps = CalculeWorkUps(value);
+        Array<int> difWorkUps = GetDifferenceFromArrays(newWorkUps, worksUps);
+        DoWorkUps(difWorkUps);
+
+    }
+
+    private Array<int> CalculeWorkUps(int value)
+    {
+        Array<int> workUps = new Array<int>();
+        int[] upProgression = new[] { 5, 10, 50 }; //@
+        for(int i = 0; i < 3; i++)
+        {
+            int currentValue = value;
+            while (currentValue >= upProgression[i])
+            {
+                currentValue -= upProgression[i];
+                worksUps[i]++;
+            }
+        }
+
+        return worksUps;
+    }
+
+
+    private Array<int> GetDifferenceFromArrays(Array<int> array1, Array<int> array2)
+    {
+        Array<int> difArray = new Array<int>();
+        
+        for(int i = 0; i < 3; i++)
+        {
+            difArray[i] = array1[i];
+            difArray[i] -= array2[i];
+        }
+
+        return difArray;
+    }
+
+    private void DoWorkUps(Array<int> ups)
+    {
+        MainInterface main = (MainInterface) GetTree().CurrentScene;
+
+        for(int i = 0; i < ups[0]; i++)
+        {
+            work.DoFirstUpStep(main);
+        }
+
+        for (int i = 0; i < ups[1]; i++)
+        {
+            work.DoSecondUpStep(main);
+        }
+
+        for (int i = 0; i < ups[2]; i++)
+        {
+            work.DoThirdUpStep(main);
+        }
+    }
 
 
 
@@ -95,6 +164,17 @@ public class WorkGUI : WindowDialog
 
     public void SetLevelValue(int value)
     {
+        lastWorkValue = value;
         GetNode<RollBox>(rollBoxPath).SetRollValue(value);
+    }
+
+    public Array<int> GetWorksUps()
+    {
+        return worksUps;
+    }
+
+    public void SetWorksUps(Array<int> value)
+    {
+        worksUps = value;
     }
 }

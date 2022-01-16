@@ -20,6 +20,11 @@ public abstract class Work : Node
 
 
 
+    public abstract void DoFirstUpStep(MainInterface gui);
+    public abstract void DoSecondUpStep(MainInterface gui);
+    public abstract void DoThirdUpStep(MainInterface gui);
+
+
 
     public String GetWorkName()
     {
