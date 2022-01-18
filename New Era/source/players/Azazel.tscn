@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://source/Player.cs" type="Script" id=1]
+[ext_resource path="res://assets/wallpapers/azazel_wallpaper.png" type="Texture" id=2]
+
+[node name="Azazel" type="Node"]
+script = ExtResource( 1 )
+characterName = "Azazel"
+worksLevel = PoolIntArray(  )
+modFactors = PoolIntArray( 0, 0, 0, 0 )
+skillsLevel = [  ]
+personalBG = ExtResource( 2 )
+worksUps = [  ]
+firstColor = Color( 1, 1, 1, 1 )
+works = [  ]
+secondColor = Color( 0, 0, 0, 1 )
+actualFactors = PoolIntArray( 20, 50, 100, 30 )
+totalAtributes = PoolIntArray( 10, 21, 20, 100, 20 )
+totalFactors = PoolIntArray( 33, 65, 73, 30 )
+playerName = "Oliveira"
+sheetURL = "https://animesonline.org/episodio/sabikui-bisco-episodio-2/"
+modAtributes = PoolIntArray( 0, 0, 0, 0, -4 )

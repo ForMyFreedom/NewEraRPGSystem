@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/honey.jpg-de86922700001e784117f32c370cfe72.stex"
+path="res://.import/mallory_wallpaper.jpg-0a9866f812c8e59852c38f76c3358c83.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/honey.jpg"
-dest_files=[ "res://.import/honey.jpg-de86922700001e784117f32c370cfe72.stex" ]
+source_file="res://assets/wallpapers/mallory_wallpaper.jpg"
+dest_files=[ "res://.import/mallory_wallpaper.jpg-0a9866f812c8e59852c38f76c3358c83.stex" ]
 
 [params]
 
