@@ -5,16 +5,16 @@ public class Medic : Work
 {
     public override void DoFirstUpStep(MainInterface gui) //@
     {
-        throw new NotImplementedException();
+        GD.Print("first");
     }
 
     public override void DoSecondUpStep(MainInterface gui) //@
     {
-        throw new NotImplementedException();
+        GD.Print("second");
     }
 
     public override void DoThirdUpStep(MainInterface gui) //@
     {
-        throw new NotImplementedException();
+        GD.Print("thrid");
     }
 }

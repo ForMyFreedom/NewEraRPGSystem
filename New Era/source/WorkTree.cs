@@ -98,8 +98,8 @@ public class WorkTree : Tree
 
         workGui.SetLevelValue(worksLevel[workIndex]);
         workGui.SetWork(work);
-        workGui.SetWorkIndex(workIndex);
         workGui.SetWorksUps(worksUps[workIndex]);
+        workGui.SetWorkIndex(workIndex);
         workGui.ConnectAllSignals(this);
 
         GetTree().CurrentScene.AddChild(workGui);
