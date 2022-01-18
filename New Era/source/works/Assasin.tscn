@@ -16,3 +16,4 @@ skills = [ ExtResource( 4 ) ]
 description = "Especialista no uso de métodos indiretos"
 enumWork = 1
 relationedAtribute = 1
+skillDescriptions = [ "Vidas ceifadas como flores, a beleza que há na morte" ]

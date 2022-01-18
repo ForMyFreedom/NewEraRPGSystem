@@ -16,3 +16,4 @@ skills = [ ExtResource( 4 ) ]
 description = "Mestre no tratamento e socorro de vidas"
 enumWork = 9
 relationedAtribute = 3
+skillDescriptions = [ "Ninguem aqui ira morrer enquanto a medicina prevalecer" ]

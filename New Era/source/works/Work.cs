@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using System;
 
 public abstract class Work : Node
@@ -17,7 +18,8 @@ public abstract class Work : Node
     private MyEnum.Work enumWork;
     [Export]
     private MyEnum.Atribute relationedAtribute;
-
+    [Export]
+    private Array<String> skillDescriptions;
 
 
     public abstract void DoFirstUpStep(MainInterface gui);
@@ -66,5 +68,10 @@ public abstract class Work : Node
     public MyEnum.Atribute GetRelationedAtribute()
     {
         return relationedAtribute;
+    }
+
+    public Array<string> GetSkillDescription()
+    {
+        return skillDescriptions;
     }
 }

@@ -12,6 +12,7 @@ public class SkillGUI : BaseGUI
     {
         base._Ready();
         WindowTitle = skill.GetSkillName();
+        GetNode<Label>(descriptionLabelPath).Text = work.GetSkillDescription()[skillIndex];
     }
 
 
