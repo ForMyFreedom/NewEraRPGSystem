@@ -110,6 +110,12 @@ public class WorkTree : Tree
     private void OpenSkillGui(Skill skill)
     {
         SkillGUI skillGui = skillGuiPackedScene.Instance<SkillGUI>();
+        int[] skillIndex = GetIndexOfSkill(skill);
+
+        skillGui.SetSkill(skill);
+        skillGui.SetSkillLevel(skillsLevel[skillIndex[0],skillIndex[1]]);
+        skillGui.SetWork(allWorks.GetWork(works[skillIndex[0]]));
+        skillGui.SetSkillIndex(skillIndex[1]);
 
         GetTree().CurrentScene.AddChild(skillGui);
         skillGui.PopupIt();
@@ -171,6 +177,24 @@ public class WorkTree : Tree
     private int GetIndexOfWork(Work w)
     {
         return works.IndexOf(w.GetEnumWork());
+    }
+
+    private int[] GetIndexOfSkill(Skill s)
+    {
+        for (int i = 0; i < works.Count; i++)
+        {
+            Work actualWork = allWorks.GetWork(works[i]);
+            Skill[] actualSkillList = actualWork.GetSkillList();
+            for (int j = 0; j < actualSkillList.Length; j++)
+            {
+                if (actualSkillList[j].GetSkillName() == s.GetSkillName())
+                {
+                    return new int[] { i, j };
+                }
+            }
+        }
+
+        return null;
     }
 
     private int GetSkillOwner(TreeItem item, int i)
