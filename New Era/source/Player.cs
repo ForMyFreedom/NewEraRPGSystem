@@ -36,11 +36,18 @@ public class Player : Node, CharacterDataBank
     [Export]
     private Array<Array<int>> skillsLevel;
 
-    [Export]
     private Array<Array<int>> worksUps;
-
     private int maxSkill = 3; //@
 
+
+    public override void _Ready()
+    {
+        worksUps = WorkUp.GetBlankWorkUpArray(works.Count);
+        for(int i=0; i<worksUps.Count; i++)
+        {
+            worksUps[i] = WorkUp.CalculeWorkUps(worksLevel[i]);
+        }
+    }
 
 
     public String GetPlayerName()

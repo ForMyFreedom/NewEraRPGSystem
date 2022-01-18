@@ -12,6 +12,8 @@ public class WorkGUI : WindowDialog
     private NodePath workTexture;
     [Export]
     private NodePath journeyLabel;
+    [Export]
+    private NodePath relationLabel;
 
     [Signal]
     public delegate void value_changed(int index, int value);
@@ -25,6 +27,7 @@ public class WorkGUI : WindowDialog
     public override void _Ready()
     {
         WindowTitle = work.GetWorkName();
+        GetNode<Label>(relationLabel).Text += work.GetRelationedAtribute();
 
         GetNode<Label>(descriptionLabelPath).Text = work.GetDescription();
         GetNode<TextureRect>(workTexture).Texture = work.GetBaseImage();
@@ -74,29 +77,11 @@ public class WorkGUI : WindowDialog
 
 
     private void VerifyTheMaestryPath(int value) //@ what about lose work? [maybe cant lose]
-                                                 //@ what about pass workup when close?
     {
-        Array<int> newWorkUps = CalculeWorkUps(value);
+        Array<int> newWorkUps = WorkUp.CalculeWorkUps(value);
         Array<int> difWorkUps = GetDifferenceFromArrays(newWorkUps, worksUps);
         DoWorkUps(difWorkUps);
-
-    }
-
-    private Array<int> CalculeWorkUps(int value)
-    {
-        Array<int> workUps = new Array<int>();
-        int[] upProgression = new[] { 5, 10, 50 }; //@
-        for(int i = 0; i < 3; i++)
-        {
-            int currentValue = value;
-            while (currentValue >= upProgression[i])
-            {
-                currentValue -= upProgression[i];
-                worksUps[i]++;
-            }
-        }
-
-        return worksUps;
+        worksUps = newWorkUps;
     }
 
 
@@ -106,7 +91,7 @@ public class WorkGUI : WindowDialog
         
         for(int i = 0; i < 3; i++)
         {
-            difArray[i] = array1[i];
+            difArray.Add(array1[i]);
             difArray[i] -= array2[i];
         }
 

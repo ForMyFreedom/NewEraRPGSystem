@@ -48,6 +48,7 @@ public class MainInterface : Control, CharacterDataBank
     public override void _Ready()
     {
         player = playerScene.Instance<Player>();
+        player._Ready();
         GetNode(sheetOpenButtonPath).Connect("button_up", this, "_OnOpenSheet");
         Connect("tree_exiting", this, "RegisterAllData");
         RegistryData(player, this);
