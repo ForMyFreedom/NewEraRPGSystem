@@ -2,12 +2,8 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public class WorkGUI : WindowDialog
+public class WorkGUI : BaseGUI
 {
-    [Export]
-    private NodePath descriptionLabelPath;
-    [Export]
-    private NodePath rollBoxPath;
     [Export]
     private NodePath workTexture;
     [Export]
@@ -15,43 +11,27 @@ public class WorkGUI : WindowDialog
     [Export]
     private NodePath relationLabel;
 
-    [Signal]
-    public delegate void value_changed(int index, int value);
-
-    private Work work = null;
     private int workIndex;
-    private Atributo relatedAtribute;
     private Array<int> worksUps;
     private int lastWorkValue;
 
     public override void _Ready()
     {
+        base._Ready();
         WindowTitle = work.GetWorkName();
         GetNode<Label>(relationLabel).Text += work.GetRelationedAtribute();
 
         GetNode<Label>(descriptionLabelPath).Text = work.GetDescription();
         GetNode<TextureRect>(workTexture).Texture = work.GetBaseImage();
-        relatedAtribute = GetInterfaceAtributeByEnum(work.GetRelationedAtribute());
-        PassDataToRollBox();
-
-        GetNode(rollBoxPath).Connect("roll_maded", this, "_OnRollMaded");
-        GetNode(rollBoxPath).Connect("value_changed", this, "_OnValueChanged");
-        Connect("popup_hide", this, "_OnPopupHide");
-    }
-
-    private void PassDataToRollBox()
-    {
-        GetNode<RollBox>(rollBoxPath).SetRelationedSum(relatedAtribute, "atribute_changed");
-        GetNode<RollBox>(rollBoxPath).SetSumValue(relatedAtribute.GetAtributeValue());
     }
 
 
-    private void _OnRollMaded(int result)
+    protected override void _OnRollMaded(int result)
     {
         //@
     }
 
-    private void _OnValueChanged(int value)
+    protected override void _OnValueChanged(int value)
     {
         VerifyTheMaestryPath(value);
         EmitSignal(nameof(value_changed), workIndex, value);
@@ -63,17 +43,6 @@ public class WorkGUI : WindowDialog
         Connect(nameof(value_changed), main, nameof(main._OnWorkValueChanged));
     }
 
-
-    private void _OnPopupHide()
-    {
-        QueueFree();
-    }
-
-    private Atributo GetInterfaceAtributeByEnum(MyEnum.Atribute atribute)
-    {
-        MainInterface main = (MainInterface) GetTree().CurrentScene;
-        return main.GetAtributeNodeByEnum(atribute);
-    }
 
 
     private void VerifyTheMaestryPath(int value) //@ what about lose work? [maybe cant lose]
