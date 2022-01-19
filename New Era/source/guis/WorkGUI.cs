@@ -9,7 +9,7 @@ public class WorkGUI : BaseGUI
     [Export]
     private NodePath journeyLabel;
     [Export]
-    private NodePath relationLabel;
+    private NodePath atributeOptionPath;
 
     private int workIndex;
     private Array<int> worksUps;
@@ -19,16 +19,24 @@ public class WorkGUI : BaseGUI
     {
         base._Ready();
         WindowTitle = work.GetWorkName();
-        GetNode<Label>(relationLabel).Text += work.GetRelationedAtribute();
+        GetNode<AtributeOptionButton>(atributeOptionPath).SetAtribute(work.GetRelationedAtribute());
 
         GetNode<Label>(descriptionLabelPath).Text = work.GetDescription();
         GetNode<TextureRect>(workTexture).Texture = work.GetBaseImage();
+        GetNode(atributeOptionPath).Connect("related_atribute_changed", this, "_OnRelatedAtributeChanged");
     }
 
 
     protected override void _OnRollMaded(int result)
     {
         //@
+    }
+
+    protected void _OnRelatedAtributeChanged(int index)
+    {
+        MainInterface main = (MainInterface) GetTree().CurrentScene;
+        relatedAtribute = main.GetAtributeNodeByEnum((MyEnum.Atribute) index);
+        PassDataToRollBox();
     }
 
     protected override void _OnValueChanged(int value)
