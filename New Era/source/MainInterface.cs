@@ -52,6 +52,7 @@ public class MainInterface : Control, CharacterDataBank
         GetNode(sheetOpenButtonPath).Connect("button_up", this, "_OnOpenSheet");
         Connect("tree_exiting", this, "RegisterAllData");
         RegistryData(player, this);
+        CenterTheWindow();
     }
 
 
@@ -688,5 +689,13 @@ public class MainInterface : Control, CharacterDataBank
         return GetNode<Atributo>(path).GetModValue();
     }
 
+
+    private void CenterTheWindow()
+    {
+        Vector2 screenSize = OS.GetScreenSize(0);
+        screenSize.y *= 0.90f;
+        Vector2 windowSize = OS.WindowSize;
+        OS.WindowPosition = (screenSize - windowSize) * 0.5f;
+    }
 }
 
