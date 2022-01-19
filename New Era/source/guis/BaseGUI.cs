@@ -25,7 +25,7 @@ public abstract class BaseGUI : WindowDialog
         Connect("popup_hide", this, "_OnPopupHide");
     }
 
-    private void PassDataToRollBox()
+    protected void PassDataToRollBox()
     {
         GetNode<RollBox>(rollBoxPath).SetRelationedSum(relatedAtribute, "atribute_changed");
         GetNode<RollBox>(rollBoxPath).SetSumValue(relatedAtribute.GetAtributeValue());
@@ -42,7 +42,7 @@ public abstract class BaseGUI : WindowDialog
         QueueFree();
     }
 
-    private Atributo GetInterfaceAtributeByEnum(MyEnum.Atribute atribute)
+    protected Atributo GetInterfaceAtributeByEnum(MyEnum.Atribute atribute)
     {
         MainInterface main = (MainInterface)GetTree().CurrentScene;
         return main.GetAtributeNodeByEnum(atribute);

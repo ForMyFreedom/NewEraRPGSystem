@@ -419,4 +419,5 @@ public class Player : Node, CharacterDataBank
     {
         worksUps = ups;
     }
+
 }
