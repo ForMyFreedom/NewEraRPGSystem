@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Mallory.tscn" type="PackedScene" id=2]
@@ -17,6 +17,9 @@
 [ext_resource path="res://source/guis/SkillGUI.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/bell.png" type="Texture" id=16]
 [ext_resource path="res://source/NotificationArea.cs" type="Script" id=17]
+[ext_resource path="res://assets/BaseMinorFont.tres" type="DynamicFont" id=18]
+[ext_resource path="res://assets/skills/blank.png" type="Texture" id=19]
+[ext_resource path="res://assets/notification.wav" type="AudioStream" id=20]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -24,7 +27,7 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "dishow"
 length = 0.3
 tracks/0/type = "value"
@@ -49,14 +52,14 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -350, -30.0 ]
+"values": [ -480, -160 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "new_notification"
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("VBOX/FirstControl/BellTexture:rect_rotation")
+tracks/0/path = NodePath("BellNode/BellTexture:rect_rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -65,11 +68,22 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, -20.0, 0.0, 20.0, 0.0 ]
+"values": [ 0.0, -30.0, 0.0, 30.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NotificationSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "show"
+[sub_resource type="Animation" id=4]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:margin_left")
@@ -81,7 +95,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -30.0, -350 ]
+"values": [ -30, -350 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:margin_right")
@@ -93,8 +107,17 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -30.0, -350 ]
+"values": [ -160, -480 ]
 }
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
 
 [node name="MainInterface" type="Control"]
 anchor_right = 1.0
@@ -122,6 +145,7 @@ senAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContaine
 minAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/MindAtribute")
 chaAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/CharismaAtribute")
 worksTreePath = NodePath("VBoxContainer/General/HBOX/WorkControl/MarginContainer/VBOX/WorkTree")
+notificationPath = NodePath("NotificationArea")
 
 [node name="BGRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -301,28 +325,30 @@ margin_bottom = 210.0
 margin_right = 141.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
+margin_top = 4.0
 margin_right = 141.0
-margin_bottom = 16.0
+margin_bottom = 20.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
 margin_left = 34.0
-margin_top = 20.0
+margin_top = 24.0
 margin_right = 107.0
-margin_bottom = 44.0
+margin_bottom = 48.0
 
 [node name="Control2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2" index="1"]
 margin_left = 145.0
 margin_right = 287.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="0"]
+margin_top = 4.0
 margin_right = 142.0
-margin_bottom = 16.0
+margin_bottom = 20.0
 
 [node name="HBoxContainer" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="1"]
 margin_left = 17.0
-margin_top = 20.0
+margin_top = 24.0
 margin_right = 124.0
-margin_bottom = 44.0
+margin_bottom = 48.0
 
 [node name="VS1" type="VSeparator" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer"]
 margin_left = 291.0
@@ -386,28 +412,30 @@ margin_bottom = 210.0
 margin_right = 141.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
+margin_top = 4.0
 margin_right = 141.0
-margin_bottom = 16.0
+margin_bottom = 20.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
 margin_left = 34.0
-margin_top = 20.0
+margin_top = 24.0
 margin_right = 107.0
-margin_bottom = 44.0
+margin_bottom = 48.0
 
 [node name="Control2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2" index="1"]
 margin_left = 145.0
 margin_right = 287.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="0"]
+margin_top = 4.0
 margin_right = 142.0
-margin_bottom = 16.0
+margin_bottom = 20.0
 
 [node name="HBoxContainer" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="1"]
 margin_left = 17.0
-margin_top = 20.0
+margin_top = 24.0
 margin_right = 124.0
-margin_bottom = 44.0
+margin_bottom = 48.0
 
 [node name="VS2" type="VSeparator" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer"]
 margin_left = 590.0
@@ -474,28 +502,30 @@ margin_bottom = 210.0
 margin_right = 141.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
+margin_top = 4.0
 margin_right = 141.0
-margin_bottom = 16.0
+margin_bottom = 20.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
 margin_left = 34.0
-margin_top = 20.0
+margin_top = 24.0
 margin_right = 107.0
-margin_bottom = 44.0
+margin_bottom = 48.0
 
 [node name="Control2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2" index="1"]
 margin_left = 145.0
 margin_right = 287.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="0"]
+margin_top = 4.0
 margin_right = 142.0
-margin_bottom = 16.0
+margin_bottom = 20.0
 
 [node name="HBoxContainer" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="1"]
 margin_left = 17.0
-margin_top = 20.0
+margin_top = 24.0
 margin_right = 124.0
-margin_bottom = 44.0
+margin_bottom = 48.0
 
 [node name="VS3" type="VSeparator" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer"]
 margin_left = 889.0
@@ -562,28 +592,30 @@ margin_bottom = 210.0
 margin_right = 142.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
+margin_top = 4.0
 margin_right = 142.0
-margin_bottom = 16.0
+margin_bottom = 20.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
 margin_left = 34.0
-margin_top = 20.0
+margin_top = 24.0
 margin_right = 107.0
-margin_bottom = 44.0
+margin_bottom = 48.0
 
 [node name="Control2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2" index="1"]
 margin_left = 146.0
 margin_right = 288.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="0"]
+margin_top = 4.0
 margin_right = 142.0
-margin_bottom = 16.0
+margin_bottom = 20.0
 
 [node name="HBoxContainer" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="1"]
 margin_left = 17.0
-margin_top = 20.0
+margin_top = 24.0
 margin_right = 124.0
-margin_bottom = 44.0
+margin_bottom = 48.0
 
 [node name="HS1" type="HSeparator" parent="VBoxContainer"]
 margin_top = 260.0
@@ -795,20 +827,31 @@ anchor_left = 1.0
 anchor_right = 1.4
 anchor_bottom = 1.0
 margin_left = -30.0
-margin_right = -30.0
+margin_right = -160.0
+mouse_filter = 2
 size_flags_vertical = 3
 script = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-bellPath = NodePath("VBOX/FirstControl/BellTexture")
+bellPath = NodePath("BellNode/BellTexture")
 animationPath = NodePath("AnimationPlayer")
+notificationListPath = NodePath("Margin/NotificationList")
+quantNotificationsPath = NodePath("BellNode/QuantNotificationsLabel")
+blankTexture = ExtResource( 19 )
+
+[node name="NotificationSound" type="AudioStreamPlayer" parent="NotificationArea"]
+stream = ExtResource( 20 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NotificationArea"]
+anims/dishow = SubResource( 2 )
+anims/new_notification = SubResource( 3 )
+anims/show = SubResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="NotificationArea"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 50.0
-margin_right = -99.0
+margin_left = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0, 0, 0, 0.313726 )
@@ -816,56 +859,53 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NotificationArea"]
-anims/dishow = SubResource( 3 )
-anims/new_notification = SubResource( 4 )
-anims/show = SubResource( 2 )
-
-[node name="VBOX" type="VBoxContainer" parent="NotificationArea"]
+[node name="Margin" type="MarginContainer" parent="NotificationArea"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 50.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FirstControl" type="Control" parent="NotificationArea/VBOX"]
-margin_right = 478.0
-margin_bottom = 172.0
+[node name="NotificationList" type="ItemList" parent="NotificationArea/Margin"]
+margin_right = 298.0
+margin_bottom = 700.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 18 )
+max_text_lines = 3
+auto_height = true
+same_column_width = true
 
-[node name="BellTexture" type="TextureRect" parent="NotificationArea/VBOX/FirstControl"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_top = -37.0
-margin_right = 50.0
-margin_bottom = 13.0
+[node name="BellNode" type="Control" parent="NotificationArea"]
+margin_top = 49.0
+margin_right = 49.0
+margin_bottom = 99.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BellTexture" type="TextureRect" parent="NotificationArea/BellNode"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 25, 25 )
 texture = ExtResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control2" type="Control" parent="NotificationArea/VBOX"]
-margin_top = 176.0
-margin_right = 478.0
-margin_bottom = 348.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Control3" type="Control" parent="NotificationArea/VBOX"]
-margin_top = 352.0
-margin_right = 478.0
-margin_bottom = 524.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Control4" type="Control" parent="NotificationArea/VBOX"]
-margin_top = 528.0
-margin_right = 478.0
-margin_bottom = 700.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="QuantNotificationsLabel" type="Label" parent="NotificationArea/BellNode"]
+visible = false
+margin_right = 16.0
+margin_bottom = 16.0
+custom_styles/normal = SubResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [editable path="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life"]
 [editable path="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge"]

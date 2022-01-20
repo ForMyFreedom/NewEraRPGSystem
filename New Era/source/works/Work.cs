@@ -5,21 +5,21 @@ using System;
 public abstract class Work : Node
 {
     [Export]
-    private string workName;
+    protected string workName;
     [Export]
-    private Texture baseImage;
+    protected Texture baseImage;
     [Export(PropertyHint.MultilineText)]
-    private string pathDescription;
+    protected string pathDescription;
     [Export]
-    private PackedScene[] skills = { };
+    protected PackedScene[] skills = { };
     [Export(PropertyHint.MultilineText)]
-    private string description;
+    protected string description;
     [Export]
-    private MyEnum.Work enumWork;
+    protected MyEnum.Work enumWork;
     [Export]
-    private MyEnum.Atribute relationedAtribute;
+    protected MyEnum.Atribute relationedAtribute;
     [Export]
-    private Array<String> skillDescriptions;
+    protected Array<String> skillDescriptions;
 
 
     public abstract void DoFirstUpStep(MainInterface gui);
@@ -74,4 +74,12 @@ public abstract class Work : Node
     {
         return skillDescriptions;
     }
+
+
+
+    protected String GetCreatePowerMessage()
+    {
+        return "Voce precisa criar um uso de critico ou tecnica";
+    }
+
 }

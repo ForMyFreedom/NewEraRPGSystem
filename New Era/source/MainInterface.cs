@@ -41,6 +41,8 @@ public class MainInterface : Control, CharacterDataBank
     private NodePath chaAtributePath;
     [Export]
     private NodePath worksTreePath;
+    [Export]
+    private NodePath notificationPath;
 
     private Player player;
     private Color[] colors = new Color[2];
@@ -110,7 +112,6 @@ public class MainInterface : Control, CharacterDataBank
 
 
 
-
     public void _OnOpenSheet()
     {
         OS.ShellOpen(player.GetSheetURL());
@@ -133,6 +134,11 @@ public class MainInterface : Control, CharacterDataBank
                 return GetNode<Atributo>(chaAtributePath);
         }
         return null;
+    }
+
+    public void CreateNewNotification(String message, Texture texture = null)
+    {
+        GetNode<NotificationArea>(notificationPath).CreateNewNotification(message, texture);
     }
 
 
