@@ -99,4 +99,7 @@ public interface CharacterDataBank
 
     Array<Array<int>> GetQuantOfWorksUp();
     void SetQuantOfWorksUp(Array<Array<int>> ups);
+
+    Godot.Collections.Array GetNotifications();
+    void SetNotifications(Godot.Collections.Array notifications);
 }

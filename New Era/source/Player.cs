@@ -35,6 +35,9 @@ public class Player : Node, CharacterDataBank
     private int[] worksLevel;
     [Export]
     private Array<Array<int>> skillsLevel;
+    [Export]
+    private Godot.Collections.Array notificationList;
+
 
     private Array<Array<int>> worksUps;
     private int maxSkill = 3; //@
@@ -420,4 +423,13 @@ public class Player : Node, CharacterDataBank
         worksUps = ups;
     }
 
+    public Godot.Collections.Array GetNotifications()
+    {
+        return notificationList;
+    }
+
+    public void SetNotifications(Godot.Collections.Array notifications)
+    {
+        notificationList = notifications;
+    }
 }

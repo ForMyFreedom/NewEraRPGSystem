@@ -99,6 +99,8 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetWorksLevel(sender.GetWorksLevel());
         reciver.SetSkillsLevel(sender.GetSkillsLevel());
         reciver.SetQuantOfWorksUp(sender.GetQuantOfWorksUp());
+
+        reciver.SetNotifications(sender.GetNotifications());
     }
 
     private void RegisterAllData()
@@ -639,6 +641,15 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<WorkTree>(worksTreePath).SetWorksUps(ups);
     }
 
+    public Godot.Collections.Array GetNotifications()
+    {
+        return GetNode<NotificationArea>(notificationPath).GetNotifications();
+    }
+
+    public void SetNotifications(Godot.Collections.Array notifications)
+    {
+        GetNode<NotificationArea>(notificationPath).SetNotifications(notifications);
+    }
 
 
 
@@ -696,6 +707,8 @@ public class MainInterface : Control, CharacterDataBank
     }
 
 
+
+
     private void CenterTheWindow()
     {
         Vector2 screenSize = OS.GetScreenSize(0);
@@ -703,5 +716,7 @@ public class MainInterface : Control, CharacterDataBank
         Vector2 windowSize = OS.WindowSize;
         OS.WindowPosition = (screenSize - windowSize) * 0.5f;
     }
+
+
 }
 
