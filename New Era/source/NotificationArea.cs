@@ -38,6 +38,7 @@ public class NotificationArea : Control
     {
         if (index < 0) return;
         notificationList.RemoveItem(index);
+        GetNode<AnimationPlayer>(animationPath).Play("del_notification");
         ActualizeQuantNotificationsLabel();
     }
 
