@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Collections;
+using System.Linq;
 
 public class NotificationArea : Control
 {
@@ -98,5 +100,28 @@ public class NotificationArea : Control
         {
             return -1;
         }
+    }
+
+
+
+    public Godot.Collections.Array GetNotifications()
+    {
+        Godot.Collections.Array notArray = notificationList.Items;
+        Godot.Collections.Array notifications = new Godot.Collections.Array();
+        for(int i = 3; i <= notArray.Count; i = i=i+3)
+        {
+            notifications.Add(new Godot.Collections.Array() {notArray[i-3],notArray[i-2]});
+        }
+        return notifications;
+    }
+
+    public void SetNotifications(Godot.Collections.Array notifications)
+    {
+        if (notifications == null) return;
+        foreach(Godot.Collections.Array not in notifications)
+        {
+            notificationList.AddItem((String)not[0], (Texture)not[1]);
+        }
+        ActualizeQuantNotificationsLabel();
     }
 }
