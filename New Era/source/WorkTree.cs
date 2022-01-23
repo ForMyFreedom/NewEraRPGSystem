@@ -5,8 +5,6 @@ using System;
 public class WorkTree : Tree
 {
     [Export]
-    public int COLUMNS_LENGTH = 3;
-    [Export]
     private PackedScene allWorksPackedScene;
     [Export]
     private PackedScene workGuiPackedScene;
@@ -126,7 +124,7 @@ public class WorkTree : Tree
     {
         foreach(TreeItem item in itens)
         {
-            for(int i = 0; i < COLUMNS_LENGTH; i++)
+            for(int i = 0; i < Columns; i++)
             {
                 object data = item.GetMetadata(i);
                 if (data is Work)
@@ -161,7 +159,7 @@ public class WorkTree : Tree
     {
         foreach(TreeItem item in itens)
         {
-            for(int i=0; i < COLUMNS_LENGTH; i++)
+            for(int i=0; i < Columns; i++)
             {
                 if (item.GetText(i) == "")
                 {

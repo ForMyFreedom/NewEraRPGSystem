@@ -790,6 +790,7 @@ margin_bottom = 205.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
+hide_root = true
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
