@@ -631,6 +631,11 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<WorkTree>(worksTreePath).SetSkillLevel(level);
     }
 
+    public void AddSomeSkillLevel(int level, int skillIndex, MyEnum.Work workEnum)
+    {
+        GetNode<WorkTree>(worksTreePath).AddSomeSkillLevel(level, skillIndex, workEnum);
+    }
+
     public Array<Array<int>> GetQuantOfWorksUp()
     {
         return GetNode<WorkTree>(worksTreePath).GetWorksUps();
