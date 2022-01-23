@@ -1,22 +1,24 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://source/Player.cs" type="Script" id=1]
 [ext_resource path="res://assets/wallpapers/mallory_wallpaper.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/skills/assasim.png" type="Texture" id=3]
+[ext_resource path="res://assets/skills/medic.png" type="Texture" id=4]
 
 [node name="Mallory" type="Node"]
 script = ExtResource( 1 )
-skillsLevel = [ [ 0 ], [ 0 ] ]
-personalBG = ExtResource( 2 )
-characterName = "Mallory"
-modAtributes = PoolIntArray( 0, 0, 0, 0, -4 )
+totalAtributes = PoolIntArray( 10, 72, 20, 51, 20 )
+actualFactors = PoolIntArray( 20, 50, 0, 30 )
+modAtributes = PoolIntArray( 0, 0, 0, 0, 0 )
 playerName = "Afonso"
-totalFactors = PoolIntArray( 33, 65, 73, 30 )
-firstColor = Color( 0.0196078, 0, 0.572549, 1 )
-sheetURL = "https://1drv.ms/w/s!Ar3mdnwNQxPdelhRut7zKa1OElY?e=bYHPnC"
+characterName = "Mallory"
 modFactors = PoolIntArray( 0, 0, 0, 0 )
-totalAtributes = PoolIntArray( 10, 21, 20, 100, 20 )
-worksLevel = PoolIntArray( 0, 0 )
-actualFactors = PoolIntArray( 20, 50, 100, 30 )
-worksUps = [ [ 0, 0, 0 ], [ 0, 0, 0 ] ]
-works = [ 1, 9 ]
+sheetURL = "https://1drv.ms/w/s!Ar3mdnwNQxPdelhRut7zKa1OElY?e=bYHPnC"
+totalFactors = PoolIntArray( 33, 65, 226, 30 )
+worksLevel = PoolIntArray( 50, 50 )
 secondColor = Color( 0, 0, 0, 1 )
+notificationList = [ [ "Voce precisa criar um uso de critico ou tecnica", ExtResource( 4 ) ], [ "Voce precisa criar um uso de critico ou tecnica", ExtResource( 4 ) ], [ "Voce precisa criar um uso de critico ou tecnica", ExtResource( 4 ) ], [ "Voce precisa criar um uso de critico ou tecnica", ExtResource( 4 ) ], [ "Voce precisa criar um uso de critico ou tecnica", ExtResource( 4 ) ], [ "Voce precisa criar um uso de critico ou tecnica", ExtResource( 3 ) ], [ "Voce precisa criar um uso de critico ou tecnica", ExtResource( 3 ) ], [ "Voce precisa criar um uso de critico ou tecnica", ExtResource( 3 ) ], [ "Voce precisa criar um uso de critico ou tecnica", ExtResource( 3 ) ], [ "Voce precisa criar um uso de critico ou tecnica", ExtResource( 3 ) ] ]
+firstColor = Color( 0.0196078, 0, 0.572549, 1 )
+works = [ 1, 9 ]
+personalBG = ExtResource( 2 )
+skillsLevel = [ [ 0 ], [ 0 ] ]

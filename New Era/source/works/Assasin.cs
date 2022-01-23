@@ -3,14 +3,14 @@ using System;
 
 public class Assasin : Work
 {
-    public override void DoFirstUpStep(MainInterface gui) //@
+    public override void DoFirstUpStep(MainInterface gui)
     {
-        GD.Print("first");
+        gui.AddAgility(1);
     }
 
-    public override void DoSecondUpStep(MainInterface gui) //@
+    public override void DoSecondUpStep(MainInterface gui)
     {
-        GD.Print("second");
+        gui.CreateNewNotification(GetCreatePowerMessage(), baseImage);
     }
 
     public override void DoThirdUpStep(MainInterface gui) //@

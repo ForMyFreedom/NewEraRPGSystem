@@ -41,6 +41,8 @@ public class MainInterface : Control, CharacterDataBank
     private NodePath chaAtributePath;
     [Export]
     private NodePath worksTreePath;
+    [Export]
+    private NodePath notificationPath;
 
     private Player player;
     private Color[] colors = new Color[2];
@@ -52,6 +54,7 @@ public class MainInterface : Control, CharacterDataBank
         GetNode(sheetOpenButtonPath).Connect("button_up", this, "_OnOpenSheet");
         Connect("tree_exiting", this, "RegisterAllData");
         RegistryData(player, this);
+        CenterTheWindow();
     }
 
 
@@ -96,6 +99,8 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetWorksLevel(sender.GetWorksLevel());
         reciver.SetSkillsLevel(sender.GetSkillsLevel());
         reciver.SetQuantOfWorksUp(sender.GetQuantOfWorksUp());
+
+        reciver.SetNotifications(sender.GetNotifications());
     }
 
     private void RegisterAllData()
@@ -105,7 +110,6 @@ public class MainInterface : Control, CharacterDataBank
         packedScene.Pack(player);
         ResourceSaver.Save(playerScene.ResourcePath, packedScene);
     }
-
 
 
 
@@ -132,6 +136,11 @@ public class MainInterface : Control, CharacterDataBank
                 return GetNode<Atributo>(chaAtributePath);
         }
         return null;
+    }
+
+    public void CreateNewNotification(String message, Texture texture = null)
+    {
+        GetNode<NotificationArea>(notificationPath).CreateNewNotification(message, texture);
     }
 
 
@@ -632,6 +641,15 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<WorkTree>(worksTreePath).SetWorksUps(ups);
     }
 
+    public Godot.Collections.Array GetNotifications()
+    {
+        return GetNode<NotificationArea>(notificationPath).GetNotifications();
+    }
+
+    public void SetNotifications(Godot.Collections.Array notifications)
+    {
+        GetNode<NotificationArea>(notificationPath).SetNotifications(notifications);
+    }
 
 
 
@@ -687,6 +705,18 @@ public class MainInterface : Control, CharacterDataBank
     {
         return GetNode<Atributo>(path).GetModValue();
     }
+
+
+
+
+    private void CenterTheWindow()
+    {
+        Vector2 screenSize = OS.GetScreenSize(0);
+        screenSize.y *= 0.90f;
+        Vector2 windowSize = OS.WindowSize;
+        OS.WindowPosition = (screenSize - windowSize) * 0.5f;
+    }
+
 
 }
 
