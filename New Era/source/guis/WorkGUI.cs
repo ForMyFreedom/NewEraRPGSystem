@@ -11,6 +11,9 @@ public class WorkGUI : BaseGUI
     [Export]
     private NodePath atributeOptionPath;
 
+    [Signal]
+    public delegate void value_changed(int index, int value);
+
     private int workIndex;
     private Array<int> worksUps;
     private int lastWorkValue;

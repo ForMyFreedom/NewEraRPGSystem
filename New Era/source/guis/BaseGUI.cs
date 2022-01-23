@@ -9,8 +9,6 @@ public abstract class BaseGUI : WindowDialog
     [Export]
     protected NodePath rollBoxPath;
 
-    [Signal]
-    public delegate void value_changed(int index, int value);
 
     protected Atributo relatedAtribute;
     protected Work work;
