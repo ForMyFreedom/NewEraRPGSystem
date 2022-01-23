@@ -109,11 +109,12 @@ public class WorkTree : Tree
     {
         SkillGUI skillGui = skillGuiPackedScene.Instance<SkillGUI>();
         int[] skillIndex = GetIndexOfSkill(skill);
-
         skillGui.SetSkill(skill);
         skillGui.SetSkillLevel(skillsLevel[skillIndex[0],skillIndex[1]]);
         skillGui.SetWork(allWorks.GetWork(works[skillIndex[0]]));
         skillGui.SetSkillIndex(skillIndex[1]);
+        skillGui.SetWorkIndex(skillIndex[0]);
+        skillGui.ConnectAllSignals(this);
 
         GetTree().CurrentScene.AddChild(skillGui);
         skillGui.PopupIt();
@@ -154,6 +155,11 @@ public class WorkTree : Tree
         SetAnWorkLevel(index, value);
     }
 
+    public void _OnSkillValueChanged(int workIndex, int skillIndex, int value)
+    {
+        SetAnSkillLevel(workIndex, skillIndex, value);
+    }
+
 
     private void MakeBlankUnselected(TreeItem[] itens)
     {
@@ -175,6 +181,11 @@ public class WorkTree : Tree
     private int GetIndexOfWork(Work w)
     {
         return works.IndexOf(w.GetEnumWork());
+    }
+
+    private int GetIndexOfWork(MyEnum.Work ew)
+    {
+        return works.IndexOf(ew);
     }
 
     private int[] GetIndexOfSkill(Skill s)
@@ -218,6 +229,19 @@ public class WorkTree : Tree
     }
 
 
+    private void VerifySkillLeveling(int workIndex, int level)
+    {
+        Work work = allWorks.GetWork(works[workIndex]);
+        Skill[] worksSkillList = work.GetSkillList();
+
+        for(int i=0; i < worksSkillList.Length; i++)
+        {
+            worksSkillList[i].PlayWayOfLevelCalcule(this, workIndex, i, level);
+        }
+
+    }
+
+
 
 
     public void SetWorks(Array<MyEnum.Work> _works)
@@ -240,6 +264,13 @@ public class WorkTree : Tree
     public void SetAnWorkLevel(int index, int level)
     {
         worksLevel[index] = level;
+        VerifySkillLeveling(index, level);
+        ActualizeLevelLabels();
+    }
+
+    public void SetAnSkillLevel(int workIndex, int skillIndex, int level)
+    {
+        skillsLevel[workIndex, skillIndex] = level;
         ActualizeLevelLabels();
     }
 
@@ -259,6 +290,11 @@ public class WorkTree : Tree
         return skillsLevel;
     }
 
+    public void AddSomeSkillLevel(int level, int skillIndex, MyEnum.Work workEnum)
+    {
+        int workIndex = GetIndexOfWork(workEnum);
+        skillsLevel[workIndex, skillIndex] += level;
+    }
 
     public Array<Array<int>> GetWorksUps()
     {
