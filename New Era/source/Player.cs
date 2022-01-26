@@ -30,25 +30,29 @@ public class Player : Node, CharacterDataBank
     private int[] modAtributes;
 
     [Export]
-    private Array<MyEnum.Work> works;
+    private PackedScene tempWork1;
     [Export]
-    private int[] worksLevel;
+    private PackedScene tempWork2;
+
     [Export]
-    private Array<Array<int>> skillsLevel;
+    private Array<Work> works;
     [Export]
     private Godot.Collections.Array notificationList;
 
-
-    private Array<Array<int>> worksUps;
-    private int maxSkill = 3; //@
+    private static int maxSkill = 3; //@
 
 
     public override void _Ready()
     {
-        worksUps = WorkUp.GetBlankWorkUpArray(works.Count);
-        for(int i=0; i<worksUps.Count; i++)
+        //@
+        works = new Array<Work>();
+        works.Add(tempWork1.Instance<Work>());
+        works.Add(tempWork2.Instance<Work>());
+        //@
+
+        for (int i=0; i<GetQuantOfWorksUp().Count; i++)
         {
-            worksUps[i] = WorkUp.CalculeWorkUps(worksLevel[i]);
+            works[i].SetWorksUp(WorkUp.CalculeWorkUps(works[i].GetLevel()));
         }
     }
 
@@ -359,68 +363,32 @@ public class Player : Node, CharacterDataBank
     }
 
 
-    public Array<MyEnum.Work> GetWorks()
+    public Array<Work> GetWorks()
     {
         return works;
     }
 
-    public void SetWorks(Array<MyEnum.Work> _works)
+    public void SetWorks(Array<Work> _works)
     {
         works = _works;
     }
 
-    public int[] GetWorksLevel()
-    {
-        return worksLevel;
-    }
-
-    public void SetWorksLevel(int[] level)
-    {
-        worksLevel = level;
-    }
-
-    public int[,] GetSkillsLevel()
-    {
-        int[,] level = new int[skillsLevel.Count, maxSkill];
-        
-        for(int i=0 ; i<skillsLevel.Count ; i++)
-        {
-            for(int j=0; j<maxSkill ; j++)
-            {
-                try
-                {
-                    level[i, j] = skillsLevel[i][j];
-                } catch (Exception){ }
-            }
-        }
-        
-        return level;
-    }
-
-
-    public void SetSkillsLevel(int[,] level)
-    {
-        for (int i = 0; i < skillsLevel.Count; i++)
-        {
-            for (int j = 0; j < maxSkill; j++)
-            {
-                try
-                {
-                    skillsLevel[i][j] = level[i, j];
-                }
-                catch (Exception) { }
-            }
-        }
-    }
-
     public Array<Array<int>> GetQuantOfWorksUp()
     {
+        Array<Array<int>> worksUps = new Array<Array<int>>();
+        foreach(Work work in works)
+        {
+            worksUps.Add(work.GetWorksUp());
+        }
         return worksUps;
     }
 
     public void SetQuantOfWorksUp(Array<Array<int>> ups)
     {
-        worksUps = ups;
+        for(int i = 0; i < works.Count; i++)
+        {
+            works[i].SetWorksUp(ups[i]);
+        }
     }
 
     public Godot.Collections.Array GetNotifications()

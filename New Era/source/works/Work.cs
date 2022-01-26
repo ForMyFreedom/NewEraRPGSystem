@@ -21,6 +21,9 @@ public abstract class Work : Node
     [Export]
     protected Array<String> skillDescriptions;
 
+    protected int level;
+    protected Array<int> worksUps;
+
 
     public abstract void DoFirstUpStep(MainInterface gui);
     public abstract void DoSecondUpStep(MainInterface gui);
@@ -75,7 +78,25 @@ public abstract class Work : Node
         return skillDescriptions;
     }
 
+    public int GetLevel()
+    {
+        return level;
+    }
 
+    public void SetLevel(int l)
+    {
+        level = l;
+    }
+
+    public Array<int> GetWorksUp()
+    {
+        return worksUps;
+    }
+
+    public void SetWorksUp(Array<int> wu)
+    {
+        worksUps = wu;
+    }
 
     protected String GetCreatePowerMessage()
     {

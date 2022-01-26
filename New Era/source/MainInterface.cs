@@ -96,10 +96,6 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetModCharisma(sender.GetModCharisma());
 
         reciver.SetWorks(sender.GetWorks());
-        reciver.SetWorksLevel(sender.GetWorksLevel());
-        reciver.SetSkillsLevel(sender.GetSkillsLevel());
-        reciver.SetQuantOfWorksUp(sender.GetQuantOfWorksUp());
-
         reciver.SetNotifications(sender.GetNotifications());
     }
 
@@ -601,50 +597,22 @@ public class MainInterface : Control, CharacterDataBank
     }
 
 
-    public Array<MyEnum.Work> GetWorks()
+    public Array<Work> GetWorks()
     {
         return GetNode<WorkTree>(worksTreePath).GetWorks();
     }
 
-    public void SetWorks(Array<MyEnum.Work> _works)
+    public void SetWorks(Array<Work> _works)
     {
         GetNode<WorkTree>(worksTreePath).SetWorks(_works);
     }
 
-    public int[] GetWorksLevel()
+    public void AddAnSkillLevel(MyEnum.Work enumWork, int skillIndex, int levelAdd)
     {
-        return GetNode<WorkTree>(worksTreePath).GetWorksLevel();
+        GetWorkByEnum(enumWork).GetSkillList()[skillIndex].AddLevel(levelAdd);
     }
 
-    public void SetWorksLevel(int[] level)
-    {
-        GetNode<WorkTree>(worksTreePath).SetWorksLevel(level);
-    }
 
-    public int[,] GetSkillsLevel()
-    {
-        return GetNode<WorkTree>(worksTreePath).GetSkillLevel();
-    }
-
-    public void SetSkillsLevel(int[,] level)
-    {
-        GetNode<WorkTree>(worksTreePath).SetSkillLevel(level);
-    }
-
-    public void AddSomeSkillLevel(int level, int skillIndex, MyEnum.Work workEnum)
-    {
-        GetNode<WorkTree>(worksTreePath).AddSomeSkillLevel(level, skillIndex, workEnum);
-    }
-
-    public Array<Array<int>> GetQuantOfWorksUp()
-    {
-        return GetNode<WorkTree>(worksTreePath).GetWorksUps();
-    }
-
-    public void SetQuantOfWorksUp(Array<Array<int>> ups)
-    {
-        GetNode<WorkTree>(worksTreePath).SetWorksUps(ups);
-    }
 
     public Godot.Collections.Array GetNotifications()
     {
@@ -711,6 +679,15 @@ public class MainInterface : Control, CharacterDataBank
         return GetNode<Atributo>(path).GetModValue();
     }
 
+    private Work GetWorkByEnum(MyEnum.Work we)
+    {
+        foreach(Work work in GetWorks())
+        {
+            if (work.GetEnumWork() == we)
+                return work;
+        }
+        return null;
+    }
 
 
 

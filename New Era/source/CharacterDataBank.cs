@@ -88,17 +88,8 @@ public interface CharacterDataBank
     int GetModCharisma();
     void SetModCharisma(int value);
 
-    Array<MyEnum.Work> GetWorks();
-    void SetWorks(Array<MyEnum.Work> _works);
-
-    int[] GetWorksLevel();
-    void SetWorksLevel(int[] level);
-
-    int[,] GetSkillsLevel();
-    void SetSkillsLevel(int[,] level);
-
-    Array<Array<int>> GetQuantOfWorksUp();
-    void SetQuantOfWorksUp(Array<Array<int>> ups);
+    Array<Work> GetWorks();
+    void SetWorks(Array<Work> _works);
 
     Godot.Collections.Array GetNotifications();
     void SetNotifications(Godot.Collections.Array notifications);

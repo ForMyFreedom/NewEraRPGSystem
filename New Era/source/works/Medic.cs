@@ -6,7 +6,7 @@ public class Medic : Work
     public override void DoFirstUpStep(MainInterface gui)
     {
         gui.AddMind(1);
-        gui.AddSomeSkillLevel(5, 0, enumWork);
+        gui.AddAnSkillLevel(enumWork, 0, 5);
     }
 
     public override void DoSecondUpStep(MainInterface gui)
