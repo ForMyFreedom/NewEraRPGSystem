@@ -15,7 +15,6 @@ public class WorkGUI : BaseGUI
     public delegate void value_changed(int index, int value);
 
     private int workIndex;
-    private Array<int> worksUps;
     private int lastWorkValue;
 
     public override void _Ready()
@@ -59,9 +58,9 @@ public class WorkGUI : BaseGUI
     private void VerifyTheMaestryPath(int value) //@ what about lose work? [maybe cant lose]
     {
         Array<int> newWorkUps = WorkUp.CalculeWorkUps(value);
-        Array<int> difWorkUps = GetDifferenceFromArrays(newWorkUps, worksUps);
+        Array<int> difWorkUps = GetDifferenceFromArrays(newWorkUps, work.GetWorksUp());
         DoWorkUps(difWorkUps);
-        worksUps = newWorkUps;
+        work.SetWorksUp(newWorkUps);
     }
 
 
@@ -109,6 +108,8 @@ public class WorkGUI : BaseGUI
     {
         work = w;
         GetNode<RichTextLabel>(journeyLabel).BbcodeText += work.GetPathDescription();
+        //@
+        GetNode<RollBox>(rollBoxPath).SetRollValue(w.GetLevel());
     }
 
     public int GetWorkIndex()
@@ -121,25 +122,4 @@ public class WorkGUI : BaseGUI
         workIndex = index;
     }
 
-
-    public int GetLevelValue()
-    {
-        return GetNode<RollBox>(rollBoxPath).GetRollValue();
-    }
-
-    public void SetLevelValue(int value)
-    {
-        lastWorkValue = value;
-        GetNode<RollBox>(rollBoxPath).SetRollValue(value);
-    }
-
-    public Array<int> GetWorksUps()
-    {
-        return worksUps;
-    }
-
-    public void SetWorksUps(Array<int> value)
-    {
-        worksUps = value;
-    }
 }

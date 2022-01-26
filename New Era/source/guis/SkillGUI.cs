@@ -4,7 +4,6 @@ using System;
 public class SkillGUI : BaseGUI
 {
     private Skill skill;
-    private int skillLevel;
     private int skillIndex;
     private int workIndex;
 
@@ -15,7 +14,7 @@ public class SkillGUI : BaseGUI
     {
         base._Ready();
         WindowTitle = skill.GetSkillName();
-        GetNode<Label>(descriptionLabelPath).Text = work.GetSkillDescription()[skillIndex];
+        GetNode<Label>(descriptionLabelPath).Text = skill.GetSkillDescription();
     }
 
     protected override void _OnRollMaded(int result)
@@ -51,12 +50,7 @@ public class SkillGUI : BaseGUI
     public void SetSkill(Skill s)
     {
         skill = s;
-    }
-
-    public void SetSkillLevel(int level)
-    {
-        skillLevel = level;
-        GetNode<RollBox>(rollBoxPath).SetRollValue(skillLevel);
+        GetNode<RollBox>(rollBoxPath).SetRollValue(s.GetLevel());
     }
 
     public void SetWork(Work w)
