@@ -1,8 +1,9 @@
 using Godot;
 using Godot.Collections;
 using System;
+using System.Linq;
 
-public abstract class Work : Node
+public abstract class Work : Resource
 {
     [Export]
     protected string workName;
@@ -11,7 +12,7 @@ public abstract class Work : Node
     [Export(PropertyHint.MultilineText)]
     protected string pathDescription;
     [Export]
-    protected PackedScene[] skills = { };
+    protected Skill[] skills = { };
     [Export(PropertyHint.MultilineText)]
     protected string description;
     [Export]
@@ -19,10 +20,9 @@ public abstract class Work : Node
     [Export]
     protected MyEnum.Atribute relationedAtribute;
     [Export]
-    protected Array<String> skillDescriptions;
-
-    protected int level;
-    protected Array<int> worksUps;
+    private int level;
+    [Export]
+    private Array<int> worksUps;
 
 
     public abstract void DoFirstUpStep(MainInterface gui);
@@ -43,14 +43,7 @@ public abstract class Work : Node
 
     public Skill[] GetSkillList()
     {
-        Skill[] trueSkillList = new Skill[skills.Length];
-        
-        for(int i=0 ; i<skills.Length ; i++)
-        {
-            trueSkillList[i] = skills[i].Instance<Skill>();
-        }
-
-        return trueSkillList;
+        return skills;
     }
 
     public string GetDescription()
@@ -71,11 +64,6 @@ public abstract class Work : Node
     public MyEnum.Atribute GetRelationedAtribute()
     {
         return relationedAtribute;
-    }
-
-    public Array<string> GetSkillDescription()
-    {
-        return skillDescriptions;
     }
 
     public int GetLevel()

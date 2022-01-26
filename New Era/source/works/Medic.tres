@@ -1,19 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://source/works/Medic.cs" type="Script" id=1]
-[ext_resource path="res://source/works/Work.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/skills/Medicine.tres" type="Resource" id=2]
 [ext_resource path="res://assets/skills/medic.png" type="Texture" id=3]
-[ext_resource path="res://source/skills/Medicine.tscn" type="PackedScene" id=4]
 
-[node name="Medic" instance=ExtResource( 2 )]
+[resource]
 script = ExtResource( 1 )
 workName = "Médico"
 baseImage = ExtResource( 3 )
 pathDescription = "A cada 5 de Médico, +5 em Medicina | +1 Mente
 A cada 15 de Médico, +1 Uso de Crítico [Médico]
 A cada 30 de Médico, Bônus de Maestria"
-skills = [ ExtResource( 4 ) ]
+skills = [ ExtResource( 2 ) ]
 description = "Mestre no tratamento e socorro de vidas"
 enumWork = 9
 relationedAtribute = 3
-skillDescriptions = [ "Ninguem aqui ira morrer enquanto a medicina prevalecer" ]
+level = 0
+worksUps = [ 0, 0, 0 ]

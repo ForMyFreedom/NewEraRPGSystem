@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/works/Fighter.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+workName = "Lutador"
+pathDescription = "- Lutador Regular +I: +1 Pancada
+- Lutador Brigão +I: +3 Dano ao usar Pancada.
+- Lutador Artista Marcial +I: +6 Teste Ataque ao usar Pancada"
+skills = [ null ]
+description = "Especialista no combate desprovido de armas"
+enumWork = 3
+relationedAtribute = 0
+level = 0
+worksUps = [ 0, 0, 0 ]
