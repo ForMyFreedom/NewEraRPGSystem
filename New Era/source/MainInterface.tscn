@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Mallory.tscn" type="PackedScene" id=2]
@@ -136,6 +136,23 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 corner_detail = 20
+
+[sub_resource type="Animation" id=7]
+resource_name = "pulse"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("QuantNotificationsLabel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
 
 [node name="MainInterface" type="Control"]
 anchor_right = 1.0
@@ -908,9 +925,9 @@ __meta__ = {
 }
 
 [node name="QuantNotificationsLabel" type="Label" parent="NotificationArea/BellNode"]
-visible = false
 margin_right = 16.0
 margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 8 )
 custom_styles/normal = SubResource( 6 )
 custom_colors/font_color = Color( 1, 0.94902, 0, 1 )
 text = "0"
@@ -919,6 +936,10 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PulseAnimationPlayer" type="AnimationPlayer" parent="NotificationArea/BellNode"]
+autoplay = "pulse"
+anims/pulse = SubResource( 7 )
 
 [editable path="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life"]
 [editable path="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge"]

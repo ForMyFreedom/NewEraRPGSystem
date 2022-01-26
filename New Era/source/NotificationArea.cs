@@ -28,6 +28,7 @@ public class NotificationArea : Control
     }
 
 
+
     public void CreateNewNotification(String message, Texture texture=null)
     {
         if (texture == null) texture = blankTexture;
