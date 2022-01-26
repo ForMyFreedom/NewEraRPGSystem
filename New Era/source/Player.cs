@@ -30,11 +30,6 @@ public class Player : Node, CharacterDataBank
     private int[] modAtributes;
 
     [Export]
-    private PackedScene tempWork1;
-    [Export]
-    private PackedScene tempWork2;
-
-    [Export]
     private Array<Work> works;
     [Export]
     private Godot.Collections.Array notificationList;
@@ -44,12 +39,6 @@ public class Player : Node, CharacterDataBank
 
     public override void _Ready()
     {
-        //@
-        works = new Array<Work>();
-        works.Add(tempWork1.Instance<Work>());
-        works.Add(tempWork2.Instance<Work>());
-        //@
-
         for (int i=0; i<GetQuantOfWorksUp().Count; i++)
         {
             works[i].SetWorksUp(WorkUp.CalculeWorkUps(works[i].GetLevel()));

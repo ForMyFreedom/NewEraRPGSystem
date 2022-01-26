@@ -24,7 +24,7 @@ public class WorkTree : Tree
     private void _OnTreeReady()
     {
         TreeItem root = CreateItem();
-        itens = new TreeItem[2*works.Count];
+        itens = new TreeItem[GetTreeItensLength()];
         int workIndex = 0; int itemIndex = 0;
 
         foreach(Work currentWork in works)
@@ -34,6 +34,7 @@ public class WorkTree : Tree
 
             AddAllSkillItens(itemIndex, workIndex, currentWork);
             workIndex++;
+            itemIndex++;
         }
 
         MakeBlankUnselected(itens);
@@ -48,6 +49,7 @@ public class WorkTree : Tree
         itens[itemIndex].SetMetadata(0, currentWork);
     }
 
+
     private void AddAllSkillItens(int itemIndex, int workIndex, Work currentWork)
     {
         Skill[] skillList = currentWork.GetSkillList();
@@ -59,12 +61,11 @@ public class WorkTree : Tree
 
             itens[itemIndex].SetText(j, skillList[j].GetSkillName() + " " + skillList[j].GetLevel());
             itens[itemIndex].SetMetadata(j, skillList[j]);
-
-            if (j == skillList.Length - 1)
-                itemIndex++;
         }
 
     }
+
+
 
 
     private void _OnGuiInput(InputEvent @event)
@@ -110,7 +111,6 @@ public class WorkTree : Tree
         //@@@@@@@@@
         int[] skillIndex = GetIndexOfSkill(skill);
         skillGui.SetSkill(skill);
-        skillGui.SetSkillLevel(works[skillIndex[0]].GetSkillList()[skillIndex[1]].GetLevel());
         skillGui.SetWork(works[skillIndex[0]]);
         skillGui.SetSkillIndex(skillIndex[1]);
         skillGui.SetWorkIndex(skillIndex[0]);
@@ -147,8 +147,8 @@ public class WorkTree : Tree
     //@
     private void ActualizeSkillLabel(TreeItem item, int i, Skill data)
     {
-        int[] index = GetIndexOfSkill(data);
-        item.SetText(i, $"{data.GetSkillName()} {works[index[0]].GetSkillList()[index[1]]}");
+        int[] index = GetIndexOfSkill(data); //@
+        item.SetText(i, $"{data.GetSkillName()} {data.GetLevel()}");
     }
 
 
@@ -168,7 +168,6 @@ public class WorkTree : Tree
     {
         foreach(TreeItem item in itens)
         {
-            GD.Print(item.GetText(0));
             for(int i=0; i < Columns; i++)
             {
                 if (item.GetText(i) == "")
@@ -210,12 +209,10 @@ public class WorkTree : Tree
     private void VerifySkillLeveling(int workIndex, int level)
     {
         Skill[] worksSkillList = works[workIndex].GetSkillList();
-
         for(int i=0; i < worksSkillList.Length; i++)
         {
             worksSkillList[i].PlayWayOfLevelCalcule(this, workIndex, i, level);
         }
-
     }
 
 
@@ -280,5 +277,19 @@ public class WorkTree : Tree
         {
             works[i].SetWorksUp(value[i]);
         }
+    }
+
+
+    private int GetTreeItensLength()
+    {
+        int c=0;
+        foreach(Work w in works)
+        {
+            c++;
+            foreach(Skill s in w.GetSkillList())
+                c++;
+        }
+
+        return c;
     }
 }
