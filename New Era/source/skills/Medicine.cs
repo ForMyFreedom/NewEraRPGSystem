@@ -8,9 +8,4 @@ public class Medicine : Skill
         throw new NotImplementedException();
     }
 
-
-    public override void _Ready()
-    {
-        
-    }
 }

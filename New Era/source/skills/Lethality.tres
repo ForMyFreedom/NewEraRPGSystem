@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/skills/Lethality.cs" type="Script" id=1]
+[ext_resource path="res://source/wayOfCalculeSkill/HalfWayOfCalculeSkill.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 1 )
+skillName = "Letalidade"
+wayOfLevelCalculeScript = ExtResource( 2 )
+skillDescription = "Vidas ceifadas como pétalas, a beleza que há na morte"
+level = 0

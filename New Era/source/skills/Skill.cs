@@ -1,14 +1,16 @@
 using Godot;
 using System;
 
-public abstract class Skill : Node
+public abstract class Skill : Resource
 {
     [Export]
     private string skillName;
     [Export]
     private CSharpScript wayOfLevelCalculeScript;
-
-    protected int level;
+    [Export]
+    private String skillDescription;
+    [Export]
+    private int level;
 
     public abstract void DoMechanic();
     private WayOfCalculeSkill wayOfLevelCalcule;
@@ -40,4 +42,14 @@ public abstract class Skill : Node
         level += add;
     }
 
+
+    public String GetSkillDescription()
+    {
+        return skillDescription;
+    }
+
+    public void SetSkillDescription(String str)
+    {
+        skillDescription = str;
+    }
 }

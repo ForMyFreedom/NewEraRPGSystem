@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/skills/Medicine.cs" type="Script" id=1]
+[ext_resource path="res://source/wayOfCalculeSkill/IgnoreWayOfCalculeSkill.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 1 )
+skillName = "Medicina"
+wayOfLevelCalculeScript = ExtResource( 2 )
+skillDescription = "Conhecimento sobre a vida e sua manutenção"
+level = 0
