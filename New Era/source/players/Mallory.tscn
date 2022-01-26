@@ -1,26 +1,70 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://source/Player.cs" type="Script" id=1]
 [ext_resource path="res://assets/wallpapers/mallory_wallpaper.jpg" type="Texture" id=2]
 [ext_resource path="res://assets/skills/assasim.png" type="Texture" id=3]
 [ext_resource path="res://assets/skills/medic.png" type="Texture" id=4]
-[ext_resource path="res://source/works/Assasin.tscn" type="PackedScene" id=5]
-[ext_resource path="res://source/works/Medic.tscn" type="PackedScene" id=6]
+[ext_resource path="res://source/wayOfCalculeSkill/HalfWayOfCalculeSkill.cs" type="Script" id=5]
+[ext_resource path="res://source/skills/Lethality.cs" type="Script" id=6]
+[ext_resource path="res://source/wayOfCalculeSkill/IgnoreWayOfCalculeSkill.cs" type="Script" id=7]
+[ext_resource path="res://source/works/Medic.cs" type="Script" id=8]
+[ext_resource path="res://source/works/Assasin.cs" type="Script" id=9]
+[ext_resource path="res://source/skills/Medicine.cs" type="Script" id=10]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 6 )
+level = 5
+skillDescription = "Vidas ceifadas como pétalas, a beleza que há na morte"
+skillName = "Letalidade"
+wayOfLevelCalculeScript = ExtResource( 5 )
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 9 )
+level = 10
+description = "Especialista no uso de métodos indiretos"
+relationedAtribute = 1
+pathDescription = "A cada 5, +1 Agilidade
+A cada 10, +1 Técnica [Assasino] e +1 Uso de Crítico [Assasino]
+A cada 50, Bônus de Maestria e +2 Letalidade"
+skills = [ SubResource( 1 ) ]
+workName = "Assasino"
+baseImage = ExtResource( 3 )
+enumWork = 1
+worksUps = [ 2, 1, 0 ]
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 10 )
+level = 10
+skillDescription = "Conhecimento sobre a vida e sua manutenção"
+skillName = "Medicina"
+wayOfLevelCalculeScript = ExtResource( 7 )
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 8 )
+level = 10
+description = "Mestre no tratamento e socorro de vidas"
+relationedAtribute = 3
+pathDescription = "A cada 5 de Médico, +5 em Medicina | +1 Mente
+A cada 15 de Médico, +1 Uso de Crítico [Médico]
+A cada 30 de Médico, Bônus de Maestria"
+skills = [ SubResource( 3 ) ]
+workName = "Médico"
+baseImage = ExtResource( 4 )
+enumWork = 9
+worksUps = [ 2, 1, 0 ]
 
 [node name="Mallory" type="Node"]
 script = ExtResource( 1 )
-playerName = "Afonso"
 characterName = "Mallory"
 sheetURL = "https://1drv.ms/w/s!Ar3mdnwNQxPdelhRut7zKa1OElY?e=bYHPnC"
 personalBG = ExtResource( 2 )
-firstColor = Color( 0.0196078, 0, 0.572549, 1 )
-secondColor = Color( 0, 0, 0, 1 )
-totalFactors = PoolIntArray( 33, 65, 178, 30 )
+totalFactors = PoolIntArray( 33, 65, 319, 30 )
 actualFactors = PoolIntArray( 20, 50, 0, 30 )
-modFactors = PoolIntArray( 0, 0, 0, 0 )
-totalAtributes = PoolIntArray( 10, 56, 20, 33, 20 )
 modAtributes = PoolIntArray( 0, 0, 0, 0, 0 )
-tempWork1 = ExtResource( 5 )
-tempWork2 = ExtResource( 6 )
-works = [ null, null ]
-notificationList = [ [ "Voce precisa criar um uso de critico ou tecnica", ExtResource( 3 ) ], [ "Voce precisa criar um uso de critico ou tecnica", ExtResource( 3 ) ], [ "Voce precisa criar um uso de critico ou tecnica", ExtResource( 4 ) ], [ "Voce precisa criar um uso de critico ou tecnica", ExtResource( 3 ) ], [ "Voce precisa criar um uso de critico ou tecnica", ExtResource( 3 ) ] ]
+firstColor = Color( 0.0196078, 0, 0.572549, 1 )
+playerName = "Afonso"
+secondColor = Color( 0, 0, 0, 1 )
+works = [ SubResource( 2 ), SubResource( 4 ) ]
+modFactors = PoolIntArray( 0, 0, 0, 0 )
+notificationList = [  ]
+totalAtributes = PoolIntArray( 10, 103, 20, 35, 20 )
