@@ -22,15 +22,15 @@ wayOfLevelCalculeScript = ExtResource( 5 )
 script = ExtResource( 9 )
 level = 10
 description = "Especialista no uso de métodos indiretos"
+workName = "Assasino"
+baseImage = ExtResource( 3 )
+worksUps = [ 2, 1, 0 ]
 relationedAtribute = 1
 pathDescription = "A cada 5, +1 Agilidade
 A cada 10, +1 Técnica [Assasino] e +1 Uso de Crítico [Assasino]
 A cada 50, Bônus de Maestria e +2 Letalidade"
-skills = [ SubResource( 1 ) ]
-workName = "Assasino"
-baseImage = ExtResource( 3 )
 enumWork = 1
-worksUps = [ 2, 1, 0 ]
+skills = [ SubResource( 1 ) ]
 
 [sub_resource type="Resource" id=3]
 script = ExtResource( 10 )
@@ -43,28 +43,28 @@ wayOfLevelCalculeScript = ExtResource( 7 )
 script = ExtResource( 8 )
 level = 10
 description = "Mestre no tratamento e socorro de vidas"
+workName = "Médico"
+baseImage = ExtResource( 4 )
+worksUps = [ 2, 1, 0 ]
 relationedAtribute = 3
 pathDescription = "A cada 5 de Médico, +5 em Medicina | +1 Mente
 A cada 15 de Médico, +1 Uso de Crítico [Médico]
 A cada 30 de Médico, Bônus de Maestria"
-skills = [ SubResource( 3 ) ]
-workName = "Médico"
-baseImage = ExtResource( 4 )
 enumWork = 9
-worksUps = [ 2, 1, 0 ]
+skills = [ SubResource( 3 ) ]
 
 [node name="Mallory" type="Node"]
 script = ExtResource( 1 )
-characterName = "Mallory"
-sheetURL = "https://1drv.ms/w/s!Ar3mdnwNQxPdelhRut7zKa1OElY?e=bYHPnC"
-personalBG = ExtResource( 2 )
-totalFactors = PoolIntArray( 33, 65, 319, 30 )
-actualFactors = PoolIntArray( 20, 50, 0, 30 )
+modFactors = PoolIntArray( 0, 0, 0, 0 )
 modAtributes = PoolIntArray( 0, 0, 0, 0, 0 )
+works = [ SubResource( 2 ), SubResource( 4 ) ]
+notificationList = [  ]
+sheetURL = "https://1drv.ms/w/s!Ar3mdnwNQxPdelhRut7zKa1OElY?e=bYHPnC"
+totalAtributes = PoolIntArray( 10, 103, 20, 35, 20 )
+characterName = "Mallory"
 firstColor = Color( 0.0196078, 0, 0.572549, 1 )
 playerName = "Afonso"
 secondColor = Color( 0, 0, 0, 1 )
-works = [ SubResource( 2 ), SubResource( 4 ) ]
-modFactors = PoolIntArray( 0, 0, 0, 0 )
-notificationList = [  ]
-totalAtributes = PoolIntArray( 10, 103, 20, 35, 20 )
+totalFactors = PoolIntArray( 33, 65, 319, 30 )
+personalBG = ExtResource( 2 )
+actualFactors = PoolIntArray( 20, 50, 0, 30 )
