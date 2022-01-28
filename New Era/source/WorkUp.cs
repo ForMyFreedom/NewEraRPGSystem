@@ -24,21 +24,6 @@ public class WorkUp
     }
 
 
-    public static Array<Array<int>> GetBlankWorkUpArray(int len)
-    {
-        Array<Array<int>> workArray = new Array<Array<int>>();
-        for(int i = 0; i < len; i++)
-        {
-            Array<int> up = new Array<int>();
-            for(int j = 0; j < 3; j++)
-            {
-                up.Add(0);
-            }
-            workArray.Add(up);
-        }
-        return workArray;
-    }
-
 
     public int[] GetUpProgression()
     {

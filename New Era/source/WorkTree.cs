@@ -5,66 +5,67 @@ using System;
 public class WorkTree : Tree
 {
     [Export]
-    private PackedScene allWorksPackedScene;
-    [Export]
     private PackedScene workGuiPackedScene;
     [Export]
     private PackedScene skillGuiPackedScene;
 
 
-    private Array<MyEnum.Work> works;
-    private int[] worksLevel;
-    private int[,] skillsLevel;
-    private AllWorks allWorks;
+    private Array<Work> works;
+    
     private TreeItem[] itens = { };
-    private Array<Array<int>> worksUps;
 
     public override void _Ready()
     {
-        allWorks = allWorksPackedScene.Instance<AllWorks>();
-        GetTree().CurrentScene.Connect("ready", this, "_OnTreeReady");
         Connect("gui_input", this, "_OnGuiInput");
+        GetTree().CurrentScene.Connect("ready", this, "_OnTreeReady");
     }
 
 
     private void _OnTreeReady()
     {
         TreeItem root = CreateItem();
-        itens = new TreeItem[works.Count+skillsLevel.GetLength(0)]; //@?
+        itens = new TreeItem[GetTreeItensLength()];
+        int workIndex = 0; int itemIndex = 0;
 
-        int workIndex = 0;
-        int itemIndex = 0;
-
-        foreach(MyEnum.Work workEnum in works)
+        foreach(Work currentWork in works)
         {
-            Work currentWork = allWorks.GetWork(workEnum);
-            Skill[] skillList = currentWork.GetSkillList();
-
-            itens[itemIndex] = CreateItem(root);
-            itens[itemIndex].SetIcon(0, currentWork.GetBaseImage());
-            itens[itemIndex].SetText(0, currentWork.GetWorkName()+" "+worksLevel[workIndex]);
-            itens[itemIndex].SetMetadata(0, currentWork);
-
+            AddNewWorkItem(root, itemIndex, workIndex, currentWork);
             itemIndex++;
 
-            for (int j = 0; j < skillList.Length; j++)
-            {
-                if (j==0)
-                    itens[itemIndex] = CreateItem(itens[itemIndex-1]);
-
-                itens[itemIndex].SetText(j, skillList[j].GetSkillName()+" "+skillsLevel[workIndex,j]);
-                itens[itemIndex].SetMetadata(j, skillList[j]);
-
-                if (j == skillList.Length - 1)
-                    itemIndex++;
-            }
-
+            AddAllSkillItens(itemIndex, workIndex, currentWork);
             workIndex++;
+            itemIndex++;
         }
 
-        MakeBlankUnselected(new[] { root });
         MakeBlankUnselected(itens);
     }
+
+
+    private void AddNewWorkItem(TreeItem root, int itemIndex, int workIndex, Work currentWork)
+    {
+        itens[itemIndex] = CreateItem(root);
+        itens[itemIndex].SetIcon(0, currentWork.GetBaseImage());
+        itens[itemIndex].SetText(0, currentWork.GetWorkName() + " " + currentWork.GetLevel());
+        itens[itemIndex].SetMetadata(0, currentWork);
+    }
+
+
+    private void AddAllSkillItens(int itemIndex, int workIndex, Work currentWork)
+    {
+        Skill[] skillList = currentWork.GetSkillList();
+
+        for (int j = 0; j < skillList.Length; j++)
+        {
+            if (j == 0)
+                itens[itemIndex] = CreateItem(itens[itemIndex - 1]);
+
+            itens[itemIndex].SetText(j, skillList[j].GetSkillName() + " " + skillList[j].GetLevel());
+            itens[itemIndex].SetMetadata(j, skillList[j]);
+        }
+
+    }
+
+
 
 
     private void _OnGuiInput(InputEvent @event)
@@ -72,20 +73,18 @@ public class WorkTree : Tree
         if (! (@event is InputEventMouseButton)) return;
         var mouseEvent = (InputEventMouseButton) @event;
         if (mouseEvent.Doubleclick && this.GetSelected()!=null)
-        {
             OpenGui();
-        }
     }
 
 
     private void OpenGui()
     {
         TreeItem currentItem = GetSelected();
-        object skillWork = currentItem.GetMetadata(this.GetSelectedColumn());
-        if (skillWork is Work)
-            OpenWorkGui((Work) skillWork);
+        object itemData = currentItem.GetMetadata(this.GetSelectedColumn());
+        if (itemData is Work)
+            OpenWorkGui((Work) itemData);
         else
-            OpenSkillGui((Skill) skillWork);
+            OpenSkillGui((Skill) itemData);
     }
 
 
@@ -94,11 +93,11 @@ public class WorkTree : Tree
         int workIndex = GetIndexOfWork(work);
         WorkGUI workGui = workGuiPackedScene.Instance<WorkGUI>();
 
-        workGui.SetLevelValue(worksLevel[workIndex]);
+        //@@@@@@@@@
         workGui.SetWork(work);
-        workGui.SetWorksUps(worksUps[workIndex]);
         workGui.SetWorkIndex(workIndex);
         workGui.ConnectAllSignals(this);
+        //@@@@@@@@@
 
         GetTree().CurrentScene.AddChild(workGui);
         workGui.PopupIt();
@@ -108,13 +107,15 @@ public class WorkTree : Tree
     private void OpenSkillGui(Skill skill)
     {
         SkillGUI skillGui = skillGuiPackedScene.Instance<SkillGUI>();
+
+        //@@@@@@@@@
         int[] skillIndex = GetIndexOfSkill(skill);
         skillGui.SetSkill(skill);
-        skillGui.SetSkillLevel(skillsLevel[skillIndex[0],skillIndex[1]]);
-        skillGui.SetWork(allWorks.GetWork(works[skillIndex[0]]));
+        skillGui.SetWork(works[skillIndex[0]]);
         skillGui.SetSkillIndex(skillIndex[1]);
         skillGui.SetWorkIndex(skillIndex[0]);
         skillGui.ConnectAllSignals(this);
+        //@@@@@@@@@
 
         GetTree().CurrentScene.AddChild(skillGui);
         skillGui.PopupIt();
@@ -137,15 +138,17 @@ public class WorkTree : Tree
         }
     }
 
+    //@
     private void ActualizeWorkLabel(TreeItem item, int i, Work data)
     {
-        item.SetText(i, $"{data.GetWorkName()} {worksLevel[GetIndexOfWork(data)]}");
+        item.SetText(i, $"{data.GetWorkName()} {data.GetLevel()}");
     }
 
+    //@
     private void ActualizeSkillLabel(TreeItem item, int i, Skill data)
     {
-        item.SetText(i, $"{data.GetSkillName()} "+
-            $"{skillsLevel[GetSkillOwner(item, i),GetSkillOrder(item,i,data)]}");
+        int[] index = GetIndexOfSkill(data); //@
+        item.SetText(i, $"{data.GetSkillName()} {data.GetLevel()}");
     }
 
 
@@ -180,19 +183,14 @@ public class WorkTree : Tree
 
     private int GetIndexOfWork(Work w)
     {
-        return works.IndexOf(w.GetEnumWork());
-    }
-
-    private int GetIndexOfWork(MyEnum.Work ew)
-    {
-        return works.IndexOf(ew);
+        return works.IndexOf(w);
     }
 
     private int[] GetIndexOfSkill(Skill s)
     {
         for (int i = 0; i < works.Count; i++)
         {
-            Work actualWork = allWorks.GetWork(works[i]);
+            Work actualWork = works[i];
             Skill[] actualSkillList = actualWork.GetSkillList();
             for (int j = 0; j < actualSkillList.Length; j++)
             {
@@ -206,103 +204,92 @@ public class WorkTree : Tree
         return null;
     }
 
-    private int GetSkillOwner(TreeItem item, int i)
-    {
-        Work owner = (Work) item.GetParent().GetMetadata(i);
-        return GetIndexOfWork(owner);
-    }
 
-    private int GetSkillOrder(TreeItem item, int id, Skill skill)
-    {
-        Work owner = (Work)item.GetParent().GetMetadata(id);
-        Skill[] skillList = owner.GetSkillList();
-
-        for (int i=0 ; i<skillList.Length ; i++)
-        {
-            if(skillList[i].GetSkillName() == skill.GetSkillName())
-            {
-                return i;
-            }
-        }
-
-        return -1;
-    }
-
-
+    //@
     private void VerifySkillLeveling(int workIndex, int level)
     {
-        Work work = allWorks.GetWork(works[workIndex]);
-        Skill[] worksSkillList = work.GetSkillList();
-
+        Skill[] worksSkillList = works[workIndex].GetSkillList();
         for(int i=0; i < worksSkillList.Length; i++)
         {
             worksSkillList[i].PlayWayOfLevelCalcule(this, workIndex, i, level);
         }
-
     }
 
 
 
-
-    public void SetWorks(Array<MyEnum.Work> _works)
+    public void SetWorks(Array<Work> w)
     {
-        works = _works;
+        works = w;
     }
 
-    public Array<MyEnum.Work> GetWorks()
+    public Array<Work> GetWorks()
     {
         return works;
     }
-
-
+    
     public void SetWorksLevel(int[] level)
     {
-        worksLevel = level;
-        ActualizeLevelLabels();
+        for(int i=0; i < works.Count; i++)
+            SetAnWorkLevel(i, level[i]);
     }
 
     public void SetAnWorkLevel(int index, int level)
     {
-        worksLevel[index] = level;
+        works[index].SetLevel(level);
         VerifySkillLeveling(index, level);
         ActualizeLevelLabels();
     }
 
+
+    public void SetSkillLevel(int[,] level)
+    {
+        for (int i = 0; i < works.Count; i++)
+        {
+            for(int j = 0; j < works[i].GetSkillList().Length; j++)
+            {
+                SetAnSkillLevel(i, j, level[i,j]);
+            }
+        }
+    }
+
     public void SetAnSkillLevel(int workIndex, int skillIndex, int level)
     {
-        skillsLevel[workIndex, skillIndex] = level;
+        Work work = works[workIndex];
+        Skill skill = work.GetSkillList()[skillIndex];
+        skill.SetLevel(level);
         ActualizeLevelLabels();
     }
 
-    public int[] GetWorksLevel()
-    {
-        return worksLevel;
-    }
-
-    
-    public void SetSkillLevel(int[,] level)
-    {
-        skillsLevel = level;
-    }
-
-    public int[,] GetSkillLevel()
-    {
-        return skillsLevel;
-    }
-
-    public void AddSomeSkillLevel(int level, int skillIndex, MyEnum.Work workEnum)
-    {
-        int workIndex = GetIndexOfWork(workEnum);
-        skillsLevel[workIndex, skillIndex] += level;
-    }
 
     public Array<Array<int>> GetWorksUps()
     {
+        Array<Array<int>> worksUps = new Array<Array<int>>();
+        foreach(Work w in works)
+        {
+            worksUps.Add(w.GetWorksUp());
+        }
         return worksUps;
     }
 
     public void SetWorksUps(Array<Array<int>> value)
     {
-        worksUps = value;
+        for(int i=0; i < works.Count; i++)
+        {
+            works[i].SetWorksUp(value[i]);
+        }
+    }
+
+
+    private int GetTreeItensLength()
+    {
+        int c=0;
+        foreach(Work w in works)
+        {
+            c++;
+            foreach(Skill s in w.GetSkillList())
+                c++;
+        }
+
+        return c;
     }
 }

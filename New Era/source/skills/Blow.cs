@@ -7,9 +7,4 @@ public class Blow : Skill
     {
         throw new NotImplementedException();
     }
-
-    public override void _Ready()
-    {
-        
-    }
 }
