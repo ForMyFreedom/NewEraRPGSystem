@@ -14,7 +14,6 @@ public class RollBox : VBoxContainer
     [Export]
     private NodePath criticLabelPath;
 
-    private Random rgn;
     private int diceValue = 0;
     private int sumValue = 0;
     private int modValue = 0;
@@ -28,7 +27,6 @@ public class RollBox : VBoxContainer
 
     public override void _Ready()
     {
-        rgn = new Random();
         GetNode(rollButtonPath).Connect("button_up", this, "_OnRoll");
         GetNode(spinValuePath).Connect("value_changed", this, "_OnRollValueChanged");
         GetNode(modSpinPath).Connect("value_changed", this, "_OnModValueChanged");
@@ -37,8 +35,7 @@ public class RollBox : VBoxContainer
 
     private void _OnRoll()
     {
-        int result = GetRandomRoll(diceValue+modValue);
-        result = result + sumValue + modValue;
+        int result = RollCode.GetRandomAdvancedRoll(diceValue,sumValue,modValue);
         ChangeLabels(result);
         EmitSignal(nameof(roll_maded), result); 
     }
@@ -67,18 +64,6 @@ public class RollBox : VBoxContainer
         GetNode<Label>(criticLabelPath).Text = (result / 10).ToString() + " Criticos";
     }
 
-
-
-    private int GetRandomRoll(int value)
-    {
-        int sum = 0;
-        int effect = (value > 0) ? 1 : -1;
-
-        for (int i = 0; i < Math.Abs(value); i++)
-            sum += rgn.Next(1, 7) * effect;
-
-        return sum;
-    }
 
 
     private int GetValueFromSpin(NodePath path)
