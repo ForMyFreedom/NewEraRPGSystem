@@ -624,6 +624,16 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<NotificationArea>(notificationPath).SetNotifications(notifications);
     }
 
+    public int RequestSkillRoll(String skillName, int modValue=0)
+    {
+        return GetNode<WorkTree>(worksTreePath).RequestSkillRoll(skillName, modValue);
+    }
+
+    public int RequestWorkRoll(MyEnum.Work we, int modValue=0)
+    {
+        return GetNode<WorkTree>(worksTreePath).RequestWorkRoll(we, modValue);
+    }
+
 
 
     public void SetShadeColor(Color color) { GetNode<Control>(shadeColorRectPath).Modulate = color; }

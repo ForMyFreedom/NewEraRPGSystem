@@ -9,7 +9,6 @@ public class WorkTree : Tree
     [Export]
     private PackedScene skillGuiPackedScene;
 
-
     private Array<Work> works;
     
     private TreeItem[] itens = { };
@@ -64,6 +63,46 @@ public class WorkTree : Tree
         }
 
     }
+
+
+
+    public int RequestSkillRoll(String skillName, int modValue)
+    {
+        int rollValue = 0; int sumValue = 0;
+
+        foreach(Work work in works)
+        {
+            foreach(Skill skill in work.GetSkillList())
+            {
+                if(skill.GetSkillName() == skillName)
+                {
+                    rollValue = skill.GetLevel();
+                    sumValue = GetAtributeLevel(work.GetRelationedAtribute());
+                }
+            }
+        }
+
+        return RollCode.GetRandomAdvancedRoll(rollValue,sumValue,modValue);
+    }
+
+
+    public int RequestWorkRoll(MyEnum.Work we, int modValue)
+    {
+        int rollValue = 0; int sumValue = 0;
+
+        foreach (Work work in works)
+        {
+            if (work.GetEnumWork() == we)
+            {
+                rollValue = work.GetLevel();
+                sumValue = GetAtributeLevel(work.GetRelationedAtribute());
+            }
+        }
+
+        return RollCode.GetRandomAdvancedRoll(rollValue, sumValue, modValue);
+    }
+
+
 
 
 
@@ -291,5 +330,13 @@ public class WorkTree : Tree
         }
 
         return c;
+    }
+
+
+    private int GetAtributeLevel(MyEnum.Atribute atributeEnum)
+    {
+        MainInterface main = (MainInterface)GetTree().CurrentScene;
+        Atributo atribute = main.GetAtributeNodeByEnum(atributeEnum);
+        return atribute.GetAtributeValue();
     }
 }
