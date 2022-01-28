@@ -4,15 +4,19 @@ using System;
 public abstract class Skill : Resource
 {
     [Export]
-    private string skillName;
+    protected string skillName;
     [Export]
-    private CSharpScript wayOfLevelCalculeScript;
+    protected Texture effectImage; 
     [Export]
-    private String skillDescription;
+    protected CSharpScript wayOfLevelCalculeScript;
     [Export]
-    private int level;
+    protected String skillDescription;
+    [Export(PropertyHint.MultilineText)]
+    protected String mechanicDescription;
+    [Export]
+    protected int level;
 
-    public abstract void DoMechanic();
+    public abstract void DoMechanic(MainInterface main);
     private WayOfCalculeSkill wayOfLevelCalcule;
 
     public String GetSkillName()
@@ -48,8 +52,18 @@ public abstract class Skill : Resource
         return skillDescription;
     }
 
-    public void SetSkillDescription(String str)
+    public void SetSkillDescription(String description)
     {
-        skillDescription = str;
+        skillDescription = description;
+    }
+
+    public String GetMechanicDescription()
+    {
+        return mechanicDescription;
+    }
+
+    public void SetMechanicDescription(String description)
+    {
+        mechanicDescription = description;
     }
 }
