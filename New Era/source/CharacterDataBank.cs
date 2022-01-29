@@ -93,7 +93,7 @@ public interface CharacterDataBank
 
     Godot.Collections.Array GetNotifications();
     void SetNotifications(Godot.Collections.Array notifications);
-  
+
     int[] GetTrainingAtributes();
     void SetTrainingAtributes(int[] value);
 
@@ -102,3 +102,4 @@ public interface CharacterDataBank
 
     String GetTrivia();
     void SetTrivia(String text);
+}
