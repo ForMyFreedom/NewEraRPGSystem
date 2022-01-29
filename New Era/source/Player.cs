@@ -10,6 +10,8 @@ public class Player : Node, CharacterDataBank
     private String characterName;
     [Export]
     private String sheetURL;
+    [Export(PropertyHint.MultilineText)]
+    private String trivia;
 
     [Export]
     private Texture personalBG;
@@ -17,6 +19,9 @@ public class Player : Node, CharacterDataBank
     private Color firstColor;
     [Export]
     private Color secondColor;
+
+    [Export]
+    private int inspiration;
     
     [Export]
     private int[] totalFactors;
@@ -28,6 +33,8 @@ public class Player : Node, CharacterDataBank
     private int[] totalAtributes;
     [Export]
     private int[] modAtributes;
+    [Export]
+    private int[] trainingAtributes;
 
     [Export]
     private Array<Work> works;
@@ -388,5 +395,35 @@ public class Player : Node, CharacterDataBank
     public void SetNotifications(Godot.Collections.Array notifications)
     {
         notificationList = notifications;
+    }
+
+    public int[] GetTrainingAtributes()
+    {
+        return trainingAtributes;
+    }
+
+    public void SetTrainingAtributes(int[] value)
+    {
+        trainingAtributes = value;
+    }
+
+    public int GetInspiration()
+    {
+        return inspiration;
+    }
+
+    public void SetInspiration(int value)
+    {
+        inspiration = value;
+    }
+
+    public string GetTrivia()
+    {
+        return trivia;
+    }
+
+    public void SetTrivia(string text)
+    {
+        trivia = text;
     }
 }

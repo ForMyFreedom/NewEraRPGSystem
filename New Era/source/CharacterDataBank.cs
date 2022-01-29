@@ -93,4 +93,12 @@ public interface CharacterDataBank
 
     Godot.Collections.Array GetNotifications();
     void SetNotifications(Godot.Collections.Array notifications);
-}
+  
+    int[] GetTrainingAtributes();
+    void SetTrainingAtributes(int[] value);
+
+    int GetInspiration();
+    void SetInspiration(int value);
+
+    String GetTrivia();
+    void SetTrivia(String text);
