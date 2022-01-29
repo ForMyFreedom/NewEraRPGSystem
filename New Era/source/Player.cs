@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using System;
 
 public class Player : Node, CharacterDataBank
@@ -34,6 +35,22 @@ public class Player : Node, CharacterDataBank
     private int[] modAtributes;
     [Export]
     private int[] trainingAtributes;
+
+    [Export]
+    private Array<Work> works;
+    [Export]
+    private Godot.Collections.Array notificationList;
+
+    private static int maxSkill = 3; //@
+
+
+    public override void _Ready()
+    {
+        for (int i=0; i<GetQuantOfWorksUp().Count; i++)
+        {
+            works[i].SetWorksUp(WorkUp.CalculeWorkUps(works[i].GetLevel()));
+        }
+    }
 
 
     public String GetPlayerName()
@@ -342,6 +359,43 @@ public class Player : Node, CharacterDataBank
     }
 
 
+    public Array<Work> GetWorks()
+    {
+        return works;
+    }
+
+    public void SetWorks(Array<Work> _works)
+    {
+        works = _works;
+    }
+
+    public Array<Array<int>> GetQuantOfWorksUp()
+    {
+        Array<Array<int>> worksUps = new Array<Array<int>>();
+        foreach(Work work in works)
+        {
+            worksUps.Add(work.GetWorksUp());
+        }
+        return worksUps;
+    }
+
+    public void SetQuantOfWorksUp(Array<Array<int>> ups)
+    {
+        for(int i = 0; i < works.Count; i++)
+        {
+            works[i].SetWorksUp(ups[i]);
+        }
+    }
+
+    public Godot.Collections.Array GetNotifications()
+    {
+        return notificationList;
+    }
+
+    public void SetNotifications(Godot.Collections.Array notifications)
+    {
+        notificationList = notifications;
+    }
 
     public int[] GetTrainingAtributes()
     {

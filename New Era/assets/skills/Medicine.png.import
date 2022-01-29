@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/honey.jpg-de86922700001e784117f32c370cfe72.stex"
+path="res://.import/Medicine.png-fd2a11d58b2879978f736bc22309199b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/honey.jpg"
-dest_files=[ "res://.import/honey.jpg-de86922700001e784117f32c370cfe72.stex" ]
+source_file="res://assets/skills/Medicine.png"
+dest_files=[ "res://.import/Medicine.png-fd2a11d58b2879978f736bc22309199b.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TEST.png-b329f51f438487fcf3283c416d62bac3.stex"
+path="res://.import/mallory_wallpaper.jpg-0a9866f812c8e59852c38f76c3358c83.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TEST.png"
-dest_files=[ "res://.import/TEST.png-b329f51f438487fcf3283c416d62bac3.stex" ]
+source_file="res://assets/wallpapers/mallory_wallpaper.jpg"
+dest_files=[ "res://.import/mallory_wallpaper.jpg-0a9866f812c8e59852c38f76c3358c83.stex" ]
 
 [params]
 

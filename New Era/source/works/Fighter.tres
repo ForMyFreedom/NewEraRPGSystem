@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://source/works/Fighter.cs" type="Script" id=1]
+[ext_resource path="res://source/skills/Blow.tres" type="Resource" id=2]
+[ext_resource path="res://assets/skills/fighter.png" type="Texture" id=3]
+
+[resource]
+script = ExtResource( 1 )
+workName = "Lutador"
+baseImage = ExtResource( 3 )
+pathDescription = "- Lutador Regular +I: +1 Pancada
+- Lutador Brigão +I: +3 Dano ao usar Pancada.
+- Lutador Artista Marcial +I: +6 Teste Ataque ao usar Pancada"
+skills = [ ExtResource( 2 ) ]
+description = "Especialista no combate desprovido de armas"
+enumWork = 3
+relationedAtribute = 0
+level = 0
+worksUps = [ 0, 0, 0 ]

@@ -1,18 +1,22 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://source/Player.cs" type="Script" id=1]
-[ext_resource path="res://assets/TEST.png" type="Texture" id=2]
+[ext_resource path="res://assets/wallpapers/melissa_walpaper.jpg" type="Texture" id=2]
 
 [node name="Melissa" type="Node"]
 script = ExtResource( 1 )
+skillsLevel = [  ]
+firstColor = Color( 0.917647, 1, 0, 1 )
+worksLevel = PoolIntArray(  )
+totalAtributes = PoolIntArray( 1, 100, 0, 3, 25 )
 playerName = "João"
 characterName = "Melissa"
-totalAtributes = PoolIntArray( 1, 29, 0, 3, 25 )
-modFactors = PoolIntArray( -3, 2, 7, 10 )
-personalBG = ExtResource( 2 )
-firstColor = Color( 0.917647, 1, 0, 1 )
-totalFactors = PoolIntArray( 19, 51, 104, 22 )
-secondColor = Color( 0, 0, 0, 1 )
+works = [  ]
+worksUps = [  ]
+totalFactors = PoolIntArray( 19, 51, 317, 22 )
 sheetURL = "https://1drv.ms/w/s!Ar3mdnwNQxPdgQeB0VkGkUjz8uaA?e=3a0MME"
-modAtributes = PoolIntArray( 0, 2, 2, 0, 0 )
+personalBG = ExtResource( 2 )
 actualFactors = PoolIntArray( 14, 56, 104, 22 )
+modAtributes = PoolIntArray( -2, 2, 2, 0, 0 )
+secondColor = Color( 0, 0, 0, 1 )
+modFactors = PoolIntArray( -3, 2, 7, 10 )

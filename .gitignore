@@ -24,3 +24,6 @@ icons.pngs/
 fonts/
 file.samples/
 icon.png
+
+
+*.cfg

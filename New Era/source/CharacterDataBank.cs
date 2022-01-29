@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using System;
 
 public interface CharacterDataBank
@@ -87,6 +88,12 @@ public interface CharacterDataBank
     int GetModCharisma();
     void SetModCharisma(int value);
 
+    Array<Work> GetWorks();
+    void SetWorks(Array<Work> _works);
+
+    Godot.Collections.Array GetNotifications();
+    void SetNotifications(Godot.Collections.Array notifications);
+  
     int[] GetTrainingAtributes();
     void SetTrainingAtributes(int[] value);
 
@@ -95,4 +102,3 @@ public interface CharacterDataBank
 
     String GetTrivia();
     void SetTrivia(String text);
-}
