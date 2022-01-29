@@ -634,6 +634,11 @@ public class MainInterface : Control, CharacterDataBank
         return GetNode<WorkTree>(worksTreePath).RequestWorkRoll(we, modValue);
     }
 
+    public int RequestAtributeRoll(MyEnum.Atribute ae)
+    {
+        return GetAtributeNodeByEnum(ae).RequestRoll();
+    }
+
 
 
     public void SetShadeColor(Color color) { GetNode<Control>(shadeColorRectPath).Modulate = color; }

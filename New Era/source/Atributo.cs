@@ -35,6 +35,12 @@ public class Atributo : Control
     }
 
 
+    public int RequestRoll()
+    {
+        return GetNode<RollBox>(rollBoxPath).GetRandomRoll();
+    }
+
+
 
 
     public int GetAtributeValue()

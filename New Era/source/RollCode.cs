@@ -3,6 +3,8 @@ using System;
 
 public static class RollCode
 {
+    private static Random rgn = new Random();
+
     public static int GetRandomBasicRoll(int value)
     {
         return RollSomeDices(value);
@@ -23,7 +25,6 @@ public static class RollCode
 
     private static int RollSomeDices(int quant, int effect=1)
     {
-        Random rgn = new Random();
         int result = 0;
 
         for (int i = 0; i < Math.Abs(quant); i++)

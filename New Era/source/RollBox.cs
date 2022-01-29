@@ -35,7 +35,7 @@ public class RollBox : VBoxContainer
 
     private void _OnRoll()
     {
-        int result = RollCode.GetRandomAdvancedRoll(diceValue,sumValue,modValue);
+        int result = GetRandomRoll();
         ChangeLabels(result);
         EmitSignal(nameof(roll_maded), result); 
     }
@@ -56,6 +56,15 @@ public class RollBox : VBoxContainer
     {
         sumValue = (int) value;
     }
+
+
+
+    public int GetRandomRoll()
+    {
+        return RollCode.GetRandomAdvancedRoll(diceValue, sumValue, modValue);
+    }
+
+
 
 
     private void ChangeLabels(int result)
