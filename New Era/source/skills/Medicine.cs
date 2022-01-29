@@ -1,17 +1,27 @@
 using Godot;
+using Godot.Collections;
 using System;
 
 public class Medicine : Skill
 {
     int rollResult;
 
-    public override void DoMechanic(MainInterface main)
+    public override Array<string> GetTextOfMechanicButtons()
+    {
+        return new Array<string>() {"Medicina de Cura", "Medicina de Tratamento"};
+    }
+
+
+
+    public override void DoMechanic(MainInterface main, int actionIndex=0)
     {
         rollResult = main.RequestSkillRoll(skillName);
-
         string message ="";
-        message += $"Caso queire tratar ferimentos, voce cura {GetRepairLife()} Vida do alvo\n";
-        message += $"Caso queire curar uma doenca, voce ganha {GetCounterDisease()} Contra-Peconha {GetDiseaseReduction()}";
+        
+        if(actionIndex==0)
+            message += $"Voce cura {GetRepairLife()} Vida do alvo\n";
+        else
+            message += $"Voce aplica {GetCounterDisease()} Contra-Peconha {GetDiseaseReduction()}";
 
         main.CreateNewNotification(message, effectImage);
     }
