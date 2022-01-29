@@ -8,7 +8,9 @@ public class SkillGUI : BaseGUI
     [Export]
     private NodePath mechanicDescriLabelPath;
     [Export]
-    private NodePath activateMechanicButtonPath;
+    private NodePath mechanicButtonArrayPath;
+    [Export]
+    private PackedScene mechanicButtonScene;
 
     
     private Skill skill;
@@ -26,14 +28,9 @@ public class SkillGUI : BaseGUI
         GetNode<Label>(descriptionLabelPath).Text = skill.GetSkillDescription();
         GetNode<Label>(mechanicNameLabelPath).Text += skill.GetSkillName();
         GetNode<TextEdit>(mechanicDescriLabelPath).Text = skill.GetMechanicDescription();
-        GetNode(activateMechanicButtonPath).Connect("button_up", this, "_OnMechanicButtonUp");
+        CreateAllMechanicButtons();
+        ConnectAllMechanicButtons();
     }
-
-    private void _OnMechanicButtonUp()
-    {
-        skill.DoMechanic((MainInterface) GetTree().CurrentScene);
-    }
-
 
 
     protected override void _OnRollMaded(int result)
@@ -56,8 +53,32 @@ public class SkillGUI : BaseGUI
     {
         Connect(nameof(value_changed), father, nameof(father._OnSkillValueChanged));
     }
+    
+
+    private void CreateAllMechanicButtons()
+    {
+        foreach(String message in skill.GetTextOfMechanicButtons())
+        {
+            Button newButton = mechanicButtonScene.Instance<Button>();
+            newButton.Text = message;
+            GetNode(mechanicButtonArrayPath).AddChild(newButton);
+        }
+    }
+
+    private void ConnectAllMechanicButtons()
+    {
+        foreach(Control button in GetNode(mechanicButtonArrayPath).GetChildren())
+        {
+            button.Connect("do_mechanic", this, "_OnDoMechanic");
+        }
+    }
 
 
+    
+    private void _OnDoMechanic(int actionIndex)
+    {
+        skill.DoMechanic((MainInterface)GetTree().CurrentScene, actionIndex);
+    }
 
 
 

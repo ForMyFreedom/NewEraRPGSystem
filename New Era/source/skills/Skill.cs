@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using System;
 
 public abstract class Skill : Resource
@@ -16,8 +17,17 @@ public abstract class Skill : Resource
     [Export]
     protected int level;
 
-    public abstract void DoMechanic(MainInterface main);
     private WayOfCalculeSkill wayOfLevelCalcule;
+
+
+    public virtual Array<string> GetTextOfMechanicButtons()
+    {
+        return new Array<string>() {"Ativar Mecanica"};
+    }
+
+    public abstract void DoMechanic(MainInterface main, int actionIndex = 0);
+
+
 
     public String GetSkillName()
     {
