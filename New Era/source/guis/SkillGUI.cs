@@ -3,9 +3,18 @@ using System;
 
 public class SkillGUI : BaseGUI
 {
+    [Export]
+    private NodePath mechanicNameLabelPath;
+    [Export]
+    private NodePath mechanicDescriLabelPath;
+    [Export]
+    private NodePath activateMechanicButtonPath;
+
+    
     private Skill skill;
     private int skillIndex;
     private int workIndex;
+
 
     [Signal]
     public delegate void value_changed(int workindex, int skillIndex, int value);
@@ -15,7 +24,17 @@ public class SkillGUI : BaseGUI
         base._Ready();
         WindowTitle = skill.GetSkillName();
         GetNode<Label>(descriptionLabelPath).Text = skill.GetSkillDescription();
+        GetNode<Label>(mechanicNameLabelPath).Text += skill.GetSkillName();
+        GetNode<TextEdit>(mechanicDescriLabelPath).Text = skill.GetMechanicDescription();
+        GetNode(activateMechanicButtonPath).Connect("button_up", this, "_OnMechanicButtonUp");
     }
+
+    private void _OnMechanicButtonUp()
+    {
+        skill.DoMechanic((MainInterface) GetTree().CurrentScene);
+    }
+
+
 
     protected override void _OnRollMaded(int result)
     {
