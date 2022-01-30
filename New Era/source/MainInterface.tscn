@@ -1,7 +1,7 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
-[ext_resource path="res://source/players/Mallory.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/players/Azazel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/VSStyle.tres" type="StyleBox" id=3]
 [ext_resource path="res://source/Atributo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/Factor.tscn" type="PackedScene" id=5]
@@ -24,6 +24,7 @@
 [ext_resource path="res://source/audio/MultipleStreamPlayer.cs" type="Script" id=22]
 [ext_resource path="res://source/general_buttons/TriviaButton.tscn" type="PackedScene" id=23]
 [ext_resource path="res://assets/updown.png" type="Texture" id=24]
+[ext_resource path="res://source/general_buttons/CustomRollButton.tscn" type="PackedScene" id=25]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -31,13 +32,12 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=2]
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "del_notification"
+[sub_resource type="Animation" id=3]
 tracks/0/type = "method"
 tracks/0/path = NodePath("NotificationsSound")
 tracks/0/interp = 1
@@ -53,7 +53,7 @@ tracks/0/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:margin_left")
@@ -80,7 +80,7 @@ tracks/1/keys = {
 "values": [ -480, -160 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("BellNode/BellTexture:rect_rotation")
@@ -109,7 +109,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:margin_left")
@@ -136,7 +136,7 @@ tracks/1/keys = {
 "values": [ -160, -480 ]
 }
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 0, 1 )
 border_color = Color( 1, 0.94902, 0, 1 )
 corner_radius_top_left = 20
@@ -145,8 +145,7 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 corner_detail = 20
 
-[sub_resource type="Animation" id=7]
-resource_name = "pulse"
+[sub_resource type="Animation" id=8]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -172,8 +171,8 @@ __meta__ = {
 }
 playerScene = ExtResource( 2 )
 playerNamePath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/PlayerLabel")
+customRollButtonPath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/CustomRollButton")
 characterNamePath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/CharacterLabel")
-sheetOpenButtonPath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/OpenSheetButton")
 bgTexturePath = NodePath("BGRect")
 shadeColorRectPath = NodePath("ShadeBGColorRect")
 upFirstColorRectPath = NodePath("VBoxContainer/Info/PrincipalColorRect")
@@ -331,13 +330,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OpenSheetButton" type="Button" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
-margin_left = 972.0
-margin_right = 1052.0
+[node name="CustomRollButton" parent="VBoxContainer/Info/MarginContainer/HBoxContainer" instance=ExtResource( 25 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 962.0
+margin_top = 0.0
+margin_right = 1062.0
 margin_bottom = 41.0
-rect_min_size = Vector2( 80, 0 )
-size_flags_horizontal = 6
-text = "Abrir Ficha"
 
 [node name="CombatFactors" type="Control" parent="VBoxContainer"]
 margin_top = 45.0
@@ -954,7 +955,7 @@ margin_right = 194.0
 margin_bottom = 42.0
 rect_min_size = Vector2( 100, 0 )
 size_flags_horizontal = 6
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 2 )
 text = "Equipamentos"
 
 [node name="TrainingButton" type="Button" parent="VBoxContainer/General/MarginContainer/HBoxContainer"]
@@ -1009,10 +1010,10 @@ audioStreamList = [ ExtResource( 20 ), ExtResource( 21 ) ]
 audioNameList = PoolStringArray( "new_not", "del_not" )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NotificationArea"]
-anims/del_notification = SubResource( 2 )
-anims/dishow = SubResource( 3 )
-anims/new_notification = SubResource( 4 )
-anims/show = SubResource( 5 )
+anims/del_notification = SubResource( 3 )
+anims/dishow = SubResource( 4 )
+anims/new_notification = SubResource( 5 )
+anims/show = SubResource( 6 )
 
 [node name="ColorRect" type="ColorRect" parent="NotificationArea"]
 anchor_right = 1.0
@@ -1064,7 +1065,7 @@ __meta__ = {
 margin_right = 16.0
 margin_bottom = 16.0
 rect_pivot_offset = Vector2( 8, 8 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
 custom_colors/font_color = Color( 1, 0.94902, 0, 1 )
 text = "0"
 align = 1
@@ -1075,7 +1076,7 @@ __meta__ = {
 
 [node name="PulseAnimationPlayer" type="AnimationPlayer" parent="NotificationArea/BellNode"]
 autoplay = "pulse"
-anims/pulse = SubResource( 7 )
+anims/pulse = SubResource( 8 )
 
 [editable path="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life"]
 [editable path="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge"]

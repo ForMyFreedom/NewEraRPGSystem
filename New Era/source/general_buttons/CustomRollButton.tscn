@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://source/general_buttons/GeneralButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/pop_up_general_interface/CustomRollPopup.tscn" type="PackedScene" id=2]
+
+[node name="CustomRollButton" instance=ExtResource( 1 )]
+text = "Rolagem"
+packedPopup = ExtResource( 2 )

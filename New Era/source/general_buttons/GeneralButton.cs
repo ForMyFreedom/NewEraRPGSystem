@@ -8,6 +8,7 @@ public abstract class GeneralButton : Button
 
     protected MyPopup myPopup;
 
+
     public void CreatePopup(Control main)
     {
         myPopup = packedPopup.Instance<MyPopup>();

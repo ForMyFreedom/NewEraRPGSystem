@@ -18,6 +18,6 @@ public class TriviaButton : GeneralButton
 
     public override void SetData(object[] data)
     {
-        text = (String) data[0];
+        text = (String)data[0];
     }
 }

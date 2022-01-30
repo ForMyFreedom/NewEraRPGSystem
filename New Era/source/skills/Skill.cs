@@ -20,10 +20,7 @@ public abstract class Skill : Resource
     private WayOfCalculeSkill wayOfLevelCalcule;
 
 
-    public virtual Array<string> GetTextOfMechanicButtons()
-    {
-        return new Array<string>() {"Ativar Mecanica"};
-    }
+    public abstract Array<string> GetTextOfMechanicButtons();
 
     public abstract void DoMechanic(MainInterface main, int actionIndex = 0);
 

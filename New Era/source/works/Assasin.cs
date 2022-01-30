@@ -15,6 +15,10 @@ public class Assasin : Work
 
     public override void DoThirdUpStep(MainInterface gui) //@
     {
-        GD.Print("thrid");
+        gui.CreateNewNotification("Voce alcansou uma maestria de Assasino! Escolha entre: \n"+
+            "- Assasino Regular +I: +4 Letalidade \n"+
+            "- Assasino Ninja + I: +8 Letalidade ao atacar furtivamente \n"+
+            "- Assasino Chacina + I: +8 Letalidade ao atacar em um combate \n", 
+       baseImage);
     }
 }

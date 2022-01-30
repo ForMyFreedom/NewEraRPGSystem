@@ -10,9 +10,6 @@ public interface CharacterDataBank
     String GetCharacterName();
     void SetCharacterName(String name);
 
-    String GetSheetURL();
-    void SetSheetURL(String URL);
-
     Texture GetBGTexture();
     void SetBGTexture(Texture BG);
 

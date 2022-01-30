@@ -10,9 +10,9 @@ public class MainInterface : Control, CharacterDataBank
     [Export]
     private NodePath playerNamePath;
     [Export]
-    private NodePath characterNamePath;
+    private NodePath customRollButtonPath;
     [Export]
-    private NodePath sheetOpenButtonPath;
+    private NodePath characterNamePath;
     [Export]
     private NodePath bgTexturePath;
     [Export]
@@ -73,7 +73,7 @@ public class MainInterface : Control, CharacterDataBank
 
     private void ConnectAllButtons()
     {
-        GetNode(sheetOpenButtonPath).Connect("button_up", this, "_OnOpenSheet");
+        GetNode(customRollButtonPath).Connect("button_up", this, "_OnOpenRoll");
         GetNode(trainingButtonPath).Connect("button_up", this, "_OnTraining");
         GetNode(triviaButtonPath).Connect("button_up", this, "_OnTrivia");
         GetNode(equipamentsButtonPath).Connect("button_up", this, "_OnEquipaments");
@@ -137,9 +137,9 @@ public class MainInterface : Control, CharacterDataBank
 
 
 
-    public void _OnOpenSheet()
+    public void _OnOpenRoll()
     {
-        OS.ShellOpen(player.GetSheetURL());
+        GetNode<GeneralButton>(customRollButtonPath).CreatePopup(this);
     }
 
     public void _OnTrivia()
@@ -195,10 +195,6 @@ public class MainInterface : Control, CharacterDataBank
 
     public Texture GetBGTexture() { return GetNode<TextureRect>(bgTexturePath).Texture; }
     public void SetBGTexture(Texture text) { GetNode<TextureRect>(bgTexturePath).Texture = text; }
-
-    public String GetSheetURL() { return player.GetSheetURL(); }
-    public void SetSheetURL(String URL) { player.SetSheetURL(URL); }
-
 
     public Color GetFirstColor() { return colors[0]; }
 

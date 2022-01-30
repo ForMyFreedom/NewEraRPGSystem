@@ -8,8 +8,6 @@ public class Player : Node, CharacterDataBank
     private String playerName;
     [Export]
     private String characterName;
-    [Export]
-    private String sheetURL;
     [Export(PropertyHint.MultilineText)]
     private String trivia;
 
@@ -72,17 +70,6 @@ public class Player : Node, CharacterDataBank
     public void SetCharacterName(String name)
     {
         characterName = name;
-    }
-
-
-    public String GetSheetURL()
-    {
-        return sheetURL;
-    }
-
-    public void SetSheetURL(String URL)
-    {
-        sheetURL = URL;
     }
 
 
