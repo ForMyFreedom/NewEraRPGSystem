@@ -22,6 +22,11 @@ public class Factor : Control
     private NodePath applySpinPath;
     [Export]
     private NodePath applyButtonPath;
+    [Export]
+    private NodePath modApplyControlPath;
+
+    [Export]
+    private bool usesModApply;
 
     [Signal]
     public delegate void total_factor_changed(int value);
@@ -37,6 +42,11 @@ public class Factor : Control
         GetNode(applyButtonPath).Connect("button_up", this, "_OnApplyButtonUp");
         GetNode<SpinBox>(applySpinPath).Value = defaultApplyValue;
         GetTree().CurrentScene.Connect("ready", this, "_OnTreeReady");
+
+        if (!usesModApply)
+        {
+            GetNode<Control>(modApplyControlPath).Visible = false;
+        }
     }
 
 
@@ -78,6 +88,7 @@ public class Factor : Control
     private void _OnApplyButtonUp()
     {
         int applyValue = (int) GetNode<SpinBox>(applySpinPath).Value;
+        applyValue += (int)GetNode(modApplyControlPath).GetChild<SpinBox>(1).Value;
         GetNode<SpinBox>(actualSpinPath).Value += applyValue;
 
         EmitSpinSignal(actualSpinPath, nameof(actual_factor_changed));
