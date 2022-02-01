@@ -13,12 +13,9 @@ public class Assasin : Work
         gui.CreateNewNotification(GetCreatePowerMessage(), baseImage);
     }
 
-    public override void DoThirdUpStep(MainInterface gui) //@
+    public override void DoThirdUpStep(MainInterface gui)
     {
-        gui.CreateNewNotification("Voce alcansou uma maestria de Assasino! Escolha entre: \n"+
-            "- Assasino Regular +I: +4 Letalidade \n"+
-            "- Assasino Ninja + I: +8 Letalidade ao atacar furtivamente \n"+
-            "- Assasino Chacina + I: +8 Letalidade ao atacar em um combate \n", 
-       baseImage);
+        gui.CreateNewNotification($"Voce alcansou uma maestria de {workName}! "+
+            "Escolha entre: \n"+pathDescription, baseImage);
     }
 }

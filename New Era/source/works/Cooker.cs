@@ -16,6 +16,7 @@ public class Cooker : Work
 
     public override void DoThirdUpStep(MainInterface gui) //@
     {
-        GD.Print("thrid");
+        gui.CreateNewNotification($"Voce alcansou uma maestria de {workName}! " +
+            "Escolha entre: \n" + pathDescription, baseImage);
     }
 }

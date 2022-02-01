@@ -14,8 +14,9 @@ public class Medic : Work
         gui.CreateNewNotification(GetCreatePowerMessage(), baseImage);
     }
 
-    public override void DoThirdUpStep(MainInterface gui) //@
+    public override void DoThirdUpStep(MainInterface gui)
     {
-        GD.Print("thrid");
+        gui.CreateNewNotification($"Voce alcansou uma maestria de {workName}! " +
+            "Escolha entre: \n" + pathDescription, baseImage);
     }
 }
