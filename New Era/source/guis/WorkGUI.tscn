@@ -51,6 +51,7 @@ rollBoxPath = NodePath("MarginContainer/VBoxContainer/General/RollBox")
 workTexture = NodePath("MarginContainer/VBoxContainer/General/HBoxContainer2/WorkTexture")
 journeyLabel = NodePath("MarginContainer/VBoxContainer/Journey/Label")
 atributeOptionPath = NodePath("MarginContainer/VBoxContainer/General/HBoxContainer2/HBoxContainer/AtributeOptionButton")
+journeyControlPath = NodePath("MarginContainer/VBoxContainer/Journey")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -108,8 +109,8 @@ script = ExtResource( 10 )
 
 [node name="DescriptionLabel" type="Label" parent="MarginContainer/VBoxContainer/General/HBoxContainer2"]
 margin_left = 184.0
-margin_right = 309.0
-margin_bottom = 16.0
+margin_right = 291.0
+margin_bottom = 15.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.5
@@ -121,8 +122,8 @@ __meta__ = {
 }
 
 [node name="WorkTexture" type="TextureRect" parent="MarginContainer/VBoxContainer/General/HBoxContainer2"]
-margin_left = 313.0
-margin_right = 363.0
+margin_left = 295.0
+margin_right = 345.0
 margin_bottom = 50.0
 size_flags_horizontal = 0
 size_flags_vertical = 0

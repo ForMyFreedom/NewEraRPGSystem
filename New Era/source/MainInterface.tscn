@@ -366,80 +366,68 @@ __meta__ = {
 [node name="Life" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer" instance=ExtResource( 5 )]
 margin_right = 287.0
 margin_bottom = 209.0
+usesModApply = true
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer" index="0"]
-margin_top = 35.0
+margin_top = 33.0
 margin_right = 287.0
-margin_bottom = 67.0
+margin_bottom = 65.0
 text = "Vida"
 
 [node name="HBoxContainer1" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer" index="1"]
-margin_top = 71.0
+margin_top = 69.0
 margin_right = 287.0
-margin_bottom = 138.0
+margin_bottom = 134.0
 
 [node name="Control1" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer1" index="0"]
 margin_right = 141.0
-margin_bottom = 67.0
+margin_bottom = 65.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer1/Control1/VBoxContainer" index="0"]
-margin_top = 16.0
+margin_top = 15.0
 margin_right = 141.0
-margin_bottom = 31.0
+margin_bottom = 30.0
 
 [node name="TotalSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer1/Control1/VBoxContainer" index="1"]
 margin_left = 34.0
-margin_top = 35.0
+margin_top = 34.0
 margin_right = 107.0
-margin_bottom = 59.0
+margin_bottom = 58.0
 
 [node name="Control2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer1" index="1"]
 margin_left = 145.0
 margin_right = 287.0
-margin_bottom = 67.0
+margin_bottom = 65.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer1/Control2/VBoxContainer" index="0"]
-margin_top = 16.0
+margin_top = 15.0
 margin_right = 142.0
-margin_bottom = 31.0
+margin_bottom = 30.0
 
 [node name="ActualSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer1/Control2/VBoxContainer" index="1"]
 margin_left = 34.0
-margin_top = 35.0
+margin_top = 34.0
 margin_right = 107.0
-margin_bottom = 59.0
+margin_bottom = 58.0
 
 [node name="HBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer" index="2"]
-margin_top = 142.0
+margin_top = 138.0
 margin_right = 287.0
 margin_bottom = 209.0
 
 [node name="Control" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2" index="0"]
-margin_right = 141.0
+margin_right = 153.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
-margin_right = 141.0
-margin_bottom = 15.0
+margin_right = 153.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
-margin_left = 34.0
-margin_top = 19.0
-margin_right = 107.0
-margin_bottom = 43.0
+margin_left = 40.0
+margin_right = 113.0
 
-[node name="Control2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2" index="1"]
-margin_left = 145.0
+[node name="VBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2" index="1"]
+margin_left = 157.0
 margin_right = 287.0
-
-[node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="0"]
-margin_right = 142.0
-margin_bottom = 15.0
-
-[node name="HBoxContainer" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="1"]
-margin_left = 17.0
-margin_top = 19.0
-margin_right = 124.0
-margin_bottom = 43.0
 
 [node name="VS1" type="VSeparator" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer"]
 margin_left = 291.0
@@ -453,78 +441,65 @@ margin_right = 586.0
 margin_bottom = 209.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer" index="0"]
-margin_top = 35.0
+margin_top = 33.0
 margin_right = 287.0
-margin_bottom = 67.0
+margin_bottom = 65.0
 text = "Surto de Ação"
 
 [node name="HBoxContainer1" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer" index="1"]
-margin_top = 71.0
+margin_top = 69.0
 margin_right = 287.0
-margin_bottom = 138.0
+margin_bottom = 134.0
 
 [node name="Control1" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer1" index="0"]
 margin_right = 141.0
-margin_bottom = 67.0
+margin_bottom = 65.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer1/Control1/VBoxContainer" index="0"]
-margin_top = 16.0
+margin_top = 15.0
 margin_right = 141.0
-margin_bottom = 31.0
+margin_bottom = 30.0
 
 [node name="TotalSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer1/Control1/VBoxContainer" index="1"]
 margin_left = 34.0
-margin_top = 35.0
+margin_top = 34.0
 margin_right = 107.0
-margin_bottom = 59.0
+margin_bottom = 58.0
 
 [node name="Control2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer1" index="1"]
 margin_left = 145.0
 margin_right = 287.0
-margin_bottom = 67.0
+margin_bottom = 65.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer1/Control2/VBoxContainer" index="0"]
-margin_top = 16.0
+margin_top = 15.0
 margin_right = 142.0
-margin_bottom = 31.0
+margin_bottom = 30.0
 
 [node name="ActualSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer1/Control2/VBoxContainer" index="1"]
 margin_left = 34.0
-margin_top = 35.0
+margin_top = 34.0
 margin_right = 107.0
-margin_bottom = 59.0
+margin_bottom = 58.0
 
 [node name="HBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer" index="2"]
-margin_top = 142.0
+margin_top = 138.0
 margin_right = 287.0
 margin_bottom = 209.0
 
 [node name="Control" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2" index="0"]
-margin_right = 141.0
+margin_right = 153.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
-margin_right = 141.0
-margin_bottom = 15.0
+margin_right = 153.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
-margin_left = 34.0
-margin_top = 19.0
-margin_right = 107.0
-margin_bottom = 43.0
+margin_left = 40.0
+margin_right = 113.0
 
-[node name="Control2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2" index="1"]
-margin_left = 145.0
+[node name="VBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2" index="1"]
+margin_left = 157.0
 margin_right = 287.0
-
-[node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="0"]
-margin_right = 142.0
-margin_bottom = 15.0
-
-[node name="HBoxContainer" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="1"]
-margin_left = 17.0
-margin_top = 19.0
-margin_right = 124.0
-margin_bottom = 43.0
 
 [node name="VS2" type="VSeparator" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer"]
 margin_left = 590.0
@@ -541,78 +516,65 @@ relatedAtributeRelevance = 3.0
 bonusInCalculus = 10
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer" index="0"]
-margin_top = 35.0
+margin_top = 33.0
 margin_right = 287.0
-margin_bottom = 67.0
+margin_bottom = 65.0
 text = "Defesa Agilidade"
 
 [node name="HBoxContainer1" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer" index="1"]
-margin_top = 71.0
+margin_top = 69.0
 margin_right = 287.0
-margin_bottom = 138.0
+margin_bottom = 134.0
 
 [node name="Control1" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer1" index="0"]
 margin_right = 141.0
-margin_bottom = 67.0
+margin_bottom = 65.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer1/Control1/VBoxContainer" index="0"]
-margin_top = 16.0
+margin_top = 15.0
 margin_right = 141.0
-margin_bottom = 31.0
+margin_bottom = 30.0
 
 [node name="TotalSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer1/Control1/VBoxContainer" index="1"]
 margin_left = 34.0
-margin_top = 35.0
+margin_top = 34.0
 margin_right = 107.0
-margin_bottom = 59.0
+margin_bottom = 58.0
 
 [node name="Control2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer1" index="1"]
 margin_left = 145.0
 margin_right = 287.0
-margin_bottom = 67.0
+margin_bottom = 65.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer1/Control2/VBoxContainer" index="0"]
-margin_top = 16.0
+margin_top = 15.0
 margin_right = 142.0
-margin_bottom = 31.0
+margin_bottom = 30.0
 
 [node name="ActualSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer1/Control2/VBoxContainer" index="1"]
 margin_left = 34.0
-margin_top = 35.0
+margin_top = 34.0
 margin_right = 107.0
-margin_bottom = 59.0
+margin_bottom = 58.0
 
 [node name="HBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer" index="2"]
-margin_top = 142.0
+margin_top = 138.0
 margin_right = 287.0
 margin_bottom = 209.0
 
 [node name="Control" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2" index="0"]
-margin_right = 141.0
+margin_right = 153.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
-margin_right = 141.0
-margin_bottom = 15.0
+margin_right = 153.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
-margin_left = 34.0
-margin_top = 19.0
-margin_right = 107.0
-margin_bottom = 43.0
+margin_left = 40.0
+margin_right = 113.0
 
-[node name="Control2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2" index="1"]
-margin_left = 145.0
+[node name="VBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2" index="1"]
+margin_left = 157.0
 margin_right = 287.0
-
-[node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="0"]
-margin_right = 142.0
-margin_bottom = 15.0
-
-[node name="HBoxContainer" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="1"]
-margin_left = 17.0
-margin_top = 19.0
-margin_right = 124.0
-margin_bottom = 43.0
 
 [node name="VS3" type="VSeparator" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer"]
 margin_left = 889.0
@@ -629,78 +591,65 @@ relatedAtributeRelevance = 2.0
 bonusInCalculus = 10
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer" index="0"]
-margin_top = 35.0
+margin_top = 33.0
 margin_right = 288.0
-margin_bottom = 67.0
+margin_bottom = 65.0
 text = "Defesa Força"
 
 [node name="HBoxContainer1" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer" index="1"]
-margin_top = 71.0
+margin_top = 69.0
 margin_right = 288.0
-margin_bottom = 138.0
+margin_bottom = 134.0
 
 [node name="Control1" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer1" index="0"]
 margin_right = 142.0
-margin_bottom = 67.0
+margin_bottom = 65.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer1/Control1/VBoxContainer" index="0"]
-margin_top = 16.0
+margin_top = 15.0
 margin_right = 142.0
-margin_bottom = 31.0
+margin_bottom = 30.0
 
 [node name="TotalSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer1/Control1/VBoxContainer" index="1"]
 margin_left = 34.0
-margin_top = 35.0
+margin_top = 34.0
 margin_right = 107.0
-margin_bottom = 59.0
+margin_bottom = 58.0
 
 [node name="Control2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer1" index="1"]
 margin_left = 146.0
 margin_right = 288.0
-margin_bottom = 67.0
+margin_bottom = 65.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer1/Control2/VBoxContainer" index="0"]
-margin_top = 16.0
+margin_top = 15.0
 margin_right = 142.0
-margin_bottom = 31.0
+margin_bottom = 30.0
 
 [node name="ActualSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer1/Control2/VBoxContainer" index="1"]
 margin_left = 34.0
-margin_top = 35.0
+margin_top = 34.0
 margin_right = 107.0
-margin_bottom = 59.0
+margin_bottom = 58.0
 
 [node name="HBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer" index="2"]
-margin_top = 142.0
+margin_top = 138.0
 margin_right = 288.0
 margin_bottom = 209.0
 
 [node name="Control" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2" index="0"]
-margin_right = 142.0
+margin_right = 154.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
-margin_right = 142.0
-margin_bottom = 15.0
+margin_right = 154.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
-margin_left = 34.0
-margin_top = 19.0
-margin_right = 107.0
-margin_bottom = 43.0
+margin_left = 40.0
+margin_right = 113.0
 
-[node name="Control2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2" index="1"]
-margin_left = 146.0
+[node name="VBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2" index="1"]
+margin_left = 158.0
 margin_right = 288.0
-
-[node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="0"]
-margin_right = 142.0
-margin_bottom = 15.0
-
-[node name="HBoxContainer" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2/Control2/VBoxContainer2" index="1"]
-margin_left = 17.0
-margin_top = 19.0
-margin_right = 124.0
-margin_bottom = 43.0
 
 [node name="HS1" type="HSeparator" parent="VBoxContainer"]
 margin_top = 258.0

@@ -10,6 +10,8 @@ public class WorkGUI : BaseGUI
     private NodePath journeyLabel;
     [Export]
     private NodePath atributeOptionPath;
+    [Export]
+    private NodePath journeyControlPath;
 
     [Signal]
     public delegate void value_changed(int index, int value);
@@ -26,6 +28,7 @@ public class WorkGUI : BaseGUI
         GetNode<Label>(descriptionLabelPath).Text = work.GetDescription();
         GetNode<TextureRect>(workTexture).Texture = work.GetBaseImage();
         GetNode(atributeOptionPath).Connect("related_atribute_changed", this, "_OnRelatedAtributeChanged");
+        VerifyTheMaestryVisibility(work.GetLevel());
     }
 
 
@@ -44,6 +47,7 @@ public class WorkGUI : BaseGUI
     protected override void _OnValueChanged(int value)
     {
         VerifyTheMaestryPath(value);
+        VerifyTheMaestryVisibility(value);
         EmitSignal(nameof(value_changed), workIndex, value);
     }
 
@@ -61,6 +65,14 @@ public class WorkGUI : BaseGUI
         Array<int> difWorkUps = GetDifferenceFromArrays(newWorkUps, work.GetWorksUp());
         DoWorkUps(difWorkUps);
         work.SetWorksUp(newWorkUps);
+    }
+
+    private void VerifyTheMaestryVisibility(int value)
+    {
+        if (value < 50)
+            GetNode<Control>(journeyControlPath).Visible = false;
+        else
+            GetNode<Control>(journeyControlPath).Visible = true;
     }
 
 

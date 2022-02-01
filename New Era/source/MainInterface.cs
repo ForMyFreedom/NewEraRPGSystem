@@ -630,6 +630,13 @@ public class MainInterface : Control, CharacterDataBank
     {
         GetWorkByEnum(enumWork).GetSkillList()[skillIndex].AddLevel(levelAdd);
     }
+
+    public void AddAnAtributeLevel(MyEnum.Atribute enumAtribute, int levelAdd)
+    {
+        GetAtributeNodeByEnum(enumAtribute).SetAtributeValue(
+            GetAtributeNodeByEnum(enumAtribute).GetAtributeValue()+levelAdd
+        );
+    }
     
     
     public int[] GetTrainingAtributes()

@@ -324,9 +324,9 @@ public class WorkTree : Tree
         int c=0;
         foreach(Work w in works)
         {
-            c+=2;
+            c++;
+            if (w.GetSkillList().Length > 0) c++;
         }
-
         return c;
     }
 
