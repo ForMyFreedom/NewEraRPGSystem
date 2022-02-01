@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/works/AkumaNoMi.cs" type="Script" id=1]
+[ext_resource path="res://assets/skills/akuma_no_mi.png" type="Texture" id=2]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+workName = "Akuma no Mi"
+baseImage = ExtResource( 2 )
+pathDescription = "Maestria de Akuma no Mi [50]
+Você sente um grande salto em suas habilidades. Escolha um entre:
+- Usuário Regular +I: Ligero aumento de força em todos seus Usos
+de Críticos, assim como +20% em seu Atributo Relacionado
+- Usuário Agressivo +I: +50% Dano Base
+- Usuário Versátil +I: +3 Usos de Crítico [Akuma no Mi]"
+skills = [  ]
+description = "A maldição dos mares, domínio de uma fruta demoniaca"
+enumWork = 12
+relationedAtribute = 5
+level = 0
+worksUps = [ 0, 0, 0 ]

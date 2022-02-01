@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://source/skills/Protect.cs" type="Script" id=1]
+[ext_resource path="res://source/wayOfCalculeSkill/HalfWayOfCalculeSkill.cs" type="Script" id=2]
+[ext_resource path="res://assets/skills/protect.png" type="Texture" id=3]
+
+[resource]
+script = ExtResource( 1 )
+skillName = "Proteger"
+effectImage = ExtResource( 3 )
+wayOfLevelCalculeScript = ExtResource( 2 )
+skillDescription = "Sou os muros de minha tripulação"
+mechanicDescription = "Você possui um valor de Guarda igual a metade de seu nível de Guardião. O qual se trata de uma Redução de Dano que você pode destribuir entre todos aqueles a Alcanse curto de você"
+level = 0
