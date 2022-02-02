@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://source/Player.cs" type="Script" id=1]
 [ext_resource path="res://assets/wallpapers/azazel_wallpaper.png" type="Texture" id=2]
@@ -14,82 +14,84 @@
 [ext_resource path="res://source/works/Pulsation.cs" type="Script" id=12]
 [ext_resource path="res://source/skills/Beat.cs" type="Script" id=13]
 [ext_resource path="res://source/wayOfCalculeSkill/SameOfWorkWayOfCalculeSkill.cs" type="Script" id=14]
+[ext_resource path="res://source/habilitys/critic-uses/Azazel/Navigatozao.tres" type="Resource" id=15]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 3 )
 level = 5
-effectImage = ExtResource( 4 )
 wayOfLevelCalculeScript = ExtResource( 7 )
-skillDescription = "Esquerda!!... Direita!!!"
-skillName = "Pilotagem"
 mechanicDescription = "Sempre que em meio ao mar, você precisar conduzir seu navio em meio a um grande perigo, você deve realizar um Teste de Pilotagem. Para isso, rola-se os dados equivalentes ao seu valor de Pilotagem. E caso tenha sucesso, acontece o resultado Sucesso já proposto pelo Desafio. Do contrário, acontece o Fracasso.
 Ademais, Pilotagem também é usada para traçar rotas: Caso o Nível de Mar em que esteje supere em dobro o maior valor de Pilotagem da tripulação, simplesmente é impossível navegar para qualquer lugar. Sendo todas as ilhas que encontram, aleatórias.
 Por fim, a Pilotagem é necessário na elaboração de mapas. Ao passar pelo menos uma quantidade de dias estipulada pelo Narrador na localidade que deseja registrar, você pode tentar fazer um mapa: Faça um Teste de Pilotagem de Dificuldade estipulada pelo Narrador. Caso passe, você tem o mapa dentro de quatro horas. Do contrário, você falha após 25d6 minutos em alguma medição mas pode tentar novamente em uma hora."
+skillDescription = "Esquerda!!... Direita!!!"
+effectImage = ExtResource( 4 )
+skillName = "Pilotagem"
 
 [sub_resource type="Resource" id=2]
 script = ExtResource( 9 )
 level = 3
-effectImage = ExtResource( 5 )
 wayOfLevelCalculeScript = ExtResource( 7 )
-skillDescription = "Entender a natureza é saber sobreviver!"
-skillName = "Previsão"
 mechanicDescription = "Sempre que desejar ou for necessário prever a situação do mar em que está, você deve realizar um Teste de Previsão. Para isso, rola-se os dados equivalentes ao seu valor de Previsão ao passo que o Narrador escolhe uma Dificuldade levando em conta a imprevesibilidade do mar e a distância de tempo que se deseja especular. Caso tenha sucesso, você preve como o mar estará sob as condições anteriores. Do contrário, você não tem ideia."
+skillDescription = "Entender a natureza é saber sobreviver!"
+effectImage = ExtResource( 5 )
+skillName = "Previsão"
 
 [sub_resource type="Resource" id=3]
 resource_local_to_scene = true
 script = ExtResource( 8 )
 level = 10
 description = "Velejar mares e cruzar rotas, as águas são minha casa"
-workName = "Navegador"
-baseImage = ExtResource( 6 )
 enumWork = 6
-worksUps = [ 2, 1, 0 ]
-skills = [ SubResource( 1 ), SubResource( 2 ) ]
 pathDescription = "Maestria de Navegador [30]
 Você sente um grande salto em suas habilidades. Escolha um entre:
 - Mestre de Timão +I: +8 Pilotagem para conduzir navios em perigos.
 - Mestre de Rotas +I: +8 Pilotagem para conduzir navios em calmaria.
 - Mestre de Mapas +I: +8 Pilotagem para desenhar mapas.
 - Mestre de Previsão +I: +10 Previsão."
+worksUps = [ 2, 1, 0 ]
+workName = "Navegador"
+baseImage = ExtResource( 6 )
+skills = [ SubResource( 1 ), SubResource( 2 ) ]
 relationedAtribute = 2
 
 [sub_resource type="Resource" id=4]
 script = ExtResource( 13 )
 level = 10
-effectImage = ExtResource( 11 )
 wayOfLevelCalculeScript = ExtResource( 14 )
-skillDescription = "Ordenar minha vontade com as batidas de meu sangue"
-skillName = "Batimento"
 mechanicDescription = "Você possui um Cliclo Cardíarco baseado nas fases alternadas de Contração e Relaxamento (Escolhe em seu primeiro turno). Em uma Contração, você perde Batimento Surto de Ação e ganha Batimento Dano. Em um relaxamento, você ganha Batimento Surto de Ação e perde Batimento Dano.
 Você pode fazer um Contra-Ciclo (Continuar na fase atual), mas sofre Batimento/2 Dano interno. Se zerar a vida com isso, você morre instantameamente"
+skillDescription = "Ordenar minha vontade com as batidas de meu sangue"
+effectImage = ExtResource( 11 )
+skillName = "Batimento"
 
 [sub_resource type="Resource" id=5]
 resource_local_to_scene = true
 script = ExtResource( 12 )
 level = 10
 description = "A força sanguinária de uma Linhagem respeitada..."
+enumWork = 4
+pathDescription = null
+worksUps = [ 2, 1, 0 ]
 workName = "Pulsação"
 baseImage = ExtResource( 10 )
-enumWork = 4
-worksUps = [ 2, 1, 0 ]
 skills = [ SubResource( 4 ) ]
-pathDescription = null
 relationedAtribute = 1
 
 [node name="Azazel" type="Node"]
 script = ExtResource( 1 )
-personalBG = ExtResource( 2 )
 modFactors = PoolIntArray( 0, 0, 0, 0 )
-notificationList = [  ]
-totalAtributes = PoolIntArray( 10, 25, 23, 100, 20 )
+totalFactors = PoolIntArray( 33, 65, 85, 30 )
+actualFactors = PoolIntArray( 17, 30, 100, 30 )
+characterName = "Azazel"
+totalAtributes = PoolIntArray( 10, 25, 23, 50, 20 )
+personalBG = ExtResource( 2 )
+trivia = "adsasd"
+firstColor = Color( 1, 1, 1, 1 )
 playerName = "Oliveira"
 secondColor = Color( 0, 0, 0, 1 )
 inspiration = 8
-actualFactors = PoolIntArray( 17, 30, 100, 30 )
-trivia = "adsasd"
-firstColor = Color( 1, 1, 1, 1 )
-characterName = "Azazel"
-totalFactors = PoolIntArray( 33, 65, 85, 30 )
-trainingAtributes = PoolIntArray(  )
 modAtributes = PoolIntArray( 0, 0, 0, 0, -4 )
+trainingAtributes = PoolIntArray(  )
 works = [ SubResource( 3 ), SubResource( 5 ) ]
+notificationList = [  ]
+allCriticUses = [ [ ExtResource( 15 ) ] ]
