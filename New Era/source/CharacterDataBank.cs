@@ -99,4 +99,10 @@ public interface CharacterDataBank
 
     String GetTrivia();
     void SetTrivia(String text);
+
+    Array<Array<CriticUse>> GetCriticUses();
+    void SetCriticUses(Array<Array<CriticUse>> uses);
+
+    Array<Technique> GetTechniques();
+    void SetTechniques(Array<Technique> tech);
 }

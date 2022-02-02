@@ -124,6 +124,9 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetInspiration(sender.GetInspiration());
         reciver.SetTrainingAtributes(sender.GetTrainingAtributes());
         reciver.SetTrivia(sender.GetTrivia());
+
+        reciver.SetCriticUses(sender.GetCriticUses());
+        //reciver.SetTechniques(sender.GetTechniques());
     }
 
     private void RegisterAllData()
@@ -684,6 +687,33 @@ public class MainInterface : Control, CharacterDataBank
     {
         GetNode<NotificationArea>(notificationPath).SetNotifications(notifications);
     }
+
+    public Array<Array<CriticUse>> GetCriticUses()
+    {
+        return GetNode<WorkTree>(worksTreePath).GetCriticUses();
+    }
+
+    public void SetCriticUses(Array<Array<CriticUse>> uses)
+    {
+        GetNode<WorkTree>(worksTreePath).SetCriticUses(uses);
+    }
+
+    public Array<Technique> GetTechniques()
+    {
+        return GetNode<TechniquesTree>(techniquesTreePath).GetTechniques();
+    }
+
+    public void SetTechniques(Array<Technique> tech)
+    {
+        GetNode<TechniquesTree>(techniquesTreePath).SetTechniques(tech);
+    }
+
+
+
+
+
+
+
 
     public int RequestSkillRoll(String skillName, int modValue=0)
     {

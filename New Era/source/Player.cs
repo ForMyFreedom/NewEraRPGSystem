@@ -38,6 +38,10 @@ public class Player : Node, CharacterDataBank
     private Array<Work> works;
     [Export]
     private Godot.Collections.Array notificationList;
+    [Export]
+    private Array<Array<CriticUse>> allCriticUses;
+    [Export]
+    private Array<Technique> allTechniques;
 
     private static int maxSkill = 3; //@
 
@@ -412,5 +416,25 @@ public class Player : Node, CharacterDataBank
     public void SetTrivia(string text)
     {
         trivia = text;
+    }
+
+    public Array<Array<CriticUse>> GetCriticUses()
+    {
+        return allCriticUses;
+    }
+
+    public void SetCriticUses(Array<Array<CriticUse>> uses)
+    {
+        allCriticUses = uses;
+    }
+
+    public Array<Technique> GetTechniques()
+    {
+        return allTechniques;
+    }
+
+    public void SetTechniques(Array<Technique> tech)
+    {
+        allTechniques = tech;
     }
 }
