@@ -8,9 +8,13 @@ public class WorkTree : Tree
     private PackedScene workGuiPackedScene;
     [Export]
     private PackedScene skillGuiPackedScene;
+    [Export]
+    private PackedScene criticGuiPackedScene;
+    [Export]
+    private Texture useOfCriticTexture;
 
     private Array<Work> works;
-    
+    private Array<Array<CriticUse>> criticUses;
     private TreeItem[] itens = { };
 
     public override void _Ready()
@@ -29,7 +33,9 @@ public class WorkTree : Tree
         foreach(Work currentWork in works)
         {
             AddNewWorkItem(root, itemIndex, workIndex, currentWork);
+            AddUseOfCriticSection(root, itemIndex, workIndex, currentWork);
             itemIndex++;
+
 
             AddAllSkillItens(itemIndex, workIndex, currentWork);
             workIndex++;
@@ -46,6 +52,16 @@ public class WorkTree : Tree
         itens[itemIndex].SetIcon(0, currentWork.GetBaseImage());
         itens[itemIndex].SetText(0, currentWork.GetWorkName() + " " + currentWork.GetLevel());
         itens[itemIndex].SetMetadata(0, currentWork);
+    }
+
+    private void AddUseOfCriticSection(TreeItem root, int itemIndex, int workIndex, Work currentWork)
+    {
+        Array<CriticUse> uses = TryGetWorkCriticUse(workIndex);
+        Godot.Collections.Array data = new Godot.Collections.Array(works[workIndex], uses);
+
+        itens[itemIndex].SetIcon(2, useOfCriticTexture);
+        itens[itemIndex].SetText(2, "Usos de Critico");
+        itens[itemIndex].SetMetadata(2, data);
     }
 
 
@@ -121,9 +137,17 @@ public class WorkTree : Tree
         TreeItem currentItem = GetSelected();
         object itemData = currentItem.GetMetadata(this.GetSelectedColumn());
         if (itemData is Work)
-            OpenWorkGui((Work) itemData);
-        else
-            OpenSkillGui((Skill) itemData);
+        {
+            OpenWorkGui((Work)itemData);
+        }
+        else if (itemData is Skill)
+        {
+            OpenSkillGui((Skill)itemData);
+        }
+        else if (itemData is Godot.Collections.Array)
+        {
+            OpenUsesOfCriticGui((Godot.Collections.Array) itemData);
+        }
     }
 
 
@@ -158,6 +182,16 @@ public class WorkTree : Tree
 
         GetTree().CurrentScene.AddChild(skillGui);
         skillGui.PopupIt();
+    }
+
+    private void OpenUsesOfCriticGui(Godot.Collections.Array uses)
+    {
+        CriticGUI criticGui = criticGuiPackedScene.Instance<CriticGUI>();
+        criticGui.SetWork((Work)uses[0]);
+        criticGui.SetCriticUses((Godot.Collections.Array) uses[1]);
+
+        GetTree().CurrentScene.AddChild(criticGui);
+        criticGui.PopupIt();
     }
 
 
@@ -217,7 +251,17 @@ public class WorkTree : Tree
         }
     }
 
-
+    private Array<CriticUse> TryGetWorkCriticUse(int index)
+    {
+        try
+        {
+            return criticUses[index];
+        }
+        catch (Exception)
+        {
+            return new Array<CriticUse>();
+        }
+    }
 
 
     private int GetIndexOfWork(Work w)
@@ -336,5 +380,15 @@ public class WorkTree : Tree
         MainInterface main = (MainInterface)GetTree().CurrentScene;
         Atributo atribute = main.GetAtributeNodeByEnum(atributeEnum);
         return atribute.GetAtributeValue();
+    }
+
+    public Array<Array<CriticUse>> GetCriticUses()
+    {
+        return criticUses;
+    }
+
+    public void SetCriticUses(Array<Array<CriticUse>> uses)
+    {
+        criticUses = uses;
     }
 }
