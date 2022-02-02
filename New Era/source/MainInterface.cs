@@ -57,6 +57,8 @@ public class MainInterface : Control, CharacterDataBank
     private NodePath equipamentsButtonPath;
     [Export]
     private NodePath tracesButtonPath;
+    [Export]
+    private NodePath techniquesTreePath;
 
     private Player player;
     private Color[] colors = new Color[2];
