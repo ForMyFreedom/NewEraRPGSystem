@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://source/guis/CriticGUI.cs" type="Script" id=1]
+[ext_resource path="res://source/guis/SingleCriticButton.tscn" type="PackedScene" id=2]
 
 [node name="CriticGUI" type="WindowDialog"]
 anchor_left = 0.5
@@ -20,7 +21,8 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-criticTreePath = NodePath("MarginContainer/VBoxContainer/CriticTree")
+criticBoxPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer")
+singleCriticButtonPacked = ExtResource( 2 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -32,16 +34,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
 margin_right = 554.0
 margin_bottom = 316.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+scroll_vertical_enabled = false
 
-[node name="CriticTree" type="Tree" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
 margin_right = 554.0
 margin_bottom = 316.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-hide_root = true

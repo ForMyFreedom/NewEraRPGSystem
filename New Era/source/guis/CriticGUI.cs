@@ -6,7 +6,9 @@ using System;
 public class CriticGUI : WindowDialog
 {
     [Export]
-    private NodePath criticTreePath;
+    private NodePath criticBoxPath;
+    [Export]
+    private PackedScene singleCriticButtonPacked;
 
     private Work work;
     private Array<CriticUse> criticUses;
@@ -25,29 +27,24 @@ public class CriticGUI : WindowDialog
 
     private void InitializeTree()
     {
-        Tree criticTree = GetNode<Tree>(criticTreePath);
-        TreeItem root = criticTree.CreateItem();
+        Control criticBox = GetNode<Control>(criticBoxPath);
         
-        foreach(CriticUse use in criticUses)
+        for(int i=0; i < criticUses.Count; i++)
         {
-            TreeItem item = GetNode<Tree>(criticTreePath).CreateItem(root);
-            item.SetText(0, GetFormatedText(use));
+            SingleCriticButton criticNode = singleCriticButtonPacked.Instance<SingleCriticButton>();
+            criticNode.SetText(criticUses[i]);
+            criticNode.SetCritic(criticUses[i]);
+            criticNode.Connect("critic_activated", this, "_OnCriticActivated");
+            criticBox.AddChild(criticNode);
         }
     }
 
-    private String GetFormatedText(CriticUse use)
+    private void _OnCriticActivated(CriticUse use)
     {
-        return $"{use.GetUseName()} [{GetCriticCost(use)}]: \n {use.GetText()}";
+        use.DoMechanic((MainInterface) GetTree().CurrentScene);
     }
 
 
-    private String GetCriticCost(CriticUse use)
-    {
-        if (use.GetCost() < 0)
-            return "N";
-        else
-            return use.GetCost().ToString();
-    }
 
 
     public void SetWork(Work w)
