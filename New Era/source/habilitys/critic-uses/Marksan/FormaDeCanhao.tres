@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/habilitys/critic-uses/Marksan/FormaDeCanhao.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+criticUseName = "Forma de Canhão"
+relatedWork = 3
+text = "Em Testes de Ataque, você pode optar por entrar em modo canhão (Perde 10 Defesa, não pode fazer nada além de se mover e atacar, Aumenta Agilidade em 2N)."
+cost = -1
