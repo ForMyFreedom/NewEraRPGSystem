@@ -97,6 +97,9 @@ public interface CharacterDataBank
     int GetInspiration();
     void SetInspiration(int value);
 
+    int GetExtraDamage();
+    void SetExtraDamage(int value);
+
     String GetTrivia();
     void SetTrivia(String text);
 

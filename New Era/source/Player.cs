@@ -20,6 +20,8 @@ public class Player : Node, CharacterDataBank
 
     [Export]
     private int inspiration;
+    [Export]
+    private int extraDamage;
     
     [Export]
     private int[] totalFactors;
@@ -408,6 +410,16 @@ public class Player : Node, CharacterDataBank
         inspiration = value;
     }
 
+    public int GetExtraDamage()
+    {
+        return extraDamage;
+    }
+
+    public void SetExtraDamage(int value)
+    {
+        extraDamage = value;
+    }
+
     public string GetTrivia()
     {
         return trivia;
@@ -437,4 +449,5 @@ public class Player : Node, CharacterDataBank
     {
         allTechniques = tech;
     }
+
 }

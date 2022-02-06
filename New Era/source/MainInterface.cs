@@ -50,6 +50,8 @@ public class MainInterface : Control, CharacterDataBank
     [Export]
     private NodePath inspirationSpinPath;
     [Export]
+    private NodePath damageSpinPath;
+    [Export]
     private NodePath trainingButtonPath;
     [Export]
     private NodePath triviaButtonPath;
@@ -124,6 +126,7 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetNotifications(sender.GetNotifications());
 
         reciver.SetInspiration(sender.GetInspiration());
+        reciver.SetExtraDamage(sender.GetExtraDamage());
         reciver.SetTrainingAtributes(sender.GetTrainingAtributes());
         reciver.SetTrivia(sender.GetTrivia());
 
@@ -677,6 +680,20 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<SpinBox>(inspirationSpinPath).Value = value;
     }
 
+    public int GetExtraDamage()
+    {
+        return (int) GetNode<SpinBox>(damageSpinPath).Value;
+    }
+
+    public void SetExtraDamage(int value)
+    {
+        GetNode<SpinBox>(damageSpinPath).Value = value;
+    }
+
+    public void AddExtraDamage(int value)
+    {
+        GetNode<SpinBox>(damageSpinPath).Value += value;
+    }
 
 
 
