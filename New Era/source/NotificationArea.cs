@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using System;
 using System.Collections;
 using System.Linq;
@@ -18,7 +19,11 @@ public class NotificationArea : Control
     private Texture blankTexture;
 
     private bool toShow = false;
-    ItemList notificationList;
+    private ItemList notificationList;
+
+    [Signal]
+    public delegate void notification_deleted(Godot.Object obj);
+
 
     public override void _Ready()
     {
@@ -40,9 +45,19 @@ public class NotificationArea : Control
     public void DeleteNotification(int index)
     {
         if (index < 0) return;
+        EmitSignal(nameof(notification_deleted), notificationList.GetItemMetadata(index));
+
         notificationList.RemoveItem(index);
         GetNode<AnimationPlayer>(animationPath).Play("del_notification");
         ActualizeQuantNotificationsLabel();
+
+    }
+
+    public void ConnectToLastNotification(Godot.Object obj, String funcName)
+    {
+        int index = notificationList.GetItemCount()-1;
+        notificationList.SetItemMetadata(index, obj);
+        this.Connect(nameof(notification_deleted), obj, funcName);
     }
 
 

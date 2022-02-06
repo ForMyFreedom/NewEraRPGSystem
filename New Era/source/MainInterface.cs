@@ -759,6 +759,11 @@ public class MainInterface : Control, CharacterDataBank
         return GetAtributeNodeByEnum(ae).RequestRoll();
     }
 
+    public void ConnectToLastNotification(Godot.Object obj, String funcName)
+    {
+        GetNode<NotificationArea>(notificationPath).ConnectToLastNotification(obj, funcName);
+    }
+
 
 
     public void SetShadeColor(Color color)
