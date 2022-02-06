@@ -695,6 +695,16 @@ public class MainInterface : Control, CharacterDataBank
         return GetNode<WorkTree>(worksTreePath).GetCriticUses();
     }
 
+    public Array<CriticUse> GetCriticUseFromWork(MyEnum.Work we)
+    {
+        Array<Array<CriticUse>> allUses = GetCriticUses();
+        int workIndex = GetWorkIndex(we);
+        if (workIndex > -1)
+            return allUses[workIndex];
+        else
+            return null;
+    }
+
     public void SetCriticUses(Array<Array<CriticUse>> uses)
     {
         GetNode<WorkTree>(worksTreePath).SetCriticUses(uses);
@@ -810,6 +820,17 @@ public class MainInterface : Control, CharacterDataBank
         return null;
     }
 
+
+    private int GetWorkIndex(MyEnum.Work we)
+    {
+        Array<Work> works = GetWorks();
+        for(int i = 0; i < works.Count; i++)
+        {
+            if (works[i].GetEnumWork() == we)
+                return i;
+        }
+        return -1;
+    }
 
 
     private void CenterTheWindow()
