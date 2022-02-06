@@ -31,7 +31,6 @@ public class SingleCriticButton : Control
         InputEventMouseButton mouseEvent = (InputEventMouseButton) @event;
         if (mouseEvent.Doubleclick)
             EmitSignal(nameof(critic_activated), use);
-        GD.Print(RectSize.y);
         //@implement color rect logic to responsitivity
     }
 

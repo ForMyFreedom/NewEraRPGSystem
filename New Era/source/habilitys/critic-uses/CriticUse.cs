@@ -5,13 +5,13 @@ using System;
 public abstract class CriticUse : Resource
 {
     [Export]
-    private String criticUseName;
+    protected String criticUseName;
     [Export]
-    private MyEnum.Work relatedWork;
+    protected MyEnum.Work relatedWork;
     [Export]
-    private String text;
+    protected String text;
     [Export]
-    private int cost; //-1 -> N
+    protected int cost; //-1 -> N
     
     public abstract void DoMechanic(MainInterface main, int actionIndex=0);
 

@@ -45,8 +45,6 @@ public class CriticGUI : WindowDialog
     }
 
 
-
-
     public void SetWork(Work w)
     {
         work = w;

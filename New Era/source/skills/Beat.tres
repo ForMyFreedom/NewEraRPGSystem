@@ -2,7 +2,7 @@
 
 [ext_resource path="res://source/skills/Beat.cs" type="Script" id=1]
 [ext_resource path="res://assets/skills/beat.png" type="Texture" id=2]
-[ext_resource path="res://source/wayOfCalculeSkill/SameOfWorkWayOfCalculeSkill.cs" type="Script" id=3]
+[ext_resource path="res://source/wayOfCalculeSkill/HalfWayOfCalculeSkill.cs" type="Script" id=3]
 
 [resource]
 script = ExtResource( 1 )
