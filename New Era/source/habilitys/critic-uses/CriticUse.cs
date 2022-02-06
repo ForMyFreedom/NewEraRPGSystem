@@ -13,8 +13,10 @@ public abstract class CriticUse : Resource
     [Export]
     protected int cost; //-1 -> N
     
-    public abstract void DoMechanic(MainInterface main, int actionIndex=0);
-
+    public abstract void DoMechanic(MainInterface main, int actionIndex=0, int critic = -1);
+    public abstract void DoEndMechanic(MainInterface main, int actionIndex = 0, int critic = -1);
+    
+    protected Work injectedWork;
 
 
 
@@ -37,5 +39,10 @@ public abstract class CriticUse : Resource
     public int GetCost()
     {
         return cost;
+    }
+
+    public void InjectWork(Work w)
+    {
+        injectedWork = w;
     }
 }
