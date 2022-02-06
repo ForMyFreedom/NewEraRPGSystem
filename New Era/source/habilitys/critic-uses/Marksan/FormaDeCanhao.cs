@@ -5,15 +5,16 @@ using System;
 public class FormaDeCanhao : CriticUse
 {
     int holdCritic;
+    int defMod = 10;
 
     public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         if (critic == -1)
             critic = main.RequestWorkRoll(relatedWork)/10;
 
-        main.AddModAgiDefense(-10);
-        main.AddModStrDefense(-10);
-        main.AddAgility(2*critic);
+        main.AddModAgiDefense(-defMod);
+        main.AddModStrDefense(-defMod);
+        main.AddModAgility(2*critic);
         holdCritic = critic;
 
         main.CreateNewNotification(
@@ -21,12 +22,14 @@ public class FormaDeCanhao : CriticUse
             $"Mas com isso voce recebe +{2*critic} em Agilidade",
             injectedWork.GetBaseImage()
         );
+
+        ConnectToLastNotification(main);
     }
 
-    public override void DoEndMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override void DoEndMechanicLogic()
     {
-        main.AddModAgiDefense(10);
-        main.AddModStrDefense(10);
-        main.AddAgility(-2 * holdCritic);
+        main.AddModAgiDefense(defMod);
+        main.AddModStrDefense(defMod);
+        main.AddModAgility(-2 * holdCritic);
     }
 }

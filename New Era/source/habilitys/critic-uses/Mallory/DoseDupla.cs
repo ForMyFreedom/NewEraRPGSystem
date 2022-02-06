@@ -12,7 +12,7 @@ public class DoseDupla : CriticUse
         );
     }
 
-    public override void DoEndMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override void DoEndMechanicLogic()
     {
     }
 }

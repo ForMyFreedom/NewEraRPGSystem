@@ -26,11 +26,13 @@ public class Beat : Skill
         {
             main.CreateNewNotification($"Relaxamento, voce ganhou {level} Surto de Acao mas perdeu {level} Dano", effectImage);
             main.AddActualSurge(level);
+            main.AddExtraDamage(-level);
         }
         else
         {
             main.CreateNewNotification($"Contracao, voce ganhou {level} Dano mas perdeu {level} Surto de Acao", effectImage);
             main.AddActualSurge(-level);
+            main.AddExtraDamage(level);
         }
     }
 
