@@ -22,17 +22,9 @@ public class CriticGUI : WindowDialog
     public override void _Ready()
     {
         WindowTitle += work.GetWorkName();
-        InjectWorkInAllCritics();
         InitializeTree();
     }
 
-    private void InjectWorkInAllCritics()
-    {
-        foreach(CriticUse use in criticUses)
-        {
-            use.InjectWork(work);
-        }
-    }
 
 
     private void InitializeTree()

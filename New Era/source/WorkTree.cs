@@ -43,6 +43,7 @@ public class WorkTree : Tree
         }
 
         MakeBlankUnselected(itens);
+        InjectWorkInAllCriticUse();
     }
 
 
@@ -295,6 +296,17 @@ public class WorkTree : Tree
         for(int i=0; i < worksSkillList.Length; i++)
         {
             worksSkillList[i].PlayWayOfLevelCalcule(this, workIndex, i, level);
+        }
+    }
+
+
+    private void InjectWorkInAllCriticUse()
+    {
+        for(int i = 0; i < criticUses.Count; i++)
+        {
+            Work currentWork = works[i];
+            foreach(CriticUse use in criticUses[i])
+                use.InjectWork(currentWork);
         }
     }
 
