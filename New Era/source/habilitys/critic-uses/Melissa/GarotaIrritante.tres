@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/habilitys/critic-uses/Melissa/GarotaIrritante.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+criticUseName = "Garrota Irritante"
+relatedWork = 11
+text = "Permite você realizar um Teste de Manipulação disputado com a Mente de um alvo para mudar o foco de ataque dele para você (Note que o alvo tem que estar engajado ofensivamente no combate)."
+cost = 2

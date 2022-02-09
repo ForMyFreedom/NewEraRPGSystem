@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/habilitys/critic-uses/Melissa/FormaDaAbelhaReluzente.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+criticUseName = "Forma da Abelha Reluzente"
+relatedWork = 12
+text = "Todas as Técnicas que possuam um Uso de Crítico de Akuma no Mi recebe +20% em os fatores da Técnica. Limite de polem: 10"
+cost = 0
