@@ -43,7 +43,7 @@ public class Player : Node, CharacterDataBank
     [Export]
     private Array<Array<CriticUse>> allCriticUses;
     [Export]
-    private Array<Technique> allTechniques;
+    private Array<int> allTechniques;
 
     private static int maxSkill = 3; //@
 
@@ -440,12 +440,12 @@ public class Player : Node, CharacterDataBank
         allCriticUses = uses;
     }
 
-    public Array<Technique> GetTechniques()
+    public Array<int> GetTechniques()
     {
         return allTechniques;
     }
 
-    public void SetTechniques(Array<Technique> tech)
+    public void SetTechniques(Array<int> tech)
     {
         allTechniques = tech;
     }

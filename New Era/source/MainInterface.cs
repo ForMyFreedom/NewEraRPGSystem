@@ -735,14 +735,15 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<WorkTree>(worksTreePath).SetCriticUses(uses);
     }
 
-    public Array<Technique> GetTechniques()
+    public Array<int> GetTechniques()
     {
-        return GetNode<TechniquesTree>(techniquesTreePath).GetTechniques();
+        return new Array<int>();
+        //return GetNode<TechniquesTree>(techniquesTreePath).GetTechniques();
     }
 
-    public void SetTechniques(Array<Technique> tech)
+    public void SetTechniques(Array<int> tech)
     {
-        GetNode<TechniquesTree>(techniquesTreePath).SetTechniques(tech);
+        //GetNode<TechniquesTree>(techniquesTreePath).SetTechniques(tech);
     }
 
 

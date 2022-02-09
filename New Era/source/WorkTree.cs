@@ -37,9 +37,9 @@ public class WorkTree : Tree
             itemIndex++;
 
 
-            AddAllSkillItens(itemIndex, workIndex, currentWork);
+            if (AddAllSkillItens(itemIndex, workIndex, currentWork))
+                itemIndex++;
             workIndex++;
-            itemIndex++;
         }
 
         MakeBlankUnselected(itens);
@@ -66,19 +66,25 @@ public class WorkTree : Tree
     }
 
 
-    private void AddAllSkillItens(int itemIndex, int workIndex, Work currentWork)
+    private bool AddAllSkillItens(int itemIndex, int workIndex, Work currentWork)
     {
         Skill[] skillList = currentWork.GetSkillList();
+        bool haveAddSkill = false;
 
         for (int j = 0; j < skillList.Length; j++)
         {
             if (j == 0)
+            {
                 itens[itemIndex] = CreateItem(itens[itemIndex - 1]);
+                haveAddSkill = true;
+            }
 
             itens[itemIndex].SetText(j, skillList[j].GetSkillName() + " " + skillList[j].GetLevel());
             itens[itemIndex].SetMetadata(j, skillList[j]);
         }
 
+        if (haveAddSkill) return true;
+        else return false;
     }
 
 
