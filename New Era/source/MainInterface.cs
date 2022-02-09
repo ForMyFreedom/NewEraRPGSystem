@@ -60,6 +60,8 @@ public class MainInterface : Control, CharacterDataBank
     [Export]
     private NodePath tracesButtonPath;
     [Export]
+    private NodePath saveButtonPath;
+    [Export]
     private NodePath techniquesTreePath;
 
     private Player player;
@@ -82,6 +84,7 @@ public class MainInterface : Control, CharacterDataBank
         GetNode(triviaButtonPath).Connect("button_up", this, "_OnTrivia");
         GetNode(equipamentsButtonPath).Connect("button_up", this, "_OnEquipaments");
         GetNode(tracesButtonPath).Connect("button_up", this, "_OnTraces");
+        GetNode(saveButtonPath).Connect("button_activate", this, "_OnSave");
     }
 
 
@@ -168,6 +171,11 @@ public class MainInterface : Control, CharacterDataBank
     public void _OnTraces()
     {
         GD.Print("Issue #6");
+    }
+
+    public void _OnSave()
+    {
+        RegisterAllData();
     }
 
 

@@ -106,6 +106,6 @@ public interface CharacterDataBank
     Array<Array<CriticUse>> GetCriticUses();
     void SetCriticUses(Array<Array<CriticUse>> uses);
 
-    Array<Technique> GetTechniques();
-    void SetTechniques(Array<Technique> tech);
+    Array<int> GetTechniques();
+    void SetTechniques(Array<int> tech);
 }
