@@ -17,6 +17,6 @@ public class Navigator : Work
     public override void DoThirdUpStep(MainInterface gui)
     {
         gui.CreateNewNotification($"Voce alcansou uma maestria de {workName}! " +
-            "Escolha entre: \n" + pathDescription, baseImage);
+            "Escolha entre: \n" + maestryDescription, baseImage);
     }
 }
