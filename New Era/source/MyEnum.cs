@@ -11,4 +11,6 @@ public static class MyEnum
         Swordmaster, Assasin, Shooter, Fighter, Marcialist, Cooker, 
         Navigator, Scholar, Engineer, Medic, Artist, Orator, AkumaNoMi
     };
+
+    public static string savePath = "res://saves/";
 }

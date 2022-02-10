@@ -140,9 +140,8 @@ public class MainInterface : Control, CharacterDataBank
     private void RegisterAllData()
     {
         RegistryData(this, player);
-        var packedScene = new PackedScene();
-        packedScene.Pack(player);
-        ResourceSaver.Save(playerScene.ResourcePath, packedScene);
+        player.PrepareSave();
+        ResourceSaver.Save(player.GetActualSavePath(), player.GetSaveResource());
     }
 
 
