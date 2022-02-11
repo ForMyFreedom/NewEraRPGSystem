@@ -46,7 +46,7 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     [Export]
     private Array<Array<CriticUse>> allCriticUses;
     [Export]
-    private Array<int> allTechniques;
+    private Array<Technique> allTechniques;
 
 
     public String GetBaseSavePath()
@@ -473,12 +473,12 @@ public class PlayerSaveResource : Resource, CharacterDataBank
         allCriticUses = uses;
     }
 
-    public Array<int> GetTechniques()
+    public Array<Technique> GetTechniques()
     {
         return allTechniques;
     }
 
-    public void SetTechniques(Array<int> tech)
+    public void SetTechniques(Array<Technique> tech)
     {
         allTechniques = tech;
     }

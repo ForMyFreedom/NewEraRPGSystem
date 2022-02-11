@@ -1,7 +1,7 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
-[ext_resource path="res://source/players/Azazel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/players/Mallory.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/VSStyle.tres" type="StyleBox" id=3]
 [ext_resource path="res://source/Atributo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/Factor.tscn" type="PackedScene" id=5]
@@ -28,6 +28,7 @@
 [ext_resource path="res://assets/skills/arrow.png" type="Texture" id=26]
 [ext_resource path="res://source/guis/CriticGUI.tscn" type="PackedScene" id=27]
 [ext_resource path="res://source/SaveButton.cs" type="Script" id=28]
+[ext_resource path="res://source/TechniquesTree.cs" type="Script" id=29]
 
 [sub_resource type="Animation" id=1]
 resource_name = "blink"
@@ -216,6 +217,7 @@ triviaButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer
 equipamentsButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/EquipamentsButton")
 tracesButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TracesButton")
 saveButtonPath = NodePath("VBoxContainer/Info/MarginContainer/SaveButton")
+techniquesTreePath = NodePath("VBoxContainer/Perks/HBOX/HabilityControl/MarginContainer/VBOX/TechniqueTree")
 
 [node name="BGRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -956,6 +958,8 @@ margin_right = 587.0
 margin_bottom = 204.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+hide_root = true
+script = ExtResource( 29 )
 
 [node name="General" type="Control" parent="VBoxContainer"]
 margin_top = 658.0
