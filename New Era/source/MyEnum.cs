@@ -9,7 +9,7 @@ public static class MyEnum
     
     public enum Work {
         Swordmaster, Assasin, Shooter, Fighter, Marcialist, Cooker, 
-        Navigator, Scholar, Engineer, Medic, Artist, Orator, AkumaNoMi
+        Navigator, Scholar, Engineer, Medic, Artist, Orator, AkumaNoMi, None
     };
 
     public static string savePath = "res://saves/";
