@@ -134,7 +134,7 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetTrivia(sender.GetTrivia());
 
         reciver.SetCriticUses(sender.GetCriticUses());
-        //reciver.SetTechniques(sender.GetTechniques());
+        reciver.SetTechniques(sender.GetTechniques());
     }
 
     private void RegisterAllData()
@@ -734,15 +734,14 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<WorkTree>(worksTreePath).SetCriticUses(uses);
     }
 
-    public Array<int> GetTechniques()
+    public Array<Technique> GetTechniques()
     {
-        return new Array<int>();
-        //return GetNode<TechniquesTree>(techniquesTreePath).GetTechniques();
+        return GetNode<TechniquesTree>(techniquesTreePath).GetTechniques();
     }
 
-    public void SetTechniques(Array<int> tech)
+    public void SetTechniques(Array<Technique> tech)
     {
-        //GetNode<TechniquesTree>(techniquesTreePath).SetTechniques(tech);
+        GetNode<TechniquesTree>(techniquesTreePath).SetTechniques(tech);
     }
 
 

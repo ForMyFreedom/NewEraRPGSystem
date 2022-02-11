@@ -381,12 +381,12 @@ public class Player : Node, CharacterDataBank
         playerSaveResource.SetCriticUses(uses);
     }
 
-    public Array<int> GetTechniques()
+    public Array<Technique> GetTechniques()
     {
         return playerSaveResource.GetTechniques();
     }
 
-    public void SetTechniques(Array<int> tech)
+    public void SetTechniques(Array<Technique> tech)
     {
         playerSaveResource.SetTechniques(tech);
     }
