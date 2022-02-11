@@ -2,7 +2,7 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public abstract class CriticUse : Resource
+public abstract class CriticUse : NotificationConsumer
 {
     [Export]
     protected String criticUseName;
@@ -12,26 +12,11 @@ public abstract class CriticUse : Resource
     protected String text;
     [Export]
     protected int cost; //-1 -> N
-    
-    public abstract void DoMechanic(MainInterface main, int actionIndex=0, int critic = -1);
-    public abstract void DoEndMechanicLogic();
 
-    public void DoEndMechanic(object obj)
-    {
-        if (this != obj) return;
-        DoEndMechanicLogic();
-    }
-
-
-    protected MainInterface main;
     protected Work injectedWork;
 
-
-    protected void ConnectToLastNotification(MainInterface main)
-    {
-        this.main = main;
-        main.ConnectToLastNotification(this, nameof(DoEndMechanic));
-    }
+    public override abstract void DoMechanic(MainInterface main, int actionIndex=0, int critic = -1);
+    public override abstract void DoEndMechanicLogic();
 
 
 
