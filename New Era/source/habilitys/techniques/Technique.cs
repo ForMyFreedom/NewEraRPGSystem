@@ -20,16 +20,89 @@ public abstract class Technique : NotificationConsumer
     protected int suportLevel;
     [Export]
     protected int level;
+    [Export]
+    protected int modValue;
+
 
     protected Work[] injectedWorks;
 
-    public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
+
+    public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = 0)
     {
-        foreach(CriticUse use in criticUses)
-        {
-            //@
-        }
+        ExecuteAllCritics(main);
+        DoAttackRollNotification(main);
     }
+
+    
+    public void ExecuteAllCritics(MainInterface main)
+    {
+        for (int i = 0; i < criticUses.Length; i++)
+            criticUses[i].DoMechanic(main, actionIndexOfCritics[i], powerOfCritics[i]);
+    }
+
+    public void DoAttackRollNotification(MainInterface main)
+    {
+        int rollValue = CalculateRollValue();
+        int sumValue = CalculateSumValue(main);
+        int damage = CalculateBaseDamage(main) + ofensiveLevel;
+
+        int result = RollCode.GetRandomAdvancedRoll(rollValue, sumValue, modValue);
+
+        main.CreateNewNotification(
+            $"Resultado da Tecnica {techniqueName}: {result}"+GetDamageText(damage),
+            injectedWorks[0].GetBaseImage()
+        );
+    }
+
+
+
+    private int CalculateRollValue()
+    {
+        int value = 0;
+
+        foreach(Work work in injectedWorks)
+        {
+            value += work.GetLevel();
+        }
+
+        return value/injectedWorks.Length;
+    }
+
+    private int CalculateSumValue(MainInterface main)
+    {
+        int value = 0;
+
+        foreach(Work work in injectedWorks)
+        {
+            value += main.GetAtributeNodeByEnum(work.GetRelationedAtribute()).GetAtributeValue();
+        }
+
+        return value/injectedWorks.Length;
+    }
+
+
+    private int CalculateBaseDamage(MainInterface main)
+    {
+        int value = 0;
+
+        foreach (Work work in injectedWorks)
+        {
+            value += work.GetBaseDamage(main, 0); //@ GET WEAPON ACTION INDEX!!
+        }
+
+        return value / injectedWorks.Length;
+    }
+
+
+    private string GetDamageText(int damage)
+    {
+        if (damage <= 0)
+            return "";
+        else
+            return $"\n Voce causa {damage} de Dano";
+    }
+
+
 
 
     public override void DoEndMechanicLogic() { }

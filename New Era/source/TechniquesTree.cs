@@ -4,6 +4,11 @@ using System;
 
 public class TechniquesTree : Tree
 {
+    [Export]
+    private Resource techniqueNameFont;
+    [Export]
+    private Resource techniqueDescriptionFont;
+
     private Array<Technique> techniques;
     private TreeItem[] itens = { };
 
@@ -16,12 +21,15 @@ public class TechniquesTree : Tree
     private void _OnTreeReady()
     {
         TreeItem root = CreateItem();
-        itens = new TreeItem[techniques.Count];
+        itens = new TreeItem[GetTreeItemLength()];
         int itemIndex = 0;
 
         foreach (Technique currentTech in techniques)
         {
             AddNewTechniqueItem(root, itemIndex, currentTech);
+            itemIndex++;
+
+            AddTechniqueDescription(itemIndex, currentTech);
             itemIndex++;
         }
 
@@ -33,9 +41,14 @@ public class TechniquesTree : Tree
     private void AddNewTechniqueItem(TreeItem root, int itemIndex, Technique technique)
     {
         itens[itemIndex] = CreateItem(root);
-        //itens[itemIndex].SetIcon(0, image);    //@IMAGE FROM WHERE?! WITCH IMAGE?!! 
         itens[itemIndex].SetText(0, GetTechniqueText(technique));
         itens[itemIndex].SetMetadata(0, technique);
+    }
+
+    private void AddTechniqueDescription(int itemIndex, Technique technique)
+    {
+        itens[itemIndex] = CreateItem(itens[itemIndex - 1]);
+        itens[itemIndex].SetText(0, GetTechniqueDescription(technique));
     }
 
 
@@ -43,23 +56,21 @@ public class TechniquesTree : Tree
     {
         if (!(@event is InputEventMouseButton)) return;
         var mouseEvent = (InputEventMouseButton) @event;
-        if (mouseEvent.Doubleclick && this.GetSelected() != null)
-            ExecuteTechnique();
+ 
+        TreeItem selected = GetSelected();
+        if(selected==null) return;
+        if (mouseEvent.Doubleclick &&
+            this.GetSelected() != null &&
+            selected.GetMetadata(0) is Technique)
+                ExecuteTechnique((Technique)selected.GetMetadata(0));
     }
 
 
-    private void ExecuteTechnique()
+    private void ExecuteTechnique(Technique tech)
     {
-        Technique tech = GetSelectedTechnique();
         tech.DoMechanic((MainInterface) GetTree().CurrentScene);
     }
 
-
-    private Technique GetSelectedTechnique()
-    {
-        TreeItem selected = GetSelected();
-        return (Technique) selected.GetMetadata(0);
-    }
 
     private void MakeBlankUnselected(TreeItem[] itens)
     {
@@ -114,13 +125,38 @@ public class TechniquesTree : Tree
 
         for(int i = 0; i < works.Length; i++)
         {
-            worksText += works[i].ToString();
+            worksText += works[i];
             if (i != works.Length - 1)
                 worksText += " - ";
         }
 
         return $"- {tech.GetTechniqueName()}    [{worksText}] [LVL {tech.GetLevel()}]";
     }
+
+    private string GetTechniqueDescription(Technique technique)
+    {
+        return (
+            $"Ofensivo: {technique.GetOfensiveLevel()}      "+
+            $"Suporte: {technique.GetSuportLevel()}      " +
+            $"Criticos: {GetCriticListWithLevel(technique)}"
+        );
+    }
+
+    private string GetCriticListWithLevel(Technique technique)
+    {
+        string text = "";
+        CriticUse[] uses = technique.GetCriticUses();
+        for(int i = 0; i < uses.Length; i++)
+        {
+            text += $"{uses[i].GetUseName()} [{technique.GetPowerOfCritics()[i]}]";
+            if (i != uses.Length - 1)
+                text += " - ";
+        }
+        return text;
+    }
+
+
+
 
     public Array<Technique> GetTechniques()
     {
@@ -136,5 +172,10 @@ public class TechniquesTree : Tree
     private MainInterface GetMain()
     {
         return (MainInterface) GetTree().CurrentScene;
+    }
+
+    private int GetTreeItemLength()
+    {
+        return 2*techniques.Count;
     }
 }
