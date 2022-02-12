@@ -2,16 +2,19 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public class MelAnimador : CriticUse
+public class PrecisaoCritica : CriticUse
 {
+    int holdBonus;
+    int index;
+
     public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         if (critic < 0)
-            critic = main.RequestWorkRoll(relatedWork)/10;
+            return;
 
         main.CreateNewNotification(
-            $"Voce cura uma quantidade de vida igual a {critic+3}. Perde-se dois polens",
-            injectedWork.GetBaseImage());
+            $"Precisao Critica! Voce recebe +{3*critic} no Teste de Ataque"
+        );
     }
 
     public override void DoEndMechanicLogic()

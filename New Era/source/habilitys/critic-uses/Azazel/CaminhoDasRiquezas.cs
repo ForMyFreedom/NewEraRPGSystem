@@ -6,7 +6,7 @@ public class CaminhoDasRiquezas : CriticUse
 {
     public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic == -1)
+        if (critic < 0)
             critic = main.RequestSkillRoll(injectedWork.GetSkillList()[0].GetSkillName()) / 10;
 
         main.CreateNewNotification(

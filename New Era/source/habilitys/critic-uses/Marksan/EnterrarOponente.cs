@@ -11,7 +11,7 @@ public class EnterrarOponente : CriticUse
     {
         int result = main.RequestAtributeRoll(MyEnum.Atribute.AGI);
 
-        if (critic == -1)
+        if (critic < 0)
             critic = result / 4;
 
         damageExtra = (int)(1.5 * critic);
