@@ -958,8 +958,11 @@ margin_right = 587.0
 margin_bottom = 204.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 18 )
 hide_root = true
 script = ExtResource( 29 )
+techniqueNameFont = ExtResource( 14 )
+techniqueDescriptionFont = ExtResource( 18 )
 
 [node name="General" type="Control" parent="VBoxContainer"]
 margin_top = 658.0

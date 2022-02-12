@@ -32,7 +32,7 @@ public class WorkTree : Tree
 
         foreach(Work currentWork in works)
         {
-            AddNewWorkItem(root, itemIndex, workIndex, currentWork);
+            AddNewWorkItem(root, itemIndex, currentWork);
             AddUseOfCriticSection(root, itemIndex, workIndex, currentWork);
             itemIndex++;
 
@@ -47,7 +47,7 @@ public class WorkTree : Tree
     }
 
 
-    private void AddNewWorkItem(TreeItem root, int itemIndex, int workIndex, Work currentWork)
+    private void AddNewWorkItem(TreeItem root, int itemIndex, Work currentWork)
     {
         itens[itemIndex] = CreateItem(root);
         itens[itemIndex].SetIcon(0, currentWork.GetBaseImage());
