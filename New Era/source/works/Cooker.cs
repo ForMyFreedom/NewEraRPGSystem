@@ -19,4 +19,9 @@ public class Cooker : Work
         gui.CreateNewNotification($"Voce alcansou uma maestria de {workName}! " +
             "Escolha entre: \n" + maestryDescription, baseImage);
     }
+
+    public override int GetBaseDamage(MainInterface gui, int actionIndex = 0)
+    {
+        return 0;
+    }
 }

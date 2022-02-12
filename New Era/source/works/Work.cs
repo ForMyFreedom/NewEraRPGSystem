@@ -31,6 +31,7 @@ public abstract class Work : Resource
     public abstract void DoSecondUpStep(MainInterface gui);
     public abstract void DoThirdUpStep(MainInterface gui);
 
+    public abstract int GetBaseDamage(MainInterface gui, int actionIndex = 0);
 
 
     public String GetWorkName()

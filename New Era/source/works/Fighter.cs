@@ -18,4 +18,11 @@ public class Fighter : Work
         gui.CreateNewNotification($"Voce alcansou uma maestria de {workName}! " +
             "Escolha entre: \n" + maestryDescription, baseImage);
     }
+
+    public override int GetBaseDamage(MainInterface gui, int actionIndex = 0)
+    {
+        int str = gui.GetAtributeNodeByEnum(MyEnum.Atribute.STR).GetAtributeValue();
+        int agi = gui.GetAtributeNodeByEnum(MyEnum.Atribute.AGI).GetAtributeValue();
+        return (str + agi) / 2;
+    }
 }
