@@ -49,9 +49,14 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     private Array<Technique> allTechniques;
 
 
+    public int GetEditionIndex()
+    {
+        return currentEditionIndex;
+    }
+
     public String GetBaseSavePath()
     {
-        return $"{MyEnum.savePath}/{characterName}/";
+        return $"{MyEnum.savePath}{characterName}/";
     }
 
     public String GetCurrentSavePath()
@@ -61,7 +66,8 @@ public class PlayerSaveResource : Resource, CharacterDataBank
 
     private String GetEditionIndexString()
     {
-        currentEditionIndex = GetTrueEditionIndex();
+        currentEditionIndex = GetLastEditionIndex();
+        currentEditionIndex++;
 
         if (currentEditionIndex.ToString().Length == 1)
             return $"0{currentEditionIndex}";
@@ -77,10 +83,13 @@ public class PlayerSaveResource : Resource, CharacterDataBank
         }
     }
 
-    public int GetTrueEditionIndex()
+    public int GetLastEditionIndex()
     {
         Array<String> files = FileGerenciator.ListFilesInDirectory(GetBaseSavePath());
-        return files.Count;
+        PlayerSaveResource last = ResourceLoader.Load<PlayerSaveResource>(
+            GetBaseSavePath()+files[files.Count - 1]
+        );
+        return last.GetEditionIndex();
     }
 
     public void AddEditionIndex()

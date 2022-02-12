@@ -394,11 +394,6 @@ public class Player : Node, CharacterDataBank
 
 
 
-    public void PrepareSave()
-    {
-        playerSaveResource.AddEditionIndex();
-    }
-
 
     public Resource GetSaveResource()
     {

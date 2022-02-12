@@ -140,7 +140,6 @@ public class MainInterface : Control, CharacterDataBank
     private void RegisterAllData()
     {
         RegistryData(this, player);
-        player.PrepareSave();
         ResourceSaver.Save(player.GetActualSavePath(), player.GetSaveResource());
     }
 
