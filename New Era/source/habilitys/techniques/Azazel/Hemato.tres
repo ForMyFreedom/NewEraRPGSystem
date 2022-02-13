@@ -15,3 +15,4 @@ actionIndexOfCritics = PoolIntArray( 0, 0 )
 ofensiveLevel = 34
 suportLevel = 6
 level = 40
+modValue = 0
