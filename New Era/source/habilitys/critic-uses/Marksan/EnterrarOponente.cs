@@ -18,9 +18,7 @@ public class EnterrarOponente : CriticUse
         main.AddExtraDamage(damageExtra);
 
         main.CreateNewNotification(
-            $"Voce tenta agarrar um alvo com um Teste de Agilidade de {result}, caso venca, voce o agarra e comeca a voar\n"+
-             "O alvo ainda tem um turno de direito. Caso continue agarrado, em seu turno a queda acontece!\n"+
-            $"Voce causa +{damageExtra} Dano!", injectedWork.GetBaseImage()
+            partsOfMessage[0]+result+partsOfMessage[1]+damageExtra+partsOfMessage[2], injectedWork.GetBaseImage()
         );
 
         ConnectToLastNotification(main);

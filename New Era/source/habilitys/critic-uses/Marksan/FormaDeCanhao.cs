@@ -18,8 +18,7 @@ public class FormaDeCanhao : CriticUse
         holdCritic = critic;
 
         main.CreateNewNotification(
-             "Modo Ativado, Forma de Canhao: Voce apenas pode se mover e atacar, assim como tem -10 em todas suas defesas.\n"+
-            $"Mas com isso voce recebe +{2*critic} em Agilidade",
+             partsOfMessage[0]+2*critic+partsOfMessage[1],
             injectedWork.GetBaseImage()
         );
 

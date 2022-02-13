@@ -7,8 +7,7 @@ public class DoseDupla : CriticUse
     public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         main.CreateNewNotification(
-            "Voce sacrifica todas as defesas pelo proximo turno, mas ataque dois alvos!",
-            injectedWork.GetBaseImage()
+            partsOfMessage[0], injectedWork.GetBaseImage()
         );
     }
 

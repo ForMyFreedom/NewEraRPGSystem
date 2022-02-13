@@ -10,7 +10,7 @@ public class NaoSeraoOsUltimosSocorros : CriticUse
             critic = (main.RequestWorkRoll(relatedWork)/10) *4;
         
         main.CreateNewNotification(
-            $"Caso o alvo sem vida esteje prestes a morrer, voce recebe +{critic} no resultado",
+            partsOfMessage[0]+critic+partsOfMessage[1],
             injectedWork.GetBaseImage()
         );
     }

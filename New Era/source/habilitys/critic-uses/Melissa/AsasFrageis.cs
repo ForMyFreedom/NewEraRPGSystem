@@ -12,9 +12,7 @@ public class AsasFrageis : CriticUse
             critic = result / 10;
 
         main.CreateNewNotification(
-            "Apos atacar de algum modo, voce faz disputa Agilidade com "+
-           $"um alvo [Resultado {result}]. E caso seja melhor, "+
-           $"voce rouba {critic} Surto de Acao dele", injectedWork.GetBaseImage());
+            partsOfMessage[0]+result+partsOfMessage[1]+critic+partsOfMessage[2], injectedWork.GetBaseImage());
     }
 
     public override void DoEndMechanicLogic()

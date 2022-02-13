@@ -7,4 +7,5 @@ script = ExtResource( 1 )
 criticUseName = "Onda de Choque"
 relatedWork = 12
 text = "Você pode fazer um Teste de Akuma no Mi e propagar uma onda elétrica em seus arredores. Diminuindo 2N Surto de Ação de todos próximos em uma área de 1 à N/2 metros."
+partsOfMessage = PoolStringArray( "Você diminui em ", " Surto de Ação todos seres em uma area de 1 a " )
 cost = -1

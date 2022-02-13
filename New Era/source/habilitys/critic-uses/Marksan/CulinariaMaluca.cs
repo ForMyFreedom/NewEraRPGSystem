@@ -10,7 +10,7 @@ public class CulinariaMaluca : CriticUse
             critic = main.RequestWorkRoll(relatedWork)/10;
 
         main.CreateNewNotification(
-            $"Caso use apenas ingredientes vivos e duvidosos, voce recebe +{3*critic} no Teste de Culinaria",
+            partsOfMessage[0]+3*critic+partsOfMessage[1],
             injectedWork.GetBaseImage()
         );
     }

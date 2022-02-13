@@ -10,7 +10,7 @@ public class PrevisaoDetalhista : CriticUse
             critic = main.RequestSkillRoll(injectedWork.GetSkillList()[1].GetSkillName())/10;
 
         main.CreateNewNotification(
-            $"Voce foca em somente uma informacao e recebe +{3*critic} em seu Teste de Previsao",
+            partsOfMessage[0]+$"+{3*critic} "+partsOfMessage[1],
             injectedWork.GetBaseImage());
     }
 

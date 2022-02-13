@@ -10,8 +10,9 @@ public class SangueMagnetico : CriticUse
             critic = main.RequestWorkRoll(relatedWork)/10;
 
         main.CreateNewNotification(
-            "Se o alvo em geral estiver acima de 25% de Vida, voce recebe "+
-           $"+{5*critic} no Teste de Ataque", injectedWork.GetBaseImage());
+            partsOfMessage[0]+$"+{5*critic} "+partsOfMessage[1],
+            injectedWork.GetBaseImage()
+        );
     }
 
     public override void DoEndMechanicLogic()

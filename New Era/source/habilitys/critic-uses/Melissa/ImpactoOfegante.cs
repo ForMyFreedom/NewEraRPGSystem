@@ -10,8 +10,7 @@ public class ImpactoOfegante : CriticUse
             critic = main.RequestWorkRoll(relatedWork)/10;
 
         main.CreateNewNotification(
-            $"O dano de seu ataque vai para zero, mas voce reduz {critic}"+
-            " as Defesas do inimigo ate o final do combate [Estacavel]",
+            partsOfMessage[0]+critic+partsOfMessage[1],
             injectedWork.GetBaseImage()
         );
     }

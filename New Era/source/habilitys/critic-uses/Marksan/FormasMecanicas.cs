@@ -10,8 +10,7 @@ public class FormasMecanicas : CriticUse
             critic = main.RequestWorkRoll(relatedWork)/10;
 
         main.CreateNewNotification(
-            $"Voce recebe {critic} Implementacoes [Aumente +3 Atributos/Oficios de sua escolhe a cada ponto gasto]\n"+
-            $"Limite em um unico fator: {injectedWork.GetLevel()/2}. Implementacoes duram um minuto e nao podem ser alteradas nesse tempo",
+            partsOfMessage[0]+critic+partsOfMessage[1]+injectedWork.GetLevel()/2+partsOfMessage[2],
             injectedWork.GetBaseImage());
 
         ConnectToLastNotification(main);

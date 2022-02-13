@@ -13,7 +13,7 @@ public class PrecisaoCritica : CriticUse
             return;
 
         main.CreateNewNotification(
-            $"Precisao Critica! Voce recebe +{3*critic} no Teste de Ataque"
+            partsOfMessage[0]+3*critic+partsOfMessage[1]
         );
     }
 

@@ -10,8 +10,7 @@ public class CaminhoDasRiquezas : CriticUse
             critic = main.RequestSkillRoll(injectedWork.GetSkillList()[0].GetSkillName()) / 10;
 
         main.CreateNewNotification(
-            "Voce pode navegar rumo a uma ilha com todos dias recebendo "+
-            $"+{2*critic} em todos testes ligados a procurar tesouros",
+            partsOfMessage[0]+$" +{2*critic} "+partsOfMessage[1],
             injectedWork.GetBaseImage());
     }
 

@@ -9,9 +9,7 @@ public class GarotaIrritante : CriticUse
         int result = main.RequestSkillRoll(injectedWork.GetSkillList()[1].GetSkillName());
 
         main.CreateNewNotification(
-            "Caso o alvo esteje engajado ofensivamente no combate, voce " +
-            "pode mudar o foco dele caso falhe em um Teste de Mente de " +
-           $"dificuldade {result}", injectedWork.GetBaseImage());
+            partsOfMessage[0]+result, injectedWork.GetBaseImage());
     }
 
     public override void DoEndMechanicLogic()

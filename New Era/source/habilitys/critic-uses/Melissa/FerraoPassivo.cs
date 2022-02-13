@@ -10,8 +10,7 @@ public class FerraoPassivo : CriticUse
             critic = main.RequestWorkRoll(relatedWork);
 
         main.CreateNewNotification(
-            $"Antes de ser alvo de um ataque, voce devolve {critic} de "+
-             "dano para o inimigo (Independente do alvo acertar ou nao)",
+            partsOfMessage[0]+critic+partsOfMessage[1],
             injectedWork.GetBaseImage()
         );
     }

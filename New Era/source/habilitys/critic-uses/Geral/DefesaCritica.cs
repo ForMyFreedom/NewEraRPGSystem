@@ -12,12 +12,14 @@ public class DefesaCritica : CriticUse
         if (critic < 0)
             return;
 
+        this.main = main;
+
         holdBonus = 2 * critic;
         index = actionIndex;
         ModifySomeDefense(1);
 
         main.CreateNewNotification(
-            $"Defesa Critica! Voce recebe +{holdBonus} em Defesa de {GetBonusText()}");
+           partsOfMessage[0]+holdBonus+partsOfMessage[1]+GetBonusText());
         ConnectToLastNotification(main);
     }
 
@@ -38,6 +40,6 @@ public class DefesaCritica : CriticUse
 
     private string GetBonusText()
     {
-        return (index == 0) ? "Agilidade" : "Forca";
+        return (index == 0) ? "AGI" : "STR";
     }
 }

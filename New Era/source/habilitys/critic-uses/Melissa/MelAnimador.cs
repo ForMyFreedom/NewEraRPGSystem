@@ -10,7 +10,7 @@ public class MelAnimador : CriticUse
             critic = main.RequestWorkRoll(relatedWork)/10;
 
         main.CreateNewNotification(
-            $"Voce cura uma quantidade de vida igual a {critic+3}. Perde-se dois polens",
+            partsOfMessage[0]+(critic+3)+partsOfMessage[1],
             injectedWork.GetBaseImage());
     }
 

@@ -10,7 +10,7 @@ public class OndaDeChoque : CriticUse
             critic = main.RequestWorkRoll(relatedWork) / 10;
 
         main.CreateNewNotification(
-            $"Voce diminui em {2*critic} Surto de Acao todos seres em uma area de 1 a {critic/2} metros",
+            partsOfMessage[0]+2*critic+partsOfMessage[1]+critic/2+" metros",
             injectedWork.GetBaseImage()
         );
     }

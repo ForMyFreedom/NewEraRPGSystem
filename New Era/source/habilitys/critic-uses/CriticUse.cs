@@ -11,6 +11,8 @@ public abstract class CriticUse : NotificationConsumer
     [Export]
     protected String text;
     [Export]
+    protected String[] partsOfMessage;
+    [Export]
     protected int cost; //-1 -> N
 
     protected Work injectedWork;

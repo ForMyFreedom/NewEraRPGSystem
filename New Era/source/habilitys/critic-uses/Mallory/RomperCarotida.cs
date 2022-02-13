@@ -10,8 +10,7 @@ public class RomperCarotida : CriticUse
             critic = main.RequestWorkRoll(relatedWork)/10;
 
         main.CreateNewNotification(
-            $"Caso o alvo seja humanoide, sua letalidade aumenta em {critic}",
-            injectedWork.GetBaseImage()
+            partsOfMessage[0]+critic, injectedWork.GetBaseImage()
         );
     }
 

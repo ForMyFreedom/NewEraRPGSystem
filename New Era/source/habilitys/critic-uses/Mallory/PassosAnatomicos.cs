@@ -10,7 +10,7 @@ public class PassosAnatomicos : CriticUse
             critic = main.RequestAtributeRoll(MyEnum.Atribute.AGI)/5;
         
         main.CreateNewNotification(
-            $"Caso se mova em direcao a um assassinato, voce recebe +{critic} no resultado",
+            partsOfMessage[0]+critic+partsOfMessage[1],
             injectedWork.GetBaseImage()
         );
     }

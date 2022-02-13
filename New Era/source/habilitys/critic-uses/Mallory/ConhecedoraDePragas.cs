@@ -6,10 +6,10 @@ public class ConhecedoraDePragas : CriticUse
 {
     public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        main.CreateNewNotification
-        ("Em Testes de Conhecimento sobre pragas e epidemias, voce recebe "+
-        $"+{injectedWork.GetSkillList()[0].GetLevel()} no teste",
-        injectedWork.GetBaseImage());
+        main.CreateNewNotification(
+            partsOfMessage[0]+injectedWork.GetSkillList()[0].GetLevel()+partsOfMessage[1],
+            injectedWork.GetBaseImage()
+        );
     }
 
     public override void DoEndMechanicLogic()

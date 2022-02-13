@@ -16,8 +16,8 @@ public class LancaRotativa : CriticUse
         holdCritic = critic;
 
         main.CreateNewNotification(
-            "Como acao livre, voce se protege de projeteis com um bonus de "+
-           $"{2*critic} em todas suas Defesas", injectedWork.GetBaseImage());
+           partsOfMessage[0]+$"{2*critic} "+partsOfMessage[1],
+           injectedWork.GetBaseImage());
 
         ConnectToLastNotification(main);
     }
