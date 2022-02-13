@@ -129,8 +129,8 @@ public class TechniquesTree : Tree
             if (i != works.Length - 1)
                 worksText += " - ";
         }
-
-        return $"- {tech.GetTechniqueName()}    [{worksText}] [LVL {tech.GetLevel()}]";
+        string levelStr = (tech.GetLevel() > 0) ? $"[LVL {tech.GetLevel()}]" : "";
+        return $"- {tech.GetTechniqueName()}    [{worksText}] {levelStr}";
     }
 
     private string GetTechniqueDescription(Technique technique)

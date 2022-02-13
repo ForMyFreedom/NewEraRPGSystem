@@ -44,7 +44,7 @@ public abstract class Technique : NotificationConsumer
     {
         int rollValue = CalculateRollValue();
         int sumValue = CalculateSumValue(main);
-        int damage = CalculateBaseDamage(main) + ofensiveLevel;
+        int damage = CalculateBaseDamage(main) + ofensiveLevel +main.GetExtraDamage();
 
         int result = RollCode.GetRandomAdvancedRoll(rollValue, sumValue, modValue);
 
