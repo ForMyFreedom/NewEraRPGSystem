@@ -117,4 +117,9 @@ public class Factor : Control
     {
         return GetNode<SpinBox>(modSpinPath);
     }
+
+    public void SetActualMod(int value)
+    {
+        actualMod = value;
+    }
 }

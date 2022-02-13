@@ -271,7 +271,7 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModLife(int value)
     {
-        GetFactorModSpin(lifeFactorPath).Value = value;
+        SetFactorModValue(lifeFactorPath, value);
     }
 
     public void AddModLife(int sum)
@@ -323,7 +323,7 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModSurge(int value)
     {
-        GetFactorModSpin(surgeFactorPath).Value = value;
+        SetFactorModValue(surgeFactorPath, value);
     }
 
     public void AddModSurge(int sum)
@@ -375,7 +375,7 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModAgiDefense(int value)
     {
-        GetFactorModSpin(agiDefenseFactorPath).Value = value;
+        SetFactorModValue(strDefenseFactorPath, value);
     }
 
     public void AddModAgiDefense(int sum)
@@ -427,7 +427,7 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModStrDefense(int value)
     {
-        GetFactorModSpin(strDefenseFactorPath).Value = value;
+        SetFactorModValue(strDefenseFactorPath, value);
     }
 
     public void AddModStrDefense(int sum)
@@ -804,6 +804,12 @@ public class MainInterface : Control, CharacterDataBank
     private SpinBox GetFactorModSpin(NodePath path)
     {
         return GetNode<Factor>(path).GetModSpin();
+    }
+
+    private void SetFactorModValue(NodePath path, int value)
+    {
+        GetNode<Factor>(path).GetModSpin().Value = value;
+        GetNode<Factor>(path).SetActualMod(value);
     }
 
 
