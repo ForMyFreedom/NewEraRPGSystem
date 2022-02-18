@@ -1,7 +1,7 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
-[ext_resource path="res://source/players/Mallory.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/players/Melissa.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/VSStyle.tres" type="StyleBox" id=3]
 [ext_resource path="res://source/Atributo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/Factor.tscn" type="PackedScene" id=5]
@@ -22,13 +22,18 @@
 [ext_resource path="res://assets/notification.wav" type="AudioStream" id=20]
 [ext_resource path="res://assets/del_notification.wav" type="AudioStream" id=21]
 [ext_resource path="res://source/audio/MultipleStreamPlayer.cs" type="Script" id=22]
-[ext_resource path="res://source/general_buttons/TriviaButton.tscn" type="PackedScene" id=23]
+[ext_resource path="res://source/general_buttons/GeneralButton.tscn" type="PackedScene" id=23]
 [ext_resource path="res://assets/updown.png" type="Texture" id=24]
-[ext_resource path="res://source/general_buttons/CustomRollButton.tscn" type="PackedScene" id=25]
+[ext_resource path="res://source/pop_up_general_interface/TriviaPopup.tscn" type="PackedScene" id=25]
 [ext_resource path="res://assets/skills/arrow.png" type="Texture" id=26]
 [ext_resource path="res://source/guis/CriticGUI.tscn" type="PackedScene" id=27]
 [ext_resource path="res://source/SaveButton.cs" type="Script" id=28]
 [ext_resource path="res://source/TechniquesTree.cs" type="Script" id=29]
+[ext_resource path="res://source/inventory/CharacterInventory.cs" type="Script" id=30]
+[ext_resource path="res://source/pop_up_general_interface/CustomRollPopup.tscn" type="PackedScene" id=31]
+[ext_resource path="res://source/TriviaData.cs" type="Script" id=32]
+[ext_resource path="res://source/pop_up_general_interface/InventoryPopup.tscn" type="PackedScene" id=33]
+[ext_resource path="res://assets/turn/no-turn.png" type="Texture" id=34]
 
 [sub_resource type="Animation" id=1]
 resource_name = "blink"
@@ -52,12 +57,7 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=3]
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 7 )
-
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 tracks/0/type = "method"
 tracks/0/path = NodePath("NotificationsSound")
 tracks/0/interp = 1
@@ -73,7 +73,7 @@ tracks/0/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:margin_left")
@@ -100,10 +100,10 @@ tracks/1/keys = {
 "values": [ -480, -160 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("BellNode/BellTexture:rect_rotation")
+tracks/0/path = NodePath("HBoxContainer/Actions/BellNode/BellTexture:rect_rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -129,7 +129,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:margin_left")
@@ -156,7 +156,7 @@ tracks/1/keys = {
 "values": [ -160, -480 ]
 }
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 0, 1 )
 border_color = Color( 1, 0.94902, 0, 1 )
 corner_radius_top_left = 20
@@ -165,7 +165,7 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 corner_detail = 20
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -218,6 +218,8 @@ equipamentsButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxCont
 tracesButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TracesButton")
 saveButtonPath = NodePath("VBoxContainer/Info/MarginContainer/SaveButton")
 techniquesTreePath = NodePath("VBoxContainer/Perks/HBOX/HabilityControl/MarginContainer/VBOX/TechniqueTree")
+characterInventoryPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/EquipamentsButton/CharacterInventory")
+triviaDataPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton/TrivaData")
 
 [node name="BGRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -409,7 +411,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CustomRollButton" parent="VBoxContainer/Info/MarginContainer/HBoxContainer" instance=ExtResource( 25 )]
+[node name="CustomRollButton" parent="VBoxContainer/Info/MarginContainer/HBoxContainer" instance=ExtResource( 23 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -418,6 +420,8 @@ margin_left = 991.0
 margin_top = 0.0
 margin_right = 1091.0
 margin_bottom = 41.0
+text = "Rolagem"
+packedPopup = ExtResource( 31 )
 
 [node name="CombatFactors" type="Control" parent="VBoxContainer"]
 margin_top = 45.0
@@ -1003,14 +1007,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EquipamentsButton" type="Button" parent="VBoxContainer/General/MarginContainer/HBoxContainer"]
-margin_left = 90.0
-margin_right = 194.0
+[node name="EquipamentsButton" parent="VBoxContainer/General/MarginContainer/HBoxContainer" instance=ExtResource( 23 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 76.0
+margin_top = 0.0
+margin_right = 209.0
 margin_bottom = 42.0
-rect_min_size = Vector2( 100, 0 )
-size_flags_horizontal = 6
-custom_fonts/font = SubResource( 3 )
 text = "Equipamentos"
+packedPopup = ExtResource( 33 )
+
+[node name="CharacterInventory" type="Node" parent="VBoxContainer/General/MarginContainer/HBoxContainer/EquipamentsButton"]
+script = ExtResource( 30 )
 
 [node name="TrainingButton" type="Button" parent="VBoxContainer/General/MarginContainer/HBoxContainer"]
 margin_left = 382.0
@@ -1039,6 +1049,11 @@ margin_left = 962.0
 margin_top = 0.0
 margin_right = 1062.0
 margin_bottom = 42.0
+text = "Trivia"
+packedPopup = ExtResource( 25 )
+
+[node name="TrivaData" type="Node" parent="VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton"]
+script = ExtResource( 32 )
 
 [node name="NotificationArea" type="Control" parent="."]
 anchor_left = 1.0
@@ -1052,10 +1067,10 @@ script = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-bellPath = NodePath("BellNode/BellTexture")
+bellPath = NodePath("HBoxContainer/Actions/BellNode/BellTexture")
 animationPath = NodePath("AnimationPlayer")
-notificationListPath = NodePath("Margin/NotificationList")
-quantNotificationsPath = NodePath("BellNode/QuantNotificationsLabel")
+notificationListPath = NodePath("HBoxContainer/NotificationList")
+quantNotificationsPath = NodePath("HBoxContainer/Actions/BellNode/QuantNotificationsLabel")
 blankTexture = ExtResource( 19 )
 
 [node name="NotificationsSound" type="AudioStreamPlayer" parent="NotificationArea"]
@@ -1064,15 +1079,16 @@ audioStreamList = [ ExtResource( 20 ), ExtResource( 21 ) ]
 audioNameList = PoolStringArray( "new_not", "del_not" )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NotificationArea"]
-anims/del_notification = SubResource( 4 )
-anims/dishow = SubResource( 5 )
-anims/new_notification = SubResource( 6 )
-anims/show = SubResource( 7 )
+anims/del_notification = SubResource( 3 )
+anims/dishow = SubResource( 4 )
+anims/new_notification = SubResource( 5 )
+anims/show = SubResource( 6 )
 
 [node name="ColorRect" type="ColorRect" parent="NotificationArea"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 31.0
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0, 0, 0, 0.313726 )
@@ -1080,33 +1096,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Margin" type="MarginContainer" parent="NotificationArea"]
+[node name="HBoxContainer" type="HBoxContainer" parent="NotificationArea"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 50.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NotificationList" type="ItemList" parent="NotificationArea/Margin"]
-margin_right = 298.0
+[node name="Actions" type="VBoxContainer" parent="NotificationArea/HBoxContainer"]
+margin_right = 44.0
 margin_bottom = 700.0
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 18 )
-max_text_lines = 3
-auto_height = true
-same_column_width = true
+size_flags_stretch_ratio = 0.15
 
-[node name="BellNode" type="Control" parent="NotificationArea"]
-margin_top = 49.0
-margin_right = 50.0
-margin_bottom = 99.0
+[node name="BellNode" type="Control" parent="NotificationArea/HBoxContainer/Actions"]
+margin_right = 44.0
+margin_bottom = 63.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BellTexture" type="TextureRect" parent="NotificationArea/BellNode"]
+[node name="BellTexture" type="TextureRect" parent="NotificationArea/HBoxContainer/Actions/BellNode"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 25, 25 )
@@ -1115,11 +1132,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="QuantNotificationsLabel" type="Label" parent="NotificationArea/BellNode"]
+[node name="QuantNotificationsLabel" type="Label" parent="NotificationArea/HBoxContainer/Actions/BellNode"]
 margin_right = 16.0
 margin_bottom = 16.0
 rect_pivot_offset = Vector2( 8, 8 )
-custom_styles/normal = SubResource( 8 )
+custom_styles/normal = SubResource( 7 )
 custom_colors/font_color = Color( 1, 0.94902, 0, 1 )
 text = "0"
 align = 1
@@ -1128,9 +1145,41 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PulseAnimationPlayer" type="AnimationPlayer" parent="NotificationArea/BellNode"]
+[node name="PulseAnimationPlayer" type="AnimationPlayer" parent="NotificationArea/HBoxContainer/Actions/BellNode"]
 autoplay = "pulse"
-anims/pulse = SubResource( 9 )
+anims/pulse = SubResource( 8 )
+
+[node name="TurnNode" type="Control" parent="NotificationArea/HBoxContainer/Actions"]
+margin_top = 67.0
+margin_right = 44.0
+margin_bottom = 700.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TurnTexture" type="TextureRect" parent="NotificationArea/HBoxContainer/Actions/TurnNode"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 25, 25 )
+mouse_filter = 2
+texture = ExtResource( 34 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NotificationList" type="ItemList" parent="NotificationArea/HBoxContainer"]
+margin_left = 48.0
+margin_right = 348.0
+margin_bottom = 700.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 18 )
+max_text_lines = 3
+auto_height = true
+same_column_width = true
 
 [editable path="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life"]
 [editable path="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge"]

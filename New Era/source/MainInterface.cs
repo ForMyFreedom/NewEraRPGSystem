@@ -63,6 +63,10 @@ public class MainInterface : Control, CharacterDataBank
     private NodePath saveButtonPath;
     [Export]
     private NodePath techniquesTreePath;
+    [Export]
+    private NodePath characterInventoryPath;
+    [Export]
+    private NodePath triviaDataPath;
 
     private Player player;
     private Color[] colors = new Color[2];
@@ -135,6 +139,9 @@ public class MainInterface : Control, CharacterDataBank
 
         reciver.SetCriticUses(sender.GetCriticUses());
         reciver.SetTechniques(sender.GetTechniques());
+
+        reciver.SetItens(sender.GetItens());
+        reciver.SetWeaponIndex(sender.GetWeaponIndex());
     }
 
     private void RegisterAllData()
@@ -163,7 +170,7 @@ public class MainInterface : Control, CharacterDataBank
 
     public void _OnEquipaments()
     {
-        GD.Print("Issue #7");
+        GetNode<GeneralButton>(equipamentsButtonPath).CreatePopup(this);
     }
 
     public void _OnTraces()
@@ -666,13 +673,12 @@ public class MainInterface : Control, CharacterDataBank
 
     public string GetTrivia()
     {
-        object data = GetNode<GeneralButton>(triviaButtonPath).GetData();
-        return (String) data;
+        return GetNode<TriviaData>(triviaDataPath).GetTrivia();
     }
 
     public void SetTrivia(string text)
     {
-        GetNode<GeneralButton>(triviaButtonPath).SetData(new[] { text });
+        GetNode<TriviaData>(triviaDataPath).SetTrivia(text);
     }
 
 
@@ -699,6 +705,11 @@ public class MainInterface : Control, CharacterDataBank
     public void AddExtraDamage(int value)
     {
         GetNode<SpinBox>(damageSpinPath).Value += value;
+    }
+
+    public int GetSelectedWeaponDamage()
+    {
+        return GetNode<CharacterInventory>(characterInventoryPath).GetSelectedWeaponDamage();
     }
 
 
@@ -743,6 +754,25 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<TechniquesTree>(techniquesTreePath).SetTechniques(tech);
     }
 
+    public Array<InventoryItem> GetItens()
+    {
+        return GetNode<CharacterInventory>(characterInventoryPath).GetItens();
+    }
+
+    public void SetItens(Array<InventoryItem> itens)
+    {
+        GetNode<CharacterInventory>(characterInventoryPath).SetItens(itens);
+    }
+
+    public int GetWeaponIndex()
+    {
+        return GetNode<CharacterInventory>(characterInventoryPath).GetSelectedWeaponIndex();
+    }
+
+    public void SetWeaponIndex(int index)
+    {
+        GetNode<CharacterInventory>(characterInventoryPath).SetSelectedWeaponIndex(index);
+    }
 
 
 
@@ -874,7 +904,6 @@ public class MainInterface : Control, CharacterDataBank
         Vector2 windowSize = OS.WindowSize;
         OS.WindowPosition = (screenSize - windowSize) * 0.5f;
     }
-
 
 }
 
