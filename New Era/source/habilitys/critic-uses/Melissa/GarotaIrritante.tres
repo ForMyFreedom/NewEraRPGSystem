@@ -7,5 +7,5 @@ script = ExtResource( 1 )
 criticUseName = "Garrota Irritante"
 relatedWork = 11
 text = "Permite você realizar um Teste de Manipulação disputado com a Mente de um alvo para mudar o foco de ataque dele para você (Note que o alvo tem que estar engajado ofensivamente no combate)."
-partsOfMessage = PoolStringArray( "Caso o alvo esteje engajado ofensivamente no combate, você pode mudar o foco dele caso falhe em um Teste de Mente de dificuldade" )
+partsOfMessage = PoolStringArray( "Caso o alvo esteje engajado ofensivamente no combate, você pode mudar o foco dele caso falhe em um Teste de Mente de dificuldade " )
 cost = 2

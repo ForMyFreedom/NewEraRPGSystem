@@ -18,6 +18,7 @@ Você sente um grande salto em suas habilidades. Escolha um entre:
 - Mestre Retórico+I: +15 Manipulação para convenser um alvo."
 skills = [ ExtResource( 3 ), ExtResource( 4 ) ]
 description = "Palavras como o meio para se alcansar qualquer coisa"
+maestryDescription = null
 enumWork = 11
 relationedAtribute = 4
 level = 0

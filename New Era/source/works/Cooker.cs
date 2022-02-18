@@ -20,7 +20,7 @@ public class Cooker : Work
             "Escolha entre: \n" + maestryDescription, baseImage);
     }
 
-    public override int GetBaseDamage(MainInterface gui, int actionIndex = 0)
+    public override int GetBaseDamage(MainInterface gui, int weaponDamage = 0, int actionIndex = 0)
     {
         return 0;
     }

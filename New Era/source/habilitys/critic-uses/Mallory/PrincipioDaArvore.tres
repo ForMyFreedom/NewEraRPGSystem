@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/habilitys/critic-uses/Mallory/PrincipioDaArvore.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+criticUseName = "Princípio da Árvore"
+relatedWork = 9
+text = "A força de um tratamento não precisa ser interna, se você tiver conhecimento o bastante para usar de um mundo inteiro ao seu favor... Algo te impede de usar esse Uso de Crítico no momento, e você não entende por que."
+partsOfMessage = PoolStringArray( "Crítico Adormecido" )
+cost = -1

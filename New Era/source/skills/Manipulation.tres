@@ -12,4 +12,4 @@ effectImage = ExtResource( 3 )
 wayOfLevelCalculeScript = ExtResource( 2 )
 skillDescription = "A crença é uma teia, e eu sei costurar"
 mechanicDescription = "Sempre que precisar convencer ou simplesmente enganar, você deve fazer um Teste de Manipulação. Para isso, você deve realizar um Teste Regular usando sua Manipulação tentando bater em uma Dificuldade determinada pelo Narrador [O qual leva em conta a distância de crença/ plausibilidade entre o que ele acredita e o que o jogador quer convencer, e o grau de teimozia/cetidez do(s) manipulado(s)]. Caso tenha sucesso, o alvo se convence/acredita no que você diz até que seja convencido do contrário / encontre vestígios que prove o contrário. Caso fracasse, o alvo sabe que tentou mentir para ele."
-level = 0
+level = 2

@@ -20,9 +20,8 @@ public class Assasin : Work
     }
 
 
-    public override int GetBaseDamage(MainInterface gui, int actionIndex=0)
+    public override int GetBaseDamage(MainInterface gui, int weaponDamage = 0, int actionIndex = 0)
     {
-        int weapon = 10;//@getFirstWeaponDamage[com actionindex]
-        return weapon+gui.GetAtributeNodeByEnum(relationedAtribute).GetAtributeValue()/2;
+        return weaponDamage+gui.GetAtributeNodeByEnum(relationedAtribute).GetAtributeValue()/2;
     }
 }
