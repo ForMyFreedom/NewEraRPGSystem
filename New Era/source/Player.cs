@@ -6,14 +6,11 @@ public class Player : Node, CharacterDataBank
 {
     [Export]
     private PlayerSaveResource playerSaveResource;
-    private static int maxSkill = 3; //@
 
     public override void _Ready()
     {
         if (playerSaveResource == null)
             LoadLastSaveResource();
-        else
-            LoadDefinedSaveResource();
 
         CalculateWorksUp();
     }
@@ -25,11 +22,6 @@ public class Player : Node, CharacterDataBank
         playerSaveResource = ResourceLoader.Load<PlayerSaveResource>(
             GetBaseSavePath()+files[files.Count - 1]
         );
-    }
-
-    public void LoadDefinedSaveResource()
-    {
-        //@?
     }
 
     public void CalculateWorksUp()
@@ -389,6 +381,26 @@ public class Player : Node, CharacterDataBank
     public void SetTechniques(Array<Technique> tech)
     {
         playerSaveResource.SetTechniques(tech);
+    }
+
+    public Array<InventoryItem> GetItens()
+    {
+        return playerSaveResource.GetItens();
+    }
+
+    public void SetItens(Array<InventoryItem> itens)
+    {
+        playerSaveResource.SetItens(itens);
+    }
+
+    public int GetWeaponIndex()
+    {
+        return playerSaveResource.GetWeaponIndex();
+    }
+
+    public void SetWeaponIndex(int index)
+    {
+        playerSaveResource.SetWeaponIndex(index);
     }
 
 

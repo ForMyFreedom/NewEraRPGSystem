@@ -48,6 +48,11 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     [Export]
     private Array<Technique> allTechniques;
 
+    [Export]
+    private Array<InventoryItem> itens;
+    [Export]
+    private int weaponIndex;
+
 
     public int GetEditionIndex()
     {
@@ -490,5 +495,25 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     public void SetTechniques(Array<Technique> tech)
     {
         allTechniques = tech;
+    }
+
+    public Array<InventoryItem> GetItens()
+    {
+        return itens;
+    }
+
+    public void SetItens(Array<InventoryItem> _itens)
+    {
+        itens = _itens;
+    }
+
+    public int GetWeaponIndex()
+    {
+        return weaponIndex;
+    }
+
+    public void SetWeaponIndex(int index)
+    {
+        weaponIndex = index;
     }
 }

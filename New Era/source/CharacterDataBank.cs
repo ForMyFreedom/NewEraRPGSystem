@@ -108,4 +108,10 @@ public interface CharacterDataBank
 
     Array<Technique> GetTechniques();
     void SetTechniques(Array<Technique> tech);
+
+    Array<InventoryItem> GetItens();
+    void SetItens(Array<InventoryItem> itens);
+
+    int GetWeaponIndex();
+    void SetWeaponIndex(int index);
 }

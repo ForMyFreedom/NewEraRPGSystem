@@ -87,7 +87,7 @@ public abstract class Technique : NotificationConsumer
 
         foreach (Work work in injectedWorks)
         {
-            value += work.GetBaseDamage(main, 0); //@ GET WEAPON ACTION INDEX!!
+            value += work.GetBaseDamage(main, main.GetSelectedWeaponDamage());
         }
 
         return value / injectedWorks.Length;
