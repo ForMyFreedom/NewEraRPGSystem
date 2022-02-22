@@ -10,6 +10,11 @@ skillName = "Medicina"
 effectImage = ExtResource( 3 )
 wayOfLevelCalculeScript = ExtResource( 2 )
 skillDescription = "Conhecimento sobre a vida e sua manutenção"
+notificationText = "Você cura $ Vida do alvo
+%
+Você aplica $ Contra-Peçonha $
+%
+[-$ na Peçonha]"
 mechanicDescription = "	Sempre que precisar curar ferimentos, você deve usar a perícia Medicina. Para isso, você deve ter em mãos Ferramentas e se desejar Ingredientes de Medicina (Esses últimos, apenas adicionam Qualidade se forem condizentes com o mesmo tipo de dano sofrido. Veja mais em Ingredientes). Após isso, some todas as qualidades concedidas pelos Ingredientes e Ferramentas em sua Medicina e faça um Teste de Medicina. Decomponha o resultado do teste na tabela para saber o que aconteceu:
 Para cada 5, +2 de Vida	Para cada 15, -1 Efeito de Lesão ou +2 Vida
 Os efeitos só funcionam se descansar em tranquilidade por um tempo definido pelo Narrador levando em consideração a gravidade dos ferimentos. Apenas se pode fazer uma vez por dia um Tratamento por um ferimento ou grupo de ferimentos pesados. Se forem leves, vários podem ser feitos (O Narrador determina o que é sério e o que não é).

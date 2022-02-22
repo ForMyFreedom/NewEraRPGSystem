@@ -10,6 +10,13 @@ skillName = "Pancada"
 effectImage = ExtResource( 3 )
 wayOfLevelCalculeScript = ExtResource( 2 )
 skillDescription = "Nada melhor que uma boa porradaria"
+notificationText = "Se o alvo tirar menos de 
+%
+$, ele causa -$ de Dano no próximo turno
+%
+$, ele perde -$ de movimento [Podendo ficar imóvel] pelo próximo turno
+%
+$, ele tem -$ em todas suas Defesas pelo próximo turno"
 mechanicDescription = ": Sempre acertar um ataque desarmado você pode declarar Pancada, sendo o alvo obrigado a fazer um Teste Disputado de um
 dos atributos de sua escolha:
 Força (Se o alvo falhar, ele tem -Nível de Lutador/2 de dano no próximo turno).

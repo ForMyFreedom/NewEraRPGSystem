@@ -13,9 +13,9 @@ public class Medicine : Skill
 
 
 
-    public override void DoMechanic(MainInterface main, int actionIndex=0)
+    public override void DoMechanic(MainInterface main, int actionIndex=0, int mod = 0)
     {
-        rollResult = main.RequestSkillRoll(skillName);
+        rollResult = main.RequestSkillRoll(skillName, mod);
         string message ="";
         
         if(actionIndex==0)

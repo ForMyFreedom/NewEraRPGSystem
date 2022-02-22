@@ -15,6 +15,7 @@ de Qualidade superior ou igual à 4.
 - Cozinha Economica +I: +15 Culinária caso apenas haja Ingredientes de Qualidade inferior à 4"
 skills = [ ExtResource( 3 ) ]
 description = "Gênio da Refeição, mestre das barrigas"
+maestryDescription = null
 enumWork = 5
 relationedAtribute = 2
 level = 0

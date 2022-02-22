@@ -9,9 +9,9 @@ public class Protect : Skill
         return new Array<string>() { "Proteger" };
     }
 
-    public override void DoMechanic(MainInterface main, int actionIndex = 0)
+    public override void DoMechanic(MainInterface main, int actionIndex = 0, int mod = 0)
     {
-        main.CreateNewNotification($"Proteger! Voce recebe {level} pontos de Guarda para distribuir entre todos proximos a voce", effectImage);
+        main.CreateNewNotification($"Proteger! Voce recebe {level+mod} pontos de Guarda para distribuir entre todos proximos a voce", effectImage);
     }
 
 }

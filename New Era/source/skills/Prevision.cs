@@ -9,9 +9,9 @@ public class Prevision : Skill
         return new Array<string>() { "Prever" };
     }
 
-    public override void DoMechanic(MainInterface main, int actionIndex = 0)
+    public override void DoMechanic(MainInterface main, int actionIndex = 0, int mod = 0)
     {
-        int result = main.RequestSkillRoll(skillName);
+        int result = main.RequestSkillRoll(skillName, mod);
         main.CreateNewNotification(
             $"Caso a Dificuldade de Previsao do teste seje menor que {result}, voce especula e recebe informacoes. Do contrario, voce nao tem a menor ideia"
             , effectImage);

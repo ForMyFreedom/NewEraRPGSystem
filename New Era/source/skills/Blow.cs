@@ -9,19 +9,19 @@ public class Blow : Skill
         return new Array<string>() { "Pancada de Forca", "Pancada de Agilidade", "Pancada de Sentidos" };
     }
 
-    public override void DoMechanic(MainInterface main, int actionIndex = 0)
+    public override void DoMechanic(MainInterface main, int actionIndex = 0, int mod = 0)
     {
         string message = "Se o alvo tirar menos de ";
         switch (actionIndex)
         {
             case 0:
-                message += GetStrengthMessage(main);
+                message += GetStrengthMessage(main, mod);
                 break;
             case 1:
-                message += GetAgilityMessage(main);
+                message += GetAgilityMessage(main, mod);
                 break;
             case 2:
-                message += GetSensesMessage(main);
+                message += GetSensesMessage(main, mod);
                 break;
         }
 
@@ -30,21 +30,21 @@ public class Blow : Skill
 
 
 
-    private string GetStrengthMessage(MainInterface main)
+    private string GetStrengthMessage(MainInterface main, int mod = 0)
     {
-        int result = main.RequestAtributeRoll(MyEnum.Atribute.STR);
+        int result = main.RequestAtributeRoll(MyEnum.Atribute.STR, mod);
         return $"{result}, ele causa -{level} de Dano no proximo turno";
     }
 
-    private string GetAgilityMessage(MainInterface main)
+    private string GetAgilityMessage(MainInterface main, int mod = 0)
     {
-        int result = main.RequestAtributeRoll(MyEnum.Atribute.AGI);
+        int result = main.RequestAtributeRoll(MyEnum.Atribute.AGI, mod);
         return $"{result}, ele perde -{level} de movimento [Podendo ficar imovel] pelo proximo turno";
     }
 
-    private string GetSensesMessage(MainInterface main)
+    private string GetSensesMessage(MainInterface main, int mod = 0)
     {
-        int result = main.RequestAtributeRoll(MyEnum.Atribute.SEN);
+        int result = main.RequestAtributeRoll(MyEnum.Atribute.SEN, mod);
         return $"{result}, ele tem -{level} em todas suas Defesas pelo proximo turno";
     }
 }
