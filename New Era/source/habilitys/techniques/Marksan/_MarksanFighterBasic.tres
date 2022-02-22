@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/habilitys/techniques/Technique.cs" type="Script" id=1]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+techniqueName = "Porrada"
+relatedWorks = PoolIntArray( 3 )
+criticUses = [  ]
+powerOfCritics = PoolIntArray(  )
+actionIndexOfCritics = PoolIntArray(  )
+ofensiveLevel = 0
+suportLevel = 0
+level = 0
+modValue = 0

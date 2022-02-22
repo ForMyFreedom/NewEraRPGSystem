@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://source/habilitys/techniques/Technique.cs" type="Script" id=1]
+[ext_resource path="res://source/habilitys/critic-uses/Marksan/EnterrarOponente.tres" type="Resource" id=2]
+[ext_resource path="res://source/habilitys/critic-uses/Marksan/ModoTurbo.tres" type="Resource" id=3]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+techniqueName = "Takai Ryusei"
+relatedWorks = PoolIntArray( 3, 12 )
+criticUses = [ ExtResource( 3 ), ExtResource( 2 ) ]
+powerOfCritics = PoolIntArray( 12, 36 )
+actionIndexOfCritics = PoolIntArray( 0, 0 )
+ofensiveLevel = 0
+suportLevel = 17
+level = 25
+modValue = 0
