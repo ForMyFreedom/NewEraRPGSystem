@@ -52,6 +52,10 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     private Array<InventoryItem> itens;
     [Export]
     private int weaponIndex;
+    [Export]
+    private int guard;
+    [Export]
+    private MyEnum.DefenseStyle defenseStyle;
 
 
     public int GetEditionIndex()
@@ -515,5 +519,25 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     public void SetWeaponIndex(int index)
     {
         weaponIndex = index;
+    }
+
+    public int GetGuard()
+    {
+        return guard;
+    }
+
+    public void SetGuard(int guard)
+    {
+        this.guard = guard;
+    }
+
+    public MyEnum.DefenseStyle GetDefenseStyle()
+    {
+        return defenseStyle;
+    }
+
+    public void SetDefenseStyle(MyEnum.DefenseStyle style)
+    {
+        defenseStyle = style;
     }
 }

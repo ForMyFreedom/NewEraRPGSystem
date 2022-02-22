@@ -403,6 +403,25 @@ public class Player : Node, CharacterDataBank
         playerSaveResource.SetWeaponIndex(index);
     }
 
+    public int GetGuard()
+    {
+        return playerSaveResource.GetGuard();
+    }
+
+    public void SetGuard(int guard)
+    {
+        playerSaveResource.SetGuard(guard);
+    }
+
+    public MyEnum.DefenseStyle GetDefenseStyle()
+    {
+        return playerSaveResource.GetDefenseStyle();
+    }
+
+    public void SetDefenseStyle(MyEnum.DefenseStyle style)
+    {
+        playerSaveResource.SetDefenseStyle(style);
+    }
 
 
 
@@ -422,5 +441,4 @@ public class Player : Node, CharacterDataBank
     {
         return playerSaveResource.GetCurrentSavePath();
     }
-
 }

@@ -142,6 +142,8 @@ public class MainInterface : Control, CharacterDataBank
 
         reciver.SetItens(sender.GetItens());
         reciver.SetWeaponIndex(sender.GetWeaponIndex());
+        reciver.SetGuard(sender.GetGuard());
+        reciver.SetDefenseStyle(sender.GetDefenseStyle());
     }
 
     private void RegisterAllData()
@@ -772,6 +774,31 @@ public class MainInterface : Control, CharacterDataBank
     public void SetWeaponIndex(int index)
     {
         GetNode<CharacterInventory>(characterInventoryPath).SetSelectedWeaponIndex(index);
+    }
+
+    public int GetGuard()
+    {
+        return (int) GetNode<Factor>(lifeFactorPath).GetGuardSpin().Value;
+    }
+
+    public void SetGuard(int guard)
+    {
+        GetNode<Factor>(lifeFactorPath).GetGuardSpin().Value = guard;
+    }
+
+    public void AddGuard(int addGuard)
+    {
+        GetNode<Factor>(lifeFactorPath).GetGuardSpin().Value += addGuard;
+    }
+
+    public MyEnum.DefenseStyle GetDefenseStyle()
+    {
+        return GetNode<DefenseBooble>(defenseBooblePath).GetDefenseStyle();
+    }
+
+    public void SetDefenseStyle(MyEnum.DefenseStyle style)
+    {
+        GetNode<DefenseBooble>(defenseBooblePath).SetDefenseStyle(style);
     }
 
 

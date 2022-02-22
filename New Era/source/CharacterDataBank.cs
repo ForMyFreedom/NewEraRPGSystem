@@ -114,4 +114,10 @@ public interface CharacterDataBank
 
     int GetWeaponIndex();
     void SetWeaponIndex(int index);
+
+    int GetGuard();
+    void SetGuard(int guard);
+
+    MyEnum.DefenseStyle GetDefenseStyle();
+    void SetDefenseStyle(MyEnum.DefenseStyle style);
 }
