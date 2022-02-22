@@ -4,10 +4,10 @@ using System;
 
 public class ConhecedoraDePragas : CriticUse
 {
-    public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         main.CreateNewNotification(
-            partsOfMessage[0]+injectedWork.GetSkillList()[0].GetLevel()+partsOfMessage[1],
+            GetNotificationText(injectedWork.GetSkillList()[0].GetLevel()),
             injectedWork.GetBaseImage()
         );
     }

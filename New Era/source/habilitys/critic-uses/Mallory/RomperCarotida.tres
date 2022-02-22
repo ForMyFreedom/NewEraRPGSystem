@@ -7,5 +7,5 @@ script = ExtResource( 1 )
 criticUseName = "Romper Carótida"
 relatedWork = 1
 text = "Em Testes de Ataque, caso o alvo possua o pescoço a mostra e seja um humano regular em anatomia. A Letalidade aumenta em +N."
-partsOfMessage = PoolStringArray( "Caso o alvo seja humanoide, sua Letalidade aumenta em " )
+baseMessage = "O Valor de Letalidade foi aumentado em $ [Apenas caso o alvo seje humanoide]"
 cost = -1

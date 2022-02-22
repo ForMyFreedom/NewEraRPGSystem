@@ -7,5 +7,5 @@ script = ExtResource( 1 )
 criticUseName = "Defesa Crítica"
 relatedWork = 13
 text = "Que medo! Ganhe +2N de uma Defesa de sua escolha"
-partsOfMessage = PoolStringArray( "Defesa Crítica! Você recebe +", " em Defesa de " )
+baseMessage = "Defesa Crítica! Você recebe +$ em Defesa de $"
 cost = -1

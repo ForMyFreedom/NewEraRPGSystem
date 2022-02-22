@@ -7,5 +7,5 @@ script = ExtResource( 1 )
 criticUseName = "Impacto Ofegante"
 relatedWork = 4
 text = "Infere uma série de golpes extremamente rápidos, porém fracos, diretamente nos pulmões do inimigo. Em um Teste de Ataque, seu dano é anulado, mas reduz N das Defesas do inimigo até o final do combate [Estacavel]."
-partsOfMessage = PoolStringArray( "O Dano de seu ataque vai para zero, mas você reduz ", " as Defesas do inimigo até o final do combate [Estacável]" )
+baseMessage = "O Dano de seu ataque vai para zero, mas você reduz $ as Defesas do inimigo até o final do combate [Estacável]"
 cost = -1

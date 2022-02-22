@@ -6,7 +6,7 @@ public class ModoTurbo : CriticUse
 {
     int holdCritic;
 
-    public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         if (critic < 0)
             critic = main.RequestWorkRoll(relatedWork)/10;
@@ -15,8 +15,7 @@ public class ModoTurbo : CriticUse
         holdCritic = critic;
 
         main.CreateNewNotification(
-            $"Seu deslocamento aumenta em {3*critic} metros, assim como causa +{critic} Dano",
-            injectedWork.GetBaseImage()
+            GetNotificationText(3*critic, critic), injectedWork.GetBaseImage()
         );
 
         ConnectToLastNotification(main);

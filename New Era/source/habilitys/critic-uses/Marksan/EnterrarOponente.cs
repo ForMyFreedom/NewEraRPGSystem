@@ -7,7 +7,7 @@ public class EnterrarOponente : CriticUse
     int damageExtra;
 
     //In this use, the critic value means the amount of meters!
-    public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         int result = main.RequestAtributeRoll(MyEnum.Atribute.AGI);
 
@@ -17,9 +17,8 @@ public class EnterrarOponente : CriticUse
         damageExtra = (int)(1.5 * critic);
         main.AddExtraDamage(damageExtra);
 
-        main.CreateNewNotification(
-            partsOfMessage[0]+result+partsOfMessage[1]+damageExtra+partsOfMessage[2], injectedWork.GetBaseImage()
-        );
+        main.CreateNewNotification(GetNotificationText(result, damageExtra),
+            injectedWork.GetBaseImage());
 
         ConnectToLastNotification(main);
     }

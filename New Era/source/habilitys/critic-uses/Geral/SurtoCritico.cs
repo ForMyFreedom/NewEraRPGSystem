@@ -4,7 +4,7 @@ using System;
 
 public class SurtoCritico : CriticUse
 {
-    public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         if (critic < 0)
             return;
@@ -12,8 +12,7 @@ public class SurtoCritico : CriticUse
         int bonus = 2 * critic;
         main.AddActualSurge(bonus);
 
-        main.CreateNewNotification(
-            partsOfMessage[0]+bonus+partsOfMessage[1]);
+        main.CreateNewNotification(GetNotificationText(bonus));
     }
 
     public override void DoEndMechanicLogic()

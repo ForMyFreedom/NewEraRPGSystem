@@ -7,5 +7,5 @@ script = ExtResource( 1 )
 criticUseName = "Ferrão Passivo"
 relatedWork = 4
 text = "Antes de ser alvo de um ataque, permite realizar um Teste de Guardião. Independente de acertar o ataque ou não, Melissa devolve N Dano para o atacante."
-partsOfMessage = PoolStringArray( "Antes de ser alvo de um ataque, você devolve ", " de Dano para o inimigo (Independente do alvo acertar ou não)" )
+baseMessage = "Antes de ser alvo de um ataque, você devolve $ de Dano para o inimigo (Independente do alvo acertar ou não)"
 cost = -1

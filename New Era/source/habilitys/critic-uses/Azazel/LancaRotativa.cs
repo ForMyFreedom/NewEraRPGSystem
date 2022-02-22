@@ -6,7 +6,7 @@ public class LancaRotativa : CriticUse
 {
     int holdCritic;
 
-    public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         if (critic < 0)
             critic = main.RequestWorkRoll(relatedWork)/10;
@@ -16,8 +16,8 @@ public class LancaRotativa : CriticUse
         holdCritic = critic;
 
         main.CreateNewNotification(
-           partsOfMessage[0]+$"{2*critic} "+partsOfMessage[1],
-           injectedWork.GetBaseImage());
+            GetNotificationText(2*critic), injectedWork.GetBaseImage()
+        );
 
         ConnectToLastNotification(main);
     }

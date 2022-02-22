@@ -7,5 +7,5 @@ script = ExtResource( 1 )
 criticUseName = "Passos Anatômicos"
 relatedWork = 1
 text = "Em Testes de Agilidade, caso esteja tentando se mover em silêncio para assassinar um alvo, você recebe +2N no Resultado."
-partsOfMessage = PoolStringArray( "Caso se mova em direção a um assassinato, você recebe +", " no resultado" )
+baseMessage = "Caso se mova em direção a um assassinato, você recebe +$ no resultado"
 cost = -1

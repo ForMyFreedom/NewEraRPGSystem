@@ -7,5 +7,5 @@ script = ExtResource( 1 )
 criticUseName = "Lança Vampírica"
 relatedWork = 4
 text = "Em Testes de Ataque, você pode utilizar seu Talento Vampirismo com sua Lança Entoada."
-partsOfMessage = PoolStringArray( "Você pode usar seu talento vampirismo com sua lança entoada" )
+baseMessage = "Você pode usar seu talento vampirismo com sua lança entoada"
 cost = 2

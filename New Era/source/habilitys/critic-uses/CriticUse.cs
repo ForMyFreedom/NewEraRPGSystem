@@ -1,6 +1,7 @@
 using Godot;
 using Godot.Collections;
 using System;
+using System.Text.RegularExpressions;
 
 public abstract class CriticUse : NotificationConsumer
 {
@@ -10,17 +11,27 @@ public abstract class CriticUse : NotificationConsumer
     protected MyEnum.Work relatedWork;
     [Export]
     protected String text;
-    [Export]
-    protected String[] partsOfMessage;
+    [Export(PropertyHint.MultilineText)]
+    protected String baseMessage;
     [Export]
     protected int cost; //-1 -> N
 
     protected Work injectedWork;
 
-    public override abstract void DoMechanic(MainInterface main, int actionIndex=0, int critic = -1);
+    public override abstract void DoMechanicLogic(MainInterface main, int actionIndex=0, int critic = -1);
     public override abstract void DoEndMechanicLogic();
 
 
+    protected string GetNotificationText(params object[] list)
+    {
+        string finalText = baseMessage;
+        var regex = new Regex(Regex.Escape("$"));
+        for (int i = 0; i < list.Length; i++)
+        {
+            finalText = regex.Replace(finalText, list[i].ToString(), 1);
+        }
+        return finalText;
+    }
 
     public String GetUseName()
     {

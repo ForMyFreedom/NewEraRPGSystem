@@ -4,10 +4,10 @@ using System;
 
 public class DoseDupla : CriticUse
 {
-    public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         main.CreateNewNotification(
-            partsOfMessage[0], injectedWork.GetBaseImage()
+            baseMessage, injectedWork.GetBaseImage()
         );
     }
 

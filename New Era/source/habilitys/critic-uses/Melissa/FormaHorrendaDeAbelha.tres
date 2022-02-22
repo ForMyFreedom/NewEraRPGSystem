@@ -7,5 +7,5 @@ script = ExtResource( 1 )
 criticUseName = "Forma da Abelha Horrenda"
 relatedWork = 12
 text = "Aumenta o treino de Akuma no Mi em 1 ao custo de 10 Polem por Dia, ou 2 ao custo de 20 Porem por dia. Limite de Polem: 30"
-partsOfMessage = null
+baseMessage = "Aumenta seu Treino em Akuma no Mi em 1|2 ao custo de 10|20 Polens por dia"
 cost = 0

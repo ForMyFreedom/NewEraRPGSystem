@@ -6,12 +6,12 @@ public class FormaDaPrincesaDasAbelhas : CriticUse
 {
     int mod = 8;
 
-    public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         main.AddModAgility(mod);
         main.AddModStrength(-mod);
 
-        main.CreateNewNotification(partsOfMessage[0], injectedWork.GetBaseImage());
+        main.CreateNewNotification(baseMessage, injectedWork.GetBaseImage());
 
         ConnectToLastNotification(main);
     }

@@ -7,7 +7,7 @@ public class FormaDeCanhao : CriticUse
     int holdCritic;
     int defMod = 10;
 
-    public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         if (critic < 0)
             critic = main.RequestWorkRoll(relatedWork)/10;
@@ -17,11 +17,7 @@ public class FormaDeCanhao : CriticUse
         main.AddModAgility(2*critic);
         holdCritic = critic;
 
-        main.CreateNewNotification(
-             partsOfMessage[0]+2*critic+partsOfMessage[1],
-            injectedWork.GetBaseImage()
-        );
-
+        main.CreateNewNotification(GetNotificationText(2*critic), injectedWork.GetBaseImage());
         ConnectToLastNotification(main);
     }
 

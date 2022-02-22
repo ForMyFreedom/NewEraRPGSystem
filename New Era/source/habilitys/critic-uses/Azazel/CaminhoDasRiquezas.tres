@@ -7,5 +7,5 @@ script = ExtResource( 1 )
 criticUseName = "Caminho das Riquezas"
 relatedWork = 6
 text = "Em Testes de Pilotagem, você pode fazer um caminho até uma Ilha alvo tendo a cada dia um bônus de +2N em testes relacionados a procurar por tesouros."
-partsOfMessage = PoolStringArray( "Você pode navegar rumo a uma ilha com todos dias recebendo", "em todos testes ligados a procurar tesouros" )
+baseMessage = "Você pode navegar rumo a uma ilha com todos dias recebendo $ em todos testes ligados a procurar tesouros"
 cost = -1

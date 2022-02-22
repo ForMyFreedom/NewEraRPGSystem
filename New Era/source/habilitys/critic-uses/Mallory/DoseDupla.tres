@@ -7,5 +7,5 @@ script = ExtResource( 1 )
 criticUseName = "Dose Dupla"
 relatedWork = 1
 text = " Em Testes de Ataque, caso sacrifique toda sua Defesas e Guardas pelo próximo turno, você pode realizar um ataque em dois alvos de Alcance Corporal."
-partsOfMessage = PoolStringArray( "Você sacrifica todas as Defesas pelo próximo turno, mas ataque dois alvos!" )
+baseMessage = "Você sacrifica todas as Defesas pelo próximo turno, mas ataque dois alvos!"
 cost = 6

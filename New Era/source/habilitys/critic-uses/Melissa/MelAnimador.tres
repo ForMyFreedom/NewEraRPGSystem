@@ -7,5 +7,6 @@ script = ExtResource( 1 )
 criticUseName = "Mel Animador"
 relatedWork = 12
 text = "Você pode fazer um Teste de Akuma no Mi para curar uma quantidade de vida igual a N+3. Perde-se 2 Pólens"
-partsOfMessage = PoolStringArray( "Você cura uma quantidade de Vida igual a ", ". Perde-se dois pôlens" )
+baseMessage = "Você cura uma quantidade de Vida igual a $
+Perde-se dois pôlens"
 cost = -1

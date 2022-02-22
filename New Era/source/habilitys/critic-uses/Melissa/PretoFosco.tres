@@ -6,6 +6,6 @@
 script = ExtResource( 1 )
 criticUseName = "Preto Fosco"
 relatedWork = 12
-text = ""
-partsOfMessage = PoolStringArray( "Modo Fosco: Sua Defesa de Agilidade e Força foram trocadas. Você perde 1 de Vida a cada turno nesse modo" )
-cost = 0
+text = "Você assume uma forma negra de pelagem incrivelmente densa. Perde-se 1 de Surto de Ação e Vida a cada turno, porem, suas Defesas são trocadas e você recebe +N Guarda enquanto continuar ativo"
+baseMessage = "Modo Fosco: Defesas trocas, mas você perde 1 de Vida e Surto a cada turno. Recebe +$ de Guarda"
+cost = -1

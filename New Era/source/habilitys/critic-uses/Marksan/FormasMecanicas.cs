@@ -4,14 +4,14 @@ using System;
 
 public class FormasMecanicas : CriticUse
 {
-    public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         if (critic < 0)
             critic = main.RequestWorkRoll(relatedWork)/10;
 
         main.CreateNewNotification(
-            partsOfMessage[0]+critic+partsOfMessage[1]+injectedWork.GetLevel()/2+partsOfMessage[2],
-            injectedWork.GetBaseImage());
+            GetNotificationText(critic, injectedWork.GetLevel()/2), injectedWork.GetBaseImage()
+        );
 
         ConnectToLastNotification(main);
     }

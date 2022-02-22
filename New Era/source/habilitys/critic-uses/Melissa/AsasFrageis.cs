@@ -4,7 +4,7 @@ using System;
 
 public class AsasFrageis : CriticUse
 {
-    public override void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         int result = main.RequestAtributeRoll(MyEnum.Atribute.AGI);
 
@@ -12,7 +12,8 @@ public class AsasFrageis : CriticUse
             critic = result / 10;
 
         main.CreateNewNotification(
-            partsOfMessage[0]+result+partsOfMessage[1]+critic+partsOfMessage[2], injectedWork.GetBaseImage());
+            GetNotificationText(result, critic), injectedWork.GetBaseImage()
+        );
     }
 
     public override void DoEndMechanicLogic()
