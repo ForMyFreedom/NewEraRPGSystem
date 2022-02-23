@@ -87,13 +87,29 @@ public class Factor : Control
 
     private void _OnApplyButtonUp()
     {
-        int applyValue = (int) GetNode<SpinBox>(applySpinPath).Value;
-        applyValue += (int)GetNode(modApplyControlPath).GetChild<SpinBox>(1).Value;
+        int applyValue = GetStartValue();
         GetNode<SpinBox>(actualSpinPath).Value += applyValue;
 
         EmitSpinSignal(actualSpinPath, nameof(actual_factor_changed));
     }
 
+    private int GetStartValue()
+    {
+        int baseMod  = (int) GetNode<SpinBox>(applySpinPath).Value;
+        int guardMod = (int) GetNode(modApplyControlPath).GetChild<SpinBox>(1).Value;
+
+        if (guardMod > 0)
+        {
+            if (baseMod > 0) return baseMod;
+            else
+            {
+                if (guardMod + baseMod <= 0)
+                    return baseMod + guardMod;
+                return 0;
+            }
+        }
+        return baseMod;
+    }
 
 
     private void EmitSpinSignal(NodePath path, String signal)
@@ -122,4 +138,10 @@ public class Factor : Control
     {
         actualMod = value;
     }
+
+    public SpinBox GetGuardSpin()
+    {
+        return GetNode(modApplyControlPath).GetChild<SpinBox>(1);
+    }
+
 }

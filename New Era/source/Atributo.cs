@@ -37,9 +37,9 @@ public class Atributo : Control
     }
 
 
-    public int RequestRoll()
+    public int RequestRoll(int modValue=0)
     {
-        return GetNode<RollBox>(rollBoxPath).GetRandomRoll();
+        return GetNode<RollBox>(rollBoxPath).GetRandomRoll(modValue);
     }
 
 

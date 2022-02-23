@@ -60,9 +60,9 @@ public class RollBox : VBoxContainer
 
 
 
-    public int GetRandomRoll()
+    public int GetRandomRoll(int postModValue=0)
     {
-        return RollCode.GetRandomAdvancedRoll(diceValue, sumValue, modValue);
+        return RollCode.GetRandomAdvancedRoll(diceValue, sumValue, modValue+postModValue);
     }
 
 

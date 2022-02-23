@@ -1,6 +1,7 @@
 using Godot;
 using Godot.Collections;
 using System;
+using System.Linq;
 
 public class TechniquesTree : Tree
 {
@@ -29,8 +30,8 @@ public class TechniquesTree : Tree
             AddNewTechniqueItem(root, itemIndex, currentTech);
             itemIndex++;
 
-            AddTechniqueDescription(itemIndex, currentTech);
-            itemIndex++;
+            if(AddTechniqueDescription(itemIndex, currentTech))
+                itemIndex++;
         }
 
         MakeBlankUnselected(itens);
@@ -45,10 +46,12 @@ public class TechniquesTree : Tree
         itens[itemIndex].SetMetadata(0, technique);
     }
 
-    private void AddTechniqueDescription(int itemIndex, Technique technique)
+    private bool AddTechniqueDescription(int itemIndex, Technique technique)
     {
+        if (technique.GetCriticUses().Length == 0) return false;
         itens[itemIndex] = CreateItem(itens[itemIndex - 1]);
         itens[itemIndex].SetText(0, GetTechniqueDescription(technique));
+        return true;
     }
 
 
@@ -176,6 +179,17 @@ public class TechniquesTree : Tree
 
     private int GetTreeItemLength()
     {
-        return 2*techniques.Count;
+        return techniques.Count+GetQuantOfNotBasicTechniques();
+    }
+
+    private int GetQuantOfNotBasicTechniques()
+    {
+        int quant = 0;
+        foreach(Technique tech in techniques)
+        {
+            if (tech.GetCriticUses().Length != 0)
+                quant++;
+        }
+        return quant;
     }
 }
