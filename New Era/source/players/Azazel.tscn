@@ -1,52 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://source/Player.cs" type="Script" id=1]
-[ext_resource path="res://assets/wallpapers/azazel_wallpaper.png" type="Texture" id=2]
-[ext_resource path="res://source/wayOfCalculeSkill/HalfWayOfCalculeSkill.cs" type="Script" id=3]
-[ext_resource path="res://assets/skills/pulsation.png" type="Texture" id=10]
-[ext_resource path="res://assets/skills/beat.png" type="Texture" id=11]
-[ext_resource path="res://source/works/Pulsation.cs" type="Script" id=12]
-[ext_resource path="res://source/skills/Beat.cs" type="Script" id=13]
-[ext_resource path="res://source/habilitys/critic-uses/Azazel/Navigatozao.tres" type="Resource" id=15]
-
-[sub_resource type="Resource" id=1]
-script = ExtResource( 13 )
-level = 5
-effectImage = ExtResource( 11 )
-mechanicDescription = "Você possui um Cliclo Cardíarco baseado nas fases alternadas de Contração e Relaxamento (Escolhe em seu primeiro turno). Em uma Contração, você perde Batimento Surto de Ação e ganha Batimento Dano. Em um relaxamento, você ganha Batimento Surto de Ação e perde Batimento Dano.
-Você pode fazer um Contra-Ciclo (Continuar na fase atual), mas sofre Batimento/2 Dano interno. Se zerar a vida com isso, você morre instantameamente"
-wayOfLevelCalculeScript = ExtResource( 3 )
-skillName = "Batimento"
-skillDescription = "Ordenar minha vontade com as batidas de meu sangue"
-
-[sub_resource type="Resource" id=2]
-resource_local_to_scene = true
-script = ExtResource( 12 )
-level = 10
-description = "A força sanguinária de uma Linhagem respeitada..."
-relationedAtribute = 1
-enumWork = 4
-baseImage = ExtResource( 10 )
-pathDescription = null
-skills = [ SubResource( 1 ) ]
-worksUps = [ 2, 1, 0 ]
-workName = "Pulsação"
 
 [node name="Azazel" type="Node"]
 script = ExtResource( 1 )
-playerName = "Oliveira"
-characterName = "Azazel"
-trivia = "adsasd"
-personalBG = ExtResource( 2 )
-firstColor = Color( 1, 1, 1, 1 )
-secondColor = Color( 0, 0, 0, 1 )
-inspiration = 8
-totalFactors = PoolIntArray( 33, 65, 91, 30 )
-actualFactors = PoolIntArray( 17, 40, 100, 30 )
-modAtributes = PoolIntArray( 0, 0, 0, 0, -4 )
-totalAtributes = PoolIntArray( 10, 27, 23, 50, 20 )
-allCriticUses = [ [ ExtResource( 15 ) ] ]
-modFactors = PoolIntArray( 0, 0, 0, 0 )
-notificationList = [  ]
-works = [ SubResource( 2 ) ]
-trainingAtributes = PoolIntArray(  )

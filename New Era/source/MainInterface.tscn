@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Melissa.tscn" type="PackedScene" id=2]
@@ -15,8 +15,8 @@
 [ext_resource path="res://source/WorkTree.cs" type="Script" id=13]
 [ext_resource path="res://assets/BaseMediumFont.tres" type="DynamicFont" id=14]
 [ext_resource path="res://source/guis/SkillGUI.tscn" type="PackedScene" id=15]
-[ext_resource path="res://assets/bell.png" type="Texture" id=16]
-[ext_resource path="res://source/NotificationArea.cs" type="Script" id=17]
+[ext_resource path="res://assets/boobles/bell.png" type="Texture" id=16]
+[ext_resource path="res://source/notification/NotificationArea.cs" type="Script" id=17]
 [ext_resource path="res://assets/BaseMinorFont.tres" type="DynamicFont" id=18]
 [ext_resource path="res://assets/skills/blank.png" type="Texture" id=19]
 [ext_resource path="res://assets/notification.wav" type="AudioStream" id=20]
@@ -33,7 +33,11 @@
 [ext_resource path="res://source/pop_up_general_interface/CustomRollPopup.tscn" type="PackedScene" id=31]
 [ext_resource path="res://source/TriviaData.cs" type="Script" id=32]
 [ext_resource path="res://source/pop_up_general_interface/InventoryPopup.tscn" type="PackedScene" id=33]
-[ext_resource path="res://assets/turn/no-turn.png" type="Texture" id=34]
+[ext_resource path="res://assets/boobles/turn/no-turn.png" type="Texture" id=34]
+[ext_resource path="res://assets/boobles/defense/agi-defense.png" type="Texture" id=35]
+[ext_resource path="res://assets/boobles/defense/str-defense.png" type="Texture" id=36]
+[ext_resource path="res://source/notification/DefenseBooble.cs" type="Script" id=37]
+[ext_resource path="res://source/notification/Booble.cs" type="Script" id=38]
 
 [sub_resource type="Animation" id=1]
 resource_name = "blink"
@@ -220,6 +224,7 @@ saveButtonPath = NodePath("VBoxContainer/Info/MarginContainer/SaveButton")
 techniquesTreePath = NodePath("VBoxContainer/Perks/HBOX/HabilityControl/MarginContainer/VBOX/TechniqueTree")
 characterInventoryPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/EquipamentsButton/CharacterInventory")
 triviaDataPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton/TrivaData")
+defenseBooblePath = NodePath("NotificationArea/HBoxContainer/Actions/DefenseNode")
 
 [node name="BGRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -499,17 +504,17 @@ margin_right = 287.0
 margin_bottom = 209.0
 
 [node name="Control" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2" index="0"]
-margin_right = 153.0
+margin_right = 164.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
-margin_right = 153.0
+margin_right = 164.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
-margin_left = 40.0
-margin_right = 113.0
+margin_left = 45.0
+margin_right = 118.0
 
 [node name="VBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2" index="1"]
-margin_left = 157.0
+margin_left = 168.0
 margin_right = 287.0
 
 [node name="VS1" type="VSeparator" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer"]
@@ -571,17 +576,17 @@ margin_right = 287.0
 margin_bottom = 209.0
 
 [node name="Control" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2" index="0"]
-margin_right = 153.0
+margin_right = 164.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
-margin_right = 153.0
+margin_right = 164.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
-margin_left = 40.0
-margin_right = 113.0
+margin_left = 45.0
+margin_right = 118.0
 
 [node name="VBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2" index="1"]
-margin_left = 157.0
+margin_left = 168.0
 margin_right = 287.0
 
 [node name="VS2" type="VSeparator" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer"]
@@ -646,17 +651,17 @@ margin_right = 287.0
 margin_bottom = 209.0
 
 [node name="Control" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2" index="0"]
-margin_right = 153.0
+margin_right = 164.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
-margin_right = 153.0
+margin_right = 164.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
-margin_left = 40.0
-margin_right = 113.0
+margin_left = 45.0
+margin_right = 118.0
 
 [node name="VBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2" index="1"]
-margin_left = 157.0
+margin_left = 168.0
 margin_right = 287.0
 
 [node name="VS3" type="VSeparator" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer"]
@@ -721,17 +726,17 @@ margin_right = 288.0
 margin_bottom = 209.0
 
 [node name="Control" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2" index="0"]
-margin_right = 154.0
+margin_right = 165.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
-margin_right = 154.0
+margin_right = 165.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
-margin_left = 40.0
-margin_right = 113.0
+margin_left = 46.0
+margin_right = 119.0
 
 [node name="VBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2" index="1"]
-margin_left = 158.0
+margin_left = 169.0
 margin_right = 288.0
 
 [node name="HS1" type="HSeparator" parent="VBoxContainer"]
@@ -1067,7 +1072,9 @@ script = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-bellPath = NodePath("HBoxContainer/Actions/BellNode/BellTexture")
+bellPath = NodePath("HBoxContainer/Actions/BellNode")
+turnPath = NodePath("HBoxContainer/Actions/TurnNode")
+defensePath = NodePath("HBoxContainer/Actions/DefenseNode")
 animationPath = NodePath("AnimationPlayer")
 notificationListPath = NodePath("HBoxContainer/NotificationList")
 quantNotificationsPath = NodePath("HBoxContainer/Actions/BellNode/QuantNotificationsLabel")
@@ -1114,14 +1121,15 @@ size_flags_stretch_ratio = 0.15
 
 [node name="BellNode" type="Control" parent="NotificationArea/HBoxContainer/Actions"]
 margin_right = 44.0
-margin_bottom = 63.0
+margin_bottom = 51.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.1
+script = ExtResource( 38 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+textureNodePath = NodePath("BellTexture")
 
 [node name="BellTexture" type="TextureRect" parent="NotificationArea/HBoxContainer/Actions/BellNode"]
 anchor_right = 1.0
@@ -1150,15 +1158,17 @@ autoplay = "pulse"
 anims/pulse = SubResource( 8 )
 
 [node name="TurnNode" type="Control" parent="NotificationArea/HBoxContainer/Actions"]
-margin_top = 67.0
+margin_top = 55.0
 margin_right = 44.0
-margin_bottom = 700.0
+margin_bottom = 107.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource( 38 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+textureNodePath = NodePath("TurnTexture")
 
 [node name="TurnTexture" type="TextureRect" parent="NotificationArea/HBoxContainer/Actions/TurnNode"]
 anchor_right = 1.0
@@ -1166,6 +1176,43 @@ anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 25, 25 )
 mouse_filter = 2
 texture = ExtResource( 34 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DefenseNode" type="Control" parent="NotificationArea/HBoxContainer/Actions"]
+margin_top = 111.0
+margin_right = 44.0
+margin_bottom = 163.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 37 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+textureNodePath = NodePath("DefenseTexture")
+agiTexture = ExtResource( 35 )
+strTexture = ExtResource( 36 )
+
+[node name="DefenseTexture" type="TextureRect" parent="NotificationArea/HBoxContainer/Actions/DefenseNode"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 25, 25 )
+mouse_filter = 0
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlankSpace" type="Control" parent="NotificationArea/HBoxContainer/Actions"]
+margin_top = 167.0
+margin_right = 44.0
+margin_bottom = 700.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.25
 __meta__ = {
 "_edit_use_anchors_": false
 }
