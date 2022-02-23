@@ -12,5 +12,8 @@ public static class MyEnum
         Navigator, Scholar, Engineer, Medic, Artist, Orator, AkumaNoMi, None
     };
 
+    public enum DefenseStyle { StrDefense, AgiDefense };
+
     public static string savePath = "res://saves/";
+
 }

@@ -2,6 +2,7 @@ using Godot;
 using Godot.Collections;
 using System;
 using System.Text;
+using System.Linq;
 
 public class MainInterface : Control, CharacterDataBank
 {
@@ -67,6 +68,8 @@ public class MainInterface : Control, CharacterDataBank
     private NodePath characterInventoryPath;
     [Export]
     private NodePath triviaDataPath;
+    [Export]
+    private NodePath defenseBooblePath;
 
     private Player player;
     private Color[] colors = new Color[2];
@@ -75,9 +78,11 @@ public class MainInterface : Control, CharacterDataBank
     {
         player = playerScene.Instance<Player>();
         player._Ready();
-        ConnectAllButtons();
         Connect("tree_exiting", this, "RegisterAllData");
         RegistryData(player, this);
+
+        ConnectAllButtons();
+        SendBooblesData();
         CenterTheWindow();
     }
 
@@ -89,6 +94,12 @@ public class MainInterface : Control, CharacterDataBank
         GetNode(equipamentsButtonPath).Connect("button_up", this, "_OnEquipaments");
         GetNode(tracesButtonPath).Connect("button_up", this, "_OnTraces");
         GetNode(saveButtonPath).Connect("button_activate", this, "_OnSave");
+    }
+
+    private void SendBooblesData()
+    {
+        GetNode<DefenseBooble>(defenseBooblePath).SetDefenseStyle(GetDefenseStyle());
+        GetNode<DefenseBooble>(defenseBooblePath).UpdateTexture();
     }
 
 
@@ -200,6 +211,18 @@ public class MainInterface : Control, CharacterDataBank
                 return GetNode<Atributo>(minAtributePath);
             case MyEnum.Atribute.CHA:
                 return GetNode<Atributo>(chaAtributePath);
+        }
+        return null;
+    }
+
+    public Work GetWorkNodeByEnum(MyEnum.Work workEnum)
+    {
+        foreach(Work work in GetWorks())
+        {
+            if (work.GetEnumWork() == workEnum)
+            {
+                return work;
+            }
         }
         return null;
     }
@@ -812,14 +835,34 @@ public class MainInterface : Control, CharacterDataBank
         return GetNode<WorkTree>(worksTreePath).RequestSkillRoll(skillName, modValue);
     }
 
+    public void RequestSkillMechanic(MyEnum.Work work, int skillIndex, int modValue = 0, int actionIndex=0)
+    {
+        Skill skill = GetWorkNodeByEnum(work).GetSkillList()[skillIndex];
+        skill.DoMechanic(this, actionIndex, modValue);
+    }
+
     public int RequestWorkRoll(MyEnum.Work we, int modValue=0)
     {
         return GetNode<WorkTree>(worksTreePath).RequestWorkRoll(we, modValue);
     }
 
-    public int RequestAtributeRoll(MyEnum.Atribute ae)
+    public int RequestWorkRollWithNotification(MyEnum.Work we, int modValue = 0)
     {
-        return GetAtributeNodeByEnum(ae).RequestRoll();
+        int result = RequestWorkRoll(we, modValue);
+        CreateNewNotification($"Teste de {we}: {result}");
+        return result;
+    }
+
+    public int RequestAtributeRoll(MyEnum.Atribute ae, int modValue=0)
+    {
+        return GetAtributeNodeByEnum(ae).RequestRoll(modValue);
+    }
+
+    public int RequestAtributeRollWithNotification(MyEnum.Atribute ae, int modValue = 0)
+    {
+        int result = RequestAtributeRoll(ae, modValue);
+        CreateNewNotification($"Teste de {ae}: {result}");
+        return result;
     }
 
     public void ConnectToLastNotification(Godot.Object obj, String funcName)
@@ -930,6 +973,22 @@ public class MainInterface : Control, CharacterDataBank
         screenSize.y *= 0.90f;
         Vector2 windowSize = OS.WindowSize;
         OS.WindowPosition = (screenSize - windowSize) * 0.5f;
+    }
+
+
+    public Skill GetSkillByWorkAndName(MyEnum.Work workEnum, String name)
+    {
+        Work work = GetWorks().Where(w => w.GetEnumWork() == workEnum).ToArray()[0];
+        return work.GetSkillList().Where(s => s.GetSkillName() == name).ToArray()[0];
+    }
+
+    public void UpdateInventory()
+    {
+        foreach(Node child in GetChildren())
+        {
+            if(child is InventoryPopup)
+                ((InventoryPopup)child).UpdateItensText();
+        }
     }
 
 }
