@@ -11,11 +11,13 @@ public class CharacterInventory: Node
 
     public Weapon GetSelectedWeapon()
     {
+        if (selectedWeaponItemIndex == -1) return null;
         return (Weapon) itens[selectedWeaponItemIndex];
     }
 
     public int GetSelectedWeaponDamage()
     {
+        if (selectedWeaponItemIndex == -1) return 0;
         return GetSelectedWeapon().GetDamage();
     }
 

@@ -31,6 +31,15 @@ public class InventoryPopup : MyPopup
         }
     }
 
+    public void UpdateItensText()
+    {
+        CustomTreeItem itemList = GetNode<CustomTreeItem>(inventoryListPath);
+
+        for(int i = 0; i < itens.Count; i++)
+        {
+            itemList.UpdateItem(i, GetTextData(itens[i]));
+        }
+    }
 
     private void _OnItemActivated(int index)
     {

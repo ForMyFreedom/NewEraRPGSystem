@@ -17,6 +17,14 @@ public class CustomTreeItem : Control
         return newItem;
     }
 
+
+    public void UpdateItem(int index, Dictionary<string, object> data)
+    {
+        SetAllData(data, GetNode(boxPath).GetChild<Control>(index));
+        GetNode(boxPath).GetChild(index)._Ready();
+    }
+
+
     private void SetAllData(Dictionary<string,object> data, Control item)
     {
         foreach (string key in data.Keys)

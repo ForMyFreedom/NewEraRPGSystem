@@ -10,15 +10,18 @@ public abstract class InventoryItem: Resource
     [Export]
     protected int quantity;
     [Export]
-    protected CSharpScript useCode;
-
-    protected ItemCode itemCode;
+    protected Resource useCode;
 
     public void ActivateItem(MainInterface main)
     {
-        if (useCode == null) return;
-        itemCode = (ItemCode) useCode.New();
+        if (useCode == null || quantity<=0) return;
+        ItemCode itemCode = (ItemCode) useCode;
         itemCode.DoComportament(main, this);
+    }
+
+    public void RemoveQuantity(int quant = 1)
+    {
+        quantity -= quant;
     }
 
 

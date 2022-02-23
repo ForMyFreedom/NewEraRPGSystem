@@ -23,18 +23,28 @@ public class InventoryVisualTreeItem : Control
     [Signal]
     public delegate void desc_modified(string desc, int index);
 
+    private bool hasConnect = false;
+
     public override void _Ready()
     {
-        GetNode(editTextButtonPath).Connect("button_up", this, "_OnEditTextButtonUp");
-        GetNode(descEditPath).Connect("gui_input", this, "_OnLineEditGuiInput");
-
         GetNode<LineEdit>(quantEditPath).Text = (String) GetMeta("_quant");
         GetNode<LineEdit>(nameEditPath).Text = (String) GetMeta("_name");
         GetNode<LineEdit>(descEditPath).Text = (String) GetMeta("_desc");
 
+        GetNode<LineEdit>(nameEditPath).HintTooltip = (String)GetMeta("_name");
+        GetNode<LineEdit>(descEditPath).HintTooltip = (String)GetMeta("_desc");
+        ConnectSignals();
+    }
+
+    private void ConnectSignals()
+    {
+        if (hasConnect) return;
+        GetNode(editTextButtonPath).Connect("button_up", this, "_OnEditTextButtonUp");
+        GetNode(descEditPath).Connect("gui_input", this, "_OnLineEditGuiInput");
         GetNode(quantEditPath).Connect("text_changed", this, "_OnQuantTextChanged");
         GetNode(nameEditPath).Connect("text_changed", this, "_OnNameTextChanged");
         GetNode(descEditPath).Connect("text_changed", this, "_OnDescTextChanged");
+        hasConnect = true;
     }
 
 
