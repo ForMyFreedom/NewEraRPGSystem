@@ -79,6 +79,7 @@ public class MainInterface : Control, CharacterDataBank
 
     public override void _Ready()
     {
+        playerScene = GetNode<Global>("/root/Global").GetSelectedPlayerPacked();
         player = playerScene.Instance<Player>();
         player._Ready();
         RegistryData(player, this);
