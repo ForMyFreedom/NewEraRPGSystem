@@ -65,7 +65,7 @@ public class PlayerSaveResource : Resource, CharacterDataBank
 
     public String GetBaseSavePath()
     {
-        return $"{MyEnum.savePath}{characterName}/";
+        return $"{MyStatic.savePath}{characterName}/";
     }
 
     public String GetCurrentSavePath()

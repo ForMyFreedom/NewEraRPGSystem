@@ -90,7 +90,7 @@ public class MainInterface : Control, CharacterDataBank
         if (alreadyConnectAll) return;
         ConnectAllButtons();
         SendBooblesData();
-        CenterTheWindow();
+        MyStatic.CenterTheWindow();
 
         Connect("tree_exiting", this, "RegisterAllData");
         alreadyConnectAll = true;
@@ -205,7 +205,7 @@ public class MainInterface : Control, CharacterDataBank
 
     public void _OnGetSave()
     {
-        OS.ShellOpen($"{MyEnum.savePath}/{player.Name}");
+        OS.ShellOpen($"{MyStatic.savePath}/{player.Name}");
     }
 
 
@@ -978,14 +978,6 @@ public class MainInterface : Control, CharacterDataBank
         return -1;
     }
 
-
-    private void CenterTheWindow()
-    {
-        Vector2 screenSize = OS.GetScreenSize(0);
-        screenSize.y *= 0.90f;
-        Vector2 windowSize = OS.WindowSize;
-        OS.WindowPosition = (screenSize - windowSize) * 0.5f;
-    }
 
 
     public Skill GetSkillByWorkAndName(MyEnum.Work workEnum, String name)

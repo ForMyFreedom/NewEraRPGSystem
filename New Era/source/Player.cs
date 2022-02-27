@@ -434,7 +434,7 @@ public class Player : Node, CharacterDataBank
     
     public string GetBaseSavePath()
     {
-        return $"{MyEnum.savePath}/{Name}/";
+        return $"{MyStatic.savePath}/{Name}/";
     }
 
     public string GetActualSavePath()
