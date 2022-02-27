@@ -5,30 +5,26 @@ using System;
 public class PretoFosco : CriticUse
 {
     int guard;
+    int defense;
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         if (critic < 0)
             critic = main.RequestWorkRoll(relatedWork) / 10;
 
-        guard = critic;
-        InvertDefenses(main);
+        guard = 2*critic;
+        defense = 4 * critic;
         main.AddGuard(guard);
+        main.AddActualAgiDefense(-defense);
         //@lost surto e vida a cada turno
-        main.CreateNewNotification(GetNotificationText(guard), injectedWork.GetBaseImage());
+        main.CreateNewNotification(GetNotificationText(defense, guard), injectedWork.GetBaseImage());
         ConnectToLastNotification(main);
     }
 
     public override void DoEndMechanicLogic()
     {
-        InvertDefenses(main);
         main.AddGuard(-guard);
+        main.AddActualAgiDefense(defense);
     }
 
-    private void InvertDefenses(MainInterface main)
-    {
-        int agiDefense = main.GetActualAgiDefense();
-        main.SetActualAgiDefense(main.GetActualStrDefense());
-        main.SetActualStrDefense(agiDefense);
-    }
 }

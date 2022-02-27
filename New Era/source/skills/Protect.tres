@@ -10,5 +10,6 @@ skillName = "Proteger"
 effectImage = ExtResource( 3 )
 wayOfLevelCalculeScript = ExtResource( 2 )
 skillDescription = "Sou os muros de minha tripulação"
+notificationText = null
 mechanicDescription = "Você possui um valor de Guarda igual a metade de seu nível de Guardião. O qual se trata de uma Redução de Dano que você pode destribuir entre todos aqueles a Alcanse curto de você"
 level = 12

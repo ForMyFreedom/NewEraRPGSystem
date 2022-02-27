@@ -49,5 +49,6 @@ public class DefenseBooble : Booble
     public void SetDefenseStyle(MyEnum.DefenseStyle style)
     {
         defenseStyle = style;
+        UpdateTexture();
     }
 }

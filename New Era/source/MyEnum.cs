@@ -14,6 +14,5 @@ public static class MyEnum
 
     public enum DefenseStyle { StrDefense, AgiDefense };
 
-    public static string savePath = "res://saves/";
-
+    public static string savePath = OS.GetUserDataDir() + "\\saves\\";
 }
