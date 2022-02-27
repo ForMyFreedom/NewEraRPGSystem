@@ -12,6 +12,8 @@ public class SelectPlayer : Control
     private PackedScene playerButtonPacked;
     [Export]
     private PackedScene mainInterfacePacked;
+    [Export]
+    private NodePath animationPlayerPath;
 
     private Godot.Collections.Array playerStringPathArray;
     private PackedScene[] playersScenesPacked;
@@ -23,6 +25,7 @@ public class SelectPlayer : Control
         LoadPlayersData();
         LoadPlayersButtons();
         MyStatic.CenterTheWindow();
+        GetNode<AnimationPlayer>(animationPlayerPath).Play("fade-in");
     }
 
 
@@ -58,8 +61,10 @@ public class SelectPlayer : Control
     }
 
 
-    private void _OnSelectPlayer(int index)
+    private async void _OnSelectPlayer(int index)
     {
+        GetNode<AnimationPlayer>(animationPlayerPath).Play("fade-out");
+        await ToSignal(GetNode<AnimationPlayer>(animationPlayerPath), "animation_finished");
         GetNode<Global>("/root/Global").SetSelectedPlayerPacked(playersScenesPacked[index]);
         GetTree().ChangeSceneTo(mainInterfacePacked);
     }
