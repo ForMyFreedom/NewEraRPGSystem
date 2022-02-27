@@ -1,8 +1,11 @@
 using Godot;
 using System;
 
-public class SaveButton : TextureButton
+public class DoubleClickSignal : TextureButton
 {
+    [Export]
+    private NodePath animationPlayerPath;
+
     [Signal]
     public delegate void button_activate();
 
@@ -15,10 +18,11 @@ public class SaveButton : TextureButton
     {
         if (!(@event is InputEventMouseButton)) return;
         InputEventMouseButton mouseEvent = (InputEventMouseButton) @event;
+
         if (mouseEvent.Doubleclick)
         {
             EmitSignal(nameof(button_activate));
-            GetChild<AnimationPlayer>(0).Play("blink");
+            GetNode<AnimationPlayer>(animationPlayerPath).Play("activate");
         }
     }
 }

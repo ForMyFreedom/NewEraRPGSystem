@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Melissa.tscn" type="PackedScene" id=2]
@@ -27,7 +27,7 @@
 [ext_resource path="res://source/pop_up_general_interface/TriviaPopup.tscn" type="PackedScene" id=25]
 [ext_resource path="res://assets/skills/arrow.png" type="Texture" id=26]
 [ext_resource path="res://source/guis/CriticGUI.tscn" type="PackedScene" id=27]
-[ext_resource path="res://source/SaveButton.cs" type="Script" id=28]
+[ext_resource path="res://source/DoubleClickSignal.cs" type="Script" id=28]
 [ext_resource path="res://source/TechniquesTree.cs" type="Script" id=29]
 [ext_resource path="res://source/inventory/CharacterInventory.cs" type="Script" id=30]
 [ext_resource path="res://source/pop_up_general_interface/CustomRollPopup.tscn" type="PackedScene" id=31]
@@ -38,9 +38,25 @@
 [ext_resource path="res://assets/boobles/defense/str-defense.png" type="Texture" id=36]
 [ext_resource path="res://source/notification/DefenseBooble.cs" type="Script" id=37]
 [ext_resource path="res://source/notification/Booble.cs" type="Script" id=38]
+[ext_resource path="res://assets/reload.png" type="Texture" id=39]
 
 [sub_resource type="Animation" id=1]
-resource_name = "blink"
+resource_name = "activate"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.29, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 359.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=2]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -55,13 +71,13 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 tracks/0/type = "method"
 tracks/0/path = NodePath("NotificationsSound")
 tracks/0/interp = 1
@@ -77,7 +93,7 @@ tracks/0/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:margin_left")
@@ -104,7 +120,7 @@ tracks/1/keys = {
 "values": [ -480, -160 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("HBoxContainer/Actions/BellNode/BellTexture:rect_rotation")
@@ -133,7 +149,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:margin_left")
@@ -160,7 +176,7 @@ tracks/1/keys = {
 "values": [ -160, -480 ]
 }
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0, 0, 0, 1 )
 border_color = Color( 1, 0.94902, 0, 1 )
 corner_radius_top_left = 20
@@ -169,7 +185,7 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 corner_detail = 20
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -220,7 +236,8 @@ trainingButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContain
 triviaButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton")
 equipamentsButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/EquipamentsButton")
 tracesButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TracesButton")
-saveButtonPath = NodePath("VBoxContainer/Info/MarginContainer/SaveButton")
+getSaveButtonPath = NodePath("VBoxContainer/Info/MarginContainer/GetSaveButton")
+reloadSaveButtonPath = NodePath("VBoxContainer/Info/ReloadSave")
 techniquesTreePath = NodePath("VBoxContainer/Perks/HBOX/HabilityControl/MarginContainer/VBOX/TechniqueTree")
 characterInventoryPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/EquipamentsButton/CharacterInventory")
 triviaDataPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton/TrivaData")
@@ -265,6 +282,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ReloadSave" type="TextureButton" parent="VBoxContainer/Info"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -10.0
+margin_right = 20.0
+margin_bottom = 10.0
+rect_pivot_offset = Vector2( 11, 11 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 39 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+animationPlayerPath = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Info/ReloadSave"]
+anims/activate = SubResource( 1 )
+
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Info"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -281,16 +319,17 @@ margin_bottom = 41.0
 texture = ExtResource( 8 )
 expand = true
 
-[node name="SaveButton" type="TextureButton" parent="VBoxContainer/Info/MarginContainer"]
+[node name="GetSaveButton" type="TextureButton" parent="VBoxContainer/Info/MarginContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 1155.0
 margin_bottom = 41.0
 texture_normal = ExtResource( 8 )
 expand = true
 script = ExtResource( 28 )
+animationPlayerPath = NodePath("AnimationPlayer")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Info/MarginContainer/SaveButton"]
-anims/blink = SubResource( 1 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Info/MarginContainer/GetSaveButton"]
+anims/activate = SubResource( 2 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Info/MarginContainer"]
 margin_right = 1155.0
@@ -306,7 +345,7 @@ margin_top = 10.0
 margin_right = 227.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Jogador: JOGADOR"
 align = 1
 script = ExtResource( 11 )
@@ -321,7 +360,7 @@ margin_top = 10.0
 margin_right = 461.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Personagem: PERSONAGEM"
 align = 1
 script = ExtResource( 11 )
@@ -1086,10 +1125,10 @@ audioStreamList = [ ExtResource( 20 ), ExtResource( 21 ) ]
 audioNameList = PoolStringArray( "new_not", "del_not" )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NotificationArea"]
-anims/del_notification = SubResource( 3 )
-anims/dishow = SubResource( 4 )
-anims/new_notification = SubResource( 5 )
-anims/show = SubResource( 6 )
+anims/del_notification = SubResource( 4 )
+anims/dishow = SubResource( 5 )
+anims/new_notification = SubResource( 6 )
+anims/show = SubResource( 7 )
 
 [node name="ColorRect" type="ColorRect" parent="NotificationArea"]
 anchor_right = 1.0
@@ -1144,7 +1183,7 @@ __meta__ = {
 margin_right = 16.0
 margin_bottom = 16.0
 rect_pivot_offset = Vector2( 8, 8 )
-custom_styles/normal = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
 custom_colors/font_color = Color( 1, 0.94902, 0, 1 )
 text = "0"
 align = 1
@@ -1155,7 +1194,7 @@ __meta__ = {
 
 [node name="PulseAnimationPlayer" type="AnimationPlayer" parent="NotificationArea/HBoxContainer/Actions/BellNode"]
 autoplay = "pulse"
-anims/pulse = SubResource( 8 )
+anims/pulse = SubResource( 9 )
 
 [node name="TurnNode" type="Control" parent="NotificationArea/HBoxContainer/Actions"]
 margin_top = 55.0

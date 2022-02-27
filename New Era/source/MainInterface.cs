@@ -61,7 +61,9 @@ public class MainInterface : Control, CharacterDataBank
     [Export]
     private NodePath tracesButtonPath;
     [Export]
-    private NodePath saveButtonPath;
+    private NodePath getSaveButtonPath;
+    [Export]
+    private NodePath reloadSaveButtonPath;
     [Export]
     private NodePath techniquesTreePath;
     [Export]
@@ -73,18 +75,27 @@ public class MainInterface : Control, CharacterDataBank
 
     private Player player;
     private Color[] colors = new Color[2];
+    private bool alreadyConnectAll = false;
 
     public override void _Ready()
     {
         player = playerScene.Instance<Player>();
         player._Ready();
-        Connect("tree_exiting", this, "RegisterAllData");
         RegistryData(player, this);
+        MakeConnections();
+    }
 
+    private void MakeConnections()
+    {
+        if (alreadyConnectAll) return;
         ConnectAllButtons();
         SendBooblesData();
         CenterTheWindow();
+
+        Connect("tree_exiting", this, "RegisterAllData");
+        alreadyConnectAll = true;
     }
+
 
     private void ConnectAllButtons()
     {
@@ -93,7 +104,8 @@ public class MainInterface : Control, CharacterDataBank
         GetNode(triviaButtonPath).Connect("button_up", this, "_OnTrivia");
         GetNode(equipamentsButtonPath).Connect("button_up", this, "_OnEquipaments");
         GetNode(tracesButtonPath).Connect("button_up", this, "_OnTraces");
-        GetNode(saveButtonPath).Connect("button_activate", this, "_OnSave");
+        GetNode(getSaveButtonPath).Connect("button_activate", this, "_OnGetSave");
+        GetNode(reloadSaveButtonPath).Connect("button_activate", this, "_Ready");
     }
 
     private void SendBooblesData()
@@ -191,9 +203,9 @@ public class MainInterface : Control, CharacterDataBank
         GD.Print("Issue #6");
     }
 
-    public void _OnSave()
+    public void _OnGetSave()
     {
-        RegisterAllData();
+        OS.ShellOpen($"{MyEnum.savePath}/{player.Name}");
     }
 
 
