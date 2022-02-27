@@ -19,25 +19,27 @@ public class Atributo : Control
         GetNode<Label>(nameLabelPath).Text = atributeName;
         GetNode<RollBox>(rollBoxPath).Connect("roll_maded", this, "_OnRollMaded");
         GetNode<RollBox>(rollBoxPath).Connect("value_changed", this, "_OnValueChanged");
+        GetNode<RollBox>(rollBoxPath).Connect("mod_changed", this, "_OnValueChanged");
+        
         GetNode<RollBox>(rollBoxPath).SetRelationedSum(this, nameof(atribute_changed));
     }
 
 
     private void _OnRollMaded(int result)
     {
-        //emitsignal?
+        //emitsignal?@
     }
 
 
     private void _OnValueChanged(int value)
     {
-        EmitSignal(nameof(atribute_changed), value);
+        EmitSignal(nameof(atribute_changed), GetTotalValue());
     }
 
 
-    public int RequestRoll()
+    public int RequestRoll(int modValue=0)
     {
-        return GetNode<RollBox>(rollBoxPath).GetRandomRoll();
+        return GetNode<RollBox>(rollBoxPath).GetRandomRoll(modValue);
     }
 
 
@@ -63,4 +65,9 @@ public class Atributo : Control
         GetNode<RollBox>(rollBoxPath).SetModValue(value);
     }
 
+
+    private int GetTotalValue()
+    {
+        return GetNode<RollBox>(rollBoxPath).GetModValue() + GetNode<RollBox>(rollBoxPath).GetRollValue();
+    }
 }

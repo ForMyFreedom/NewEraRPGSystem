@@ -16,6 +16,11 @@ public class Pulsation : Work
     public override void DoThirdUpStep(MainInterface gui)
     {
         gui.CreateNewNotification($"Voce alcansou uma maestria de {workName}! " +
-            "Escolha entre: \n" + pathDescription, baseImage);
+            "Escolha entre: \n" + maestryDescription, baseImage);
+    }
+
+    public override int GetBaseDamage(MainInterface gui, int weaponDamage = 0, int actionIndex = 0)
+    {
+        return weaponDamage + gui.GetAtributeNodeByEnum(relationedAtribute).GetAtributeValue()/2;
     }
 }

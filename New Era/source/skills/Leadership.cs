@@ -9,9 +9,9 @@ public class Leadership : Skill
         return new Array<string>() { "Liderar com Inspiracao", "Liderar Tropas" };
     }
 
-    public override void DoMechanic(MainInterface main, int actionIndex = 0)
+    public override void DoMechanic(MainInterface main, int actionIndex = 0, int mod = 0)
     {
-        int result = main.RequestSkillRoll(skillName);
+        int result = main.RequestSkillRoll(skillName, mod);
         string message = "";
 
         if (actionIndex == 0)

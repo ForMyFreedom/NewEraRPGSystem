@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/habilitys/critic-uses/Mallory/NaoSeraoOsUltimosSocorros.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+criticUseName = "Não serão os Últimos Socorros"
+relatedWork = 9
+text = "Em Testes de Medicina, caso o alvo esteja com a Vida zerada e correndo risco de vida (Não apenas nocauteado), você recebe +4N no Resultado."
+baseMessage = "Caso o alvo sem Vida esteje prestes a morrer, você recebe +$ no resultado"
+cost = -1

@@ -20,10 +20,10 @@ public class RollBox : VBoxContainer
 
     [Signal]
     public delegate void roll_maded(int result);
-
     [Signal]
     public delegate void value_changed(int value);
-
+    [Signal]
+    public delegate void mod_changed(int value);
 
     public override void _Ready()
     {
@@ -50,6 +50,7 @@ public class RollBox : VBoxContainer
     private void _OnModValueChanged(float value)
     {
         modValue = (int) value;
+        EmitSignal(nameof(mod_changed), (int) value);
     }
 
     private void _OnSumValueChanged(float value)
@@ -59,9 +60,9 @@ public class RollBox : VBoxContainer
 
 
 
-    public int GetRandomRoll()
+    public int GetRandomRoll(int postModValue=0)
     {
-        return RollCode.GetRandomAdvancedRoll(diceValue, sumValue, modValue);
+        return RollCode.GetRandomAdvancedRoll(diceValue, sumValue, modValue+postModValue);
     }
 
 

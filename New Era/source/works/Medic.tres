@@ -16,6 +16,7 @@ Você sente um grande salto em suas habilidades. Escolha um entre:
 - Mestre Peçonhento +I: +15 Medicina em Tratamentos de venenos ou doenças"
 skills = [ ExtResource( 2 ) ]
 description = "Mestre no tratamento e socorro de vidas"
+maestryDescription = null
 enumWork = 9
 relationedAtribute = 3
 level = 0

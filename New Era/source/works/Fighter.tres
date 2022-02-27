@@ -5,6 +5,7 @@
 [ext_resource path="res://assets/skills/fighter.png" type="Texture" id=3]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource( 1 )
 workName = "Lutador"
 baseImage = ExtResource( 3 )
@@ -13,6 +14,7 @@ pathDescription = "- Lutador Regular +I: +1 Pancada
 - Lutador Artista Marcial +I: +6 Teste Ataque ao usar Pancada"
 skills = [ ExtResource( 2 ) ]
 description = "Especialista no combate desprovido de armas"
+maestryDescription = null
 enumWork = 3
 relationedAtribute = 0
 level = 0

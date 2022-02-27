@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://source/pop_up_general_interface/MyPopup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/pop_up_general_interface/InventoryPopup.cs" type="Script" id=2]
+[ext_resource path="res://source/base-scenes/CustomTreeItem.tscn" type="PackedScene" id=3]
+[ext_resource path="res://source/base-scenes/InventoryVisualTreeItem.tscn" type="PackedScene" id=4]
+
+[node name="InventoryPopup" instance=ExtResource( 1 )]
+window_title = "Inventário"
+script = ExtResource( 2 )
+inventoryListPath = NodePath("Control/CustomTreeItem")
+
+[node name="CustomTreeItem" parent="Control" index="0" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 815.0
+margin_bottom = 328.0
+itemPackedScene = ExtResource( 4 )

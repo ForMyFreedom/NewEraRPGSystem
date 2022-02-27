@@ -9,9 +9,9 @@ public class Culinary : Skill
         return new Array<string>() { "Cozinhar" };
     }
 
-    public override void DoMechanic(MainInterface main, int actionIndex = 0)
+    public override void DoMechanic(MainInterface main, int actionIndex = 0, int mod=0)
     {
-        int result = main.RequestSkillRoll(skillName);
+        int result = main.RequestSkillRoll(skillName,mod);
         string message = "Comida pronta! Apos descansarem, todos que se alimentarem recebecem:\n";
         message += GetLifeRegen(result);
         message += GetCriticGain(result);
@@ -24,7 +24,7 @@ public class Culinary : Skill
     {
         int value = result / 5;
         if (value > 0)
-            return $"   Cura {value}\n";
+            return $"Cura {value}\n";
         else
             return "";
     }
@@ -33,7 +33,7 @@ public class Culinary : Skill
     {
         int value = result / 10;
         if (value > 0)
-            return $"   +{value} Criticos nos proximos dois testes\n";
+            return $"+{value} Criticos nos proximos dois testes\n";
         else
             return "";
     }

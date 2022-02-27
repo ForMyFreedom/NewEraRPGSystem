@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/habilitys/critic-uses/Geral/SurtoCritico.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+criticUseName = "Surto Crítico"
+relatedWork = 13
+text = "Eu tenho que fazer algo! +2N Surto de Ação"
+baseMessage = "Surto Crítico! Você recebe +$ em Surto de Ação"
+cost = -1

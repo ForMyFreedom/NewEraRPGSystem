@@ -16,7 +16,9 @@ de Críticos, assim como +20% em seu Atributo Relacionado
 - Usuário Versátil +I: +3 Usos de Crítico [Akuma no Mi]"
 skills = [  ]
 description = "A maldição dos mares, domínio de uma fruta demoniaca"
+maestryDescription = null
 enumWork = 12
 relationedAtribute = 5
 level = 0
 worksUps = [ 0, 0, 0 ]
+baseDamage = 0

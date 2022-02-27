@@ -13,6 +13,8 @@ public abstract class Skill : Resource
     [Export]
     protected String skillDescription;
     [Export(PropertyHint.MultilineText)]
+    protected String notificationText;
+    [Export(PropertyHint.MultilineText)]
     protected String mechanicDescription;
     [Export]
     protected int level;
@@ -22,7 +24,7 @@ public abstract class Skill : Resource
 
     public abstract Array<string> GetTextOfMechanicButtons();
 
-    public abstract void DoMechanic(MainInterface main, int actionIndex = 0);
+    public abstract void DoMechanic(MainInterface main, int actionIndex = 0, int mod=0);
 
 
 
@@ -62,6 +64,11 @@ public abstract class Skill : Resource
     public void SetSkillDescription(String description)
     {
         skillDescription = description;
+    }
+
+    public Texture GetEffectImage()
+    {
+        return effectImage;
     }
 
     public String GetMechanicDescription()

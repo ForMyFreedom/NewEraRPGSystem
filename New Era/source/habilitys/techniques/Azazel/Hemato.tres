@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://source/habilitys/techniques/Technique.cs" type="Script" id=1]
+[ext_resource path="res://source/habilitys/critic-uses/Geral/DefesaCritica.tres" type="Resource" id=2]
+[ext_resource path="res://source/habilitys/critic-uses/Azazel/LancaVampirica.tres" type="Resource" id=3]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+techniqueName = "Hemato"
+relatedWorks = PoolIntArray( 4 )
+criticUses = [ ExtResource( 3 ), ExtResource( 2 ) ]
+powerOfCritics = PoolIntArray( 2, 20 )
+actionIndexOfCritics = PoolIntArray( 0, 0 )
+ofensiveLevel = 34
+suportLevel = 6
+level = 40
+modValue = 0

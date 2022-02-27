@@ -9,6 +9,10 @@ public static class MyEnum
     
     public enum Work {
         Swordmaster, Assasin, Shooter, Fighter, Marcialist, Cooker, 
-        Navigator, Scholar, Engineer, Medic, Artist, Orator, AkumaNoMi
+        Navigator, Scholar, Engineer, Medic, Artist, Orator, AkumaNoMi, None
     };
+
+    public enum DefenseStyle { StrDefense, AgiDefense };
+
+    public static string savePath = OS.GetUserDataDir() + "\\saves\\";
 }

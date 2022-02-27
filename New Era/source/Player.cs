@@ -5,412 +5,440 @@ using System;
 public class Player : Node, CharacterDataBank
 {
     [Export]
-    private String playerName;
-    [Export]
-    private String characterName;
-    [Export(PropertyHint.MultilineText)]
-    private String trivia;
-
-    [Export]
-    private Texture personalBG;
-    [Export]
-    private Color firstColor;
-    [Export]
-    private Color secondColor;
-
-    [Export]
-    private int inspiration;
-    
-    [Export]
-    private int[] totalFactors;
-    [Export]
-    private int[] actualFactors;
-    [Export]
-    private int[] modFactors;
-    [Export]
-    private int[] totalAtributes;
-    [Export]
-    private int[] modAtributes;
-    [Export]
-    private int[] trainingAtributes;
-
-    [Export]
-    private Array<Work> works;
-    [Export]
-    private Godot.Collections.Array notificationList;
-
-    private static int maxSkill = 3; //@
-
+    private PlayerSaveResource playerSaveResource;
 
     public override void _Ready()
     {
-        for (int i=0; i<GetQuantOfWorksUp().Count; i++)
-        {
-            works[i].SetWorksUp(WorkUp.CalculeWorkUps(works[i].GetLevel()));
-        }
+        if (playerSaveResource == null)
+            LoadLastSaveResource();
+
+        CalculateWorksUp();
     }
 
 
-    public String GetPlayerName()
+    public void LoadLastSaveResource()
     {
-        return playerName;
+        Array<String> files = FileGerenciator.ListFilesInDirectory(GetBaseSavePath());
+        playerSaveResource = ResourceLoader.Load<PlayerSaveResource>(
+            GetBaseSavePath()+files[files.Count - 1]
+        );
     }
 
-    public void SetPlayerName(String name)
+    public void CalculateWorksUp()
     {
-        playerName = name;
+        playerSaveResource.CalculateWorksUp();
     }
 
 
-    public String GetCharacterName()
+
+
+
+    public string GetPlayerName()
     {
-        return characterName;
+        return playerSaveResource.GetPlayerName();
     }
 
-    public void SetCharacterName(String name)
+    public void SetPlayerName(string name)
     {
-        characterName = name;
+        playerSaveResource.SetPlayerName(name);
     }
 
+    public string GetCharacterName()
+    {
+        return playerSaveResource.GetCharacterName();
+    }
+
+    public void SetCharacterName(string name)
+    {
+        playerSaveResource.SetCharacterName(name);
+    }
 
     public Texture GetBGTexture()
     {
-        return personalBG;
+        return playerSaveResource.GetBGTexture();
     }
 
     public void SetBGTexture(Texture BG)
     {
-        personalBG = BG;
+        playerSaveResource.SetBGTexture(BG);
     }
-
 
     public Color GetFirstColor()
     {
-        return firstColor;
+        return playerSaveResource.GetFirstColor();
     }
 
     public void SetFirstColor(Color color)
     {
-        firstColor = color;
+        playerSaveResource.SetFirstColor(color);
     }
-
 
     public Color GetSecondColor()
     {
-        return secondColor;
+        return playerSaveResource.GetSecondColor();
     }
 
     public void SetSecondColor(Color color)
     {
-        secondColor = color;
+        playerSaveResource.SetSecondColor(color);
     }
-
-
-
 
     public int GetTotalLife()
     {
-        return totalFactors[(int) MyEnum.Factor.LIFE];
+        return playerSaveResource.GetTotalLife();
     }
 
     public void SetTotalLife(int value)
     {
-        totalFactors[(int)MyEnum.Factor.LIFE] = value;
+        playerSaveResource.SetTotalLife(value);
     }
-
 
     public int GetActualLife()
     {
-        return actualFactors[(int)MyEnum.Factor.LIFE];
+        return playerSaveResource.GetActualLife();
     }
 
     public void SetActualLife(int value)
     {
-        actualFactors[(int)MyEnum.Factor.LIFE] = value;
+        playerSaveResource.SetActualLife(value);
     }
-
 
     public int GetModLife()
     {
-        return modFactors[(int)MyEnum.Factor.LIFE];
+        return playerSaveResource.GetModLife();
     }
 
     public void SetModLife(int value)
     {
-        modFactors[(int)MyEnum.Factor.LIFE] = value;
+        playerSaveResource.SetModLife(value);
     }
-
-
-
 
     public int GetTotalSurge()
     {
-        return totalFactors[(int)MyEnum.Factor.SURGE];
+        return playerSaveResource.GetTotalSurge();
     }
 
     public void SetTotalSurge(int value)
     {
-        totalFactors[(int)MyEnum.Factor.SURGE] = value;
+        playerSaveResource.SetTotalSurge(value);
     }
 
-        
     public int GetActualSurge()
     {
-        return actualFactors[(int)MyEnum.Factor.SURGE];
+        return playerSaveResource.GetActualSurge();
     }
 
     public void SetActualSurge(int value)
     {
-        actualFactors[(int)MyEnum.Factor.SURGE] = value;
+        playerSaveResource.SetActualSurge(value);
     }
-
 
     public int GetModSurge()
     {
-        return modFactors[(int)MyEnum.Factor.SURGE];
+        return playerSaveResource.GetModSurge();
     }
 
     public void SetModSurge(int value)
     {
-        modFactors[(int)MyEnum.Factor.SURGE] = value;
+        playerSaveResource.SetModSurge(value);
     }
-
-
-
 
     public int GetTotalAgiDefense()
     {
-        return totalFactors[(int)MyEnum.Factor.AGI_DEF];
+        return playerSaveResource.GetTotalAgiDefense();
     }
 
     public void SetTotalAgiDefense(int value)
     {
-        totalFactors[(int)MyEnum.Factor.AGI_DEF] = value;
+        playerSaveResource.SetTotalAgiDefense(value);
     }
-
 
     public int GetActualAgiDefense()
     {
-        return actualFactors[(int)MyEnum.Factor.AGI_DEF];
+        return playerSaveResource.GetActualAgiDefense();
     }
 
     public void SetActualAgiDefense(int value)
     {
-        actualFactors[(int)MyEnum.Factor.AGI_DEF] = value;
+        playerSaveResource.SetActualAgiDefense(value);
     }
-
 
     public int GetModAgiDefense()
     {
-        return modFactors[(int)MyEnum.Factor.AGI_DEF];
+        return playerSaveResource.GetModAgiDefense();
     }
 
     public void SetModAgiDefense(int value)
     {
-        modFactors[(int)MyEnum.Factor.AGI_DEF] = value;
+        playerSaveResource.SetModAgiDefense(value);
     }
-
-
-
 
     public int GetTotalStrDefense()
     {
-        return totalFactors[(int)MyEnum.Factor.STR_DEF];
+        return playerSaveResource.GetTotalStrDefense();
     }
 
     public void SetTotalStrDefense(int value)
     {
-        totalFactors[(int)MyEnum.Factor.STR_DEF] = value;
+        playerSaveResource.SetTotalStrDefense(value);
     }
-
 
     public int GetActualStrDefense()
     {
-        return actualFactors[(int)MyEnum.Factor.STR_DEF];
+        return playerSaveResource.GetActualStrDefense();
     }
 
     public void SetActualStrDefense(int value)
     {
-        actualFactors[(int)MyEnum.Factor.STR_DEF] = value;
+        playerSaveResource.SetActualStrDefense(value);
     }
-
 
     public int GetModStrDefense()
     {
-        return modFactors[(int)MyEnum.Factor.STR_DEF];
+        return playerSaveResource.GetModStrDefense();
     }
 
     public void SetModStrDefense(int value)
     {
-        modFactors[(int)MyEnum.Factor.STR_DEF] = value;
+        playerSaveResource.SetModStrDefense(value);
     }
 
     public int GetStrength()
     {
-        return totalAtributes[(int)MyEnum.Atribute.STR];
+        return playerSaveResource.GetStrength();
     }
 
     public void SetStrength(int value)
     {
-        totalAtributes[(int)MyEnum.Atribute.STR] = value;
+        playerSaveResource.SetStrength(value);
     }
 
     public int GetAgility()
     {
-        return totalAtributes[(int)MyEnum.Atribute.AGI];
+        return playerSaveResource.GetAgility();
     }
 
     public void SetAgility(int value)
     {
-        totalAtributes[(int)MyEnum.Atribute.AGI] = value;
+        playerSaveResource.SetAgility(value);
     }
 
     public int GetSenses()
     {
-        return totalAtributes[(int)MyEnum.Atribute.SEN];
+        return playerSaveResource.GetSenses();
     }
 
     public void SetSenses(int value)
     {
-        totalAtributes[(int)MyEnum.Atribute.SEN] = value;
+        playerSaveResource.SetSenses(value);
     }
 
     public int GetMind()
     {
-        return totalAtributes[(int)MyEnum.Atribute.MIN];
+        return playerSaveResource.GetMind();
     }
 
     public void SetMind(int value)
     {
-        totalAtributes[(int)MyEnum.Atribute.MIN] = value;
+        playerSaveResource.SetMind(value);
     }
 
     public int GetCharisma()
     {
-        return totalAtributes[(int)MyEnum.Atribute.CHA];
+        return playerSaveResource.GetCharisma();
     }
 
     public void SetCharisma(int value)
     {
-        totalAtributes[(int)MyEnum.Atribute.CHA] = value;
+        playerSaveResource.SetCharisma(value);
     }
 
     public int GetModStrength()
     {
-        return modAtributes[(int)MyEnum.Atribute.STR];
+        return playerSaveResource.GetModStrength();
     }
 
     public void SetModStrength(int value)
     {
-        modAtributes[(int)MyEnum.Atribute.STR] = value;
+        playerSaveResource.SetModStrength(value);
     }
 
     public int GetModAgility()
     {
-        return modAtributes[(int)MyEnum.Atribute.AGI];
+        return playerSaveResource.GetModAgility();
     }
 
     public void SetModAgility(int value)
     {
-        modAtributes[(int)MyEnum.Atribute.AGI] = value;
+        playerSaveResource.SetModAgility(value);
     }
 
     public int GetModSenses()
     {
-        return modAtributes[(int)MyEnum.Atribute.SEN];
+        return playerSaveResource.GetModSenses();
     }
 
     public void SetModSenses(int value)
     {
-        modAtributes[(int)MyEnum.Atribute.SEN] = value;
+        playerSaveResource.SetModSenses(value);
     }
 
     public int GetModMind()
     {
-        return modAtributes[(int)MyEnum.Atribute.MIN];
+        return playerSaveResource.GetModMind();
     }
 
     public void SetModMind(int value)
     {
-        modAtributes[(int)MyEnum.Atribute.MIN] = value;
+        playerSaveResource.SetModMind(value);
     }
 
     public int GetModCharisma()
     {
-        return modAtributes[(int)MyEnum.Atribute.CHA];
+        return playerSaveResource.GetModCharisma();
     }
 
     public void SetModCharisma(int value)
     {
-        modAtributes[(int)MyEnum.Atribute.CHA] = value;
+        playerSaveResource.SetModCharisma(value);
     }
-
 
     public Array<Work> GetWorks()
     {
-        return works;
+        return playerSaveResource.GetWorks();
     }
 
     public void SetWorks(Array<Work> _works)
     {
-        works = _works;
-    }
-
-    public Array<Array<int>> GetQuantOfWorksUp()
-    {
-        Array<Array<int>> worksUps = new Array<Array<int>>();
-        foreach(Work work in works)
-        {
-            worksUps.Add(work.GetWorksUp());
-        }
-        return worksUps;
-    }
-
-    public void SetQuantOfWorksUp(Array<Array<int>> ups)
-    {
-        for(int i = 0; i < works.Count; i++)
-        {
-            works[i].SetWorksUp(ups[i]);
-        }
+        playerSaveResource.SetWorks(_works);
     }
 
     public Godot.Collections.Array GetNotifications()
     {
-        return notificationList;
+        return playerSaveResource.GetNotifications();
     }
 
     public void SetNotifications(Godot.Collections.Array notifications)
     {
-        notificationList = notifications;
+        playerSaveResource.SetNotifications(notifications);
     }
 
     public int[] GetTrainingAtributes()
     {
-        return trainingAtributes;
+        return playerSaveResource.GetTrainingAtributes();
     }
 
     public void SetTrainingAtributes(int[] value)
     {
-        trainingAtributes = value;
+        playerSaveResource.SetTrainingAtributes(value);
     }
 
     public int GetInspiration()
     {
-        return inspiration;
+        return playerSaveResource.GetInspiration();
     }
 
     public void SetInspiration(int value)
     {
-        inspiration = value;
+        playerSaveResource.SetInspiration(value);
+    }
+
+    public int GetExtraDamage()
+    {
+        return playerSaveResource.GetExtraDamage();
+    }
+
+    public void SetExtraDamage(int value)
+    {
+        playerSaveResource.SetExtraDamage(value);
     }
 
     public string GetTrivia()
     {
-        return trivia;
+        return playerSaveResource.GetTrivia();
     }
 
     public void SetTrivia(string text)
     {
-        trivia = text;
+        playerSaveResource.SetTrivia(text);
+    }
+
+    public Array<Array<CriticUse>> GetCriticUses()
+    {
+        return playerSaveResource.GetCriticUses();
+    }
+
+    public void SetCriticUses(Array<Array<CriticUse>> uses)
+    {
+        playerSaveResource.SetCriticUses(uses);
+    }
+
+    public Array<Technique> GetTechniques()
+    {
+        return playerSaveResource.GetTechniques();
+    }
+
+    public void SetTechniques(Array<Technique> tech)
+    {
+        playerSaveResource.SetTechniques(tech);
+    }
+
+    public Array<InventoryItem> GetItens()
+    {
+        return playerSaveResource.GetItens();
+    }
+
+    public void SetItens(Array<InventoryItem> itens)
+    {
+        playerSaveResource.SetItens(itens);
+    }
+
+    public int GetWeaponIndex()
+    {
+        return playerSaveResource.GetWeaponIndex();
+    }
+
+    public void SetWeaponIndex(int index)
+    {
+        playerSaveResource.SetWeaponIndex(index);
+    }
+
+    public int GetGuard()
+    {
+        return playerSaveResource.GetGuard();
+    }
+
+    public void SetGuard(int guard)
+    {
+        playerSaveResource.SetGuard(guard);
+    }
+
+    public MyEnum.DefenseStyle GetDefenseStyle()
+    {
+        return playerSaveResource.GetDefenseStyle();
+    }
+
+    public void SetDefenseStyle(MyEnum.DefenseStyle style)
+    {
+        playerSaveResource.SetDefenseStyle(style);
+    }
+
+
+
+
+    public Resource GetSaveResource()
+    {
+        return playerSaveResource;
+    }
+    
+    
+    public string GetBaseSavePath()
+    {
+        return $"{MyStatic.savePath}/{Name}/";
+    }
+
+    public string GetActualSavePath()
+    {
+        return playerSaveResource.GetCurrentSavePath();
     }
 }

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/habilitys/critic-uses/Azazel/LancaVampirica.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+criticUseName = "Lança Vampírica"
+relatedWork = 4
+text = "Em Testes de Ataque, você pode utilizar seu Talento Vampirismo com sua Lança Entoada."
+baseMessage = "Você pode usar seu talento vampirismo com sua lança entoada"
+cost = 2

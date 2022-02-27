@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/habilitys/critic-uses/Melissa/EnxameDaAbelha.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+criticUseName = "Enxame da Abelha Solitária"
+relatedWork = 12
+text = "Em Testes de Ataque, antes/depois atacar, pode ir para forma reluzente para princesa e vice-versa."
+baseMessage = "Antes ou depois de atacar, você pode ir da forma reluzente para princesa e vice-versa"
+cost = 1

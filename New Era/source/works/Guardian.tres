@@ -12,6 +12,7 @@ baseImage = ExtResource( 2 )
 pathDescription = null
 skills = [ ExtResource( 3 ) ]
 description = "Guardar e proteger, a vontade da barreira"
+maestryDescription = null
 enumWork = 4
 relationedAtribute = 1
 level = 0

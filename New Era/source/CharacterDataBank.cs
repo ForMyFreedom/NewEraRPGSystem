@@ -97,6 +97,27 @@ public interface CharacterDataBank
     int GetInspiration();
     void SetInspiration(int value);
 
+    int GetExtraDamage();
+    void SetExtraDamage(int value);
+
     String GetTrivia();
     void SetTrivia(String text);
+
+    Array<Array<CriticUse>> GetCriticUses();
+    void SetCriticUses(Array<Array<CriticUse>> uses);
+
+    Array<Technique> GetTechniques();
+    void SetTechniques(Array<Technique> tech);
+
+    Array<InventoryItem> GetItens();
+    void SetItens(Array<InventoryItem> itens);
+
+    int GetWeaponIndex();
+    void SetWeaponIndex(int index);
+
+    int GetGuard();
+    void SetGuard(int guard);
+
+    MyEnum.DefenseStyle GetDefenseStyle();
+    void SetDefenseStyle(MyEnum.DefenseStyle style);
 }

@@ -11,7 +11,7 @@ public class Beat : Skill
         return new Array<string>() { "Ciclo Regular", "Contra Ciclo" };
     }
 
-    public override void DoMechanic(MainInterface main, int actionIndex = 0)
+    public override void DoMechanic(MainInterface main, int actionIndex = 0, int mod = 0)
     {
         if (actionIndex == 0)
             DoRegularCicle(main);
@@ -26,11 +26,13 @@ public class Beat : Skill
         {
             main.CreateNewNotification($"Relaxamento, voce ganhou {level} Surto de Acao mas perdeu {level} Dano", effectImage);
             main.AddActualSurge(level);
+            main.AddExtraDamage(-level);
         }
         else
         {
             main.CreateNewNotification($"Contracao, voce ganhou {level} Dano mas perdeu {level} Surto de Acao", effectImage);
             main.AddActualSurge(-level);
+            main.AddExtraDamage(level);
         }
     }
 

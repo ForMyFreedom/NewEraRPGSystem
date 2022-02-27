@@ -13,6 +13,7 @@ A cada 10, +1 Técnica [Assasino] e +1 Uso de Crítico [Assasino]
 A cada 50, Bônus de Maestria e +2 Letalidade"
 skills = [ ExtResource( 2 ) ]
 description = "Especialista no uso de métodos indiretos"
+maestryDescription = null
 enumWork = 1
 relationedAtribute = 1
 level = 0

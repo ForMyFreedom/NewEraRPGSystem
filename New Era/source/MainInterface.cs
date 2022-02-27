@@ -2,6 +2,7 @@ using Godot;
 using Godot.Collections;
 using System;
 using System.Text;
+using System.Linq;
 
 public class MainInterface : Control, CharacterDataBank
 {
@@ -50,6 +51,8 @@ public class MainInterface : Control, CharacterDataBank
     [Export]
     private NodePath inspirationSpinPath;
     [Export]
+    private NodePath damageSpinPath;
+    [Export]
     private NodePath trainingButtonPath;
     [Export]
     private NodePath triviaButtonPath;
@@ -57,19 +60,43 @@ public class MainInterface : Control, CharacterDataBank
     private NodePath equipamentsButtonPath;
     [Export]
     private NodePath tracesButtonPath;
+    [Export]
+    private NodePath getSaveButtonPath;
+    [Export]
+    private NodePath reloadSaveButtonPath;
+    [Export]
+    private NodePath techniquesTreePath;
+    [Export]
+    private NodePath characterInventoryPath;
+    [Export]
+    private NodePath triviaDataPath;
+    [Export]
+    private NodePath defenseBooblePath;
 
     private Player player;
     private Color[] colors = new Color[2];
+    private bool alreadyConnectAll = false;
 
     public override void _Ready()
     {
+        playerScene = GetNode<Global>("/root/Global").GetSelectedPlayerPacked();
         player = playerScene.Instance<Player>();
         player._Ready();
-        ConnectAllButtons();
-        Connect("tree_exiting", this, "RegisterAllData");
         RegistryData(player, this);
-        CenterTheWindow();
+        MakeConnections();
     }
+
+    private void MakeConnections()
+    {
+        if (alreadyConnectAll) return;
+        ConnectAllButtons();
+        SendBooblesData();
+        MyStatic.CenterTheWindow();
+
+        Connect("tree_exiting", this, "RegisterAllData");
+        alreadyConnectAll = true;
+    }
+
 
     private void ConnectAllButtons()
     {
@@ -78,6 +105,14 @@ public class MainInterface : Control, CharacterDataBank
         GetNode(triviaButtonPath).Connect("button_up", this, "_OnTrivia");
         GetNode(equipamentsButtonPath).Connect("button_up", this, "_OnEquipaments");
         GetNode(tracesButtonPath).Connect("button_up", this, "_OnTraces");
+        GetNode(getSaveButtonPath).Connect("button_activate", this, "_OnGetSave");
+        GetNode(reloadSaveButtonPath).Connect("button_activate", this, "_Ready");
+    }
+
+    private void SendBooblesData()
+    {
+        GetNode<DefenseBooble>(defenseBooblePath).SetDefenseStyle(GetDefenseStyle());
+        GetNode<DefenseBooble>(defenseBooblePath).UpdateTexture();
     }
 
 
@@ -122,16 +157,23 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetNotifications(sender.GetNotifications());
 
         reciver.SetInspiration(sender.GetInspiration());
+        reciver.SetExtraDamage(sender.GetExtraDamage());
         reciver.SetTrainingAtributes(sender.GetTrainingAtributes());
         reciver.SetTrivia(sender.GetTrivia());
+
+        reciver.SetCriticUses(sender.GetCriticUses());
+        reciver.SetTechniques(sender.GetTechniques());
+
+        reciver.SetItens(sender.GetItens());
+        reciver.SetWeaponIndex(sender.GetWeaponIndex());
+        reciver.SetGuard(sender.GetGuard());
+        reciver.SetDefenseStyle(sender.GetDefenseStyle());
     }
 
     private void RegisterAllData()
     {
         RegistryData(this, player);
-        var packedScene = new PackedScene();
-        packedScene.Pack(player);
-        ResourceSaver.Save(playerScene.ResourcePath, packedScene);
+        ResourceSaver.Save(player.GetActualSavePath(), player.GetSaveResource());
     }
 
 
@@ -154,12 +196,17 @@ public class MainInterface : Control, CharacterDataBank
 
     public void _OnEquipaments()
     {
-        GD.Print("Issue #7");
+        GetNode<GeneralButton>(equipamentsButtonPath).CreatePopup(this);
     }
 
     public void _OnTraces()
     {
         GD.Print("Issue #6");
+    }
+
+    public void _OnGetSave()
+    {
+        OS.ShellOpen($"{MyStatic.savePath}/{player.Name}");
     }
 
 
@@ -177,6 +224,18 @@ public class MainInterface : Control, CharacterDataBank
                 return GetNode<Atributo>(minAtributePath);
             case MyEnum.Atribute.CHA:
                 return GetNode<Atributo>(chaAtributePath);
+        }
+        return null;
+    }
+
+    public Work GetWorkNodeByEnum(MyEnum.Work workEnum)
+    {
+        foreach(Work work in GetWorks())
+        {
+            if (work.GetEnumWork() == workEnum)
+            {
+                return work;
+            }
         }
         return null;
     }
@@ -257,7 +316,7 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModLife(int value)
     {
-        GetFactorModSpin(lifeFactorPath).Value = value;
+        SetFactorModValue(lifeFactorPath, value);
     }
 
     public void AddModLife(int sum)
@@ -309,7 +368,7 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModSurge(int value)
     {
-        GetFactorModSpin(surgeFactorPath).Value = value;
+        SetFactorModValue(surgeFactorPath, value);
     }
 
     public void AddModSurge(int sum)
@@ -361,7 +420,7 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModAgiDefense(int value)
     {
-        GetFactorModSpin(agiDefenseFactorPath).Value = value;
+        SetFactorModValue(strDefenseFactorPath, value);
     }
 
     public void AddModAgiDefense(int sum)
@@ -413,7 +472,7 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModStrDefense(int value)
     {
-        GetFactorModSpin(strDefenseFactorPath).Value = value;
+        SetFactorModValue(strDefenseFactorPath, value);
     }
 
     public void AddModStrDefense(int sum)
@@ -652,13 +711,12 @@ public class MainInterface : Control, CharacterDataBank
 
     public string GetTrivia()
     {
-        object data = GetNode<GeneralButton>(triviaButtonPath).GetData();
-        return (String) data;
+        return GetNode<TriviaData>(triviaDataPath).GetTrivia();
     }
 
     public void SetTrivia(string text)
     {
-        GetNode<GeneralButton>(triviaButtonPath).SetData(new[] { text });
+        GetNode<TriviaData>(triviaDataPath).SetTrivia(text);
     }
 
 
@@ -672,6 +730,25 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<SpinBox>(inspirationSpinPath).Value = value;
     }
 
+    public int GetExtraDamage()
+    {
+        return (int) GetNode<SpinBox>(damageSpinPath).Value;
+    }
+
+    public void SetExtraDamage(int value)
+    {
+        GetNode<SpinBox>(damageSpinPath).Value = value;
+    }
+
+    public void AddExtraDamage(int value)
+    {
+        GetNode<SpinBox>(damageSpinPath).Value += value;
+    }
+
+    public int GetSelectedWeaponDamage()
+    {
+        return GetNode<CharacterInventory>(characterInventoryPath).GetSelectedWeaponDamage();
+    }
 
 
 
@@ -685,9 +762,96 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<NotificationArea>(notificationPath).SetNotifications(notifications);
     }
 
+    public Array<Array<CriticUse>> GetCriticUses()
+    {
+        return GetNode<WorkTree>(worksTreePath).GetCriticUses();
+    }
+
+    public Array<CriticUse> GetCriticUseFromWork(MyEnum.Work we)
+    {
+        Array<Array<CriticUse>> allUses = GetCriticUses();
+        int workIndex = GetWorkIndex(we);
+        if (workIndex > -1)
+            return allUses[workIndex];
+        else
+            return null;
+    }
+
+    public void SetCriticUses(Array<Array<CriticUse>> uses)
+    {
+        GetNode<WorkTree>(worksTreePath).SetCriticUses(uses);
+    }
+
+    public Array<Technique> GetTechniques()
+    {
+        return GetNode<TechniquesTree>(techniquesTreePath).GetTechniques();
+    }
+
+    public void SetTechniques(Array<Technique> tech)
+    {
+        GetNode<TechniquesTree>(techniquesTreePath).SetTechniques(tech);
+    }
+
+    public Array<InventoryItem> GetItens()
+    {
+        return GetNode<CharacterInventory>(characterInventoryPath).GetItens();
+    }
+
+    public void SetItens(Array<InventoryItem> itens)
+    {
+        GetNode<CharacterInventory>(characterInventoryPath).SetItens(itens);
+    }
+
+    public int GetWeaponIndex()
+    {
+        return GetNode<CharacterInventory>(characterInventoryPath).GetSelectedWeaponIndex();
+    }
+
+    public void SetWeaponIndex(int index)
+    {
+        GetNode<CharacterInventory>(characterInventoryPath).SetSelectedWeaponIndex(index);
+    }
+
+    public int GetGuard()
+    {
+        return (int) GetNode<Factor>(lifeFactorPath).GetGuardSpin().Value;
+    }
+
+    public void SetGuard(int guard)
+    {
+        GetNode<Factor>(lifeFactorPath).GetGuardSpin().Value = guard;
+    }
+
+    public void AddGuard(int addGuard)
+    {
+        GetNode<Factor>(lifeFactorPath).GetGuardSpin().Value += addGuard;
+    }
+
+    public MyEnum.DefenseStyle GetDefenseStyle()
+    {
+        return GetNode<DefenseBooble>(defenseBooblePath).GetDefenseStyle();
+    }
+
+    public void SetDefenseStyle(MyEnum.DefenseStyle style)
+    {
+        GetNode<DefenseBooble>(defenseBooblePath).SetDefenseStyle(style);
+    }
+
+
+
+
+
+
+
     public int RequestSkillRoll(String skillName, int modValue=0)
     {
         return GetNode<WorkTree>(worksTreePath).RequestSkillRoll(skillName, modValue);
+    }
+
+    public void RequestSkillMechanic(MyEnum.Work work, int skillIndex, int modValue = 0, int actionIndex=0)
+    {
+        Skill skill = GetWorkNodeByEnum(work).GetSkillList()[skillIndex];
+        skill.DoMechanic(this, actionIndex, modValue);
     }
 
     public int RequestWorkRoll(MyEnum.Work we, int modValue=0)
@@ -695,9 +859,28 @@ public class MainInterface : Control, CharacterDataBank
         return GetNode<WorkTree>(worksTreePath).RequestWorkRoll(we, modValue);
     }
 
-    public int RequestAtributeRoll(MyEnum.Atribute ae)
+    public int RequestWorkRollWithNotification(MyEnum.Work we, int modValue = 0)
     {
-        return GetAtributeNodeByEnum(ae).RequestRoll();
+        int result = RequestWorkRoll(we, modValue);
+        CreateNewNotification($"Teste de {we}: {result}");
+        return result;
+    }
+
+    public int RequestAtributeRoll(MyEnum.Atribute ae, int modValue=0)
+    {
+        return GetAtributeNodeByEnum(ae).RequestRoll(modValue);
+    }
+
+    public int RequestAtributeRollWithNotification(MyEnum.Atribute ae, int modValue = 0)
+    {
+        int result = RequestAtributeRoll(ae, modValue);
+        CreateNewNotification($"Teste de {ae}: {result}");
+        return result;
+    }
+
+    public void ConnectToLastNotification(Godot.Object obj, String funcName)
+    {
+        GetNode<NotificationArea>(notificationPath).ConnectToLastNotification(obj, funcName);
     }
 
 
@@ -734,6 +917,12 @@ public class MainInterface : Control, CharacterDataBank
     private SpinBox GetFactorModSpin(NodePath path)
     {
         return GetNode<Factor>(path).GetModSpin();
+    }
+
+    private void SetFactorModValue(NodePath path, int value)
+    {
+        GetNode<Factor>(path).GetModSpin().Value = value;
+        GetNode<Factor>(path).SetActualMod(value);
     }
 
 
@@ -779,15 +968,33 @@ public class MainInterface : Control, CharacterDataBank
     }
 
 
-
-    private void CenterTheWindow()
+    private int GetWorkIndex(MyEnum.Work we)
     {
-        Vector2 screenSize = OS.GetScreenSize(0);
-        screenSize.y *= 0.90f;
-        Vector2 windowSize = OS.WindowSize;
-        OS.WindowPosition = (screenSize - windowSize) * 0.5f;
+        Array<Work> works = GetWorks();
+        for(int i = 0; i < works.Count; i++)
+        {
+            if (works[i].GetEnumWork() == we)
+                return i;
+        }
+        return -1;
     }
 
+
+
+    public Skill GetSkillByWorkAndName(MyEnum.Work workEnum, String name)
+    {
+        Work work = GetWorks().Where(w => w.GetEnumWork() == workEnum).ToArray()[0];
+        return work.GetSkillList().Where(s => s.GetSkillName() == name).ToArray()[0];
+    }
+
+    public void UpdateInventory()
+    {
+        foreach(Node child in GetChildren())
+        {
+            if(child is InventoryPopup)
+                ((InventoryPopup)child).UpdateItensText();
+        }
+    }
 
 }
 

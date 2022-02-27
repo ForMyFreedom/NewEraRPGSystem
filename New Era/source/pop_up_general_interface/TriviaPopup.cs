@@ -6,30 +6,24 @@ public class TriviaPopup : MyPopup
     [Export]
     protected NodePath labelPath;
 
-    private String trivia;
+    private TriviaData triviaData;
 
+    public override void InjectData(Node baseData)
+    {
+        triviaData = (TriviaData) baseData;
+    }
 
     public override void PopupIt()
     {
         PopupCenteredRatio(RATIO);
-    }
-
-    public override void PassDataToMain()
-    {
-        main.SetTrivia(GetTrivia());
+        GetNode<TextEdit>(labelPath).Text = triviaData.GetTrivia();
+        GetNode(labelPath).Connect("text_changed", this, "_OnTextChanged");
     }
 
 
-
-    public String GetTrivia()
+    public void _OnTextChanged()
     {
-        return GetNode<TextEdit>(labelPath).Text;
-    }
-    
-    public void SetTrivia(String text)
-    {
-        trivia = text;
-        GetNode<TextEdit>(labelPath).Text = trivia;
+        triviaData.SetTrivia(GetNode<TextEdit>(labelPath).Text);
     }
 
 }
