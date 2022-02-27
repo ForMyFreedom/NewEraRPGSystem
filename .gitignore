@@ -25,6 +25,7 @@ fonts/
 file.samples/
 icon.png
 
-
+.vs/
 *.cfg
+
 saves/
