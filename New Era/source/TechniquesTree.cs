@@ -132,17 +132,14 @@ public class TechniquesTree : Tree
             if (i != works.Length - 1)
                 worksText += " - ";
         }
+            
         string levelStr = (tech.GetLevel() > 0) ? $"[LVL {tech.GetLevel()}]" : "";
         return $"- {tech.GetTechniqueName()}    [{worksText}] {levelStr}";
     }
 
     private string GetTechniqueDescription(Technique technique)
     {
-        return (
-            $"Ofensivo: {technique.GetOfensiveLevel()}      "+
-            $"Suporte: {technique.GetSuportLevel()}      " +
-            $"Criticos: {GetCriticListWithLevel(technique)}"
-        );
+        return  $"Criticos: {GetCriticListWithLevel(technique)}";
     }
 
     private string GetCriticListWithLevel(Technique technique)

@@ -15,10 +15,6 @@ public abstract class Technique : NotificationConsumer
     [Export]
     protected int[] actionIndexOfCritics;
     [Export]
-    protected int ofensiveLevel;
-    [Export]
-    protected int suportLevel;
-    [Export]
     protected int level;
     [Export]
     protected int modValue;
@@ -44,7 +40,7 @@ public abstract class Technique : NotificationConsumer
     {
         int rollValue = CalculateRollValue();
         int sumValue = CalculateSumValue(main);
-        int damage = CalculateBaseDamage(main) + ofensiveLevel +main.GetExtraDamage();
+        int damage = CalculateBaseDamage(main) + main.GetExtraDamage();
 
         int result = RollCode.GetRandomAdvancedRoll(rollValue, sumValue, modValue);
 
@@ -136,16 +132,6 @@ public abstract class Technique : NotificationConsumer
     public int GetLevel()
     {
         return level;
-    }
-
-    public int GetOfensiveLevel()
-    {
-        return ofensiveLevel;
-    }
-
-    public int GetSuportLevel()
-    {
-        return suportLevel;
     }
 
     public void InjectWorks(Work[] ws)
