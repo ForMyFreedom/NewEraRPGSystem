@@ -150,13 +150,23 @@ public class NotificationArea : Control
         return notifications;
     }
 
+
     public void SetNotifications(Godot.Collections.Array notifications)
     {
-        if (notifications == null) return;
-        foreach(Godot.Collections.Array not in notifications)
+        CleanAllNotificationsItens();
+
+        foreach (Godot.Collections.Array not in notifications)
         {
             notificationList.AddItem((String)not[0], (Texture)not[1]);
         }
+
         ActualizeQuantNotificationsLabel();
+    }
+
+
+    private void CleanAllNotificationsItens()
+    {
+        for(int i = 0; i < notificationList.Items.Count / 3; i++)
+            notificationList.RemoveItem(i);
     }
 }
