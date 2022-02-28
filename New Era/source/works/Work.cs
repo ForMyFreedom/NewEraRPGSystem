@@ -15,8 +15,6 @@ public abstract class Work : Resource
     protected Skill[] skills = { };
     [Export(PropertyHint.MultilineText)]
     protected string description;
-    [Export(PropertyHint.MultilineText)]
-    protected string maestryDescription;
     [Export]
     protected MyEnum.Work enumWork;
     [Export]

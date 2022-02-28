@@ -16,7 +16,7 @@ public class Fighter : Work
     public override void DoThirdUpStep(MainInterface gui) //@
     {
         gui.CreateNewNotification($"Voce alcansou uma maestria de {workName}! " +
-            "Escolha entre: \n" + maestryDescription, baseImage);
+            "Escolha entre: \n" + pathDescription, baseImage);
     }
 
     public override int GetBaseDamage(MainInterface gui, int weaponDamage = 0, int actionIndex = 0)
