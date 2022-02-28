@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/works/Haki.cs" type="Script" id=1]
+[ext_resource path="res://assets/skills/haki.png" type="Texture" id=2]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+workName = "Haki"
+baseImage = ExtResource( 2 )
+pathDescription = "- Usuário Regular +I: Ligeiro aumento de força em todos seus Usos
+de Crítico, assim como 15 pontos para destribuir entre seus Atributos.
+- Usuário de Princípios +I: +9 entre Ten, Zetsu, Ren e +1 Uso de
+Crítico [Forma]
+- Usuário de Aura +I: +25% Afinidade com alguma Cor (Menos
+Especialização) e +1 Uso de Crítico [Hatsu]"
+skills = [  ]
+description = "Os meios de se distorcer o plausível são as Formas, enquanto a manifestação pura de sua Vontade se chama Aura (A qual é limitada e presa por
+uma Barreira, mas presente entre todos seres vivos que possuem vontade)."
+maestryDescription = "Null"
+enumWork = 14
+relationedAtribute = 5
+level = 0
+worksUps = [ 0, 0, 0 ]
