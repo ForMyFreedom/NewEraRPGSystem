@@ -106,7 +106,7 @@ public class MainInterface : Control, CharacterDataBank
         GetNode(equipamentsButtonPath).Connect("button_up", this, "_OnEquipaments");
         GetNode(tracesButtonPath).Connect("button_up", this, "_OnTraces");
         GetNode(getSaveButtonPath).Connect("button_activate", this, "_OnGetSave");
-        GetNode(reloadSaveButtonPath).Connect("button_activate", this, "_Ready");
+        GetNode(reloadSaveButtonPath).Connect("button_activate", this, "_OnReload");
     }
 
     private void SendBooblesData()
@@ -207,6 +207,11 @@ public class MainInterface : Control, CharacterDataBank
     public void _OnGetSave()
     {
         OS.ShellOpen($"{MyStatic.savePath}/{player.Name}");
+    }
+
+    public void _OnReload()
+    {
+        _Ready();
     }
 
 
