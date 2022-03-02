@@ -30,6 +30,7 @@ public abstract class Work : Resource
     public abstract void DoFirstUpStep(MainInterface gui);
     public abstract void DoSecondUpStep(MainInterface gui);
     public abstract void DoThirdUpStep(MainInterface gui);
+    public abstract void DoForthUpStep(MainInterface gui);
 
     public abstract int GetBaseDamage(MainInterface gui, int weaponDamage = 0, int actionIndex=0);
 
@@ -63,6 +64,11 @@ public abstract class Work : Resource
     {
         return pathDescription;
     }
+
+    public string GetMaestryDescription()
+    {
+        return maestryDescription;
+    }
     
     public MyEnum.Atribute GetRelationedAtribute()
     {
@@ -89,9 +95,13 @@ public abstract class Work : Resource
         worksUps = wu;
     }
 
-    protected String GetCreatePowerMessage()
+    protected String GetCreateCriticMessage()
     {
-        return "Voce precisa criar um uso de critico ou tecnica";
+        return "Voce precisa criar um uso de critico";
     }
 
+    protected String GetCreateTechMessage()
+    {
+        return "Voce precisa criar uma tecnica";
+    }
 }

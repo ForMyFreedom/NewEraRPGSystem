@@ -11,10 +11,15 @@ public class Cooker : Work
 
     public override void DoSecondUpStep(MainInterface gui)
     {
-        gui.CreateNewNotification(GetCreatePowerMessage(), baseImage);
+        gui.CreateNewNotification(GetCreateCriticMessage(), baseImage);
     }
 
-    public override void DoThirdUpStep(MainInterface gui) //@
+    public override void DoThirdUpStep(MainInterface gui)
+    {
+        gui.CreateNewNotification(GetCreateTechMessage(), baseImage);
+    }
+
+    public override void DoForthUpStep(MainInterface gui)
     {
         gui.CreateNewNotification($"Voce alcansou uma maestria de {workName}! " +
             "Escolha entre: \n" + maestryDescription, baseImage);
