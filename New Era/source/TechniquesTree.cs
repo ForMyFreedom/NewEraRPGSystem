@@ -25,6 +25,8 @@ public class TechniquesTree : Tree
         itens = new TreeItem[GetTreeItemLength()];
         int itemIndex = 0;
 
+        InjectWorkInAllTechniques();
+
         foreach (Technique currentTech in techniques)
         {
             AddNewTechniqueItem(root, itemIndex, currentTech);
@@ -35,7 +37,6 @@ public class TechniquesTree : Tree
         }
 
         MakeBlankUnselected(itens);
-        InjectTechniqueInAllCriticUse();
     }
 
 
@@ -89,7 +90,7 @@ public class TechniquesTree : Tree
         }
     }
 
-    private void InjectTechniqueInAllCriticUse()
+    private void InjectWorkInAllTechniques()
     {
         Array<Work> allWorks = GetMain().GetWorks();
 
@@ -124,11 +125,11 @@ public class TechniquesTree : Tree
     public string GetTechniqueText(Technique tech)
     {
         string worksText = "";
-        MyEnum.Work[] works = tech.GetRelatedWorks();
+        Work[] works = tech.GetInjectedWorks();
 
         for(int i = 0; i < works.Length; i++)
         {
-            worksText += works[i];
+            worksText += works[i].GetWorkName();
             if (i != works.Length - 1)
                 worksText += " - ";
         }

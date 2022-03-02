@@ -61,10 +61,9 @@ public class NotificationArea : Control
 
     public void ConnectToLastNotification(Godot.Object obj, String funcName)
     {
-        if (IsConnected(nameof(notification_deleted), obj, funcName)) return;
-
-        int index = notificationList.GetItemCount()-1;
+        int index = notificationList.GetItemCount() - 1;
         notificationList.SetItemMetadata(index, obj);
+        if (IsConnected(nameof(notification_deleted), obj, funcName)) return;
         this.Connect(nameof(notification_deleted), obj, funcName);
     }
 

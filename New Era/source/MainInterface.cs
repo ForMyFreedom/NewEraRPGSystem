@@ -992,6 +992,12 @@ public class MainInterface : Control, CharacterDataBank
         return work.GetSkillList().Where(s => s.GetSkillName() == name).ToArray()[0];
     }
 
+    public Skill GetSkillByWorkAndIndex(MyEnum.Work workEnum, int index)
+    {
+        Work work = GetWorks().Where(w => w.GetEnumWork() == workEnum).ToArray()[0];
+        return work.GetSkillList()[index];
+    }
+
     public void UpdateInventory()
     {
         foreach(Node child in GetChildren())

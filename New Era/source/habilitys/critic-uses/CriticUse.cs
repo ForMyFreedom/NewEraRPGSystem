@@ -9,7 +9,7 @@ public abstract class CriticUse : NotificationConsumer
     protected String criticUseName;
     [Export]
     protected MyEnum.Work relatedWork;
-    [Export]
+    [Export(PropertyHint.MultilineText)]
     protected String text;
     [Export(PropertyHint.MultilineText)]
     protected String baseMessage;

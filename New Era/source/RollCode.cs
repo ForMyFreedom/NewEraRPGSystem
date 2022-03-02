@@ -5,9 +5,14 @@ public static class RollCode
 {
     private static Random rgn = new Random();
 
+    public static int GetRandomCustomRoll(int dice)
+    {
+        return rgn.Next(1, dice + 1);
+    }
+
     public static int GetRandomBasicRoll(int value)
     {
-        return RollSomeDices(value);
+        return RollSomeD6(value);
     }
 
 
@@ -17,13 +22,13 @@ public static class RollCode
         int finalRollValue = rollValue + modValue;
         int effect = (finalRollValue > 0) ? 1 : -1;
 
-        return result + RollSomeDices(finalRollValue, effect);
+        return result + RollSomeD6(finalRollValue, effect);
     }
 
 
 
 
-    private static int RollSomeDices(int quant, int effect=1)
+    private static int RollSomeD6(int quant, int effect=1)
     {
         int result = 0;
 

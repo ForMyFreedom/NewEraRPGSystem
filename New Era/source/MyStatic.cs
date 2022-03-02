@@ -3,7 +3,8 @@ using System;
 
 public static class MyStatic
 {
-    public static string savePath = OS.GetUserDataDir() + "\\saves\\";
+    public static string savePath = "res://saves//"; //"res://saves//"; //OS.GetUserDataDir() + "\\saves\\";
+
 
     public static void CenterTheWindow()
     {

@@ -114,6 +114,11 @@ public abstract class Technique : NotificationConsumer
         return relatedWorks;
     }
 
+    public Work[] GetInjectedWorks()
+    {
+        return injectedWorks;
+    }
+
     public CriticUse[] GetCriticUses()
     {
         return criticUses;
