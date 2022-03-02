@@ -13,9 +13,12 @@ public class Medicine : Skill
 
 
 
-    public override void DoMechanic(MainInterface main, int actionIndex=0, int mod = 0)
+    public override void DoMechanicLogic(MainInterface main, int actionIndex=0, int critic = -1)
     {
-        rollResult = main.RequestSkillRoll(skillName, mod);
+        if (critic < 0)
+            critic = 0;
+
+        rollResult = main.RequestSkillRoll(skillName, critic);
         string message ="";
         
         if(actionIndex==0)
@@ -25,6 +28,11 @@ public class Medicine : Skill
 
         main.CreateNewNotification(message, effectImage);
     }
+
+    public override void DoEndMechanicLogic()
+    {
+    }
+
 
     private int GetRepairLife()
     {

@@ -9,25 +9,31 @@ public class Blow : Skill
         return new Array<string>() { "Pancada de Forca", "Pancada de Agilidade", "Pancada de Sentidos" };
     }
 
-    public override void DoMechanic(MainInterface main, int actionIndex = 0, int mod = 0)
+    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
+        if (critic < 0)
+            critic = 0;
+
         string message = "Se o alvo tirar menos de ";
         switch (actionIndex)
         {
             case 0:
-                message += GetStrengthMessage(main, mod);
+                message += GetStrengthMessage(main, critic);
                 break;
             case 1:
-                message += GetAgilityMessage(main, mod);
+                message += GetAgilityMessage(main, critic);
                 break;
             case 2:
-                message += GetSensesMessage(main, mod);
+                message += GetSensesMessage(main, critic);
                 break;
         }
 
         main.CreateNewNotification(message, effectImage);
     }
 
+    public override void DoEndMechanicLogic()
+    {
+    }
 
 
     private string GetStrengthMessage(MainInterface main, int mod = 0)

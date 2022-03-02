@@ -2,7 +2,7 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public abstract class Skill : Resource
+public abstract class Skill : NotificationConsumer
 {
     [Export]
     protected string skillName;
@@ -24,8 +24,8 @@ public abstract class Skill : Resource
 
     public abstract Array<string> GetTextOfMechanicButtons();
 
-    public abstract void DoMechanic(MainInterface main, int actionIndex = 0, int mod=0);
-
+    public override abstract void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic=-1);
+    public override abstract void DoEndMechanicLogic();
 
 
     public String GetSkillName()

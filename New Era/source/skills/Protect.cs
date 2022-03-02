@@ -4,15 +4,27 @@ using System;
 
 public class Protect : Skill
 {
+    int guard;
+
     public override Array<string> GetTextOfMechanicButtons()
     {
         return new Array<string>() { "Proteger" };
     }
 
-    public override void DoMechanic(MainInterface main, int actionIndex = 0, int mod = 0)
+    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        main.AddGuard(level + mod);
-        main.CreateNewNotification($"Proteger! Voce recebe {level+mod} pontos de Guarda para distribuir entre todos proximos a voce", effectImage);
+        if (critic < 0)
+            critic = 0;
+
+        guard = level + critic;
+        main.AddGuard(guard);
+        main.CreateNewNotification($"Proteger! Voce recebe {guard} pontos de Guarda para distribuir entre todos proximos a voce", effectImage);
+        ConnectToLastNotification(main);
+    }
+
+    public override void DoEndMechanicLogic()
+    {
+        main.AddGuard(-guard);
     }
 
 }
