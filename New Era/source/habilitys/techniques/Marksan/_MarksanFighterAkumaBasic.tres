@@ -10,7 +10,5 @@ relatedWorks = PoolIntArray( 3, 12 )
 criticUses = [  ]
 powerOfCritics = PoolIntArray(  )
 actionIndexOfCritics = PoolIntArray(  )
-ofensiveLevel = 0
-suportLevel = 0
 level = 0
 modValue = 0
