@@ -23,8 +23,14 @@ public class CriticGUI : WindowDialog
     {
         WindowTitle += work.GetWorkName();
         InitializeTree();
+        Connect("popup_hide", this, "_OnPopupHide");
     }
 
+
+    private void _OnPopupHide()
+    {
+        QueueFree();
+    }
 
 
     private void InitializeTree()

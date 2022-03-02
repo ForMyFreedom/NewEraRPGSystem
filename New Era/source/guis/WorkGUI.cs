@@ -80,7 +80,7 @@ public class WorkGUI : BaseGUI
     {
         Array<int> difArray = new Array<int>();
         
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < array1.Count; i++)
         {
             difArray.Add(array1[i]);
             difArray[i] -= array2[i];
@@ -107,8 +107,12 @@ public class WorkGUI : BaseGUI
         {
             work.DoThirdUpStep(main);
         }
-    }
 
+        for (int i = 0; i < ups[3]; i++)
+        {
+            work.DoForthUpStep(main);
+        }
+    }
 
 
     public void PopupIt()
@@ -119,7 +123,7 @@ public class WorkGUI : BaseGUI
     public void SetWork(Work w)
     {
         work = w;
-        GetNode<RichTextLabel>(journeyLabel).BbcodeText += work.GetPathDescription();
+        GetNode<RichTextLabel>(journeyLabel).BbcodeText += work.GetMaestryDescription();
         //@
         GetNode<RollBox>(rollBoxPath).SetRollValue(w.GetLevel());
     }
