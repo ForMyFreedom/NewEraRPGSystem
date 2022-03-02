@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Melissa.tscn" type="PackedScene" id=2]
@@ -39,8 +39,9 @@
 [ext_resource path="res://source/notification/DefenseBooble.cs" type="Script" id=37]
 [ext_resource path="res://source/notification/Booble.cs" type="Script" id=38]
 [ext_resource path="res://assets/reload.png" type="Texture" id=39]
+[ext_resource path="res://assets/import.png" type="Texture" id=40]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=10]
 resource_name = "activate"
 length = 0.3
 tracks/0/type = "value"
@@ -54,6 +55,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 359.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "activate"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.490196, 0.2, 0.2, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -210,13 +227,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 playerScene = ExtResource( 2 )
-playerNamePath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/PlayerLabel")
-customRollButtonPath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/CustomRollButton")
-characterNamePath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/CharacterLabel")
+playerNamePath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/PlayerLabel")
+customRollButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/CustomRollButton")
+characterNamePath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/CharacterLabel")
 bgTexturePath = NodePath("BGRect")
 shadeColorRectPath = NodePath("ShadeBGColorRect")
 upFirstColorRectPath = NodePath("VBoxContainer/Info/PrincipalColorRect")
-upSecondColorRectPath = NodePath("VBoxContainer/Info/MarginContainer/SecondaryColorRect")
+upSecondColorRectPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/SecondaryColorRect")
 downFirstColorRectPath = NodePath("VBoxContainer/General/PrincipalColorRect")
 downSecondColorRectPath = NodePath("VBoxContainer/General/MarginContainer/SecondaryColorRect")
 lifeFactorPath = NodePath("VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life")
@@ -230,18 +247,19 @@ minAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContaine
 chaAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/CharismaAtribute")
 worksTreePath = NodePath("VBoxContainer/Perks/HBOX/WorkControl/MarginContainer/VBOX/WorkTree")
 notificationPath = NodePath("NotificationArea")
-inspirationSpinPath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX/Control/InspirationSpinBox")
-damageSpinPath = NodePath("VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX2/Control/DamageSpinBox")
+inspirationSpinPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/HBOX/Control/InspirationSpinBox")
+damageSpinPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/HBOX2/Control/DamageSpinBox")
 trainingButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TrainingButton")
 triviaButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton")
 equipamentsButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/EquipamentsButton")
 tracesButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TracesButton")
-getSaveButtonPath = NodePath("VBoxContainer/Info/MarginContainer/GetSaveButton")
-reloadSaveButtonPath = NodePath("VBoxContainer/Info/ReloadSave")
+getSaveButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/GetSaveButton")
+reloadSaveButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/VBoxContainer/ReloadSave")
 techniquesTreePath = NodePath("VBoxContainer/Perks/HBOX/HabilityControl/MarginContainer/VBOX/TechniqueTree")
 characterInventoryPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/EquipamentsButton/CharacterInventory")
 triviaDataPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton/TrivaData")
 defenseBooblePath = NodePath("NotificationArea/HBoxContainer/Actions/DefenseNode")
+importSaveButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/VBoxContainer/ImportSave")
 
 [node name="BGRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -282,12 +300,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ReloadSave" type="TextureButton" parent="VBoxContainer/Info"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_top = -10.0
-margin_right = 20.0
-margin_bottom = 10.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Info"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Info/HBoxContainer"]
+margin_right = 23.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.02
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReloadSave" type="TextureButton" parent="VBoxContainer/Info/HBoxContainer/VBoxContainer"]
+margin_right = 23.0
+margin_bottom = 18.0
 rect_pivot_offset = Vector2( 11, 11 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -300,39 +332,59 @@ __meta__ = {
 }
 animationPlayerPath = NodePath("AnimationPlayer")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Info/ReloadSave"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Info/HBoxContainer/VBoxContainer/ReloadSave"]
+anims/activate = SubResource( 10 )
+
+[node name="ImportSave" type="TextureButton" parent="VBoxContainer/Info/HBoxContainer/VBoxContainer"]
+margin_top = 22.0
+margin_right = 23.0
+margin_bottom = 41.0
+rect_pivot_offset = Vector2( 11, 11 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 40 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+animationPlayerPath = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Info/HBoxContainer/VBoxContainer/ImportSave"]
 anims/activate = SubResource( 1 )
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Info"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_right = -20.0
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Info/HBoxContainer"]
+margin_left = 27.0
+margin_right = 1195.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SecondaryColorRect" type="TextureRect" parent="VBoxContainer/Info/MarginContainer"]
+[node name="SecondaryColorRect" type="TextureRect" parent="VBoxContainer/Info/HBoxContainer/MarginContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_right = 1155.0
+margin_right = 1168.0
 margin_bottom = 41.0
 texture = ExtResource( 8 )
 expand = true
 
-[node name="GetSaveButton" type="TextureButton" parent="VBoxContainer/Info/MarginContainer"]
+[node name="GetSaveButton" type="TextureButton" parent="VBoxContainer/Info/HBoxContainer/MarginContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_right = 1155.0
+margin_right = 1168.0
 margin_bottom = 41.0
 texture_normal = ExtResource( 8 )
 expand = true
 script = ExtResource( 28 )
 animationPlayerPath = NodePath("AnimationPlayer")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Info/MarginContainer/GetSaveButton"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Info/HBoxContainer/MarginContainer/GetSaveButton"]
 anims/activate = SubResource( 2 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Info/MarginContainer"]
-margin_right = 1155.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Info/HBoxContainer/MarginContainer"]
+margin_right = 1168.0
 margin_bottom = 41.0
 mouse_filter = 2
 alignment = 1
@@ -340,9 +392,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerLabel" type="Label" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
+[node name="PlayerLabel" type="Label" parent="VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer"]
 margin_top = 10.0
-margin_right = 227.0
+margin_right = 230.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 3 )
@@ -354,10 +406,10 @@ __meta__ = {
 }
 textBase = "Jogador: "
 
-[node name="CharacterLabel" type="Label" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
-margin_left = 231.0
+[node name="CharacterLabel" type="Label" parent="VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 234.0
 margin_top = 10.0
-margin_right = 461.0
+margin_right = 464.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 3 )
@@ -369,31 +421,31 @@ __meta__ = {
 }
 textBase = "Personagem: "
 
-[node name="HBOX" type="HBoxContainer" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
-margin_left = 465.0
-margin_right = 692.0
+[node name="HBOX" type="HBoxContainer" parent="VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 468.0
+margin_right = 699.0
 margin_bottom = 41.0
 mouse_filter = 2
 size_flags_horizontal = 3
 
-[node name="InspirationLabel" type="Label" parent="VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX"]
+[node name="InspirationLabel" type="Label" parent="VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/HBOX"]
 margin_top = 10.0
-margin_right = 123.0
+margin_right = 126.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 14 )
 text = "Inspiração"
 align = 2
 
-[node name="Control" type="Control" parent="VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX"]
-margin_left = 127.0
-margin_right = 227.0
+[node name="Control" type="Control" parent="VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/HBOX"]
+margin_left = 130.0
+margin_right = 231.0
 margin_bottom = 41.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.8
 
-[node name="InspirationSpinBox" type="SpinBox" parent="VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX/Control"]
+[node name="InspirationSpinBox" type="SpinBox" parent="VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/HBOX/Control"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -412,31 +464,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBOX2" type="HBoxContainer" parent="VBoxContainer/Info/MarginContainer/HBoxContainer"]
-margin_left = 696.0
-margin_right = 923.0
+[node name="HBOX2" type="HBoxContainer" parent="VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 703.0
+margin_right = 933.0
 margin_bottom = 41.0
 mouse_filter = 2
 size_flags_horizontal = 3
 
-[node name="DamageLabel" type="Label" parent="VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX2"]
+[node name="DamageLabel" type="Label" parent="VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/HBOX2"]
 margin_top = 10.0
-margin_right = 123.0
+margin_right = 125.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 14 )
 text = "Dano Extra"
 align = 2
 
-[node name="Control" type="Control" parent="VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX2"]
-margin_left = 127.0
-margin_right = 227.0
+[node name="Control" type="Control" parent="VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/HBOX2"]
+margin_left = 129.0
+margin_right = 230.0
 margin_bottom = 41.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.8
 
-[node name="DamageSpinBox" type="SpinBox" parent="VBoxContainer/Info/MarginContainer/HBoxContainer/HBOX2/Control"]
+[node name="DamageSpinBox" type="SpinBox" parent="VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/HBOX2/Control"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -455,14 +507,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CustomRollButton" parent="VBoxContainer/Info/MarginContainer/HBoxContainer" instance=ExtResource( 23 )]
+[node name="CustomRollButton" parent="VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource( 23 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 991.0
+margin_left = 1002.0
 margin_top = 0.0
-margin_right = 1091.0
+margin_right = 1102.0
 margin_bottom = 41.0
 text = "Rolagem"
 packedPopup = ExtResource( 31 )

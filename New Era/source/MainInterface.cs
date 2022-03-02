@@ -72,10 +72,13 @@ public class MainInterface : Control, CharacterDataBank
     private NodePath triviaDataPath;
     [Export]
     private NodePath defenseBooblePath;
+    [Export]
+    private NodePath importSaveButtonPath;
 
     private Player player;
     private Color[] colors = new Color[2];
     private bool alreadyConnectAll = false;
+    private bool toSaveOnClose = true;
 
     public override void _Ready()
     {
@@ -107,6 +110,7 @@ public class MainInterface : Control, CharacterDataBank
         GetNode(tracesButtonPath).Connect("button_up", this, "_OnTraces");
         GetNode(getSaveButtonPath).Connect("button_activate", this, "_OnGetSave");
         GetNode(reloadSaveButtonPath).Connect("button_activate", this, "_OnReload");
+        GetNode(importSaveButtonPath).Connect("button_activate", this, "_OnImportSave");
     }
 
     private void SendBooblesData()
@@ -172,6 +176,7 @@ public class MainInterface : Control, CharacterDataBank
 
     private void RegisterAllData()
     {
+        if (!toSaveOnClose) return;
         RegistryData(this, player);
         ResourceSaver.Save(player.GetActualSavePath(), player.GetSaveResource());
     }
@@ -214,6 +219,11 @@ public class MainInterface : Control, CharacterDataBank
         _Ready();
     }
 
+    public void _OnImportSave()
+    {
+        _OnGetSave();
+        toSaveOnClose = false;
+    }
 
     public Atributo GetAtributeNodeByEnum(MyEnum.Atribute atribute)
     {
