@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://powers-data/works/Orator.cs" type="Script" id=1]
+[ext_resource path="res://assets/game-icons/works-icon/orator.png" type="Texture" id=2]
+[ext_resource path="res://powers-data/skills/Leadership.tres" type="Resource" id=3]
+[ext_resource path="res://powers-data/skills/Manipulation.tres" type="Resource" id=4]
+
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+workName = "Orador"
+baseImage = ExtResource( 2 )
+pathDescription = "Maestria de Orador [30]
+Você sente um grande salto em suas habilidades. Escolha um entre:
+- Mestre Capitão +I: +15 Liderança para motivar um pequeno grupo.
+- Mestre de Guerra +I: +15 Liderança para mover grandes massas.
+- Mestre Manipulador +I: +15 Manipulação para enganar um alvo.
+- Mestre Retórico+I: +15 Manipulação para convenser um alvo."
+skills = [ ExtResource( 3 ), ExtResource( 4 ) ]
+description = "Palavras como o meio para se alcansar qualquer coisa"
+maestryDescription = null
+enumWork = 11
+relationedAtribute = 4
+level = 0
+worksUps = [ 0, 0, 0 ]

@@ -1,0 +1,251 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/fonts/tres-fonts/BaseMajorFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/fonts/tres-fonts/BaseMinorFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://source/scenes/main-interface/factors/Factor.cs" type="Script" id=3]
+[ext_resource path="res://assets/main-interface-misc/updown.png" type="Texture" id=4]
+
+
+[node name="Factor" type="Control"]
+margin_right = 247.0
+margin_bottom = 197.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+totalSpinPath = NodePath("VBoxContainer/HBoxContainer1/Control1/VBoxContainer/TotalSpinBox")
+actualSpinPath = NodePath("VBoxContainer/HBoxContainer1/Control2/VBoxContainer/ActualSpinBox")
+modSpinPath = NodePath("VBoxContainer/HBoxContainer2/Control/VBoxContainer/ModSpinBox")
+applySpinPath = NodePath("VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer/ApplySpinBox")
+applyButtonPath = NodePath("VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer/ApplyButton")
+modApplyControlPath = NodePath("VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 27.0
+margin_right = 247.0
+margin_bottom = 59.0
+size_flags_vertical = 10
+custom_fonts/font = ExtResource( 1 )
+text = "Fator"
+align = 1
+valign = 1
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 63.0
+margin_right = 247.0
+margin_bottom = 122.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control1" type="Control" parent="VBoxContainer/HBoxContainer1"]
+margin_right = 121.0
+margin_bottom = 59.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer1/Control1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer1/Control1/VBoxContainer"]
+margin_top = 12.0
+margin_right = 121.0
+margin_bottom = 27.0
+size_flags_vertical = 10
+custom_fonts/font = ExtResource( 2 )
+text = "Total  "
+align = 1
+valign = 1
+
+[node name="TotalSpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer1/Control1/VBoxContainer"]
+margin_left = 24.0
+margin_top = 31.0
+margin_right = 97.0
+margin_bottom = 55.0
+size_flags_horizontal = 6
+size_flags_vertical = 2
+custom_icons/updown = ExtResource( 4 )
+max_value = 1000.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer1"]
+margin_left = 125.0
+margin_right = 247.0
+margin_bottom = 59.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer1/Control2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer1/Control2/VBoxContainer"]
+margin_top = 12.0
+margin_right = 122.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+size_flags_vertical = 10
+custom_fonts/font = ExtResource( 2 )
+text = "Atual "
+align = 1
+valign = 1
+
+[node name="ActualSpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer1/Control2/VBoxContainer"]
+margin_left = 24.0
+margin_top = 31.0
+margin_right = 97.0
+margin_bottom = 55.0
+size_flags_horizontal = 6
+size_flags_vertical = 2
+custom_icons/updown = ExtResource( 4 )
+max_value = 1000.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 126.0
+margin_right = 247.0
+margin_bottom = 197.0
+mouse_filter = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 124.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Control/VBoxContainer"]
+margin_right = 124.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+size_flags_vertical = 10
+custom_fonts/font = ExtResource( 2 )
+text = "Mod   "
+align = 1
+valign = 1
+
+[node name="ModSpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer2/Control/VBoxContainer"]
+margin_left = 25.0
+margin_top = 19.0
+margin_right = 98.0
+margin_bottom = 43.0
+size_flags_horizontal = 6
+size_flags_vertical = 2
+custom_icons/updown = ExtResource( 4 )
+min_value = -1000.0
+max_value = 1000.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 128.0
+margin_right = 247.0
+margin_bottom = 71.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+margin_right = 119.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+custom_fonts/font = ExtResource( 2 )
+text = "Aplicação"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+margin_left = 6.0
+margin_top = 19.0
+margin_right = 113.0
+margin_bottom = 43.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="ApplySpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer"]
+margin_right = 73.0
+margin_bottom = 24.0
+focus_next = NodePath("../ApplyButton")
+size_flags_horizontal = 5
+size_flags_vertical = 2
+custom_icons/updown = ExtResource( 4 )
+min_value = -1000.0
+max_value = 1000.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ApplyButton" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer"]
+margin_left = 77.0
+margin_right = 107.0
+margin_bottom = 20.0
+size_flags_horizontal = 5
+size_flags_vertical = 0
+text = "Ok"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+margin_top = 47.0
+margin_right = 119.0
+margin_bottom = 71.0
+size_flags_horizontal = 5
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2"]
+margin_right = 42.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Guarda"
+align = 1
+valign = 1
+
+[node name="ModApplySpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2"]
+margin_left = 46.0
+margin_right = 119.0
+margin_bottom = 24.0
+focus_next = NodePath("../ApplyButton")
+size_flags_horizontal = 10
+size_flags_vertical = 0
+custom_icons/updown = ExtResource( 4 )
+max_value = 1000.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

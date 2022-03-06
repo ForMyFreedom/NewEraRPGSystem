@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://powers-data/critic-uses/Azazel/SangueMagnetico.cs" type="Script" id=1]
+
+
+[resource]
+script = ExtResource( 1 )
+criticUseName = "Sangue Magnético"
+relatedWork = 4
+text = "Caso o alvo tenha uma quantidade decente de sangue no corpo (Em geral acima de 25% da Vida), você pode receber +5N no Teste de Ataque."
+baseMessage = "Se o alvo em geral estiver acima de 25% de Vida, você recebe $ no Teste de Ataque"
+cost = -1

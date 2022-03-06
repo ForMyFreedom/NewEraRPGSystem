@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://powers-data/skills/Beat.cs" type="Script" id=1]
+[ext_resource path="res://assets/game-icons/skills-icon/beat.png" type="Texture" id=2]
+[ext_resource path="res://source/support/wayOfCalculeSkill/HalfWayOfCalculeSkill.cs" type="Script" id=3]
+
+
+[resource]
+script = ExtResource( 1 )
+skillName = "Batimento"
+effectImage = ExtResource( 2 )
+wayOfLevelCalculeScript = ExtResource( 3 )
+skillDescription = "Ordenar minha vontade com as batidas de meu sangue"
+notificationText = "Relaxamento, você ganha $ Surto de Ação mas perde $ Dano
+%
+Contração, você ganha $ Dano mas perde $ Surto de Ação
+%
+Contra ciclo! Você mantem o batimento atual, e por isso sofre $ de Dano interno"
+mechanicDescription = "Você possui um Cliclo Cardíarco baseado nas fases alternadas de Contração e Relaxamento (Escolhe em seu primeiro turno). Em uma Contração, você perde Batimento Surto de Ação e ganha Batimento Dano. Em um relaxamento, você ganha Batimento Surto de Ação e perde Batimento Dano.
+Você pode fazer um Contra-Ciclo (Continuar na fase atual), mas sofre Batimento/2 Dano interno. Se zerar a vida com isso, você morre instantameamente"
+level = 0

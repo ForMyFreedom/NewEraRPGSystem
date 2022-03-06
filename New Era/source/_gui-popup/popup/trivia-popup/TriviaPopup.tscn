@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://source/_gui-popup/popup/MyPopup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/_gui-popup/popup/trivia-popup/TriviaPopup.cs" type="Script" id=2]
+[ext_resource path="res://assets/fonts/tres-fonts/BaseMinorFont.tres" type="DynamicFont" id=3]
+
+
+[node name="TriviaPopup" instance=ExtResource( 1 )]
+window_title = "Trivia"
+script = ExtResource( 2 )
+labelPath = NodePath("Control/TextEdit")
+
+[node name="TextEdit" type="TextEdit" parent="Control" index="0"]
+margin_right = 815.0
+margin_bottom = 328.0
+custom_fonts/font = ExtResource( 3 )
+wrap_enabled = true
+caret_blink = true

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://powers-data/critic-uses/Azazel/PrevisaoDetalhista.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+criticUseName = "Previsão Detalhista"
+relatedWork = 6
+text = "Em Testes de Previsão, você foca nos mínimos detalhes em suas previsões, ignorando o geral. Escolha uma informação especifica e tenha +3N no Resultado. Você não recebe nenhuma outra informação além dessa."
+baseMessage = "Você foca em somente uma informação e recebe $ em seu Teste de Previsão"
+cost = -1

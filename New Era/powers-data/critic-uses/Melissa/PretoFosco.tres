@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://powers-data/critic-uses/Melissa/PretoFosco.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+criticUseName = "Preto Fosco"
+relatedWork = 12
+text = "Você assume uma forma negra de pelagem incrivelmente densa. Perde-se 1 de Surto de Ação e Vida a cada turno, porem, suas Defesas são trocadas e você recebe +N Guarda enquanto continuar ativo"
+baseMessage = "Modo Fosco: Você perde 1 de Vida e Surto a cada turno, assim como $ Defesa de Agilidade, mas recebe +$ de Guarda"
+cost = -1

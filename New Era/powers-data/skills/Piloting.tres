@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://powers-data/skills/Piloting.cs" type="Script" id=1]
+[ext_resource path="res://source/support/wayOfCalculeSkill/IgnoreWayOfCalculeSkill.cs" type="Script" id=2]
+[ext_resource path="res://assets/game-icons/skills-icon/piloting.png" type="Texture" id=3]
+
+
+[resource]
+script = ExtResource( 1 )
+skillName = "Pilotagem"
+effectImage = ExtResource( 3 )
+wayOfLevelCalculeScript = ExtResource( 2 )
+skillDescription = "Esquerda!!... Direita!!!"
+notificationText = null
+mechanicDescription = "Sempre que em meio ao mar, você precisar conduzir seu navio em meio a um grande perigo, você deve realizar um Teste de Pilotagem. Para isso, rola-se os dados equivalentes ao seu valor de Pilotagem. E caso tenha sucesso, acontece o resultado Sucesso já proposto pelo Desafio. Do contrário, acontece o Fracasso.
+Ademais, Pilotagem também é usada para traçar rotas: Caso o Nível de Mar em que esteje supere em dobro o maior valor de Pilotagem da tripulação, simplesmente é impossível navegar para qualquer lugar. Sendo todas as ilhas que encontram, aleatórias.
+Por fim, a Pilotagem é necessário na elaboração de mapas. Ao passar pelo menos uma quantidade de dias estipulada pelo Narrador na localidade que deseja registrar, você pode tentar fazer um mapa: Faça um Teste de Pilotagem de Dificuldade estipulada pelo Narrador. Caso passe, você tem o mapa dentro de quatro horas. Do contrário, você falha após 25d6 minutos em alguma medição mas pode tentar novamente em uma hora."
+level = 0

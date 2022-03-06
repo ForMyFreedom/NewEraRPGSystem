@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/del_notification.wav-4fe6e3159af1f0f105cea7ac126a0c8d.sample"
+
+[deps]
+
+source_file="res://assets/sounds/del_notification.wav"
+dest_files=[ "res://.import/del_notification.wav-4fe6e3159af1f0f105cea7ac126a0c8d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
