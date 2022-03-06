@@ -6,6 +6,8 @@ public class Global : Node
     [Export]
     private PackedScene selectedPlayerPacked;
 
+    private Player player;
+
 
     public void SetSelectedPlayerPacked(PackedScene packed)
     {
@@ -18,9 +20,24 @@ public class Global : Node
         return selectedPlayerPacked;
     }
 
+
+    public Player GetPlayer()
+    {
+        return player;
+    }
+
+
+    public void SetPlayer(Player player)
+    {
+        this.player = player;
+    }
+
+
+
+
+    //@
     public String GetSelectedSavePlayerFolder()
     {
-        Player player = selectedPlayerPacked.Instance<Player>();
-        return MyStatic.savePath+player.Name;
+        return MyStatic.savePath + player.GetFileName();
     }
 }

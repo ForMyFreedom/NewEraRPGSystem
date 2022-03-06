@@ -89,7 +89,7 @@ public class MainInterface : Control, CharacterDataBank
     {
         playerScene = GetNode<Global>("/root/Global").GetSelectedPlayerPacked();
         player = playerScene.Instance<Player>();
-        player._Ready();
+        player.DoReady();
         RegistryData(player, this);
         MakeConnections();
     }
@@ -184,7 +184,7 @@ public class MainInterface : Control, CharacterDataBank
     {
         if (!toSaveOnClose) return;
         RegistryData(this, player);
-        ResourceSaver.Save(player.GetActualSavePath(), player.GetSaveResource());
+        ResourceSaver.Save(player.GetCurrentSavePath(), (Resource) player);
     }
 
 
@@ -217,7 +217,7 @@ public class MainInterface : Control, CharacterDataBank
 
     public void _OnGetSave()
     {
-        OS.ShellOpen($"{MyStatic.savePath}/{player.Name}");
+        OS.ShellOpen($"{MyStatic.savePath}/{player.GetFileName()}");
     }
 
     public void _OnReload()

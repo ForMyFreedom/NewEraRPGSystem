@@ -1,7 +1,6 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://source/scenes/main-interface/MainInterface.cs" type="Script" id=1]
-[ext_resource path="res://source/___players/p/Melissa.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/styles/VSStyle.tres" type="StyleBox" id=3]
 [ext_resource path="res://source/scenes/main-interface/atributes/Atributo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/scenes/main-interface/factors/Factor.tscn" type="PackedScene" id=5]
@@ -217,7 +216,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-playerScene = ExtResource( 2 )
 playerNamePath = NodePath("MainBox/Info/HBoxContainer/MarginContainer/HBoxContainer/PlayerLabel")
 customRollButtonPath = NodePath("MainBox/Info/HBoxContainer/MarginContainer/HBoxContainer/CustomRollButton")
 characterNamePath = NodePath("MainBox/Info/HBoxContainer/MarginContainer/HBoxContainer/CharacterLabel")

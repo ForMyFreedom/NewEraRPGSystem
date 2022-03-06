@@ -14,6 +14,7 @@ public class VersionIndex : Control
         GetNode<AnimationPlayer>(animationPlayerPath).Play("fade-in");
 
         string playerFolder = GetNode<Global>("/root/Global/").GetSelectedSavePlayerFolder();
+        
         Array<string> paths = FileGerenciator.ListFilesInDirectory(playerFolder);
         PlayerSaveResource save = ResourceLoader.Load<PlayerSaveResource>(
             playerFolder+"\\"+paths[paths.Count-1]

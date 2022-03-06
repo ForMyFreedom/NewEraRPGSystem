@@ -6,8 +6,6 @@ public class SelectPlayer : Control
 {
     [Export]
     private NodePath playerBoxContainerPath;
-    [Export(PropertyHint.File)]
-    private string playerFolderPath;
     [Export]
     private PackedScene playerButtonPacked;
     [Export]
@@ -15,9 +13,8 @@ public class SelectPlayer : Control
     [Export]
     private NodePath animationPlayerPath;
 
-    private Godot.Collections.Array playerStringPathArray;
-    private PackedScene[] playersScenesPacked;
-    private Player[] playersScenes;
+    private Godot.Collections.Array<string> playerStringPathArray;
+    private Player[] playersResources;
 
 
     public override void _Ready()
@@ -31,21 +28,27 @@ public class SelectPlayer : Control
 
     private void LoadPlayersData()
     {
-        playerStringPathArray = ListFilesInDiretory(playerFolderPath);
-        playersScenesPacked = new PackedScene[playerStringPathArray.Count];
-        playersScenes = new Player[playerStringPathArray.Count];
+        playerStringPathArray = FileGerenciator.ListFilesInDirectory(MyStatic.savePath);
+        playersResources = new Player[playerStringPathArray.Count];
+
 
         for (int i = 0; i < playerStringPathArray.Count; i++)
         {
-            playersScenesPacked[i] = ResourceLoader.Load<PackedScene>(playerFolderPath + playerStringPathArray[i]);
-            playersScenes[i] = playersScenesPacked[i].Instance<Player>();
+            var allPlayerSaves = FileGerenciator.ListFilesInDirectory(
+                 GetPlayerFolderPath(playerStringPathArray[i])
+            );
+
+            playersResources[i] = ResourceLoader.Load<Player>(
+                $"{GetPlayerFolderPath(playerStringPathArray[i])}" +
+                $"{GetLastSaveFromFolder(allPlayerSaves)}"
+            );
         }
     }
 
 
     private void LoadPlayersButtons()
     {
-        foreach(var player in playersScenes)
+        foreach(var player in playersResources)
         {
             GetNode(playerBoxContainerPath).AddChild(CreateButton(player));
         }
@@ -55,7 +58,7 @@ public class SelectPlayer : Control
     private Button CreateButton(Player player)
     {
         Button btn = playerButtonPacked.Instance<Button>();
-        btn.Text = player.Name;
+        btn.Text = player.GetFileName();
         btn.Connect("select_player", this, "_OnSelectPlayer");
         return btn;
     }
@@ -65,31 +68,21 @@ public class SelectPlayer : Control
     {
         GetNode<AnimationPlayer>(animationPlayerPath).Play("fade-out");
         await ToSignal(GetNode<AnimationPlayer>(animationPlayerPath), "animation_finished");
-        GetNode<Global>("/root/Global").SetSelectedPlayerPacked(playersScenesPacked[index]);
+        
+        //@
+        //GetNode<Global>("/root/Global").SetSelectedPlayerPacked(playersScenesPacked[index]);
         GetTree().ChangeSceneTo(mainInterfacePacked);
     }
+    
 
 
-
-    public Godot.Collections.Array ListFilesInDiretory(String path)
+    private string GetPlayerFolderPath(String playerName)
     {
-        var files = new Godot.Collections.Array();
-        var dir = new Directory();
-        dir.Open(path);
-        dir.ListDirBegin();
+        return $"{MyStatic.savePath}{playerName}//";
+    }
 
-        while (true)
-        {
-            var file = dir.GetNext();
-            if (file == "")
-                break;
-            else if (!file.BeginsWith("."))
-            {
-                files.Add(file);
-            }
-        }
-
-        dir.ListDirEnd();
-        return files;
+    private string GetLastSaveFromFolder(Array<String> allPlayerSaves)
+    {
+        return allPlayerSaves[allPlayerSaves.Count - 1];
     }
 }

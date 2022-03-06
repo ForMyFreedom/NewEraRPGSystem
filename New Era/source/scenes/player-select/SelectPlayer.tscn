@@ -52,7 +52,6 @@ __meta__ = {
 "_edit_vertical_guides_": [ 199.709, 995.042 ]
 }
 playerBoxContainerPath = NodePath("VBoxContainer/GridContainer")
-playerFolderPath = "res://source/___players/p//"
 playerButtonPacked = ExtResource( 3 )
 mainInterfacePacked = ExtResource( 4 )
 animationPlayerPath = NodePath("AnimationPlayer")

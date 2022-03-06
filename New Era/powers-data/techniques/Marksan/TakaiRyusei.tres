@@ -4,7 +4,6 @@
 [ext_resource path="res://powers-data/critic-uses/Marksan/EnterrarOponente.tres" type="Resource" id=2]
 [ext_resource path="res://powers-data/critic-uses/Marksan/ModoTurbo.tres" type="Resource" id=3]
 
-
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )

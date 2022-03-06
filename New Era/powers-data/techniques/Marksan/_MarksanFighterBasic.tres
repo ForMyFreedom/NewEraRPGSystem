@@ -2,7 +2,6 @@
 
 [ext_resource path="res://source/power/Technique.cs" type="Script" id=1]
 
-
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )

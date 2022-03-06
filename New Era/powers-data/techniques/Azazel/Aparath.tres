@@ -5,7 +5,6 @@
 [ext_resource path="res://powers-data/critic-uses/Azazel/LancaVampirica.tres" type="Resource" id=3]
 [ext_resource path="res://powers-data/critic-uses/Geral/SurtoCritico.tres" type="Resource" id=4]
 
-
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )

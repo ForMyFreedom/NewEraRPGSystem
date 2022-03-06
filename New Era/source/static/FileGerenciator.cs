@@ -4,6 +4,11 @@ using System;
 
 public static class FileGerenciator
 {
+    public static Player LoadPlayer(String path)
+    {
+        return ResourceLoader.Load<Player>(path);
+    }
+
     public static Array<String> ListFilesInDirectory(String path)
     {
         Directory dir = new Directory();

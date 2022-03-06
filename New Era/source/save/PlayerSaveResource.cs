@@ -2,7 +2,7 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public class PlayerSaveResource : Resource, CharacterDataBank
+public class PlayerSaveResource : Resource, Player
 {
     [Export]
     private int currentEditionIndex;
@@ -106,6 +106,12 @@ public class PlayerSaveResource : Resource, CharacterDataBank
         currentEditionIndex++;
     }
 
+    public void DoReady()
+    {
+        CalculateWorksUp();
+    }
+
+
 
 
     public String GetPlayerName()
@@ -129,6 +135,10 @@ public class PlayerSaveResource : Resource, CharacterDataBank
         characterName = name;
     }
 
+    public String GetFileName()
+    {
+        return characterName; //@
+    }
 
     public Texture GetBGTexture()
     {

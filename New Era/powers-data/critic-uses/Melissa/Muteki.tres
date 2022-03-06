@@ -2,7 +2,6 @@
 
 [ext_resource path="res://powers-data/critic-uses/Melissa/Muteki.cs" type="Script" id=1]
 
-
 [resource]
 script = ExtResource( 1 )
 criticUseName = "Forma Mista, Muteki"
