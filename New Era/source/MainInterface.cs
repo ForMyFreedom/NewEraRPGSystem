@@ -74,6 +74,11 @@ public class MainInterface : Control, CharacterDataBank
     private NodePath defenseBooblePath;
     [Export]
     private NodePath importSaveButtonPath;
+    [Export]
+    private NodePath versionSaveButtonPath;
+
+    [Export]
+    private PackedScene versionSavePackedScene;
 
     private Player player;
     private Color[] colors = new Color[2];
@@ -111,6 +116,7 @@ public class MainInterface : Control, CharacterDataBank
         GetNode(getSaveButtonPath).Connect("button_activate", this, "_OnGetSave");
         GetNode(reloadSaveButtonPath).Connect("button_activate", this, "_OnReload");
         GetNode(importSaveButtonPath).Connect("button_activate", this, "_OnImportSave");
+        GetNode(versionSaveButtonPath).Connect("button_activate", this, "_OnVersionSave");
     }
 
     private void SendBooblesData()
@@ -221,9 +227,18 @@ public class MainInterface : Control, CharacterDataBank
 
     public void _OnImportSave()
     {
-        _OnGetSave();
         toSaveOnClose = false;
+        _OnGetSave();
     }
+
+
+    public void _OnVersionSave()
+    {
+        toSaveOnClose = false;
+        GetTree().ChangeSceneTo(versionSavePackedScene);
+    }
+
+
 
     public Atributo GetAtributeNodeByEnum(MyEnum.Atribute atribute)
     {

@@ -17,5 +17,11 @@ public class Global : Node
     public PackedScene GetSelectedPlayerPacked()
     {
         return selectedPlayerPacked;
-    }   
+    }
+
+    public String GetSelectedSavePlayerFolder()
+    {
+        Player player = selectedPlayerPacked.Instance<Player>();
+        return MyStatic.savePath+player.Name;
+    }
 }
