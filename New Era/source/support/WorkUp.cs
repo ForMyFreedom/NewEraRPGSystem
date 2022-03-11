@@ -1,32 +1,34 @@
-using Godot;
-using Godot.Collections;
 using System;
+using Godot.Collections;
 
-public class WorkUp
+namespace Evolution
 {
-    private static int[] upProgression = new[] { 5, 10, 20, 50 };
-
-    public static Array<int> CalculeWorkUps(int value)
+    public class WorkUp
     {
-        Array<int> newWorkUps = new Array<int>(0,0,0,0);
+        private static int[] upProgression = new[] { 5, 10, 20, 50 };
 
-        for (int i = 0; i < upProgression.Length; i++)
+        public static Array<int> CalculeWorkUps(int value)
         {
-            int currentValue = value;
-            while (currentValue >= upProgression[i])
+            Array<int> newWorkUps = new Array<int>(0, 0, 0, 0);
+
+            for (int i = 0; i < upProgression.Length; i++)
             {
-                currentValue -= upProgression[i];
-                newWorkUps[i]++;
+                int currentValue = value;
+                while (currentValue >= upProgression[i])
+                {
+                    currentValue -= upProgression[i];
+                    newWorkUps[i]++;
+                }
             }
+
+            return newWorkUps;
         }
 
-        return newWorkUps;
-    }
 
 
-
-    public int[] GetUpProgression()
-    {
-        return upProgression;
+        public int[] GetUpProgression()
+        {
+            return upProgression;
+        }
     }
 }

@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+using Entities;
+using Capacities;
+
 public class Guardian : Work
 {
     public override void DoFirstUpStep(MainInterface gui)

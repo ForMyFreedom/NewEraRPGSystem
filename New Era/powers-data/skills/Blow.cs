@@ -2,6 +2,10 @@ using Godot;
 using Godot.Collections;
 using System;
 
+using Entities;
+using Capacities;
+using Statics.Enums;
+
 public class Blow : Skill
 {
     public override Array<string> GetTextOfMechanicButtons()

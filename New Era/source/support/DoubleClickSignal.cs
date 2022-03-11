@@ -1,28 +1,31 @@
 using Godot;
 using System;
 
-public class DoubleClickSignal : TextureButton
+namespace Signals
 {
-    [Export]
-    private NodePath animationPlayerPath;
-
-    [Signal]
-    public delegate void button_activate();
-
-    public override void _Ready()
+    public class DoubleClickSignal : TextureButton
     {
-        Connect("gui_input", this, "_OnGuiInput");
-    }
+        [Export]
+        private NodePath animationPlayerPath;
 
-    private void _OnGuiInput(InputEvent @event)
-    {
-        if (!(@event is InputEventMouseButton)) return;
-        InputEventMouseButton mouseEvent = (InputEventMouseButton) @event;
+        [Signal]
+        public delegate void button_activate();
 
-        if (mouseEvent.Doubleclick)
+        public override void _Ready()
         {
-            EmitSignal(nameof(button_activate));
-            GetNode<AnimationPlayer>(animationPlayerPath).Play("activate");
+            Connect("gui_input", this, "_OnGuiInput");
+        }
+
+        private void _OnGuiInput(InputEvent @event)
+        {
+            if (!(@event is InputEventMouseButton)) return;
+            InputEventMouseButton mouseEvent = (InputEventMouseButton)@event;
+
+            if (mouseEvent.Doubleclick)
+            {
+                EmitSignal(nameof(button_activate));
+                GetNode<AnimationPlayer>(animationPlayerPath).Play("activate");
+            }
         }
     }
 }

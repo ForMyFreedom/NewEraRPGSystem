@@ -3,6 +3,8 @@ using Godot.Collections;
 using System;
 using System.Linq;
 
+using Entities;
+
 public abstract class NotificationConsumer : Resource
 {
     protected MainInterface main;

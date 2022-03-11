@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+using Entities;
+using Capacities;
+
 public class Navigator : Work
 {
     public override void DoFirstUpStep(MainInterface gui)

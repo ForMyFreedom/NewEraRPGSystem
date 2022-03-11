@@ -2,6 +2,9 @@ using Godot;
 using Godot.Collections;
 using System;
 
+using Entities;
+using Capacities;
+
 public class Piloting : Skill
 {
     public override Array<string> GetTextOfMechanicButtons()

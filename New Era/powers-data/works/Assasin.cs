@@ -1,6 +1,10 @@
 using Godot;
 using System;
 
+using Capacities;
+using Entities;
+
+
 public class Assasin : Work
 {
     public override void DoFirstUpStep(MainInterface gui)

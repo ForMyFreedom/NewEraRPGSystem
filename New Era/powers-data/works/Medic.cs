@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+using Entities;
+using Capacities;
+
 public class Medic : Work
 {
     public override void DoFirstUpStep(MainInterface gui)

@@ -2,6 +2,10 @@ using Godot;
 using Godot.Collections;
 using System;
 
+using Entities;
+using Capacities;
+
+
 public class Beat : Skill
 {
     private bool isRelaxed = false;

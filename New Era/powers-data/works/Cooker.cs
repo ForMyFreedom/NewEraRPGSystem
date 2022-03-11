@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+using Entities;
+using Capacities;
+
 public class Cooker : Work
 {
     public override void DoFirstUpStep(MainInterface gui)

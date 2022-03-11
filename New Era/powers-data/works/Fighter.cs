@@ -1,6 +1,10 @@
 using Godot;
 using System;
 
+using Entities;
+using Capacities;
+using Statics.Enums;
+
 public class Fighter : Work
 {
     public override void DoFirstUpStep(MainInterface gui)

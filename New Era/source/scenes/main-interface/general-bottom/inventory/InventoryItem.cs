@@ -1,6 +1,8 @@
 using Godot;
 using System;
 
+using Entities;
+
 public abstract class InventoryItem: Resource
 {
     [Export]

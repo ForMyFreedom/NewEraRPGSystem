@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+using Entities;
+using Statics.Enums;
+
 public abstract class TollItens : ItemCode
 {
     [Export]

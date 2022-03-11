@@ -1,6 +1,6 @@
 [gd_scene load_steps=53 format=2]
 
-[ext_resource path="res://source/scenes/main-interface/MainInterface.cs" type="Script" id=1]
+[ext_resource path="res://source/scenes/main-interface/MainGodotInterface.cs" type="Script" id=1]
 [ext_resource path="res://assets/styles/VSStyle.tres" type="StyleBox" id=3]
 [ext_resource path="res://source/scenes/main-interface/atributes/Atributo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/scenes/main-interface/factors/Factor.tscn" type="PackedScene" id=5]
@@ -208,7 +208,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 
-[node name="MainInterface" type="Control"]
+[node name="MainGodotInterface" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2

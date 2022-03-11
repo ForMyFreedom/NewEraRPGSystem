@@ -1,6 +1,10 @@
 using Godot;
 using System;
 
+using Entities;
+using Capacities;
+using Evolution;
+
 public class SingleCriticButton : Control
 {
     [Export]

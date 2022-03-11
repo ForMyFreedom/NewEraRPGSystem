@@ -3,6 +3,10 @@ using Godot.Collections;
 using System.Linq;
 using System;
 
+using Entities;
+using Capacities;
+
+
 public class CriticGUI : WindowDialog
 {
     [Export]

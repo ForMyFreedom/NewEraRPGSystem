@@ -1,6 +1,8 @@
 using Godot;
 using System;
 
+using Statics.Enums;
+
 public class AtributeOptionButton : OptionButton
 {
     [Signal]

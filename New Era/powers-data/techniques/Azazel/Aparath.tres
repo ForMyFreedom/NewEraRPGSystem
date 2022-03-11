@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=5 format=2]
 
-[ext_resource path="res://source/power/Technique.cs" type="Script" id=1]
+[ext_resource path="res://source/Capacities/Technique.cs" type="Script" id=1]
 [ext_resource path="res://powers-data/critic-uses/Azazel/ExplosaoDeSangue.tres" type="Resource" id=2]
 [ext_resource path="res://powers-data/critic-uses/Azazel/LancaVampirica.tres" type="Resource" id=3]
 [ext_resource path="res://powers-data/critic-uses/Geral/SurtoCritico.tres" type="Resource" id=4]

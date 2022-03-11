@@ -2,6 +2,12 @@ using Godot;
 using Godot.Collections;
 using System;
 
+using Entities;
+using Capacities;
+using Evolution;
+using Statics.Enums;
+
+
 public class WorkGUI : BaseGUI
 {
     [Export]

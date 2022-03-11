@@ -2,24 +2,31 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public class VersionIndex : Control
+using Entities;
+using Statics.File;
+using Statics.Global;
+
+namespace Scenes
 {
-    [Export]
-    private NodePath animationPlayerPath;
-    [Export]
-    private NodePath quantOfSavesLabelPath;
- 
-    public override void _Ready()
+    public class VersionIndex : Control
     {
-        GetNode<AnimationPlayer>(animationPlayerPath).Play("fade-in");
+        [Export]
+        private NodePath animationPlayerPath;
+        [Export]
+        private NodePath quantOfSavesLabelPath;
 
-        string playerFolder = GetNode<Global>("/root/Global/").GetSelectedSavePlayerFolder();
-        
-        Array<string> paths = FileGerenciator.ListFilesInDirectory(playerFolder);
-        PlayerSaveResource save = ResourceLoader.Load<PlayerSaveResource>(
-            playerFolder+"\\"+paths[paths.Count-1]
-        );
+        public override void _Ready()
+        {
+            GetNode<AnimationPlayer>(animationPlayerPath).Play("fade-in");
 
-        GetNode<Label>(quantOfSavesLabelPath).Text = save.GetEditionIndex().ToString();
+            string playerFolder = GetNode<Global>("/root/Global/").GetSelectedSavePlayerFolder();
+
+            Array<string> paths = FileGerenciator.ListFilesInDirectory(playerFolder);
+            PlayerSaveResource save = ResourceLoader.Load<PlayerSaveResource>(
+                playerFolder + "\\" + paths[paths.Count - 1]
+            );
+
+            GetNode<Label>(quantOfSavesLabelPath).Text = save.GetEditionIndex().ToString();
+        }
     }
 }

@@ -1,6 +1,8 @@
 using Godot;
 using System;
 
+using Entities;
+
 public class Booble : Control
 {
     [Export]

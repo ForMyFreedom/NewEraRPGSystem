@@ -3,6 +3,11 @@ using Godot.Collections;
 using System;
 using System.Linq;
 
+
+using Entities;
+using Capacities.Interface;
+using Statics.Enums;
+
 public class TechniquesTree : Tree
 {
     [Export]
@@ -10,7 +15,7 @@ public class TechniquesTree : Tree
     [Export]
     private Resource techniqueDescriptionFont;
 
-    private Array<Technique> techniques;
+    private Array<TechniqueInterface> techniques;
     private TreeItem[] itens = { };
 
     public override void _Ready()
@@ -27,7 +32,7 @@ public class TechniquesTree : Tree
 
         InjectWorkInAllTechniques();
 
-        foreach (Technique currentTech in techniques)
+        foreach (TechniqueInterface currentTech in techniques)
         {
             AddNewTechniqueItem(root, itemIndex, currentTech);
             itemIndex++;
@@ -40,14 +45,14 @@ public class TechniquesTree : Tree
     }
 
 
-    private void AddNewTechniqueItem(TreeItem root, int itemIndex, Technique technique)
+    private void AddNewTechniqueItem(TreeItem root, int itemIndex, TechniqueInterface technique)
     {
         itens[itemIndex] = CreateItem(root);
         itens[itemIndex].SetText(0, GetTechniqueText(technique));
         itens[itemIndex].SetMetadata(0, technique);
     }
 
-    private bool AddTechniqueDescription(int itemIndex, Technique technique)
+    private bool AddTechniqueDescription(int itemIndex, TechniqueInterface technique)
     {
         if (technique.GetCriticUses().Length == 0) return false;
         itens[itemIndex] = CreateItem(itens[itemIndex - 1]);
@@ -65,12 +70,12 @@ public class TechniquesTree : Tree
         if(selected==null) return;
         if (mouseEvent.Doubleclick &&
             this.GetSelected() != null &&
-            selected.GetMetadata(0) is Technique)
-                ExecuteTechnique((Technique)selected.GetMetadata(0));
+            selected.GetMetadata(0) is TechniqueInterface)
+                ExecuteTechnique((TechniqueInterface)selected.GetMetadata(0));
     }
 
 
-    private void ExecuteTechnique(Technique tech)
+    private void ExecuteTechnique(TechniqueInterface tech)
     {
         tech.DoMechanic((MainInterface) GetTree().CurrentScene);
     }
@@ -92,13 +97,13 @@ public class TechniquesTree : Tree
 
     private void InjectWorkInAllTechniques()
     {
-        Array<Work> allWorks = GetMain().GetWorks();
+        Array<WorkInterface> allWorks = GetMain().GetWorks();
 
         for (int i = 0; i < techniques.Count; i++)
         {
-            Technique currentTech = techniques[i];
+            TechniqueInterface currentTech = techniques[i];
             MyEnum.Work[] currentEnumWorks = currentTech.GetRelatedWorks();
-            Work[] actualWorksArray = new Work[currentEnumWorks.Length];
+            WorkInterface[] actualWorksArray = new WorkInterface[currentEnumWorks.Length];
 
             for(int j = 0; j < currentEnumWorks.Length; j++)
             {
@@ -110,9 +115,9 @@ public class TechniquesTree : Tree
     }
 
 
-    private Work GetWorkByEnum(Array<Work> allWorks, MyEnum.Work we)
+    private WorkInterface GetWorkByEnum(Array<WorkInterface> allWorks, MyEnum.Work we)
     {
-        foreach(Work work in allWorks)
+        foreach(WorkInterface work in allWorks)
         {
             if (work.GetEnumWork() == we)
                 return work;
@@ -122,10 +127,10 @@ public class TechniquesTree : Tree
 
 
 
-    public string GetTechniqueText(Technique tech)
+    public string GetTechniqueText(TechniqueInterface tech)
     {
         string worksText = "";
-        Work[] works = tech.GetInjectedWorks();
+        WorkInterface[] works = tech.GetInjectedWorks();
 
         for(int i = 0; i < works.Length; i++)
         {
@@ -138,15 +143,15 @@ public class TechniquesTree : Tree
         return $"- {tech.GetTechniqueName()}    [{worksText}] {levelStr}";
     }
 
-    private string GetTechniqueDescription(Technique technique)
+    private string GetTechniqueDescription(TechniqueInterface technique)
     {
         return  $"Criticos: {GetCriticListWithLevel(technique)}";
     }
 
-    private string GetCriticListWithLevel(Technique technique)
+    private string GetCriticListWithLevel(TechniqueInterface technique)
     {
         string text = "";
-        CriticUse[] uses = technique.GetCriticUses();
+        CriticUseInterface[] uses = technique.GetCriticUses();
         for(int i = 0; i < uses.Length; i++)
         {
             text += $"{uses[i].GetUseName()} [{technique.GetPowerOfCritics()[i]}]";
@@ -159,12 +164,12 @@ public class TechniquesTree : Tree
 
 
 
-    public Array<Technique> GetTechniques()
+    public Array<TechniqueInterface> GetTechniques()
     {
         return techniques;
     }
 
-    public void SetTechniques(Array<Technique> tech)
+    public void SetTechniques(Array<TechniqueInterface> tech)
     {
         techniques = tech;
     }
@@ -183,7 +188,7 @@ public class TechniquesTree : Tree
     private int GetQuantOfNotBasicTechniques()
     {
         int quant = 0;
-        foreach(Technique tech in techniques)
+        foreach(TechniqueInterface tech in techniques)
         {
             if (tech.GetCriticUses().Length != 0)
                 quant++;

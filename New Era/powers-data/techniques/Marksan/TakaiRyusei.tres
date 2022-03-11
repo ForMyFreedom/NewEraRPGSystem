@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
-[ext_resource path="res://source/power/Technique.cs" type="Script" id=1]
+[ext_resource path="res://source/Capacities/Technique.cs" type="Script" id=1]
 [ext_resource path="res://powers-data/critic-uses/Marksan/EnterrarOponente.tres" type="Resource" id=2]
 [ext_resource path="res://powers-data/critic-uses/Marksan/ModoTurbo.tres" type="Resource" id=3]
 

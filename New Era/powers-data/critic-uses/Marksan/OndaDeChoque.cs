@@ -2,6 +2,9 @@ using Godot;
 using Godot.Collections;
 using System;
 
+using Entities;
+using Capacities;
+
 public class OndaDeChoque : CriticUse
 {
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
