@@ -2,8 +2,8 @@ using Godot;
 using Godot.Collections;
 using System;
 
-using Entities;
-using Capacities;
+using Entities.Interface;
+using Capacities.Interface;
 using Statics.Enums;
 
 public abstract class BaseGUI : WindowDialog
@@ -15,7 +15,7 @@ public abstract class BaseGUI : WindowDialog
 
 
     protected Atributo relatedAtribute;
-    protected Work work;
+    protected WorkInterface work;
 
     public override void _Ready()
     {

@@ -2,12 +2,12 @@ using Godot;
 using Godot.Collections;
 using System;
 
-using Entities;
+using Entities.Interface;
 using Statics.Enums;
 
 namespace Capacities
 {
-    public abstract class Work : Resource, Interface.WorkInterface
+    public abstract class Work : Resource
     {
         [Export]
         protected string workName;

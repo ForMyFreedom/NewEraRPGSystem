@@ -3,7 +3,7 @@ using Godot.Collections;
 using System;
 
 using Capacities.Interface;
-using Entities;
+using Entities.Interface;
 using Statics.Enums;
 
 public class WorkTree : Tree
@@ -198,7 +198,7 @@ public class WorkTree : Tree
     private void OpenUsesOfCriticGui(Godot.Collections.Array uses)
     {
         CriticGUI criticGui = criticGuiPackedScene.Instance<CriticGUI>();
-        criticGui.SetWork((WorkInterface)uses[0]);
+        criticGui.SetWork((WorkInterface) uses[0]);
         criticGui.SetCriticUses((Godot.Collections.Array) uses[1]);
 
         GetTree().CurrentScene.AddChild(criticGui);

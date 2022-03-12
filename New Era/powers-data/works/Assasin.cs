@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 using Capacities;
-using Entities;
+using Entities.Interface;
 
 
 public class Assasin : Work

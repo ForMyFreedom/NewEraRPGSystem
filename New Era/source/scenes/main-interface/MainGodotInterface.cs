@@ -5,6 +5,7 @@ using System.Text;
 using System.Linq;
 
 using Entities;
+using Entities.Interface;
 using Statics;
 using Statics.Enums;
 using Statics.Global;
@@ -889,7 +890,7 @@ namespace GodotScene
 
         public void RequestSkillMechanic(MyEnum.Work work, int skillIndex, int modValue = 0, int actionIndex = 0)
         {
-            Skill skill = GetWorkNodeByEnum(work).GetSkillList()[skillIndex];
+            SkillInterface skill = GetWorkNodeByEnum(work).GetSkillList()[skillIndex];
             skill.DoMechanic(this, actionIndex, modValue);
         }
 

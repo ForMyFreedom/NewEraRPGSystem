@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-using Entities;
+using Entities.Interface;
 using Capacities;
 
 public class Orator : Work

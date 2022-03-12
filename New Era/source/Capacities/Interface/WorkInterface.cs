@@ -3,7 +3,7 @@ using Godot.Collections;
 using System;
 
 using Statics.Enums;
-using Entities;
+using Entities.Interface;
 
 namespace Capacities.Interface
 {

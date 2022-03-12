@@ -2,11 +2,11 @@ using Godot;
 using System;
 
 using Statics.Enums;
-using Entities;
+using Entities.Interface;
 
 namespace Capacities.Interface
 {
-    public interface TechniqueInterface
+    public interface TechniqueInterface : NotificationConsumerInterface
     {
         void ExecuteAllCritics(MainInterface main);
 
@@ -16,8 +16,8 @@ namespace Capacities.Interface
         String GetTechniqueName();
 
         MyEnum.Work[] GetRelatedWorks();
-        Work[] GetInjectedWorks();
-        CriticUse[] GetCriticUses();
+        WorkInterface[] GetInjectedWorks();
+        CriticUseInterface[] GetCriticUses();
 
         int[] GetPowerOfCritics();
         int[] GetActionIndexOfCritics();

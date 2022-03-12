@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-using Entities;
+using Entities.Interface;
 using Statics.Enums;
 
 public abstract class TollItens : ItemCode

@@ -2,7 +2,7 @@ using Godot;
 using Godot.Collections;
 using System;
 
-namespace Entities
+namespace Entities.Interface
 {
     public interface Player : CharacterDataBank
     {

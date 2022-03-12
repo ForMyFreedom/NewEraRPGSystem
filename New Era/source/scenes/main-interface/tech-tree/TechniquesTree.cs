@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 
 
-using Entities;
+using Entities.Interface;
 using Capacities.Interface;
 using Statics.Enums;
 

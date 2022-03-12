@@ -2,7 +2,8 @@ using Godot;
 using System;
 
 using Statics.Enums;
-using Entities;
+using Capacities.Interface;
+using Entities.Interface;
 
 namespace Capacities
 {
@@ -13,7 +14,7 @@ namespace Capacities
         [Export]
         protected MyEnum.Work[] relatedWorks;
         [Export]
-        protected CriticUse[] criticUses;
+        protected CriticUseInterface[] criticUses;
         [Export]
         protected int[] powerOfCritics;
         [Export]
@@ -24,7 +25,7 @@ namespace Capacities
         protected int modValue;
 
 
-        protected Work[] injectedWorks;
+        protected WorkInterface[] injectedWorks;
 
 
         public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = 0)
@@ -118,12 +119,12 @@ namespace Capacities
             return relatedWorks;
         }
 
-        public Work[] GetInjectedWorks()
+        public WorkInterface[] GetInjectedWorks()
         {
             return injectedWorks;
         }
 
-        public CriticUse[] GetCriticUses()
+        public CriticUseInterface[] GetCriticUses()
         {
             return criticUses;
         }
@@ -143,7 +144,7 @@ namespace Capacities
             return level;
         }
 
-        public void InjectWorks(Work[] ws)
+        public void InjectWorks(WorkInterface[] ws)
         {
             injectedWorks = ws;
         }

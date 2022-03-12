@@ -3,9 +3,9 @@ using Godot.Collections;
 using System;
 using System.Linq;
 
-using Entities;
+using Entities.Interface;
 
-public abstract class NotificationConsumer : Resource
+public abstract class NotificationConsumer : Resource, NotificationConsumerInterface
 {
     protected MainInterface main;
 

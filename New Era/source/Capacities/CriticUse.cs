@@ -3,7 +3,8 @@ using System;
 using System.Text.RegularExpressions;
 using Statics.Enums;
 
-using Entities;
+using Entities.Interface;
+using Capacities.Interface;
 
 namespace Capacities
 {
@@ -20,7 +21,7 @@ namespace Capacities
         [Export]
         protected int cost; //-1 -> N
 
-        protected Work injectedWork;
+        protected WorkInterface injectedWork;
 
         public override abstract void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1);
         public override abstract void DoEndMechanicLogic();
@@ -57,7 +58,7 @@ namespace Capacities
             return cost;
         }
 
-        public void InjectWork(Work w)
+        public void InjectWork(WorkInterface w)
         {
             injectedWork = w;
         }

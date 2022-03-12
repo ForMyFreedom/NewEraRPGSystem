@@ -7,13 +7,13 @@ using Entities;
 
 namespace Capacities.Interface
 {
-    public interface CriticUseInterface
+    public interface CriticUseInterface : NotificationConsumerInterface
     {
         String GetUseName();
         String GetText();
 
         MyEnum.Work GetRelatedWork();
-        void InjectWork(Work w);
+        void InjectWork(WorkInterface w);
 
         int GetCost();
     }

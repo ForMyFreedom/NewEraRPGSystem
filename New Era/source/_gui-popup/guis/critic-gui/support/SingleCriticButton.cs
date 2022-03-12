@@ -1,9 +1,8 @@
 using Godot;
 using System;
 
-using Entities;
+using Capacities.Interface;
 using Capacities;
-using Evolution;
 
 public class SingleCriticButton : Control
 {
@@ -15,7 +14,7 @@ public class SingleCriticButton : Control
     [Signal]
     public delegate void critic_activated(CriticUse use);
 
-    private CriticUse use;
+    private CriticUseInterface use;
 
     public override void _Ready()
     {
@@ -39,24 +38,24 @@ public class SingleCriticButton : Control
     }
 
 
-    public void SetText(CriticUse use)
+    public void SetText(CriticUseInterface use)
     {
         GetNode<RichTextLabel>(textPath).BbcodeText = GetFormatedText(use);
     }
 
-    public void SetCritic(CriticUse use)
+    public void SetCritic(CriticUseInterface use)
     {
         this.use = use;
     }
 
 
 
-    private String GetFormatedText(CriticUse use)
+    private String GetFormatedText(CriticUseInterface use)
     {
         return $"[b]{use.GetUseName()} [{GetCriticCost(use)}][/b]: {use.GetText()}";
     }
 
-    private String GetCriticCost(CriticUse use)
+    private String GetCriticCost(CriticUseInterface use)
     {
         if (use.GetCost() < 0)
             return "N";

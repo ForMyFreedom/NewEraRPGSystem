@@ -1,8 +1,8 @@
 using Godot;
 using System;
 
-using Entities;
-using Capacities;
+using Entities.Interface;
+using Capacities.Interface;
 
 public class SkillGUI : BaseGUI
 {
@@ -16,7 +16,7 @@ public class SkillGUI : BaseGUI
     private PackedScene mechanicButtonScene;
 
     
-    private Skill skill;
+    private SkillInterface skill;
     private int skillIndex;
     private int workIndex;
 
@@ -90,13 +90,13 @@ public class SkillGUI : BaseGUI
         PopupCenteredRatio(0.5f);
     }
 
-    public void SetSkill(Skill s)
+    public void SetSkill(SkillInterface s)
     {
         skill = s;
         GetNode<RollBox>(rollBoxPath).SetRollValue(s.GetLevel());
     }
 
-    public void SetWork(Work w)
+    public void SetWork(WorkInterface w)
     {
         work = w;
     }

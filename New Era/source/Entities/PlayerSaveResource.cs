@@ -2,9 +2,10 @@ using Godot;
 using Godot.Collections;
 using System;
 
+using Entities.Interface;
 using Capacities.Interface;
-using Statics;
 using Evolution;
+using Statics;
 using Statics.Enums;
 using Statics.File;
 

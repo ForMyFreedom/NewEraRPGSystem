@@ -6,7 +6,7 @@ using Entities;
 
 namespace Capacities.Interface
 {
-    public interface SkillInterface
+    public interface SkillInterface : NotificationConsumerInterface
     {
         Array<string> GetTextOfMechanicButtons();
         void PlayWayOfLevelCalcule(WorkTree workTree, int workIndex, int skillIndex, int level);

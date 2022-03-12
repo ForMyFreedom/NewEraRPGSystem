@@ -5,7 +5,8 @@ using System;
 using Statics.Enums;
 using Capacities.Interface;
 
-namespace Entities
+
+namespace Entities.Interface
 {
     public interface CharacterDataBank
     {

@@ -3,8 +3,8 @@ using Godot.Collections;
 using System.Linq;
 using System;
 
-using Entities;
-using Capacities;
+using Entities.Interface;
+using Capacities.Interface;
 
 
 public class CriticGUI : WindowDialog
@@ -14,8 +14,8 @@ public class CriticGUI : WindowDialog
     [Export]
     private PackedScene singleCriticButtonPacked;
 
-    private Work work;
-    private Array<CriticUse> criticUses;
+    private WorkInterface work;
+    private Array<CriticUseInterface> criticUses;
 
 
     public void PopupIt()
@@ -51,26 +51,26 @@ public class CriticGUI : WindowDialog
         }
     }
 
-    private void _OnCriticActivated(CriticUse use)
+    private void _OnCriticActivated(CriticUseInterface use)
     {
         use.DoMechanic((MainInterface) GetTree().CurrentScene);
     }
 
 
-    public void SetWork(Work w)
+    public void SetWork(WorkInterface w)
     {
         work = w;
     }
 
-    public Array<CriticUse> GetCriticUses()
+    public Array<CriticUseInterface> GetCriticUses()
     {
         return criticUses;
     }
 
     public void SetCriticUses(Godot.Collections.Array uses)
     {
-        criticUses = new Array<CriticUse>();
-        foreach(CriticUse use in uses)
+        criticUses = new Array<CriticUseInterface>();
+        foreach(CriticUseInterface use in uses)
         {
             criticUses.Add(use);
         }

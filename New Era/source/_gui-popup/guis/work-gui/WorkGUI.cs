@@ -2,8 +2,8 @@ using Godot;
 using Godot.Collections;
 using System;
 
-using Entities;
-using Capacities;
+using Entities.Interface;
+using Capacities.Interface;
 using Evolution;
 using Statics.Enums;
 
@@ -126,7 +126,7 @@ public class WorkGUI : BaseGUI
         PopupCenteredRatio(0.5f);
     } 
 
-    public void SetWork(Work w)
+    public void SetWork(WorkInterface w)
     {
         work = w;
         GetNode<RichTextLabel>(journeyLabel).BbcodeText += work.GetMaestryDescription();

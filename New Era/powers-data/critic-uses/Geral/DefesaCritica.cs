@@ -2,7 +2,7 @@ using Godot;
 using Godot.Collections;
 using System;
 
-using Entities;
+using Entities.Interface;
 using Capacities;
 
 public class DefesaCritica : CriticUse
