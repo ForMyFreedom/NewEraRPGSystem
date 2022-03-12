@@ -18,11 +18,13 @@ public class Zetsu : Skill
         if (critic < 0)
             critic = 0;
 
+        this.main = main;
+
         agiDefense = main.GetActualAgiDefense();
         strDefense = main.GetActualStrDefense();
         guard = main.GetGuard();
 
-        ModifyDefenseFactors(1/2);
+        ModifyDefenseFactors(0.5f);
 
         main.CreateNewNotification("Forma de Haki Zetsu: Voce recebe: "+
             $"+{3*level} em Testes Sigilosos \n"+
@@ -38,14 +40,14 @@ public class Zetsu : Skill
     
     public override void DoEndMechanicLogic()
     {
-        ModifyDefenseFactors(2);
+        ModifyDefenseFactors(1);
     }
 
 
-    private void ModifyDefenseFactors(int mod)
+    private void ModifyDefenseFactors(float mod)
     {
-        main.SetActualAgiDefense(agiDefense*mod);
-        main.SetActualStrDefense(strDefense*mod);
-        main.SetGuard(guard*mod);
+        main.SetActualAgiDefense((int)(agiDefense*mod));
+        main.SetActualStrDefense((int)(strDefense *mod));
+        main.SetGuard((int)(guard *mod));
     }
 }
