@@ -10,10 +10,11 @@ public class RomperCarotida : CriticUse
             critic = main.RequestWorkRoll(relatedWork)/10;
 
         main.RequestSkillMechanic(relatedWork, 0, critic);
-
+        /*
         main.CreateNewNotification(
             GetNotificationText(critic), injectedWork.GetBaseImage()
         );
+        */
     }
 
     public override void DoEndMechanicLogic()
