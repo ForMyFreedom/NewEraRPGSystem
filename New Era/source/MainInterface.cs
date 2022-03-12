@@ -445,12 +445,12 @@ public class MainInterface : Control, CharacterDataBank
 
     public int GetModAgiDefense()
     {
-        return (int)GetFactorModSpin(agiDefenseFactorPath).Value;
+        return (int) GetFactorModSpin(agiDefenseFactorPath).Value;
     }
 
     public void SetModAgiDefense(int value)
     {
-        SetFactorModValue(strDefenseFactorPath, value);
+        SetFactorModValue(agiDefenseFactorPath, value);
     }
 
     public void AddModAgiDefense(int sum)
