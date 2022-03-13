@@ -5,9 +5,14 @@ public static class RollCode
 {
     private static Random rgn = new Random();
 
-    public static int GetRandomCustomRoll(int dice)
+    public static int GetRandomCustomRoll(int dice, int quant=1)
     {
-        return rgn.Next(1, dice + 1);
+        int sum = 0;
+
+        for(int i=0 ; i<quant ; i++)
+            sum+= rgn.Next(1, dice + 1);
+
+        return sum;
     }
 
     public static int GetRandomBasicRoll(int value)
