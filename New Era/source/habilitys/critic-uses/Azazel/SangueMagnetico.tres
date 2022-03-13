@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
-criticUseName = "Sangue Magnético"
+criticUseName = "Sangue Cortante"
 relatedWork = 4
-text = "Caso o alvo tenha uma quantidade decente de sangue no corpo (Em geral acima de 25% da Vida), você pode receber +5N no Teste de Ataque."
-baseMessage = "Se o alvo em geral estiver acima de 25% de Vida, você recebe $ no Teste de Ataque"
+text = "Caso o alvo tenha uma quantidade decente de sangue no corpo (Em geral acima de 25% da Vida), você pode receber +3N Dano"
+baseMessage = "Se alvo com mai s25% de Vida, você recebe $ Dano [Remova isso após o ataque]"
 cost = -1
