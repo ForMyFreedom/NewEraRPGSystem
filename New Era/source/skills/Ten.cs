@@ -18,7 +18,7 @@ public class Ten : Skill
 
         guard = level + critic;
         main.AddGuard(guard);
-        main.CreateNewNotification($"Forma de Haki Ten: + {guard} Guarda", effectImage);
+        main.CreateNewNotification($"Forma de Haki Ten: + {guard} Guarda | -25% Hatsus", effectImage);
         ConnectToLastNotification(main);
     }
 
