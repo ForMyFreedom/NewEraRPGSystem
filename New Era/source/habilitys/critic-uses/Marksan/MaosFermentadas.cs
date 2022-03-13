@@ -35,7 +35,7 @@ public class MaosFermentadas : CriticUse
 
     private MyEnum.Atribute SortAtribute()
     {
-        int random = RollCode.GetRandomBasicRoll(1);
+        int random = RollCode.GetRandomCustomRoll(5);
         return (MyEnum.Atribute)(random-1);
     }
 }
