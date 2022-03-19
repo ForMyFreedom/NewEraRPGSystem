@@ -14,6 +14,8 @@ Fraquezas:
    Batimento Irregular [Você não pode usar sua Mecânica ‘Batimento’]
    Irracional [Você não pode usar nenhuma ferramenta ou arma, mas pode usar seus Usos de Pulsação com seus Ataques Desarmados]
    Sol do Inferno [Você perde metade da vida ao ficar um turno exposto ao sol, 25% caso já não possua Solarium no corpo]
-   Fome Imparável [A cada três turnos que você passar sem utilizar seu Vampirismo, você sofre 3d6 Dano por fome. Caso sua vida seja zerada com esse Dano, você cai inconciente e com sua forma desativada]
+   Fome Imparável [A cada três turnos que você passar sem utilizar seu Vampirismo, você sofre 3d6 Dano por fome
+   Caso sua vida seja zerada com esse Dano, você cai inconciente e com sua forma desativada]
+
 Para desfazer a forma, é preciso 5 Críticos em um Teste de Força [+2 para cada consumo em uma semana]"
 image = ExtResource( 1 )
