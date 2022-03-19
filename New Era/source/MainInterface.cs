@@ -84,6 +84,7 @@ public class MainInterface : Control, CharacterDataBank
     private Color[] colors = new Color[2];
     private bool alreadyConnectAll = false;
     private bool toSaveOnClose = true;
+    private LifeUpdaterAbstract lifeUpdater;
 
     public override void _Ready()
     {
@@ -97,16 +98,16 @@ public class MainInterface : Control, CharacterDataBank
     private void MakeConnections()
     {
         if (alreadyConnectAll) return;
-        ConnectAllButtons();
+        ConnectAllSignals();
         SendBooblesData();
-        MyStatic.CenterTheWindow();
-
+        CreateLifeUpdater();
         Connect("tree_exiting", this, "RegisterAllData");
         alreadyConnectAll = true;
     }
 
 
-    private void ConnectAllButtons()
+
+    private void ConnectAllSignals()
     {
         GetNode(customRollButtonPath).Connect("button_up", this, "_OnOpenRoll");
         GetNode(trainingButtonPath).Connect("button_up", this, "_OnTraining");
@@ -117,12 +118,19 @@ public class MainInterface : Control, CharacterDataBank
         GetNode(reloadSaveButtonPath).Connect("button_activate", this, "_OnReload");
         GetNode(importSaveButtonPath).Connect("button_activate", this, "_OnImportSave");
         GetNode(versionSaveButtonPath).Connect("button_activate", this, "_OnVersionSave");
+
+        GetNode(worksTreePath).Connect("work_level_changed", this, "_OnWorkLevelChanged");
     }
 
     private void SendBooblesData()
     {
         GetNode<DefenseBooble>(defenseBooblePath).SetDefenseStyle(GetDefenseStyle());
         GetNode<DefenseBooble>(defenseBooblePath).UpdateTexture();
+    }
+
+    private void CreateLifeUpdater()
+    {
+        lifeUpdater = (LifeUpdaterAbstract) GetLifeUpdaterScript().New(this);
     }
 
 
@@ -237,7 +245,12 @@ public class MainInterface : Control, CharacterDataBank
         toSaveOnClose = false;
         GetTree().ChangeSceneTo(versionSavePackedScene);
     }
-
+    
+    public void _OnWorkLevelChanged(int index, int value)
+    {
+        if (index == GetPrincipalWorkIndex())
+            lifeUpdater.DoUpdateOfLife(value);
+    }
 
 
     public Atributo GetAtributeNodeByEnum(MyEnum.Atribute atribute)
