@@ -534,13 +534,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetStrength(int value)
     {
-        player.SetStrength(value);
         SetAtributeMajor(strAtributePath, value);
     }
 
     public void AddStrength(int sum)
     {
-        player.SetStrength(player.GetStrength()+sum);
         AddAtributeMajor(strAtributePath, sum);
     }
 
@@ -553,13 +551,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetAgility(int value)
     {
-        player.SetAgility(value);
         SetAtributeMajor(agiAtributePath, value);
     }
 
     public void AddAgility(int sum)
     {
-        player.SetAgility(player.GetAgility() + sum);
         AddAtributeMajor(agiAtributePath, sum);
     }
 
@@ -572,13 +568,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetSenses(int value)
     {
-        player.SetSenses(value);
         SetAtributeMajor(senAtributePath, value);
     }
 
     public void AddSenses(int sum)
     {
-        player.SetSenses(player.GetSenses() + sum);
         AddAtributeMajor(senAtributePath, sum);
     }
 
@@ -591,13 +585,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetMind(int value)
     {
-        player.SetMind(value);
         SetAtributeMajor(minAtributePath, value);
     }
 
     public void AddMind(int sum)
     {
-        player.SetMind(player.GetMind() + sum);
         AddAtributeMajor(minAtributePath, sum);
     }
 
@@ -610,13 +602,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetCharisma(int value)
     {
-        player.SetCharisma(value);
         SetAtributeMajor(chaAtributePath, value);
     }
 
     public void AddCharisma(int sum)
     {
-        player.SetCharisma(player.GetCharisma() + sum);
         AddAtributeMajor(chaAtributePath, sum);
     }
 
@@ -631,13 +621,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModStrength(int value)
     {
-        player.SetModStrength(value);
         SetAtributeMod(strAtributePath, value);
     }
 
     public void AddModStrength(int sum)
     {
-        player.SetModStrength(player.GetModStrength() + sum);
         AddAtributeMod(strAtributePath, sum);
     }
 
@@ -650,13 +638,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModAgility(int value)
     {
-        player.SetModAgility(value);
         SetAtributeMod(agiAtributePath, value);
     }
 
     public void AddModAgility(int sum)
     {
-        player.SetModAgility(player.GetModAgility() + sum);
         AddAtributeMod(agiAtributePath, sum);
     }
 
@@ -669,13 +655,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModSenses(int value)
     {
-        player.SetModSenses(value);
         SetAtributeMod(senAtributePath, value);
     }
 
     public void AddModSenses(int sum)
     {
-        player.SetModSenses(player.GetModSenses() + sum);
         AddAtributeMod(senAtributePath, sum);
     }
 
@@ -688,13 +672,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModMind(int value)
     {
-        player.SetModMind(value);
         SetAtributeMod(minAtributePath, value);
     }
 
     public void AddModMind(int sum)
     {
-        player.SetModMind(player.GetModMind() + sum);
         AddAtributeMod(minAtributePath, sum);
     }
 
@@ -707,13 +689,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModCharisma(int value)
     {
-        player.SetModCharisma(value);
         SetAtributeMod(chaAtributePath, value);
     }
 
     public void AddModCharisma(int sum)
     {
-        player.SetModCharisma(player.GetModCharisma() + sum);
         AddAtributeMod(chaAtributePath, sum);
     }
 

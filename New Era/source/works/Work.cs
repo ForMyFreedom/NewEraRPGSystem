@@ -50,6 +50,11 @@ public abstract class Work : Resource
         return skills;
     }
 
+    public void SetSkillList(Skill[] skills)
+    {
+        this.skills = skills;
+    }
+
     public string GetDescription()
     {
         return description;
@@ -104,4 +109,5 @@ public abstract class Work : Resource
     {
         return "Voce precisa criar uma tecnica";
     }
+
 }
