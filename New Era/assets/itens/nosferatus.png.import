@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ameiko_wallpaper.png-d5689746094bc20005279be0d5cb13aa.stex"
+path="res://.import/nosferatus.png-fba2f340a4ac567cfbd56b240bef69e1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wallpapers/ameiko_wallpaper.png"
-dest_files=[ "res://.import/ameiko_wallpaper.png-d5689746094bc20005279be0d5cb13aa.stex" ]
+source_file="res://assets/itens/nosferatus.png"
+dest_files=[ "res://.import/nosferatus.png-fba2f340a4ac567cfbd56b240bef69e1.stex" ]
 
 [params]
 
