@@ -7,7 +7,7 @@ public class ConhecedoraDePragas : CriticUse
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         main.CreateNewNotification(
-            GetNotificationText(injectedWork.GetSkillList()[0].GetLevel()),
+            MyStatic.GetNotificationText(baseMessage, injectedWork.GetSkillList()[0].GetLevel()),
             injectedWork.GetBaseImage()
         );
     }

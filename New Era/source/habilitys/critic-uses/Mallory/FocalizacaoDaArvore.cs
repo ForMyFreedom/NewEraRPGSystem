@@ -9,7 +9,7 @@ public class FocalizacaoDaArvore : CriticUse
         if (critic == -1)
             critic = main.RequestAtributeRoll(MyEnum.Atribute.MIN)/10;
 
-        main.CreateNewNotification(GetNotificationText(critic), injectedWork.GetBaseImage());
+        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, critic), injectedWork.GetBaseImage());
     }
 
     public override void DoEndMechanicLogic()

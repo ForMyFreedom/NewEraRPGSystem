@@ -10,7 +10,7 @@ public class PrevisaoDetalhista : CriticUse
             critic = main.RequestSkillRoll(injectedWork.GetSkillList()[1].GetSkillName())/10;
 
         main.CreateNewNotification(
-            GetNotificationText(3 * critic), injectedWork.GetBaseImage()
+        MyStatic.GetNotificationText(baseMessage, 3 * critic), injectedWork.GetBaseImage()
         );
     }
 

@@ -10,7 +10,7 @@ public class MelAnimador : CriticUse
             critic = main.RequestWorkRoll(relatedWork)/10;
 
         main.CreateNewNotification(
-            GetNotificationText(critic+3), injectedWork.GetBaseImage()
+        MyStatic.GetNotificationText(baseMessage, critic+3), injectedWork.GetBaseImage()
         );
     }
 

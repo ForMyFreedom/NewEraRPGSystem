@@ -56,6 +56,10 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     private int guard;
     [Export]
     private MyEnum.DefenseStyle defenseStyle;
+    [Export]
+    private int principalWorkIndex;
+    [Export]
+    private CSharpScript lifeUpdaterScript;
 
 
     public int GetEditionIndex()
@@ -405,7 +409,7 @@ public class PlayerSaveResource : Resource, CharacterDataBank
 
     public Array<Work> GetWorks()
     {
-        return works;
+        return DuplicateWork();
     }
 
     public void SetWorks(Array<Work> _works)
@@ -503,7 +507,7 @@ public class PlayerSaveResource : Resource, CharacterDataBank
 
     public Array<InventoryItem> GetItens()
     {
-        return itens;
+        return DuplicateItens();
     }
 
     public void SetItens(Array<InventoryItem> _itens)
@@ -539,5 +543,68 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     public void SetDefenseStyle(MyEnum.DefenseStyle style)
     {
         defenseStyle = style;
+    }
+
+    public int GetPrincipalWorkIndex()
+    {
+        return principalWorkIndex;
+    }
+
+    public void SetPrincipalWorkIndex(int index)
+    {
+        principalWorkIndex = index;
+    }
+
+    public CSharpScript GetLifeUpdaterScript()
+    {
+        return lifeUpdaterScript;
+    }
+
+    public void SetLifeUpdaterScript(CSharpScript script)
+    {
+        lifeUpdaterScript = script;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private Array<Work> DuplicateWork()
+    {
+        Array<Work> duplicatedArray = new Array<Work>();
+        for (int i = 0; i < works.Count; i++)
+        {
+            duplicatedArray.Add((Work)works[i].Duplicate());
+            Skill[] originalSkillList = works[i].GetSkillList();
+            Skill[] duplicatedSkillList = new Skill[originalSkillList.Length];
+
+            for (int j = 0; j < originalSkillList.Length; j++)
+            {
+                duplicatedSkillList[j] = (Skill)originalSkillList[j].Duplicate();
+            }
+
+            duplicatedArray[i].SetSkillList(duplicatedSkillList);
+        }
+        return duplicatedArray;
+    }
+
+
+    private Array<InventoryItem> DuplicateItens()
+    {
+        Array<InventoryItem> duplicatedArray = new Array<InventoryItem>();
+        for (int i = 0; i < itens.Count; i++)
+        {
+            duplicatedArray.Add((InventoryItem)itens[i].Duplicate());
+        }
+        return duplicatedArray;
     }
 }

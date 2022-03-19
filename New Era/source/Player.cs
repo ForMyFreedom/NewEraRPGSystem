@@ -32,7 +32,6 @@ public class Player : Node, CharacterDataBank
 
 
 
-
     public string GetPlayerName()
     {
         return playerSaveResource.GetPlayerName();
@@ -440,5 +439,25 @@ public class Player : Node, CharacterDataBank
     public string GetActualSavePath()
     {
         return playerSaveResource.GetCurrentSavePath();
+    }
+
+    public int GetPrincipalWorkIndex()
+    {
+        return playerSaveResource.GetPrincipalWorkIndex();
+    }
+
+    public void SetPrincipalWorkIndex(int index)
+    {
+        playerSaveResource.SetPrincipalWorkIndex(index);
+    }
+
+    public CSharpScript GetLifeUpdaterScript()
+    {
+        return playerSaveResource.GetLifeUpdaterScript();
+    }
+
+    public void SetLifeUpdaterScript(CSharpScript script)
+    {
+        playerSaveResource.SetLifeUpdaterScript(script);
     }
 }

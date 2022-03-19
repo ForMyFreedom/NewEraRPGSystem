@@ -10,7 +10,7 @@ public class FormasMecanicas : CriticUse
             critic = main.RequestWorkRoll(relatedWork)/10;
 
         main.CreateNewNotification(
-            GetNotificationText(critic, injectedWork.GetLevel()/2), injectedWork.GetBaseImage()
+        MyStatic.GetNotificationText(baseMessage, critic, injectedWork.GetLevel()/2), injectedWork.GetBaseImage()
         );
 
         ConnectToLastNotification(main);

@@ -84,6 +84,7 @@ public class MainInterface : Control, CharacterDataBank
     private Color[] colors = new Color[2];
     private bool alreadyConnectAll = false;
     private bool toSaveOnClose = true;
+    private LifeUpdaterAbstract lifeUpdater;
 
     public override void _Ready()
     {
@@ -92,21 +93,22 @@ public class MainInterface : Control, CharacterDataBank
         player._Ready();
         RegistryData(player, this);
         MakeConnections();
+        MyStatic.CenterTheWindow();
     }
 
     private void MakeConnections()
     {
         if (alreadyConnectAll) return;
-        ConnectAllButtons();
+        ConnectAllSignals();
         SendBooblesData();
-        MyStatic.CenterTheWindow();
-
+        CreateLifeUpdater();
         Connect("tree_exiting", this, "RegisterAllData");
         alreadyConnectAll = true;
     }
 
 
-    private void ConnectAllButtons()
+
+    private void ConnectAllSignals()
     {
         GetNode(customRollButtonPath).Connect("button_up", this, "_OnOpenRoll");
         GetNode(trainingButtonPath).Connect("button_up", this, "_OnTraining");
@@ -117,12 +119,19 @@ public class MainInterface : Control, CharacterDataBank
         GetNode(reloadSaveButtonPath).Connect("button_activate", this, "_OnReload");
         GetNode(importSaveButtonPath).Connect("button_activate", this, "_OnImportSave");
         GetNode(versionSaveButtonPath).Connect("button_activate", this, "_OnVersionSave");
+
+        GetNode(worksTreePath).Connect("work_level_changed", this, "_OnWorkLevelChanged");
     }
 
     private void SendBooblesData()
     {
         GetNode<DefenseBooble>(defenseBooblePath).SetDefenseStyle(GetDefenseStyle());
         GetNode<DefenseBooble>(defenseBooblePath).UpdateTexture();
+    }
+
+    private void CreateLifeUpdater()
+    {
+        lifeUpdater = (LifeUpdaterAbstract) GetLifeUpdaterScript().New(this);
     }
 
 
@@ -237,7 +246,12 @@ public class MainInterface : Control, CharacterDataBank
         toSaveOnClose = false;
         GetTree().ChangeSceneTo(versionSavePackedScene);
     }
-
+    
+    public void _OnWorkLevelChanged(int index, int value)
+    {
+        if (index == GetPrincipalWorkIndex())
+            lifeUpdater.DoUpdateOfLife(value);
+    }
 
 
     public Atributo GetAtributeNodeByEnum(MyEnum.Atribute atribute)
@@ -521,13 +535,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetStrength(int value)
     {
-        player.SetStrength(value);
         SetAtributeMajor(strAtributePath, value);
     }
 
     public void AddStrength(int sum)
     {
-        player.SetStrength(player.GetStrength()+sum);
         AddAtributeMajor(strAtributePath, sum);
     }
 
@@ -540,13 +552,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetAgility(int value)
     {
-        player.SetAgility(value);
         SetAtributeMajor(agiAtributePath, value);
     }
 
     public void AddAgility(int sum)
     {
-        player.SetAgility(player.GetAgility() + sum);
         AddAtributeMajor(agiAtributePath, sum);
     }
 
@@ -559,13 +569,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetSenses(int value)
     {
-        player.SetSenses(value);
         SetAtributeMajor(senAtributePath, value);
     }
 
     public void AddSenses(int sum)
     {
-        player.SetSenses(player.GetSenses() + sum);
         AddAtributeMajor(senAtributePath, sum);
     }
 
@@ -578,13 +586,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetMind(int value)
     {
-        player.SetMind(value);
         SetAtributeMajor(minAtributePath, value);
     }
 
     public void AddMind(int sum)
     {
-        player.SetMind(player.GetMind() + sum);
         AddAtributeMajor(minAtributePath, sum);
     }
 
@@ -597,13 +603,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetCharisma(int value)
     {
-        player.SetCharisma(value);
         SetAtributeMajor(chaAtributePath, value);
     }
 
     public void AddCharisma(int sum)
     {
-        player.SetCharisma(player.GetCharisma() + sum);
         AddAtributeMajor(chaAtributePath, sum);
     }
 
@@ -618,13 +622,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModStrength(int value)
     {
-        player.SetModStrength(value);
         SetAtributeMod(strAtributePath, value);
     }
 
     public void AddModStrength(int sum)
     {
-        player.SetModStrength(player.GetModStrength() + sum);
         AddAtributeMod(strAtributePath, sum);
     }
 
@@ -637,13 +639,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModAgility(int value)
     {
-        player.SetModAgility(value);
         SetAtributeMod(agiAtributePath, value);
     }
 
     public void AddModAgility(int sum)
     {
-        player.SetModAgility(player.GetModAgility() + sum);
         AddAtributeMod(agiAtributePath, sum);
     }
 
@@ -656,13 +656,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModSenses(int value)
     {
-        player.SetModSenses(value);
         SetAtributeMod(senAtributePath, value);
     }
 
     public void AddModSenses(int sum)
     {
-        player.SetModSenses(player.GetModSenses() + sum);
         AddAtributeMod(senAtributePath, sum);
     }
 
@@ -675,13 +673,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModMind(int value)
     {
-        player.SetModMind(value);
         SetAtributeMod(minAtributePath, value);
     }
 
     public void AddModMind(int sum)
     {
-        player.SetModMind(player.GetModMind() + sum);
         AddAtributeMod(minAtributePath, sum);
     }
 
@@ -694,13 +690,11 @@ public class MainInterface : Control, CharacterDataBank
 
     public void SetModCharisma(int value)
     {
-        player.SetModCharisma(value);
         SetAtributeMod(chaAtributePath, value);
     }
 
     public void AddModCharisma(int sum)
     {
-        player.SetModCharisma(player.GetModCharisma() + sum);
         AddAtributeMod(chaAtributePath, sum);
     }
 
@@ -867,6 +861,25 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<DefenseBooble>(defenseBooblePath).SetDefenseStyle(style);
     }
 
+    public int GetPrincipalWorkIndex()
+    {
+        return player.GetPrincipalWorkIndex();
+    }
+
+    public void SetPrincipalWorkIndex(int index)
+    {
+        player.GetPrincipalWorkIndex();
+    }
+
+    public CSharpScript GetLifeUpdaterScript()
+    {
+        return player.GetLifeUpdaterScript();
+    }
+
+    public void SetLifeUpdaterScript(CSharpScript script)
+    {
+        player.SetLifeUpdaterScript(script);
+    }
 
 
 

@@ -9,7 +9,7 @@ public class Hana : CriticUse
         if (critic < 0)
             critic = main.RequestWorkRoll(relatedWork)/10;
 
-        main.CreateNewNotification(GetNotificationText(critic), injectedWork.GetBaseImage());
+        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, critic), injectedWork.GetBaseImage());
     }
 
     public override void DoEndMechanicLogic()

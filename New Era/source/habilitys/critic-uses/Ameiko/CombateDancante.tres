@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/habilitys/critic-uses/Ameiko/CombateDancante.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+criticUseName = "Combate Dancante"
+relatedWork = 10
+text = "Você pode como uma Ação Livre entrar em estado de Combate Dançante [Enquanto um ataque não te acertar, você fica com +3N Defesa de Agilidade]. Uma vez por combate"
+baseMessage = "Combate Dançante: +$ Defesa de Agilidade enquanto não for acertada [Remova caso seja]"
+cost = -1

@@ -21,7 +21,7 @@ public class TechArmor : CriticUse
         ModifyAllFactors(1);
 
         main.CreateNewNotification(
-            GetNotificationText(strMod, resMod, surgeMod), injectedWork.GetBaseImage()
+        MyStatic.GetNotificationText(baseMessage, strMod, resMod, surgeMod), injectedWork.GetBaseImage()
         );
         ConnectToLastNotification(main);
     }

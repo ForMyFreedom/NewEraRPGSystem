@@ -10,7 +10,7 @@ public class ImpactoOfegante : CriticUse
             critic = main.RequestWorkRoll(relatedWork)/10;
 
         main.CreateNewNotification(
-            GetNotificationText(critic), injectedWork.GetBaseImage()
+        MyStatic.GetNotificationText(baseMessage, critic), injectedWork.GetBaseImage()
         );
     }
 

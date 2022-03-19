@@ -9,7 +9,7 @@ public class CulinariaMaluca : CriticUse
         if (critic < 0)
             critic = main.RequestWorkRoll(relatedWork)/10;
 
-        main.CreateNewNotification(GetNotificationText(3*critic),injectedWork.GetBaseImage());
+        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, 3*critic),injectedWork.GetBaseImage());
     }
 
     public override void DoEndMechanicLogic()

@@ -16,7 +16,7 @@ public class LancaRotativa : CriticUse
         holdCritic = critic;
 
         main.CreateNewNotification(
-            GetNotificationText(2*critic), injectedWork.GetBaseImage()
+        MyStatic.GetNotificationText(baseMessage, 2*critic), injectedWork.GetBaseImage()
         );
 
         ConnectToLastNotification(main);

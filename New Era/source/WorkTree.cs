@@ -13,6 +13,9 @@ public class WorkTree : Tree
     [Export]
     private Texture useOfCriticTexture;
 
+    [Signal]
+    public delegate void work_level_changed(int index, int value);
+
     private Array<Work> works;
     private Array<Array<CriticUse>> criticUses;
     private TreeItem[] itens = { };
@@ -35,7 +38,6 @@ public class WorkTree : Tree
             AddNewWorkItem(root, itemIndex, currentWork);
             AddUseOfCriticSection(root, itemIndex, workIndex, currentWork);
             itemIndex++;
-
 
             if (AddAllSkillItens(itemIndex, workIndex, currentWork))
                 itemIndex++;
@@ -235,6 +237,7 @@ public class WorkTree : Tree
 
     public void _OnWorkValueChanged(int index, int value)
     {
+        EmitSignal(nameof(work_level_changed), index, value);
         SetAnWorkLevel(index, value);
     }
 
@@ -321,6 +324,8 @@ public class WorkTree : Tree
     public void SetWorks(Array<Work> w)
     {
         works = w;
+        SetMetadataInItens();
+        ActualizeLevelLabels();
     }
 
     public Array<Work> GetWorks()
@@ -408,5 +413,26 @@ public class WorkTree : Tree
     public void SetCriticUses(Array<Array<CriticUse>> uses)
     {
         criticUses = uses;
+    }
+
+    private void SetMetadataInItens()
+    {
+        int workIndex = 0;
+        for (int i = 0; i < itens.Length; i++)
+        {
+            for (int j = 0; j < Columns; j++)
+            {
+                if (itens[i].GetMetadata(j) is Work)
+                {
+                    itens[i].SetMetadata(j, works[workIndex]);
+                    workIndex++;
+                }
+
+                if(itens[i].GetMetadata(j) is Skill)
+                {
+                    itens[i].SetMetadata(j, works[workIndex-1].GetSkillList()[j]);
+                }
+            }
+        }
     }
 }

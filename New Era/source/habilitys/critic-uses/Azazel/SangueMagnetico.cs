@@ -15,7 +15,7 @@ public class SangueMagnetico : CriticUse
         main.AddExtraDamage(dmg);
 
         main.CreateNewNotification(
-            GetNotificationText(dmg), injectedWork.GetBaseImage()
+        MyStatic.GetNotificationText(baseMessage, dmg), injectedWork.GetBaseImage()
         );
         ConnectToLastNotification(main);
     }

@@ -12,7 +12,7 @@ public class RomperCarotida : CriticUse
         main.RequestSkillMechanic(relatedWork, 0, critic);
         /*
         main.CreateNewNotification(
-            GetNotificationText(critic), injectedWork.GetBaseImage()
+        MyStatic.GetNotificationText(baseMessage, critic), injectedWork.GetBaseImage()
         );
         */
     }

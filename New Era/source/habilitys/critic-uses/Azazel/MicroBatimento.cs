@@ -14,7 +14,7 @@ public class MicroBatimento : CriticUse
         beatLevel = main.GetSkillByWorkAndIndex(relatedWork, 0).GetLevel();
         main.GetWorkNodeByEnum(relatedWork).GetSkillList()[0].DoMechanic(main, actionIndex, beatLevel);
 
-        main.CreateNewNotification(GetNotificationText(selfDamage), injectedWork.GetBaseImage());
+        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, selfDamage), injectedWork.GetBaseImage());
     }
 
     public override void DoEndMechanicLogic()

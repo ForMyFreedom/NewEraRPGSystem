@@ -17,7 +17,7 @@ public class EnterrarOponente : CriticUse
         damageExtra = (int)(1.5 * critic);
         main.AddExtraDamage(damageExtra);
 
-        main.CreateNewNotification(GetNotificationText(result, damageExtra),
+        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, result, damageExtra),
             injectedWork.GetBaseImage());
 
         ConnectToLastNotification(main);

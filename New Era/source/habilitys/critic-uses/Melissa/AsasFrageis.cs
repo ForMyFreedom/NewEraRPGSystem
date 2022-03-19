@@ -12,7 +12,7 @@ public class AsasFrageis : CriticUse
             critic = result / 10;
 
         main.CreateNewNotification(
-            GetNotificationText(result, critic), injectedWork.GetBaseImage()
+            MyStatic.GetNotificationText(baseMessage, result, critic), injectedWork.GetBaseImage()
         );
     }
 
