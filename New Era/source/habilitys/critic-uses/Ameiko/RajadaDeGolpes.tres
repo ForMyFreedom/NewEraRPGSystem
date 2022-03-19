@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/habilitys/critic-uses/Ameiko/RajadaDeGolpes.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+criticUseName = "Rajada de Golpes"
+relatedWork = 3
+text = "Em Testes de Ataque, caso acerte, você pode realizar golpes consecutivos com desvantagem acumulada de 15 em seu Teste. Quando você errar, a sequência de golpes acaba. Anule todos os Críticos recebidos nesses ataques consecutivos."
+baseMessage = "Você pode realizar golpes consecutivos com desvantagem acumulada de 15 em seu Teste.
+Quando você errar, a sequência de golpes acaba"
+cost = 3
