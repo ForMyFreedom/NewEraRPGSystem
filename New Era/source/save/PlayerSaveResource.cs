@@ -56,6 +56,10 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     private int guard;
     [Export]
     private MyEnum.DefenseStyle defenseStyle;
+    [Export]
+    private int principalWorkIndex;
+    [Export]
+    private CSharpScript lifeUpdaterScript;
 
 
     public int GetEditionIndex()
@@ -539,5 +543,25 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     public void SetDefenseStyle(MyEnum.DefenseStyle style)
     {
         defenseStyle = style;
+    }
+
+    public int GetPrincipalWorkIndex()
+    {
+        return principalWorkIndex;
+    }
+
+    public void SetPrincipalWorkIndex(int index)
+    {
+        principalWorkIndex = index;
+    }
+
+    public CSharpScript GetLifeUpdaterScript()
+    {
+        return lifeUpdaterScript;
+    }
+
+    public void SetLifeUpdaterScript(CSharpScript script)
+    {
+        lifeUpdaterScript = script;
     }
 }

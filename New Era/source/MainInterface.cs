@@ -867,6 +867,25 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<DefenseBooble>(defenseBooblePath).SetDefenseStyle(style);
     }
 
+    public int GetPrincipalWorkIndex()
+    {
+        return player.GetPrincipalWorkIndex();
+    }
+
+    public void SetPrincipalWorkIndex(int index)
+    {
+        player.GetPrincipalWorkIndex();
+    }
+
+    public CSharpScript GetLifeUpdaterScript()
+    {
+        return player.GetLifeUpdaterScript();
+    }
+
+    public void SetLifeUpdaterScript(CSharpScript script)
+    {
+        player.SetLifeUpdaterScript(script);
+    }
 
 
 

@@ -120,4 +120,10 @@ public interface CharacterDataBank
 
     MyEnum.DefenseStyle GetDefenseStyle();
     void SetDefenseStyle(MyEnum.DefenseStyle style);
+
+    int GetPrincipalWorkIndex();
+    void SetPrincipalWorkIndex(int index);
+
+    CSharpScript GetLifeUpdaterScript();
+    void SetLifeUpdaterScript(CSharpScript script);
 }
