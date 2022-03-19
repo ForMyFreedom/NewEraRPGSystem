@@ -10,7 +10,7 @@ public class PassosAnatomicos : CriticUse
             critic = main.RequestAtributeRoll(MyEnum.Atribute.AGI)/5;
         
         main.CreateNewNotification(
-            GetNotificationText(critic), injectedWork.GetBaseImage()
+        MyStatic.GetNotificationText(baseMessage, critic), injectedWork.GetBaseImage()
         );
     }
 

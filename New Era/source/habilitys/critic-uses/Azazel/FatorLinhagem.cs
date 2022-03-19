@@ -8,8 +8,10 @@ public class FatorLinhagem : CriticUse
     {
         if (critic < 0)
             critic = main.RequestWorkRoll(relatedWork)/10;
-            
-        main.CreateNewNotification(GetNotificationText(critic/4), injectedWork.GetBaseImage());
+
+
+
+        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, critic /4), injectedWork.GetBaseImage());
         ConnectToLastNotification(main);
     }
 

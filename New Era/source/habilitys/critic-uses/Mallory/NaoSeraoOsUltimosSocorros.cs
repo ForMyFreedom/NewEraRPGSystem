@@ -10,7 +10,7 @@ public class NaoSeraoOsUltimosSocorros : CriticUse
             critic = (main.RequestWorkRoll(relatedWork)/10) *4;
         
         main.CreateNewNotification(
-            GetNotificationText(critic), injectedWork.GetBaseImage()
+        MyStatic.GetNotificationText(baseMessage, critic), injectedWork.GetBaseImage()
         );
     }
 

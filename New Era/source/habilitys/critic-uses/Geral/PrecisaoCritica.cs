@@ -12,7 +12,7 @@ public class PrecisaoCritica : CriticUse
         if (critic < 0)
             return;
 
-        main.CreateNewNotification(GetNotificationText(3*critic));
+        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, 3*critic));
     }
 
     public override void DoEndMechanicLogic()

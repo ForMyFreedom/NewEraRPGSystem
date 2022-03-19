@@ -9,7 +9,7 @@ public class GarotaIrritante : CriticUse
         int result = main.RequestSkillRoll(injectedWork.GetSkillList()[1].GetSkillName());
 
         main.CreateNewNotification(
-            GetNotificationText(result), injectedWork.GetBaseImage()
+        MyStatic.GetNotificationText(baseMessage, result), injectedWork.GetBaseImage()
         );
     }
 

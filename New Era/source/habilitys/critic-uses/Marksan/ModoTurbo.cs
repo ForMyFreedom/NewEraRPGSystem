@@ -15,7 +15,7 @@ public class ModoTurbo : CriticUse
         holdCritic = critic;
 
         main.CreateNewNotification(
-            GetNotificationText(3*critic, critic), injectedWork.GetBaseImage()
+        MyStatic.GetNotificationText(baseMessage, 3*critic, critic), injectedWork.GetBaseImage()
         );
 
         ConnectToLastNotification(main);

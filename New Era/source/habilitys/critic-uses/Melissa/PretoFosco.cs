@@ -17,7 +17,7 @@ public class PretoFosco : CriticUse
         main.AddGuard(guard);
         main.AddActualAgiDefense(-defense);
         //@lost surto e vida a cada turno
-        main.CreateNewNotification(GetNotificationText(defense, guard), injectedWork.GetBaseImage());
+        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, defense, guard), injectedWork.GetBaseImage());
         ConnectToLastNotification(main);
     }
 

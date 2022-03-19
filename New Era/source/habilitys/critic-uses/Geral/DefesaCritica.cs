@@ -18,7 +18,7 @@ public class DefesaCritica : CriticUse
         index = actionIndex;
         ModifySomeDefense(1);
 
-        main.CreateNewNotification(GetNotificationText(holdBonus,GetBonusText()));
+        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, holdBonus,GetBonusText()));
         ConnectToLastNotification(main);
     }
 

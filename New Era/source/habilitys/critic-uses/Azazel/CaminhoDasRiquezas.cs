@@ -10,7 +10,7 @@ public class CaminhoDasRiquezas : CriticUse
             critic = main.RequestSkillRoll(injectedWork.GetSkillList()[0].GetSkillName()) / 10;
 
         main.CreateNewNotification(
-            GetNotificationText(2*critic), injectedWork.GetBaseImage()
+        MyStatic.GetNotificationText(baseMessage, 2 * critic), injectedWork.GetBaseImage()
         );
     }
 

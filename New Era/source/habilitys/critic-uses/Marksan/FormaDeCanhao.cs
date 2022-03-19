@@ -17,7 +17,7 @@ public class FormaDeCanhao : CriticUse
         main.AddModAgility(2*critic);
         holdCritic = critic;
 
-        main.CreateNewNotification(GetNotificationText(2*critic), injectedWork.GetBaseImage());
+        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, 2 *critic), injectedWork.GetBaseImage());
         ConnectToLastNotification(main);
     }
 

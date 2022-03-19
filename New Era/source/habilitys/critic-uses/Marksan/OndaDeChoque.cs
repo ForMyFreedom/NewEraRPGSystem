@@ -10,7 +10,7 @@ public class OndaDeChoque : CriticUse
             critic = main.RequestWorkRoll(relatedWork) / 10;
 
         main.CreateNewNotification(
-            GetNotificationText(2*critic, critic/2), injectedWork.GetBaseImage()
+            MyStatic.GetNotificationText(baseMessage, 2*critic, critic/2), injectedWork.GetBaseImage()
         );
     }
 

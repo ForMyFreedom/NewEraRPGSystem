@@ -13,8 +13,8 @@ public class Muteki : CriticUse
 
         guard = 4 * critic;
         main.AddGuard(guard);
-
-        main.CreateNewNotification(GetNotificationText(guard), injectedWork.GetBaseImage());
+        
+        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, guard), injectedWork.GetBaseImage());
         ConnectToLastNotification(main);
     }
 

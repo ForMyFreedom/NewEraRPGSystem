@@ -13,7 +13,7 @@ public class MaosFermentadas : CriticUse
 
         mod = 3 * critic;
 
-        main.CreateNewNotification(GetNotificationText(mod), injectedWork.GetBaseImage());
+        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, mod), injectedWork.GetBaseImage());
         ConnectToLastNotification(main);
     }
 

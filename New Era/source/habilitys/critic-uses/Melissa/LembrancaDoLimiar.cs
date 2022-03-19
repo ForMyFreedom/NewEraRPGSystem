@@ -9,7 +9,7 @@ public class LembrancaDoLimiar : CriticUse
         if (critic < 0)
             critic = main.RequestSkillRoll(injectedWork.GetSkillList()[1].GetSkillName())/10;
 
-        main.CreateNewNotification(GetNotificationText(2*critic), injectedWork.GetBaseImage());
+        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, 2*critic), injectedWork.GetBaseImage());
     }
 
     public override void DoEndMechanicLogic()

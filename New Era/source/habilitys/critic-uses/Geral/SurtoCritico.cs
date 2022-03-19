@@ -12,7 +12,7 @@ public class SurtoCritico : CriticUse
         int bonus = 2 * critic;
         main.AddActualSurge(bonus);
 
-        main.CreateNewNotification(GetNotificationText(bonus));
+        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, bonus));
     }
 
     public override void DoEndMechanicLogic()

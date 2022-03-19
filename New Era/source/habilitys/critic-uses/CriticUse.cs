@@ -22,17 +22,6 @@ public abstract class CriticUse : NotificationConsumer
     public override abstract void DoEndMechanicLogic();
 
 
-    protected string GetNotificationText(params object[] list)
-    {
-        string finalText = baseMessage;
-        var regex = new Regex(Regex.Escape("$"));
-        for (int i = 0; i < list.Length; i++)
-        {
-            finalText = regex.Replace(finalText, list[i].ToString(), 1);
-        }
-        return finalText;
-    }
-
     public String GetUseName()
     {
         return criticUseName;
