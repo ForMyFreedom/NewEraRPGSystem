@@ -14,6 +14,8 @@ public class SelectPlayer : Control
     private PackedScene mainInterfacePacked;
     [Export]
     private NodePath animationPlayerPath;
+    [Export]
+    private NodePath openSaveFolderButtonPath;
 
     private Godot.Collections.Array playerStringPathArray;
     private PackedScene[] playersScenesPacked;
@@ -24,6 +26,7 @@ public class SelectPlayer : Control
     {
         LoadPlayersData();
         LoadPlayersButtons();
+        DoConections();
         MyStatic.CenterTheWindow();
         GetNode<AnimationPlayer>(animationPlayerPath).Play("fade-in");
     }
@@ -51,6 +54,11 @@ public class SelectPlayer : Control
         }
     }
 
+    private void DoConections()
+    {
+        GetNode(openSaveFolderButtonPath).Connect("button_up", this, "_OnOpenSaveFolder");
+    }
+
 
     private Button CreateButton(Player player)
     {
@@ -69,6 +77,10 @@ public class SelectPlayer : Control
         GetTree().ChangeSceneTo(mainInterfacePacked);
     }
 
+    private void _OnOpenSaveFolder()
+    {
+        OS.ShellOpen(MyStatic.savePath);
+    }
 
 
     public Godot.Collections.Array ListFilesInDiretory(String path)
