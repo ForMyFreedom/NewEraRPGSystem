@@ -56,7 +56,6 @@ custom_constants/minimum_spaces = 5
 max_length = 3
 editable = false
 virtual_keyboard_enabled = false
-selecting_enabled = false
 caret_blink = true
 caret_blink_speed = 0.5
 __meta__ = {

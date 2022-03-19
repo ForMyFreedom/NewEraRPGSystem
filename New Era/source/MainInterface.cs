@@ -93,6 +93,7 @@ public class MainInterface : Control, CharacterDataBank
         player._Ready();
         RegistryData(player, this);
         MakeConnections();
+        MyStatic.CenterTheWindow();
     }
 
     private void MakeConnections()
