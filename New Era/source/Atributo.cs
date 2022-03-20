@@ -43,7 +43,10 @@ public class Atributo : Control
     }
 
 
-
+    public int GetAtributeTotalValue()
+    {
+        return GetAtributeValue() + GetModValue();
+    }
 
     public int GetAtributeValue()
     {
