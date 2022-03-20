@@ -6,6 +6,6 @@
 script = ExtResource( 1 )
 criticUseName = "Forma da Princesa Abelha"
 relatedWork = 12
-text = "+8 de agilidade, -8 de força. Pode voar por 20 metros de movimento até precisar pousar. Limite de polem: 13"
-baseMessage = "Você se tornou mais rápido mas menos forte, podendo voar por 20 metros. Limite de Polem: 13"
+text = "+Akuma/5 em Agilidade.  Pode voar por 20 metros de movimento até precisar pousar. Limite de polem: 13"
+baseMessage = "Você se tornou mais rápido, +$ Agilidade. Podendo voar por 20 metros. Limite de Polem: 13"
 cost = 0

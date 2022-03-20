@@ -4,21 +4,19 @@ using System;
 
 public class FormaDaPrincesaDasAbelhas : CriticUse
 {
-    int mod = 8;
+    int holdMod;
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        main.AddModAgility(mod);
-        main.AddModStrength(-mod);
+        holdMod = injectedWork.GetLevel() / 5;
+        main.AddModAgility(holdMod);
 
-        main.CreateNewNotification(baseMessage, injectedWork.GetBaseImage());
-
+        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, holdMod), injectedWork.GetBaseImage());
         ConnectToLastNotification(main);
     }
 
     public override void DoEndMechanicLogic()
     {
-        main.AddModAgility(-mod);
-        main.AddModStrength(mod);
+        main.AddModAgility(-holdMod);
     }
 }
