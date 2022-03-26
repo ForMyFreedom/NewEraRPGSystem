@@ -38,6 +38,6 @@ public class Ren : Skill
 
     private int GetDamage(int actionIndex, int mod)
     {
-        return (int)(2.5*(level + mod))/(4-actionIndex);
+        return (int)(2*(level + mod))/(4-actionIndex);
     }
 }
