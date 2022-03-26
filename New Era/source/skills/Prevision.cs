@@ -11,9 +11,6 @@ public class Prevision : Skill
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0)
-            critic = 0;
-
         int result = main.RequestSkillRoll(skillName, critic);
         main.CreateNewNotification(
             $"Caso a Dificuldade de Previsao do teste seje menor que {result}, voce especula e recebe informacoes. Do contrario, voce nao tem a menor ideia"
@@ -24,4 +21,8 @@ public class Prevision : Skill
     {
     }
 
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return 0;
+    }
 }

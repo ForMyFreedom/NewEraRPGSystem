@@ -26,4 +26,9 @@ public class Ten : Skill
     {
         main.AddGuard(-guard);
     }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return 0;
+    }
 }

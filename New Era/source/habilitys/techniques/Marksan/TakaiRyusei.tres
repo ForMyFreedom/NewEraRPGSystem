@@ -7,6 +7,8 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = false
 techniqueName = "Takai Ryusei"
 relatedWorks = PoolIntArray( 3, 12 )
 criticUses = [ ExtResource( 3 ), ExtResource( 2 ) ]

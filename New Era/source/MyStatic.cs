@@ -6,6 +6,7 @@ public static class MyStatic
 {
     public static string savePath = "res://saves//"; //"res://saves//"; //OS.GetUserDataDir() + "\\saves\\";
 
+    public static int MaximumUseSurgeCoeficient = 5;
 
     public static void CenterTheWindow()
     {

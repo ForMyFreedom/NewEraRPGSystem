@@ -6,15 +6,17 @@ public class ImpactoOfegante : CriticUse
 {
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0)
-            critic = main.RequestWorkRoll(relatedWork)/10;
-
         main.CreateNewNotification(
-        MyStatic.GetNotificationText(baseMessage, critic), injectedWork.GetBaseImage()
+            MyStatic.GetNotificationText(baseMessage, critic), injectedWork.GetBaseImage()
         );
     }
 
     public override void DoEndMechanicLogic()
     {
+    }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return main.RequestWorkRoll(relatedWork) / 10;
     }
 }

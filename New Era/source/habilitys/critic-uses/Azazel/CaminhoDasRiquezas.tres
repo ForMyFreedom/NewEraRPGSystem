@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
 criticUseName = "Caminho das Riquezas"
 relatedWork = 6
 text = "Em Testes de Pilotagem, você pode fazer um caminho até uma Ilha alvo tendo a cada dia um bônus de +2N em testes relacionados a procurar por tesouros."

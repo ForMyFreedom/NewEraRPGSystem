@@ -5,6 +5,8 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
 techniqueName = "Tecnologia Bigorgue"
 relatedWorks = PoolIntArray( 12 )
 criticUses = [  ]

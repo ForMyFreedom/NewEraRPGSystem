@@ -6,6 +6,8 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = false
 skillName = "Letalidade"
 effectImage = ExtResource( 3 )
 wayOfLevelCalculeScript = ExtResource( 2 )

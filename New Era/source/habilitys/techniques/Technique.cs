@@ -95,7 +95,7 @@ public abstract class Technique : NotificationConsumer
         if (damage <= 0)
             return "";
         else
-            return $"\n Voce causa {damage} de Dano";
+            return $"\n {damage} Dano/Guarda";
     }
 
 

@@ -11,9 +11,6 @@ public class Culinary : Skill
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0)
-            critic = 0;
-
         int result = main.RequestSkillRoll(skillName,critic);
         string message = "Comida pronta! Apos descansarem, todos que se alimentarem recebecem:\n";
         message += GetLifeRegen(result);
@@ -52,5 +49,11 @@ public class Culinary : Skill
             return $"   +{value} proximo dado de Treino em 4 dias\n";
         else
             return "";
+    }
+
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return 0;
     }
 }

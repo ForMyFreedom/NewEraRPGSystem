@@ -10,7 +10,7 @@ public class Beat : Skill
 
     public override Array<string> GetTextOfMechanicButtons()
     {
-        return new Array<string>() { "Pressao Absoluta", "Meia Pressao", "Fluxo", "Meia Frequencia", "Frequencia Absoluta" };
+        return new Array<string>() { "Frequencia Absoluta", "Meia Frequencia", "Fluxo", "Meia Pressao", "Pressao Absoluta" };
     }
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
@@ -49,5 +49,8 @@ public class Beat : Skill
     {
     }
 
-
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return 0;
+    }
 }

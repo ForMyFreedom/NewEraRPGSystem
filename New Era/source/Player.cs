@@ -122,6 +122,11 @@ public class Player : Node, CharacterDataBank
         playerSaveResource.SetTotalSurge(value);
     }
 
+    public int GetMaximumUseOfSurge()
+    {
+        return playerSaveResource.GetMaximumUseOfSurge();
+    }
+
     public int GetActualSurge()
     {
         return playerSaveResource.GetActualSurge();
@@ -460,4 +465,5 @@ public class Player : Node, CharacterDataBank
     {
         playerSaveResource.SetLifeUpdaterScript(script);
     }
+
 }

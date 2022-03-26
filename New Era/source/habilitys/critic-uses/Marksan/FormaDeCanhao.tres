@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
 criticUseName = "Forma de Canhão"
 relatedWork = 3
 text = "Em Testes de Ataque, você pode optar por entrar em modo canhão (Perde 10 Defesa, não pode fazer nada além de se mover e atacar, Aumenta Agilidade em 2N)."

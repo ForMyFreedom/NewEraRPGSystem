@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
+toDispendSurge = true
 criticUseName = "Vento Solar"
 relatedWork = 3
 text = "Dispara um chute defensivo em direção a um alvo, recebendo -2N Dano contra aquele alvo até o começo de seu próximo Turno"

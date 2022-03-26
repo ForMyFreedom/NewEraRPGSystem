@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
 criticUseName = "Hatsu Conjuração, Hana"
 relatedWork = 14
 text = "Cria N Polens Horrendos [Apenas podem ser usados na Forma Horrenda]. Melissa ficará em estado de Zetsu forçado o dia inteiro após consumir um desses polens."

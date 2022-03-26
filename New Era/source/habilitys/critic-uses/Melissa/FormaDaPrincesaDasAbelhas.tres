@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
 criticUseName = "Forma da Princesa Abelha"
 relatedWork = 12
 text = "+Akuma/5 em Agilidade.  Pode voar por 20 metros de movimento até precisar pousar. Limite de polem: 13"

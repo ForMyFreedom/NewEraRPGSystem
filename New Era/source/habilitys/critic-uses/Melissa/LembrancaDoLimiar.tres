@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
 criticUseName = "Lembrança do Limiar"
 relatedWork = 11
 text = "Contando uma boa mentira pra si mesma, Melissa é capaz de conectar seu coração ao dia da quebra de seu Limiar. Em um Teste de Manipulação, você aumenta em +2N a Guarda ganhada em seu próximo Uso de Crítico de Haki."

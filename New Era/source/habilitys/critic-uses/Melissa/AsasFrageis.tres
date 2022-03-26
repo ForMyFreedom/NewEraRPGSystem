@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
 criticUseName = "Asas Frágeis"
 relatedWork = 4
 text = "Após acertar um ataque/contra-ataque, permite rolar um Teste de Agilidade disputado contra um alvo. Caso ganhe, se rouba N Surto de Ação do Inimigo "

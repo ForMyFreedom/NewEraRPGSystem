@@ -14,4 +14,9 @@ public class DoseDupla : CriticUse
     public override void DoEndMechanicLogic()
     {
     }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return cost;
+    }
 }

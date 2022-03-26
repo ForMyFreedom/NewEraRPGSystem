@@ -8,9 +8,6 @@ public class SangueMagnetico : CriticUse
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0)
-            critic = main.RequestWorkRoll(relatedWork)/10;
-
         dmg = 3 * critic;
         main.AddExtraDamage(dmg);
 
@@ -23,5 +20,10 @@ public class SangueMagnetico : CriticUse
     public override void DoEndMechanicLogic()
     {
         main.AddExtraDamage(-dmg);
+    }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return main.RequestWorkRoll(relatedWork) / 10;
     }
 }

@@ -18,4 +18,9 @@ public class PrecisaoCritica : CriticUse
     public override void DoEndMechanicLogic()
     {
     }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return 0;
+    }
 }

@@ -11,9 +11,6 @@ public class Blow : Skill
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0)
-            critic = 0;
-
         string message = "Se o alvo tirar menos de ";
         switch (actionIndex)
         {
@@ -52,5 +49,11 @@ public class Blow : Skill
     {
         int result = main.RequestAtributeRoll(MyEnum.Atribute.SEN, mod);
         return $"{result}, ele tem -{level} em todas suas Defesas pelo proximo turno";
+    }
+
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return 0;
     }
 }

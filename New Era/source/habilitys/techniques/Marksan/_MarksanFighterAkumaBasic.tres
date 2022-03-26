@@ -5,6 +5,8 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
 techniqueName = "Porrada Ciborgue"
 relatedWorks = PoolIntArray( 3, 12 )
 criticUses = [  ]

@@ -18,4 +18,9 @@ public class SurtoCritico : CriticUse
     public override void DoEndMechanicLogic()
     {
     }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return 0;
+    }
 }

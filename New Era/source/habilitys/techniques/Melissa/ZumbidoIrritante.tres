@@ -7,6 +7,8 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = false
 techniqueName = "Zumbido Irritante"
 relatedWorks = PoolIntArray( 4 )
 criticUses = [ ExtResource( 2 ), ExtResource( 3 ) ]

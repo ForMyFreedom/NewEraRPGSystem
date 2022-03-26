@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
+toDispendSurge = true
 criticUseName = "Cisne Radiante"
 relatedWork = 10
 text = "Entra em estado de transe, incorporando a coreografia da dança das lâminas. Neste modo, aumenta-se o Dano de seus Ataques de Lutador em +2N por três turnos"

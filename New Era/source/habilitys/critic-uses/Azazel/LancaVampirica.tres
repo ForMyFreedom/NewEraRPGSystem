@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
 criticUseName = "Lança Vampírica"
 relatedWork = 4
 text = "Em Testes de Ataque, você pode utilizar seu Talento Vampirismo com sua Lança Entoada."
