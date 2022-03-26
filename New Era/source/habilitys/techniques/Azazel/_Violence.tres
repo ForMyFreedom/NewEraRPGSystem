@@ -1,15 +1,17 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://source/habilitys/techniques/Technique.cs" type="Script" id=1]
+[ext_resource path="res://assets/itens/nosferatus.png" type="Texture" id=2]
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )
 isSingleton = true
-techniqueName = "Ataque de Abelha"
-relatedWorks = PoolIntArray( 12 )
+techniqueName = "Violência"
+relatedWorks = PoolIntArray( 4 )
 criticUses = [  ]
 powerOfCritics = PoolIntArray(  )
 actionIndexOfCritics = PoolIntArray(  )
 level = 0
 modValue = 0
+customImage = ExtResource( 2 )

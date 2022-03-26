@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
 criticUseName = "Preto Fosco"
 relatedWork = 12
 text = "Você assume uma forma negra de pelagem incrivelmente densa. Perde-se 1 de Surto de Ação e Vida a cada turno, porem, suas Defesas são trocadas e você recebe +N Guarda enquanto continuar ativo"

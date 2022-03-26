@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
 criticUseName = "Romper Carótida"
 relatedWork = 1
 text = "Em Testes de Ataque, caso o alvo possua o pescoço a mostra e seja um humano regular em anatomia. A Letalidade aumenta em +N."

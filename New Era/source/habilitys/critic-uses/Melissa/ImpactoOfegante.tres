@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
 criticUseName = "Impacto Ofegante"
 relatedWork = 4
 text = "Infere uma série de golpes extremamente rápidos, porém fracos, diretamente nos pulmões do inimigo. Em um Teste de Ataque, seu dano é anulado, mas reduz N das Defesas do inimigo até o final do combate [Estacavel]."

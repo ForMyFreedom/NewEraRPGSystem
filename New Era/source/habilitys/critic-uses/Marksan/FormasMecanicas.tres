@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
 criticUseName = "Formas Mecânicas"
 relatedWork = 12
 text = "Você pode fazer um Teste de Akuma no Mi em uma Ação Padrão. Ganhando uma quantidade de Implementações igual à N (Uma Implementação aumenta em +3 um valor de seu Atributo/Ofício, pode-se colocar várias Implementações em um mesmo Atributo/Ofício, (Com o limite de metade de seu nível em Akuma no Mi). Duram por um minuto e não podem ser removidas até esse tempo passar"
