@@ -3,17 +3,21 @@ using System;
 
 public abstract class FlorCopaDeSangue : ItemCode
 {
-    public override void DoComportament(MainInterface main, InventoryItem item)
+    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         int health = (int)(main.GetTotalLife() * 0.2f);
 
         main.AddActualLife(health);
         main.CreateNewNotification(
-            $"Flor da Copa de Sangue: Voce cura {health} de Vida",
+            MyStatic.GetNotificationText(message, health),
             main.GetWorkNodeByEnum(MyEnum.Work.AkumaNoMi).GetBaseImage()
         );
 
         item.RemoveQuantity();
         main.UpdateInventory();
+    }
+
+    public override void DoEndMechanicLogic()
+    {
     }
 }
