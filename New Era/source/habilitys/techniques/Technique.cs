@@ -18,7 +18,8 @@ public abstract class Technique : NotificationConsumer
     protected int level;
     [Export]
     protected int modValue;
-
+    [Export]
+    protected Texture customImage;
 
     protected Work[] injectedWorks;
 
@@ -46,7 +47,7 @@ public abstract class Technique : NotificationConsumer
 
         main.CreateNewNotification(
             $"Resultado da Tecnica {techniqueName}: {result}"+GetDamageText(damage),
-            injectedWorks[0].GetBaseImage()
+            GetTechniqueImage()
         );
     }
 
@@ -102,6 +103,15 @@ public abstract class Technique : NotificationConsumer
 
 
     public override void DoEndMechanicLogic() { }
+
+
+    public Texture GetTechniqueImage()
+    {
+        if (customImage != null)
+            return customImage;
+        else
+            return injectedWorks[0].GetBaseImage();
+    }
 
 
     public String GetTechniqueName()

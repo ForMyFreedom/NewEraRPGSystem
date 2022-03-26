@@ -816,6 +816,16 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<TechniquesTree>(techniquesTreePath).SetTechniques(tech);
     }
 
+    public void AddTechnique(Technique tech)
+    {
+        GetNode<TechniquesTree>(techniquesTreePath).AddTechnique(tech);
+    }
+
+    public void RemoveTechnique(Technique tech)
+    {
+        GetNode<TechniquesTree>(techniquesTreePath).RemoveTechnique(tech);
+    }
+
     public Array<InventoryItem> GetItens()
     {
         return GetNode<CharacterInventory>(characterInventoryPath).GetItens();
