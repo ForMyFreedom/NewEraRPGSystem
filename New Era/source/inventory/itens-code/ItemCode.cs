@@ -1,7 +1,19 @@
 using Godot;
 using System;
 
-public abstract class ItemCode : Resource
+public abstract class ItemCode : NotificationConsumer
 {
-    public abstract void DoComportament(MainInterface main, InventoryItem item);
+    [Export(PropertyHint.MultilineText)]
+    protected string message;
+
+    protected InventoryItem item;
+
+    public void DoComportament(MainInterface main, InventoryItem item)
+    {
+        this.item = item;
+        DoMechanicLogic(main);
+    }
+
+    public abstract override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1);
+    public abstract override void DoEndMechanicLogic();
 }
