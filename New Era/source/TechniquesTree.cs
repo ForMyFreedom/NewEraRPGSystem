@@ -21,6 +21,7 @@ public class TechniquesTree : Tree
 
     private void _OnTreeReady()
     {
+        Clear();
         TreeItem root = CreateItem();
         itens = new TreeItem[GetTreeItemLength()];
         int itemIndex = 0;
@@ -167,6 +168,18 @@ public class TechniquesTree : Tree
     public void SetTechniques(Array<Technique> tech)
     {
         techniques = tech;
+    }
+
+    public void AddTechnique(Technique tech)
+    {
+        techniques.Add(tech);
+        _OnTreeReady();
+    }
+
+    public void RemoveTechnique(Technique tech)
+    {
+        techniques.Remove(tech);
+        _OnTreeReady();
     }
 
 

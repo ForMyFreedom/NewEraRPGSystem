@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
 criticUseName = "Explosão de Sangue"
 relatedWork = 4
 text = "Após acertar um ataque com Lança Vampírica, você traga o sangue do alvo e o explode com sua lâmina. Você causa 10% da Vida Máxima do Alvo em Dano Desguardado Fisicamente caso não cause Danos, 5% caso cause."

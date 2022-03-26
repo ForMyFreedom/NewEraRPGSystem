@@ -4,13 +4,13 @@ using System;
 
 public class Beat : Skill
 {
-    private bool isRelaxed = false;
-    private int holdActionIndex;
-    private int mod;
+    private int applyedDmgBonus = 0;
+    private int acummulateStress = 0;
+    private int stressNode = 0;
 
     public override Array<string> GetTextOfMechanicButtons()
     {
-        return new Array<string>() { "Ciclo Regular", "Contra Ciclo" };
+        return new Array<string>() { "Pressao Absoluta", "Meia Pressao", "Fluxo", "Meia Frequencia", "Frequencia Absoluta" };
     }
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
@@ -18,53 +18,36 @@ public class Beat : Skill
         if (critic < 0)
             critic = 0;
 
-        holdActionIndex = actionIndex;
-        this.main = main;
+        float correction = 2 - Math.Abs(actionIndex - 2);
+        float stressMod = 1f / (int) (5 * Math.Pow(2, correction));
+        float damageMod = 1f / (5 - actionIndex);
+        float surgeMod = 1f / (1 + actionIndex);
 
-        if (actionIndex == 0)
-            DoRegularCicle(critic);
-        else
-            DoCounterCicle(critic);
+        damageMod = (damageMod == 1 / 5f) ? 0 : damageMod;
+        surgeMod = (surgeMod == 1 / 5f) ? 0 : surgeMod;
+        surgeMod = surgeMod / 2;
 
+        int surgeBonus = (int) (level * surgeMod) + critic;
+        int dmgBonus = (int)(level * damageMod) + critic;
+        int stressBonus = (int)(level * stressMod) + critic;
+
+
+        main.AddActualSurge(surgeBonus);
+        main.AddExtraDamage(dmgBonus - applyedDmgBonus);
+        applyedDmgBonus = dmgBonus;
+        acummulateStress += stressBonus;
+
+        int strValue = main.GetAtributeNodeByEnum(MyEnum.Atribute.STR).GetAtributeTotalValue();
+        stressNode = acummulateStress/strValue;
+
+        main.CreateNewNotification(MyStatic.GetNotificationText(notificationText, dmgBonus, surgeBonus, stressBonus, stressNode), effectImage);
     }
+
+
 
     public override void DoEndMechanicLogic()
     {
-        if (holdActionIndex == 0)
-            ModifyFactors(mod,(isRelaxed)?-1:1);
     }
 
 
-    private void DoRegularCicle(int critic)
-    {
-        isRelaxed = !isRelaxed;
-        mod = level + critic;
-
-        if (isRelaxed)
-        {
-            main.CreateNewNotification($"Relaxamento, voce ganhou {mod} Surto de Acao mas perdeu {level} Dano", effectImage);
-            ModifyFactors(mod, 1);
-        }
-        else
-        {
-            main.CreateNewNotification($"Contracao, voce ganhou {level} Dano mas perdeu {level} Surto de Acao", effectImage);
-            ModifyFactors(mod, -1);
-        }
-
-        ConnectToLastNotification(main);
-    }
-
-    private void DoCounterCicle(int critic)
-    {
-        main.CreateNewNotification($"Contra ciclo! Voce mantem o batimento atual, e por isso sofre {level/2} de Dano interno", effectImage);
-        main.AddActualLife(-level / 2);
-        isRelaxed = !isRelaxed;
-    }
-
-
-    private void ModifyFactors(int mod, int ori)
-    {
-        main.AddModSurge(mod*ori);
-        main.AddExtraDamage(-mod*ori);
-    }
 }

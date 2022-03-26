@@ -6,15 +6,12 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
 skillName = "Batimento"
 effectImage = ExtResource( 2 )
 wayOfLevelCalculeScript = ExtResource( 3 )
 skillDescription = "Ordenar minha vontade com as batidas de meu sangue"
-notificationText = "Relaxamento, você ganha $ Surto de Ação mas perde $ Dano
-%
-Contração, você ganha $ Dano mas perde $ Surto de Ação
-%
-Contra ciclo! Você mantem o batimento atual, e por isso sofre $ de Dano interno"
-mechanicDescription = "Você possui um Cliclo Cardíarco baseado nas fases alternadas de Contração e Relaxamento (Escolhe em seu primeiro turno). Em uma Contração, você perde Batimento Surto de Ação e ganha Batimento Dano. Em um relaxamento, você ganha Batimento Surto de Ação e perde Batimento Dano.
-Você pode fazer um Contra-Ciclo (Continuar na fase atual), mas sofre Batimento/2 Dano interno. Se zerar a vida com isso, você morre instantameamente"
+notificationText = "Batimento: Você recebe +$ Dano e +$ Regeneração de Surto de Ação, ao custo de +$ de Stress [A próxima vez que cair, sua queda valerá por $]"
+mechanicDescription = "Você possui um grupo de Fases Cardiacas que pode selecionar ou não no início dos seus Turnos. Essencialmente é tudo sobre a Pressão [Bônus de Dano] e a Frequência [Ganho de Surto] de seu Sangue.
+Cada fase tem um custo em Stress Cardiaco atrelado ao quão radical é o foco em um dos Fatores. Para cada valor maior que um na divisão de sua Força pelo seu Stress, você ganha um Nódo de Stress [Na próxima vez que Cair, você receberá +Nódos quedas a mais]"
 level = 0

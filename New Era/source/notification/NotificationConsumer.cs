@@ -5,30 +5,29 @@ using System.Linq;
 
 public abstract class NotificationConsumer : Resource
 {
+    [Export]
+    private bool isSingleton = true;
+
+    private bool isActive = false;
     protected MainInterface main;
 
     public void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if(!NotificationAlreadyExist(main))
-            DoMechanicLogic(main, actionIndex, critic);
+        if (isSingleton && isActive) return;
+        DoMechanicLogic(main, actionIndex, critic);
+        ConnectToLastNotification(main);
+        isActive = true;
     }
 
     public void DoEndMechanic(object obj)
     {
         if (this != obj) return;
         DoEndMechanicLogic();
+        isActive = false;
     }
 
     public abstract void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1);
     public abstract void DoEndMechanicLogic();
-
-    public bool NotificationAlreadyExist(MainInterface main) //@
-    {
-        object[] array = main.GetNotifications().Cast<object>().ToArray();
-        object[] result = array.Select(notification => notification.ToString()).ToArray();
-        return result.Contains(this);
-    }
-
 
     protected void ConnectToLastNotification(MainInterface main)
     {

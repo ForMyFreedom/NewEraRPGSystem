@@ -4,9 +4,10 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
 criticUseName = "Rajada de Golpes"
 relatedWork = 3
-text = "Em Testes de Ataque, caso acerte, você pode realizar golpes consecutivos com desvantagem acumulada de 15 em seu Teste. Quando você errar, a sequência de golpes acaba. Anule todos os Críticos recebidos nesses ataques consecutivos."
+text = "Em Testes de Ataque, caso acerte, você pode realizar golpes consecutivos com desvantagem acumulada de 15. Quando você errar, a sequência acaba [Anule todos os Críticos recebidos durante]"
 baseMessage = "Você pode realizar golpes consecutivos com desvantagem acumulada de 15 em seu Teste.
 Quando você errar, a sequência de golpes acaba"
 cost = 3

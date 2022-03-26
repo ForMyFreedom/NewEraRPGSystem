@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
 criticUseName = "Mãos Fermentadas"
 relatedWork = 5
 text = "Em Testes de Culinária, você rola 1d5 para o Atributo relatável e 1d6 para o efeito [Impar é Revés, Par é Fortuna], recebe ±3N de bônus por uma hora."

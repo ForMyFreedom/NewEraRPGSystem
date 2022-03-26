@@ -1,17 +1,17 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://source/habilitys/techniques/Technique.cs" type="Script" id=1]
-[ext_resource path="res://source/habilitys/critic-uses/Melissa/Isshoni.tres" type="Resource" id=2]
-[ext_resource path="res://source/habilitys/critic-uses/Melissa/LembrancaDoLimiar.tres" type="Resource" id=3]
+[ext_resource path="res://source/habilitys/critic-uses/Ameiko/CombateDancante.tres" type="Resource" id=2]
+[ext_resource path="res://source/habilitys/critic-uses/Ameiko/CisneRadiante.tres" type="Resource" id=3]
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )
 isSingleton = true
-techniqueName = "Kazoku"
-relatedWorks = PoolIntArray( 14, 11 )
+techniqueName = "Cisne do Sol"
+relatedWorks = PoolIntArray( 10 )
 criticUses = [ ExtResource( 3 ), ExtResource( 2 ) ]
-powerOfCritics = PoolIntArray( 5, 3 )
+powerOfCritics = PoolIntArray( 5, 5 )
 actionIndexOfCritics = PoolIntArray( 0, 0 )
-level = 17
+level = 20
 modValue = 0

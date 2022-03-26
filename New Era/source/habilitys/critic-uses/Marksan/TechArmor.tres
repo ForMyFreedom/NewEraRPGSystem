@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
 criticUseName = "T3ch-Arm0r"
 relatedWork = 12
 text = "Fortificando seu corpo com placas tecnológicas, você recebe +N de Força e +3N de Resistência a Venenos, com o custo de 2N Surto de Ação."

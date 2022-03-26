@@ -4,3 +4,5 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
+message = "Flor da Copa de Sangue: Você cura $ de Vida"

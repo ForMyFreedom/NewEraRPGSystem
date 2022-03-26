@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
 criticUseName = "Passos Anatômicos"
 relatedWork = 1
 text = "Em Testes de Agilidade, caso esteja tentando se mover em silêncio para assassinar um alvo, você recebe +2N no Resultado."

@@ -12,7 +12,7 @@ public abstract class TollItens : ItemCode
     [Export]
     private int actionIndex;
 
-    public override void DoComportament(MainInterface main, InventoryItem item)
+    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         main.RequestSkillMechanic(workEnum, skillIndex, 3 * quality, actionIndex);
     }
