@@ -26,28 +26,39 @@ public abstract class Technique : NotificationConsumer
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = 0)
     {
         ExecuteAllCritics(main);
-        DoAttackRollNotification(main);
+        DoAttackRollNotification(main, critic);
     }
 
-    
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return DoRollOfTechnique(main) / 10;
+    }
+
+
     public void ExecuteAllCritics(MainInterface main)
     {
         for (int i = 0; i < criticUses.Length; i++)
-            criticUses[i].DoMechanic(main, actionIndexOfCritics[i], powerOfCritics[i]);
+            criticUses[i].DoMechanic(main, actionIndexOfCritics[i], powerOfCritics[i], true);
     }
 
-    public void DoAttackRollNotification(MainInterface main)
+    public void DoAttackRollNotification(MainInterface main, int critic)
     {
-        int rollValue = CalculateRollValue();
-        int sumValue = CalculateSumValue(main);
         int damage = CalculateBaseDamage(main) + main.GetExtraDamage();
-
-        int result = RollCode.GetRandomAdvancedRoll(rollValue, sumValue, modValue);
+        int result = critic * 10;
 
         main.CreateNewNotification(
             $"Resultado da Tecnica {techniqueName}: {result}"+GetDamageText(damage),
             injectedWorks[0].GetBaseImage()
         );
+    }
+
+
+
+    public int DoRollOfTechnique(MainInterface main)
+    {
+        int rollValue = CalculateRollValue();
+        int sumValue = CalculateSumValue(main);
+        return RollCode.GetRandomAdvancedRoll(rollValue, sumValue, modValue);
     }
 
 
