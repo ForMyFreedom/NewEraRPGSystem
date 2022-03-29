@@ -12,7 +12,17 @@ public class CriticRegulatorBox : HBoxContainer
 
     public override void _Ready()
     {
+        GetNode(typeOfCriticLimitButtonPath).Connect(
+            nameof(TypeOfCriticButton.style_changed), this, "_OnStyleChanged"
+        );
     }
+
+
+    private void _OnStyleChanged(bool state)
+    {
+        GetNode<SpinBox>(criticLimitSpinBoxPath).Editable = state;
+    }
+
 
 
     public int GetCriticLimitLevel()
