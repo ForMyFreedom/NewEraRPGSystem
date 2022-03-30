@@ -5,22 +5,22 @@ public class CriticRegulatorBox : HBoxContainer
 {
     [Export]
     private NodePath criticLimitSpinBoxPath;
-    [Export]
-    private NodePath typeOfCriticLimitButtonPath;
 
+    private bool isLimited = false;
 
 
     public override void _Ready()
     {
-        GetNode(typeOfCriticLimitButtonPath).Connect(
-            nameof(TypeOfCriticButton.style_changed), this, "_OnStyleChanged"
-        );
+        GetNode(criticLimitSpinBoxPath).Connect("value_changed", this, "_OnCriticLimitChanged");
     }
 
 
-    private void _OnStyleChanged(bool state)
+    private void _OnCriticLimitChanged(float value)
     {
-        GetNode<SpinBox>(criticLimitSpinBoxPath).Editable = state;
+        if (value > 0)
+            isLimited = true;
+        else
+            isLimited = false;
     }
 
 
@@ -32,6 +32,6 @@ public class CriticRegulatorBox : HBoxContainer
 
     public bool IsCriticLimited()
     {
-        return GetNode<TypeOfCriticButton>(typeOfCriticLimitButtonPath).GetCriticType();
+        return isLimited;
     }
 }
