@@ -16,4 +16,8 @@ public class FerraoDaRainha : CriticUse
     {
     }
 
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return main.GetActualSurge();
+    }
 }

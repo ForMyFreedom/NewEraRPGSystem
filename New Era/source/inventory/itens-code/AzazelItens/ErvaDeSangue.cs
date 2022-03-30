@@ -66,4 +66,9 @@ public class ErvaDeSangue : ItemCode
             main.AddTechnique(tech);
         }
     }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return 0;
+    }
 }
