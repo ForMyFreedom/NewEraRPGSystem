@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
+toDispendSurge = true
 criticUseName = "Surto Crítico"
 relatedWork = 13
 text = "Eu tenho que fazer algo! +2N Surto de Ação"

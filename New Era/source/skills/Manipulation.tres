@@ -7,6 +7,8 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = false
 skillName = "Manipulação"
 effectImage = ExtResource( 3 )
 wayOfLevelCalculeScript = ExtResource( 2 )

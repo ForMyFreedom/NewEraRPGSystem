@@ -9,7 +9,7 @@ public class DefesaCritica : CriticUse
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0)
+        if (critic <= 0)
             return;
 
         this.main = main;
@@ -40,5 +40,10 @@ public class DefesaCritica : CriticUse
     private string GetBonusText()
     {
         return (index == 0) ? "AGI" : "STR";
+    }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return 0;
     }
 }

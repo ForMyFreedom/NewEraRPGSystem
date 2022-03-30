@@ -5,6 +5,8 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = false
 skillName = "@Arte de Tempo@"
 wayOfLevelCalculeScript = ExtResource( 2 )
 skillDescription = "@Arte do Tempo@"

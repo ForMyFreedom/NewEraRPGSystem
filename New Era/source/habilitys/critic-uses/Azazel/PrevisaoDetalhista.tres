@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
+toDispendSurge = true
 criticUseName = "Previsão Detalhista"
 relatedWork = 6
 text = "Em Testes de Previsão, você foca nos mínimos detalhes em suas previsões, ignorando o geral. Escolha uma informação especifica e tenha +3N no Resultado. Você não recebe nenhuma outra informação além dessa."

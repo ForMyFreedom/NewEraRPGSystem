@@ -19,4 +19,9 @@ public class FormaDaPrincesaDasAbelhas : CriticUse
     {
         main.AddModAgility(-holdMod);
     }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return cost;
+    }
 }

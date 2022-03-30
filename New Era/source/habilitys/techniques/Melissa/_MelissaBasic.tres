@@ -6,6 +6,7 @@
 resource_local_to_scene = true
 script = ExtResource( 1 )
 isSingleton = true
+toDispendSurge = true
 techniqueName = "Ataque de Abelha"
 relatedWorks = PoolIntArray( 12 )
 criticUses = [  ]

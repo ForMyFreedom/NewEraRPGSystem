@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
+toDispendSurge = true
 criticUseName = "Rajada de Golpes"
 relatedWork = 3
 text = "Em Testes de Ataque, caso acerte, você pode realizar golpes consecutivos com desvantagem acumulada de 15. Quando você errar, a sequência acaba [Anule todos os Críticos recebidos durante]"

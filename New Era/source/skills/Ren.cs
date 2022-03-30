@@ -13,9 +13,6 @@ public class Ren : Skill
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0)
-            critic = 0;
-
         damage = GetDamage(actionIndex, critic);
         main.AddExtraDamage(damage);
 
@@ -39,5 +36,10 @@ public class Ren : Skill
     private int GetDamage(int actionIndex, int mod)
     {
         return (int)(2*(level + mod))/(4-actionIndex);
+    }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return 0;
     }
 }

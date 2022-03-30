@@ -236,7 +236,7 @@ agiAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContaine
 senAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/SensesAtribute")
 minAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/MindAtribute")
 chaAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/CharismaAtribute")
-worksTreePath = NodePath("VBoxContainer/Perks/HBOX/WorkControl/MarginContainer/VBOX/WorkTree")
+worksTreePath = NodePath("VBoxContainer/Capacities/HBOX/WorkControl/MarginContainer/VBOX/WorkTree")
 notificationPath = NodePath("NotificationArea")
 inspirationSpinPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/HBOX/Control/InspirationSpinBox")
 damageSpinPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/HBOX2/Control/DamageSpinBox")
@@ -246,7 +246,7 @@ equipamentsButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxCont
 tracesButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TracesButton")
 getSaveButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/GetSaveButton")
 reloadSaveButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/HBoxContainer/VBoxContainer/ReloadSave")
-techniquesTreePath = NodePath("VBoxContainer/Perks/HBOX/HabilityControl/MarginContainer/VBOX/TechniqueTree")
+techniquesTreePath = NodePath("VBoxContainer/Capacities/HBOX/HabilityControl/MarginContainer/VBOX/TechniqueTree")
 characterInventoryPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/EquipamentsButton/CharacterInventory")
 triviaDataPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton/TrivaData")
 defenseBooblePath = NodePath("NotificationArea/HBoxContainer/Actions/DefenseNode")
@@ -960,27 +960,27 @@ margin_right = 1195.0
 margin_bottom = 441.0
 custom_styles/separator = ExtResource( 10 )
 
-[node name="Perks" type="Control" parent="VBoxContainer"]
+[node name="Capacities" type="Control" parent="VBoxContainer"]
 margin_top = 445.0
 margin_right = 1195.0
 margin_bottom = 654.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HBOX" type="HBoxContainer" parent="VBoxContainer/Perks"]
+[node name="HBOX" type="HBoxContainer" parent="VBoxContainer/Capacities"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WorkControl" type="Control" parent="VBoxContainer/Perks/HBOX"]
+[node name="WorkControl" type="Control" parent="VBoxContainer/Capacities/HBOX"]
 margin_right = 591.0
 margin_bottom = 209.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Perks/HBOX/WorkControl"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Capacities/HBOX/WorkControl"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0
@@ -989,7 +989,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBOX" type="VBoxContainer" parent="VBoxContainer/Perks/HBOX/WorkControl/MarginContainer"]
+[node name="VBOX" type="VBoxContainer" parent="VBoxContainer/Capacities/HBOX/WorkControl/MarginContainer"]
 margin_right = 586.0
 margin_bottom = 204.0
 size_flags_horizontal = 3
@@ -998,7 +998,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Name" type="Label" parent="VBoxContainer/Perks/HBOX/WorkControl/MarginContainer/VBOX"]
+[node name="Name" type="Label" parent="VBoxContainer/Capacities/HBOX/WorkControl/MarginContainer/VBOX"]
 margin_right = 586.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
@@ -1012,7 +1012,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WorkTree" type="Tree" parent="VBoxContainer/Perks/HBOX/WorkControl/MarginContainer/VBOX"]
+[node name="WorkTree" type="Tree" parent="VBoxContainer/Capacities/HBOX/WorkControl/MarginContainer/VBOX"]
 margin_top = 37.0
 margin_right = 586.0
 margin_bottom = 204.0
@@ -1029,20 +1029,20 @@ skillGuiPackedScene = ExtResource( 15 )
 criticGuiPackedScene = ExtResource( 27 )
 useOfCriticTexture = ExtResource( 26 )
 
-[node name="VS1" type="VSeparator" parent="VBoxContainer/Perks/HBOX"]
+[node name="VS1" type="VSeparator" parent="VBoxContainer/Capacities/HBOX"]
 margin_left = 595.0
 margin_right = 599.0
 margin_bottom = 209.0
 custom_styles/separator = ExtResource( 3 )
 
-[node name="HabilityControl" type="Control" parent="VBoxContainer/Perks/HBOX"]
+[node name="HabilityControl" type="Control" parent="VBoxContainer/Capacities/HBOX"]
 margin_left = 603.0
 margin_right = 1195.0
 margin_bottom = 209.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Perks/HBOX/HabilityControl"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Capacities/HBOX/HabilityControl"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -5.0
@@ -1053,7 +1053,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBOX" type="VBoxContainer" parent="VBoxContainer/Perks/HBOX/HabilityControl/MarginContainer"]
+[node name="VBOX" type="VBoxContainer" parent="VBoxContainer/Capacities/HBOX/HabilityControl/MarginContainer"]
 margin_right = 587.0
 margin_bottom = 204.0
 size_flags_horizontal = 3
@@ -1062,7 +1062,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Name" type="Label" parent="VBoxContainer/Perks/HBOX/HabilityControl/MarginContainer/VBOX"]
+[node name="Name" type="Label" parent="VBoxContainer/Capacities/HBOX/HabilityControl/MarginContainer/VBOX"]
 margin_right = 587.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
@@ -1076,7 +1076,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TechniqueTree" type="Tree" parent="VBoxContainer/Perks/HBOX/HabilityControl/MarginContainer/VBOX"]
+[node name="TechniqueTree" type="Tree" parent="VBoxContainer/Capacities/HBOX/HabilityControl/MarginContainer/VBOX"]
 margin_top = 37.0
 margin_right = 587.0
 margin_bottom = 204.0

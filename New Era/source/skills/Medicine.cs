@@ -15,9 +15,6 @@ public class Medicine : Skill
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex=0, int critic = -1)
     {
-        if (critic < 0)
-            critic = 0;
-
         rollResult = main.RequestSkillRoll(skillName, critic);
         string message ="";
         
@@ -54,4 +51,8 @@ public class Medicine : Skill
             return "";
     }
 
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return 0;
+    }
 }

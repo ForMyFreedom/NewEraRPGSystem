@@ -8,9 +8,6 @@ public class Muteki : CriticUse
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0)
-            critic = main.RequestSkillRoll(injectedWork.GetSkillList()[0].GetSkillName())/10;
-
         guard = 4 * critic;
         main.AddGuard(guard);
         
@@ -23,4 +20,9 @@ public class Muteki : CriticUse
         main.AddGuard(-guard);
     }
 
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return main.RequestSkillRoll(injectedWork.GetSkillList()[0].GetSkillName()) / 10;
+    }
 }

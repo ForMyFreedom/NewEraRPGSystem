@@ -31,6 +31,8 @@ public interface CharacterDataBank
     int GetTotalSurge();
     void SetTotalSurge(int value);
 
+    int GetMaximumUseOfSurge();
+
     int GetActualSurge();
     void SetActualSurge(int value);
 

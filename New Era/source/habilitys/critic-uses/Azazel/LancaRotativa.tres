@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
+toDispendSurge = true
 criticUseName = "Lança Rotativa"
 relatedWork = 4
 text = "Permite você realizar um Teste de Ataque como Ação Livre para se proteger de projéteis. Aumente sua Defesa em +2N."

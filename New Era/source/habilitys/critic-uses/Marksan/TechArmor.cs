@@ -10,9 +10,6 @@ public class TechArmor : CriticUse
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0)
-            critic = main.RequestWorkRoll(relatedWork)/10;
-
         this.main = main;
         strMod = critic;
         resMod = 3 * critic;
@@ -36,5 +33,11 @@ public class TechArmor : CriticUse
     {
         main.AddModStrength(ori * strMod);
         main.AddModSurge(-ori * surgeMod);
+    }
+
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return main.RequestWorkRoll(relatedWork) / 10;
     }
 }

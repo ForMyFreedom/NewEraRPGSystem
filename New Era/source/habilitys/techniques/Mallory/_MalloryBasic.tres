@@ -6,6 +6,7 @@
 resource_local_to_scene = true
 script = ExtResource( 1 )
 isSingleton = true
+toDispendSurge = true
 techniqueName = "Assasinato"
 relatedWorks = PoolIntArray( 1 )
 criticUses = [  ]

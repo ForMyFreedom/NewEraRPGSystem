@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
+toDispendSurge = true
 criticUseName = "Leveza nas Patas"
 relatedWork = 3
 text = "Arremesa um alvo para cima com um chute circular, reduzindo a Defesa dele em 2N até o começo de seu próximo Turno"

@@ -6,6 +6,8 @@
 
 [resource]
 script = ExtResource( 2 )
+isSingleton = true
+toDispendSurge = false
 skillName = "Ren"
 effectImage = ExtResource( 1 )
 wayOfLevelCalculeScript = ExtResource( 3 )

@@ -6,17 +6,18 @@ public class AsasFrageis : CriticUse
 {
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        int result = main.RequestAtributeRoll(MyEnum.Atribute.AGI);
-
-        if (critic < 0)
-            critic = result / 10;
-
         main.CreateNewNotification(
-            MyStatic.GetNotificationText(baseMessage, result, critic), injectedWork.GetBaseImage()
+            MyStatic.GetNotificationText(baseMessage, 10*critic, critic), injectedWork.GetBaseImage()
         );
     }
 
     public override void DoEndMechanicLogic()
     {
+    }
+    
+    
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return main.RequestAtributeRoll(MyEnum.Atribute.AGI) / 10;
     }
 }

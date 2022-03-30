@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
+toDispendSurge = true
 criticUseName = "Princípio da Árvore I, Focalização"
 relatedWork = 14
 text = "O conhecimento díspar que vem da Árvore tem suas raizes em um mar de leis, seu explendor de um céu sem fim, e sua terra na extensão de seus irmãos...

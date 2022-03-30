@@ -47,9 +47,14 @@ public class CriticGUI : WindowDialog
         }
     }
 
-    private void _OnCriticActivated(CriticUse use)
+    private void _OnCriticActivated(CriticUse use, int criticLimit, bool isLimitedCritic)
     {
-        use.DoMechanic((MainInterface) GetTree().CurrentScene);
+        MainInterface main = (MainInterface)GetTree().CurrentScene;
+
+        int reachedCritic = use.RequestCriticTest(main);
+        if (isLimitedCritic && reachedCritic > criticLimit) reachedCritic = criticLimit;
+
+        use.DoMechanic(main, 0, reachedCritic);
     }
 
 
