@@ -165,7 +165,6 @@ public class NotificationArea : Control
 
     private void CleanAllNotificationsItens()
     {
-        for(int i = 0; i < notificationList.Items.Count / 3; i++)
-            notificationList.RemoveItem(i);
+        notificationList.Clear();
     }
 }
