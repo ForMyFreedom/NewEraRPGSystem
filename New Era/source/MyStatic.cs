@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 public static class MyStatic
 {
-    public static string savePath = "res://saves-new-surge//"; //"res://saves//"; //OS.GetUserDataDir() + "\\saves\\";
+    public static string savePath = "res://saves//"; //"res://saves//"; //OS.GetUserDataDir() + "\\saves\\";
 
     public static int MaximumUseSurgeCoeficient = 5;
 
