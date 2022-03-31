@@ -18,7 +18,12 @@ public abstract class NotificationConsumer : Resource
     {
         if (isSingleton && isActive) return;
         critic = GetCriticIfNotDetermined(main, critic);
-        critic = ResolveSurgeDispension(main, critic, limitFree);
+        critic = DefineFinalCritic(main, critic, limitFree);
+
+        if (!CanUseThisHability(main, critic))
+            return;
+
+        ConsumeCritic(main, critic);
         DoMechanicLogic(main, actionIndex, critic);
         ConnectToLastNotification(main);
         isActive = true;
@@ -49,14 +54,26 @@ public abstract class NotificationConsumer : Resource
             return critic;
     }
 
-    private int ResolveSurgeDispension(MainInterface main, int critic, bool limitFree)
+    private int DefineFinalCritic(MainInterface main, int critic, bool limitFree)
     {
         if (!toDispendSurge) return critic;
         int maximumUseOfSurge = main.GetMaximumUseOfSurge();
         if (!limitFree && critic > maximumUseOfSurge)  critic = maximumUseOfSurge;
         if (critic < 0) critic = 0;
 
-        main.AddActualSurge(-critic);
         return critic;
+    }
+
+    private bool CanUseThisHability(MainInterface main, int critic)
+    {
+        if (main.GetActualSurge() < critic)
+            return false;
+        else
+            return true;
+    }
+
+    private void ConsumeCritic(MainInterface main, int critic)
+    {
+        main.AddActualSurge(-critic);
     }
 }
