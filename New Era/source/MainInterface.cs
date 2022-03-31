@@ -403,6 +403,11 @@ public class MainInterface : Control, CharacterDataBank
         GetFactorTotalSpin(surgeFactorPath).Value += sum;
     }
 
+    public int GetMaximumUseOfSurge()
+    {
+        return GetTotalSurge()/MyStatic.MaximumUseSurgeCoeficient;
+    }
+
 
 
     public int GetModSurge()
@@ -1054,6 +1059,5 @@ public class MainInterface : Control, CharacterDataBank
                 ((InventoryPopup)child).UpdateItensText();
         }
     }
-
 }
 

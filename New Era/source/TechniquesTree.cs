@@ -61,13 +61,14 @@ public class TechniquesTree : Tree
     {
         if (!(@event is InputEventMouseButton)) return;
         var mouseEvent = (InputEventMouseButton) @event;
- 
+
         TreeItem selected = GetSelected();
-        if(selected==null) return;
+        if (selected==null) return;
+
         if (mouseEvent.Doubleclick &&
             this.GetSelected() != null &&
             selected.GetMetadata(0) is Technique)
-                ExecuteTechnique((Technique)selected.GetMetadata(0));
+                ExecuteTechnique((Technique) selected.GetMetadata(0));
     }
 
 

@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 public static class MyStatic
 {
     public static string savePath = OS.GetUserDataDir() + "\\saves\\";
+    public static int MaximumUseSurgeCoeficient = 5;
 
     public static void CenterTheWindow()
     {

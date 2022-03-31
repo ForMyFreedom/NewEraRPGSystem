@@ -7,9 +7,11 @@ public class SingleCriticButton : Control
     private NodePath textPath;
     [Export]
     private NodePath rectSelectPath;
+    [Export]
+    private NodePath criticRegulatorBoxPath;
 
     [Signal]
-    public delegate void critic_activated(CriticUse use);
+    public delegate void critic_activated(CriticUse use, int criticLimit, bool isLimitedCritic);
 
     private CriticUse use;
 
@@ -30,7 +32,13 @@ public class SingleCriticButton : Control
         if (!(@event is InputEventMouseButton)) return;
         InputEventMouseButton mouseEvent = (InputEventMouseButton) @event;
         if (mouseEvent.Doubleclick)
-            EmitSignal(nameof(critic_activated), use);
+        {
+            EmitSignal(
+                nameof(critic_activated), use,
+                GetNode<CriticRegulatorBox>(criticRegulatorBoxPath).GetCriticLimitLevel(),
+                GetNode<CriticRegulatorBox>(criticRegulatorBoxPath).IsCriticLimited()
+            );
+        }
         //@implement color rect logic to responsitivity
     }
 

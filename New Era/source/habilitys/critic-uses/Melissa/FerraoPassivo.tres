@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
+toDispendSurge = true
 criticUseName = "Ferrão Passivo"
 relatedWork = 4
 text = "Antes de ser alvo de um ataque, permite realizar um Teste de Guardião. Independente de acertar o ataque ou não, Melissa devolve N Dano para o atacante."

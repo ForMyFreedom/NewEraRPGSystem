@@ -215,6 +215,12 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     }
 
 
+    public int GetMaximumUseOfSurge()
+    {
+        return totalAtributes[(int) MyEnum.Factor.SURGE]/MyStatic.MaximumUseSurgeCoeficient;
+    }
+
+
     public int GetActualSurge()
     {
         return actualFactors[(int)MyEnum.Factor.SURGE];

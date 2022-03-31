@@ -9,8 +9,8 @@ public class EnterrarOponente : CriticUse
     //In this use, the critic value means the amount of meters!
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        int result = main.RequestAtributeRoll(MyEnum.Atribute.AGI);
-
+        int result = critic*10;
+        
         if (critic < 0)
             critic = result / 4;
 
@@ -26,5 +26,10 @@ public class EnterrarOponente : CriticUse
     public override void DoEndMechanicLogic()
     {
         main.AddExtraDamage(-damageExtra);
+    }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return main.RequestAtributeRoll(MyEnum.Atribute.AGI) / 10;
     }
 }

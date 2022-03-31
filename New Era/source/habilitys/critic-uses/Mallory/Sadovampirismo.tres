@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
+toDispendSurge = true
 criticUseName = "Haki de Manissão, Sadovampirismo"
 relatedWork = 14
 text = "Permite manipular a misteriosa força vital dos seres vivos de uma maneira parasítica. Você pode ativar esse uso, e para cada 10 de dano que um oponente tenha sofrido, você causa 1 de Dano nesse alvo. Assim como, extrai tal força vital para você ou um aliado, recuperando o equivalente de Dano causado [Reusável em alvo apenas caso novos 5 Ferimento]"

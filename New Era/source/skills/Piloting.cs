@@ -11,9 +11,6 @@ public class Piloting : Skill
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0)
-            critic = 0;
-
         int result = main.RequestSkillRoll(skillName, critic);
         string message =
             $"Apos algum tempo determinado, voce tenta desenhar um mapa com resultado {result}.\n" +
@@ -25,5 +22,10 @@ public class Piloting : Skill
 
     public override void DoEndMechanicLogic()
     {
+    }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return 0;
     }
 }

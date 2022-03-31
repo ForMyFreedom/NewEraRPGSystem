@@ -5,8 +5,9 @@
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
+toDispendSurge = true
 criticUseName = "Sangue Cortante"
 relatedWork = 4
 text = "Caso o alvo tenha uma quantidade decente de sangue no corpo (Em geral acima de 25% da Vida), você pode receber +3N Dano"
-baseMessage = "Se alvo com mai s25% de Vida, você recebe $ Dano [Remova isso após o ataque]"
+baseMessage = "Se alvo com mais de 25% Vida, você recebe $ Dano [Remova isso após o ataque]"
 cost = -1

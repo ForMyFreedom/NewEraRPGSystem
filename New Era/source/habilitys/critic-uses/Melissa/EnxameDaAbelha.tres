@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
+toDispendSurge = true
 criticUseName = "Enxame da Abelha Solitária"
 relatedWork = 12
 text = "Em Testes de Ataque, antes/depois atacar, pode ir para forma reluzente para princesa e vice-versa."

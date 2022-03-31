@@ -6,7 +6,8 @@
 resource_local_to_scene = true
 script = ExtResource( 1 )
 isSingleton = true
-techniqueName = "Pulsação"
+toDispendSurge = true
+techniqueName = "Ataque de Lança"
 relatedWorks = PoolIntArray( 4 )
 criticUses = [  ]
 powerOfCritics = PoolIntArray(  )

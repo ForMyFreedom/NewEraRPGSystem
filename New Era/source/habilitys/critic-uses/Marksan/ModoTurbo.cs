@@ -8,9 +8,6 @@ public class ModoTurbo : CriticUse
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0)
-            critic = main.RequestWorkRoll(relatedWork)/10;
-
         main.AddExtraDamage(critic);
         holdCritic = critic;
 
@@ -24,5 +21,10 @@ public class ModoTurbo : CriticUse
     public override void DoEndMechanicLogic()
     {
         main.AddExtraDamage(-holdCritic);
+    }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return main.RequestWorkRoll(relatedWork) / 10;
     }
 }

@@ -15,9 +15,6 @@ public class Zetsu : Skill
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0)
-            critic = 0;
-
         this.main = main;
 
         agiDefense = main.GetActualAgiDefense();
@@ -49,5 +46,11 @@ public class Zetsu : Skill
         main.SetActualAgiDefense((int)(agiDefense*mod));
         main.SetActualStrDefense((int)(strDefense *mod));
         main.SetGuard((int)(guard *mod));
+    }
+
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return 0;
     }
 }

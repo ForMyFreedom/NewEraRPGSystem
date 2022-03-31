@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
+toDispendSurge = true
 criticUseName = "Culinária Maluca"
 relatedWork = 5
 text = "Em Testes de Culinária, caso esteja usando apenas ingredientes vivos duvidosos, você recebe um bônus em Resultado igual à 3N"

@@ -8,9 +8,6 @@ public class MaosFermentadas : CriticUse
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0)
-            critic = main.RequestWorkRoll(relatedWork)/10;
-
         mod = 3 * critic;
 
         main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, mod), injectedWork.GetBaseImage());
@@ -37,5 +34,11 @@ public class MaosFermentadas : CriticUse
     {
         int random = RollCode.GetRandomCustomRoll(5);
         return (MyEnum.Atribute)(random-1);
+    }
+
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return main.RequestWorkRoll(relatedWork) / 10;
     }
 }

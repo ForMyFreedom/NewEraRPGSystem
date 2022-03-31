@@ -6,14 +6,17 @@ public class GarotaIrritante : CriticUse
 {
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        int result = main.RequestSkillRoll(injectedWork.GetSkillList()[1].GetSkillName());
-
         main.CreateNewNotification(
-        MyStatic.GetNotificationText(baseMessage, result), injectedWork.GetBaseImage()
+            MyStatic.GetNotificationText(baseMessage, critic*10), injectedWork.GetBaseImage()
         );
     }
 
     public override void DoEndMechanicLogic()
     {
+    }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return main.RequestSkillRoll(injectedWork.GetSkillList()[1].GetSkillName()) / 10;
     }
 }
