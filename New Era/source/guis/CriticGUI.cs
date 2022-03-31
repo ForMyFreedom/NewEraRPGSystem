@@ -13,6 +13,11 @@ public class CriticGUI : WindowDialog
     private Work work;
     private Array<CriticUse> criticUses;
 
+    public override void _Input(InputEvent @event)
+    {
+        if (@event.IsActionPressed("Esc"))
+            Hide();
+    }
 
     public void PopupIt()
     {

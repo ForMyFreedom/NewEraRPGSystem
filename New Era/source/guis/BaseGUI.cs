@@ -13,6 +13,12 @@ public abstract class BaseGUI : WindowDialog
     protected Atributo relatedAtribute;
     protected Work work;
 
+    public override void _Input(InputEvent @event)
+    {
+        if(@event.IsActionPressed("Esc"))
+            Hide();
+    }
+
     public override void _Ready()
     {
         relatedAtribute = GetInterfaceAtributeByEnum(work.GetRelationedAtribute());

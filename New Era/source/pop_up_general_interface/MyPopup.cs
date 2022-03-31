@@ -10,6 +10,11 @@ public abstract class MyPopup : WindowDialog
 
     public abstract void InjectData(Node baseData);
 
+    public override void _Input(InputEvent @event)
+    {
+        if (@event.IsActionPressed("Esc"))
+            Hide();
+    }
 
     public MainInterface GetMain()
     {
