@@ -8,6 +8,6 @@ isSingleton = true
 toDispendSurge = true
 criticUseName = "Forma da Princesa Abelha"
 relatedWork = 12
-text = "+Akuma/5 em Agilidade.  Pode voar por 20 metros de movimento até precisar pousar. Limite de polem: 13"
+text = "+Akuma/3 em Agilidade.  Pode voar por 20 metros de movimento até precisar pousar. Limite de polem: 13"
 baseMessage = "Você se tornou mais rápido, +$ Agilidade. Podendo voar por 20 metros. Limite de Polem: 13"
 cost = 0

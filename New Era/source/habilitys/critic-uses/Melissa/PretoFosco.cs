@@ -9,11 +9,11 @@ public class PretoFosco : CriticUse
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        guard = 2*critic;
-        defense = 4 * critic;
+        guard = 2 * critic;
+        defense = -4 * critic;
         main.AddGuard(guard);
-        main.AddActualAgiDefense(-defense);
-        //@lost surto e vida a cada turno
+        main.AddActualAgiDefense(defense);
+
         main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, defense, guard), injectedWork.GetBaseImage());
         ConnectToLastNotification(main);
     }

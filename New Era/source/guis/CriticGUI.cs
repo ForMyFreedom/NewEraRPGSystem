@@ -58,6 +58,7 @@ public class CriticGUI : WindowDialog
 
         int reachedCritic = use.RequestCriticTest(main);
         if (isLimitedCritic && reachedCritic > criticLimit) reachedCritic = criticLimit;
+        if (main.GetActualSurge() < reachedCritic) reachedCritic = main.GetActualSurge();
 
         use.DoMechanic(main, 0, reachedCritic);
     }
