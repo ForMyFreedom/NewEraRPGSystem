@@ -73,8 +73,6 @@ public class MainInterface : Control, CharacterDataBank
     [Export]
     private NodePath defenseBooblePath;
     [Export]
-    private NodePath importSaveButtonPath;
-    [Export]
     private NodePath versionSaveButtonPath;
 
     [Export]
@@ -117,7 +115,6 @@ public class MainInterface : Control, CharacterDataBank
         GetNode(tracesButtonPath).Connect("button_up", this, "_OnTraces");
         GetNode(getSaveButtonPath).Connect("button_activate", this, "_OnGetSave");
         GetNode(reloadSaveButtonPath).Connect("button_activate", this, "_OnReload");
-        GetNode(importSaveButtonPath).Connect("button_activate", this, "_OnImportSave");
         GetNode(versionSaveButtonPath).Connect("button_activate", this, "_OnVersionSave");
 
         GetNode(worksTreePath).Connect("work_level_changed", this, "_OnWorkLevelChanged");
@@ -232,12 +229,6 @@ public class MainInterface : Control, CharacterDataBank
     public void _OnReload()
     {
         _Ready();
-    }
-
-    public void _OnImportSave()
-    {
-        toSaveOnClose = false;
-        _OnGetSave();
     }
 
 

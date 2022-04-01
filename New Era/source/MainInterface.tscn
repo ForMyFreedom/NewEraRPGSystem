@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Melissa.tscn" type="PackedScene" id=2]
@@ -39,7 +39,6 @@
 [ext_resource path="res://source/notification/DefenseBooble.cs" type="Script" id=37]
 [ext_resource path="res://source/notification/Booble.cs" type="Script" id=38]
 [ext_resource path="res://assets/reload.png" type="Texture" id=39]
-[ext_resource path="res://assets/import.png" type="Texture" id=40]
 [ext_resource path="res://assets/version.png" type="Texture" id=41]
 [ext_resource path="res://source/VersionIndex.tscn" type="PackedScene" id=42]
 
@@ -64,9 +63,6 @@ resource_name = "activate"
 
 [sub_resource type="Animation" id=3]
 resource_name = "activate"
-
-[sub_resource type="Animation" id=4]
-resource_name = "activate"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -81,13 +77,13 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 tracks/0/type = "method"
 tracks/0/path = NodePath("NotificationsSound")
 tracks/0/interp = 1
@@ -103,7 +99,7 @@ tracks/0/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:margin_left")
@@ -130,7 +126,7 @@ tracks/1/keys = {
 "values": [ -480, -160 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("HBoxContainer/Actions/BellNode/BellTexture:rect_rotation")
@@ -159,7 +155,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:margin_left")
@@ -186,14 +182,14 @@ tracks/1/keys = {
 "values": [ -160, -480 ]
 }
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0, 0, 0, 1 )
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=10]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -250,7 +246,6 @@ techniquesTreePath = NodePath("VBoxContainer/Capacities/HBOX/HabilityControl/Mar
 characterInventoryPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/EquipamentsButton/CharacterInventory")
 triviaDataPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton/TrivaData")
 defenseBooblePath = NodePath("NotificationArea/HBoxContainer/Actions/DefenseNode")
-importSaveButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/HBoxContainer/VBoxContainer/ImportSave")
 versionSaveButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/HBoxContainer/VBoxContainer/VersionSave")
 versionSavePackedScene = ExtResource( 42 )
 
@@ -339,29 +334,9 @@ margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ImportSave" type="TextureButton" parent="VBoxContainer/Info/HBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="VersionSave" type="TextureButton" parent="VBoxContainer/Info/HBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 22.0
 margin_right = 15.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 11, 11 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture_normal = ExtResource( 40 )
-expand = true
-stretch_mode = 5
-script = ExtResource( 28 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-animationPlayerPath = NodePath("AnimationPlayer2")
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="VBoxContainer/Info/HBoxContainer/HBoxContainer/VBoxContainer/ImportSave"]
-anims/activate = SubResource( 2 )
-
-[node name="VersionSave" type="TextureButton" parent="VBoxContainer/Info/HBoxContainer/HBoxContainer/VBoxContainer"]
-margin_left = 19.0
-margin_top = 22.0
-margin_right = 34.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 11, 11 )
 size_flags_horizontal = 3
@@ -376,7 +351,7 @@ __meta__ = {
 animationPlayerPath = NodePath("AnimationPlayer3")
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="VBoxContainer/Info/HBoxContainer/HBoxContainer/VBoxContainer/VersionSave"]
-anims/activate = SubResource( 3 )
+anims/activate = SubResource( 2 )
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Info/HBoxContainer"]
 margin_left = 38.0
@@ -405,7 +380,7 @@ script = ExtResource( 28 )
 animationPlayerPath = NodePath("AnimationPlayer2")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="VBoxContainer/Info/HBoxContainer/MarginContainer/GetSaveButton"]
-anims/activate = SubResource( 4 )
+anims/activate = SubResource( 3 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Info/HBoxContainer/MarginContainer"]
 margin_right = 1157.0
@@ -421,7 +396,7 @@ margin_top = 10.0
 margin_right = 227.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "Jogador: JOGADOR"
 align = 1
 script = ExtResource( 11 )
@@ -436,7 +411,7 @@ margin_top = 10.0
 margin_right = 461.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "Personagem: PERSONAGEM"
 align = 1
 script = ExtResource( 11 )
@@ -1201,10 +1176,10 @@ audioStreamList = [ ExtResource( 20 ), ExtResource( 21 ) ]
 audioNameList = PoolStringArray( "new_not", "del_not" )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NotificationArea"]
-anims/del_notification = SubResource( 6 )
-anims/dishow = SubResource( 7 )
-anims/new_notification = SubResource( 8 )
-anims/show = SubResource( 9 )
+anims/del_notification = SubResource( 5 )
+anims/dishow = SubResource( 6 )
+anims/new_notification = SubResource( 7 )
+anims/show = SubResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="NotificationArea"]
 anchor_right = 1.0
@@ -1259,7 +1234,7 @@ __meta__ = {
 margin_right = 16.0
 margin_bottom = 16.0
 rect_pivot_offset = Vector2( 8, 8 )
-custom_styles/normal = SubResource( 10 )
+custom_styles/normal = SubResource( 9 )
 custom_colors/font_color = Color( 1, 0.94902, 0, 1 )
 text = "0"
 align = 1
@@ -1270,7 +1245,7 @@ __meta__ = {
 
 [node name="PulseAnimationPlayer" type="AnimationPlayer" parent="NotificationArea/HBoxContainer/Actions/BellNode"]
 autoplay = "pulse"
-anims/pulse = SubResource( 11 )
+anims/pulse = SubResource( 10 )
 
 [node name="TurnNode" type="Control" parent="NotificationArea/HBoxContainer/Actions"]
 margin_top = 55.0
