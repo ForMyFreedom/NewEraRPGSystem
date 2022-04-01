@@ -74,6 +74,7 @@ public abstract class NotificationConsumer : Resource
 
     private void ConsumeCritic(MainInterface main, int critic)
     {
-        main.AddActualSurge(-critic);
+        if(toDispendSurge)
+            main.AddActualSurge(-critic);
     }
 }
