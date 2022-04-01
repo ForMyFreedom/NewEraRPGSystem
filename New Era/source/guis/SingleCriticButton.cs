@@ -17,7 +17,7 @@ public class SingleCriticButton : Control
 
     public override void _Ready()
     {
-        GetNode(textPath).Connect("gui_input", this, "_OnGuiInput");
+        Connect("gui_input", this, "_OnGuiInput");
         Connect("ready", this, "_OnThisReady");
     }
 
