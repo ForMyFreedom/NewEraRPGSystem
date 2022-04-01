@@ -4,6 +4,9 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = false
+message = null
 quality = 2
 workEnum = 13
 skillIndex = 0
