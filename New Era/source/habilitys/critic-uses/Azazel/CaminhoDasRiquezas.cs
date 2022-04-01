@@ -14,9 +14,4 @@ public class CaminhoDasRiquezas : CriticUse
     public override void DoEndMechanicLogic()
     {
     }
-
-    public override int RequestCriticTest(MainInterface main)
-    {
-        return main.RequestSkillRoll(injectedWork.GetSkillList()[0].GetSkillName()) / 10;
-    }
 }

@@ -1,11 +1,13 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://source/habilitys/critic-uses/Azazel/FatorLinhagem.cs" type="Script" id=1]
+
+[sub_resource type="Resource" id=1]
 
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
-toDispendSurge = true
+criticEntity = SubResource( 1 )
 criticUseName = "Hatsu Transmutação, Fator Linhagem"
 relatedWork = 14
 text = "Você recebe uma quantidade de Linhagens igual a N/4, podendo acioná-las em você assim como em quem você consiga tocar no sangue:

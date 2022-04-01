@@ -18,9 +18,4 @@ public class CombateDancante : CriticUse
     {
         main.AddModAgiDefense(-holdBonus);
     }
-
-    public override int RequestCriticTest(MainInterface main)
-    {
-        return main.RequestWorkRoll(relatedWork) / 10;
-    }
 }

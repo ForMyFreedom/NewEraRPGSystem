@@ -13,7 +13,7 @@ public class FormaHorrendaDeAbelha : CriticUse
     {
     }
 
-    public override int RequestCriticTest(MainInterface main)
+    public int RequestCriticTest(MainInterface main)
     {
         return cost;
     }

@@ -14,9 +14,4 @@ public class FatorLinhagem : CriticUse
     {
         main.CreateNewNotification("Remova as Linhagens...", injectedWork.GetBaseImage());
     }
-
-    public override int RequestCriticTest(MainInterface main)
-    {
-        return main.RequestWorkRoll(relatedWork) / 10;
-    }
 }

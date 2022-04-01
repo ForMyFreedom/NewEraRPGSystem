@@ -67,7 +67,7 @@ public class ErvaDeSangue : ItemCode
         }
     }
 
-    public override int RequestCriticTest(MainInterface main)
+    public int RequestCriticTest(MainInterface main)
     {
         return 0;
     }

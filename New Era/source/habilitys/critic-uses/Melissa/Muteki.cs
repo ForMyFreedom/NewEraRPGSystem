@@ -21,7 +21,7 @@ public class Muteki : CriticUse
     }
 
 
-    public override int RequestCriticTest(MainInterface main)
+    public int RequestCriticTest(MainInterface main)
     {
         return main.RequestSkillRoll(injectedWork.GetSkillList()[0].GetSkillName()) / 10;
     }

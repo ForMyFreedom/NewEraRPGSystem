@@ -51,7 +51,7 @@ public class Medicine : Skill
             return "";
     }
 
-    public override int RequestCriticTest(MainInterface main)
+    public int RequestCriticTest(MainInterface main)
     {
         return 0;
     }

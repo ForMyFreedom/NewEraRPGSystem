@@ -49,7 +49,7 @@ public class Zetsu : Skill
     }
 
 
-    public override int RequestCriticTest(MainInterface main)
+    public int RequestCriticTest(MainInterface main)
     {
         return 0;
     }

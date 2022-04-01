@@ -30,7 +30,7 @@ public abstract class Technique : NotificationConsumer
         DoAttackRollNotification(main, critic);
     }
 
-    public override int RequestCriticTest(MainInterface main)
+    public int RequestCriticTest(MainInterface main)
     {
         return DoRollOfTechnique(main) / 10;
     }

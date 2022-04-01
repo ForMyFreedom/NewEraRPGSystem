@@ -28,7 +28,7 @@ public class EnterrarOponente : CriticUse
         main.AddExtraDamage(-damageExtra);
     }
 
-    public override int RequestCriticTest(MainInterface main)
+    public int RequestCriticTest(MainInterface main)
     {
         return main.RequestAtributeRoll(MyEnum.Atribute.AGI) / 10;
     }

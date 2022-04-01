@@ -1,11 +1,17 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://source/habilitys/critic-uses/Azazel/ExplosaoDeSangue.cs" type="Script" id=1]
+[ext_resource path="res://source/critic-entity/BasicCriticEntity.cs" type="Script" id=2]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+toDispendSurge = true
+baseCritic = 7
 
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
-toDispendSurge = true
+criticEntity = SubResource( 1 )
 criticUseName = "Explosão de Sangue"
 relatedWork = 4
 text = "Após acertar um ataque com Lança Vampírica, você traga o sangue do alvo e o explode com sua lâmina. Você causa 10% da Vida Máxima do Alvo em Dano Desguardado Fisicamente caso não cause Danos, 5% caso cause."

@@ -1,11 +1,18 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://source/habilitys/critic-uses/Ameiko/CisneRadiante.cs" type="Script" id=1]
+[ext_resource path="res://source/critic-entity/WorkCriticEntity.cs" type="Script" id=2]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+toDispendSurge = true
+baseCritic = -1
+relatedWork = 0
 
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
-toDispendSurge = true
+criticEntity = SubResource( 1 )
 criticUseName = "Cisne Radiante"
 relatedWork = 10
 text = "Entra em estado de transe, incorporando a coreografia da dança das lâminas. Neste modo, aumenta-se o Dano de seus Ataques de Lutador em +2N por três turnos"

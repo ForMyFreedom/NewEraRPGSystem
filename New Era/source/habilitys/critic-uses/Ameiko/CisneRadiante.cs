@@ -18,9 +18,4 @@ public class CisneRadiante : CriticUse
     {
         main.AddExtraDamage(-holdBonus);
     }
-
-    public override int RequestCriticTest(MainInterface main)
-    {
-        return main.RequestWorkRoll(relatedWork)/10;
-    }
 }

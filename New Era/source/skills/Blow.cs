@@ -52,7 +52,7 @@ public class Blow : Skill
     }
 
 
-    public override int RequestCriticTest(MainInterface main)
+    public int RequestCriticTest(MainInterface main)
     {
         return 0;
     }

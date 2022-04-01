@@ -12,9 +12,4 @@ public class LevezaNasPatas : CriticUse
     public override void DoEndMechanicLogic()
     {
     }
-
-    public override int RequestCriticTest(MainInterface main)
-    {
-        return main.RequestWorkRoll(relatedWork) / 10;
-    }
 }

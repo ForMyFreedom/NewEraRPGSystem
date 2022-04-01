@@ -20,7 +20,6 @@ public abstract class CriticUse : NotificationConsumer
 
     public override abstract void DoMechanicLogic(MainInterface main, int actionIndex=0, int critic = -1);
     public override abstract void DoEndMechanicLogic();
-    public override abstract int RequestCriticTest(MainInterface main);
 
     public String GetUseName()
     {

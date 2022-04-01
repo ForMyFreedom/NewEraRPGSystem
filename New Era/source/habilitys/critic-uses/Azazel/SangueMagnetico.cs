@@ -22,7 +22,7 @@ public class SangueMagnetico : CriticUse
         main.AddExtraDamage(-dmg);
     }
 
-    public override int RequestCriticTest(MainInterface main)
+    public int RequestCriticTest(MainInterface main)
     {
         return main.RequestWorkRoll(relatedWork) / 10;
     }

@@ -1,11 +1,18 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://source/habilitys/critic-uses/Azazel/CaminhoDasRiquezas.cs" type="Script" id=1]
+[ext_resource path="res://source/critic-entity/SkillCriticEntity.cs" type="Script" id=2]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+toDispendSurge = true
+baseCritic = -1
+skillName = "Pilotagem"
 
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
-toDispendSurge = true
+criticEntity = SubResource( 1 )
 criticUseName = "Caminho das Riquezas"
 relatedWork = 6
 text = "Em Testes de Pilotagem, você pode fazer um caminho até uma Ilha alvo tendo a cada dia um bônus de +2N em testes relacionados a procurar por tesouros."

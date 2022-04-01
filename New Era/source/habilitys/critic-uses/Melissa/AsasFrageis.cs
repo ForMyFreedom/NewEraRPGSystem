@@ -16,7 +16,7 @@ public class AsasFrageis : CriticUse
     }
     
     
-    public override int RequestCriticTest(MainInterface main)
+    public int RequestCriticTest(MainInterface main)
     {
         return main.RequestAtributeRoll(MyEnum.Atribute.AGI) / 10;
     }

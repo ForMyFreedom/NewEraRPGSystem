@@ -15,7 +15,7 @@ public class GarotaIrritante : CriticUse
     {
     }
 
-    public override int RequestCriticTest(MainInterface main)
+    public int RequestCriticTest(MainInterface main)
     {
         return main.RequestSkillRoll(injectedWork.GetSkillList()[1].GetSkillName()) / 10;
     }

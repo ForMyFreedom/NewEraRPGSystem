@@ -13,7 +13,7 @@ public class FocalizacaoDaArvore : CriticUse
     {
     }
 
-    public override int RequestCriticTest(MainInterface main)
+    public int RequestCriticTest(MainInterface main)
     {
         return main.RequestAtributeRoll(MyEnum.Atribute.MIN) / 10;
     }

@@ -56,7 +56,7 @@ public class CriticGUI : WindowDialog
     {
         MainInterface main = (MainInterface)GetTree().CurrentScene;
 
-        int reachedCritic = use.RequestCriticTest(main);
+        int reachedCritic = use.GetCriticEntity().RequestCriticTest(main);
         if (isLimitedCritic && reachedCritic > criticLimit) reachedCritic = criticLimit;
 
         use.DoMechanic(main, 0, reachedCritic);

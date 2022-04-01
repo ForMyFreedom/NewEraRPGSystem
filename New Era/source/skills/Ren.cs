@@ -38,7 +38,7 @@ public class Ren : Skill
         return (int)(2*(level + mod))/(4-actionIndex);
     }
 
-    public override int RequestCriticTest(MainInterface main)
+    public int RequestCriticTest(MainInterface main)
     {
         return 0;
     }

@@ -42,7 +42,7 @@ public class DefesaCritica : CriticUse
         return (index == 0) ? "AGI" : "STR";
     }
 
-    public override int RequestCriticTest(MainInterface main)
+    public int RequestCriticTest(MainInterface main)
     {
         return 0;
     }
