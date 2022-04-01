@@ -8,7 +8,7 @@ public class FormaDaPrincesaDasAbelhas : CriticUse
 
     public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        holdMod = injectedWork.GetLevel() / 5;
+        holdMod = injectedWork.GetLevel() / 3;
         main.AddModAgility(holdMod);
 
         main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, holdMod), injectedWork.GetBaseImage());
