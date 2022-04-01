@@ -4,3 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = false
+message = null
