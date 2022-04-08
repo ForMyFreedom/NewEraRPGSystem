@@ -18,7 +18,7 @@ public abstract class CriticUse : NotificationConsumer
 
     protected Work injectedWork;
 
-    public override abstract void DoMechanicLogic(MainInterface main, int actionIndex=0, int critic = -1);
+    public override abstract MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex=0, int critic = -1);
     public override abstract void DoEndMechanicLogic();
     public override abstract int RequestCriticTest(MainInterface main);
 
