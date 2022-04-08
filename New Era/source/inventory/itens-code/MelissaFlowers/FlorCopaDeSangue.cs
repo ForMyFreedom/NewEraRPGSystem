@@ -3,18 +3,18 @@ using System;
 
 public abstract class FlorCopaDeSangue : ItemCode
 {
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         int health = (int)(main.GetTotalLife() * 0.2f);
 
         main.AddActualLife(health);
-        main.CreateNewNotification(
-            MyStatic.GetNotificationText(message, health),
-            main.GetWorkNodeByEnum(MyEnum.Work.AkumaNoMi).GetBaseImage()
-        );
 
         item.RemoveQuantity();
         main.UpdateInventory();
+
+        return new MessageNotificationData(
+            message, new object[] {health}, main.GetWorkNodeByEnum(MyEnum.Work.AkumaNoMi).GetBaseImage()
+        );
     }
 
     public override void DoEndMechanicLogic()

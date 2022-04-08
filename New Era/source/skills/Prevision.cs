@@ -9,12 +9,13 @@ public class Prevision : Skill
         return new Array<string>() { "Prever" };
     }
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         int result = main.RequestSkillRoll(skillName, critic);
-        main.CreateNewNotification(
-            $"Caso a Dificuldade de Previsao do teste seje menor que {result}, voce especula e recebe informacoes. Do contrario, voce nao tem a menor ideia"
-            , effectImage);
+
+        return new MessageNotificationData(
+            notificationText, new object[] { result }, effectImage
+        );
     }
 
     public override void DoEndMechanicLogic()

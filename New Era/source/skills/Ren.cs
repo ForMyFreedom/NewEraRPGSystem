@@ -11,18 +11,14 @@ public class Ren : Skill
         return new Array<string>() { "Ren 1/4", "Rem 1/3", "Rem 1/2", "Ren Total" };
     }
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         damage = GetDamage(actionIndex, critic);
         main.AddExtraDamage(damage);
 
-        main.CreateNewNotification("Forma de Haki Ren: Voce recebe: " +
-            $"+{damage} Dano \n" +
-            $"-{damage} em todos seus Testes Sigilosos \n" +
-            $"-{damage / 5} Vida a cada turno \n", effectImage
+        return new MessageNotificationData(
+            notificationText, new object[] { damage, damage, damage/5 }, effectImage
         );
-
-        ConnectToLastNotification(main);
 
         //@turn lost of life
     }

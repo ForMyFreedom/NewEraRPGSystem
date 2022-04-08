@@ -12,7 +12,7 @@ skillName = "Ten"
 effectImage = ExtResource( 2 )
 wayOfLevelCalculeScript = ExtResource( 3 )
 skillDescription = "Cubra sua aura e determine sua vontade"
-notificationText = null
+notificationText = "Forma de Haki Ten: +$ Guarda | -25% Hatsus"
 mechanicDescription = "+Ten em Guarda
 Todos Hatsus são reduzidos em 25%"
 level = 0

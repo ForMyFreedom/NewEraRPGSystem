@@ -6,16 +6,15 @@ public class ModoTurbo : CriticUse
 {
     int holdCritic;
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         main.AddExtraDamage(critic);
         holdCritic = critic;
 
-        main.CreateNewNotification(
-        MyStatic.GetNotificationText(baseMessage, 3*critic, critic), injectedWork.GetBaseImage()
-        );
 
-        ConnectToLastNotification(main);
+        return new MessageNotificationData(
+            baseMessage, new object[] { critic, 3 * critic, critic }, injectedWork.GetBaseImage()
+        );
     }
 
     public override void DoEndMechanicLogic()

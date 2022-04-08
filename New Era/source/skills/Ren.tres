@@ -12,7 +12,10 @@ skillName = "Ren"
 effectImage = ExtResource( 1 )
 wayOfLevelCalculeScript = ExtResource( 3 )
 skillDescription = "Libere toda sua vontade sem mais amarras!"
-notificationText = null
+notificationText = "Forma de Haki Ren: Voce recebe:
+     +$ Dano
+     -$ em todos seus Testes Sigilosos
+     -$ Vida a cada turno "
 mechanicDescription = "+2*Ren em todos Danos que se aproveite de sua Aura
 
 -3*Ren em todos Testes Sigilosos

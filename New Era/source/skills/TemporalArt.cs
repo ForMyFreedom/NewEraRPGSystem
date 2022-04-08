@@ -12,7 +12,7 @@ public class TemporalArt : Skill
         return new Array<string>() { "Criar Performace" };
     }
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         int result = 0;
         if (critic < 0)
@@ -20,11 +20,9 @@ public class TemporalArt : Skill
         else
             result = critic * 10;
 
-        main.CreateNewNotification(
-             "Escolha um nome e imagine como sera a sua arte \n"+
-            $"Ela demora naturalmente {GetCreationDay()} dias para ser criada, "+
-            $"com seu Resultado sendo igual a {result} \n [O Narrador lhe dara os valores de Vida e Inspiracao concedidos] \n"+
-            $"Para cada dia a mais adicione +{aprimorationByExtraDay} no Resultado", effectImage);
+        return new MessageNotificationData(
+            notificationText, new object[] { GetCreationDay(), result, aprimorationByExtraDay }, effectImage
+        );
     }
 
 

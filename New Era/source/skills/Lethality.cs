@@ -9,11 +9,11 @@ public class Lethality : Skill
         return new Array<string>() { "Assasinar" };
     }
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        main.CreateNewNotification(
-            $"Letalidade! O alvo sofre {level+critic} Dano adicional caso isso zere sua vida"
-        , effectImage);
+        return new MessageNotificationData(
+            notificationText, new object[] { level + critic }, effectImage
+        );
     }
 
     public override void DoEndMechanicLogic()

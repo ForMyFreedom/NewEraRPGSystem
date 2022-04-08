@@ -9,12 +9,13 @@ public class Manipulation : Skill
         return new Array<string>() { "Manipular" };
     }
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         int result = main.RequestSkillRoll(skillName, critic);
-        main.CreateNewNotification(
-            $"Caso a Dificuldade de Crenca do teste seje menor que {result}, voce convence o alvo. Do contrario, ele sabe suas intensoes"
-            , effectImage);
+
+        return new MessageNotificationData(
+            notificationText, new object[] { result }, effectImage
+        );
     }
 
     public override void DoEndMechanicLogic()

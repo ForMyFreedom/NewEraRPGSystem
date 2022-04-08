@@ -6,12 +6,14 @@ public abstract class BombaFumaca : ItemCode
     [Export]
     private Texture bombTexture;
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        main.CreateNewNotification(message, bombTexture);
-
         item.RemoveQuantity();
         main.UpdateInventory();
+
+        return new MessageNotificationData(
+            message, null, bombTexture
+        );
     }
 
     public override void DoEndMechanicLogic()

@@ -8,7 +8,7 @@ public class TechArmor : CriticUse
     int resMod;
     int surgeMod;
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         this.main = main;
         strMod = critic;
@@ -17,10 +17,9 @@ public class TechArmor : CriticUse
 
         ModifyAllFactors(1);
 
-        main.CreateNewNotification(
-        MyStatic.GetNotificationText(baseMessage, strMod, resMod, surgeMod), injectedWork.GetBaseImage()
+        return new MessageNotificationData(
+            baseMessage, new object[] { critic, strMod, resMod, surgeMod }, injectedWork.GetBaseImage()
         );
-        ConnectToLastNotification(main);
     }
 
     public override void DoEndMechanicLogic()

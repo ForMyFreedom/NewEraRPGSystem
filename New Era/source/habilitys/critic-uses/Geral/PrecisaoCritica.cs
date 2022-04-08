@@ -7,12 +7,14 @@ public class PrecisaoCritica : CriticUse
     int holdBonus;
     int index;
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         if (critic < 0)
-            return;
+            return null;
 
-        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, 3*critic));
+        return new MessageNotificationData(
+            baseMessage, new object[] { critic, 3 * critic }
+        );
     }
 
     public override void DoEndMechanicLogic()

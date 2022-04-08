@@ -6,13 +6,14 @@ public class FormaDaPrincesaDasAbelhas : CriticUse
 {
     int holdMod;
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         holdMod = injectedWork.GetLevel() / 3;
         main.AddModAgility(holdMod);
 
-        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, holdMod), injectedWork.GetBaseImage());
-        ConnectToLastNotification(main);
+        return new MessageNotificationData(
+            baseMessage, new object[] { critic, holdMod }, injectedWork.GetBaseImage()
+        );
     }
 
     public override void DoEndMechanicLogic()

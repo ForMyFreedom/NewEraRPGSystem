@@ -6,13 +6,14 @@ public class Muteki : CriticUse
 {
     int guard;
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         guard = 4 * critic;
         main.AddGuard(guard);
-        
-        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, guard), injectedWork.GetBaseImage());
-        ConnectToLastNotification(main);
+
+        return new MessageNotificationData(
+            baseMessage, new object[] { critic, guard }, injectedWork.GetBaseImage()
+        );
     }
 
     public override void DoEndMechanicLogic()

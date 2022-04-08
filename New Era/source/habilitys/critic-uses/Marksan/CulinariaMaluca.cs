@@ -4,9 +4,11 @@ using System;
 
 public class CulinariaMaluca : CriticUse
 {
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, 3*critic),injectedWork.GetBaseImage());
+        return new MessageNotificationData(
+            baseMessage, new object[] { critic, 3 * critic }, injectedWork.GetBaseImage()
+        );
     }
 
     public override void DoEndMechanicLogic()

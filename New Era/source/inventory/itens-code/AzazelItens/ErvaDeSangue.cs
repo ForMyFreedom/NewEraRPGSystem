@@ -9,38 +9,36 @@ public class ErvaDeSangue : ItemCode
     [Export]
     private Resource violenceTechnique;
 
-    private int actualSTR;
-    private int actualAGI;
+    private int bonusStr;
+    private int bonusAgi;
     private Array<Technique> noViolenceTechniques;
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         item.RemoveQuantity();
         main.UpdateInventory();
 
         int charismaImpact = -2*main.GetCharisma();
-        int damage = (main.GetStrength() + main.GetAgility()) / 2;
 
-        actualSTR = main.GetStrength();
-        actualAGI = main.GetAgility();
+        bonusStr = (int)(main.GetStrength()/2.5);
+        bonusAgi = (int)(main.GetAgility()/2.5);
 
-        main.AddModStrength(actualSTR);
-        main.AddModAgility(actualAGI);
+        main.AddModStrength(bonusStr);
+        main.AddModAgility(bonusAgi);
 
         RemoveAllNoViolenceTechniques(main);
         main.AddTechnique((Technique) violenceTechnique);
 
-        main.CreateNewNotification(
-            MyStatic.GetNotificationText(message, charismaImpact, damage), image
+        return new MessageNotificationData(
+            message, new object[] { charismaImpact }, image
         );
-        ConnectToLastNotification(main);
     }
 
 
     public override void DoEndMechanicLogic()
     {
-        main.AddModStrength(-actualSTR);
-        main.AddModAgility(-actualAGI);
+        main.AddModStrength(-bonusStr);
+        main.AddModAgility(-bonusAgi);
 
         main.RemoveTechnique((Technique) violenceTechnique);
         AddAllNoViolenceTechniques();
