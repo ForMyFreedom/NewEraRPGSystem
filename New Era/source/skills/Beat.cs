@@ -13,7 +13,7 @@ public class Beat : Skill
         return new Array<string>() { "Frequencia Absoluta", "Meia Frequencia", "Fluxo", "Meia Pressao", "Pressao Absoluta" };
     }
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         if (critic < 0)
             critic = 0;
@@ -40,7 +40,10 @@ public class Beat : Skill
         int strValue = main.GetAtributeNodeByEnum(MyEnum.Atribute.STR).GetAtributeTotalValue();
         stressNode = acummulateStress/strValue;
 
-        main.CreateNewNotification(MyStatic.GetNotificationText(notificationText, dmgBonus, surgeBonus, stressBonus, stressNode), effectImage);
+        return new MessageNotificationData(
+            notificationText, new object[] { dmgBonus, surgeBonus, stressBonus, stressNode }, effectImage
+        );
+
     }
 
 

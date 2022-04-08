@@ -4,10 +4,11 @@ using System;
 
 public class ExplosaoDeSangue : CriticUse
 {
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        main.CreateNewNotification(
-            baseMessage, injectedWork.GetBaseImage());
+        return new MessageNotificationData(
+            baseMessage, null, injectedWork.GetBaseImage()
+        );
     }
 
     public override void DoEndMechanicLogic()

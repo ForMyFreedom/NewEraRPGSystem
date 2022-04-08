@@ -13,7 +13,7 @@ public class Medicine : Skill
 
 
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex=0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex=0, int critic = -1)
     {
         rollResult = main.RequestSkillRoll(skillName, critic);
         string message ="";
@@ -23,7 +23,9 @@ public class Medicine : Skill
         else
             message += $"Voce aplica {GetCounterDisease()} Contra-Peconha {GetDiseaseReduction()}";
 
-        main.CreateNewNotification(message, effectImage);
+        return new MessageNotificationData(
+            message, null, effectImage
+        );
     }
 
     public override void DoEndMechanicLogic()

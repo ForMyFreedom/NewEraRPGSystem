@@ -24,7 +24,10 @@ public abstract class NotificationConsumer : Resource
             return;
 
         ConsumeCritic(main, critic);
-        DoMechanicLogic(main, actionIndex, critic);
+        MessageNotificationData messageData = DoMechanicLogic(main, actionIndex, critic);
+
+        if (messageData == null) return;
+        CreateNotification(main, messageData, critic, main.GetMaximumUseOfSurge());
         ConnectToLastNotification(main);
         isActive = true;
     }
@@ -36,7 +39,7 @@ public abstract class NotificationConsumer : Resource
         isActive = false;
     }
 
-    public abstract void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1);
+    public abstract MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1);
     public abstract void DoEndMechanicLogic();
     public abstract int RequestCriticTest(MainInterface main);
 
@@ -57,8 +60,8 @@ public abstract class NotificationConsumer : Resource
     private int DefineFinalCritic(MainInterface main, int critic, bool limitFree)
     {
         if (!toDispendSurge) return critic;
-        int maximumUseOfSurge = main.GetMaximumUseOfSurge();
-        if (!limitFree && critic > maximumUseOfSurge)  critic = maximumUseOfSurge;
+        //int maximumUseOfSurge = main.GetMaximumUseOfSurge();
+        //if (!limitFree && critic > maximumUseOfSurge)  critic = maximumUseOfSurge;
         if (critic < 0) critic = 0;
 
         return critic;
@@ -75,6 +78,13 @@ public abstract class NotificationConsumer : Resource
     private void ConsumeCritic(MainInterface main, int critic)
     {
         if (toDispendSurge)
-            main.AddActualSurge(-critic);
+            main.AddActualSurge(-critic/2);
+    }
+
+    private void CreateNotification(MainInterface main, MessageNotificationData messageData, int critic, int limit)
+    {
+        main.CreateNewNotification(MyStatic.GetNotificationText(
+            messageData.GetMessage(), new int[2] {critic, limit}, messageData.GetData()
+        ), messageData.GetTexture());
     }
 }

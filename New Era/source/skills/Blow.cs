@@ -9,7 +9,7 @@ public class Blow : Skill
         return new Array<string>() { "Pancada de Forca", "Pancada de Agilidade", "Pancada de Sentidos" };
     }
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         string message = "Se o alvo tirar menos de ";
         switch (actionIndex)
@@ -25,7 +25,9 @@ public class Blow : Skill
                 break;
         }
 
-        main.CreateNewNotification(message, effectImage);
+        return new MessageNotificationData(
+            message, null, effectImage
+        );
     }
 
     public override void DoEndMechanicLogic()

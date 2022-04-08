@@ -9,14 +9,17 @@ public class Culinary : Skill
         return new Array<string>() { "Cozinhar" };
     }
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         int result = main.RequestSkillRoll(skillName,critic);
         string message = "Comida pronta! Apos descansarem, todos que se alimentarem recebecem:\n";
         message += GetLifeRegen(result);
         message += GetCriticGain(result);
         message += GetTrainBonus(result);
-        main.CreateNewNotification(message, effectImage);
+
+        return new MessageNotificationData(
+            message, null, effectImage
+        );
     }
 
     public override void DoEndMechanicLogic()

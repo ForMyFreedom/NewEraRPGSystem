@@ -13,7 +13,7 @@ public class Zetsu : Skill
         return new Array<string>() { "Zetsu" };
     }
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         this.main = main;
 
@@ -23,14 +23,10 @@ public class Zetsu : Skill
 
         ModifyDefenseFactors(0.5f);
 
-        main.CreateNewNotification("Forma de Haki Zetsu: Voce recebe: "+
-            $"+{3*level} em Testes Sigilosos \n"+
-            $"+{level} em Recuperacao de Surto de Acao a cada final de turno \n"+
-             "Mas sua Guarda e Defesas sao reduzidas pela metade, e voce nao pode usar Hatsus", effectImage
+
+        return new MessageNotificationData(
+            notificationText, new object[] { 3*level, level }, effectImage
         );
-
-        ConnectToLastNotification(main);
-
         //@turn win of surge
     }
 

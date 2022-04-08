@@ -7,7 +7,7 @@ public class EnterrarOponente : CriticUse
     int damageExtra;
 
     //In this use, the critic value means the amount of meters!
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         int result = critic*10;
         
@@ -17,10 +17,9 @@ public class EnterrarOponente : CriticUse
         damageExtra = (int)(1.5 * critic);
         main.AddExtraDamage(damageExtra);
 
-        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, result, damageExtra),
-            injectedWork.GetBaseImage());
-
-        ConnectToLastNotification(main);
+        return new MessageNotificationData(
+            baseMessage, new object[] { critic, result, damageExtra }, injectedWork.GetBaseImage()
+        );
     }
 
     public override void DoEndMechanicLogic()

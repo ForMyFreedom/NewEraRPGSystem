@@ -4,9 +4,11 @@ using System;
 
 public class VentoSolar : CriticUse
 {
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, critic), injectedWork.GetBaseImage());
+        return new MessageNotificationData(
+            baseMessage, new object[] { critic, critic }, injectedWork.GetBaseImage()
+        );
     }
 
     public override void DoEndMechanicLogic()

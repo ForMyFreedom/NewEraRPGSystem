@@ -7,10 +7,10 @@ public class DefesaCritica : CriticUse
     int holdBonus;
     int index;
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         if (critic <= 0)
-            return;
+            return null;
 
         this.main = main;
 
@@ -18,8 +18,9 @@ public class DefesaCritica : CriticUse
         index = actionIndex;
         ModifySomeDefense(1);
 
-        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, holdBonus,GetBonusText()));
-        ConnectToLastNotification(main);
+        return new MessageNotificationData(
+            baseMessage, new object[] { critic, holdBonus, GetBonusText() }
+        );
     }
 
     public override void DoEndMechanicLogic()

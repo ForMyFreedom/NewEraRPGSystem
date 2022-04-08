@@ -11,15 +11,17 @@ public class Ten : Skill
         return new Array<string>() { "Ten" };
     }
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         if (critic < 0)
             critic = 0;
 
         guard = level + critic;
         main.AddGuard(guard);
-        main.CreateNewNotification($"Forma de Haki Ten: + {guard} Guarda | -25% Hatsus", effectImage);
-        ConnectToLastNotification(main);
+
+        return new MessageNotificationData(
+            notificationText, new object[] { guard }, effectImage
+        );
     }
 
     public override void DoEndMechanicLogic()

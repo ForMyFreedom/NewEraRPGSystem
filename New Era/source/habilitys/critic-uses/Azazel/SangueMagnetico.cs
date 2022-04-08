@@ -6,15 +6,14 @@ public class SangueMagnetico : CriticUse
 {
     int dmg;
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         dmg = 3 * critic;
         main.AddExtraDamage(dmg);
 
-        main.CreateNewNotification(
-        MyStatic.GetNotificationText(baseMessage, dmg), injectedWork.GetBaseImage()
+        return new MessageNotificationData(
+            baseMessage, new object[] { critic, dmg }, injectedWork.GetBaseImage()
         );
-        ConnectToLastNotification(main);
     }
 
     public override void DoEndMechanicLogic()

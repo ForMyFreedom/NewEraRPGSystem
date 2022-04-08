@@ -24,10 +24,11 @@ public abstract class Technique : NotificationConsumer
     protected Work[] injectedWorks;
 
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = 0)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = 0)
     {
         ExecuteAllCritics(main);
         DoAttackRollNotification(main, critic);
+        return null;
     }
 
     public override int RequestCriticTest(MainInterface main)

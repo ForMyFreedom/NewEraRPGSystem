@@ -40,6 +40,15 @@ public class NotificationArea : Control
 
 
 
+    public override void _Input(InputEvent @event)
+    {
+        if (!toShow) return;
+        if (@event.IsActionPressed("Esc"))
+            DoSlaa();
+    }
+
+
+
     public void CreateNewNotification(String message, Texture texture=null)
     {
         if (texture == null) texture = blankTexture;
@@ -85,10 +94,13 @@ public class NotificationArea : Control
         InputEventMouseButton buttonEvent = (InputEventMouseButton) @event;
         if (buttonEvent.ButtonIndex != (int) ButtonList.Left) return;
 
-        if (buttonEvent.Pressed)
-            toShow = !toShow;
-        else
-            return;
+        if (!buttonEvent.Pressed) return;
+        DoSlaa();
+    }
+
+    private void DoSlaa()
+    {
+        toShow = !toShow;
 
         if (toShow)
             GetNode<AnimationPlayer>(animationPath).Play("show");

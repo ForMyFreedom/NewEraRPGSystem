@@ -12,7 +12,10 @@ skillName = "Zetsu"
 effectImage = ExtResource( 2 )
 wayOfLevelCalculeScript = ExtResource( 3 )
 skillDescription = "Guarde sua vontade para seu interior"
-notificationText = null
+notificationText = "Forma de Haki Zetsu: Voce recebe
+       +$ em Testes Sigilosos
+       +$ em Recuperacao de Surto de Acao a cada final de turno
+       Mas sua Guarda e Defesas sao reduzidas pela metade, e voce nao pode usar Hatsus"
 mechanicDescription = "+3*Zetsu em Testes Sigilosos
 +Zetsu em Recuperação de Surto de Ação a cada Turno
 

@@ -6,12 +6,14 @@ public class CombateDancante : CriticUse
 {
     int holdBonus;
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         holdBonus = 3 * critic;
         main.AddModAgiDefense(holdBonus);
 
-        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, holdBonus), injectedWork.GetBaseImage());
+        return new MessageNotificationData(
+            baseMessage, new object[] { critic, holdBonus }, injectedWork.GetBaseImage()
+        );
     }
 
     public override void DoEndMechanicLogic()

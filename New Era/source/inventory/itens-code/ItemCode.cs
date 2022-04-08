@@ -11,9 +11,9 @@ public abstract class ItemCode : NotificationConsumer
     public void DoComportament(MainInterface main, InventoryItem item)
     {
         this.item = item;
-        DoMechanicLogic(main);
+        DoMechanic(main);
     }
 
-    public abstract override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1);
+    public abstract override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1);
     public abstract override void DoEndMechanicLogic();
 }

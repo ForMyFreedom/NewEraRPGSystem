@@ -6,12 +6,13 @@ public class MaosFermentadas : CriticUse
 {
     int mod;
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         mod = 3 * critic;
 
-        main.CreateNewNotification(MyStatic.GetNotificationText(baseMessage, mod), injectedWork.GetBaseImage());
-        ConnectToLastNotification(main);
+        return new MessageNotificationData(
+            baseMessage, new object[] { critic, mod }, injectedWork.GetBaseImage()
+        );
     }
 
     public override void DoEndMechanicLogic()

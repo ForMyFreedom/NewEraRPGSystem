@@ -24,7 +24,7 @@ public abstract class Skill : NotificationConsumer
 
     public abstract Array<string> GetTextOfMechanicButtons();
 
-    public override abstract void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic=-1);
+    public override abstract MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic=-1);
     public override abstract void DoEndMechanicLogic();
 
 

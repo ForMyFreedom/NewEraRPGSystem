@@ -7,9 +7,9 @@ public class FerraoDaRainha : CriticUse
     [Export]
     private Texture customImage;
 
-    public override void DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
+    public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        main.CreateNewNotification(baseMessage, customImage);
+        return new MessageNotificationData(baseMessage, null, customImage);
     }
 
     public override void DoEndMechanicLogic()
