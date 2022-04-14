@@ -54,13 +54,17 @@ public class CriticGUI : WindowDialog
 
     private void _OnCriticActivated(CriticUse use, int criticLimit, bool isLimitedCritic)
     {
-        MainInterface main = (MainInterface)GetTree().CurrentScene;
+        MainInterface main = (MainInterface) GetTree().CurrentScene;
 
-        int reachedCritic = use.RequestCriticTest(main);
-        if (isLimitedCritic && reachedCritic > criticLimit) reachedCritic = criticLimit;
-        if (main.GetActualSurge() < reachedCritic) reachedCritic = main.GetActualSurge();
+        int critic = -1;
 
-        use.DoMechanic(main, 0, reachedCritic);
+        int reachCritic = use.RequestCriticTest(main);
+        if (isLimitedCritic)
+            critic = criticLimit;
+
+        if (critic > reachCritic) critic = reachCritic;
+
+        use.DoMechanic(main, 0, critic);
     }
 
 

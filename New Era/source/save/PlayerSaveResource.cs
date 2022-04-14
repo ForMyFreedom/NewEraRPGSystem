@@ -49,6 +49,9 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     private Array<Technique> allTechniques;
 
     [Export]
+    private CapacitiesPlayerData capacitiesPlayerData;
+
+    [Export]
     private Array<InventoryItem> itens;
     [Export]
     private int weaponIndex;
@@ -509,6 +512,16 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     public void SetTechniques(Array<Technique> tech)
     {
         allTechniques = tech;
+    }
+
+    public CapacitiesPlayerData GetCapacitiesPlayerData()
+    {
+        return capacitiesPlayerData;
+    }
+
+    public void SetCapacitiesPlayerData(CapacitiesPlayerData playerData)
+    {
+        capacitiesPlayerData = playerData;
     }
 
     public Array<InventoryItem> GetItens()

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/FormaDaPrincesaDasAbelhas.cs" type="Script" id=1]
+[ext_resource path="res://assets/wallpapers/sun_melissa_wallpaper.jpg" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Forma da Princesa Abelha"
+relatedWork = 12
+text = "+Akuma/3 em Agilidade.  Pode voar por 20 metros de movimento até precisar pousar. Limite de polem: 13"
+baseMessage = "Você se tornou mais rápido, +$ Agilidade. Podendo voar por 20 metros. Limite de Polem: 13"
+cost = 0
+customTexture = ExtResource( 2 )

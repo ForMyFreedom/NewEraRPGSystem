@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Marksan/ModoTurbo.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+criticUseName = "Modo Turbo"
+relatedWork = 12
+text = "Você pode fazer um Teste de Akuma no Mi aumentar seu Deslocamento em combate em +3N. Assim como recebe um bônus de Dano igual à +N"
+baseMessage = "Seu deslocamento aumenta em $ metros, assim como causa +$ Dano"
+cost = -1

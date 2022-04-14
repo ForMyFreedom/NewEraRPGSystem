@@ -16,12 +16,9 @@ public static class MyStatic
         OS.WindowPosition = (screenSize - windowSize) * 0.5f;
     }
 
-    public static string GetNotificationText(string baseMessage, int[] criticArray, object[] list)
+    public static string GetNotificationText(string baseMessage, int critic, object[] list)
     {
-        int critic = criticArray[0];
-        int limit = criticArray[1];
-
-        string finalText = (critic > 0 ? $"[{critic} Criticos] [Grau {limit-critic}] \n" : "") + baseMessage;
+        string finalText = (critic > 0 ? $"[{critic} Criticos] " : "") + baseMessage;
         var regex = new Regex(Regex.Escape("$"));
 
         if (list != null)

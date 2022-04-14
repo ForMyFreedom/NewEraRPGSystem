@@ -295,7 +295,7 @@ public class MainInterface : Control, CharacterDataBank
     public void SetFirstColor(Color color)
     {
         colors[0] = color;
-        SetShadeColor(color);   SetFirstColorInRect(color);
+        SetFirstColorInRect(color);
     }
 
 
@@ -304,7 +304,7 @@ public class MainInterface : Control, CharacterDataBank
     public void SetSecondColor(Color color)
     {
         colors[1] = color;
-        SetSecondColorInRect(color);
+        SetSecondColorInRect(color); SetShadeColor(color);
     }
 
 
@@ -820,6 +820,17 @@ public class MainInterface : Control, CharacterDataBank
     public void RemoveTechnique(Technique tech)
     {
         GetNode<TechniquesTree>(techniquesTreePath).RemoveTechnique(tech);
+    }
+
+
+    public CapacitiesPlayerData GetCapacitiesPlayerData()
+    {
+        return player.GetCapacitiesPlayerData();
+    }
+
+    public void SetCapacitiesPlayerData(CapacitiesPlayerData playerData)
+    {
+        player.SetCapacitiesPlayerData(playerData);
     }
 
     public Array<InventoryItem> GetItens()

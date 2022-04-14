@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/ImpactoOfegante.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+criticUseName = "Impacto Ofegante"
+relatedWork = 4
+text = "Infere uma série de golpes extremamente rápidos, porém fracos, diretamente nos pulmões do inimigo. Em um Teste de Ataque, seu dano é anulado, mas reduz N das Defesas do inimigo até o final do combate [Estacavel]."
+baseMessage = "O Dano de seu ataque vai para zero, mas você reduz $ as Defesas do inimigo até o final do combate [Estacável]"
+cost = -1

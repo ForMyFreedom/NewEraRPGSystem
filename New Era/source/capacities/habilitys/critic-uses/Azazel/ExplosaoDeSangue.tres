@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Azazel/ExplosaoDeSangue.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+criticUseName = "Explosão de Sangue"
+relatedWork = 4
+text = "Após acertar um ataque com Lança Vampírica, você traga o sangue do alvo e o explode com sua lâmina. Você causa 10% da Vida Máxima do Alvo em Dano Desguardado Fisicamente caso não cause Danos, 5% caso cause."
+baseMessage = "Alvo perde 10% de sua Vida Total (Dano Desguardado Físico) caso seu ataque atual não cause dano (5% caso cause)"
+cost = 7

@@ -13,6 +13,7 @@ public class Player : Node, CharacterDataBank
             LoadLastSaveResource();
 
         CalculateWorksUp();
+        InjectDataInCapacities();
     }
 
 
@@ -29,7 +30,20 @@ public class Player : Node, CharacterDataBank
         playerSaveResource.CalculateWorksUp();
     }
 
+    public void InjectDataInCapacities()
+    {
+        foreach (Work work in GetWorks())
+        {
+            work.InjectPlayerData(GetCapacitiesPlayerData().GetWorkPlayerData(work.GetEnumWork()));
 
+            int count = 0;
+            foreach(Skill skill in work.GetSkillList())
+            {
+                skill.InjectPlayerData(GetCapacitiesPlayerData().GetSkillPlayerData(work.GetEnumWork(), count));
+                count++;
+            }
+        }
+    }
 
 
     public string GetPlayerName()
@@ -385,6 +399,16 @@ public class Player : Node, CharacterDataBank
     public void SetTechniques(Array<Technique> tech)
     {
         playerSaveResource.SetTechniques(tech);
+    }
+
+    public CapacitiesPlayerData GetCapacitiesPlayerData()
+    {
+        return playerSaveResource.GetCapacitiesPlayerData();
+    }
+
+    public void SetCapacitiesPlayerData(CapacitiesPlayerData playerData)
+    {
+        playerSaveResource.SetCapacitiesPlayerData(playerData);
     }
 
     public Array<InventoryItem> GetItens()

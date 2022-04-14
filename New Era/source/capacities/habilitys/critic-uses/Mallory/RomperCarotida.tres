@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Mallory/RomperCarotida.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+criticUseName = "Romper Carótida"
+relatedWork = 1
+text = "Em Testes de Ataque, caso o alvo possua o pescoço a mostra e seja um humano regular em anatomia. A Letalidade aumenta em +N."
+baseMessage = "O Valor de Letalidade foi aumentado em $ [Apenas caso o alvo seje humanoide]"
+cost = -1

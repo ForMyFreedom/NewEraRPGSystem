@@ -74,7 +74,7 @@ public class TechniquesTree : Tree
 
     private void ExecuteTechnique(Technique tech)
     {
-        tech.DoMechanic((MainInterface) GetTree().CurrentScene);
+        tech.DoMechanic((MainInterface) GetTree().CurrentScene, 0, -1);
     }
 
 
@@ -136,8 +136,7 @@ public class TechniquesTree : Tree
                 worksText += " - ";
         }
             
-        string levelStr = (tech.GetLevel() > 0) ? $"[LVL {tech.GetLevel()}]" : "";
-        return $"- {tech.GetTechniqueName()}    [{worksText}] {levelStr}";
+        return $"- {tech.GetTechniqueName()}    [{worksText}]";
     }
 
     private string GetTechniqueDescription(Technique technique)

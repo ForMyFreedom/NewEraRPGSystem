@@ -1,0 +1,29 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Azazel/FatorLinhagem.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+criticUseName = "Hatsu Transmutação, Fator Linhagem"
+relatedWork = 14
+text = "Você recebe uma quantidade de Linhagens igual a N/4, podendo acioná-las em você assim como em quem você consiga tocar no sangue:
+  Solarium: -10% Vida ao sol, esse valor se torna 2*Bônus de Dano
+  Lunarium: -10% Surto de Ação a lua, esse valor se torna 2*Guarda
+  Geofrium: +15 de Resistência para distribuir livremente
+  Hidrofium: Pode respirar por 5 minutos em baixo d'água, e recebe metade dos danos de pressão
+  Plaqueta: Recupera 10% de Vida [Uma vez por dia]
+  Célula Vermelha: Recupera 5% de Surto de Ação [Uma vez por dia]
+  Célula Branca: Ganha 3 Contra-Praga [Uma vez por dia]
+  Plasma: Recupera o dobro de Vida em um Descanso [Uma vez por dia]"
+baseMessage = "Você tem $ Linhagens para aplicar:
+       Solarium: -10% Vida ao sol, esse valor se torna 2*Bônus de Dano
+       Lunarium: -10% Surto de Ação a lua, esse valor se torna 2*Guarda
+       Geofrium: +15 de Resistência para distribuir livremente
+       Hidrofium: Pode respirar por 5 minutos em baixo d'água, e recebe metade dos danos de pressão
+       Plaqueta: Recupera 10% de Vida [Uma vez por dia]
+       Célula Vermelha: Recupera 5% de Surto de Ação [Uma vez por dia]
+       Célula Branca: Ganha 3 Contra-Praga [Uma vez por dia]
+       Plasma: Recupera o dobro de Vida em um Descanso [Uma vez por dia]"
+cost = -1

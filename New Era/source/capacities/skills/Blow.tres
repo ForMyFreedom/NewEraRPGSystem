@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://source/capacities/skills/Blow.cs" type="Script" id=1]
+[ext_resource path="res://source/wayOfCalculeSkill/HalfWayOfCalculeSkill.cs" type="Script" id=2]
+[ext_resource path="res://assets/skills/blow.png" type="Texture" id=3]
+
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = false
+skillName = "Pancada"
+effectImage = ExtResource( 3 )
+wayOfLevelCalculeScript = ExtResource( 2 )
+skillDescription = "Nada melhor que uma boa porradaria"
+notificationText = "Se o alvo tirar menos de 
+%
+$, ele causa -$ de Dano no próximo turno
+%
+$, ele perde -$ de movimento [Podendo ficar imóvel] pelo próximo turno
+%
+$, ele tem -$ em todas suas Defesas pelo próximo turno"
+mechanicDescription = ": Sempre acertar um ataque desarmado você pode declarar Pancada, sendo o alvo obrigado a fazer um Teste Disputado de um
+dos atributos de sua escolha:
+Força (Se o alvo falhar, ele tem -Nível de Lutador/2 de dano no próximo turno).
+Agilidade (Se o alvo falhar, ele é incapaz de se mover no próximo turno).
+Sentidos (Se o alvo falhar, ele tem -Nível de Lutador/2 Defesas no próx. turno).
+Caso você falhe em algum dos testes, nada acontece. Porem, você não pode
+mais declarar Pancada até ter dormido por bastante tempo [Alcansar Maestrias de Lutador aumentam a quantidade de falhas possíveis até se esgotar]."
+level = 0

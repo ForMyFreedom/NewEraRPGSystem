@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://source/capacities/skills/Prevision.cs" type="Script" id=1]
+[ext_resource path="res://source/wayOfCalculeSkill/IgnoreWayOfCalculeSkill.cs" type="Script" id=2]
+[ext_resource path="res://assets/skills/prevision.png" type="Texture" id=3]
+
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = false
+skillName = "Previsão"
+effectImage = ExtResource( 3 )
+wayOfLevelCalculeScript = ExtResource( 2 )
+skillDescription = "Entender a natureza é saber sobreviver!"
+notificationText = "Caso a Dificuldade de Previsao do teste seje menor que $, você especula e recebe informacoes. Do contrario, voce nao tem a menor ideia"
+mechanicDescription = "Sempre que desejar ou for necessário prever a situação do mar em que está, você deve realizar um Teste de Previsão. Para isso, rola-se os dados equivalentes ao seu valor de Previsão ao passo que o Narrador escolhe uma Dificuldade levando em conta a imprevesibilidade do mar e a distância de tempo que se deseja especular. Caso tenha sucesso, você preve como o mar estará sob as condições anteriores. Do contrário, você não tem ideia."
+level = 0

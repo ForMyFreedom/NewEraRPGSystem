@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Marksan/TechArmor.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+criticUseName = "T3ch-Arm0r"
+relatedWork = 12
+text = "Fortificando seu corpo com placas tecnológicas, você recebe +N de Força e +3N de Resistência a Venenos, com o custo de 2N Surto de Ação."
+baseMessage = "Modo T3ch-Arm0r:
++$ Força
++$ Resistência a Venenos
+-$ Surto de Ação"
+cost = -1

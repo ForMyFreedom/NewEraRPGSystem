@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/FerraoDaRainha.cs" type="Script" id=1]
+
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+criticUseName = "Ferrão da Rainha"
+relatedWork = 12
+text = "O ataque Mais Forte..."
+baseMessage = null
+cost = 0

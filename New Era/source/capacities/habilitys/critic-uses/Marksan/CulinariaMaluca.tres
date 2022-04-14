@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Marksan/CulinariaMaluca.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+criticUseName = "Culinária Maluca"
+relatedWork = 5
+text = "Em Testes de Culinária, caso esteja usando apenas ingredientes vivos duvidosos, você recebe um bônus em Resultado igual à 3N"
+baseMessage = "Caso use apenas ingredientes vivos e duvidosos, você recebe +$ no Teste de Culinária"
+cost = -1
