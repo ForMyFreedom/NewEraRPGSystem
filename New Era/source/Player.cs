@@ -33,17 +33,27 @@ public class Player : Node, CharacterDataBank
 
     public void InjectDataInCapacities()
     {
-        foreach (Work work in GetWorks())
-        {
-            work.InjectPlayerData(GetCapacitiesPlayerData().GetWorkPlayerData(work.GetEnumWork()));
+        Array<Work> works = GetWorks();
+        Array<Work> updatedWorks = new Array<Work>();
 
-            int count = 0;
-            foreach(Skill skill in work.GetSkillList())
+        for (int i = 0; i < works.Count; i++)
+        {
+            works[i].InjectPlayerData(GetCapacitiesPlayerData().GetWorkPlayerData(works[i].GetEnumWork()));
+            updatedWorks.Add(works[i]);
+
+            Skill[] skillList = new Skill[works[i].GetSkillList().Length];
+
+            for(int j = 0; j < skillList.Length; j++)
             {
-                skill.InjectPlayerData(GetCapacitiesPlayerData().GetSkillPlayerData(work.GetEnumWork(), count));
-                count++;
+                Skill skill = works[i].GetSkillList()[j];
+                skill.InjectPlayerData(GetCapacitiesPlayerData().GetSkillPlayerData(works[i].GetEnumWork(), j));
+                skillList[j] = skill;
             }
+
+            updatedWorks[i].SetSkillList(skillList);
         }
+
+        SetWorks(updatedWorks);
     }
 
 
