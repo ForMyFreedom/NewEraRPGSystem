@@ -64,7 +64,6 @@ public abstract class NotificationConsumer : Resource
         if (critic < 0)        critic = 0;
         if (!CanUseThisHability(main, critic) && canLimit)
             critic = (int)(Math.Pow(main.GetActualSurge(),2) / GetCriticWaste(main.GetActualSurge()));
-        
         return critic;
     }
 
@@ -91,6 +90,6 @@ public abstract class NotificationConsumer : Resource
 
     private int GetCriticWaste(int value)
     {
-        return value / 2;
+        return (value/2 <= 0) ? 1 : value/2;
     }
 }

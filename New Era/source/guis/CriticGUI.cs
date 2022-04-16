@@ -62,6 +62,7 @@ public class CriticGUI : WindowDialog
         if (isLimitedCritic)
             critic = criticLimit;
 
+        if (use.GetCost() > critic) critic = use.GetCost();
         if (critic > reachCritic) critic = reachCritic;
 
         use.DoMechanic(main, 0, critic);
