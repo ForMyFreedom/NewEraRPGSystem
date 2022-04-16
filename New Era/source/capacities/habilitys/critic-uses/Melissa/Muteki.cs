@@ -12,7 +12,7 @@ public class Muteki : CriticUse
         main.AddGuard(guard);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { critic, guard }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { guard }, injectedWork.GetBaseImage()
         );
     }
 

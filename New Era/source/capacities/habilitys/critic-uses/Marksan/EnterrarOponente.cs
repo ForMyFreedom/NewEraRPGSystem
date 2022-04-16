@@ -18,7 +18,7 @@ public class EnterrarOponente : CriticUse
         main.AddExtraDamage(damageExtra);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { critic, result, damageExtra }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { result, damageExtra }, injectedWork.GetBaseImage()
         );
     }
 

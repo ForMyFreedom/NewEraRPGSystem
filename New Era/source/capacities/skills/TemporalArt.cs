@@ -15,7 +15,8 @@ public class TemporalArt : Skill
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         int result = 0;
-        if (critic < 0)
+
+        if (critic <= 0)
             result = main.RequestSkillRoll(skillName);
         else
             result = critic * 10;

@@ -13,14 +13,14 @@ public class FormaDaPrincesaDasAbelhas : CriticUse
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        holdMod = injectedWork.GetLevel() / 3;
+        holdMod = (int)(critic / 1.5);
         main.AddModAgility(holdMod);
 
         lastTexture = main.GetBGTexture();
         main.SetBGTexture(customTexture);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { critic, holdMod }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { holdMod }, injectedWork.GetBaseImage()
         );
 
     }
@@ -33,6 +33,6 @@ public class FormaDaPrincesaDasAbelhas : CriticUse
 
     public override int RequestCriticTest(MainInterface main)
     {
-        return cost;
+        return main.RequestWorkRoll(relatedWork) / 10;
     }
 }

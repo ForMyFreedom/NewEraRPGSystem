@@ -13,7 +13,7 @@ public class PrecisaoCritica : CriticUse
             return null;
 
         return new MessageNotificationData(
-            baseMessage, new object[] { critic, 3 * critic }
+            baseMessage, new object[] { 3 * critic }
         );
     }
 

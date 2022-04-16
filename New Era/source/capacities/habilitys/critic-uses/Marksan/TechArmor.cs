@@ -4,6 +4,11 @@ using System;
 
 public class TechArmor : CriticUse
 {
+    [Export]
+    private Texture customImage;
+
+    private Texture lastTexture;
+
     int strMod;
     int resMod;
     int surgeMod;
@@ -17,13 +22,17 @@ public class TechArmor : CriticUse
 
         ModifyAllFactors(1);
 
+        lastTexture = main.GetBGTexture();
+        main.SetBGTexture(customImage);
+
         return new MessageNotificationData(
-            baseMessage, new object[] { critic, strMod, resMod, surgeMod }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { strMod, resMod, surgeMod }, injectedWork.GetBaseImage()
         );
     }
 
     public override void DoEndMechanicLogic()
     {
+        main.SetBGTexture(lastTexture);
         ModifyAllFactors(-1);
     }
 

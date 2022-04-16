@@ -13,7 +13,7 @@ public class ModoTurbo : CriticUse
 
 
         return new MessageNotificationData(
-            baseMessage, new object[] { critic, 3 * critic, critic }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { 3 * critic, critic }, injectedWork.GetBaseImage()
         );
     }
 

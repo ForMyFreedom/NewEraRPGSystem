@@ -7,7 +7,7 @@ public class CulinariaMaluca : CriticUse
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         return new MessageNotificationData(
-            baseMessage, new object[] { critic, 3 * critic }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { 3 * critic }, injectedWork.GetBaseImage()
         );
     }
 

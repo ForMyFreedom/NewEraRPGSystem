@@ -6,6 +6,7 @@
 script = ExtResource( 1 )
 isSingleton = true
 toDispendSurge = true
+canLimit = false
 criticUseName = "Precisão Crítica"
 relatedWork = 13
 text = "Afinamento de sua vontade, +3N em um Teste de Ataque"

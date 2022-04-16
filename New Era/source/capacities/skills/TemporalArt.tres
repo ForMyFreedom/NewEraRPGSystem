@@ -3,11 +3,11 @@
 [ext_resource path="res://source/capacities/skills/TemporalArt.cs" type="Script" id=1]
 [ext_resource path="res://source/wayOfCalculeSkill/IgnoreWayOfCalculeSkill.cs" type="Script" id=2]
 
-
 [resource]
 script = ExtResource( 1 )
-isSingleton = true
+isSingleton = null
 toDispendSurge = false
+canLimit = null
 skillName = "@Arte de Tempo@"
 wayOfLevelCalculeScript = ExtResource( 2 )
 skillDescription = "@Arte do Tempo@"
@@ -17,5 +17,5 @@ Ela demora naturalmente $ dias para ser criada, com seu Resultado sendo igual a 
 Para cada dia a mais adicione +$ no Resultado"
 mechanicDescription = "Sempre que precisar desenvolver uma arte, você normalmente não precisa de nenhuma Ferramenta e Ingrediente. Devendo apenas realizar um Teste Regular sem Dificuldade. Com o Resultado definido, consulte a Tabela de Arte.
 Só pode se apreciar uma performace (A seguir) uma vez, logicamente, porem a cada vez que outros personagens apreciarem a mesma perfomace, o valor de Resultado para ele cai em 15 pontos"
-level = 0
-aprimorationByExtraDay = 5
+level = null
+aprimorationByExtraDay = null

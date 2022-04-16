@@ -6,9 +6,9 @@
 script = ExtResource( 1 )
 isSingleton = true
 toDispendSurge = true
-criticUseName = "Asas Frágeis"
+canLimit = false
+criticUseName = "Postura do Deus Louva-Deus"
 relatedWork = 4
-text = "Após acertar um ataque/contra-ataque, permite rolar um Teste de Agilidade disputado contra um alvo. Caso ganhe, se rouba N Surto de Ação do Inimigo "
-baseMessage = "Após atacar de algum modo, você faz disputa Agilidade com um alvo [Resultado $]
-E caso seja melhor, você rouba $ Surto de Ação do alvo"
+text = "Assume uma postura de combate extremamente versátil e Agressiva. Caso o inimigo consiga passar as Defesas ou a Guarda de Melissa, enquanto ela estiver com essa postura ativa, devolve uma porcentagem crescente de Dano"
+baseMessage = "[Forma] Caso o inimigo consiga passar as Defesas [Agilidade] ou a Guarda [Força], você retorna $% de Dano"
 cost = -1

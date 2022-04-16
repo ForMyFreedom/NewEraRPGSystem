@@ -15,7 +15,7 @@ public class MicroBatimento : CriticUse
         main.GetWorkNodeByEnum(relatedWork).GetSkillList()[0].DoMechanic(main, actionIndex, beatLevel);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { critic, selfDamage }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { selfDamage }, injectedWork.GetBaseImage()
         );
     }
 

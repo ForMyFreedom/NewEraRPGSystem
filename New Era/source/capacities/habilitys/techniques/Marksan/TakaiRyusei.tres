@@ -8,11 +8,11 @@
 resource_local_to_scene = true
 script = ExtResource( 1 )
 isSingleton = true
-toDispendSurge = false
+toDispendSurge = true
+canLimit = true
 techniqueName = "Takai Ryusei"
 relatedWorks = PoolIntArray( 3, 12 )
 criticUses = [ ExtResource( 3 ), ExtResource( 2 ) ]
 powerOfCritics = PoolIntArray( 9, 27 )
 actionIndexOfCritics = PoolIntArray( 0, 0 )
-level = 25
 modValue = 0

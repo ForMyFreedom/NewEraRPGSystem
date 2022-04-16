@@ -6,6 +6,7 @@
 script = ExtResource( 1 )
 isSingleton = true
 toDispendSurge = true
+canLimit = false
 criticUseName = "Micro-Batimento"
 relatedWork = 4
 text = "Em uma Ação Livre ao custo de 1d6+2 de Vida, durante esse turno, o efeito da mecânica ‘Batimentos’ é duplicada"

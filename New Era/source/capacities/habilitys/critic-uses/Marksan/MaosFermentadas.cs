@@ -11,7 +11,7 @@ public class MaosFermentadas : CriticUse
         mod = 3 * critic;
 
         return new MessageNotificationData(
-            baseMessage, new object[] { critic, mod }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { mod }, injectedWork.GetBaseImage()
         );
     }
 

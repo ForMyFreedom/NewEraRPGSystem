@@ -7,8 +7,6 @@ public abstract class Skill : NotificationConsumer, IPlayerDataConsumer
     [Export]
     protected string skillName;
     [Export]
-    protected Texture effectImage; 
-    [Export]
     protected CSharpScript wayOfLevelCalculeScript;
     [Export]
     protected String skillDescription;
@@ -16,11 +14,11 @@ public abstract class Skill : NotificationConsumer, IPlayerDataConsumer
     protected String notificationText;
     [Export(PropertyHint.MultilineText)]
     protected String mechanicDescription;
-    [Export]
-    protected int level;
 
     private WayOfCalculeSkill wayOfLevelCalcule;
     private SkillPlayerData skillPlayerData;
+    protected Texture effectImage;
+    protected int level;
 
     public abstract Array<string> GetTextOfMechanicButtons();
 
@@ -31,6 +29,13 @@ public abstract class Skill : NotificationConsumer, IPlayerDataConsumer
     public void InjectPlayerData(IVolatilePlayerData playerData)
     {
         skillPlayerData = (SkillPlayerData) playerData;
+        effectImage = GetEffectImage();
+        level = GetLevel();
+    }
+
+    public IVolatilePlayerData GetVolatilePlayerData()
+    {
+        return skillPlayerData;
     }
 
 
@@ -39,10 +44,10 @@ public abstract class Skill : NotificationConsumer, IPlayerDataConsumer
         return skillName;
     }
 
-    public void PlayWayOfLevelCalcule(WorkTree workTree, int workIndex, int skillIndex, int level)
+    public void PlayWayOfLevelCalcule(WorkTree workTree, int workIndex, int skillIndex, int _level)
     {
         wayOfLevelCalcule = (WayOfCalculeSkill)wayOfLevelCalculeScript.New();
-        wayOfLevelCalcule.CalculeLevelSkill(workTree, workIndex, skillIndex, level);
+        wayOfLevelCalcule.CalculeLevelSkill(workTree, workIndex, skillIndex, _level);
     }
 
 
@@ -74,7 +79,7 @@ public abstract class Skill : NotificationConsumer, IPlayerDataConsumer
 
     public Texture GetEffectImage()
     {
-        return effectImage;
+        return skillPlayerData.GetTexture();
     }
 
     public String GetMechanicDescription()

@@ -6,6 +6,7 @@
 script = ExtResource( 1 )
 isSingleton = true
 toDispendSurge = true
+canLimit = false
 criticUseName = "Conhecedora de Pragas"
 relatedWork = 9
 text = "Em Testes de Conhecimento, caso o assunto seja sobre pragas e epidemias, você tem +Medicina no Dado de Conhecimento"

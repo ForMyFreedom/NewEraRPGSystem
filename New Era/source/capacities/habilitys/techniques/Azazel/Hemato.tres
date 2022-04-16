@@ -8,11 +8,11 @@
 resource_local_to_scene = true
 script = ExtResource( 1 )
 isSingleton = true
-toDispendSurge = false
+toDispendSurge = true
+canLimit = true
 techniqueName = "Hemato"
 relatedWorks = PoolIntArray( 4 )
 criticUses = [ ExtResource( 3 ), ExtResource( 2 ) ]
 powerOfCritics = PoolIntArray( 2, 18 )
 actionIndexOfCritics = PoolIntArray( 0, 0 )
-level = 40
 modValue = 0

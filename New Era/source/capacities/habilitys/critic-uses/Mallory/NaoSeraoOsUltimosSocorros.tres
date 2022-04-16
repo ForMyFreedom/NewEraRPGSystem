@@ -6,6 +6,7 @@
 script = ExtResource( 1 )
 isSingleton = true
 toDispendSurge = true
+canLimit = false
 criticUseName = "Não serão os Últimos Socorros"
 relatedWork = 9
 text = "Em Testes de Medicina, caso o alvo esteja com a Vida zerada e correndo risco de vida (Não apenas nocauteado), você recebe +4N no Resultado."

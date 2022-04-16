@@ -2,9 +2,11 @@
 
 [ext_resource path="res://source/capacities/habilitys/critic-uses/Geral/DefesaCritica.cs" type="Script" id=1]
 
-
 [resource]
 script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
 criticUseName = "Defesa Crítica"
 relatedWork = 13
 text = "Que medo! Ganhe +2N de uma Defesa de sua escolha"

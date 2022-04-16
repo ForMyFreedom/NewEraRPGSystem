@@ -7,7 +7,7 @@ public class LembrancaDoLimiar : CriticUse
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         return new MessageNotificationData(
-            baseMessage, new object[] { critic, 2 * critic }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { 2 * critic }, injectedWork.GetBaseImage()
         );
     }
 

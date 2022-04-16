@@ -2,16 +2,15 @@
 
 [ext_resource path="res://source/capacities/habilitys/techniques/Technique.cs" type="Script" id=1]
 
-
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )
 isSingleton = true
-toDispendSurge = true
+toDispendSurge = false
+canLimit = true
 techniqueName = "Ataque Básico"
 relatedWorks = PoolIntArray( 12 )
 criticUses = [  ]
 powerOfCritics = PoolIntArray(  )
 actionIndexOfCritics = PoolIntArray(  )
-level = 0
 modValue = 0

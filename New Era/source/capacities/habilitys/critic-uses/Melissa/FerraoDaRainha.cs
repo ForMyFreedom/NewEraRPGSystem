@@ -9,7 +9,8 @@ public class FerraoDaRainha : CriticUse
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        return new MessageNotificationData(baseMessage, null, customImage);
+        main.SetBGTexture(customImage);
+        return new MessageNotificationData(baseMessage, null, null);
     }
 
     public override void DoEndMechanicLogic()

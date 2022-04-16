@@ -6,11 +6,11 @@
 resource_local_to_scene = true
 script = ExtResource( 1 )
 isSingleton = true
-toDispendSurge = true
+toDispendSurge = false
+canLimit = true
 techniqueName = "Tecnologia Bigorgue"
 relatedWorks = PoolIntArray( 12 )
 criticUses = [  ]
 powerOfCritics = PoolIntArray(  )
 actionIndexOfCritics = PoolIntArray(  )
-level = 0
 modValue = 0

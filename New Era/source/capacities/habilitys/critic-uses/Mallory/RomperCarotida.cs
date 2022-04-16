@@ -9,7 +9,7 @@ public class RomperCarotida : CriticUse
         main.RequestSkillMechanic(relatedWork, 0, critic);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { critic, critic }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { critic }, injectedWork.GetBaseImage()
         );
     }
 

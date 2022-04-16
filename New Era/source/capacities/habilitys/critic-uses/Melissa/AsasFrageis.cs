@@ -6,9 +6,7 @@ public class AsasFrageis : CriticUse
 {
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        return new MessageNotificationData(
-            baseMessage, new object[] { critic, 10 * critic, critic }, injectedWork.GetBaseImage()
-        );
+        return new MessageNotificationData(baseMessage, new object[] {Math.Sqrt(50*critic)}, injectedWork.GetBaseImage());
     }
 
     public override void DoEndMechanicLogic()
@@ -18,6 +16,6 @@ public class AsasFrageis : CriticUse
     
     public override int RequestCriticTest(MainInterface main)
     {
-        return main.RequestAtributeRoll(MyEnum.Atribute.AGI) / 10;
+        return main.RequestWorkRoll(relatedWork) / 10;
     }
 }

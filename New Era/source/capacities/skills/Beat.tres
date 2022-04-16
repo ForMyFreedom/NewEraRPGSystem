@@ -1,18 +1,16 @@
-[gd_resource type="Resource" load_steps=4 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://source/capacities/skills/Beat.cs" type="Script" id=1]
-[ext_resource path="res://assets/skills/beat.png" type="Texture" id=2]
 [ext_resource path="res://source/wayOfCalculeSkill/HalfWayOfCalculeSkill.cs" type="Script" id=3]
 
 [resource]
 script = ExtResource( 1 )
 isSingleton = true
 toDispendSurge = false
+canLimit = true
 skillName = "Batimento"
-effectImage = ExtResource( 2 )
 wayOfLevelCalculeScript = ExtResource( 3 )
 skillDescription = "Ordenar minha vontade com as batidas de meu sangue"
 notificationText = "Batimento: Você recebe +$ Dano e +$ Regeneração de Surto de Ação, ao custo de +$ de Stress [A próxima vez que cair, sua queda valerá por $]"
 mechanicDescription = "Você possui um grupo de Fases Cardiacas que pode selecionar ou não no início dos seus Turnos. Essencialmente é tudo sobre a Pressão [Bônus de Dano] e a Frequência [Ganho de Surto] de seu Sangue.
 Cada fase tem um custo em Stress Cardiaco atrelado ao quão radical é o foco em um dos Fatores. Para cada valor maior que um na divisão de sua Força pelo seu Stress, você ganha um Nódo de Stress [Na próxima vez que Cair, você receberá +Nódos quedas a mais]"
-level = 0

@@ -6,6 +6,7 @@
 script = ExtResource( 1 )
 isSingleton = true
 toDispendSurge = true
+canLimit = false
 criticUseName = "Hatsu Manipulação, Issho-Ni"
 relatedWork = 14
 text = "Uni-se com a Apes em uma forma de combate exótica. A medusa não pode ser acertada, e sempre que Melissa atacar, Apes escolhará um de seus ataque para aplicar no alvo"

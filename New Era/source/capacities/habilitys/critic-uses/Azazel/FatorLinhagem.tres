@@ -6,6 +6,7 @@
 script = ExtResource( 1 )
 isSingleton = true
 toDispendSurge = true
+canLimit = false
 criticUseName = "Hatsu Transmutação, Fator Linhagem"
 relatedWork = 14
 text = "Você recebe uma quantidade de Linhagens igual a N/4, podendo acioná-las em você assim como em quem você consiga tocar no sangue:

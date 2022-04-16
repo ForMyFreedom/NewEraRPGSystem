@@ -6,6 +6,7 @@
 script = ExtResource( 1 )
 isSingleton = true
 toDispendSurge = true
+canLimit = false
 criticUseName = "Garrota Irritante"
 relatedWork = 11
 text = "Permite você realizar um Teste de Manipulação disputado com a Mente de um alvo para mudar o foco de ataque dele para você (Note que o alvo tem que estar engajado ofensivamente no combate)."

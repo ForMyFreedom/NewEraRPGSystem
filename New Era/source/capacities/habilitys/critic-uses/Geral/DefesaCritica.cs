@@ -19,7 +19,7 @@ public class DefesaCritica : CriticUse
         ModifySomeDefense(1);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { critic, holdBonus, GetBonusText() }
+            baseMessage, new object[] { holdBonus, GetBonusText() }
         );
     }
 

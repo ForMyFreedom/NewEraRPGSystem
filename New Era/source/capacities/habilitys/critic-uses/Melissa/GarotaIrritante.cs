@@ -7,7 +7,7 @@ public class GarotaIrritante : CriticUse
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         return new MessageNotificationData(
-            baseMessage, new object[] { critic, critic * 10 }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { critic * 10 }, injectedWork.GetBaseImage()
         );
     }
 
