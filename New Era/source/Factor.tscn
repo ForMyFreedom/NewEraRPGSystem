@@ -7,7 +7,7 @@
 
 [node name="Factor" type="Control"]
 margin_right = 247.0
-margin_bottom = 197.0
+margin_bottom = 174.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 3 )
@@ -19,7 +19,8 @@ actualSpinPath = NodePath("VBoxContainer/HBoxContainer1/Control2/VBoxContainer/A
 modSpinPath = NodePath("VBoxContainer/HBoxContainer2/Control/VBoxContainer/ModSpinBox")
 applySpinPath = NodePath("VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer/ApplySpinBox")
 applyButtonPath = NodePath("VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer/ApplyButton")
-modApplyControlPath = NodePath("VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2")
+modApplyControlPath = NodePath("VBoxContainer/HBoxContainer3/HBoxContainer3")
+restButtonPath = NodePath("VBoxContainer/HBoxContainer3/HBoxContainer2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -29,9 +30,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_top = 27.0
+margin_top = 7.0
 margin_right = 247.0
-margin_bottom = 59.0
+margin_bottom = 39.0
 size_flags_vertical = 10
 custom_fonts/font = ExtResource( 1 )
 text = "Fator"
@@ -39,9 +40,9 @@ align = 1
 valign = 1
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 63.0
+margin_top = 43.0
 margin_right = 247.0
-margin_bottom = 122.0
+margin_bottom = 83.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -51,7 +52,7 @@ __meta__ = {
 
 [node name="Control1" type="Control" parent="VBoxContainer/HBoxContainer1"]
 margin_right = 121.0
-margin_bottom = 59.0
+margin_bottom = 40.0
 mouse_filter = 2
 size_flags_horizontal = 3
 
@@ -64,9 +65,8 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer1/Control1/VBoxContainer"]
-margin_top = 12.0
 margin_right = 121.0
-margin_bottom = 27.0
+margin_bottom = 15.0
 size_flags_vertical = 10
 custom_fonts/font = ExtResource( 2 )
 text = "Total  "
@@ -75,9 +75,9 @@ valign = 1
 
 [node name="TotalSpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer1/Control1/VBoxContainer"]
 margin_left = 24.0
-margin_top = 31.0
+margin_top = 19.0
 margin_right = 97.0
-margin_bottom = 55.0
+margin_bottom = 43.0
 size_flags_horizontal = 6
 size_flags_vertical = 2
 custom_icons/updown = ExtResource( 4 )
@@ -89,7 +89,7 @@ __meta__ = {
 [node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer1"]
 margin_left = 125.0
 margin_right = 247.0
-margin_bottom = 59.0
+margin_bottom = 40.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -103,9 +103,8 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer1/Control2/VBoxContainer"]
-margin_top = 12.0
 margin_right = 122.0
-margin_bottom = 27.0
+margin_bottom = 15.0
 size_flags_horizontal = 3
 size_flags_vertical = 10
 custom_fonts/font = ExtResource( 2 )
@@ -115,9 +114,9 @@ valign = 1
 
 [node name="ActualSpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer1/Control2/VBoxContainer"]
 margin_left = 24.0
-margin_top = 31.0
+margin_top = 19.0
 margin_right = 97.0
-margin_bottom = 55.0
+margin_bottom = 43.0
 size_flags_horizontal = 6
 size_flags_vertical = 2
 custom_icons/updown = ExtResource( 4 )
@@ -127,14 +126,14 @@ __meta__ = {
 }
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 126.0
+margin_top = 87.0
 margin_right = 247.0
-margin_bottom = 197.0
+margin_bottom = 130.0
 mouse_filter = 2
 size_flags_vertical = 3
 
 [node name="Control" type="Control" parent="VBoxContainer/HBoxContainer2"]
-margin_right = 124.0
+margin_right = 136.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
@@ -148,7 +147,7 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Control/VBoxContainer"]
-margin_right = 124.0
+margin_right = 136.0
 margin_bottom = 15.0
 size_flags_horizontal = 3
 size_flags_vertical = 10
@@ -158,9 +157,9 @@ align = 1
 valign = 1
 
 [node name="ModSpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer2/Control/VBoxContainer"]
-margin_left = 25.0
+margin_left = 31.0
 margin_top = 19.0
-margin_right = 98.0
+margin_right = 104.0
 margin_bottom = 43.0
 size_flags_horizontal = 6
 size_flags_vertical = 2
@@ -172,16 +171,16 @@ __meta__ = {
 }
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 128.0
+margin_left = 140.0
 margin_right = 247.0
-margin_bottom = 71.0
+margin_bottom = 43.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
-margin_right = 119.0
+margin_right = 107.0
 margin_bottom = 15.0
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -191,9 +190,8 @@ align = 1
 valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
-margin_left = 6.0
 margin_top = 19.0
-margin_right = 113.0
+margin_right = 107.0
 margin_bottom = 43.0
 size_flags_horizontal = 4
 size_flags_vertical = 3
@@ -219,14 +217,34 @@ size_flags_horizontal = 5
 size_flags_vertical = 0
 text = "Ok"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
-margin_top = 47.0
-margin_right = 119.0
-margin_bottom = 71.0
-size_flags_horizontal = 5
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 134.0
+margin_right = 247.0
+margin_bottom = 158.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 43.0
+margin_right = 121.0
+margin_bottom = 24.0
+size_flags_horizontal = 10
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2"]
+[node name="RestButton" type="Button" parent="VBoxContainer/HBoxContainer3/HBoxContainer2"]
+margin_right = 78.0
+margin_bottom = 24.0
+size_flags_horizontal = 6
+text = "Descançar"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 128.0
+margin_right = 247.0
+margin_bottom = 24.0
+size_flags_horizontal = 10
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/HBoxContainer3"]
 margin_right = 42.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
@@ -236,7 +254,7 @@ text = "Guarda"
 align = 1
 valign = 1
 
-[node name="ModApplySpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2"]
+[node name="ModApplySpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer3/HBoxContainer3"]
 margin_left = 46.0
 margin_right = 119.0
 margin_bottom = 24.0

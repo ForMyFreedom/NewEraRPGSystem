@@ -24,9 +24,13 @@ public class Factor : Control
     private NodePath applyButtonPath;
     [Export]
     private NodePath modApplyControlPath;
+    [Export]
+    private NodePath restButtonPath;
 
     [Export]
     private bool usesModApply;
+    [Export]
+    private bool usesRestButton;
 
     [Signal]
     public delegate void total_factor_changed(int value);
@@ -34,32 +38,45 @@ public class Factor : Control
     public delegate void actual_factor_changed(int value);
 
     int actualMod;
-
+    private bool connectionsMadded;
 
     public override void _Ready()
     {
         actualMod = (int) GetNode<SpinBox>(modSpinPath).Value;
         GetNode(applyButtonPath).Connect("button_up", this, "_OnApplyButtonUp");
         GetNode<SpinBox>(applySpinPath).Value = defaultApplyValue;
-        GetTree().CurrentScene.Connect("ready", this, "_OnTreeReady");
+        GetTree().CurrentScene.Connect("main_ready", this, "_OnMainReady");
 
         if (!usesModApply)
         {
             GetNode<Control>(modApplyControlPath).Visible = false;
         }
+
+        if (!usesRestButton)
+            GetNode<Control>(restButtonPath).Visible = false;
+        else
+            GetNode(restButtonPath).GetChild<Button>(0).Connect("button_up", this, "_OnRestButtonUp");
     }
 
 
-    private void _OnTreeReady()
+    private void _OnMainReady()
     {
-        GetNode(modSpinPath).Connect("value_changed", this, "_OnModSpinChanged");
+        if (connectionsMadded) return;
 
+        GetNode(modSpinPath).Connect("value_changed", this, "_OnModSpinChanged");
         if (relatedAtributePath != null)
-        {
             GetNode(relatedAtributePath).Connect("atribute_changed", this, "_OnReleatedAtributeChanged");
-        }
+        
+        connectionsMadded = true;
     }
 
+
+    private void _OnRestButtonUp()
+    {
+        GetActualSpin().Value += GetTotalSpin().Value/4;
+        if (GetActualSpin().Value > GetTotalSpin().Value)
+            GetActualSpin().Value = GetTotalSpin().Value;
+    }
 
 
     private void _OnModSpinChanged(float value)
