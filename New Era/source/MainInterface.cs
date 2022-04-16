@@ -78,27 +78,36 @@ public class MainInterface : Control, CharacterDataBank
     [Export]
     private PackedScene versionSavePackedScene;
 
+    [Signal]
+    public delegate void main_ready();
+
     private Player player;
     private Color[] colors = new Color[2];
     private bool alreadyConnectAll = false;
     private bool toSaveOnClose = true;
     private LifeUpdaterAbstract lifeUpdater;
 
-    public override void _Ready()
+
+    public override void _EnterTree()
     {
         playerScene = GetNode<Global>("/root/Global").GetSelectedPlayerPacked();
         player = playerScene.Instance<Player>();
-        player._Ready();
+        player._MyRead();
+    }
+    
+    public override void _Ready()
+    {
         RegistryData(player, this);
         MakeConnections();
+        SendBooblesData();
         MyStatic.CenterTheWindow();
+        EmitSignal(nameof(main_ready));
     }
 
     private void MakeConnections()
     {
         if (alreadyConnectAll) return;
         ConnectAllSignals();
-        SendBooblesData();
         CreateLifeUpdater();
         Connect("tree_exiting", this, "RegisterAllData");
         alreadyConnectAll = true;

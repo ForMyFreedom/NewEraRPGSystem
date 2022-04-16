@@ -7,19 +7,20 @@ public class Player : Node, CharacterDataBank
     [Export]
     private PlayerSaveResource playerSaveResource;
 
-    public override void _Ready()
+    public void _MyRead()
     {
         if (playerSaveResource == null)
             LoadLastSaveResource();
 
-        CalculateWorksUp();
         InjectDataInCapacities();
+        CalculateWorksUp();
     }
 
 
     public void LoadLastSaveResource()
     {
         Array<String> files = FileGerenciator.ListFilesInDirectory(GetBaseSavePath());
+
         playerSaveResource = ResourceLoader.Load<PlayerSaveResource>(
             GetBaseSavePath()+files[files.Count - 1]
         );

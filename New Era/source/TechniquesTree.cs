@@ -16,10 +16,10 @@ public class TechniquesTree : Tree
     public override void _Ready()
     {
         Connect("gui_input", this, "_OnGuiInput");
-        GetTree().CurrentScene.Connect("ready", this, "_OnTreeReady");
+        GetTree().CurrentScene.Connect("main_ready", this, "_OnMainReady");
     }
 
-    private void _OnTreeReady()
+    private void _OnMainReady()
     {
         Clear();
         TreeItem root = CreateItem();
@@ -173,13 +173,13 @@ public class TechniquesTree : Tree
     public void AddTechnique(Technique tech)
     {
         techniques.Add(tech);
-        _OnTreeReady();
+        _OnMainReady();
     }
 
     public void RemoveTechnique(Technique tech)
     {
         techniques.Remove(tech);
-        _OnTreeReady();
+        _OnMainReady();
     }
 
 
