@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://source/capacities/skills/Leadership.cs" type="Script" id=1]
+[ext_resource path="res://source/wayOfCalculeSkill/IgnoreWayOfCalculeSkill.cs" type="Script" id=2]
+[ext_resource path="res://assets/skills/leadership.png" type="Texture" id=3]
+
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = false
+skillName = "Liderança"
+effectImage = ExtResource( 3 )
+wayOfLevelCalculeScript = ExtResource( 2 )
+skillDescription = "Eles lutam ao meu lado, eles precisam de mim"
+notificationText = "Em meio ao terror, todos seus aliados recebem +$ Inspiração!
+%
+Você organiza as tropas com um resultado de $. Caso falhe, "
+mechanicDescription = "Sempre que precisar inspirar algumas pessoas, você pode fazer um Teste de Liderança (Esta ação só pode ser realizada em cenas tensas e de fato perigosas). Para isso, realize um Teste sem dificuldade. E para cada 10 no Resultado, os alvos recebem +1 Inspiração até o final do Desafio/Combate. Caso fracasse, nada acontece. Essa é uma Ação Padrão.
+Por outra lado, sempre que precisar comandar e guiar um grande contingente de pessoas, você pode fazer um Teste de Liderança de Dificuldade determinada pelo Narrador [O qual leva em conta a dificuldade das ordem, a fidelidade, e a densidade de pessoas]. Caso tenha sucesso, todos acatam sua ordem. Caso fracasse, role 1d6 (Para 2 ou menor ninguem segue suas ordens. Do contrário, apenas metade o obedece)."
+level = 3

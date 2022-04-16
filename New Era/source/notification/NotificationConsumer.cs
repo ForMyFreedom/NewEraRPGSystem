@@ -6,19 +6,20 @@ using System.Linq;
 public abstract class NotificationConsumer : Resource
 {
     [Export]
-    private bool isSingleton = true;
+    protected bool isSingleton = true;
     [Export]
-    private bool toDispendSurge = true;
-
+    protected bool toDispendSurge = true;
+    [Export]
+    protected bool canLimit = true;
 
     private bool isActive = false;
     protected MainInterface main;
 
-    public void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1, bool limitFree = false)
+    public void DoMechanic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         if (isSingleton && isActive) return;
         critic = GetCriticIfNotDetermined(main, critic);
-        critic = DefineFinalCritic(main, critic, limitFree);
+        critic = DefineFinalCritic(main, critic, canLimit);
 
         if (!CanUseThisHability(main, critic))
             return;
@@ -27,7 +28,7 @@ public abstract class NotificationConsumer : Resource
         MessageNotificationData messageData = DoMechanicLogic(main, actionIndex, critic);
 
         if (messageData == null) return;
-        CreateNotification(main, messageData, critic, main.GetMaximumUseOfSurge());
+        CreateNotification(main, messageData, critic);
         ConnectToLastNotification(main);
         isActive = true;
     }
@@ -57,19 +58,18 @@ public abstract class NotificationConsumer : Resource
             return critic;
     }
 
-    private int DefineFinalCritic(MainInterface main, int critic, bool limitFree)
+    private int DefineFinalCritic(MainInterface main, int critic, bool canLimit)
     {
-        if (!toDispendSurge) return critic;
-        //int maximumUseOfSurge = main.GetMaximumUseOfSurge();
-        //if (!limitFree && critic > maximumUseOfSurge)  critic = maximumUseOfSurge;
-        if (critic < 0) critic = 0;
-
+        if (!toDispendSurge)   return critic;
+        if (critic < 0)        critic = 0;
+        if (!CanUseThisHability(main, critic) && canLimit)
+            critic = (int)(Math.Pow(main.GetActualSurge(),2) / GetCriticWaste(main.GetActualSurge()));
         return critic;
     }
 
     private bool CanUseThisHability(MainInterface main, int critic)
     {
-        if (main.GetActualSurge() < critic)
+        if (main.GetActualSurge() < GetCriticWaste(critic))
             return false;
         else
             return true;
@@ -78,13 +78,18 @@ public abstract class NotificationConsumer : Resource
     private void ConsumeCritic(MainInterface main, int critic)
     {
         if (toDispendSurge)
-            main.AddActualSurge(-critic/2);
+            main.AddActualSurge(-GetCriticWaste(critic));
     }
 
-    private void CreateNotification(MainInterface main, MessageNotificationData messageData, int critic, int limit)
+    private void CreateNotification(MainInterface main, MessageNotificationData messageData, int critic)
     {
         main.CreateNewNotification(MyStatic.GetNotificationText(
-            messageData.GetMessage(), new int[2] {critic, limit}, messageData.GetData()
+            messageData.GetMessage(), critic, messageData.GetData()
         ), messageData.GetTexture());
+    }
+
+    private int GetCriticWaste(int value)
+    {
+        return (value/2 <= 0) ? 1 : value/2;
     }
 }

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/FerraoPassivo.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Impacto do Louva Deus"
+relatedWork = 4
+text = "Causa um dano equivalente a Defesa de Agilidade Atual dividido por 8 caso o inimigo erre seu ataque. Precisa estar na Postura do Deus Louva Deus"
+baseMessage = "Na forma do Deus Louva-Deus, caso o oponente erre seu ataque, você causa $ nesse oponente (Staca com Defesa de Agilidade)"
+cost = 6

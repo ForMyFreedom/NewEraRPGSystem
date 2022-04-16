@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/techniques/Technique.cs" type="Script" id=1]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/AsasFrageis.tres" type="Resource" id=2]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/FormaDaPrincesaDasAbelhas.tres" type="Resource" id=3]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/EnxameDaAbelha.tres" type="Resource" id=4]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/Miragem.tres" type="Resource" id=5]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+techniqueName = "Postura Solar"
+relatedWorks = PoolIntArray( 12, 4 )
+criticUses = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 2 ) ]
+powerOfCritics = PoolIntArray( 0, 21, 21, 17 )
+actionIndexOfCritics = PoolIntArray( 0, 0, 0, 0 )
+modValue = 0

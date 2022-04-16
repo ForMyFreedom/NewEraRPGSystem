@@ -111,6 +111,9 @@ public interface CharacterDataBank
     Array<Technique> GetTechniques();
     void SetTechniques(Array<Technique> tech);
 
+    CapacitiesPlayerData GetCapacitiesPlayerData();
+    void SetCapacitiesPlayerData(CapacitiesPlayerData capacitiesPlayerData);
+
     Array<InventoryItem> GetItens();
     void SetItens(Array<InventoryItem> itens);
 

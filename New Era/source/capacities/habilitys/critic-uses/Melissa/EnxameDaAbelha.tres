@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/EnxameDaAbelha.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Primeiro as Damas"
+relatedWork = 12
+text = "A primeira troca de forma em um combate não tem custo de Surto de Ação caso esteje lutando contra um homem"
+baseMessage = "A primeira troca de forma em um combate não tem custo de Surto de Ação caso esteje lutando contra um homem"
+cost = 0

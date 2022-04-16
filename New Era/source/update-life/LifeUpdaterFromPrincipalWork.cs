@@ -5,6 +5,8 @@ public abstract class LifeUpdaterFromPrincipalWork : LifeUpdaterAbstract
 {
     protected int principalWorkLevel;
 
+    public LifeUpdaterFromPrincipalWork() { }
+
     public LifeUpdaterFromPrincipalWork(MainInterface main) : base(main)
     {
         principalWorkLevel = GetLevelFromPrincipalWork(main);

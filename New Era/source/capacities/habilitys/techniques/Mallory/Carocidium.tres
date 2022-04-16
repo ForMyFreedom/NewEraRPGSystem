@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/techniques/Technique.cs" type="Script" id=1]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Mallory/RomperCarotida.tres" type="Resource" id=2]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Geral/PrecisaoCritica.tres" type="Resource" id=3]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+techniqueName = "Carocídium"
+relatedWorks = PoolIntArray( 1 )
+criticUses = [ ExtResource( 2 ), ExtResource( 3 ) ]
+powerOfCritics = PoolIntArray( 5, 7 )
+actionIndexOfCritics = PoolIntArray( 0, 0 )
+modValue = 0

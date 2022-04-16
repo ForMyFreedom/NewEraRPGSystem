@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Marksan/FormasMecanicas.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Formas Mecânicas"
+relatedWork = 12
+text = "Você pode fazer um Teste de Akuma no Mi em uma Ação Padrão. Ganhando uma quantidade de Implementações igual à N (Uma Implementação aumenta em +3 um valor de seu Atributo/Ofício, pode-se colocar várias Implementações em um mesmo Atributo/Ofício, (Com o limite de metade de seu nível em Akuma no Mi). Duram por um minuto e não podem ser removidas até esse tempo passar"
+baseMessage = "Você recebe $ Implementações [Aumente +2 Atributos/Oficios de sua escolhe a cada ponto gasto]
+Limite em um único fator: $
+Implementações duram um minuto e não podem ser alteradas nesse tempo"
+cost = -1

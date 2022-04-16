@@ -78,27 +78,36 @@ public class MainInterface : Control, CharacterDataBank
     [Export]
     private PackedScene versionSavePackedScene;
 
+    [Signal]
+    public delegate void main_ready();
+
     private Player player;
     private Color[] colors = new Color[2];
     private bool alreadyConnectAll = false;
     private bool toSaveOnClose = true;
     private LifeUpdaterAbstract lifeUpdater;
 
-    public override void _Ready()
+
+    public override void _EnterTree()
     {
         playerScene = GetNode<Global>("/root/Global").GetSelectedPlayerPacked();
         player = playerScene.Instance<Player>();
-        player._Ready();
+        player._MyRead();
+    }
+    
+    public override void _Ready()
+    {
         RegistryData(player, this);
         MakeConnections();
+        SendBooblesData();
         MyStatic.CenterTheWindow();
+        EmitSignal(nameof(main_ready));
     }
 
     private void MakeConnections()
     {
         if (alreadyConnectAll) return;
         ConnectAllSignals();
-        SendBooblesData();
         CreateLifeUpdater();
         Connect("tree_exiting", this, "RegisterAllData");
         alreadyConnectAll = true;
@@ -295,7 +304,7 @@ public class MainInterface : Control, CharacterDataBank
     public void SetFirstColor(Color color)
     {
         colors[0] = color;
-        SetShadeColor(color);   SetFirstColorInRect(color);
+        SetFirstColorInRect(color);
     }
 
 
@@ -304,7 +313,7 @@ public class MainInterface : Control, CharacterDataBank
     public void SetSecondColor(Color color)
     {
         colors[1] = color;
-        SetSecondColorInRect(color);
+        SetSecondColorInRect(color); SetShadeColor(color);
     }
 
 
@@ -820,6 +829,17 @@ public class MainInterface : Control, CharacterDataBank
     public void RemoveTechnique(Technique tech)
     {
         GetNode<TechniquesTree>(techniquesTreePath).RemoveTechnique(tech);
+    }
+
+
+    public CapacitiesPlayerData GetCapacitiesPlayerData()
+    {
+        return player.GetCapacitiesPlayerData();
+    }
+
+    public void SetCapacitiesPlayerData(CapacitiesPlayerData playerData)
+    {
+        player.SetCapacitiesPlayerData(playerData);
     }
 
     public Array<InventoryItem> GetItens()

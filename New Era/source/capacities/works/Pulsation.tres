@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/capacities/works/Pulsation.cs" type="Script" id=1]
+[ext_resource path="res://source/capacities/skills/Beat.tres" type="Resource" id=3]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+workName = "Pulsação"
+pathDescription = null
+skills = [ ExtResource( 3 ) ]
+description = "A força sanguinária de uma Linhagem respeitada..."
+maestryDescription = null
+enumWork = 4

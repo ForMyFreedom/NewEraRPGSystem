@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Mallory/ConhecedoraDePragas.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Conhecedora de Pragas"
+relatedWork = 9
+text = "Em Testes de Conhecimento, caso o assunto seja sobre pragas e epidemias, você tem +Medicina no Dado de Conhecimento"
+baseMessage = "Em Testes de Conhecimento sobre pragas e epidemias, você recebe +$ no teste"
+cost = 0

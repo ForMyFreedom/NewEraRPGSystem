@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/Miragem.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Miragem"
+relatedWork = 4
+text = "O Sol aquece o entorno de Melissa, fazendo com que fique mais difícil enxerga-la enquanto se move. Seus movimentos se tornam completos borrões, porém, sua aura se dispersa no processo, e caso Melissa tente usar sua Guarda em si mesmo, a forma se dissipa. Caso esteje de dia, +3.5N em Defesa de Agilidade"
+baseMessage = "Caso esteje de dia, você sera sua guarda e recebe +$ Defesa de Agilidade"
+cost = -1

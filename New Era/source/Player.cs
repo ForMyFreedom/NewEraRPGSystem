@@ -7,11 +7,12 @@ public class Player : Node, CharacterDataBank
     [Export]
     private PlayerSaveResource playerSaveResource;
 
-    public override void _Ready()
+    public void _MyRead()
     {
         if (playerSaveResource == null)
             LoadLastSaveResource();
 
+        InjectDataInCapacities();
         CalculateWorksUp();
     }
 
@@ -19,6 +20,7 @@ public class Player : Node, CharacterDataBank
     public void LoadLastSaveResource()
     {
         Array<String> files = FileGerenciator.ListFilesInDirectory(GetBaseSavePath());
+
         playerSaveResource = ResourceLoader.Load<PlayerSaveResource>(
             GetBaseSavePath()+files[files.Count - 1]
         );
@@ -29,7 +31,30 @@ public class Player : Node, CharacterDataBank
         playerSaveResource.CalculateWorksUp();
     }
 
+    public void InjectDataInCapacities()
+    {
+        Array<Work> works = GetWorks();
+        Array<Work> updatedWorks = new Array<Work>();
 
+        for (int i = 0; i < works.Count; i++)
+        {
+            works[i].InjectPlayerData(GetCapacitiesPlayerData().GetWorkPlayerData(works[i].GetEnumWork()));
+            updatedWorks.Add(works[i]);
+
+            Skill[] skillList = new Skill[works[i].GetSkillList().Length];
+
+            for(int j = 0; j < skillList.Length; j++)
+            {
+                Skill skill = works[i].GetSkillList()[j];
+                skill.InjectPlayerData(GetCapacitiesPlayerData().GetSkillPlayerData(works[i].GetEnumWork(), j));
+                skillList[j] = skill;
+            }
+
+            updatedWorks[i].SetSkillList(skillList);
+        }
+
+        SetWorks(updatedWorks);
+    }
 
 
     public string GetPlayerName()
@@ -385,6 +410,16 @@ public class Player : Node, CharacterDataBank
     public void SetTechniques(Array<Technique> tech)
     {
         playerSaveResource.SetTechniques(tech);
+    }
+
+    public CapacitiesPlayerData GetCapacitiesPlayerData()
+    {
+        return playerSaveResource.GetCapacitiesPlayerData();
+    }
+
+    public void SetCapacitiesPlayerData(CapacitiesPlayerData playerData)
+    {
+        playerSaveResource.SetCapacitiesPlayerData(playerData);
     }
 
     public Array<InventoryItem> GetItens()

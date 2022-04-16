@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Azazel/LancaRotativa.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Lança Rotativa"
+relatedWork = 4
+text = "Permite você realizar um Teste de Ataque como Ação Livre para se proteger de projéteis. Aumente sua Defesa em +2N."
+baseMessage = "Como ação livre, você se protege de projéteis com um bônus de $ em todas suas Defesas"
+cost = -1

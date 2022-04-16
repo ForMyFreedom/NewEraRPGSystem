@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/AsasFrageis.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Postura do Deus Louva-Deus"
+relatedWork = 4
+text = "Assume uma postura de combate extremamente versátil e Agressiva. Caso o inimigo consiga passar as Defesas ou a Guarda de Melissa, enquanto ela estiver com essa postura ativa, devolve uma porcentagem crescente de Dano"
+baseMessage = "[Forma] Caso o inimigo consiga passar as Defesas [Agilidade] ou a Guarda [Força], você retorna $% de Dano"
+cost = -1

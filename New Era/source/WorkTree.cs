@@ -23,11 +23,11 @@ public class WorkTree : Tree
     public override void _Ready()
     {
         Connect("gui_input", this, "_OnGuiInput");
-        GetTree().CurrentScene.Connect("ready", this, "_OnTreeReady");
+        GetTree().CurrentScene.Connect("main_ready", this, "_OnMainReady");
     }
 
 
-    private void _OnTreeReady()
+    private void _OnMainReady()
     {
         TreeItem root = CreateItem();
         itens = new TreeItem[GetTreeItensLength()];

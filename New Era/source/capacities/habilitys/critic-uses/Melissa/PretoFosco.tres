@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/PretoFosco.cs" type="Script" id=1]
+[ext_resource path="res://assets/wallpapers/moon_melissa_walpaper.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Preto Fosco"
+relatedWork = 12
+text = "Você assume uma forma negra de pelagem incrivelmente densa. Perde-se -4N Defesa de Agilidade, porem você ganha e +2N Guarda enquanto continuar ativo"
+baseMessage = "Modo Fosco: $ Defesa de Agilidade, porem você recebe $ de Guarda"
+cost = -1
+customTexture = ExtResource( 2 )

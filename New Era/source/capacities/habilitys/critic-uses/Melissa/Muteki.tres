@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/Muteki.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Forma Mista, Muteki"
+relatedWork = 14
+text = "Ao se misturar os pelos da Abelha com o Ten, cria-se uma poderosa forma defensiva mas vagarosa. Caso esteje com os modos Ten e Preto Fosco ativados, você pode ativar essa forma com um Teste de Ten e receber +4N de Guarda. Caso opte por esquivar (Considerar sua Defesa) de um ataque, a forma se dissipa. "
+baseMessage = "Caso esteje com seu Ten e Preto Fosco ativados, você recebe +$ Guarda
+[Caso opte por considerar sua defesa em um ataque, desative esse crítico]"
+cost = -1

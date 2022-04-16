@@ -16,10 +16,10 @@ public class TechniquesTree : Tree
     public override void _Ready()
     {
         Connect("gui_input", this, "_OnGuiInput");
-        GetTree().CurrentScene.Connect("ready", this, "_OnTreeReady");
+        GetTree().CurrentScene.Connect("main_ready", this, "_OnMainReady");
     }
 
-    private void _OnTreeReady()
+    private void _OnMainReady()
     {
         Clear();
         TreeItem root = CreateItem();
@@ -74,7 +74,7 @@ public class TechniquesTree : Tree
 
     private void ExecuteTechnique(Technique tech)
     {
-        tech.DoMechanic((MainInterface) GetTree().CurrentScene);
+        tech.DoMechanic((MainInterface) GetTree().CurrentScene, 0, -1);
     }
 
 
@@ -136,8 +136,7 @@ public class TechniquesTree : Tree
                 worksText += " - ";
         }
             
-        string levelStr = (tech.GetLevel() > 0) ? $"[LVL {tech.GetLevel()}]" : "";
-        return $"- {tech.GetTechniqueName()}    [{worksText}] {levelStr}";
+        return $"- {tech.GetTechniqueName()}    [{worksText}]";
     }
 
     private string GetTechniqueDescription(Technique technique)
@@ -174,13 +173,13 @@ public class TechniquesTree : Tree
     public void AddTechnique(Technique tech)
     {
         techniques.Add(tech);
-        _OnTreeReady();
+        _OnMainReady();
     }
 
     public void RemoveTechnique(Technique tech)
     {
         techniques.Remove(tech);
-        _OnTreeReady();
+        _OnMainReady();
     }
 
 

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Azazel/SangueMagnetico.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Sangue Cortante"
+relatedWork = 4
+text = "Caso o alvo tenha uma quantidade decente de sangue no corpo (Em geral acima de 25% da Vida), você pode receber +3N Dano"
+baseMessage = "Se alvo com mais de 25% Vida, você recebe $ Dano [Remova isso após o ataque]"
+cost = -1
