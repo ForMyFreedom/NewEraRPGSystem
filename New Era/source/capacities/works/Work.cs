@@ -7,8 +7,6 @@ public abstract class Work : Resource, IPlayerDataConsumer
 {
     [Export]
     protected string workName;
-    [Export]
-    protected Texture baseImage;
     [Export(PropertyHint.MultilineText)]
     protected string pathDescription;
     [Export]
@@ -19,15 +17,10 @@ public abstract class Work : Resource, IPlayerDataConsumer
     protected string maestryDescription;
     [Export]
     protected MyEnum.Work enumWork;
-    [Export]
-    protected MyEnum.Atribute relationedAtribute;
-    [Export]
-    private int level;
-    [Export]
-    //private Array<int> worksUps;
-
 
     private WorkPlayerData workPlayerData;
+    protected Texture baseImage;
+    protected MyEnum.Atribute relationedAtribute;
 
     public abstract void DoFirstUpStep(MainInterface gui);
     public abstract void DoSecondUpStep(MainInterface gui);
@@ -40,6 +33,13 @@ public abstract class Work : Resource, IPlayerDataConsumer
     public void InjectPlayerData(IVolatilePlayerData playerData)
     {
         workPlayerData = (WorkPlayerData) playerData;
+        relationedAtribute = GetRelationedAtribute();
+        baseImage = GetBaseImage();
+    }
+
+    public IVolatilePlayerData GetVolatilePlayerData()
+    {
+        return workPlayerData;
     }
 
 
@@ -50,7 +50,7 @@ public abstract class Work : Resource, IPlayerDataConsumer
 
     public Texture GetBaseImage()
     {
-        return baseImage;
+        return workPlayerData.GetTexture();
     }
 
     public Skill[] GetSkillList()

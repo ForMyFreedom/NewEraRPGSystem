@@ -4,6 +4,8 @@ using Godot.Collections;
 public class WorkPlayerData : Resource, IVolatilePlayerData
 {
     [Export]
+    private Texture workTexture;
+    [Export]
     private MyEnum.Work workEnum;
     [Export]
     private MyEnum.Atribute relationedAtribute;
@@ -45,5 +47,15 @@ public class WorkPlayerData : Resource, IVolatilePlayerData
     public void SetWorksUps(Array<int> array)
     {
         worksUps = array;
+    }
+
+    public Texture GetTexture()
+    {
+        return workTexture;
+    }
+
+    public void SetTexture(Texture texture)
+    {
+        workTexture = texture;
     }
 }

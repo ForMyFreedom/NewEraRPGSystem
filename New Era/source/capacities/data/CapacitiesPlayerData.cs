@@ -16,7 +16,9 @@ public class CapacitiesPlayerData : Resource
 
     public SkillPlayerData[] GetAllSkillFromWorkPlayerData(MyEnum.Work workEnum)
     {
-        return allSkillData.Where(s => s[0].GetWorkEnum() == workEnum).First().ToArray();
+        return allSkillData
+            .Where(s => s.Count>0)
+            .Where(s => s[0].GetWorkEnum() == workEnum).First().ToArray();
     }
 
     public SkillPlayerData GetSkillPlayerData(MyEnum.Work workEnum, int index)

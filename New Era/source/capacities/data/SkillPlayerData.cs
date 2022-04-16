@@ -3,6 +3,8 @@ using Godot;
 public class SkillPlayerData : Resource, IVolatilePlayerData
 {
     [Export]
+    private Texture skillTexture;
+    [Export]
     private MyEnum.Work workEnum;
     [Export]
     private int level;
@@ -20,5 +22,15 @@ public class SkillPlayerData : Resource, IVolatilePlayerData
     public void SetLevel(int value)
     {
         level = value;
+    }
+
+    public Texture GetTexture()
+    {
+        return skillTexture;
+    }
+
+    public void SetTexture(Texture texture)
+    {
+        skillTexture = texture;
     }
 }
