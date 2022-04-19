@@ -13,7 +13,7 @@ public class Miragem : CriticUse
         main.SetGuard(0);
 
         holdDefense = (int)(critic * 3.5);
-        main.AddActualAgiDefense(holdDefense);
+        main.AddModAgiDefense(holdDefense);
 
         return new MessageNotificationData(baseMessage, new object[] { holdDefense }, injectedWork.GetBaseImage());
     }
@@ -21,7 +21,7 @@ public class Miragem : CriticUse
     public override void DoEndMechanicLogic()
     {
         main.SetGuard(holdGuard);
-        main.AddActualAgiDefense(-holdDefense);
+        main.AddModAgiDefense(-holdDefense);
     }
 
     public override int RequestCriticTest(MainInterface main)
