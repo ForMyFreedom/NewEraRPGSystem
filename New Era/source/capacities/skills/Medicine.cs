@@ -19,9 +19,9 @@ public class Medicine : Skill
         string message ="";
         
         if(actionIndex==0)
-            message += $"Voce cura {GetRepairLife()} Vida do alvo\n";
+            message += $"Voce cura {GetRepairLife(rollResult)} Vida do alvo\n";
         else
-            message += $"Voce aplica {GetCounterDisease()} Contra-Peconha {GetDiseaseReduction()}";
+            message += $"Voce aplica {GetCounterDisease(rollResult)} Contra-Peconha {GetDiseaseReduction()}";
 
         return new MessageNotificationData(
             message, null, effectImage
@@ -33,14 +33,14 @@ public class Medicine : Skill
     }
 
 
-    private int GetRepairLife()
+    public int GetRepairLife(int result)
     {
-        return (int)(rollResult/5)+2*(int)(rollResult/15);
+        return (result/5) + 2*(result/15);
     }
 
-    private int GetCounterDisease()
+    public int GetCounterDisease(int result)
     {
-        return (int)(rollResult / 10);
+        return result / 10;
     }
 
     private string GetDiseaseReduction()
