@@ -8,7 +8,7 @@ public class TriviaPopup : MyPopup
 
     private TriviaData triviaData;
 
-    public override void InjectData(Node baseData)
+    public override void InjectDataNode(Node baseData)
     {
         triviaData = (TriviaData) baseData;
     }
