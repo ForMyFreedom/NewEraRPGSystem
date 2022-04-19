@@ -131,4 +131,7 @@ public interface CharacterDataBank
 
     CSharpScript GetLifeUpdaterScript();
     void SetLifeUpdaterScript(CSharpScript script);
+
+    Array<Trace> GetTraces();
+    void SetTraces(Array<Trace> traces);
 }

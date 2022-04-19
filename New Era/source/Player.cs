@@ -501,4 +501,13 @@ public class Player : Node, CharacterDataBank
         playerSaveResource.SetLifeUpdaterScript(script);
     }
 
+    public Array<Trace> GetTraces()
+    {
+        return playerSaveResource.GetTraces();
+    }
+
+    public void SetTraces(Array<Trace> traces)
+    {
+        playerSaveResource.SetTraces(traces);
+    }
 }
