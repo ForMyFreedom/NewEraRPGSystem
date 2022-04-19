@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/capacities/traces/traces-mechanics/Ameiko/FamineTraceMechanic.cs" type="Script" id=1]
+[ext_resource path="res://assets/traces/famine_angry.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = false
+toDispendSurge = false
+canLimit = false
+baseMessage = "Você ganhou 2 Marcadores de Fome [Atual: $]"
+dmgBonus = 10
+furyText = "A sua fome lhe consome, você recebe +10 de Dano mais sofrerá 5 de Dano por turno até saciar a sua fome (Ações Insanas!)"
+furyFamineTexture = ExtResource( 2 )
