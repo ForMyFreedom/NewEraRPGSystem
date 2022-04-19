@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public abstract class TollItens : ItemCode
+public class TollItens : ItemCode
 {
     [Export]
     private int quality;
@@ -16,5 +16,14 @@ public abstract class TollItens : ItemCode
     {
         main.RequestSkillMechanic(workEnum, skillIndex, 3 * quality, actionIndex);
         return null;
+    }
+
+    public override void DoEndMechanicLogic()
+    {
+    }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return 0;
     }
 }

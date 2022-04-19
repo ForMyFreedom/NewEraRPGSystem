@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public abstract class BombaFumaca : ItemCode
+public class BombaFumaca : ItemCode
 {
     [Export]
     private Texture bombTexture;
@@ -18,5 +18,10 @@ public abstract class BombaFumaca : ItemCode
 
     public override void DoEndMechanicLogic()
     {
+    }
+
+    public override int RequestCriticTest(MainInterface main)
+    {
+        return 0;
     }
 }
