@@ -7,6 +7,7 @@ public class Beat : Skill
     private int applyedDmgBonus = 0;
     private int acummulateStress = 0;
     private int stressNode = 0;
+    private int holdActionIndex;
 
     public override Array<string> GetTextOfMechanicButtons()
     {
@@ -17,6 +18,8 @@ public class Beat : Skill
     {
         if (critic < 0)
             critic = 0;
+
+        holdActionIndex = actionIndex;
 
         float correction = 2 - Math.Abs(actionIndex - 2);
         float stressMod = 1f / (int) (5 * Math.Pow(2, correction));
@@ -46,6 +49,11 @@ public class Beat : Skill
 
     }
 
+
+    public int GetActionIndex()
+    {
+        return holdActionIndex;
+    }
 
 
     public override void DoEndMechanicLogic()

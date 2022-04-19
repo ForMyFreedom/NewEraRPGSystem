@@ -71,6 +71,8 @@ public class MainInterface : Control, CharacterDataBank
     [Export]
     private NodePath triviaDataPath;
     [Export]
+    private NodePath traceDataPath;
+    [Export]
     private NodePath defenseBooblePath;
     [Export]
     private NodePath versionSaveButtonPath;
@@ -193,6 +195,8 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetWeaponIndex(sender.GetWeaponIndex());
         reciver.SetGuard(sender.GetGuard());
         reciver.SetDefenseStyle(sender.GetDefenseStyle());
+
+        reciver.SetTraces(sender.GetTraces());
     }
 
     private void RegisterAllData()
@@ -227,7 +231,7 @@ public class MainInterface : Control, CharacterDataBank
 
     public void _OnTraces()
     {
-        GD.Print("Issue #6");
+        GetNode<GeneralButton>(tracesButtonPath).CreatePopup(this);
     }
 
     public void _OnGetSave()
@@ -759,6 +763,11 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<SpinBox>(inspirationSpinPath).Value = value;
     }
 
+    public void AddInspiration(int value)
+    {
+        SetInspiration(GetInspiration() + value);
+    }
+
     public int GetExtraDamage()
     {
         return (int) GetNode<SpinBox>(damageSpinPath).Value;
@@ -905,6 +914,16 @@ public class MainInterface : Control, CharacterDataBank
     public void SetLifeUpdaterScript(CSharpScript script)
     {
         player.SetLifeUpdaterScript(script);
+    }
+
+    public Array<Trace> GetTraces()
+    {
+        return GetNode<TracesData>(traceDataPath).GetTraces();
+    }
+
+    public void SetTraces(Array<Trace> traces)
+    {
+        GetNode<TracesData>(traceDataPath).SetTraces(traces);
     }
 
 

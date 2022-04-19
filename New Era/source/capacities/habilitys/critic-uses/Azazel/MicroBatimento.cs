@@ -11,8 +11,11 @@ public class MicroBatimento : CriticUse
         int selfDamage = RollCode.GetRandomBasicRoll(1) + 2;
         main.AddActualLife(-selfDamage);
 
+        Beat beatSkill = (Beat) main.GetSkillByWorkAndIndex(relatedWork, 0);
+
         beatLevel = main.GetSkillByWorkAndIndex(relatedWork, 0).GetLevel();
-        main.GetWorkNodeByEnum(relatedWork).GetSkillList()[0].DoMechanic(main, actionIndex, beatLevel);
+        main.GetWorkNodeByEnum(relatedWork).GetSkillList()[0].DoMechanic(main, beatSkill.GetActionIndex(), beatLevel);
+
 
         return new MessageNotificationData(
             baseMessage, new object[] { selfDamage }, injectedWork.GetBaseImage()

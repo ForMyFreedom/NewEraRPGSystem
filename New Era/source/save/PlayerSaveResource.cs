@@ -64,6 +64,9 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     [Export]
     private CSharpScript lifeUpdaterScript;
 
+    [Export]
+    private Array<Trace> traces;
+
 
     public int GetEditionIndex()
     {
@@ -584,6 +587,15 @@ public class PlayerSaveResource : Resource, CharacterDataBank
         lifeUpdaterScript = script;
     }
 
+    public Array<Trace> GetTraces()
+    {
+        return traces;
+    }
+
+    public void SetTraces(Array<Trace> traces)
+    {
+        this.traces = traces;
+    }
 
 
 

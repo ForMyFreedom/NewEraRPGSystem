@@ -7,20 +7,20 @@ public abstract class GeneralButton : Button
     private PackedScene packedPopup;
 
     protected MyPopup myPopup;
-    protected Node baseData;
+    protected Node baseDataNode;
 
     public override void _Ready()
     {
         if (GetChildren().Count>0)
-            baseData = GetChild(0);
+            baseDataNode = GetChild(0);
     }
 
     public void CreatePopup(Control main)
     {
-        if (baseData == null) return;
+        if (baseDataNode == null) return;
         myPopup = packedPopup.Instance<MyPopup>();
         main.AddChild(myPopup);
-        myPopup.InjectData(baseData);
+        myPopup.InjectDataNode(baseDataNode);
         myPopup.PopupIt();
     }
 }

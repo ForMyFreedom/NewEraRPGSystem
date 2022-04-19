@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Melissa.tscn" type="PackedScene" id=2]
@@ -24,23 +24,25 @@
 [ext_resource path="res://source/audio/MultipleStreamPlayer.cs" type="Script" id=22]
 [ext_resource path="res://source/general_buttons/GeneralButton.tscn" type="PackedScene" id=23]
 [ext_resource path="res://assets/updown.png" type="Texture" id=24]
-[ext_resource path="res://source/pop_up_general_interface/TriviaPopup.tscn" type="PackedScene" id=25]
+[ext_resource path="res://source/pop_up_general_interface/trivia/TriviaPopup.tscn" type="PackedScene" id=25]
 [ext_resource path="res://assets/skills/arrow.png" type="Texture" id=26]
 [ext_resource path="res://source/guis/CriticGUI.tscn" type="PackedScene" id=27]
 [ext_resource path="res://source/DoubleClickSignal.cs" type="Script" id=28]
 [ext_resource path="res://source/TechniquesTree.cs" type="Script" id=29]
 [ext_resource path="res://source/inventory/CharacterInventory.cs" type="Script" id=30]
-[ext_resource path="res://source/pop_up_general_interface/CustomRollPopup.tscn" type="PackedScene" id=31]
-[ext_resource path="res://source/TriviaData.cs" type="Script" id=32]
-[ext_resource path="res://source/pop_up_general_interface/InventoryPopup.tscn" type="PackedScene" id=33]
+[ext_resource path="res://source/pop_up_general_interface/roll/CustomRollPopup.tscn" type="PackedScene" id=31]
+[ext_resource path="res://source/pop_up_general_interface/trivia/TriviaData.cs" type="Script" id=32]
+[ext_resource path="res://source/pop_up_general_interface/equipaments/InventoryPopup.tscn" type="PackedScene" id=33]
 [ext_resource path="res://assets/boobles/turn/no-turn.png" type="Texture" id=34]
 [ext_resource path="res://assets/boobles/defense/agi-defense.png" type="Texture" id=35]
 [ext_resource path="res://assets/boobles/defense/str-defense.png" type="Texture" id=36]
 [ext_resource path="res://source/notification/DefenseBooble.cs" type="Script" id=37]
 [ext_resource path="res://source/notification/Booble.cs" type="Script" id=38]
 [ext_resource path="res://assets/reload.png" type="Texture" id=39]
+[ext_resource path="res://source/pop_up_general_interface/traces/TracesData.cs" type="Script" id=40]
 [ext_resource path="res://assets/version.png" type="Texture" id=41]
 [ext_resource path="res://source/VersionIndex.tscn" type="PackedScene" id=42]
+[ext_resource path="res://source/pop_up_general_interface/traces/TracesPopup.tscn" type="PackedScene" id=43]
 
 [sub_resource type="Animation" id=1]
 resource_name = "activate"
@@ -245,6 +247,7 @@ reloadSaveButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/HBoxContainer/
 techniquesTreePath = NodePath("VBoxContainer/Capacities/HBOX/HabilityControl/MarginContainer/VBOX/TechniqueTree")
 characterInventoryPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/EquipamentsButton/CharacterInventory")
 triviaDataPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton/TrivaData")
+traceDataPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TracesButton/TracesData")
 defenseBooblePath = NodePath("NotificationArea/HBoxContainer/Actions/DefenseNode")
 versionSaveButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/HBoxContainer/VBoxContainer/VersionSave")
 versionSavePackedScene = ExtResource( 42 )
@@ -1195,14 +1198,20 @@ size_flags_horizontal = 6
 custom_fonts/font = ExtResource( 14 )
 text = "Treinar"
 
-[node name="TracesButton" type="Button" parent="VBoxContainer/General/MarginContainer/HBoxContainer"]
+[node name="TracesButton" parent="VBoxContainer/General/MarginContainer/HBoxContainer" instance=ExtResource( 23 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 672.0
+margin_top = 0.0
 margin_right = 772.0
 margin_bottom = 42.0
-rect_min_size = Vector2( 100, 0 )
-size_flags_horizontal = 6
-custom_fonts/font = ExtResource( 14 )
 text = "Traços"
+packedPopup = ExtResource( 43 )
+
+[node name="TracesData" type="Node" parent="VBoxContainer/General/MarginContainer/HBoxContainer/TracesButton"]
+script = ExtResource( 40 )
 
 [node name="TriviaButton" parent="VBoxContainer/General/MarginContainer/HBoxContainer" instance=ExtResource( 23 )]
 anchor_left = 0.0

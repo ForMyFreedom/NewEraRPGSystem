@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://source/pop_up_general_interface/MyPopup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/base-scenes/CustomTreeItem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/pop_up_general_interface/traces/TracesPopup.cs" type="Script" id=3]
+[ext_resource path="res://source/pop_up_general_interface/traces/TraceVisualTreeItem.tscn" type="PackedScene" id=4]
+
+[node name="TracesPopup" instance=ExtResource( 1 )]
+window_title = "Traços"
+script = ExtResource( 3 )
+traceTreePath = NodePath("Control/TraceTreeItem")
+
+[node name="TraceTreeItem" parent="Control" index="0" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 815.0
+margin_bottom = 328.0
+itemPackedScene = ExtResource( 4 )

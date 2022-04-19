@@ -8,7 +8,7 @@ public class CustomRollPopup : MyPopup
         PopupCenteredRatio(RATIO);
     }
 
-    public override void InjectData(Node baseData)
+    public override void InjectDataNode(Node baseData)
     {
     }
 }

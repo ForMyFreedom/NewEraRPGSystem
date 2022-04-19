@@ -8,7 +8,7 @@ public abstract class MyPopup : WindowDialog
 
     public abstract void PopupIt();
 
-    public abstract void InjectData(Node baseData);
+    public abstract void InjectDataNode(Node baseData);
 
     public override void _Input(InputEvent @event)
     {

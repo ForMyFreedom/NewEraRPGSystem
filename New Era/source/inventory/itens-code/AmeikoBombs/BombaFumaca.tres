@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource( 1 )
-isSingleton = true
+isSingleton = false
 toDispendSurge = false
-canLimit = true
+canLimit = false
 message = "-30 em ataques contra você [Remova em três turnos]"
 bombTexture = ExtResource( 2 )

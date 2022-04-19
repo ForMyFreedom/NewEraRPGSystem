@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://source/pop_up_general_interface/MyPopup.tscn" type="PackedScene" id=1]
-[ext_resource path="res://source/pop_up_general_interface/TriviaPopup.cs" type="Script" id=2]
+[ext_resource path="res://source/pop_up_general_interface/trivia/TriviaPopup.cs" type="Script" id=2]
 [ext_resource path="res://assets/BaseMinorFont.tres" type="DynamicFont" id=3]
 
 [node name="TriviaPopup" instance=ExtResource( 1 )]

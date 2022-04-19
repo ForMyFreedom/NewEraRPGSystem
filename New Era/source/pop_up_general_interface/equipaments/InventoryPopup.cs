@@ -10,12 +10,19 @@ public class InventoryPopup : MyPopup
     private CharacterInventory inventory;
     private Array<InventoryItem> itens;
 
-    public override void InjectData(Node baseData)
+    public override void InjectDataNode(Node baseData)
     {
         inventory = (CharacterInventory) baseData;
         itens = ((CharacterInventory) baseData).GetItens();
+    }
+
+
+    public override void PopupIt()
+    {
+        PopupCenteredRatio(RATIO);
         DoReady();
     }
+
 
     public void DoReady()
     {
@@ -30,6 +37,7 @@ public class InventoryPopup : MyPopup
             newItem.Connect("desc_modified", this, "_OnDescModified");
         }
     }
+
 
     public void UpdateItensText()
     {
@@ -74,10 +82,5 @@ public class InventoryPopup : MyPopup
     }
 
 
-
-    public override void PopupIt()
-    {
-        PopupCenteredRatio(RATIO);
-    }
 
 }

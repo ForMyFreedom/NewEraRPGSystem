@@ -1,24 +1,20 @@
 using Godot;
 using System;
 
-public class FlorCopaDeSangue : ItemCode
+public class MoonTraceMechanic : TraceMechanic
 {
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        int health = (int)(main.GetTotalLife() * 0.2f);
-
-        main.AddActualLife(health);
-
-        item.RemoveQuantity();
-        main.UpdateInventory();
+        main.AddExtraDamage(main.GetAtributeNodeByEnum(MyEnum.Atribute.MIN).GetAtributeTotalValue());
 
         return new MessageNotificationData(
-            message, new object[] {health}, main.GetWorkNodeByEnum(MyEnum.Work.AkumaNoMi).GetBaseImage()
+            baseMessage, null, trace.GetTraceImage()
         );
     }
 
     public override void DoEndMechanicLogic()
     {
+        main.AddExtraDamage(-main.GetAtributeNodeByEnum(MyEnum.Atribute.MIN).GetAtributeTotalValue());
     }
 
     public override int RequestCriticTest(MainInterface main)

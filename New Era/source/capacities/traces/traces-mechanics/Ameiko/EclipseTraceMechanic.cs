@@ -1,24 +1,18 @@
 using Godot;
 using System;
 
-public class BombaFumaca : ItemCode
+public class EclipseTraceMechanic : TraceMechanic
 {
-    [Export]
-    private Texture bombTexture;
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        item.RemoveQuantity();
-        main.UpdateInventory();
-
+        //@
         return new MessageNotificationData(
-            message, null, bombTexture
+            baseMessage, new object[] { 2 }, trace.GetTraceImage()
         );
     }
 
-    public override void DoEndMechanicLogic()
-    {
-    }
+    public override void DoEndMechanicLogic() { }
 
     public override int RequestCriticTest(MainInterface main)
     {

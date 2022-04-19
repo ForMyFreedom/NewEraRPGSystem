@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/traces/traces-mechanics/DoAtributeTestTraceMechanic.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+baseMessage = null
+atributeEnum = 0
+linearMod = 0.0
+constMod = 0
+sumMod = 0
