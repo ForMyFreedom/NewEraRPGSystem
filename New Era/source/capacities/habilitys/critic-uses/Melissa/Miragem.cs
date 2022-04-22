@@ -12,7 +12,7 @@ public class Miragem : CriticUse
         holdGuard = main.GetGuard();
         main.SetGuard(0);
 
-        holdDefense = (int)(critic * 3.5);
+        holdDefense = (int)(critic * 3);
         main.AddModAgiDefense(holdDefense);
 
         return new MessageNotificationData(baseMessage, new object[] { holdDefense }, injectedWork.GetBaseImage());

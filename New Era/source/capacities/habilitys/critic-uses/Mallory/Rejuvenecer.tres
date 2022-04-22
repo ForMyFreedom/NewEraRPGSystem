@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Mallory/Rejuvenecer.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Rejuvenecer"
+relatedWork = 9
+text = "Caso cure alguém, ou a si mesmo, recupera 2N% de Surto de Ação sobre o Valor Curado"
+baseMessage = "Após uma cura, você recupera [$% da Cura Realizada] no Surto de Ação do Alvo Curado
+Caso não tenha ainda tenha feito um tratamento: $ Vida e $ Surto de Ação"
+cost = -1
