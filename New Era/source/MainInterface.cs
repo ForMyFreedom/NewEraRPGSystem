@@ -45,6 +45,8 @@ public class MainInterface : Control, CharacterDataBank
     [Export]
     private NodePath chaAtributePath;
     [Export]
+    private NodePath detAtributePath;
+    [Export]
     private NodePath worksTreePath;
     [Export]
     private NodePath notificationPath;
@@ -173,12 +175,14 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetMind(sender.GetMind());
         reciver.SetSenses(sender.GetSenses());
         reciver.SetCharisma(sender.GetCharisma());
+        reciver.SetDetermination(sender.GetDetermination());
 
         reciver.SetModStrength(sender.GetModStrength());
         reciver.SetModAgility(sender.GetModAgility());
         reciver.SetModMind(sender.GetModMind());
         reciver.SetModSenses(sender.GetModSenses());
         reciver.SetModCharisma(sender.GetModCharisma());
+        reciver.SetModDetermination(sender.GetModDetermination());
 
         reciver.SetWorks(sender.GetWorks());
         reciver.SetNotifications(sender.GetNotifications());
@@ -272,6 +276,8 @@ public class MainInterface : Control, CharacterDataBank
                 return GetNode<Atributo>(minAtributePath);
             case MyEnum.Atribute.CHA:
                 return GetNode<Atributo>(chaAtributePath);
+            case MyEnum.Atribute.DET:
+                return GetNode<Atributo>(detAtributePath);
         }
         return null;
     }
@@ -620,6 +626,21 @@ public class MainInterface : Control, CharacterDataBank
         AddAtributeMajor(chaAtributePath, sum);
     }
 
+    public int GetDetermination()
+    {
+        return GetAtributeMajor(detAtributePath);
+    }
+
+    public void SetDetermination(int value)
+    {
+        SetAtributeMajor(detAtributePath, value);
+    }
+
+    public void AddDetermination(int sum)
+    {
+        AddAtributeMajor(detAtributePath, sum);
+    }
+
 
 
 
@@ -706,6 +727,24 @@ public class MainInterface : Control, CharacterDataBank
     {
         AddAtributeMod(chaAtributePath, sum);
     }
+
+
+    public int GetModDetermination()
+    {
+        return GetAtributeMod(detAtributePath);
+    }
+
+    public void SetModDetermination(int value)
+    {
+        SetAtributeMod(detAtributePath, value);
+    }
+
+    public void AddModDetermination(int sum)
+    {
+        AddAtributeMod(detAtributePath, sum);
+    }
+
+
 
 
     public Array<Work> GetWorks()
