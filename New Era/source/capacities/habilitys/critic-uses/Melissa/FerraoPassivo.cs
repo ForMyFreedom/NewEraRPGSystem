@@ -8,6 +8,8 @@ public class FerraoPassivo : CriticUse
     {
         int dmgBonus = main.GetActualAgiDefense() / 8;
 
+        main.AddActualSurge(-5);
+
         return new MessageNotificationData(
             baseMessage, new object[] {dmgBonus}, injectedWork.GetBaseImage()
         );

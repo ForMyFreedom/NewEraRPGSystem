@@ -9,8 +9,8 @@ toDispendSurge = true
 canLimit = false
 criticUseName = "Enterrar Oponente"
 relatedWork = 3
-text = "Em Testes de Ataque, você pode optar por fazer essa Manobra de Duelo de Agilidade (Caso vença, você agarra sem causar dano o oponente, o qual tem um turno para tentar escapar do ataque que vira.  E após isso, causa-se um Dano extra de 1.5*Metros de distância do chão. Caso falhe, o ataque perde todo o dano)"
+text = "Em Testes de Ataque, você pode optar por fazer essa Manobra de Duelo de Agilidade (Caso vença, você agarra sem causar dano o oponente, o qual tem um turno para tentar escapar do ataque que vira.  E após isso, causa-se um Dano extra de 1.5*Metros de distância do chão. Caso falhe, o ataque perde todo o dano) [-17 Surto de Ação]"
 baseMessage = "Você tenta agarrar um alvo com um Teste de Agilidade de $
 Caso vença, você o agarra e começa a voar. O alvo ainda tem um turno de direito
 Caso continue agarrado, em seu turno a queda acontece! Você causa +$ Dano!"
-cost = 3
+cost = 6
