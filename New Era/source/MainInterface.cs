@@ -71,6 +71,8 @@ public class MainInterface : Control, CharacterDataBank
     [Export]
     private NodePath characterInventoryPath;
     [Export]
+    private NodePath rollDataPath;
+    [Export]
     private NodePath triviaDataPath;
     [Export]
     private NodePath traceDataPath;
@@ -103,7 +105,7 @@ public class MainInterface : Control, CharacterDataBank
     {
         RegistryData(player, this);
         MakeConnections();
-        SendBooblesData();
+        SendLocalizatedData();
         MyStatic.CenterTheWindow();
         EmitSignal(nameof(main_ready));
     }
@@ -133,10 +135,22 @@ public class MainInterface : Control, CharacterDataBank
         GetNode(worksTreePath).Connect("work_level_changed", this, "_OnWorkLevelChanged");
     }
 
+    private void SendLocalizatedData()
+    {
+        SendBooblesData();
+        SendRollData();
+    }
+
     private void SendBooblesData()
     {
         GetNode<DefenseBooble>(defenseBooblePath).SetDefenseStyle(GetDefenseStyle());
         GetNode<DefenseBooble>(defenseBooblePath).UpdateTexture();
+    }
+
+    private void SendRollData()
+    {
+        GetNode<CustomRollData>(rollDataPath).SetPrincipalColor(GetFirstColor());
+        GetNode<CustomRollData>(rollDataPath).SetSecondaryColor(GetSecondColor());
     }
 
     private void CreateLifeUpdater()
