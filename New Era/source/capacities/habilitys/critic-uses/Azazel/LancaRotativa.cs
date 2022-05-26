@@ -4,23 +4,24 @@ using System;
 
 public class LancaRotativa : CriticUse
 {
+    float mod = 3.5f;
     int holdCritic;
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        main.AddModAgiDefense(2*critic);
-        main.AddModStrDefense(2*critic);
+        main.AddModAgiDefense((int)mod*critic);
+        main.AddModStrDefense((int)mod *critic);
         holdCritic = critic;
 
         return new MessageNotificationData(
-            baseMessage, new object[] { 2 * critic }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { mod*critic }, injectedWork.GetBaseImage()
         );
     }
 
     public override void DoEndMechanicLogic()
     {
-        main.AddModAgiDefense(-2 *holdCritic);
-        main.AddModStrDefense(-2*holdCritic);
+        main.AddModAgiDefense((int)-mod*holdCritic);
+        main.AddModStrDefense((int)-mod*holdCritic);
     }
 
 
