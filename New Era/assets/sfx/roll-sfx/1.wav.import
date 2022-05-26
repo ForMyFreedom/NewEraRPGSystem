@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/notification.wav-e3e94a9d1fbe46ce43417fc140138304.sample"
+path="res://.import/1.wav-693f4f8a80619748997c30478c0dee91.sample"
 
 [deps]
 
-source_file="res://assets/notification.wav"
-dest_files=[ "res://.import/notification.wav-e3e94a9d1fbe46ce43417fc140138304.sample" ]
+source_file="res://assets/sfx/roll-sfx/1.wav"
+dest_files=[ "res://.import/1.wav-693f4f8a80619748997c30478c0dee91.sample" ]
 
 [params]
 

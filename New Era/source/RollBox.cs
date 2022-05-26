@@ -13,6 +13,8 @@ public class RollBox : VBoxContainer
     private NodePath resultLabelPath;
     [Export]
     private NodePath criticLabelPath;
+    [Export]
+    private NodePath audioStreamPath;
 
     private int diceValue = 0;
     private int sumValue = 0;
@@ -37,6 +39,7 @@ public class RollBox : VBoxContainer
     {
         int result = GetRandomRoll();
         ChangeLabels(result);
+        PlaySFX();
         EmitSignal(nameof(roll_maded), result); 
     }
 
@@ -72,6 +75,11 @@ public class RollBox : VBoxContainer
     {
         GetNode<Label>(resultLabelPath).Text = result.ToString();
         GetNode<Label>(criticLabelPath).Text = (result / 10).ToString() + " Criticos";
+    }
+
+    private void PlaySFX()
+    {
+        GetNode<MultipleStreamPlayer>(audioStreamPath).PlayRandomAudio();
     }
 
 

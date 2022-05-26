@@ -22,6 +22,14 @@ public class MultipleStreamPlayer : AudioStreamPlayer
         if (Stream != null) Play();
     }
 
+    public void PlayRandomAudio()
+    {
+        var x = RollCode.GetRandomCustomRoll(audioStreamList.Length) - 1;
+        GD.Print(x);
+        Stream = audioStreamList[RollCode.GetRandomCustomRoll(audioStreamList.Length) - 1];
+        if (Stream != null) Play();
+    }
+
 
     private int SearchIndexByName(String searchName)
     {
