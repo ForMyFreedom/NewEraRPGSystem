@@ -370,12 +370,12 @@ public class PlayerSaveResource : Resource, CharacterDataBank
 
     public int GetDetermination()
     {
-        return totalAtributes[(int)MyEnum.Atribute.DET];
+        return totalAtributes[(int)MyEnum.Atribute.DEJ];
     }
 
     public void SetDetermination(int value)
     {
-        totalAtributes[(int)MyEnum.Atribute.DET] = value;
+        totalAtributes[(int)MyEnum.Atribute.DEJ] = value;
     }
 
     public int GetModStrength()
@@ -430,12 +430,12 @@ public class PlayerSaveResource : Resource, CharacterDataBank
 
     public int GetModDetermination()
     {
-        return modAtributes[(int)MyEnum.Atribute.DET];
+        return modAtributes[(int)MyEnum.Atribute.DEJ];
     }
 
     public void SetModDetermination(int value)
     {
-        modAtributes[(int)MyEnum.Atribute.DET] = value;
+        modAtributes[(int)MyEnum.Atribute.DEJ] = value;
     }
 
 
