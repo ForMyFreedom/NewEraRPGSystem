@@ -72,6 +72,9 @@ public interface CharacterDataBank
     int GetCharisma();
     void SetCharisma(int value);
 
+    int GetDetermination();
+    void SetDetermination(int value);
+
     int GetModStrength();
     void SetModStrength(int value);
 
@@ -86,6 +89,9 @@ public interface CharacterDataBank
 
     int GetModCharisma();
     void SetModCharisma(int value);
+
+    int GetModDetermination();
+    void SetModDetermination(int value);
 
     Array<Work> GetWorks();
     void SetWorks(Array<Work> _works);

@@ -282,6 +282,16 @@ public class Player : Node, CharacterDataBank
         playerSaveResource.SetCharisma(value);
     }
 
+    public int GetDetermination()
+    {
+        return playerSaveResource.GetDetermination();
+    }
+
+    public void SetDetermination(int value)
+    {
+        playerSaveResource.SetDetermination(value);
+    }
+
     public int GetModStrength()
     {
         return playerSaveResource.GetModStrength();
@@ -330,6 +340,16 @@ public class Player : Node, CharacterDataBank
     public void SetModCharisma(int value)
     {
         playerSaveResource.SetModCharisma(value);
+    }
+
+    public int GetModDetermination()
+    {
+        return playerSaveResource.GetModDetermination();
+    }
+
+    public void SetModDetermination(int value)
+    {
+        playerSaveResource.SetModDetermination(value);
     }
 
     public Array<Work> GetWorks()
@@ -510,4 +530,5 @@ public class Player : Node, CharacterDataBank
     {
         playerSaveResource.SetTraces(traces);
     }
+
 }
