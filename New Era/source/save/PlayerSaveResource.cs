@@ -368,6 +368,16 @@ public class PlayerSaveResource : Resource, CharacterDataBank
         totalAtributes[(int)MyEnum.Atribute.CHA] = value;
     }
 
+    public int GetDetermination()
+    {
+        return totalAtributes[(int)MyEnum.Atribute.DEJ];
+    }
+
+    public void SetDetermination(int value)
+    {
+        totalAtributes[(int)MyEnum.Atribute.DEJ] = value;
+    }
+
     public int GetModStrength()
     {
         return modAtributes[(int)MyEnum.Atribute.STR];
@@ -416,6 +426,16 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     public void SetModCharisma(int value)
     {
         modAtributes[(int)MyEnum.Atribute.CHA] = value;
+    }
+
+    public int GetModDetermination()
+    {
+        return modAtributes[(int)MyEnum.Atribute.DEJ];
+    }
+
+    public void SetModDetermination(int value)
+    {
+        modAtributes[(int)MyEnum.Atribute.DEJ] = value;
     }
 
 
@@ -646,4 +666,5 @@ public class PlayerSaveResource : Resource, CharacterDataBank
         }
         return duplicatedArray;
     }
+
 }

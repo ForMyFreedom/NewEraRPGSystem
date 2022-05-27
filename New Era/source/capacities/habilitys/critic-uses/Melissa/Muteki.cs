@@ -8,7 +8,7 @@ public class Muteki : CriticUse
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        guard = 4 * critic;
+        guard = 3 * critic;
         main.AddGuard(guard);
 
         return new MessageNotificationData(

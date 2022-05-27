@@ -11,7 +11,7 @@ toDispendSurge = false
 canLimit = true
 message = "Forma: Nosferatus
 Talentos
-   Sabor do Sangue [Vampirismo recupera o dobro de vida e não tem mais tempo de recarga]
+   Sabor do Sangue [Vampirismo recupera o dobro de vida (LIMITE: 1/4 VIDA TOTAL) e não tem mais tempo de recarga]
    Olhar do Desespero [Todos sentem uma aura de profundo medo só de te olhar, o que reflete em $ em todos testes feitos contra você]
    Força da Lua [Sentindo a lua aonde quer que ela esteja, seu valor de Força e Agilidade aumentam em +Atributo/2.5]
       *O dano de seus ataques é calculado pela média de Força e Agilidade
@@ -22,6 +22,6 @@ Fraquezas:
    Fome Imparável [A cada três turnos que você passar sem utilizar seu Vampirismo, você sofre 3d6 Dano por fome
    Caso sua vida seja zerada com esse Dano, você cai inconciente e com sua forma desativada]
 
-Para desfazer a forma, é preciso 5 Críticos em um Teste de Força [+2 para cada consumo em uma semana]"
+Para desfazer a forma, é preciso 6 Críticos em um Teste de Força [+2 para cada consumo antes de dormir]"
 image = ExtResource( 1 )
 violenceTechnique = ExtResource( 3 )

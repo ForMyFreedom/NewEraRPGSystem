@@ -9,6 +9,6 @@ toDispendSurge = true
 canLimit = false
 criticUseName = "Dose Dupla"
 relatedWork = 1
-text = " Em Testes de Ataque, caso sacrifique toda sua Defesas e Guardas pelo próximo turno, você pode realizar um ataque em dois alvos de Alcance Corporal."
+text = " Em Testes de Ataque, caso sacrifique toda sua Defesas e Guardas pelo próximo turno, você pode realizar um ataque em dois alvos de Alcance Corporal. [-7 Surto de Ação]"
 baseMessage = "Você sacrifica todas as Defesas pelo próximo turno, mas ataque dois alvos!"
 cost = 6

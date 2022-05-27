@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/5.wav-2e45d9094e671099c0b28995d9bd2a58.sample"
+
+[deps]
+
+source_file="res://assets/sfx/roll-sfx/5.wav"
+dest_files=[ "res://.import/5.wav-2e45d9094e671099c0b28995d9bd2a58.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

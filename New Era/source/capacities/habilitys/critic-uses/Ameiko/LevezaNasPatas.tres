@@ -10,5 +10,5 @@ canLimit = false
 criticUseName = "Leveza nas Patas"
 relatedWork = 3
 text = "Arremesa um alvo para cima com um chute circular, reduzindo a Defesa dele em 2N até o começo de seu próximo Turno"
-baseMessage = "Alvo arremesado, -$ nas Defesas dele até o começo de seu próximo turno"
+baseMessage = "Alvo arremesado para cima, -$ nas Defesas dele até o começo de seu próximo turno"
 cost = -1

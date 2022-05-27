@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Melissa.tscn" type="PackedScene" id=2]
@@ -19,8 +19,8 @@
 [ext_resource path="res://source/notification/NotificationArea.cs" type="Script" id=17]
 [ext_resource path="res://assets/BaseMinorFont.tres" type="DynamicFont" id=18]
 [ext_resource path="res://assets/skills/blank.png" type="Texture" id=19]
-[ext_resource path="res://assets/notification.wav" type="AudioStream" id=20]
-[ext_resource path="res://assets/del_notification.wav" type="AudioStream" id=21]
+[ext_resource path="res://assets/sfx/notification.wav" type="AudioStream" id=20]
+[ext_resource path="res://assets/sfx/del_notification.wav" type="AudioStream" id=21]
 [ext_resource path="res://source/audio/MultipleStreamPlayer.cs" type="Script" id=22]
 [ext_resource path="res://source/general_buttons/GeneralButton.tscn" type="PackedScene" id=23]
 [ext_resource path="res://assets/updown.png" type="Texture" id=24]
@@ -43,6 +43,7 @@
 [ext_resource path="res://assets/version.png" type="Texture" id=41]
 [ext_resource path="res://source/VersionIndex.tscn" type="PackedScene" id=42]
 [ext_resource path="res://source/pop_up_general_interface/traces/TracesPopup.tscn" type="PackedScene" id=43]
+[ext_resource path="res://source/pop_up_general_interface/roll/CustomRollData.cs" type="Script" id=44]
 
 [sub_resource type="Animation" id=1]
 resource_name = "activate"
@@ -234,6 +235,7 @@ agiAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContaine
 senAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/SensesAtribute")
 minAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/MindAtribute")
 chaAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/CharismaAtribute")
+detAtributePath = NodePath("VBoxContainer/Atributes/MarginContainer/HBoxContainer/DeterminationAtribute")
 worksTreePath = NodePath("VBoxContainer/Capacities/HBOX/WorkControl/MarginContainer/VBOX/WorkTree")
 notificationPath = NodePath("NotificationArea")
 inspirationSpinPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/HBOX/Control/InspirationSpinBox")
@@ -246,6 +248,7 @@ getSaveButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/G
 reloadSaveButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/HBoxContainer/VBoxContainer/ReloadSave")
 techniquesTreePath = NodePath("VBoxContainer/Capacities/HBOX/HabilityControl/MarginContainer/VBOX/TechniqueTree")
 characterInventoryPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/EquipamentsButton/CharacterInventory")
+rollDataPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/CustomRollButton/CustomRollData")
 triviaDataPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton/TrivaData")
 traceDataPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TracesButton/TracesData")
 defenseBooblePath = NodePath("NotificationArea/HBoxContainer/Actions/DefenseNode")
@@ -520,6 +523,9 @@ margin_right = 1093.0
 margin_bottom = 41.0
 text = "Rolagem"
 packedPopup = ExtResource( 31 )
+
+[node name="CustomRollData" type="Node" parent="VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/CustomRollButton"]
+script = ExtResource( 44 )
 
 [node name="CombatFactors" type="Control" parent="VBoxContainer"]
 margin_top = 45.0
@@ -936,70 +942,85 @@ __meta__ = {
 [node name="StrengthAtribute" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 227.0
+margin_right = 187.0
 margin_bottom = 167.0
 size_flags_horizontal = 3
 atributeName = "Força"
 
 [node name="VS1" type="VSeparator" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer"]
-margin_left = 231.0
-margin_right = 235.0
+margin_left = 191.0
+margin_right = 195.0
 margin_bottom = 167.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="AgilityAtribute" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 239.0
-margin_right = 466.0
+margin_left = 199.0
+margin_right = 387.0
 margin_bottom = 167.0
 size_flags_horizontal = 3
 atributeName = "Agilidade"
 
 [node name="VS2" type="VSeparator" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer"]
-margin_left = 470.0
-margin_right = 474.0
+margin_left = 391.0
+margin_right = 395.0
 margin_bottom = 167.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="SensesAtribute" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 478.0
-margin_right = 706.0
+margin_left = 399.0
+margin_right = 586.0
 margin_bottom = 167.0
 size_flags_horizontal = 3
 atributeName = "Sentidos"
 
 [node name="VS3" type="VSeparator" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer"]
-margin_left = 710.0
-margin_right = 714.0
+margin_left = 590.0
+margin_right = 594.0
 margin_bottom = 167.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="MindAtribute" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 718.0
-margin_right = 945.0
+margin_left = 598.0
+margin_right = 786.0
 margin_bottom = 167.0
 size_flags_horizontal = 3
 atributeName = "Mente"
 
 [node name="VS4" type="VSeparator" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer"]
-margin_left = 949.0
-margin_right = 953.0
+margin_left = 790.0
+margin_right = 794.0
 margin_bottom = 167.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="CharismaAtribute" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 957.0
-margin_right = 1185.0
+margin_left = 798.0
+margin_right = 985.0
 margin_bottom = 167.0
 size_flags_horizontal = 3
 atributeName = "Carisma"
+
+[node name="VS5" type="VSeparator" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer"]
+margin_left = 989.0
+margin_right = 993.0
+margin_bottom = 167.0
+custom_styles/separator = ExtResource( 3 )
+
+[node name="DeterminationAtribute" parent="VBoxContainer/Atributes/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 997.0
+margin_right = 1185.0
+margin_bottom = 167.0
+size_flags_horizontal = 3
+atributeName = "Desejo"
 
 [node name="HS2" type="HSeparator" parent="VBoxContainer"]
 margin_top = 437.0

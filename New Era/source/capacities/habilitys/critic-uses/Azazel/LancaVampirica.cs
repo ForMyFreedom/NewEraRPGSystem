@@ -8,6 +8,8 @@ public class LancaVampirica : CriticUse
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
+        main.AddActualSurge(-5);
+
         return new MessageNotificationData(
             baseMessage, null, injectedWork.GetBaseImage()
         );

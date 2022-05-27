@@ -9,6 +9,6 @@ toDispendSurge = true
 canLimit = false
 criticUseName = "Lança Rotativa"
 relatedWork = 4
-text = "Permite você realizar um Teste de Ataque como Ação Livre para se proteger de projéteis. Aumente sua Defesa em +2N."
+text = "Permite você realizar um Teste de Ataque como Ação Livre para se proteger de projéteis. Aumente sua Defesa em +3.5N."
 baseMessage = "Como ação livre, você se protege de projéteis com um bônus de $ em todas suas Defesas"
 cost = -1

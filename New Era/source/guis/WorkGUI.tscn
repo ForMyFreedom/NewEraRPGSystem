@@ -103,7 +103,7 @@ margin_right = 180.0
 margin_bottom = 50.0
 size_flags_vertical = 8
 text = "STR"
-items = [ "STR", null, false, 0, null, "AGI", null, false, 1, null, "SEN", null, false, 2, null, "MIN", null, false, 3, null, "CHA", null, false, 4, null ]
+items = [ "STR", null, false, 0, null, "AGI", null, false, 1, null, "SEN", null, false, 2, null, "MIN", null, false, 3, null, "CHA", null, false, 4, null, "DEJ", null, false, 5, null ]
 selected = 0
 script = ExtResource( 10 )
 
