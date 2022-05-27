@@ -1,21 +1,11 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/calibriz.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/updown.png" type="Texture" id=2]
 [ext_resource path="res://source/RollBox.cs" type="Script" id=3]
 [ext_resource path="res://assets/BaseMajorFont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://assets/calibrib.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://assets/sfx/roll-sfx/7.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/sfx/roll-sfx/8.wav" type="AudioStream" id=7]
-[ext_resource path="res://assets/sfx/roll-sfx/1.wav" type="AudioStream" id=8]
-[ext_resource path="res://assets/sfx/roll-sfx/2.wav" type="AudioStream" id=9]
-[ext_resource path="res://assets/sfx/roll-sfx/4.wav" type="AudioStream" id=10]
-[ext_resource path="res://assets/sfx/roll-sfx/5.wav" type="AudioStream" id=11]
-[ext_resource path="res://assets/sfx/roll-sfx/6.wav" type="AudioStream" id=12]
-[ext_resource path="res://assets/sfx/roll-sfx/9.wav" type="AudioStream" id=13]
-[ext_resource path="res://assets/sfx/roll-sfx/3.wav" type="AudioStream" id=14]
-[ext_resource path="res://assets/sfx/roll-sfx/10.wav" type="AudioStream" id=15]
-[ext_resource path="res://source/audio/MultipleStreamPlayer.cs" type="Script" id=16]
+[ext_resource path="res://source/audio/RollStreamPlayer.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 14
@@ -44,7 +34,7 @@ spinValuePath = NodePath("HBoxContainer2/SpinBox")
 modSpinPath = NodePath("HBoxContainer/ModSpinBox")
 resultLabelPath = NodePath("Result")
 criticLabelPath = NodePath("Critic")
-audioStreamPath = NodePath("AudioStreamPlayer")
+audioStreamPath = NodePath("RollStreamPlayer")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 margin_right = 1195.0
@@ -116,7 +106,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-script = ExtResource( 16 )
-audioStreamList = [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 15 ) ]
-audioNameList = PoolStringArray( "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" )
+[node name="RollStreamPlayer" parent="." instance=ExtResource( 6 )]
