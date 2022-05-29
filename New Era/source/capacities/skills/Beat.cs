@@ -16,9 +16,6 @@ public class Beat : Skill
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0)
-            critic = 0;
-
         holdActionIndex = actionIndex;
 
         float correction = 2 - Math.Abs(actionIndex - 2);

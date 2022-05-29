@@ -8,7 +8,7 @@ isSingleton = true
 toDispendSurge = true
 canLimit = false
 criticUseName = "Princípio da Árvore I, Focalização"
-relatedWork = 14
+relatedWork = 15
 text = "O conhecimento díspar que vem da Árvore tem suas raizes em um mar de leis, seu explendor de um céu sem fim, e sua terra na extensão de seus irmãos...
 Os quais como são muitos, talvez seja preciso olhar um de cada vez... Sempre que ativar um Princípio (Como as Formas de Haki), você pode fazer um Teste de Mente e receber +N de nível nessa forma [Apenas pode trocar após uma hora]"
 baseMessage = "Primeiro Galho: +$ em uma Forma de sua escolha por uma hora [Não pode reusar até o fim desse tempo]"
