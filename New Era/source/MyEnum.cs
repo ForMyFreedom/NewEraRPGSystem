@@ -9,7 +9,7 @@ public static class MyEnum
     
     public enum Work {
         Swordmaster, Assasin, Shooter, Fighter, Marcialist, Cooker, 
-        Navigator, Scholar, Engineer, Medic, Artist, Orator, AkumaNoMi, None, Haki
+        Navigator, Scholar, Engineer, Medic, Artist, Orator, AkumaNoMi, None, Haki, Gensoku
     };
 
     public enum DefenseStyle { StrDefense, AgiDefense };

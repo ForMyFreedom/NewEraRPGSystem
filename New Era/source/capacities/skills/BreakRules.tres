@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/wayOfCalculeSkill/SameOfWorkWayOfCalculeSkill.cs" type="Script" id=1]
+[ext_resource path="res://source/capacities/skills/BreakRules.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+skillName = "Quebrar Regras"
+wayOfLevelCalculeScript = ExtResource( 1 )
+skillDescription = "A Entropia, o ID, e minha Ambição!"
+notificationText = "Você quebra uma regra de Peso $ (Perdendo $ Surto de Ação)"
+mechanicDescription = "Como um negador da realidade, munido de sua Cor, você naturalmente pode quebrar regras situacionais caso seja coerente com seu tipo de Haki (Como tocar uma Akuma no Mi que não pode ser tocada). Você pode realizar um Teste de Haki e quebrar uma regra de peso N/5 ao custo de o dobro desse valor em Surto de Ação"
