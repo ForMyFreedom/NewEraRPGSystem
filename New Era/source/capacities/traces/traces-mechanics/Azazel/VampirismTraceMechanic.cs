@@ -5,7 +5,7 @@ public class VampirismTraceMechanic : TraceMechanic
 {
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        int damage = main.GetAtributeNodeByEnum(MyEnum.Atribute.STR).GetAtributeTotalValue()/2;
+        int damage = main.GetTotalAtributeValue(MyEnum.Atribute.STR) / 2;
         int health = damage+5;
 
         return new MessageNotificationData(

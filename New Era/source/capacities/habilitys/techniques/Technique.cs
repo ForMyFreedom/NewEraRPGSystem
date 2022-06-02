@@ -81,7 +81,7 @@ public abstract class Technique : NotificationConsumer
 
         foreach(Work work in injectedWorks)
         {
-            value += main.GetAtributeNodeByEnum(work.GetRelationedAtribute()).GetAtributeTotalValue();
+            value += main.GetTotalAtributeValue(work.GetRelationedAtribute());
         }
 
         return value/injectedWorks.Length;

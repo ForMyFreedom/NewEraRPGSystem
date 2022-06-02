@@ -215,6 +215,7 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetDefenseStyle(sender.GetDefenseStyle());
 
         reciver.SetTraces(sender.GetTraces());
+        reciver.SetAllGameData(sender.GetAllGameData());
     }
 
     private void RegisterAllData()
@@ -294,6 +295,11 @@ public class MainInterface : Control, CharacterDataBank
                 return GetNode<Atributo>(detAtributePath);
         }
         return null;
+    }
+
+    public int GetTotalAtributeValue(MyEnum.Atribute atributeEnum)
+    {
+        return GetAtributeNodeByEnum(atributeEnum).GetAtributeTotalValue();
     }
 
     public Work GetWorkNodeByEnum(MyEnum.Work workEnum)
@@ -979,6 +985,26 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<TracesData>(traceDataPath).SetTraces(traces);
     }
 
+    public object GetGameDataByKey(string key)
+    {
+        return player.GetGameDataByKey(key);
+    }
+
+    public void SetGameDataByKey(string key, object data)
+    {
+        player.SetGameDataByKey(key, data);
+    }
+
+    public Dictionary<string, object> GetAllGameData()
+    {
+        return player.GetAllGameData();
+    }
+
+    public void SetAllGameData(Dictionary<string, object> gameData)
+    {
+        player.SetAllGameData(gameData);
+    }
+
 
 
 
@@ -1142,5 +1168,6 @@ public class MainInterface : Control, CharacterDataBank
                 ((InventoryPopup)child).UpdateItensText();
         }
     }
+
 }
 

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://source/capacities/skills/Ren.tres" type="Resource" id=1]
+[ext_resource path="res://source/capacities/skills/Ten.tres" type="Resource" id=2]
+[ext_resource path="res://source/capacities/skills/Zetsu.tres" type="Resource" id=3]
+[ext_resource path="res://source/capacities/works/Gensoku.cs" type="Script" id=4]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 4 )
+workName = "Gensoku"
+pathDescription = "Null"
+skills = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ) ]
+description = "Existência e Desejo, as forças mais simples do universo..."
+maestryDescription = null
+enumWork = 15
+firstUpText = "6 Pontos para distruir entre Ten, Zetsu e Ren"

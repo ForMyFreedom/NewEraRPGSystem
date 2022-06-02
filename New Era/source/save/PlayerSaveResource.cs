@@ -66,6 +66,9 @@ public class PlayerSaveResource : Resource, CharacterDataBank
 
     [Export]
     private Array<Trace> traces;
+    [Export]
+    private Dictionary<string, object> gameData;
+
 
 
     public int GetEditionIndex()
@@ -617,8 +620,26 @@ public class PlayerSaveResource : Resource, CharacterDataBank
         this.traces = traces;
     }
 
+    public object GetGameDataByKey(string key)
+    {
+        if (!gameData.ContainsKey(key)) return null;
+        return gameData[key];
+    }
 
+    public void SetGameDataByKey(string key, object data)
+    {
+        gameData[key] = data;
+    }
 
+    public Dictionary<string, object> GetAllGameData()
+    {
+        return gameData;
+    }
+
+    public void SetAllGameData(Dictionary<string, object> gameData)
+    {
+        this.gameData = gameData;
+    }
 
 
 
@@ -666,5 +687,4 @@ public class PlayerSaveResource : Resource, CharacterDataBank
         }
         return duplicatedArray;
     }
-
 }

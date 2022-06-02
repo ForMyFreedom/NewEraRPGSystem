@@ -1,27 +1,24 @@
 using Godot;
 using System;
 
-public class FamineTraceMechanic : TraceMechanic
+public class FamineTraceMechanic : FaminesUserTraceMechanic
 {
-    [Export]
-    private int dmgBonus;
-
     [Export(PropertyHint.MultilineText)]
     private string furyText;
     [Export]
     private Texture furyFamineTexture;
 
-    private int famine;
-
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         MessageNotificationData result;
-        famine+=2;
+
+        AddFamine(main, 2);
+        int famine = GetFamine(main);
 
         if (FamineSurpassStrength(main))
-            result = GetFuryResult();
+            result = GetFuryResult(main);
         else
-            result = GetProgressionResult();
+            result = GetProgressionResult(famine);
 
         return result;
     }
@@ -33,16 +30,7 @@ public class FamineTraceMechanic : TraceMechanic
     }
 
 
-
-    private MessageNotificationData GetFuryResult()
-    {
-        main.AddExtraDamage(dmgBonus);
-        main.AddActualLife(-dmgBonus / 2);
-
-        return new MessageNotificationData(furyText, null, furyFamineTexture);
-    }
-
-    private MessageNotificationData GetProgressionResult()
+    private MessageNotificationData GetProgressionResult(int famine)
     {
         return new MessageNotificationData(
             baseMessage, new object[] { famine }, trace.GetTraceImage()
@@ -52,22 +40,7 @@ public class FamineTraceMechanic : TraceMechanic
 
     private bool FamineSurpassStrength(MainInterface main)
     {
-        return famine > main.GetAtributeNodeByEnum(MyEnum.Atribute.STR).GetAtributeTotalValue();
+        return GetFamine(main) > main.GetTotalAtributeValue(MyEnum.Atribute.STR);
     }
 
-
-    public int GetFamine()
-    {
-        return famine;
-    }
-
-    public void AddFamine(int value)
-    {
-        famine += value;
-    }
-
-    public override int RequestCriticTest(MainInterface main)
-    {
-        return 0;
-    }
 }

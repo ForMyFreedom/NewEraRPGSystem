@@ -3,9 +3,12 @@ using System;
 
 public class Haki : Work
 {
+    [Export]
+    private string firstUpText;
+
     public override void DoFirstUpStep(MainInterface gui)
     {
-        gui.CreateNewNotification("Distribua 3 pontos entre Ten, Zetsu e Ren", baseImage);
+        gui.CreateNewNotification(firstUpText, baseImage);
     }
 
     public override void DoSecondUpStep(MainInterface gui)
@@ -26,6 +29,6 @@ public class Haki : Work
 
     public override int GetBaseDamage(MainInterface gui, int weaponDamage = 0, int actionIndex = 0)
     {
-        return weaponDamage + gui.GetAtributeNodeByEnum(relationedAtribute).GetAtributeTotalValue()/2;
+        return weaponDamage + gui.GetTotalAtributeValue(relationedAtribute) / 2;
     }
 }

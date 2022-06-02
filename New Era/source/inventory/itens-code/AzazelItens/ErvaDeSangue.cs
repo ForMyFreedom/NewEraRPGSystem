@@ -18,7 +18,7 @@ public class ErvaDeSangue : ItemCode
         item.RemoveQuantity();
         main.UpdateInventory();
 
-        int charismaImpact = -2*main.GetCharisma();
+        int charismaImpact = -2 * main.GetTotalAtributeValue(MyEnum.Atribute.CHA);
 
         bonusStr = (int)(main.GetStrength()/2.5);
         bonusAgi = (int)(main.GetAgility()/2.5);

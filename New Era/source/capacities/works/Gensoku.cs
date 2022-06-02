@@ -1,11 +1,14 @@
 using Godot;
 using System;
 
-public class Fighter : Work
+public class Gensoku : Work
 {
+    [Export]
+    private string firstUpText;
+
     public override void DoFirstUpStep(MainInterface gui)
     {
-        gui.CreateNewNotification("+1 STR/AGI/SEN", baseImage);
+        gui.AddAnAtributeLevel(relationedAtribute, 3);
     }
 
     public override void DoSecondUpStep(MainInterface gui)
@@ -26,8 +29,6 @@ public class Fighter : Work
 
     public override int GetBaseDamage(MainInterface gui, int weaponDamage = 0, int actionIndex = 0)
     {
-        int str = gui.GetTotalAtributeValue(MyEnum.Atribute.STR);
-        int agi = gui.GetTotalAtributeValue(MyEnum.Atribute.AGI);
-        return (str + agi) / 2;
+        return GetLevel() + gui.GetTotalAtributeValue(relationedAtribute)/2;
     }
 }
