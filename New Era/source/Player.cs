@@ -531,4 +531,23 @@ public class Player : Node, CharacterDataBank
         playerSaveResource.SetTraces(traces);
     }
 
+    public object GetGameDataByKey(string key)
+    {
+        return playerSaveResource.GetGameDataByKey(key);
+    }
+
+    public void SetGameDataByKey(string key, object data)
+    {
+        playerSaveResource.SetGameDataByKey(key, data);
+    }
+
+    public Dictionary<string, object> GetAllGameData()
+    {
+        return playerSaveResource.GetAllGameData();
+    }
+
+    public void SetAllGameData(Dictionary<string, object> gameData)
+    {
+        playerSaveResource.SetAllGameData(gameData);
+    }
 }

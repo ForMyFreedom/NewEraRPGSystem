@@ -140,4 +140,9 @@ public interface CharacterDataBank
 
     Array<Trace> GetTraces();
     void SetTraces(Array<Trace> traces);
+
+    object GetGameDataByKey(string key);
+    void SetGameDataByKey(string key, object data);
+    Dictionary<string, object> GetAllGameData();
+    void SetAllGameData(Dictionary<string, object> gameData);
 }
