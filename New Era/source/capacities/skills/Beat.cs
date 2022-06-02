@@ -9,6 +9,9 @@ public class Beat : Skill
     private int stressNode = 0;
     private int holdActionIndex;
 
+    protected static readonly string stressKey = "stress";
+
+
     public override Array<string> GetTextOfMechanicButtons()
     {
         return new Array<string>() { "Frequencia Absoluta", "Meia Frequencia", "Fluxo", "Meia Pressao", "Pressao Absoluta" };
@@ -17,6 +20,7 @@ public class Beat : Skill
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         holdActionIndex = actionIndex;
+        acummulateStress = GetStress(main);
 
         float correction = 2 - Math.Abs(actionIndex - 2);
         float stressMod = 1f / (int) (5 * Math.Pow(2, correction));
@@ -37,8 +41,10 @@ public class Beat : Skill
         applyedDmgBonus = dmgBonus;
         acummulateStress += stressBonus;
 
-        int strValue = main.GetAtributeNodeByEnum(MyEnum.Atribute.STR).GetAtributeTotalValue();
-        stressNode = acummulateStress/strValue;
+        int strValue = main.GetTotalAtributeValue(MyEnum.Atribute.STR);
+        stressNode = 3*acummulateStress/strValue;
+
+        SetStress(main, acummulateStress);
 
         return new MessageNotificationData(
             notificationText, new object[] { dmgBonus, surgeBonus, stressBonus, stressNode }, effectImage
@@ -47,15 +53,34 @@ public class Beat : Skill
     }
 
 
+    public int GetStress(MainInterface main)
+    {
+        return GetGameData<int>(main, stressKey, 0);
+    }
+
+    public void SetStress(MainInterface main, int stress)
+    {
+        main.SetGameDataByKey(stressKey, stress);
+    }
+
+
+    public T GetGameData<T>(MainInterface main, string key, T defaultResponse)  //@ put in mystatic
+    {
+        var data = main.GetGameDataByKey(key);
+        return (data != null) ? (T)data : defaultResponse;
+    }
+
+
+
+
+
     public int GetActionIndex()
     {
         return holdActionIndex;
     }
 
 
-    public override void DoEndMechanicLogic()
-    {
-    }
+    public override void DoEndMechanicLogic() { }
 
     public override int RequestCriticTest(MainInterface main)
     {

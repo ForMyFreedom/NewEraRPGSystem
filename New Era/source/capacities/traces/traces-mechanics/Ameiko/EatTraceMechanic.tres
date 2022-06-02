@@ -8,3 +8,4 @@ isSingleton = false
 toDispendSurge = false
 canLimit = false
 baseMessage = "Comer comer... -2 Marcadores de Fome [Atual: $]"
+dmgBonus = 0
