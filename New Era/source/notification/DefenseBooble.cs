@@ -37,7 +37,7 @@ public class DefenseBooble : Booble
     private void UpdateGuard()
     {
         int mod = (defenseStyle == MyEnum.DefenseStyle.StrDefense) ? 1 : -1;
-        GetMain().AddGuard(mod * GetMain().GetStrength()/2);
+        GetMain().AddGuard(mod * GetMain().GetTotalAtributeValue(MyEnum.Atribute.STR)/2);
     }
 
 

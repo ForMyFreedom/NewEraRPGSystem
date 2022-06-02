@@ -26,8 +26,8 @@ public class Fighter : Work
 
     public override int GetBaseDamage(MainInterface gui, int weaponDamage = 0, int actionIndex = 0)
     {
-        int str = gui.GetAtributeNodeByEnum(MyEnum.Atribute.STR).GetAtributeTotalValue();
-        int agi = gui.GetAtributeNodeByEnum(MyEnum.Atribute.AGI).GetAtributeTotalValue();
+        int str = gui.GetTotalAtributeValue(MyEnum.Atribute.STR);
+        int agi = gui.GetTotalAtributeValue(MyEnum.Atribute.AGI);
         return (str + agi) / 2;
     }
 }

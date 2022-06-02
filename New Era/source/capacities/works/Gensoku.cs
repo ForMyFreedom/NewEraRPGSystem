@@ -29,6 +29,6 @@ public class Gensoku : Work
 
     public override int GetBaseDamage(MainInterface gui, int weaponDamage = 0, int actionIndex = 0)
     {
-        return GetLevel()+gui.GetAtributeNodeByEnum(relationedAtribute).GetAtributeTotalValue()/2;
+        return GetLevel() + gui.GetTotalAtributeValue(relationedAtribute)/2;
     }
 }

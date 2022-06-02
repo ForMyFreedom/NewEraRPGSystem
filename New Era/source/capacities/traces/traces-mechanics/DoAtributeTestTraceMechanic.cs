@@ -14,7 +14,7 @@ public class DoAtributeTestTraceMechanic : TraceMechanic
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        int value = main.GetAtributeNodeByEnum(atributeEnum).GetAtributeTotalValue();
+        int value = main.GetTotalAtributeValue(atributeEnum);
         value = (int)(value * linearMod + constMod);
         int result = RollCode.GetRandomBasicRoll(value)+value+sumMod;
 

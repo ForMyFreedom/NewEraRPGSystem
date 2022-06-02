@@ -31,6 +31,6 @@ public class Artist : Work
 
     public override int GetBaseDamage(MainInterface gui, int weaponDamage = 0, int actionIndex = 0)
     {
-        return baseDamage + gui.GetAtributeNodeByEnum(relationedAtribute).GetAtributeTotalValue()/2;
+        return baseDamage + gui.GetTotalAtributeValue(relationedAtribute) / 2;
     }
 }

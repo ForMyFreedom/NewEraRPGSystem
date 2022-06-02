@@ -27,6 +27,6 @@ public class Assasin : Work
 
     public override int GetBaseDamage(MainInterface gui, int weaponDamage = 0, int actionIndex = 0)
     {
-        return weaponDamage+gui.GetAtributeNodeByEnum(relationedAtribute).GetAtributeTotalValue()/2;
+        return weaponDamage+ gui.GetTotalAtributeValue(relationedAtribute) / 2;
     }
 }
