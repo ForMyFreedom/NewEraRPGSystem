@@ -9,6 +9,7 @@ toDispendSurge = true
 canLimit = false
 criticUseName = "Micro-Batimento"
 relatedWork = 4
-text = "Em uma Ação Livre ao custo de 1d6+2 de Vida, durante esse turno, o efeito da mecânica ‘Batimentos’ é duplicada [-3 Surto de Ação]"
+text = "Em uma Ação Livre ao custo de 1d6+2 de Vida, durante esse turno, o efeito da mecânica ‘Batimentos’ é duplicada [-3 Surto de Ação]
+Use o valor de crítico aqui para determinar o tipo de fase cardíaca: 0 [Frequencia Absoluta]  1 [Meia Frequência]  2 [Fluxo]  3 [Meia pressão]  4 [Pressão Absoluta]"
 baseMessage = "Você sofre $ Dano em seu coração para dobrar o efeito de sua mecânica Batimento!"
 cost = 4

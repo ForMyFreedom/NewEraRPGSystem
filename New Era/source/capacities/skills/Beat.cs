@@ -31,9 +31,11 @@ public class Beat : Skill
         surgeMod = (surgeMod == 1 / 5f) ? 0 : surgeMod;
         surgeMod = surgeMod / 3;
 
-        int surgeBonus = (int) (level * surgeMod) + critic;
-        int dmgBonus = (int)(level * damageMod) + critic;
-        int stressBonus = (int)(level * stressMod) + critic;
+        var levelToThisCritic = level + critic;
+
+        int surgeBonus = (int) (levelToThisCritic * surgeMod);
+        int dmgBonus = (int)(levelToThisCritic * damageMod);
+        int stressBonus = (int)(levelToThisCritic * stressMod);
 
 
         main.AddActualSurge(surgeBonus);
@@ -47,7 +49,7 @@ public class Beat : Skill
         SetStress(main, acummulateStress);
 
         return new MessageNotificationData(
-            notificationText, new object[] { dmgBonus, surgeBonus, stressBonus, stressNode }, effectImage
+            notificationText, new object[] { dmgBonus, surgeBonus, stressBonus, stressNode+1 }, effectImage
         );
 
     }
@@ -55,21 +57,13 @@ public class Beat : Skill
 
     public int GetStress(MainInterface main)
     {
-        return GetGameData<int>(main, stressKey, 0);
+        return MyStatic.GetGameData<int>(main, stressKey, 0);
     }
 
     public void SetStress(MainInterface main, int stress)
     {
         main.SetGameDataByKey(stressKey, stress);
     }
-
-
-    public T GetGameData<T>(MainInterface main, string key, T defaultResponse)  //@ put in mystatic
-    {
-        var data = main.GetGameDataByKey(key);
-        return (data != null) ? (T)data : defaultResponse;
-    }
-
 
 
 

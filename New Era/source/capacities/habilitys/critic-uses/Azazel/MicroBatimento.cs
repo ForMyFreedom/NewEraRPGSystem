@@ -8,13 +8,16 @@ public class MicroBatimento : CriticUse
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
+        if (critic < 0 || critic > 4)
+            critic = 2;
+
         int selfDamage = RollCode.GetRandomBasicRoll(1) + 2;
         main.AddActualLife(-selfDamage);
 
         Beat beatSkill = (Beat) main.GetSkillByWorkAndIndex(relatedWork, 0);
 
-        beatLevel = main.GetSkillByWorkAndIndex(relatedWork, 0).GetLevel();
-        main.GetWorkNodeByEnum(relatedWork).GetSkillList()[0].DoMechanic(main, beatSkill.GetActionIndex(), beatLevel);
+        beatLevel = main.GetSkillByWorkAndIndex(relatedWork, critic).GetLevel();
+        beatSkill.DoMechanic(main, 2, beatLevel);
 
         main.AddActualSurge(-3);
 
