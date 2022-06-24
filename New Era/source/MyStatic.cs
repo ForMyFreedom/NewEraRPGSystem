@@ -30,4 +30,11 @@ public static class MyStatic
 
         return finalText;
     }
+
+
+    public static T GetGameData<T>(MainInterface main, string key, T defaultResponse)
+    {
+        var data = main.GetGameDataByKey(key);
+        return (data != null) ? (T) data : defaultResponse;
+    }
 }
