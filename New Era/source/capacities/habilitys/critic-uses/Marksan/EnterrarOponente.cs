@@ -14,10 +14,13 @@ public class EnterrarOponente : CriticUse
         if (critic < 0)
             critic = result / 4;
 
-        damageExtra = (int)(1.5 * critic);
+        if (critic > 20)
+            critic = 20;
+
+        damageExtra = 2 * critic;
         main.AddExtraDamage(damageExtra);
 
-        main.AddActualSurge(-17);
+        main.AddActualSurge(-20);
 
         return new MessageNotificationData(
             baseMessage, new object[] { result, damageExtra }, injectedWork.GetBaseImage()
