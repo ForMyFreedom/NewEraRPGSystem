@@ -5,7 +5,7 @@ public static class MyEnum
 {
     public enum Factor { LIFE, SURGE, AGI_DEF, STR_DEF };
     
-    public enum Atribute { STR, AGI, SEN, MIN, CHA, DEJ, UND };
+    public enum Atribute { STR, AGI, SEN, MIN, CHA, VON, UND };
     
     public enum Work {
         Swordmaster, Assasin, Shooter, Fighter, Marcialist, Cooker, 

@@ -291,7 +291,7 @@ public class MainInterface : Control, CharacterDataBank
                 return GetNode<Atributo>(minAtributePath);
             case MyEnum.Atribute.CHA:
                 return GetNode<Atributo>(chaAtributePath);
-            case MyEnum.Atribute.DEJ:
+            case MyEnum.Atribute.VON:
                 return GetNode<Atributo>(detAtributePath);
         }
         return null;

@@ -1020,7 +1020,7 @@ margin_left = 997.0
 margin_right = 1185.0
 margin_bottom = 167.0
 size_flags_horizontal = 3
-atributeName = "Desejo"
+atributeName = "Vontade"
 
 [node name="HS2" type="HSeparator" parent="VBoxContainer"]
 margin_top = 437.0
