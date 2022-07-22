@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Marksan/ComidaCondensada.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Comida Condensada"
+relatedWork = 5
+text = "Você é capaz de condensar uma comida com uma técnica de secura que não chega a gastar os nutrientes e vitaminas de um ingrente... Ganhando os seguintes benefícios:
+     - Em todo e qualquer ingrediente que possua (Salvo algumas excessões do mestre), você pode ativar esse Uso para eles se tornarem praticamente perenes.
+	- Você pode sanar a sede de X pessoas para cada 2X ingredientes secados dessa forma (A despeito de tamanho das pessoas / ingredientes)
+	- Toda fritura que fazer com ingredientes dessa origem recebem +Sentidos/2 no Resultado, ao passo que toda sopa/caldo feito com os mesmos ingredientes tem -4d6 [-14] no Resultado"
+baseMessage = "Você condensa seus ingredientes
+- Agora eles são praticamentes perenes (Salvo excessões)
+	- Você pode sanar a sede de X pessoas para cada 2X ingredientes condensados
+	- Toda fritura que fazer com ingredientes dessa origem recebem +$ no Resultado...
+	Ao passo que toda sopa/caldo feito com os mesmos ingredientes tem -$ no Resultado"
+cost = 0

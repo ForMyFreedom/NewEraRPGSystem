@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/techniques/Technique.cs" type="Script" id=1]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Ameiko/DobraDoSol.tres" type="Resource" id=2]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Ameiko/RajadaDeGolpes.tres" type="Resource" id=3]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Ameiko/OlhosQueVeemADanca.tres" type="Resource" id=4]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+techniqueName = "Lissão dos Raios de Sol"
+relatedWorks = PoolIntArray( 10, 3, 14 )
+criticUses = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ]
+powerOfCritics = PoolIntArray( 6, 4, 5 )
+actionIndexOfCritics = PoolIntArray( 0, 0, 0 )
+modValue = 0

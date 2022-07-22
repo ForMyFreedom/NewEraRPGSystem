@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Ameiko/SimulacrumSolar.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Simulacrum Solar"
+relatedWork = 15
+text = "[Modificação no Ren (Ele precisa estar ativo!)]
+Fazendo sua Aura tomar as Formas e Cores dos Raios de Sol (Também conhecido como o Ren do Sol!), você pode internalizar a essência eterea do sol com tal fachada, ganhando os seguintes benefícios:
+    - Capacidades que dependam da existencia do sol podem ser relizadas, mas apenas com metade do \"resultado\" [Mestre avalia]
+	- Mesmo não iluminando os seus arredores, você consegue ver no escuro total como se fosse claridade por _Gensoku_ metros, e penumbra por duas vezes _Gensoku_ metros
+	- E por fim, todos seus Testes de Vontade que tentam lhe afogar em Desespero são feitos com - três vezes _Gensoku_ no Resultado
+
+[-5 Surto de Ação a cada turno que manter essa modificação no Ren]"
+baseMessage = "Seu Ren toma a forma e cor dos raios de sol, você ganha:
+- Capacidades que dependam da existencia do sol podem ser relizadas, mas apenas com metade do \"resultado\" [Mestre avalia]
+	- Mesmo não iluminando os seus arredores, você consegue ver no escuro total como se fosse claridade por $ metros, e penumbra por $ metros
+	- E por fim, todos seus Testes de Vontade que tentam lhe afogar em Desespero são feitos com -$ no Resultado"
+cost = 0

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Azazel/AleijamentoSanguinario.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Aleijamento Sanguinário"
+relatedWork = 4
+text = "O sangue interior é lido, ele mostra e atrai os ataques com vampirismo para pontos do corpo que podem aleijar as capacidades da pessoa, uma explosão ocorre nesse local para maior dano em um ponto sensível.
+Escolhendo um dos Aleijamentos abaixo e realizando um Teste Disputado de Agilidade, você consiguirá realizá-lo caso cumpra o Diferencial de Crítico [DC]
+Aleijamentos:
+     Garganta [DC 2]: Reduz em 2N posteriores ganhos de Surto de Ação (Silenciamento Narrativo)
+	 Tendões Superiores [DC 3]: -2N Testes que envolvam membros superiores
+	 Tendões Inferiores [DC 3]: -2N Agilidade para Movimento
+	 Virilha [DC 4]: Reduz Vida e Surto de Ação em 1.5N
+	 Olhos [DC 4]: Reduz Sentidos e Defesas em 2N "
+baseMessage = "Após já ter escolhido seu Aleijamento...
+Resultado: $
+Aleijamentos:
+     Garganta [DC 3]: Reduz em $ posteriores ganhos de Surto de Ação (Silenciamento Narrativo)
+	 Tendões Superiores [DC 4]: $ Testes que envolvam membros superiores
+	 Tendões Inferiores [DC 4]: $ Agilidade para Movimento
+	 Virilha [DC 5]: Reduz Vida e Surto de Ação em $
+	 Olhos [DC 5]: Reduz Sentidos e Defesas em $"
+cost = -1

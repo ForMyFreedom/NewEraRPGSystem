@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Marksan/BateriaAna.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Bateria Anã"
+relatedWork = 12
+text = "Você modifica seu corpo para que ele seja capaz de reter e liberar eletrecidade (Seja por estática ou cargas dinâmicas como relâmpagos), uma pequena pilha! [O limite de Marcadores de Eletrecidade é igual a metade do seu valor de Akuma no Mi]
+
+Alimentação Estática: A cada uma hora, você pode gastar 1 minuto concentrando toda a energia estática que adquiriu nesse tempo e ganhar 2d6 Marcadores de Eletrecidade.
+
+Alimentação Dinâmica: Sempre que for alvo de algum efeito de eletricidade direta, você pode rolar um Teste de Akuma no Mi e absorver _Críticos_ Marcadores de Eletrecidade [Isso não afeta o seu dano recebido]
+
+Liberação: Você pode fazer diversas coisas com a energia acumulada, como se fosse uma bateria anã mesmo. Mas quanto ao dano, a cada 2 Marcadores gastos em um ataque, você diminui o Surto de Ação do alvo em 1d3. E já a cada 10, você aumenta o seu Dano em 2d3 [Mestre rola essas liberações pra você]"
+baseMessage = "Escolha sua Ação como Bateria Anã:
+   Alimentação Estática: Acumulando uma hora de estática em 1 minuto, você absorve $ Marcadores de Eletricidade
+   Alimentação Dinâmica: Recebendo uma discarga no peito, você absorve $ Marcadores de Eletrecidade
+   Liberação: A cada 2 ME, -1d3 Surto de Ação alvo. A cada 10 ME, -2d3 Vida alvo"
+cost = 10

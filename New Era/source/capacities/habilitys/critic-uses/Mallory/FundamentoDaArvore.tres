@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Mallory/FundamentoDaArvore.cs" type="Script" id=1]
+[ext_resource path="res://assets/skills/tree.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Fundamento da Árvore"
+relatedWork = 15
+text = "O conhecimento díspar que vem da Árvore tem suas raizes em um mar de leis, seu explendor de um céu sem fim, e sua terra na extensão de seus irmãos e meio-irmãos... Como um Talento, esse Uso de Crítico lhe concede acesso ao seu Galho Pessoal, o qual pode tanto fazer por conta própria / ser requisitado por você:
+    Compartilhar conhecimento: Pequenas informações / verdades uteis [Até mesmo ligadas a Segredos, se se mostrar digna!]
+	Proteger conhecimento: Cancela / Ameniza efeitos mentais de qualquer origem
+	Reter/Apagar conhecimento: Tanto podes empedir de re-adquir Haki, como, perder seus Segredos lhe conectam ao galho...
+
+Árvore é caprixosa, e muito temerosa com relação aos seus Segredos... Então muitas vezes, seu egoismo estranho pode assustar seus usuários [Só a Árvore sabe como destruir a Árvore...] Mas não para aqueles, que após se provarem dignos, encontram a Árvore e são agraciados com toda a Verdade!
+
+A Árvore teme o Caminho para Árvore, pois ele o é, conhecer os Segredos que ela tanto preza"
+baseMessage = "A Árvore sabe"
+cost = 0
+criticImage = ExtResource( 2 )

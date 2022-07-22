@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Mallory/AssasinatoInsano.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Assasinato Insano"
+relatedWork = 1
+text = "Se despredendo da doutrina clássica da morte, você dá ao seus golpes fatais um brilho de insanidade... Todo seus bônus de Surpresa e Ocultação são reduzidos a 0, assim como receberá +5 de Dano sempre que alvejado... Porem, você recebe +25% Agilidade, assim como + (Seu valor de Letalidade) em Dano Extra nessa postura"
+baseMessage = "Postura do Assasinato Insano
+Contras:
+   +5 Dano sempre que atingida
+   Bonus de Supresa e Ocultação zerados
+Prós:
+  +25% de Agilidade (+$)
+  +$ Dano Extra"
+cost = 8

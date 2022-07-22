@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Mallory/OqueNaoMataFortalece.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "O que não mata fortalece"
+relatedWork = 9
+text = "Após em combate, curar um alvo com sua Medicina, ele terá +N/3 Agilidade até o combate se encerrar"
+baseMessage = "Alvo da cura recebe +$ Agilidade até o final do combate"
+cost = -1

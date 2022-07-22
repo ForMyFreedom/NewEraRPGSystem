@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Ameiko/EstrondoDePernas.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Estrondo de Pernas"
+relatedWork = 3
+text = "Caso consiga acertar uma Pancada de Agilidade em um alvo, com um veloz chute duplo absurdo nas pernas, você pode modificá-la para fazer com que ao indez do alvo ficar 1 turno sem se mover, fique 2 turnos sem se pode se mecher, com sua Defesa de Agilidade se reduzindo em 6d6 até você se levantar"
+baseMessage = "[Após acertar uma Pancada de Agilidade]
+Chute quebrador de pernas!
+O alvo fica dois turnos sem se mover ao custo do desequilibrio de tal golpe reduzir sua Defesa de Agilidade em $"
+cost = 26
