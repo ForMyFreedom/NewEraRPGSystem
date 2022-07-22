@@ -6,8 +6,10 @@ public class AleijamentoSanguinario : CriticUse
 {
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
+        int roll = main.RequestAtributeRoll(MyEnum.Atribute.AGI);
+
         var intArray = new int[] { 
-            10*critic, 2 * critic, -2 * critic, -2 * critic, (int)(1.5 * critic), 2 * critic
+            roll, 2 * critic, -2 * critic, -2 * critic, (int)(1.5 * critic), 2 * critic
         };
 
         var effectArray = System.Array.ConvertAll(intArray, e => (object) e);
@@ -23,6 +25,6 @@ public class AleijamentoSanguinario : CriticUse
 
     public override int RequestCriticTest(MainInterface main)
     {
-        return main.RequestWorkRoll(relatedWork)/10;
+        return cost;
     }
 }

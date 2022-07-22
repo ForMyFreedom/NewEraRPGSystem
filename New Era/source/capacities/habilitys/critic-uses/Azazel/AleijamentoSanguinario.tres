@@ -25,4 +25,4 @@ Aleijamentos:
 	 Tendões Inferiores [DC 4]: $ Agilidade para Movimento
 	 Virilha [DC 5]: Reduz Vida e Surto de Ação em $
 	 Olhos [DC 5]: Reduz Sentidos e Defesas em $"
-cost = -1
+cost = 30
