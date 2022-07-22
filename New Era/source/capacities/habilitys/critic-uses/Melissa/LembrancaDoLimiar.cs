@@ -12,7 +12,7 @@ public class LembrancaDoLimiar : CriticUse
         main.AddGuard(holdGuard);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { holdGuard }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { holdGuard }, criticImage
         );
     }
 

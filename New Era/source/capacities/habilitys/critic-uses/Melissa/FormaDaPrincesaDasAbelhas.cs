@@ -20,7 +20,7 @@ public class FormaDaPrincesaDasAbelhas : CriticUse
         main.SetBGTexture(customTexture);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { holdMod }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { holdMod }, criticImage
         );
 
     }

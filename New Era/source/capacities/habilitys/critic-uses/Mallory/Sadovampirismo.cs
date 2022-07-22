@@ -9,7 +9,7 @@ public class Sadovampirismo : CriticUse
         main.AddActualSurge(-6);
 
         return new MessageNotificationData(
-            baseMessage, null, injectedWork.GetBaseImage()
+            baseMessage, null, criticImage
         );
     }
 

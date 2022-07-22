@@ -7,7 +7,7 @@ public class Isshoni : CriticUse
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         return new MessageNotificationData(
-            baseMessage, null, injectedWork.GetBaseImage()
+            baseMessage, null, criticImage
         );
     }
 

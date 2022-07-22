@@ -22,7 +22,7 @@ public class MicroBatimento : CriticUse
         main.AddActualSurge(-3);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { selfDamage }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { selfDamage }, criticImage
         );
     }
 

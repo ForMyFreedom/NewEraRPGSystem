@@ -14,7 +14,7 @@ public class LancaRotativa : CriticUse
         main.AddModStrDefense(holdBonus);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { holdBonus }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { holdBonus }, criticImage
         );
     }
 

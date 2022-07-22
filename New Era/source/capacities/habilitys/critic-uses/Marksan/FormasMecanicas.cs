@@ -7,13 +7,13 @@ public class FormasMecanicas : CriticUse
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         return new MessageNotificationData(
-            baseMessage, new object[] { 2*critic, injectedWork.GetLevel()/2 }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { 2*critic, injectedWork.GetLevel()/2 }, criticImage
         );
     }
 
     public override void DoEndMechanicLogic()
     {
-        main.CreateNewNotification("Lembre-se de remover o bonus concedido!", injectedWork.GetBaseImage());
+        main.CreateNewNotification("Lembre-se de remover o bonus concedido!", criticImage);
     }
 
 

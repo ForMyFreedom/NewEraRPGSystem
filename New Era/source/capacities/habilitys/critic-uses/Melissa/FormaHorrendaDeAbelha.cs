@@ -6,7 +6,7 @@ public class FormaHorrendaDeAbelha : CriticUse
 {
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        return new MessageNotificationData(baseMessage, null, injectedWork.GetBaseImage());
+        return new MessageNotificationData(baseMessage, null, criticImage);
     }
 
     public override void DoEndMechanicLogic()

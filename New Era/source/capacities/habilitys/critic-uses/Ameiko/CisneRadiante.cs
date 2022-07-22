@@ -12,7 +12,7 @@ public class CisneRadiante : CriticUse
         main.AddExtraDamage(holdBonus);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { holdBonus }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { holdBonus }, criticImage
         );
     }
 
