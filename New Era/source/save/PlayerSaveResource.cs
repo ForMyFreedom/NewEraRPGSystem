@@ -444,7 +444,7 @@ public class PlayerSaveResource : Resource, CharacterDataBank
 
     public Array<Work> GetWorks()
     {
-        return DuplicateWork();
+        return works;
     }
 
     public void SetWorks(Array<Work> _works)
@@ -648,31 +648,6 @@ public class PlayerSaveResource : Resource, CharacterDataBank
 
 
 
-
-
-    private Array<Work> DuplicateWork()
-    {
-        Array<Work> duplicatedArray = new Array<Work>();
-        for (int i = 0; i < works.Count; i++)
-        {
-            duplicatedArray.Add((Work)works[i].Duplicate());
-            if(consumerHasData(works[i]))
-                duplicatedArray[i].InjectPlayerData(works[i].GetVolatilePlayerData());
-            Skill[] originalSkillList = works[i].GetSkillList();
-            Skill[] duplicatedSkillList = new Skill[originalSkillList.Length];
-
-            for (int j = 0; j < originalSkillList.Length; j++)
-            {
-                duplicatedSkillList[j] = (Skill)originalSkillList[j].Duplicate();
-                if(consumerHasData(originalSkillList[j]))
-                    duplicatedSkillList[j].InjectPlayerData(originalSkillList[j].GetVolatilePlayerData());
-            }
-
-            duplicatedArray[i].SetSkillList(duplicatedSkillList);
-        }
-        return duplicatedArray;
-    }
-
     private bool consumerHasData(IPlayerDataConsumer consumer)
     {
         return consumer.GetVolatilePlayerData() != null;
@@ -688,3 +663,28 @@ public class PlayerSaveResource : Resource, CharacterDataBank
         return duplicatedArray;
     }
 }
+
+/*
+private Array<Work> DuplicateWork()     //it was necessary when the work had player's data...
+{
+    Array<Work> duplicatedArray = new Array<Work>();
+    for (int i = 0; i < works.Count; i++)
+    {
+        duplicatedArray.Add((Work)works[i].Duplicate());
+        if(consumerHasData(works[i]))
+            duplicatedArray[i].InjectPlayerData(works[i].GetVolatilePlayerData());
+        Skill[] originalSkillList = works[i].GetSkillList();
+        Skill[] duplicatedSkillList = new Skill[originalSkillList.Length];
+
+        for (int j = 0; j < originalSkillList.Length; j++)
+        {
+            duplicatedSkillList[j] = (Skill)originalSkillList[j].Duplicate();
+            if(consumerHasData(originalSkillList[j]))
+                duplicatedSkillList[j].InjectPlayerData(originalSkillList[j].GetVolatilePlayerData());
+        }
+
+        duplicatedArray[i].SetSkillList(duplicatedSkillList);
+    }
+    return duplicatedArray;
+}
+*/

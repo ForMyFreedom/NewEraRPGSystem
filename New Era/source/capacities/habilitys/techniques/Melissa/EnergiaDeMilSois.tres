@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/techniques/Technique.cs" type="Script" id=1]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/CorPorCor.tres" type="Resource" id=2]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/Compensacao.tres" type="Resource" id=3]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/Improve.tres" type="Resource" id=4]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+techniqueName = "Mach Solar"
+relatedWorks = PoolIntArray( 15, 14, 11 )
+criticUses = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ]
+powerOfCritics = PoolIntArray( 13, 13, 0 )
+actionIndexOfCritics = PoolIntArray( 0, 0, 0 )
+modValue = 0

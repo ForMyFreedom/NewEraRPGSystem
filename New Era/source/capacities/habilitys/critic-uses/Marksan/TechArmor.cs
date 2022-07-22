@@ -26,7 +26,7 @@ public class TechArmor : CriticUse
         main.SetBGTexture(customImage);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { strMod, resMod, surgeMod }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { strMod, resMod, surgeMod }, criticImage
         );
     }
 

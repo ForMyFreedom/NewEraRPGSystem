@@ -12,7 +12,7 @@ public class CombateDancante : CriticUse
         main.AddModAgiDefense(holdBonus);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { holdBonus }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { holdBonus }, criticImage
         );
     }
 

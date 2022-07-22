@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Marksan/AquecimentoDeBatalha.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Aquecimento de Batalha"
+relatedWork = 3
+text = "Você pode gastar seis turnos (30 Segundos) em uma sequência eficiente de aquecimentos a fim de evitar lessões em atividades físicas (Para cada 15 pontos de Agilidade, você diminui essa quantidade de turnos em 1 [Mínimo 2]).... Após gastar o tempo necessário, você recebe um bônus de Guarda de um terço de seu nível de Lutador até descansar!"
+baseMessage = "Após se aquecer, você ganha $ Guarda até esfriar os músculos"
+cost = 20

@@ -13,7 +13,7 @@ public class Rejuvenecer : CriticUse
         int surgeRegen = (int)((surgePercentage / 100f)*lifeRegen);
 
         return new MessageNotificationData(
-            baseMessage, new object[] {surgePercentage, lifeRegen, surgeRegen }, injectedWork.GetBaseImage()
+            baseMessage, new object[] {surgePercentage, lifeRegen, surgeRegen }, criticImage
         );
     }
 

@@ -11,7 +11,7 @@ public class FerraoPassivo : CriticUse
         main.AddActualSurge(-5);
 
         return new MessageNotificationData(
-            baseMessage, new object[] {dmgBonus}, injectedWork.GetBaseImage()
+            baseMessage, new object[] {dmgBonus}, criticImage
         );
     }
 

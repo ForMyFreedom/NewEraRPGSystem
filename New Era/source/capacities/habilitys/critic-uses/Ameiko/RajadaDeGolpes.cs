@@ -9,7 +9,7 @@ public class RajadaDeGolpes : CriticUse
         main.AddActualSurge(-8);
 
         return new MessageNotificationData(
-            baseMessage, null, injectedWork.GetBaseImage()
+            baseMessage, null, criticImage
         );
     }
 

@@ -9,7 +9,7 @@ public class DoseDupla : CriticUse
         main.AddActualSurge(-7);
 
         return new MessageNotificationData(
-            baseMessage, null, injectedWork.GetBaseImage()
+            baseMessage, null, criticImage
         );
     }
 

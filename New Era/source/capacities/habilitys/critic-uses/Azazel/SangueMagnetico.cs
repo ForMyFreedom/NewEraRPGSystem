@@ -12,7 +12,7 @@ public class SangueMagnetico : CriticUse
         main.AddExtraDamage(dmg);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { dmg }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { dmg }, criticImage
         );
     }
 

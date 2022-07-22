@@ -23,7 +23,7 @@ public class EnterrarOponente : CriticUse
         main.AddActualSurge(-20);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { result, damageExtra }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { result, damageExtra }, criticImage
         );
     }
 

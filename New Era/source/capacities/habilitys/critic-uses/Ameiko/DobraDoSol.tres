@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Ameiko/DobraDoSol.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Dobra do Sol"
+relatedWork = 14
+text = "Você é capaz de Manipular os Raios de Sol para Emiti-los ofensivamente em seus inimigos! Caso esteje de dia, você pode realizar um Teste de Haki para criar uma zona circular chamada Área de Sol, a qual tem uma área de 2N metros quadrados / N Indivíduos próximos, e causa 2N Dano por turno (Podendo ser invocada a até 3N metros de distância de você, caso consiga ver o local)
+A Área de Sol dura por N turnos, e antes de inicia-la, você pode diminuir/aumentar a área em 1 Indivíduos para causar mais/menos 5 de Dano"
+baseMessage = "Você instaura uma Área de Sol, que pode ter seu centro a até $ metros de distância de você
+$ Dano em $ Indivíduos próximos [$ m²] por $ turnos
+[-1 Indívudo -> +5 Dano]"
+cost = -1

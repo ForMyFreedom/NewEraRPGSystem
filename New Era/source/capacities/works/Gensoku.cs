@@ -8,7 +8,7 @@ public class Gensoku : Work
 
     public override void DoFirstUpStep(MainInterface gui)
     {
-        gui.AddAnAtributeLevel(relationedAtribute, 3);
+        gui.CreateNewNotification(firstUpText, baseImage);
     }
 
     public override void DoSecondUpStep(MainInterface gui)

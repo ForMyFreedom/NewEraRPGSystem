@@ -15,6 +15,8 @@ public abstract class CriticUse : NotificationConsumer
     protected String baseMessage;
     [Export]
     protected int cost; //-1 -> N
+    [Export]
+    protected Texture criticImage;
 
 
     public CriticUse()
@@ -51,5 +53,6 @@ public abstract class CriticUse : NotificationConsumer
     public void InjectWork(Work w)
     {
         injectedWork = w;
+        criticImage = (criticImage != null) ? criticImage : injectedWork.GetBaseImage();
     }
 }

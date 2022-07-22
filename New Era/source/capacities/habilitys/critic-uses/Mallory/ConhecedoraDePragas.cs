@@ -7,7 +7,7 @@ public class ConhecedoraDePragas : CriticUse
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         return new MessageNotificationData(
-            baseMessage, new object[] { injectedWork.GetSkillList()[0].GetLevel() }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { injectedWork.GetSkillList()[0].GetLevel() }, criticImage
         );
     }
 

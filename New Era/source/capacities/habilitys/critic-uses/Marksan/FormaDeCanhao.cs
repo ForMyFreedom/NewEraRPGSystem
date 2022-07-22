@@ -16,7 +16,7 @@ public class FormaDeCanhao : CriticUse
 
 
         return new MessageNotificationData(
-            baseMessage, new object[] { 2 * critic }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { 2 * critic }, criticImage
         );
     }
 

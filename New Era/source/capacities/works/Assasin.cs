@@ -5,7 +5,7 @@ public class Assasin : Work
 {
     public override void DoFirstUpStep(MainInterface gui)
     {
-        gui.AddAgility(1);
+        gui.AddAgility(2);
     }
 
     public override void DoSecondUpStep(MainInterface gui)

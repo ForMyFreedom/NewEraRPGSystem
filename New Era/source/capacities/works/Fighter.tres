@@ -7,10 +7,13 @@
 resource_local_to_scene = true
 script = ExtResource( 1 )
 workName = "Lutador"
-pathDescription = "- Lutador Regular +I: +1 Pancada
-- Lutador Brigão +I: +3 Dano ao usar Pancada.
-- Lutador Artista Marcial +I: +6 Teste Ataque ao usar Pancada"
+pathDescription = "A cada 5, +3 entre STR/AGI/SEN
+A cada 10, +1 Uso de Crítico
+A cada 20, +1 Técnica
+A cada 50, Bônus de Maestria"
 skills = [ ExtResource( 2 ) ]
 description = "Especialista no combate desprovido de armas"
-maestryDescription = null
+maestryDescription = "- Lutador Regular +I: +1 Pancada
+- Lutador Brigão +I: +10 Dano ao usar Pancada.
+- Lutador Artista Marcial +I: +30 Teste Ataque ao usar Pancada"
 enumWork = 3

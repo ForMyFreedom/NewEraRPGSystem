@@ -6,7 +6,7 @@ public class AsasFrageis : CriticUse
 {
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        return new MessageNotificationData(baseMessage, new object[] {Math.Sqrt(50*critic)}, injectedWork.GetBaseImage());
+        return new MessageNotificationData(baseMessage, new object[] {Math.Sqrt(50*critic)}, criticImage);
     }
 
     public override void DoEndMechanicLogic()

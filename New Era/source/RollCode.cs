@@ -15,9 +15,9 @@ public static class RollCode
         return sum;
     }
 
-    public static int GetRandomBasicRoll(int value)
+    public static int GetRandomBasicRoll(int quant)
     {
-        return RollSomeD6(value);
+        return RollSomeD6(quant);
     }
 
 

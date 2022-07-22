@@ -23,7 +23,7 @@ public class PretoFosco : CriticUse
         main.SetBGTexture(customTexture);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { defense, guard }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { defense, guard }, criticImage
         );
     }
 

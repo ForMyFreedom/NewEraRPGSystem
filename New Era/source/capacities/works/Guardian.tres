@@ -7,8 +7,11 @@
 resource_local_to_scene = true
 script = ExtResource( 1 )
 workName = "Guardião"
-pathDescription = null
+pathDescription = "A cada 5, +2 Atributo Relacionado
+A cada 10, +1 Uso de Crítico
+A cada 20, +1 Técnica
+A cada 50, Bônus de Maestria"
 skills = [ ExtResource( 3 ) ]
 description = "Guardar e proteger, a vontade da barreira"
-maestryDescription = null
+maestryDescription = "@... não feito..."
 enumWork = 4

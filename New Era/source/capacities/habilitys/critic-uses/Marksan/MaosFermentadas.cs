@@ -11,7 +11,7 @@ public class MaosFermentadas : CriticUse
         mod = 3 * critic;
 
         return new MessageNotificationData(
-            baseMessage, new object[] { mod }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { mod }, criticImage
         );
     }
 
@@ -22,7 +22,7 @@ public class MaosFermentadas : CriticUse
 
         string strOrientation = (orientation == 1) ? "Revez" : "Fortuna";
         main.CreateNewNotification(
-            $"{strOrientation} em {atribute} por uma hora!", injectedWork.GetBaseImage()
+            $"{strOrientation} em {atribute} por uma hora!", criticImage
         );
     }
 

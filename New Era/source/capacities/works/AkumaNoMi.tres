@@ -6,14 +6,12 @@
 resource_local_to_scene = true
 script = ExtResource( 1 )
 workName = "Akuma no Mi"
-pathDescription = "Maestria de Akuma no Mi [50]
-Você sente um grande salto em suas habilidades. Escolha um entre:
-- Usuário Regular +I: Ligero aumento de força em todos seus Usos
-de Críticos, assim como +20% em seu Atributo Relacionado
-- Usuário Agressivo +I: +50% Dano Base
-- Usuário Versátil +I: +3 Usos de Crítico [Akuma no Mi]"
+pathDescription = "A cada 5, +3 Atributo relacionado
+A cada 10, +1 Uso de Crítico
+A cada 20, +1 Técnica
+A cada 50, Bônus de Maestria"
 skills = [  ]
 description = "A maldição dos mares, domínio de uma fruta demoniaca"
-maestryDescription = null
+maestryDescription = "... Mistério ..."
 enumWork = 12
 baseDamage = 0

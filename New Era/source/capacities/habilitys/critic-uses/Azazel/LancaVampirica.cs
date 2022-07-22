@@ -11,7 +11,7 @@ public class LancaVampirica : CriticUse
         main.AddActualSurge(-5);
 
         return new MessageNotificationData(
-            baseMessage, null, injectedWork.GetBaseImage()
+            baseMessage, null, criticImage
         );
 
         //@acionar o talento

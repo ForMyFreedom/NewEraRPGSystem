@@ -5,7 +5,7 @@ public class Fighter : Work
 {
     public override void DoFirstUpStep(MainInterface gui)
     {
-        gui.CreateNewNotification("+1 STR/AGI/SEN", baseImage);
+        gui.CreateNewNotification("+3 entre STR/AGI/SEN", baseImage);
     }
 
     public override void DoSecondUpStep(MainInterface gui)

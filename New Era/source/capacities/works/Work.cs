@@ -113,6 +113,16 @@ public abstract class Work : Resource, IPlayerDataConsumer
         workPlayerData.SetWorksUps(worksUps);
     }
 
+    public Array<string> GetMaestryList()
+    {
+        return workPlayerData.GetMaestryList();
+    }
+
+    public void SetMaestryList(Array<string> list)
+    {
+        workPlayerData.SetMaestryList(list);
+    }
+
     protected String GetCreateCriticMessage()
     {
         return "Voce precisa criar um uso de critico";

@@ -16,7 +16,7 @@ public class Muteki : CriticUse
         main.RequestSkillMechanic(relatedWork, skillIndexOfTen);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { guard }, injectedWork.GetBaseImage()
+            baseMessage, new object[] { guard }, criticImage
         );
     }
 
