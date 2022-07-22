@@ -14,6 +14,6 @@ canLimit = true
 techniqueName = "Lissão dos Raios de Sol"
 relatedWorks = PoolIntArray( 10, 3, 14 )
 criticUses = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ]
-powerOfCritics = PoolIntArray( 6, 4, 5 )
+powerOfCritics = PoolIntArray( 26, 20, 5 )
 actionIndexOfCritics = PoolIntArray( 0, 0, 0 )
 modValue = 0

@@ -13,6 +13,6 @@ canLimit = true
 techniqueName = "Hemato"
 relatedWorks = PoolIntArray( 4 )
 criticUses = [ ExtResource( 3 ), ExtResource( 2 ) ]
-powerOfCritics = PoolIntArray( 2, 18 )
+powerOfCritics = PoolIntArray( 12, 34 )
 actionIndexOfCritics = PoolIntArray( 0, 0 )
 modValue = 0
