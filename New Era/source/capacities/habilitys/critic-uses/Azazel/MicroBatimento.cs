@@ -19,8 +19,6 @@ public class MicroBatimento : CriticUse
         beatLevel = main.GetSkillByWorkAndIndex(relatedWork, critic).GetLevel();
         beatSkill.DoMechanic(main, 2, beatLevel);
 
-        main.AddActualSurge(-3);
-
         return new MessageNotificationData(
             baseMessage, new object[] { selfDamage }, criticImage
         );
