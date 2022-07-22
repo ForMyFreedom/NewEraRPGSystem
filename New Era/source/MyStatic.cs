@@ -18,7 +18,7 @@ public static class MyStatic
 
     public static string GetNotificationText(string baseMessage, int critic, object[] list)
     {
-        string finalText = (critic > 0 ? $"[{critic} Criticos] " : "") + baseMessage;
+        string finalText = (critic > 0 ? $"[ {critic} ] " : "") + baseMessage;
         var regex = new Regex(Regex.Escape("$"));
 
         if (list != null)
