@@ -5,17 +5,16 @@
 
 [resource]
 script = ExtResource( 1 )
-isSingleton = null
+isSingleton = true
 toDispendSurge = false
-canLimit = null
-skillName = "@Arte de Tempo@"
+canLimit = true
+skillName = "Dança"
 wayOfLevelCalculeScript = ExtResource( 2 )
-skillDescription = "@Arte do Tempo@"
+skillDescription = "Movimentos belos e inspiradores"
 notificationText = "Escolha um nome e imagine como sera a sua arte
 Ela demora naturalmente $ dias para ser criada, com seu Resultado sendo igual a $
-[O Narrador lhe dara os valores de Vida e Inspiracao concedidos]
+[O Narrador lhe dará os valores de Vida e Inspiração concedidos]
 Para cada dia a mais adicione +$ no Resultado"
 mechanicDescription = "Sempre que precisar desenvolver uma arte, você normalmente não precisa de nenhuma Ferramenta e Ingrediente. Devendo apenas realizar um Teste Regular sem Dificuldade. Com o Resultado definido, consulte a Tabela de Arte.
 Só pode se apreciar uma performace (A seguir) uma vez, logicamente, porem a cada vez que outros personagens apreciarem a mesma perfomace, o valor de Resultado para ele cai em 15 pontos"
-level = null
-aprimorationByExtraDay = null
+aprimorationByExtraDay = 5

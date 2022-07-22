@@ -14,8 +14,9 @@ skillDescription = "Guarde sua vontade para seu interior"
 notificationText = "Forma de Haki Zetsu: Voce recebe
        +$ em Testes Sigilosos
        +$ em Recuperacao de Surto de Acao a cada final de turno
-       Mas sua Guarda e Defesas sao reduzidas pela metade, e voce nao pode usar Hatsus"
+       Mas sua Guarda e Defesas sao reduzidas pela metade
+	   E você não tem acesso as suas Leis [Seirath] / Expressões [Haki]"
 mechanicDescription = "+3*Zetsu em Testes Sigilosos
 +Zetsu em Recuperação de Surto de Ação a cada Turno
-
-Você não pode realizar Hatsus"
+Sua guarda e defesa são reduzidas pela metade
+Você não tem acesso as suas Leis [Seirath] / Expressões [Haki]"
