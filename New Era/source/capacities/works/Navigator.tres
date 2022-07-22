@@ -8,13 +8,14 @@
 resource_local_to_scene = true
 script = ExtResource( 1 )
 workName = "Navegador"
-pathDescription = "Maestria de Navegador [30]
-Você sente um grande salto em suas habilidades. Escolha um entre:
-- Mestre de Timão +I: +8 Pilotagem para conduzir navios em perigos.
+pathDescription = "A cada 5, +2 Sentidos | +6 entre Pilotagem e Previsão
+A cada 10, +1 Uso de Crítico
+A cada 20, +12 entre Pilotagem e Previsão
+A cada 50, Bônus de Maestria"
+skills = [ ExtResource( 3 ), ExtResource( 4 ) ]
+description = "Velejar mares e cruzar rotas, as águas são minha casa"
+maestryDescription = "- Mestre de Timão +I: +8 Pilotagem para conduzir navios em perigos.
 - Mestre de Rotas +I: +8 Pilotagem para conduzir navios em calmaria.
 - Mestre de Mapas +I: +8 Pilotagem para desenhar mapas.
 - Mestre de Previsão +I: +10 Previsão."
-skills = [ ExtResource( 3 ), ExtResource( 4 ) ]
-description = "Velejar mares e cruzar rotas, as águas são minha casa"
-maestryDescription = null
 enumWork = 6

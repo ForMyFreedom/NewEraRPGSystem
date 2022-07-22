@@ -5,8 +5,8 @@ public class Orator : Work
 {
     public override void DoFirstUpStep(MainInterface gui)
     {
-        gui.AddCharisma(1);
-        gui.CreateNewNotification("Distribuia 5 pontos entre Lideranca e Manipulacao", baseImage);
+        gui.AddCharisma(2);
+        gui.CreateNewNotification("Distribuia 6 pontos entre Lideranca e Manipulacao", baseImage);
     }
 
     public override void DoSecondUpStep(MainInterface gui)
@@ -16,7 +16,7 @@ public class Orator : Work
 
     public override void DoThirdUpStep(MainInterface gui)
     {
-        gui.CreateNewNotification(GetCreateTechMessage(), baseImage);
+        gui.CreateNewNotification("Distribuia 12 pontos entre Lideranca e Manipulacao", baseImage);
     }
 
     public override void DoForthUpStep(MainInterface gui)

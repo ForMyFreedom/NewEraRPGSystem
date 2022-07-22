@@ -5,7 +5,7 @@ public class Guardian : Work
 {
     public override void DoFirstUpStep(MainInterface gui)
     {
-        gui.AddAgility(1);
+        gui.AddAnAtributeLevel(relationedAtribute, 2);
     }
 
     public override void DoSecondUpStep(MainInterface gui)
@@ -26,6 +26,6 @@ public class Guardian : Work
 
     public override int GetBaseDamage(MainInterface gui, int weaponDamage = 0, int actionIndex = 0)
     {
-        return 0;
+        return (gui.GetTotalAtributeValue(MyEnum.Atribute.AGI)+gui.GetTotalAtributeValue(MyEnum.Atribute.STR))/3;
     }
 }

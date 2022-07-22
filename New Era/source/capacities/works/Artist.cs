@@ -8,7 +8,7 @@ public class Artist : Work
 
     public override void DoFirstUpStep(MainInterface gui)
     {
-        gui.AddCharisma(1);
+        gui.AddCharisma(2);
         gui.AddAnSkillLevel(enumWork, 0, 5);
         //@ maybe make the skillLevel here a request to distribuite in its variated 'arts'
     }
@@ -20,7 +20,7 @@ public class Artist : Work
 
     public override void DoThirdUpStep(MainInterface gui)
     {
-        gui.CreateNewNotification(GetCreateTechMessage(), baseImage);
+        gui.AddAnSkillLevel(enumWork, 0, 10);
     }
 
     public override void DoForthUpStep(MainInterface gui)

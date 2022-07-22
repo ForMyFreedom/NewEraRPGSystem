@@ -5,7 +5,7 @@ public class Cooker : Work
 {
     public override void DoFirstUpStep(MainInterface gui)
     {
-        gui.AddSenses(1);
+        gui.AddSenses(2);
         gui.AddAnSkillLevel(enumWork, 0, 5);
     }
 
@@ -16,7 +16,7 @@ public class Cooker : Work
 
     public override void DoThirdUpStep(MainInterface gui)
     {
-        gui.CreateNewNotification(GetCreateTechMessage(), baseImage);
+        gui.AddAnSkillLevel(enumWork, 0, 10);
     }
 
     public override void DoForthUpStep(MainInterface gui)

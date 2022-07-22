@@ -6,13 +6,14 @@
 [resource]
 script = ExtResource( 1 )
 workName = "Médico"
-pathDescription = "Maestria de Médico [30]
-Você sente um grande salto em suas habilidades. Escolha um entre:
-- Mestre Regular +I: +10 Medicina
+pathDescription = "A cada 5, +2 Mente | +5 Medicina
+A cada 10, +1 Uso de Crítico
+A cada 20, +10 Medicina
+A cada 50, Bônus de Maestria"
+skills = [ ExtResource( 2 ) ]
+description = "Mestre no tratamento e socorro de vidas"
+maestryDescription = "- Mestre Regular +I: +10 Medicina
 - Mestre Cirurgico +I: +15 Medicina em Tramamentos de Ferimentos considerados sérios.
 - Mestre Clínico +I: +20 Medicina em Tratamentos de Ferimentos considerados não-sérios.
 - Mestre Peçonhento +I: +15 Medicina em Tratamentos de venenos ou doenças"
-skills = [ ExtResource( 2 ) ]
-description = "Mestre no tratamento e socorro de vidas"
-maestryDescription = null
 enumWork = 9

@@ -6,10 +6,13 @@
 [resource]
 script = ExtResource( 1 )
 workName = "Assasino"
-pathDescription = "A cada 5, +1 Agilidade
-A cada 10, +1 Técnica [Assasino] e +1 Uso de Crítico [Assasino]
-A cada 50, Bônus de Maestria e +2 Letalidade"
+pathDescription = "A cada 5, +2 Agilidade
+A cada 10, +1 Uso de Crítico
+A cada 20, +1 Técnica
+A cada 50, Bônus de Maestria"
 skills = [ ExtResource( 2 ) ]
 description = "Especialista no uso de métodos indiretos"
-maestryDescription = null
+maestryDescription = "- Assasino Regular +I: +5 Letalidade
+- Assasino Ninja +I: +10 Letalidade ao atacar furtivamente
+- Assasino Chacina +I: +10 Letalidade ao atacar em um combate"
 enumWork = 1

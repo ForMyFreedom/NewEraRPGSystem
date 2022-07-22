@@ -9,9 +9,17 @@ public class WorkGUI : BaseGUI
     [Export]
     private NodePath journeyLabel;
     [Export]
+    private NodePath maestryLabel;
+    [Export]
     private NodePath atributeOptionPath;
     [Export]
     private NodePath journeyControlPath;
+    [Export]
+    private NodePath maestryPathControlPath;
+    [Export]
+    private NodePath maestryListControlPath;
+    [Export]
+    private NodePath maestryListLabelPath;
 
     [Signal]
     public delegate void value_changed(int index, int value);
@@ -25,6 +33,7 @@ public class WorkGUI : BaseGUI
         WindowTitle = work.GetWorkName();
         GetNode<AtributeOptionButton>(atributeOptionPath).SetAtribute(work.GetRelationedAtribute());
 
+        GetNode<RichTextLabel>(maestryListLabelPath).BbcodeText = GetMaestryListAsString(work.GetMaestryList());
         GetNode<Label>(descriptionLabelPath).Text = work.GetDescription();
         GetNode<TextureRect>(workTexture).Texture = work.GetBaseImage();
         GetNode(atributeOptionPath).Connect("related_atribute_changed", this, "_OnRelatedAtributeChanged");
@@ -46,7 +55,7 @@ public class WorkGUI : BaseGUI
 
     protected override void _OnValueChanged(int value)
     {
-        VerifyTheMaestryPath(value);
+        ApplyUpPath(value);
         VerifyTheMaestryVisibility(value);
         EmitSignal(nameof(value_changed), workIndex, value);
     }
@@ -59,7 +68,7 @@ public class WorkGUI : BaseGUI
 
 
 
-    private void VerifyTheMaestryPath(int value) //@ what about lose work? [maybe cant lose]
+    private void ApplyUpPath(int value) //@ what about lose work? [maybe cant lose]
     {
         Array<int> newWorkUps = WorkUp.CalculeWorkUps(value);
         Array<int> difWorkUps = GetDifferenceFromArrays(newWorkUps, work.GetWorksUp());
@@ -70,9 +79,15 @@ public class WorkGUI : BaseGUI
     private void VerifyTheMaestryVisibility(int value)
     {
         if (value < 50)
-            GetNode<Control>(journeyControlPath).Visible = false;
+        {
+            GetNode<Control>(maestryPathControlPath).Visible = false;
+            GetNode<Control>(maestryListControlPath).Visible = false;
+        }
         else
-            GetNode<Control>(journeyControlPath).Visible = true;
+        {
+            GetNode<Control>(maestryPathControlPath).Visible = true;
+            GetNode<Control>(maestryListControlPath).Visible = true;
+        }
     }
 
 
@@ -123,8 +138,8 @@ public class WorkGUI : BaseGUI
     public void SetWork(Work w)
     {
         work = w;
-        GetNode<RichTextLabel>(journeyLabel).BbcodeText += work.GetMaestryDescription();
-        //@
+        GetNode<RichTextLabel>(journeyLabel).BbcodeText += work.GetPathDescription();
+        GetNode<RichTextLabel>(maestryLabel).BbcodeText += work.GetMaestryDescription();
         GetNode<RollBox>(rollBoxPath).SetRollValue(w.GetLevel());
     }
 
@@ -138,4 +153,15 @@ public class WorkGUI : BaseGUI
         workIndex = index;
     }
 
+    private string GetMaestryListAsString(Array<String> maestryList)
+    {
+        string response = "[center][b]";
+        
+        foreach(string maestry in maestryList)
+        {
+            response += maestryList+"\n";
+        }
+        
+        return response + "[/b][/center]";
+    }
 }

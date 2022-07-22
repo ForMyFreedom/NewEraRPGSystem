@@ -13,6 +13,8 @@ public class WorkPlayerData : Resource, IVolatilePlayerData
     private int level;
     [Export]
     private Array<int> worksUps;
+    [Export]
+    private Array<string> maestryList;
 
     public MyEnum.Work GetWorkEnum()
     {
@@ -57,5 +59,15 @@ public class WorkPlayerData : Resource, IVolatilePlayerData
     public void SetTexture(Texture texture)
     {
         workTexture = texture;
+    }
+
+    public Array<string> GetMaestryList()
+    {
+        return this.maestryList;
+    }
+
+    public void SetMaestryList(Array<string> list)
+    {
+        this.maestryList = list;
     }
 }
