@@ -34,6 +34,7 @@ public class Atributo : Control
     private void _OnValueChanged(int value)
     {
         EmitSignal(nameof(atribute_changed), GetTotalValue());
+        HandleMaestryStyle(value >= 50);
     }
 
 
@@ -72,5 +73,13 @@ public class Atributo : Control
     private int GetTotalValue()
     {
         return GetNode<RollBox>(rollBoxPath).GetModValue() + GetNode<RollBox>(rollBoxPath).GetRollValue();
+    }
+
+    private void HandleMaestryStyle(bool isMaster)
+    {
+        if (isMaster)
+            GetNode<Label>(nameLabelPath).AddColorOverride("font_color", new Color("ffd700"));
+        else
+            GetNode<Label>(nameLabelPath).AddColorOverride("font_color", Colors.White);
     }
 }
