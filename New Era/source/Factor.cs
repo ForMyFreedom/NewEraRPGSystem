@@ -96,6 +96,11 @@ public class Factor : Control
     {
         int finalValue = (int)(value*relatedAtributeRelevance) + bonusInCalculus;
         finalValue += (int) GetNode<SpinBox>(modSpinPath).Value;
+
+        int actualValue = (int)(GetNode<SpinBox>(actualSpinPath).Value);
+        int totalValue = (int)(GetNode<SpinBox>(totalSpinPath).Value);
+
+        GetNode<SpinBox>(actualSpinPath).Value = finalValue + actualValue-totalValue;
         GetNode<SpinBox>(totalSpinPath).Value = finalValue;
 
         EmitSpinSignal(totalSpinPath, nameof(total_factor_changed));
