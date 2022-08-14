@@ -59,6 +59,8 @@ public class MainInterface : Control, CharacterDataBank
     [Export]
     private NodePath triviaButtonPath;
     [Export]
+    private NodePath sencienceButtonPath;
+    [Export]
     private NodePath equipamentsButtonPath;
     [Export]
     private NodePath tracesButtonPath;
@@ -74,6 +76,8 @@ public class MainInterface : Control, CharacterDataBank
     private NodePath rollDataPath;
     [Export]
     private NodePath triviaDataPath;
+    [Export]
+    private NodePath sencienceDataPath;
     [Export]
     private NodePath traceDataPath;
     [Export]
@@ -126,6 +130,7 @@ public class MainInterface : Control, CharacterDataBank
         GetNode(customRollButtonPath).Connect("button_up", this, "_OnOpenRoll");
         GetNode(trainingButtonPath).Connect("button_up", this, "_OnTraining");
         GetNode(triviaButtonPath).Connect("button_up", this, "_OnTrivia");
+        GetNode(sencienceButtonPath).Connect("button_up", this, "_OnSencience");
         GetNode(equipamentsButtonPath).Connect("button_up", this, "_OnEquipaments");
         GetNode(tracesButtonPath).Connect("button_up", this, "_OnTraces");
         GetNode(getSaveButtonPath).Connect("button_activate", this, "_OnGetSave");
@@ -205,6 +210,7 @@ public class MainInterface : Control, CharacterDataBank
         reciver.SetExtraDamage(sender.GetExtraDamage());
         reciver.SetTrainingAtributes(sender.GetTrainingAtributes());
         reciver.SetTrivia(sender.GetTrivia());
+        reciver.SetSencienceText(sender.GetSencienceText());
 
         reciver.SetCriticUses(sender.GetCriticUses());
         reciver.SetTechniques(sender.GetTechniques());
@@ -236,6 +242,11 @@ public class MainInterface : Control, CharacterDataBank
     public void _OnTrivia()
     {
         GetNode<GeneralButton>(triviaButtonPath).CreatePopup(this);
+    }
+
+    public void _OnSencience()
+    {
+        GetNode<GeneralButton>(sencienceButtonPath).CreatePopup(this);
     }
 
     public void _OnTraining()
@@ -803,12 +814,22 @@ public class MainInterface : Control, CharacterDataBank
 
     public string GetTrivia()
     {
-        return GetNode<TriviaData>(triviaDataPath).GetTrivia();
+        return GetNode<TriviaData>(triviaDataPath).GetText();
     }
 
     public void SetTrivia(string text)
     {
-        GetNode<TriviaData>(triviaDataPath).SetTrivia(text);
+        GetNode<TriviaData>(triviaDataPath).SetText(text);
+    }
+
+    public string GetSencienceText()
+    {
+        return GetNode<TriviaData>(sencienceDataPath).GetText();
+    }
+
+    public void SetSencienceText(string text)
+    {
+        GetNode<TriviaData>(sencienceDataPath).SetText(text);
     }
 
 

@@ -28,6 +28,7 @@ public abstract class NotificationConsumer : Resource
         MessageNotificationData messageData = DoMechanicLogic(main, actionIndex, critic);
 
         if (messageData == null) return;
+        if (messageData.CriticWasRenewed()) critic = messageData.GetRenewCritic();
         CreateNotification(main, messageData, critic);
         ConnectToLastNotification(main);
         isActive = true;

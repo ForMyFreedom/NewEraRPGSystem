@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/capacities/skills/Gen.cs" type="Script" id=1]
+[ext_resource path="res://source/wayOfCalculeSkill/IgnoreWayOfCalculeSkill.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+skillName = "Kyo"
+wayOfLevelCalculeScript = ExtResource( 2 )
+skillDescription = "Meu Desejo, meu grande Desejo"
+notificationText = "Sob um certo Desejo, você escolhe entre:
+   - Aumentar em $ o Resultado da Ação
+   - Aumentar em $/$ o Efeito da Ação [Mestre escolhe]
+
+[Reações e Defesas divididas pela metade]"
+mechanicDescription = "[Gensoku]
+A cada 10 pontos de Vontade, você adquire +1 Desejo Transcendental ou apenas Desejo [Coisas como, 'Descobrir a Árvore Aurea', 'Me tornar o maior espadachim do mundo',...'], a qual lhe permitirá usar seus Fundamentos com o objetivo de alcansar tal Desejo (Apenas causas diretas são válidas...)
+Também é permitido ao se adquirir uma nova Ala, ao invez disso optar por reforçar uma já existênte, ganhando +3 Críticos em todos Fundamentos alinhados a tal Desejo para cada nível acima de I. [Anotado como I -> II -> III -> ...]
+
+[Kyo]
+Sob uma Ala de seu Desejo, você realiza a ação de sua volição com +3*Kyo no Resultado (Ou de 2*Kyo a Kyo no Efeito do Resultado, variando com o que se está bonificando)
+{Crie Uso de Críticos livremente que apenas ativam o Kyo para algum Desejo seu!}
+Porem, caso de alguma forma seja pego desprevenido, saiba que todos os testes de reação a adversidades tem seu Resultado e efeito dividido pela metade (Assim como suas Defesas)"

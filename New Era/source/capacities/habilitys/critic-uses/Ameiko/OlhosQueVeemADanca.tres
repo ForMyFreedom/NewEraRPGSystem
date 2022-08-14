@@ -9,7 +9,8 @@ toDispendSurge = true
 canLimit = false
 criticUseName = "Olhos que veem a Dança"
 relatedWork = 10
-text = "Sendo capaz de simular os movimentos de um oponente com sua dança, você é capaz, após olhar para um Uso de Crítico Exclusivamente Corporal sendo executado pelo menos duas vezes, realizar um Teste de Sentidos para ver se você conseguiu capitar a sequência daquela ação. Caso você consiga superar o Crítico dispendido naquele Uso de Crítico, você pode realizar um Teste de Dança para praticar por 1 turno. Caso consiga igualmente superar o gasto de Crítico original, esse Uso de Crítico vai para sua lista de Críticos Olhados (A seguir)
+text = "Sendo capaz de simular os movimentos de um oponente com sua dança, você pode, após olhar para um Uso de Crítico Exclusivamente Corporal sendo executado pelo menos duas vezes, realizar um Teste de Sentidos para ver se você conseguiu capitar a sequência daquela ação. Caso você consiga superar o Crítico dispendido naquele Uso de Crítico, você pode realizar um Teste de Dança para praticar por 1 turno. Caso consiga igualmente superar o gasto de Crítico original, esse Uso de Crítico vai para sua lista de Críticos Olhados (A seguir)
+
 Você possui uma quantidade de Críticos Olhados até um terço da sua Mente, os quais podem ser ativados com Teste de Danças, com a diferença de que, eles gastam o dobro de Surto de Ação, assim como tem que ser feitos junto com um outro Crítico Pessoal seu. (Caso estore seu limite de Críticos Olhados, o Crítico mais velho será esquecido e só poderá ser aprendido se repetir esse processo do zero!)"
 baseMessage = "Após ver um certo Uso de Crítico duas vezes, seus olhos o destricham com $ Críticos
 Após replicar por um turno o que seus olhos lhe viram, seu corpo o dança com $ Críticos

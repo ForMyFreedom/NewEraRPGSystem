@@ -1,0 +1,42 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/CeuNegro.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Céu Negro"
+relatedWork = 14
+text = "Sendo detentor da não cor-negra, Koshukei, a cor mais fraca, você pode manifestar o Céu Negro contra usuários de Haki: Sempre for alvo de uma habilidade de Haki, você pode absorver as Cores do alvo como um buraco negro de cores que és... Você diminui -N/3 Críticos do Uso alvo e adquire essa quantidade em Pontos de Absorção, os quais devem ser imediatamente gastos com a aprovação do mestre [O ponto aqui, é se a habilidade original reflete um um pouco o bônus absorvido, escrito no próprio bônus como verá a seguir]: Para cada 1 Ponto de Absoção,
+	  + 2 Vida/Surto de Ação [Habilidades que deixariam o usuário mais vigoroso]
+	  + 3 Atributo/Ofício  [Habilidades que dariam um certo bonus ao usuário]
+	
+	  + 5 Defesa [Habilidades que deixariam o usuário mais defensivo]
+	  + 1 Guarda [Habilidades que deixariam o usuário mais defensivo]
+	
+	  + 5 Precisão [Habilidades que deixariam o usuário mais ofensivo]
+	  + 1 Dano [Habilidades que deixariam o usuário mais ofensivo]
+	
+	  + outro...?
+
+[Todos os Bônus duram até o final do combate, sendo acumulativos...]
+[Em caso de Habilidades que tinham o intuito de ajudá-lo, o Céu Negro não surtirá efeitos por razões óbvias]
+[Por ser um Uso de Crítico reativo, você perderá seu próximo turno ao utilizá-lo]
+
+'Minha cor pode ser mesmo a fraca, mas a escuridão dela pode manchar a sua também!'"
+baseMessage = "Você diminui os Críticos da habilidade de Haki alvo em $
+Para cada 1 Ponto de Absorção equivalente:
+	  + 2 Vida/Surto de Ação [Habilidades que deixariam o usuário mais vigoroso]
+	  + 3 Atributo/Ofício  [Habilidades que dariam um certo bonus ao usuário]
+	
+	  + 5 Defesa [Habilidades que deixariam o usuário mais defensivo]
+	  + 1 Guarda [Habilidades que deixariam o usuário mais defensivo]
+	
+	  + 5 Precisão [Habilidades que deixariam o usuário mais ofensivo]
+	  + 1 Dano [Habilidades que deixariam o usuário mais ofensivo]
+	
+	  + outro...?"
+cost = -1
+endMessage = "Não esqueça de tirar os bônus da absorção no final do combate!"

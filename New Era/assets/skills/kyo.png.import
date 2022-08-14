@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ren.png-b8deeb21c3838b19b6da949a6fe5dc65.stex"
+path="res://.import/kyo.png-8a8cc3654f55f42529d2da9b242eaede.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/skills/ren.png"
-dest_files=[ "res://.import/ren.png-b8deeb21c3838b19b6da949a6fe5dc65.stex" ]
+source_file="res://assets/skills/kyo.png"
+dest_files=[ "res://.import/kyo.png-8a8cc3654f55f42529d2da9b242eaede.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -12,4 +12,4 @@ skillName = "Proteger"
 wayOfLevelCalculeScript = ExtResource( 2 )
 skillDescription = "Sou os muros de minha tripulação"
 notificationText = "Proteger! Voce recebe $ pontos de Guarda para distribuir entre todos proximos a você"
-mechanicDescription = "Você possui um valor de Guarda igual a metade de seu nível de Guardião. O qual se trata de uma Redução de Dano que você pode destribuir entre todos aqueles a Alcanse curto de você"
+mechanicDescription = "Você possui um valor de Guarda igual a 2/3 nível de Guardião. O qual se trata de uma Redução de Dano que você pode destribuir entre todos aqueles a Alcanse curto de você"

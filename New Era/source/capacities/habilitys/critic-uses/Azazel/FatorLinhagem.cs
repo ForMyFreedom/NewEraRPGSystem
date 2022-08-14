@@ -2,12 +2,13 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public class FatorLinhagem : CriticUse
+public class FatorLinhagem : HakiUse
 {
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
+        critic = GetHakisColorRollResult(main, new[] { HakiColors.AzazelRed }, critic)/10;
         return new MessageNotificationData(
-            baseMessage, new object[] { critic, critic / 4 }, criticImage
+            baseMessage, new object[] { critic / 4 }, criticImage, critic
         );
     }
 

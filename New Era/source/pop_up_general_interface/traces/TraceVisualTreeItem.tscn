@@ -15,9 +15,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -656.0
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 nameLineEditPath = NodePath("H-Box/NameLineEdit")
 textLineEditPath = NodePath("H-Box/TextLineEdit")
 traceImagePath = NodePath("")
@@ -38,6 +35,7 @@ margin_right = 196.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
+custom_colors/font_color_uneditable = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_fonts/font = SubResource( 1 )
 editable = false
 virtual_keyboard_enabled = false
@@ -50,6 +48,7 @@ margin_left = 200.0
 margin_right = 1181.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
+custom_colors/font_color_uneditable = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_fonts/font = ExtResource( 1 )
 editable = false
 virtual_keyboard_enabled = false

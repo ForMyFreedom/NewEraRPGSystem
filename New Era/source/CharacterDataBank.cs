@@ -111,6 +111,9 @@ public interface CharacterDataBank
     String GetTrivia();
     void SetTrivia(String text);
 
+    String GetSencienceText();
+    void SetSencienceText(String text);
+
     Array<Array<CriticUse>> GetCriticUses();
     void SetCriticUses(Array<Array<CriticUse>> uses);
 

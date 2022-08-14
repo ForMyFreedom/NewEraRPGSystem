@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/BaseMediumFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/BaseMinorFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://source/TechniquesTree.cs" type="Script" id=3]
+
+[node name="TechniqueTree" type="Tree"]
+margin_top = 37.0
+margin_right = 587.0
+margin_bottom = 204.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+hide_root = true
+script = ExtResource( 3 )
+techniqueNameFont = ExtResource( 1 )
+techniqueDescriptionFont = ExtResource( 2 )

@@ -17,6 +17,3 @@ size_flags_horizontal = 6
 custom_fonts/font = ExtResource( 1 )
 text = "General"
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}

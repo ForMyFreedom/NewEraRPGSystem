@@ -1,7 +1,5 @@
 using Godot;
-using Godot.Collections;
 using System;
-using System.Text.RegularExpressions;
 
 public abstract class CriticUse : NotificationConsumer
 {

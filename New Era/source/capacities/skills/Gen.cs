@@ -1,33 +1,21 @@
-using Godot;
 using Godot.Collections;
-using System;
 
-public class Ten : Skill
+public class Gen : Skill //turn's to Kyo
 {
-    int guard;
-
     public override Array<string> GetTextOfMechanicButtons()
     {
-        return new Array<string>() { "Ten" };
+        return new Array<string>() { "Kyo" };
     }
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0)
-            critic = 0;
-
-        guard = level + critic;
-        main.AddGuard(guard);
-
         return new MessageNotificationData(
-            notificationText, new object[] { guard }, effectImage
+            notificationText, new object[] { 3*level,2*level,level }, effectImage
         );
+
     }
 
-    public override void DoEndMechanicLogic()
-    {
-        main.AddGuard(-guard);
-    }
+    public override void DoEndMechanicLogic() { }
 
     public override int RequestCriticTest(MainInterface main)
     {

@@ -13,6 +13,8 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     private String playerName;
     [Export(PropertyHint.MultilineText)]
     private String trivia;
+    [Export(PropertyHint.MultilineText)]
+    private String sencienceText;
 
     [Export]
     private Texture personalBG;
@@ -518,6 +520,16 @@ public class PlayerSaveResource : Resource, CharacterDataBank
     public void SetTrivia(string text)
     {
         trivia = text;
+    }
+
+    public string GetSencienceText()
+    {
+        return sencienceText;
+    }
+
+    public void SetSencienceText(string text)
+    {
+        this.sencienceText = text;
     }
 
     public Array<Array<CriticUse>> GetCriticUses()

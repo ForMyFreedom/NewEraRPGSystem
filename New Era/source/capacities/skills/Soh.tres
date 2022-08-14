@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/skills/SohKho.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+skillName = "Soh"
+skillDescription = "Tenho que fugir, ou nunca mais farei o que quero!"
+notificationText = "Você evade o conflito a fim de prezervar o seu Desejo, recebendo um valor entre $/$/$ no Resultado/Efeito de sua Ação"
+mechanicDescription = "[Soh]
+A fim de se seguir em frente com seu Desejo, você acredita que a melhor maneira de superar a adversidade presente é fugindo/evadindo de alguma forma... Ao ativar essa Skill com uma Ala de Desejo em mente, você recebe entre + 3*Soh / 2*Soh / Soh em algum Resultado ou Efeito cujo o fim deva ser alguma forma de evasão pelo seu Desejo [O meio deve ser DIRETO, nada de cadeias de causalidade!]
+
+
+[Puristas Terrenos: Agorismo]
+Caso seja uma Entidade Terrena e possua tanto a Barreira como a Fenda, sendo usuário do Gensoku, você pode ativar essa Skill livremente para diminuir os Críticos de uma habilidade de Seirath em [Gensoku/2+Soh], podendo potencialmente zerar!
+A razão disso se dá na Primazia do Desejo: Ao tentar impor uma regra a uma aura transcendental, o Seirath simplesmente falha por puro desprezo por estar acima de qualquer norma, como um ego que precede a moral
+"
+counterMoralText = "Ao ser alvo de uma Habilidade de Seirath, caso o nível do Usuário seja menor que $, você ignora completamente!"
+counterMoralName = "Agorismo"

@@ -5,12 +5,12 @@ public class TriviaData : Node
 {
     private string trivia;
 
-    public string GetTrivia()
+    public string GetText()
     {
         return trivia;
     }
 
-    public void SetTrivia(String text)
+    public void SetText(String text)
     {
         trivia = text;
     }

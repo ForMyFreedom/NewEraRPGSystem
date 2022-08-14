@@ -8,8 +8,8 @@ isSingleton = true
 toDispendSurge = true
 canLimit = false
 criticUseName = "Improve"
-relatedWork = 15
-text = "Melhore! MELHORE AINDA MAIS!!"
-baseMessage = "MELHOOORE!
-Você converte $ pontos de Ten em Ren"
+relatedWork = 14
+text = "[Cor Preta]
+Aprimora todo o corpo para quebrar seu limite coporal de uma maneira abrupta, que melhora rapidamente todo seu corpo, porém, se fere no processo"
+baseMessage = "MELHOOORE!"
 cost = -1

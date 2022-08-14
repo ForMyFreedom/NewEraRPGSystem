@@ -7,7 +7,7 @@ public class Improve : CriticUse
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         return new MessageNotificationData(
-            baseMessage,new object[]{ critic }, criticImage
+            baseMessage,new object[]{ }, criticImage
         );
     }
 

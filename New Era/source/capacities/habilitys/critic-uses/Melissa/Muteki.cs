@@ -4,16 +4,13 @@ using System;
 
 public class Muteki : CriticUse
 {
-    [Export]
-    private int skillIndexOfTen;
     int guard;
 
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        guard = 2 * critic;
+        int guard = 2*(main.RequestAtributeRoll(MyEnum.Atribute.VON) / 10);
         main.AddGuard(guard);
-        main.RequestSkillMechanic(relatedWork, skillIndexOfTen);
 
         return new MessageNotificationData(
             baseMessage, new object[] { guard }, criticImage

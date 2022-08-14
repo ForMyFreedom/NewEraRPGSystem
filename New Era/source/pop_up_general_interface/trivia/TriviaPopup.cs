@@ -16,14 +16,14 @@ public class TriviaPopup : MyPopup
     public override void PopupIt()
     {
         PopupCenteredRatio(RATIO);
-        GetNode<TextEdit>(labelPath).Text = triviaData.GetTrivia();
+        GetNode<TextEdit>(labelPath).Text = triviaData.GetText();
         GetNode(labelPath).Connect("text_changed", this, "_OnTextChanged");
     }
 
 
     public void _OnTextChanged()
     {
-        triviaData.SetTrivia(GetNode<TextEdit>(labelPath).Text);
+        triviaData.SetText(GetNode<TextEdit>(labelPath).Text);
     }
 
 }
