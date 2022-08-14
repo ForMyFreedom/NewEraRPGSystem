@@ -7,11 +7,13 @@ script = ExtResource( 1 )
 isSingleton = true
 toDispendSurge = true
 canLimit = false
-criticUseName = "Hatsu Transmutação, Fator Linhagem"
+criticUseName = "Fator Sanguineo"
 relatedWork = 14
-text = "Você recebe uma quantidade de Linhagens igual a N/4, podendo acioná-las em você assim como em quem você consiga tocar no sangue:
-  Solarium: -10% Vida ao sol, esse valor se torna 2*Bônus de Dano
-  Lunarium: -10% Surto de Ação a lua, esse valor se torna 2*Guarda
+text = "[Cor Vinho] [Uma a cada 7 Sessões, pode adicionar um novo Fator]
+Você recebe uma quantidade de Mutações no sangue igual a N/4, podendo acioná-las apenas você:
+  Solarium: -10% Vida ao sol, esse valor se torna 1.5*Bônus de Dano
+  Solarium Mutado: Recupera 10% da vida máxima ao sol, esse valor se torna -1.5*Bônus de dano
+  Lunarium: -10% Surto de Ação a lua, esse valor se torna 1.5*Guarda
   Geofrium: +15 de Resistência para distribuir livremente
   Hidrofium: Pode respirar por 5 minutos em baixo d'água, e recebe metade dos danos de pressão
   Plaqueta: Recupera 10% de Vida [Uma vez por dia]
@@ -19,8 +21,9 @@ text = "Você recebe uma quantidade de Linhagens igual a N/4, podendo acioná-la
   Célula Branca: Ganha 3 Contra-Praga [Uma vez por dia]
   Plasma: Recupera o dobro de Vida em um Descanso [Uma vez por dia]"
 baseMessage = "Você tem $ Linhagens para aplicar:
-       Solarium: -10% Vida ao sol, esse valor se torna 2*Bônus de Dano
-       Lunarium: -10% Surto de Ação a lua, esse valor se torna 2*Guarda
+       Solarium: -10% Vida ao sol, esse valor se torna 1.5*Bônus de Dano
+	   Solarium Mutado: Recupera 10% da vida máxima ao sol, esse valor se torna -1.5*Bônus de dano
+       Lunarium: -10% Surto de Ação a lua, esse valor se torna 1.5*Guarda
        Geofrium: +15 de Resistência para distribuir livremente
        Hidrofium: Pode respirar por 5 minutos em baixo d'água, e recebe metade dos danos de pressão
        Plaqueta: Recupera 10% de Vida [Uma vez por dia]

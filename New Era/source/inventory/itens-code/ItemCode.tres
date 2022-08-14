@@ -6,4 +6,5 @@
 script = ExtResource( 1 )
 isSingleton = true
 toDispendSurge = false
+canLimit = true
 message = null

@@ -20,7 +20,6 @@ public class EnterrarOponente : CriticUse
         damageExtra = 2 * critic;
         main.AddExtraDamage(damageExtra);
 
-        main.AddActualSurge(-20);
 
         return new MessageNotificationData(
             baseMessage, new object[] { result, damageExtra }, criticImage

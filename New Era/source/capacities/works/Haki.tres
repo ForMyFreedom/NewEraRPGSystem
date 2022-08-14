@@ -7,12 +7,12 @@
 resource_local_to_scene = true
 script = ExtResource( 1 )
 workName = "Haki"
-pathDescription = "A cada 5, +2 pontos em Gensoku
-A cada 10, +1 Uso de Crítico
+pathDescription = "A cada 5, +2 pontos em Gensoku OU +1 Desejo
+A cada 10, +1 Uso de Crítico E +1 Cor
 A cada 20, +1 Técnica
 A cada 50, Bônus de Maestria"
 skills = [ ExtResource( 2 ) ]
-description = "Quebrar as regras é tudo que importa nesse mundo..."
+description = "Minha Ambição está acima dessas regras malditas!"
 maestryDescription = "... Mistérios..."
 enumWork = 14
-firstUpText = "Adicione 2 pontos em Gensoku"
+firstUpText = "Adicione 2 pontos em Gensoko"

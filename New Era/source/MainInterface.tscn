@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://source/MainInterface.cs" type="Script" id=1]
 [ext_resource path="res://source/players/Melissa.tscn" type="PackedScene" id=2]
@@ -28,7 +28,7 @@
 [ext_resource path="res://assets/skills/arrow.png" type="Texture" id=26]
 [ext_resource path="res://source/guis/CriticGUI.tscn" type="PackedScene" id=27]
 [ext_resource path="res://source/DoubleClickSignal.cs" type="Script" id=28]
-[ext_resource path="res://source/TechniquesTree.cs" type="Script" id=29]
+[ext_resource path="res://source/guis/TechniqueTree.tscn" type="PackedScene" id=29]
 [ext_resource path="res://source/inventory/CharacterInventory.cs" type="Script" id=30]
 [ext_resource path="res://source/pop_up_general_interface/roll/CustomRollPopup.tscn" type="PackedScene" id=31]
 [ext_resource path="res://source/pop_up_general_interface/trivia/TriviaData.cs" type="Script" id=32]
@@ -44,6 +44,7 @@
 [ext_resource path="res://source/VersionIndex.tscn" type="PackedScene" id=42]
 [ext_resource path="res://source/pop_up_general_interface/traces/TracesPopup.tscn" type="PackedScene" id=43]
 [ext_resource path="res://source/pop_up_general_interface/roll/CustomRollData.cs" type="Script" id=44]
+[ext_resource path="res://assets/calibrili.ttf" type="DynamicFontData" id=45]
 
 [sub_resource type="Animation" id=1]
 resource_name = "activate"
@@ -85,6 +86,11 @@ size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=11]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 45 )
 
 [sub_resource type="Animation" id=5]
 tracks/0/type = "method"
@@ -213,9 +219,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 playerScene = ExtResource( 2 )
 playerNamePath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/PlayerLabel")
 customRollButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/CustomRollButton")
@@ -242,6 +245,7 @@ inspirationSpinPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer
 damageSpinPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/HBOX2/Control/DamageSpinBox")
 trainingButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TrainingButton")
 triviaButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton")
+sencienceButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/SencienceButton")
 equipamentsButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/EquipamentsButton")
 tracesButtonPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TracesButton")
 getSaveButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/GetSaveButton")
@@ -249,7 +253,8 @@ reloadSaveButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/HBoxContainer/
 techniquesTreePath = NodePath("VBoxContainer/Capacities/HBOX/HabilityControl/MarginContainer/VBOX/TechniqueTree")
 characterInventoryPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/EquipamentsButton/CharacterInventory")
 rollDataPath = NodePath("VBoxContainer/Info/HBoxContainer/MarginContainer/HBoxContainer/CustomRollButton/CustomRollData")
-triviaDataPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton/TrivaData")
+triviaDataPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton/TriviaData")
+sencienceDataPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/SencienceButton/SencienceData")
 traceDataPath = NodePath("VBoxContainer/General/MarginContainer/HBoxContainer/TracesButton/TracesData")
 defenseBooblePath = NodePath("NotificationArea/HBoxContainer/Actions/DefenseNode")
 versionSaveButtonPath = NodePath("VBoxContainer/Info/HBoxContainer/HBoxContainer/VBoxContainer/VersionSave")
@@ -571,7 +576,7 @@ margin_right = 141.0
 margin_bottom = 49.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer1/Control1/VBoxContainer" index="0"]
-margin_top = 6.0
+margin_top = 5.0
 margin_right = 141.0
 margin_bottom = 21.0
 
@@ -587,7 +592,7 @@ margin_right = 287.0
 margin_bottom = 49.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer1/Control2/VBoxContainer" index="0"]
-margin_top = 6.0
+margin_top = 5.0
 margin_right = 142.0
 margin_bottom = 21.0
 
@@ -607,17 +612,24 @@ margin_right = 176.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
 margin_right = 176.0
+margin_bottom = 16.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
 margin_left = 51.0
+margin_top = 20.0
 margin_right = 124.0
+margin_bottom = 44.0
 
 [node name="VBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2" index="1"]
 margin_left = 180.0
 margin_right = 287.0
 margin_bottom = 49.0
 
+[node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2/VBoxContainer2" index="0"]
+margin_bottom = 16.0
+
 [node name="HBoxContainer" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer2/VBoxContainer2" index="1"]
+margin_top = 20.0
 margin_bottom = 49.0
 
 [node name="HBoxContainer3" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer" index="3"]
@@ -630,8 +642,15 @@ margin_left = 63.0
 margin_right = 141.0
 
 [node name="HBoxContainer3" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer3" index="1"]
-margin_left = 168.0
+margin_left = 163.0
 margin_right = 287.0
+
+[node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer3/HBoxContainer3" index="0"]
+margin_right = 47.0
+
+[node name="ModApplySpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/Life/VBoxContainer/HBoxContainer3/HBoxContainer3" index="1"]
+margin_left = 51.0
+margin_right = 124.0
 
 [node name="VS1" type="VSeparator" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer"]
 margin_left = 291.0
@@ -661,7 +680,7 @@ margin_right = 141.0
 margin_bottom = 49.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer1/Control1/VBoxContainer" index="0"]
-margin_top = 6.0
+margin_top = 5.0
 margin_right = 141.0
 margin_bottom = 21.0
 
@@ -677,7 +696,7 @@ margin_right = 287.0
 margin_bottom = 49.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer1/Control2/VBoxContainer" index="0"]
-margin_top = 6.0
+margin_top = 5.0
 margin_right = 142.0
 margin_bottom = 21.0
 
@@ -697,17 +716,24 @@ margin_right = 176.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
 margin_right = 176.0
+margin_bottom = 16.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
 margin_left = 51.0
+margin_top = 20.0
 margin_right = 124.0
+margin_bottom = 44.0
 
 [node name="VBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2" index="1"]
 margin_left = 180.0
 margin_right = 287.0
 margin_bottom = 49.0
 
+[node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2/VBoxContainer2" index="0"]
+margin_bottom = 16.0
+
 [node name="HBoxContainer" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer2/VBoxContainer2" index="1"]
+margin_top = 20.0
 margin_bottom = 49.0
 
 [node name="HBoxContainer3" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer" index="3"]
@@ -720,8 +746,15 @@ margin_left = 63.0
 margin_right = 141.0
 
 [node name="HBoxContainer3" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer3" index="1"]
-margin_left = 168.0
+margin_left = 163.0
 margin_right = 287.0
+
+[node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer3/HBoxContainer3" index="0"]
+margin_right = 47.0
+
+[node name="ModApplySpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/ActionSurge/VBoxContainer/HBoxContainer3/HBoxContainer3" index="1"]
+margin_left = 51.0
+margin_right = 124.0
 
 [node name="VS2" type="VSeparator" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer"]
 margin_left = 590.0
@@ -753,7 +786,7 @@ margin_right = 141.0
 margin_bottom = 49.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer1/Control1/VBoxContainer" index="0"]
-margin_top = 6.0
+margin_top = 5.0
 margin_right = 141.0
 margin_bottom = 21.0
 
@@ -769,7 +802,7 @@ margin_right = 287.0
 margin_bottom = 49.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer1/Control2/VBoxContainer" index="0"]
-margin_top = 6.0
+margin_top = 5.0
 margin_right = 142.0
 margin_bottom = 21.0
 
@@ -789,17 +822,24 @@ margin_right = 176.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
 margin_right = 176.0
+margin_bottom = 16.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
 margin_left = 51.0
+margin_top = 20.0
 margin_right = 124.0
+margin_bottom = 44.0
 
 [node name="VBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2" index="1"]
 margin_left = 180.0
 margin_right = 287.0
 margin_bottom = 49.0
 
+[node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2/VBoxContainer2" index="0"]
+margin_bottom = 16.0
+
 [node name="HBoxContainer" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer2/VBoxContainer2" index="1"]
+margin_top = 20.0
 margin_bottom = 49.0
 
 [node name="HBoxContainer3" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer" index="3"]
@@ -812,8 +852,15 @@ margin_left = 63.0
 margin_right = 141.0
 
 [node name="HBoxContainer3" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer3" index="1"]
-margin_left = 168.0
+margin_left = 163.0
 margin_right = 287.0
+
+[node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer3/HBoxContainer3" index="0"]
+margin_right = 47.0
+
+[node name="ModApplySpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/AgilityDefense/VBoxContainer/HBoxContainer3/HBoxContainer3" index="1"]
+margin_left = 51.0
+margin_right = 124.0
 
 [node name="VS3" type="VSeparator" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer"]
 margin_left = 889.0
@@ -845,7 +892,7 @@ margin_right = 142.0
 margin_bottom = 49.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer1/Control1/VBoxContainer" index="0"]
-margin_top = 6.0
+margin_top = 5.0
 margin_right = 142.0
 margin_bottom = 21.0
 
@@ -861,7 +908,7 @@ margin_right = 288.0
 margin_bottom = 49.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer1/Control2/VBoxContainer" index="0"]
-margin_top = 6.0
+margin_top = 5.0
 margin_right = 142.0
 margin_bottom = 21.0
 
@@ -881,17 +928,24 @@ margin_right = 177.0
 
 [node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="0"]
 margin_right = 177.0
+margin_bottom = 16.0
 
 [node name="ModSpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2/Control/VBoxContainer" index="1"]
 margin_left = 52.0
+margin_top = 20.0
 margin_right = 125.0
+margin_bottom = 44.0
 
 [node name="VBoxContainer2" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2" index="1"]
 margin_left = 181.0
 margin_right = 288.0
 margin_bottom = 49.0
 
+[node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2/VBoxContainer2" index="0"]
+margin_bottom = 16.0
+
 [node name="HBoxContainer" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer2/VBoxContainer2" index="1"]
+margin_top = 20.0
 margin_bottom = 49.0
 
 [node name="HBoxContainer3" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer" index="3"]
@@ -904,8 +958,15 @@ margin_left = 64.0
 margin_right = 142.0
 
 [node name="HBoxContainer3" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer3" index="1"]
-margin_left = 169.0
+margin_left = 164.0
 margin_right = 288.0
+
+[node name="Label" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer3/HBoxContainer3" index="0"]
+margin_right = 47.0
+
+[node name="ModApplySpinBox" parent="VBoxContainer/CombatFactors/MarginContainer/HBoxContainer/StrengthDefense/VBoxContainer/HBoxContainer3/HBoxContainer3" index="1"]
+margin_left = 51.0
+margin_right = 124.0
 
 [node name="HS1" type="HSeparator" parent="VBoxContainer"]
 margin_top = 258.0
@@ -1144,17 +1205,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TechniqueTree" type="Tree" parent="VBoxContainer/Capacities/HBOX/HabilityControl/MarginContainer/VBOX"]
-margin_top = 37.0
-margin_right = 587.0
-margin_bottom = 204.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 18 )
-hide_root = true
-script = ExtResource( 29 )
-techniqueNameFont = ExtResource( 14 )
-techniqueDescriptionFont = ExtResource( 18 )
+[node name="TechniqueTree" parent="VBoxContainer/Capacities/HBOX/HabilityControl/MarginContainer/VBOX" instance=ExtResource( 29 )]
+techniqueDescriptionFont = SubResource( 11 )
 
 [node name="General" type="Control" parent="VBoxContainer"]
 margin_top = 658.0
@@ -1200,9 +1252,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 76.0
+margin_left = 47.0
 margin_top = 0.0
-margin_right = 209.0
+margin_right = 180.0
 margin_bottom = 42.0
 text = "Equipamentos"
 packedPopup = ExtResource( 33 )
@@ -1211,8 +1263,8 @@ packedPopup = ExtResource( 33 )
 script = ExtResource( 30 )
 
 [node name="TrainingButton" type="Button" parent="VBoxContainer/General/MarginContainer/HBoxContainer"]
-margin_left = 382.0
-margin_right = 482.0
+margin_left = 295.0
+margin_right = 395.0
 margin_bottom = 42.0
 rect_min_size = Vector2( 100, 0 )
 size_flags_horizontal = 6
@@ -1224,9 +1276,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 672.0
+margin_left = 527.0
 margin_top = 0.0
-margin_right = 772.0
+margin_right = 627.0
 margin_bottom = 42.0
 text = "Traços"
 packedPopup = ExtResource( 43 )
@@ -1234,19 +1286,34 @@ packedPopup = ExtResource( 43 )
 [node name="TracesData" type="Node" parent="VBoxContainer/General/MarginContainer/HBoxContainer/TracesButton"]
 script = ExtResource( 40 )
 
+[node name="SencienceButton" parent="VBoxContainer/General/MarginContainer/HBoxContainer" instance=ExtResource( 23 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 759.0
+margin_top = 0.0
+margin_right = 859.0
+margin_bottom = 42.0
+text = "Senciência"
+packedPopup = ExtResource( 25 )
+
+[node name="SencienceData" type="Node" parent="VBoxContainer/General/MarginContainer/HBoxContainer/SencienceButton"]
+script = ExtResource( 32 )
+
 [node name="TriviaButton" parent="VBoxContainer/General/MarginContainer/HBoxContainer" instance=ExtResource( 23 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 962.0
+margin_left = 991.0
 margin_top = 0.0
-margin_right = 1062.0
+margin_right = 1091.0
 margin_bottom = 42.0
 text = "Trivia"
 packedPopup = ExtResource( 25 )
 
-[node name="TrivaData" type="Node" parent="VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton"]
+[node name="TriviaData" type="Node" parent="VBoxContainer/General/MarginContainer/HBoxContainer/TriviaButton"]
 script = ExtResource( 32 )
 
 [node name="NotificationArea" type="Control" parent="."]
@@ -1258,9 +1325,6 @@ margin_right = -160.0
 mouse_filter = 2
 size_flags_vertical = 3
 script = ExtResource( 17 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 bellPath = NodePath("HBoxContainer/Actions/BellNode")
 turnPath = NodePath("HBoxContainer/Actions/TurnNode")
 defensePath = NodePath("HBoxContainer/Actions/DefenseNode")
@@ -1333,8 +1397,8 @@ __meta__ = {
 margin_right = 16.0
 margin_bottom = 16.0
 rect_pivot_offset = Vector2( 8, 8 )
-custom_styles/normal = SubResource( 9 )
 custom_colors/font_color = Color( 1, 0.94902, 0, 1 )
+custom_styles/normal = SubResource( 9 )
 text = "0"
 align = 1
 valign = 1

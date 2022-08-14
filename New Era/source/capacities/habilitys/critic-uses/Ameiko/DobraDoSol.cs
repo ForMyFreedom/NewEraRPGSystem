@@ -2,10 +2,12 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public class DobraDoSol : CriticUse
+public class DobraDoSol : HakiUse
 {
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
+        critic = GetHakisColorRollResult(main, new[] { HakiColors.AmeikoYellow }, critic)/10;
+
         var intArray = new int[] {
             3*critic, 2 * critic, 1 * critic, 2 * critic, 1 * critic
         };
@@ -13,7 +15,7 @@ public class DobraDoSol : CriticUse
         var effectArray = System.Array.ConvertAll(intArray, e => (object)e);
 
         return new MessageNotificationData(
-            baseMessage, effectArray, criticImage
+            baseMessage, effectArray, criticImage, critic
         );
     }
 

@@ -412,6 +412,16 @@ public class Player : Node, CharacterDataBank
         playerSaveResource.SetTrivia(text);
     }
 
+    public string GetSencienceText()
+    {
+        return playerSaveResource.GetSencienceText();
+    }
+
+    public void SetSencienceText(string text)
+    {
+        playerSaveResource.SetSencienceText(text);
+    }
+
     public Array<Array<CriticUse>> GetCriticUses()
     {
         return playerSaveResource.GetCriticUses();
@@ -550,4 +560,5 @@ public class Player : Node, CharacterDataBank
     {
         playerSaveResource.SetAllGameData(gameData);
     }
+
 }

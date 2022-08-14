@@ -16,7 +16,7 @@ public abstract class Skill : NotificationConsumer, IPlayerDataConsumer
     protected String mechanicDescription;
 
     private WayOfCalculeSkill wayOfLevelCalcule;
-    private SkillPlayerData skillPlayerData;
+    protected SkillPlayerData skillPlayerData;
     protected Texture effectImage;
     protected int level;
 

@@ -1,6 +1,3 @@
-using Godot;
-using System;
-
 public abstract class LifeUpdaterFromPrincipalWork : LifeUpdaterAbstract
 {
     protected int principalWorkLevel;

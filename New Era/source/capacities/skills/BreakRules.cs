@@ -4,16 +4,29 @@ using System;
 
 public class BreakRules : Skill
 {
+    [Export(PropertyHint.MultilineText)]
+    protected string colorAuraMessageText;
+    [Export(PropertyHint.MultilineText)]
+    protected string paintMessageText;
+
     public override Array<string> GetTextOfMechanicButtons()
     {
-        return new Array<string>() { "Quebrar regras" };
+        return new Array<string>() { "Tingir sua Aura", "Pintar a Realidade" };
     }
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        int value = main.RequestSkillRoll(skillName, critic)/50;
-        main.AddActualSurge(-2 * value);
-        return new MessageNotificationData(notificationText, new object[]{ value, 2*value }, effectImage);
+        switch (actionIndex)
+        {
+            case 0: {
+                    int halfLevel = main.GetWorkNodeByEnum(skillPlayerData.GetWorkEnum()).GetLevel() / 2;
+                return new MessageNotificationData(colorAuraMessageText, new object[] {halfLevel}, effectImage);
+            }
+            case 1:
+                return new MessageNotificationData(paintMessageText, new object[] { }, effectImage);
+            default:
+                return new MessageNotificationData(notificationText, new object[] { }, effectImage);
+        }
     }
 
     

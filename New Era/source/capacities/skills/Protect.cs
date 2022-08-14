@@ -13,7 +13,7 @@ public class Protect : Skill
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        guard = level + critic;
+        guard = (int)(4f/3f*level) + critic;
         main.AddGuard(guard);
 
         return new MessageNotificationData(

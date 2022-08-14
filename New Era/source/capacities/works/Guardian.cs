@@ -26,6 +26,6 @@ public class Guardian : Work
 
     public override int GetBaseDamage(MainInterface gui, int weaponDamage = 0, int actionIndex = 0)
     {
-        return (gui.GetTotalAtributeValue(MyEnum.Atribute.AGI)+gui.GetTotalAtributeValue(MyEnum.Atribute.STR))/3;
+        return (int)((gui.GetTotalAtributeValue(MyEnum.Atribute.AGI) + gui.GetTotalAtributeValue(MyEnum.Atribute.STR))/2.5);
     }
 }
