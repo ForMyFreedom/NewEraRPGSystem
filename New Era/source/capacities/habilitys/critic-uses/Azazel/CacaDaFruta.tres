@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Azazel/CacaDaFruta.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Caça da Fruta"
+relatedWork = 15
+text = "A fim de cumprir seu Desejo de 'Acumular Riquezas', você entende o verdadeiro valor das Frutas do Diabo...
+Inicialmente, você ganha dois Novos Atributos: Sede da Caça [O quão provavel é achar uma Akuma no Mi aleatória] e Peso da Caça [O quão bom será essa Akuma no Mi]
+Sempre que entrar em uma Cena de Exploração em que haja o potencial delas existirem, você escolhe entre:
+     Aumentar em @% a Sede da Caça
+	 Aumentar em 1 o Peso da Caça
+
+Sempre que aumentar a Sede em uma Cena de Exploração, você deve rolar a porcentagem (E zerar caso consiga)
+O quão bom a Akuma no Mi será se dará na seguinte lei:
+     1) @
+	 2) @
+	 3) @
+	 4) @
+	 5) @"
+baseMessage = null
+cost = -1

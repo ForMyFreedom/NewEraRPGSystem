@@ -7,7 +7,7 @@ public class OqueNaoMataFortalece : CriticUse
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         return new MessageNotificationData(
-            baseMessage, new object[] { critic/3 }, criticImage
+            baseMessage, new object[] {(int)(critic/2.5)}, criticImage
         );
     }
 
