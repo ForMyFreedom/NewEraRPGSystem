@@ -17,3 +17,4 @@ maestryDescription = "- Lutador Regular +I: +1 Pancada
 - Lutador Brigão +I: +10 Dano ao usar Pancada.
 - Lutador Artista Marcial +I: +30 Teste Ataque ao usar Pancada"
 enumWork = 3
+workDetail = ""

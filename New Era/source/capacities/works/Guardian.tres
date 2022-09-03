@@ -15,3 +15,4 @@ skills = [ ExtResource( 3 ) ]
 description = "Guardar e proteger, a vontade da barreira"
 maestryDescription = "@... não feito..."
 enumWork = 4
+workDetail = ""

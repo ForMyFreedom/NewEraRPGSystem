@@ -17,7 +17,7 @@ A fim de se seguir em frente com seu Desejo, você acredita que a melhor maneira
 
 
 [Puristas Terrenos: Cinismo]
-Caso seja uma Entidade Terrena e possua tanto a Barreira como a Fenda, sendo usuário do Gensoku, você pode ativar essa Skill livremente para diminuir os Críticos de uma habilidade de Haki em [Gensoku/2+Gen], podendo potencialmente zerar!
+Caso seja uma Entidade Terrena e possua tanto a Barreira como a Fenda, sendo usuário do Gensoku, você pode ativar essa Skill livremente para diminuir os Críticos de uma habilidade de Haki em [Gensoku/3+Gen/3], podendo potencialmente zerar!
 A razão disso se dá na Primazia do Desejo: Uma aura que tenha alcance direto a sua contraparte transcendental, não pode ter suas regras quebradas dado que ele vive no vazio de normas. Como um ego eque precede a moral"
-counterMoralText = "Ao ser alvo de uma Habilidade de Haki, caso o nível do Usuário seja menor que $, você ignora completamente!"
-counterMoralName = "Nilismo"
+counterMoralText = "Ao ser alvo de uma Habilidade de Haki, você diminui $ Críticos dela [Podendo potencialmente zerar!]"
+counterMoralName = "Cinismo"

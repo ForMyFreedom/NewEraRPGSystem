@@ -13,9 +13,10 @@ A cada 10, +1 Uso de Crítico
 A cada 20,  +12 entre Liderança e Manipulação
 A cada 50, Bônus de Maestria"
 skills = [ ExtResource( 3 ), ExtResource( 4 ) ]
-description = "Palavras como o meio para se alcansar qualquer coisa"
+description = "Palavras são o meio para se alcansar tudo"
 maestryDescription = "- Mestre Capitão +I: +15 Liderança para motivar um pequeno grupo.
 - Mestre de Guerra +I: +15 Liderança para mover grandes massas.
 - Mestre Manipulador +I: +15 Manipulação para enganar um alvo.
 - Mestre Retórico+I: +15 Manipulação para convenser um alvo."
 enumWork = 11
+workDetail = ""

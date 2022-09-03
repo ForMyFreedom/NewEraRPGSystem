@@ -16,3 +16,4 @@ maestryDescription = "- Assasino Regular +I: +5 Letalidade
 - Assasino Ninja +I: +10 Letalidade ao atacar furtivamente
 - Assasino Chacina +I: +10 Letalidade ao atacar em um combate"
 enumWork = 1
+workDetail = ""

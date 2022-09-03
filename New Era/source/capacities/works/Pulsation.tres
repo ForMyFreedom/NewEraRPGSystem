@@ -12,8 +12,9 @@ A cada 10, +1 Uso de Crítico
 A cada 20, +1 Técnica
 A cada 50, Bônus de Maestria"
 skills = [ ExtResource( 3 ) ]
-description = "A força sanguinária de uma Linhagem respeitada..."
+description = "A força sanguinária de uma Linhagem respeitada"
 maestryDescription = "- Pulsação Sedenta +I: +1 Uso de Vampirismo por hora
 - Pulsação Lunar +I: +25% Dano sob o efeito do Talento 'Lua'
 - Pulsação Cardíaca +I: -50% do Stress da Mecânica Batimento"
 enumWork = 4
+workDetail = ""

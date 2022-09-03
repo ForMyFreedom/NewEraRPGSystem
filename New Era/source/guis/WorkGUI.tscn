@@ -30,7 +30,34 @@ font_data = ExtResource( 6 )
 font_data = ExtResource( 8 )
 
 [node name="WorkGUI" type="WindowDialog"]
-visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -284.5
+margin_top = -162.0
+margin_right = 285.5
+margin_bottom = 162.0
+rect_min_size = Vector2( 570, 324 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+popup_exclusive = true
+script = ExtResource( 1 )
+descriptionLabelPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/General/HBoxContainer2/HBoxContainer2/DescriptionLabel")
+rollBoxPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/General/RollBox")
+workTexture = NodePath("MarginContainer/ScrollContainer/VBoxContainer/General/HBoxContainer2/HBoxContainer2/WorkTexture")
+journeyLabel = NodePath("MarginContainer/ScrollContainer/VBoxContainer/Journey/Label")
+maestryLabel = NodePath("MarginContainer/ScrollContainer/VBoxContainer/MaestryPath/Label")
+atributeOptionPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/General/HBoxContainer2/HBoxContainer/AtributeOptionButton")
+journeyControlPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/Journey")
+maestryPathControlPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/MaestryPath")
+maestryListControlPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/Maestry")
+maestryListLabelPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/Maestry/Label")
+workDetailControlPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/Detail")
+workDetailLabelPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/Detail/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -39,47 +66,22 @@ margin_left = -285.0
 margin_top = -162.0
 margin_right = 285.0
 margin_bottom = 162.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
-popup_exclusive = true
-script = ExtResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": false
-}
-descriptionLabelPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/General/HBoxContainer2/DescriptionLabel")
-rollBoxPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/General/RollBox")
-workTexture = NodePath("MarginContainer/ScrollContainer/VBoxContainer/General/HBoxContainer2/WorkTexture")
-journeyLabel = NodePath("MarginContainer/ScrollContainer/VBoxContainer/Journey/Label")
-maestryLabel = NodePath("MarginContainer/ScrollContainer/VBoxContainer/MaestryPath/Label")
-atributeOptionPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/General/HBoxContainer2/HBoxContainer/AtributeOptionButton")
-journeyControlPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/Journey")
-maestryPathControlPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/MaestryPath")
-maestryListControlPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/Maestry")
-maestryListLabelPath = NodePath("MarginContainer/ScrollContainer/VBoxContainer/Maestry/Label")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = 5.0
-margin_right = -15.0
-margin_bottom = -5.0
-__meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
-margin_right = 540.0
-margin_bottom = 314.0
+margin_right = 570.0
+margin_bottom = 324.0
+scroll_horizontal_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
 margin_right = 540.0
-margin_bottom = 314.0
-size_flags_horizontal = 3
+margin_bottom = 446.0
+size_flags_horizontal = 0
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -122,10 +124,15 @@ items = [ "STR", null, false, 0, null, "AGI", null, false, 1, null, "SEN", null,
 selected = 0
 script = ExtResource( 10 )
 
-[node name="DescriptionLabel" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/General/HBoxContainer2"]
-margin_left = 184.0
-margin_right = 291.0
-margin_bottom = 15.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/General/HBoxContainer2"]
+margin_left = 361.0
+margin_right = 540.0
+margin_bottom = 50.0
+size_flags_horizontal = 10
+
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/General/HBoxContainer2/HBoxContainer2"]
+margin_right = 125.0
+margin_bottom = 16.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.5
@@ -136,9 +143,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WorkTexture" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/General/HBoxContainer2"]
-margin_left = 295.0
-margin_right = 345.0
+[node name="WorkTexture" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/General/HBoxContainer2/HBoxContainer2"]
+margin_left = 129.0
+margin_right = 179.0
 margin_bottom = 50.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -177,28 +184,61 @@ margin_right = 540.0
 margin_bottom = 25.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/bold_italics_font = SubResource( 2 )
-custom_fonts/italics_font = SubResource( 3 )
-custom_fonts/bold_font = SubResource( 4 )
-custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 1, 0.843137, 0, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/bold_italics_font = SubResource( 2 )
+custom_fonts/italics_font = SubResource( 3 )
+custom_fonts/bold_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 5 )
 bbcode_enabled = true
 fit_content_height = true
 scroll_active = false
 
-[node name="HS3" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="Detail" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 margin_top = 178.0
 margin_right = 540.0
-margin_bottom = 182.0
+margin_bottom = 306.0
+rect_min_size = Vector2( 540, 128 )
+size_flags_vertical = 3
+
+[node name="HS3" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer/Detail"]
+margin_right = 540.0
+margin_bottom = 4.0
+size_flags_vertical = 0
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/ScrollContainer/VBoxContainer/Detail"]
+margin_top = 8.0
+margin_right = 540.0
+margin_bottom = 128.0
+size_flags_vertical = 3
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/bold_italics_font = SubResource( 2 )
+custom_fonts/italics_font = SubResource( 3 )
+custom_fonts/bold_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 5 )
+bbcode_enabled = true
+bbcode_text = "[center][b]Detalhes[/b][/center]
+"
+text = "Detalhes
+"
+fit_content_height = true
+scroll_active = false
+
+[node name="HS4" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 310.0
+margin_right = 540.0
+margin_bottom = 314.0
 size_flags_vertical = 0
 
 [node name="Journey" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 186.0
+margin_top = 318.0
 margin_right = 540.0
-margin_bottom = 314.0
+margin_bottom = 446.0
 rect_min_size = Vector2( 540, 128 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -208,14 +248,14 @@ margin_right = 540.0
 margin_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/bold_italics_font = SubResource( 2 )
-custom_fonts/italics_font = SubResource( 3 )
-custom_fonts/bold_font = SubResource( 4 )
-custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/bold_italics_font = SubResource( 2 )
+custom_fonts/italics_font = SubResource( 3 )
+custom_fonts/bold_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[wave amp=14 freq=5] [center][b]Jornada a se trilhar[/b][/center]
  [/wave]
@@ -239,14 +279,14 @@ margin_right = 540.0
 margin_bottom = 140.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/bold_italics_font = SubResource( 2 )
-custom_fonts/italics_font = SubResource( 3 )
-custom_fonts/bold_font = SubResource( 4 )
-custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/bold_italics_font = SubResource( 2 )
+custom_fonts/italics_font = SubResource( 3 )
+custom_fonts/bold_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[wave amp=14 freq=5] [center][b]Maestria a se conquistar[/b][/center][/wave]
 "
