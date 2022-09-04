@@ -22,7 +22,7 @@ public abstract class HakiUse : CriticUse
 
         int newResult = RollCode.GetRandomAdvancedRoll(levelMean, main.GetDetermination());
 
-        main.AddActualSurge((newResult/10-originalCritic)/2);
+        main.AddActualSurge(originalCritic/2-newResult/20);
         return newResult;
 
     }
