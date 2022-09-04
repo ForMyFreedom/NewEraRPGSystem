@@ -15,8 +15,8 @@ A fim de se seguir em frente com seu Desejo, você acredita que a melhor maneira
 
 
 [Puristas Terrenos: Agorismo]
-Caso seja uma Entidade Terrena e possua tanto a Barreira como a Fenda, sendo usuário do Gensoku, você pode ativar essa Skill livremente para diminuir os Críticos de uma habilidade de Seirath em [Gensoku/2+Soh], podendo potencialmente zerar!
+Caso seja uma Entidade Terrena e possua tanto a Barreira como a Fenda, sendo usuário do Gensoku, você pode ativar essa Skill livremente para diminuir os Críticos de uma habilidade de Seirath em [Gensoku/3+Soh/3], podendo potencialmente zerar!
 A razão disso se dá na Primazia do Desejo: Ao tentar impor uma regra a uma aura transcendental, o Seirath simplesmente falha por puro desprezo por estar acima de qualquer norma, como um ego que precede a moral
 "
-counterMoralText = "Ao ser alvo de uma Habilidade de Seirath, caso o nível do Usuário seja menor que $, você ignora completamente!"
+counterMoralText = "Ao ser alvo de uma Habilidade de Seirath, você diminui $ Críticos dela [Podendo potencialmente zerar!]"
 counterMoralName = "Agorismo"

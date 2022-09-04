@@ -17,6 +17,8 @@ public abstract class Work : Resource, IPlayerDataConsumer
     protected string maestryDescription;
     [Export]
     protected MyEnum.Work enumWork;
+    [Export(PropertyHint.MultilineText)]
+    protected string workDetail;
 
     private WorkPlayerData workPlayerData;
     protected Texture baseImage;
@@ -66,6 +68,11 @@ public abstract class Work : Resource, IPlayerDataConsumer
     public string GetDescription()
     {
         return description;
+    }
+
+    public string GetDetail()
+    {
+        return workDetail;
     }
 
     public MyEnum.Work GetEnumWork()

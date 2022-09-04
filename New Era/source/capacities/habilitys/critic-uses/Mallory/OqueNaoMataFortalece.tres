@@ -9,6 +9,6 @@ toDispendSurge = true
 canLimit = false
 criticUseName = "O que não mata fortalece"
 relatedWork = 9
-text = "Após em combate, curar um alvo com sua Medicina, ele terá +N/3 Agilidade até o combate se encerrar"
+text = "Após em combate, curar um alvo com sua Medicina, ele terá +N/2.5 Agilidade até o combate se encerrar"
 baseMessage = "Alvo da cura recebe +$ Agilidade até o final do combate"
 cost = -1

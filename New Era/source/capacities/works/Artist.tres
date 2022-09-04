@@ -12,9 +12,10 @@ A cada 10, +1 Uso de Crítico
 A cada 20, +10 em [Arte]
 A cada 50, Bônus de Maestria"
 skills = [ ExtResource( 1 ) ]
-description = "A arte é o caminho para a alma e seus maiores mistérios..."
+description = "A arte é o caminho para a alma e seus mistérios"
 maestryDescription = "- Artista Regular +I: +10 [Arte].
 - Artista Alegreto +I: +15 [Arte] quando seu personagem estiver alegre.
 - Artista Adagio +I: +15 [Arte] quando seu personagem estiver abalado."
 enumWork = 10
+workDetail = ""
 baseDamage = 10

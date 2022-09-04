@@ -8,16 +8,19 @@ public class MicroBatimento : CriticUse
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        if (critic < 0 || critic > 4)
-            critic = 2;
+        if (critic < 1 || critic > 5)
+            critic = 3;
 
-        int selfDamage = RollCode.GetRandomBasicRoll(1) + 2;
-        main.AddActualLife(-selfDamage);
+        int totalLife = main.GetTotalLife();
+        int selfDamage = (int)(-totalLife * 0.15);
+        main.AddActualLife(selfDamage);
+
+        main.AddActualSurge(-10);
 
         Beat beatSkill = (Beat) main.GetSkillByWorkAndIndex(relatedWork, 0);
 
         beatLevel = beatSkill.GetLevel();
-        beatSkill.DoMechanic(main, 2, beatLevel);
+        beatSkill.DoMechanic(main, critic-1, beatLevel);
 
         return new MessageNotificationData(
             baseMessage, new object[] { selfDamage }, criticImage
@@ -30,6 +33,6 @@ public class MicroBatimento : CriticUse
 
     public override int RequestCriticTest(MainInterface main)
     {
-        return cost;
+        return main.RequestWorkRoll(relatedWork) / 10;
     }
 }

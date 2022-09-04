@@ -2,12 +2,13 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public class NaoSeraoOsUltimosSocorros : CriticUse
+public class Isshoni : CriticUse
 {
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        Medicine medicine = main.GetSkillByWorkAndIndex(relatedWork, 0) as Medicine;
-        return medicine.DoMechanicLogic(main, 0, (4 * critic) / 10);
+        return new MessageNotificationData(
+            baseMessage, null, criticImage
+        );
     }
 
     public override void DoEndMechanicLogic()
@@ -16,6 +17,6 @@ public class NaoSeraoOsUltimosSocorros : CriticUse
 
     public override int RequestCriticTest(MainInterface main)
     {
-        return main.RequestWorkRoll(relatedWork) / 10;
+        return cost;
     }
 }

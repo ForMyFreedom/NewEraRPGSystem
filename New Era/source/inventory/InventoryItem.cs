@@ -5,7 +5,7 @@ public abstract class InventoryItem: Resource
 {
     [Export]
     protected string itemName;
-    [Export]
+    [Export(PropertyHint.MultilineText)]
     protected string itemDescription;
     [Export]
     protected int quantity;

@@ -6,6 +6,7 @@
 script = ExtResource( 1 )
 isSingleton = true
 toDispendSurge = false
+canLimit = true
 message = null
 quality = 2
 workEnum = 13

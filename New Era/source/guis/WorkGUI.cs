@@ -20,6 +20,10 @@ public class WorkGUI : BaseGUI
     private NodePath maestryListControlPath;
     [Export]
     private NodePath maestryListLabelPath;
+    [Export]
+    private NodePath workDetailControlPath;
+    [Export]
+    private NodePath workDetailLabelPath;
 
     [Signal]
     public delegate void value_changed(int index, int value);
@@ -38,6 +42,7 @@ public class WorkGUI : BaseGUI
         GetNode<TextureRect>(workTexture).Texture = work.GetBaseImage();
         GetNode(atributeOptionPath).Connect("related_atribute_changed", this, "_OnRelatedAtributeChanged");
         VerifyTheMaestryVisibility(work.GetLevel());
+        VerifyTheDetailVisibility();
     }
 
 
@@ -88,6 +93,14 @@ public class WorkGUI : BaseGUI
             GetNode<Control>(maestryPathControlPath).Visible = true;
             GetNode<Control>(maestryListControlPath).Visible = true;
         }
+    }
+
+    private void VerifyTheDetailVisibility()
+    {
+        if (work.GetDetail() == "")
+            GetNode<Control>(workDetailControlPath).Visible = false;
+        else
+            GetNode<RichTextLabel>(workDetailLabelPath).BbcodeText += work.GetDetail();
     }
 
 

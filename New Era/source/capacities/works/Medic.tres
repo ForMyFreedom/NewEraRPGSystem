@@ -17,3 +17,4 @@ maestryDescription = "- Mestre Regular +I: +10 Medicina
 - Mestre Clínico +I: +20 Medicina em Tratamentos de Ferimentos considerados não-sérios.
 - Mestre Peçonhento +I: +15 Medicina em Tratamentos de venenos ou doenças"
 enumWork = 9
+workDetail = ""

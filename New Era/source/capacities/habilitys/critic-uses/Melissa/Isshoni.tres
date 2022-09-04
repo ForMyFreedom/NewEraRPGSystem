@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/Isshoni.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Issho-Ni"
+relatedWork = 14
+text = "[Cor Negra, Quebra as Regras da Influência sobre Águas Vivas]
+Uni-se com a Apes em uma forma de combate exótica. A medusa não pode ser acertada, e sempre que Melissa atacar, Apes escolhará um de seus ataque para aplicar no alvo:
+Ataques:
+   Chicote Eletrizante (Teste 20d6+20, Dano 10 | -10 Surto de Ação Alvo)
+   Veneno Psicomotor (Teste 20d6+20, Dano 20 | Escravizador)
+Usos:
+   Veneno Eletrizado [N]: Em Testes de Ataque, permite sofrer 2N de Dano e causar 2N de Dano extra em ‘Veneno Psicomotor’
+   Sede por Sal [N]: Em Testes de Ataque, permite gastar 10 Surto de Ação extra e receber +2d6 Vida caso o alvo possua sal em seu corpo
+Talentos:
+   Escravizador (Caso zere a vida com esse dano, o alvo se torna um Azul de Primeiro Domínio)
+"
+baseMessage = "Modo Unido: Apes sempre atacará após Melissa atacar"
+cost = 10

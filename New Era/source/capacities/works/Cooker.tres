@@ -18,3 +18,4 @@ maestryDescription = "- Cozinha Regular +I: +10 Culinária.
 de Qualidade superior ou igual à 4.
 - Cozinha Economica +I: +15 Culinária caso apenas haja Ingredientes de Qualidade inferior à 4"
 enumWork = 5
+workDetail = ""

@@ -38,7 +38,7 @@ public class SohKho : Skill     //turn's to GenSoh
     {
         int gensokuLevel = main.GetWorkNodeByEnum(skillPlayerData.GetWorkEnum()).GetLevel();
         return new MessageNotificationData(
-            counterMoralText, new object[] { gensokuLevel/2 + level }, effectImage
+            counterMoralText, new object[] { (gensokuLevel+level)/3 }, effectImage
         );
     }
 

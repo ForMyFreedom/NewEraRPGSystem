@@ -15,4 +15,6 @@ skills = [ ExtResource( 2 ) ]
 description = "Minha Ambição está acima dessas regras malditas!"
 maestryDescription = "... Mistérios..."
 enumWork = 14
+workDetail = "[Domínio Solo: Arbítrio]
+Caso possua apenas Haki de Poder Sensenciente, você recebe o seguinte benefício: Sempre que estiver com o Haki ativo, suas habilidades afetam ainda mais os Usuários de Akuma no Mi [De que forma, ainda é um segredo!]"
 firstUpText = "Adicione 2 pontos em Gensoko"

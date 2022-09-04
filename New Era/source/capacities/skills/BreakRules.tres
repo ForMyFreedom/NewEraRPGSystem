@@ -13,9 +13,12 @@ wayOfLevelCalculeScript = ExtResource( 1 )
 skillDescription = "A Entropia, o ID, e minha Ambição!"
 notificationText = "---"
 mechanicDescription = "Um Usuário de Haki, após quebrar sua Barreira, se vê livre com a capacidade de pressionar sua Fenda para ativamente tingir a Cor de sua Aura além dos limites da Forma...
-Você possui uma quantidade de Cores da Ambição igual a [Haki/10  +1], as quais representam uma faceta da realidade a qual tens capacidade de quebrá-la
-[Ex: Roxo Escuro, Propriedades         Verde, Existência de Plantas Venenosas      etc]
-Todas as Cores possuem um Grau de Tonalidade (GT) e um Grau de Vibração (GV) que vai de 0 à 10, os quais determinam respectivamente, o nível de poder nativo em termos de generalidade e força
+Você possui uma quantidade de Cores da Ambição igual a [Haki/10  +1], as quais representam uma faceta da realidade a qual tens capacidade de quebrá-la [Abolição|Quebra as regras ...], ou de sentimentos que anseia por manifestar [Manifestação|Manifesta o sentimento...]
+[ Ex:
+    Roxo Escuro [Quebra as regras das Propriedades]
+	Rosa  [Manifesta o prazer carnal]
+]
+Todas as Cores possuem um Grau de Tonalidade (GT) e um Grau de Vibração (GV) que vai de 0 à 10 em média, os quais determinam respectivamente, o nível de poder nativo em termos de generalidade e força
 
 Tabela dos Graus:
 	0-1		Muito Fraco / Muito Específico
@@ -27,10 +30,10 @@ Tabela dos Graus:
 
 Sempre que adquirir uma nova Cor da Ambição, você também pode escolher por investi-la em uma cor já existênte e ganhar um nível nela, o que se traduz em +5% de Haki nos Usos de Críticos que possuem essa cor [Números romanos são usados para representar o Nível da Ambição]
 
-Ex de diferentes usuários [Cor Nível, Quebro regras sobre... (GT| GV)]:
-       Roxo Escuro I, Propriedades (GT: 9 | GV: 9) 
-       Verde II, A Existência de Plantas Não-Venenosas (GT: 4| GV: 2)
-	   Marrom II, Plantas Não-Venenosas (GT: 7| GV: 2)
+Ex de diferentes usuários:
+       Rosa II [Manifesta o prazer carnal]  (GT: 3| GV: 5)
+       Roxo Escuro I [Quebra as regras das Propriedades]  (GT: 9 | GV: 9) 
+	   Vermelho I [Quebra as regras das Propriedades do Sangue] (GT: 4| GV: 7)
 
 
 Haki e Seirath, diferente de todos outros Ofícios, tem a ativação e mantenimento dos seus Usos de Crítico restringido ao estado descrito a seguir: Sob as Cores da Ambição, você gasta uma Ação de Movimento para tingir sua fenda com uma quantidade quase livre de cores pessoais (Caso opte por trocar as Cores, uma outra Ação de Movimento é necessária. Já caso opte por sair do estado, é Ação Livre)

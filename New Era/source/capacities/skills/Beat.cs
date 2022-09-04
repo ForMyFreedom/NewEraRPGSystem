@@ -29,7 +29,7 @@ public class Beat : Skill
 
         damageMod = (damageMod == 1 / 5f) ? 0 : damageMod;
         surgeMod = (surgeMod == 1 / 5f) ? 0 : surgeMod;
-        surgeMod = surgeMod / 3;
+        surgeMod = surgeMod / 2;
 
         var levelToThisCritic = level + critic;
 
@@ -38,8 +38,12 @@ public class Beat : Skill
         int stressBonus = (int)(levelToThisCritic * stressMod);
 
 
-        main.AddActualSurge(surgeBonus);
-        main.AddExtraDamage(dmgBonus - applyedDmgBonus);
+        if (main.GetActualSurge() + surgeBonus <= main.GetTotalSurge())
+            main.AddActualSurge(surgeBonus);
+        else
+            main.SetActualSurge(main.GetTotalSurge());
+        
+        main.AddExtraDamage(dmgBonus);
         applyedDmgBonus = dmgBonus;
         acummulateStress += stressBonus;
 
@@ -74,7 +78,9 @@ public class Beat : Skill
     }
 
 
-    public override void DoEndMechanicLogic() { }
+    public override void DoEndMechanicLogic() {
+        main.AddExtraDamage(-applyedDmgBonus);
+    }
 
     public override int RequestCriticTest(MainInterface main)
     {
