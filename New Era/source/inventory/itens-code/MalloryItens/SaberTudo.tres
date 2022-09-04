@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/inventory/itens-code/MalloryItens/SaberTudo.cs" type="Script" id=1]
+[ext_resource path="res://assets/itens/saberTudo.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = false
+canLimit = false
+message = "[+5X Críticos Teste de Mente [Limite X: Metade de seu valor de Mente] | -X Vida Permanente]"
+image = ExtResource( 2 )
