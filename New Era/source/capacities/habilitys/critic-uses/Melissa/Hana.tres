@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/Hana.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Hana"
+relatedWork = 14
+text = "[Cor Negra, Quebra as Regras da Existência de Polêms]
+Cria 2N Polens Horrendos [Apenas podem ser usados na Forma Horrenda]. Melissa ficará em estado de Kyo forçado o dia inteiro após consumir um desses polens."
+baseMessage = "Você recebe $ Polens Horrendos
+[Você fica em estado de Kyo esse dia inteiro]"
+cost = -1
