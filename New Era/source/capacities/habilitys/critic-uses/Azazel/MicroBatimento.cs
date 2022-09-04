@@ -11,8 +11,9 @@ public class MicroBatimento : CriticUse
         if (critic < 1 || critic > 5)
             critic = 3;
 
-        int selfDamage = RollCode.GetRandomBasicRoll(2);
-        main.AddActualLife(-selfDamage);
+        int totalLife = main.GetTotalLife();
+        int selfDamage = (int)(-totalLife * 0.15);
+        main.AddActualLife(selfDamage);
 
         main.AddActualSurge(-10);
 

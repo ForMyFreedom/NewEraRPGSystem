@@ -9,7 +9,7 @@ toDispendSurge = false
 canLimit = false
 criticUseName = "Micro-Batimento"
 relatedWork = 4
-text = "Em uma Ação Livre ao custo de 2d6 de Vida, durante esse turno, o efeito da mecânica ‘Batimentos’ é duplicada
+text = "Em uma Ação Livre ao custo de 15% de Vida, durante esse turno, o efeito da mecânica ‘Batimentos’ é duplicada
 Use o valor de crítico aqui para determinar o tipo de fase cardíaca: 
 1 [Frequencia Absoluta]  2 [Meia Frequência]  3 [Fluxo]  4 [Meia pressão]  5 [Pressão Absoluta]
 [-10 Surto de Ação]"
