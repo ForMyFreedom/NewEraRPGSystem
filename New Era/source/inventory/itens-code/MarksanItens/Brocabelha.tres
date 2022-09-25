@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/inventory/itens-code/MarksanItens/Brocabelha.cs" type="Script" id=1]
+[ext_resource path="res://assets/itens/brocabelha.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+message = "Traços
+     - Vontade Casada: Marksan e Melissa tem o potencial de criar Usos de Críticos voltados
+	 exclusivamente para a Brocabelha [Com o diferencial de que, o outro também poderá usá-lo
+	 tendo a broca em mãos! Sem restrições de requisitos]
+     - Rotação Mundana: Para fazer a broca girar, sua vontade e energia será sugada para o objeto...
+	 A cada turno, -8 Surto de Ação. E todos Testes de Vontade são feitos com metade do Atributo.
+União
+     - Mineração Polinária: Estando girando, pode perfurar objetos, recebendo +6 Críticos
+	 (-3 se for de uma Categoria Ermética, Haki/Seirath).
+     - Picada Cibernética: Estando girando, pode ser usada em combate, a qual concede
+	 +20 Dano e 25% de chance de injetar Bee.exe (Um código que rodará dentro da aura do alvo,
+	 atualmente sem nenhuma instrução...)."
+image = ExtResource( 2 )
