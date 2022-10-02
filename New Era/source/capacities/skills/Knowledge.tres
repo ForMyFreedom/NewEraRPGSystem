@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/capacities/skills/Knowledge.cs" type="Script" id=1]
+[ext_resource path="res://source/wayOfCalculeSkill/IgnoreWayOfCalculeSkill.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+skillName = "Conhecimento"
+wayOfLevelCalculeScript = ExtResource( 2 )
+skillDescription = "Conhecimento através dos livros"
+notificationText = "Caçando por conhecimento por algumas horas, você tem $ Informações e $ Revelações"
+mechanicDescription = "Sempre que precisar consultar seu conhecimento a fim de adquirir alguma informação sobre um tópico específico, você deve fazer um Teste de Conhecimento. Para isso, se faz um Teste Regular e compara com a Dificuldade estabelicida pelo Narrador (O qual leva em conta a especificidade [Se é geral ou específico] e raridade [Se é comum ou escuso] que tal tópico possui). Após ter o Resultado, o subtraia com a Dificuldade e decomponha na tabela a seguir:
+    Para cada 10, +1 Informação sobre o Tópico
+	Para cada 30, +1 Revelação sobre o Tópico
+
+Caso não haja mais Informações relevantes, o Narrador pode dar mais detalhes úteis sobre as Informações adquiridas. Por outro lado, se não houver Revelações (Informações poderosas e muito secretas) sobre o Tópico, apenas ignore o bônus."
