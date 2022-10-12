@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://source/capacities/works/Scholar.cs" type="Script" id=1]
+[ext_resource path="res://source/capacities/skills/Exploration.tres" type="Resource" id=2]
+[ext_resource path="res://source/capacities/skills/Knowledge.tres" type="Resource" id=3]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+workName = "Estudioso"
+pathDescription = "A cada 5, +2 Mente | +6 entre Exploração e Conhecimento
+A cada 10, +1 Uso de Crítico
+A cada 20,  +12 entre Exploração e Conhecimento
+A cada 50, Bônus de Maestria"
+skills = [ ExtResource( 2 ), ExtResource( 3 ) ]
+description = "Conhecimento pela Verdade e Realidade"
+maestryDescription = "- Mestre Saqueador +I: +15 Exploração em Testes relacionados a encontrar tesouros e riquezas.
+- Mestre Arqueôlogo +I: +20 Exploração em Testes relacionados a obtenção moral de conhecimento.
+- Mestre Teórico +I: +15 Conhecimento em Testes relacionados a teorias, como história.
+- Mestre Prático +I: +10 Conhecimento em Testes relacionados a informação prática, como métodos."
+enumWork = 7
+workDetail = ""
+distributeSkillText = "Distribua 6 pontos entre Exploração e Conhecimento"
