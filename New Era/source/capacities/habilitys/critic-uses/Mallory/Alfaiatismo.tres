@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Mallory/Alfaiatismo.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Alfaiatismo"
+relatedWork = 7
+text = "Você é capaz de fazer desde pequenos a grandes trabalhos com linha pano... Após despender algum tempo definido pelo mestre (De horas a dias), você consegue criar algum objeto de costura se possuir os materiais necessários (Quanto a trabalhos complexos e/ou que necessitem de algum grau de qualidade, você tem N de Qualidade em tal criação)"
+baseMessage = "Após o definido, você cria um objeto de costura com $ de Qualidade"
+cost = -1
