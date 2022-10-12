@@ -1,9 +1,15 @@
+using Godot;
 
 public class Scholar : Work
 {
+    [Export(PropertyHint.MultilineText)]
+    private string distributeSkillText;
+
+
     public override void DoFirstUpStep(MainInterface gui)
     {
         gui.AddMind(2);
+        gui.CreateNewNotification(distributeSkillText, baseImage);
     }
 
     public override void DoSecondUpStep(MainInterface gui)

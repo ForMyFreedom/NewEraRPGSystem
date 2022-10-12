@@ -20,3 +20,4 @@ maestryDescription = "- Mestre Saqueador +I: +15 Exploração em Testes relacion
 - Mestre Prático +I: +10 Conhecimento em Testes relacionados a informação prática, como métodos."
 enumWork = 7
 workDetail = ""
+distributeSkillText = "Distribua 6 pontos entre Exploração e Conhecimento"
