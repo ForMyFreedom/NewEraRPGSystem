@@ -1,8 +1,6 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://source/capacities/skills/Soh.tres" type="Resource" id=1]
-[ext_resource path="res://source/capacities/skills/Kyo.tres" type="Resource" id=2]
-[ext_resource path="res://source/capacities/skills/Gen.tres" type="Resource" id=3]
+[ext_resource path="res://source/capacities/skills/Primazy.tres" type="Resource" id=1]
 [ext_resource path="res://source/capacities/works/Gensoku.cs" type="Script" id=4]
 
 [resource]
@@ -13,10 +11,13 @@ pathDescription = "A cada 5, +6 entre Nozo/Toiku/Tsukoi
 A cada 10, +1 Uso de Crítico
 A cada 20, +1 Técnica
 A cada 50, Bônus de Maestria"
-skills = [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ) ]
+skills = [ ExtResource( 1 ) ]
 description = "O Eu Transcendental, acima da Vontade Mundial"
 maestryDescription = "@... não feito..."
 enumWork = 15
-workDetail = "A cada 10 pontos de Vontade, você adquire +1 Desejo [Coisas como, 'Descobrir a Árvore Aurea', 'Me tornar o maior espadachim do mundo',...'], a qual lhe permitirá usar seus Fundamentos com o objetivo de alcansar tal Desejo (Apenas causas diretas são válidas...)
-Também é permitido ao se adquirir uma nova Ala, ao invez disso optar por reforçar uma já existênte, ganhando +3 Críticos em todos Fundamentos alinhados a tal Desejo para cada nível acima de I. [Anotado como I -> II -> III -> ...]"
+workDetail = "A cada 10 pontos de Vontade, você adquire +1 Desejo [Coisas como, 'Descobrir a Árvore Aurea', 'Me tornar o maior espadachim do mundo',...'], a qual lhe permitirá usar seus Usos com o objetivo de alcansar tal Desejo (Apenas causas diretas são válidas...)
+Também é permitido ao se adquirir uma nova Ala, ao invez disso optar por reforçar uma já existênte, ganhando +3 Críticos em todos Fundamentos alinhados a tal Desejo para cada nível acima de I. [Anotado como I -> II -> III -> ...]
+
+Os Usos de Gensoku são categorizados de duas formas: Egostimo [Foca-se toda sua Existência sobre esse Desejo, usando-se de Restrições...] e Fundamentos [Aplica-se o Apriori nas situações]
+*Existem categorias ocultas, como a Transfiguração usada por Mallory..."
 firstUpText = "6 Pontos para distruir entre Nozo, Toiku e Tsukoi"
