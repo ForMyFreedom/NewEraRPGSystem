@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/capacities/skills/EgoMundis.cs" type="Script" id=1]
+[ext_resource path="res://source/wayOfCalculeSkill/HalfWayOfCalculeSkill.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+skillName = "Ego Mundis"
+wayOfLevelCalculeScript = ExtResource( 2 )
+skillDescription = "Me tornarei um só com esse Mundo!"
+notificationText = null
+mechanicDescription = null
