@@ -3,12 +3,9 @@ using System;
 
 public class Haki : Work
 {
-    [Export]
-    private string firstUpText;
-
     public override void DoFirstUpStep(MainInterface gui)
     {
-        gui.CreateNewNotification(firstUpText, baseImage);
+        gui.AddDetermination(2);
     }
 
     public override void DoSecondUpStep(MainInterface gui)

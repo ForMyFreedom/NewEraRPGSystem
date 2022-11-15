@@ -9,14 +9,8 @@ toDispendSurge = true
 canLimit = true
 skillName = "Soh"
 skillDescription = "Tenho que fugir, ou nunca mais farei o que quero!"
-notificationText = "Você evade o conflito a fim de prezervar o seu Desejo, recebendo um valor entre $/$/$ no Resultado/Efeito de sua Ação"
-mechanicDescription = "[Soh]
-A fim de se seguir em frente com seu Desejo, você acredita que a melhor maneira de superar a adversidade presente é fugindo/evadindo de alguma forma... Ao ativar essa Skill com uma Ala de Desejo em mente, você recebe entre + 3*Soh / 2*Soh / Soh em algum Resultado ou Efeito cujo o fim deva ser alguma forma de evasão pelo seu Desejo [O meio deve ser DIRETO, nada de cadeias de causalidade!]
-
-
-[Puristas Terrenos: Agorismo]
-Caso seja uma Entidade Terrena e possua tanto a Barreira como a Fenda, sendo usuário do Gensoku, você pode ativar essa Skill livremente para diminuir os Críticos de uma habilidade de Seirath em [Gensoku/3+Soh/3], podendo potencialmente zerar!
-A razão disso se dá na Primazia do Desejo: Ao tentar impor uma regra a uma aura transcendental, o Seirath simplesmente falha por puro desprezo por estar acima de qualquer norma, como um ego que precede a moral
-"
-counterMoralText = "Ao ser alvo de uma Habilidade de Seirath, você diminui $ Críticos dela [Podendo potencialmente zerar!]"
+notificationText = "Ao ser alvo de uma Habilidade Ideológica, você diminui $ Críticos dela [Podendo potencialmente zerar!]"
+mechanicDescription = "Caso seja uma Entidade Terrena e possua tanto a Barreira como a Fenda, sendo usuário do Gensoku, você pode ativar essa Skill livremente para diminuir os Críticos de uma habilidade Ideológica [Haki ou Seirath] em [Gensoku/2.5], podendo potencialmente zerar!
+A razão disso se dá na Primazia do Desejo: Ao tentar impor uma regra a uma aura transcendental, ao tentar quebrar uma regra de uma aura transcedental, os poderes ideológicos simplesmente falham por estar acima de qualquer regra, como um ego que precede a moral e a realidade"
+counterMoralText = "Ao ser alvo de uma Habilidade Ideológica, você diminui $ Críticos dela [Podendo potencialmente zerar!]"
 counterMoralName = "Agorismo"

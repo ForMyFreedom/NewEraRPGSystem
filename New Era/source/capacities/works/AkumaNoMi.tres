@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://source/capacities/works/AkumaNoMi.cs" type="Script" id=1]
+[ext_resource path="res://source/capacities/skills/EgoMundis.tres" type="Resource" id=2]
 
 [resource]
 resource_local_to_scene = true
@@ -10,7 +11,7 @@ pathDescription = "A cada 5, +3 Atributo relacionado
 A cada 10, +1 Uso de Crítico
 A cada 20, +1 Técnica
 A cada 50, Bônus de Maestria"
-skills = [  ]
+skills = [ ExtResource( 2 ) ]
 description = "A força misteriosa, de um fruto qualquer..."
 maestryDescription = "... Mistério ..."
 enumWork = 12

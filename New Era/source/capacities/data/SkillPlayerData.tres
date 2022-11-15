@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
-workEnum = 0
+workEnum = 13
 level = 0
+skillIsDisabled = false

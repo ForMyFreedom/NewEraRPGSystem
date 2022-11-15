@@ -75,18 +75,21 @@ public class WorkTree : Tree
 
         for (int j = 0; j < skillList.Length; j++)
         {
-            if (j == 0)
-            {
-                itens[itemIndex] = CreateItem(itens[itemIndex - 1]);
-                haveAddSkill = true;
-            }
+            var playerData = (SkillPlayerData) skillList[j].GetVolatilePlayerData();
 
-            itens[itemIndex].SetText(j, skillList[j].GetSkillName() + " " + skillList[j].GetLevel());
-            itens[itemIndex].SetMetadata(j, skillList[j]);
+            if (!playerData.IsSkillDisabled()){
+                if (j == 0)
+                {
+                    itens[itemIndex] = CreateItem(itens[itemIndex - 1]);
+                    haveAddSkill = true;
+                }
+
+                itens[itemIndex].SetText(j, skillList[j].GetSkillName() + " " + skillList[j].GetLevel());
+                itens[itemIndex].SetMetadata(j, skillList[j]);
+            }
         }
 
-        if (haveAddSkill) return true;
-        else return false;
+        return haveAddSkill;
     }
 
 
@@ -392,7 +395,7 @@ public class WorkTree : Tree
         foreach(Work w in works)
         {
             c++;
-            if (w.GetSkillList().Length > 0) c++;
+            if (w.GetSkillList().Length > 0 && !AllSkillsFromWorkAreDisabled(w)) c++;
         }
         return c;
     }
@@ -434,5 +437,16 @@ public class WorkTree : Tree
                 }
             }
         }
+    }
+
+    private bool AllSkillsFromWorkAreDisabled(Work w)
+    {
+        foreach(Skill skill in w.GetSkillList())
+        {
+            var playerData = (SkillPlayerData)skill.GetVolatilePlayerData();
+            if (!playerData.IsSkillDisabled()) return false;
+        }
+
+        return true;
     }
 }

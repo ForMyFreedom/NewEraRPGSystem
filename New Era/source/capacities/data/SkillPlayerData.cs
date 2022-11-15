@@ -8,6 +8,8 @@ public class SkillPlayerData : Resource, IVolatilePlayerData
     private MyEnum.Work workEnum;
     [Export]
     private int level;
+    [Export]
+    private bool skillIsDisabled = false;
 
     public MyEnum.Work GetWorkEnum()
     {
@@ -32,5 +34,15 @@ public class SkillPlayerData : Resource, IVolatilePlayerData
     public void SetTexture(Texture texture)
     {
         skillTexture = texture;
+    }
+
+    public bool IsSkillDisabled()
+    {
+        return skillIsDisabled;
+    }
+
+    public void SetSkillDisabled(bool disabled)
+    {
+        skillIsDisabled = disabled;
     }
 }
