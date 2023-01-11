@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/traces/traces-mechanics/Marksan/SacreMechanic.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+baseMessage = "Esperança: $
+Distorção Egótica: -$ Querer
+*2 Esperança -> +1 Críticos todos os Testes | -1 Críticos em Testes de Querer contra ações de caráter suicida (Pedido pelo mestre)
+*Caso a Esperança seja igual ou maior que seu valor de Querer, você entra em um estado vegetativo
+"
