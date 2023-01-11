@@ -8,6 +8,8 @@ public abstract class Technique : NotificationConsumer
     protected String techniqueName;
     [Export]
     protected MyEnum.Work[] relatedWorks;
+    [Export(PropertyHint.MultilineText)]
+    protected String techniqueConcept;
     [Export]
     protected CriticUse[] criticUses;
     [Export]
@@ -37,8 +39,17 @@ public abstract class Technique : NotificationConsumer
 
     public void ExecuteAllCritics(MainInterface main)
     {
+        int actualCriticPower;
+
         for (int i = 0; i < criticUses.Length; i++)
-            criticUses[i].DoMechanic(main, actionIndexOfCritics[i], powerOfCritics[i]);
+        {
+            actualCriticPower = powerOfCritics[i];
+
+            if(actualCriticPower == -1)
+                actualCriticPower = criticUses[i].RequestCriticTest(main);
+
+            criticUses[i].DoMechanic(main, actionIndexOfCritics[i], actualCriticPower);
+        }
     }
 
     public void DoAttackRollNotification(MainInterface main, int critic)
@@ -60,8 +71,6 @@ public abstract class Technique : NotificationConsumer
         int sumValue = CalculateSumValue(main);
         return RollCode.GetRandomAdvancedRoll(rollValue, sumValue, modValue);
     }
-
-
 
     private int CalculateRollValue()
     {
@@ -127,6 +136,11 @@ public abstract class Technique : NotificationConsumer
     public String GetTechniqueName()
     {
         return techniqueName;
+    }
+
+    public String GetTechniqueConcept()
+    {
+        return techniqueConcept;
     }
 
     public MyEnum.Work[] GetRelatedWorks()

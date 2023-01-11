@@ -2,7 +2,7 @@
 
 [ext_resource path="res://source/capacities/habilitys/techniques/Technique.cs" type="Script" id=1]
 [ext_resource path="res://source/capacities/habilitys/critic-uses/Mallory/RomperCarotida.tres" type="Resource" id=2]
-[ext_resource path="res://source/capacities/habilitys/critic-uses/Geral/PrecisaoCritica.tres" type="Resource" id=3]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Mallory/Patocidium.tres" type="Resource" id=3]
 
 [resource]
 resource_local_to_scene = true
@@ -12,7 +12,8 @@ toDispendSurge = true
 canLimit = true
 techniqueName = "Carocídium"
 relatedWorks = [ 1 ]
+techniqueConcept = "[PRECISA CRIAR UM BÔNUS NARRATIVO]"
 criticUses = [ ExtResource( 2 ), ExtResource( 3 ) ]
-powerOfCritics = PoolIntArray( 15, 7 )
+powerOfCritics = PoolIntArray( -1, -1 )
 actionIndexOfCritics = PoolIntArray( 0, 0 )
 modValue = 0

@@ -10,6 +10,7 @@ toDispendSurge = false
 canLimit = true
 techniqueName = "Ataque Básico"
 relatedWorks = [ 12 ]
+techniqueConcept = null
 criticUses = [  ]
 powerOfCritics = PoolIntArray(  )
 actionIndexOfCritics = PoolIntArray(  )

@@ -11,6 +11,7 @@ toDispendSurge = true
 canLimit = true
 techniqueName = "Violência"
 relatedWorks = [ 4 ]
+techniqueConcept = null
 criticUses = [  ]
 powerOfCritics = PoolIntArray(  )
 actionIndexOfCritics = PoolIntArray(  )
