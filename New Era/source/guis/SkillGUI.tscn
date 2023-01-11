@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://source/guis/SkillGUI.cs" type="Script" id=1]
 [ext_resource path="res://assets/calibrib.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://source/guis/MechanicButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/BaseMinorFont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://source/RollBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/fonts/BaseMediumFont.tres" type="DynamicFont" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -125,7 +126,7 @@ rect_min_size = Vector2( 0, 200 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color_readonly = Color( 1, 1, 1, 1 )
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
 readonly = true
 shortcut_keys_enabled = false
 virtual_keyboard_enabled = false

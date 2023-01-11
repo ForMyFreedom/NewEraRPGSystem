@@ -46,6 +46,7 @@ public class TechniquesTree : Tree
         itens[itemIndex] = CreateItem(root);
         itens[itemIndex].SetText(0, GetTechniqueText(technique));
         itens[itemIndex].SetMetadata(0, technique);
+        itens[itemIndex].SetTooltip(0, technique.GetTechniqueConcept());
     }
 
     private bool AddTechniqueDescription(int itemIndex, Technique technique)
@@ -148,12 +149,18 @@ public class TechniquesTree : Tree
     {
         string text = "";
         CriticUse[] uses = technique.GetCriticUses();
+
         for(int i = 0; i < uses.Length; i++)
         {
-            text += $"{uses[i].GetUseName()} [{technique.GetPowerOfCritics()[i]}]";
+            text += uses[i].GetUseName();
+
+            if (technique.GetPowerOfCritics()[i] != -1)
+                text += $" [{ technique.GetPowerOfCritics()[i]}]";
+
             if (i != uses.Length - 1)
                 text += " - ";
         }
+
         return text;
     }
 
