@@ -1,17 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets/BaseMajorFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://source/player-selection/PlayerSelectButton.cs" type="Script" id=2]
 
 [node name="PlayerSelectButton" type="Button"]
-margin_left = 99.0
-margin_top = 192.0
-margin_right = 299.0
-margin_bottom = 242.0
-rect_min_size = Vector2( 200, 50 )
-size_flags_horizontal = 6
-size_flags_vertical = 6
-custom_fonts/font = ExtResource( 1 )
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 77.0
+margin_bottom = 70.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+flat = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false

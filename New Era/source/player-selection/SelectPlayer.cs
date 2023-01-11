@@ -4,14 +4,12 @@ using System;
 
 public class SelectPlayer : Control
 {
-    [Export]
-    private NodePath playerBoxContainerPath;
     [Export(PropertyHint.File)]
     private string playerFolderPath;
     [Export]
-    private PackedScene playerButtonPacked;
-    [Export]
     private PackedScene mainInterfacePacked;
+    [Export]
+    private NodePath playerButtonContainerPath;
     [Export]
     private NodePath animationPlayerPath;
     [Export]
@@ -48,9 +46,9 @@ public class SelectPlayer : Control
 
     private void LoadPlayersButtons()
     {
-        foreach(var player in playersScenes)
+        foreach(Node btn in GetNode(playerButtonContainerPath).GetChildren())
         {
-            GetNode(playerBoxContainerPath).AddChild(CreateButton(player));
+            btn.Connect("select_player", this, "_OnSelectPlayer");
         }
     }
 
@@ -58,16 +56,6 @@ public class SelectPlayer : Control
     {
         GetNode(openSaveFolderButtonPath).Connect("button_up", this, "_OnOpenSaveFolder");
     }
-
-
-    private Button CreateButton(Player player)
-    {
-        Button btn = playerButtonPacked.Instance<Button>();
-        btn.Text = player.Name;
-        btn.Connect("select_player", this, "_OnSelectPlayer");
-        return btn;
-    }
-
 
     private async void _OnSelectPlayer(int index)
     {

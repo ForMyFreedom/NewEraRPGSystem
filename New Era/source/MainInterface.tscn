@@ -322,7 +322,7 @@ columns = 2
 
 [node name="ReloadSave" type="TextureButton" parent="VBoxContainer/Info/HBoxContainer/HBoxContainer/VBoxContainer"]
 margin_right = 15.0
-margin_bottom = 18.0
+margin_bottom = 19.0
 rect_pivot_offset = Vector2( 7, 9 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -341,14 +341,14 @@ anims/activate = SubResource( 1 )
 [node name="Control2" type="Control" parent="VBoxContainer/Info/HBoxContainer/HBoxContainer/VBoxContainer"]
 margin_left = 19.0
 margin_right = 34.0
-margin_bottom = 18.0
+margin_bottom = 19.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VersionSave" type="TextureButton" parent="VBoxContainer/Info/HBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 22.0
+margin_top = 23.0
 margin_right = 15.0
-margin_bottom = 40.0
+margin_bottom = 41.0
 rect_pivot_offset = Vector2( 11, 11 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
