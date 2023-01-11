@@ -4,11 +4,6 @@ using System;
 
 public class Knowledge : Skill
 {
-    public override Array<string> GetTextOfMechanicButtons()
-    {
-        return new Array<string>() { "Buscar Conhecimento" };
-    }
-
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         int result = main.RequestSkillRoll(skillName);

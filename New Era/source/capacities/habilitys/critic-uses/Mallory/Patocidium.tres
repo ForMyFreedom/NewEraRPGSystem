@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Mallory/Patocidium.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Patocidium"
+relatedWork = 1
+text = "Você realiza uma tentativa de assasinato com o máximo de suas emoções pessoais. Realize um Teste de Querer e registre os X Críticos... Você causará +3X Dano, porem, você terá -3X em todos seus Testes Mentais até descansar [Acumulativo]."
+baseMessage = "Você assasina com o coração
++$ Dano nesse golpe
+-$ em todos Testes Mentais até descansar [Acumulativo]"
+cost = 30

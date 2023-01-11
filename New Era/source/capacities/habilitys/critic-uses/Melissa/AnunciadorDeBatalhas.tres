@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/AnunciadorDeBatalhas.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Anunciador De Batalhas"
+relatedWork = 11
+text = "Sua oratória é capaz de refrescar as tropas para uma nova batalha... Caso consiga dizer algo considerado inspirador pelo mestre, o Surto de ção Atual de Todos do Bando aumenta em 2N"
+baseMessage = "Caso consiga dizer algo considerado inspirador pelo mestre, o Surto de ção Atual de Todos do Bando aumenta em $"
+cost = -1

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/capacities/skills/Craftsman.cs" type="Script" id=1]
+[ext_resource path="res://source/wayOfCalculeSkill/IgnoreWayOfCalculeSkill.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+skillName = "Engenharia"
+wayOfLevelCalculeScript = ExtResource( 2 )
+skillDescription = "Mecanismos e mais mecanismos"
+notificationText = ""
+mechanicDescription = "Sempre que precisar criar algum objeto, você deve usar Engenharia para isso. 
+De início, o Narrador determina a Dificuldade de execussão do projeto [O qual leva em conta a complexidade mecânica e dimensões], e se caso ela for duas vezes maior que o seu valor em Engenharia, você é incapaz de criá-la com suas capaciades atuais. Do contrário, você pode prosseguir caso possua as Ferramentas e Ingredientes necessários (Determinados pelo Narrador).
+Com tudo resolvido, para criar o objeto, basta despender uma quantidade de Dias igual a um quarto da Dificuldade. Devendo a cada dia, rolar um Teste de Engenharia para avaliar seu progresso:
+
+Tabela de Progressão
+  Fracasso ↓ metade    +2 Dia
+  Fracasso ↑ metade     Nada acontece
+  Sucesso                      Nada acontece
+  Sucesso Dobrado      -2 Dia
+  Suceso Triplicado     -3 Dias
+  ...                                ...
+Com o tempo passado, você constrói o objeto [O Narrador determina suas regras e valores].
+
+Além disso, sempre que precisar reparar algum objeto, você pode usar Engenharia para isso.
+Semelhante ao primeiro uso de Engenharia, o Narrador determina uma Dificuldade de concerto (Relativamente menor a de criação do próprio objeto. E diretamente proporcional a dificuldade de reparar os danos sofridos). Após isso, segue-se as memas regras de dias e Tabela de Progressão (Com a diferença porem, que a quantidade de Ingredientes necessários é bem menor)."
+mechanicOptions = [ "Criar", "Reparar" ]
+createTextMessage = "Criação Diária: $"
+refactorTextMessage = "Reparamento Diário: $"

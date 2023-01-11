@@ -7,7 +7,7 @@
 resource_local_to_scene = true
 script = ExtResource( 1 )
 workName = "Haki"
-pathDescription = "A cada 5, +2 pontos em Desejo
+pathDescription = "A cada 5, +2 pontos em Querer
 A cada 10, +1 Uso de Crítico E +1 Cor
 A cada 20, +1 Técnica
 A cada 50, Bônus de Maestria"
@@ -15,13 +15,15 @@ skills = [ ExtResource( 2 ) ]
 description = "Minha Ambição está acima dessas regras malditas!"
 maestryDescription = "... Mistérios..."
 enumWork = 14
-workDetail = "Um Usuário de Haki, após expandir sua fenda, se vê livre com a capacidade de pressioná-la para ativamente tingir a Cor de sua Aura além dos limites da Forma...
-Você possui uma quantidade de Cores da Ambição igual a [Haki/10  +1], as quais representam uma faceta da realidade a qual tens capacidade de quebrá-la [Abolição|Quebra as regras ...], ou de sentimentos que anseia por manifestar [Manifestação|Manifesta o sentimento...]
+workDetail = "Um Usuário de Haki, após expandir sua fenda, se vê livre com a capacidade de pressioná-la para ativamente tingir a Cor de sua Aura...
+Você possui uma quantidade de Cores da Ambição igual a [Haki/10  +1], as quais representam uma faceta da realidade a qual tens o desejo / necessidade de quebrá-la [Abolição|Quebra as regras ...], ou de sentimentos que anseia por manifestar [Manifestação|Manifesta o sentimento...]
+
 [ Ex:
     Roxo Escuro [Quebra as regras das Propriedades]
 	Rosa  [Manifesta o prazer carnal]
 ]
-Todas as Cores possuem um Grau de Tonalidade (GT) e um Grau de Vibração (GV) que vai de 0 à 10 em média, os quais determinam respectivamente, o nível de poder nativo em termos de generalidade e força
+
+Todas as Cores possuem um Grau de Tonalidade (GT) e um Grau de Vibração (GV) que vai de 0 à 10 em média, os quais determinam respectivamente, o nível de poder nativo em termos de generalidade, e em termos de força
 
 Tabela dos Graus:
 	0-1		Muito Fraco / Muito Específico
@@ -39,13 +41,11 @@ Ex de diferentes usuários:
 	   Vermelho I [Quebra as regras das Propriedades do Sangue] (GT: 4| GV: 7)
 
 
-Haki e Seirath, diferente de todos outros Ofícios, tem a ativação e mantenimento dos seus Usos de Crítico restringido ao estado descrito a seguir: Sob as Cores da Ambição, você gasta uma Ação de Movimento para tingir sua fenda com uma quantidade quase livre de cores pessoais (Caso opte por trocar as Cores, uma outra Ação de Movimento é necessária. Já caso opte por sair do estado, é Ação Livre)
+Haki, diferente de todos outros Ofícios, tem a ativação e mantenimento dos seus Usos de Crítico restringido ao estado descrito a seguir: Sob as Cores da Ambição, você gasta uma Ação de Movimento para tingir sua fenda com uma quantidade de cores pessoais (Caso opte por trocar as Cores, uma outra Ação de Movimento é necessária. Já caso opte por sair do estado, é Ação Livre)
 Com estado ativo, você pode:
     - Usar os Usos de Crítico ligados as Cores ativas no momento [Para Usos que contenham múltiplas cores em sua composição, todas as Cores devem estar ativadas conjuntamente para poder usá-la]. Porem, você é limitado a possuir uma combinação de cores na qual o somatório de todos os seus Graus de Tonalidade, não supere metade de seu nível de Haki
 	- Permite usar seu Haki para se defender de Habilidades de Seirath [Em duelos diretos e indiretos de Ordem vs Revolta]
 
 
 Mas, ao manter sua Ambição radiando, você tem a seguinte consequência:
-    - Devido ao que se conhece como 'Chance Ermética', para cada turno (Ou cinco segundos) que você mantêm o seu Haki ativo, você aumenta em +[Somatório do G.V. de todas cores ativas]% a probabilidade de perder 1 ponto de Vontade no momento em que descansar [Mas antes de rolar 1d100 em seu descanso, você deve subtrair seu nível de Haki na porcentagem, para assim almejar um resultado menor no d100 que o valor final!]  [Avisando que isso pode se converter em 2|3 pontos de Vontade caso a Chance Ermética Final chegue a valores como 103%|201%]
-	
-*A etimologia de Chance Ermética se dá devido ao fato de que tanto as capacidades de Haki e Seirath, se originaram no que se conhece por Ermos Celestiais e Profundos, respectivamente..."
+   -Sempre que tomar uma Ação que não seja de sua ideologia (Motivada por razões pessoais / pela vontade das outras pessoas) enquanto esta com esse poder ativado, você deve rolar um Teste de Querer de dificuldade variada com a situação, podendo potencialmente não se importar com essa questão se falhar no teste..."

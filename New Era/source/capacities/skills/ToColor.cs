@@ -4,11 +4,6 @@ using System;
 
 public class ToColor : Skill
 {
-    public override Array<string> GetTextOfMechanicButtons()
-    {
-        return new Array<string>() { "Colorir a Realidade" };
-    }
-
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         return new MessageNotificationData(notificationText, new object[] { }, effectImage);

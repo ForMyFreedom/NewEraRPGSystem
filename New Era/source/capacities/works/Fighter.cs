@@ -28,6 +28,6 @@ public class Fighter : Work
     {
         int str = gui.GetTotalAtributeValue(MyEnum.Atribute.STR);
         int agi = gui.GetTotalAtributeValue(MyEnum.Atribute.AGI);
-        return (str + agi) / 2;
+        return (str + agi) / 2 + weaponDamage;
     }
 }

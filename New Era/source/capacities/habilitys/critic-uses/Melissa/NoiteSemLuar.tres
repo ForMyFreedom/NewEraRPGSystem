@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/NoiteSemLuar.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Noite sem Luar"
+relatedWork = 14
+text = "Faz com que Melissa e seu adversario entrem em um breu completo por [Haki/10] turnos. Durante esse efeito, Melissa só conseguira ver e ouvir o inimigo, assim como o inimigo só conseguirá ver e ouvir Melissa... Mas, ele vê algo desesperador nela, como uma projeção interior. Devendo no início de seu turno realizar Testes de Querer disputado com ela, e se falhar, ganhará [Haki/10] Pontos de Desespeiro"
+baseMessage = "Noite sem Luar: $ Turnos [Alvos apenas se enchergam a si mesmos, na escuridão do desespeiro]
+Alvo no inicio de cada turno tem que fazer um Testes de Querer disputado com você
+Se ele falhar, ganhará $ Pontos de Desespeiro"
+cost = 40

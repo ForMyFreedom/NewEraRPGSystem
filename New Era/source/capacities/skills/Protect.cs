@@ -6,16 +6,11 @@ public class Protect : Skill
 {
     int guard;
 
-    public override Array<string> GetTextOfMechanicButtons()
-    {
-        return new Array<string>() { "Proteger" };
-    }
-
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         guard = (int)(4f/3f*level) + critic;
         main.AddGuard(guard);
-
+            
         return new MessageNotificationData(
             notificationText, new object[] { guard }, effectImage
         );

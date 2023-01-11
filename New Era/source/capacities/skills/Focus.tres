@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/capacities/skills/Focus.cs" type="Script" id=1]
+[ext_resource path="res://source/wayOfCalculeSkill/HalfWayOfCalculeSkill.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+skillName = "Foco"
+wayOfLevelCalculeScript = ExtResource( 2 )
+skillDescription = "Foco! Você não tem infinitas balas!"
+notificationText = null
+mechanicDescription = "Você pode gastar sua Ação Padrão para escolher um alvo para ser o seu Foco. O que lhe permite sempre antes de disparar, escolher
+um dos dois bônus:
+    Precisão Agressiva: Seu valor de Críticos recebidos aumenta pela metade (Caso adquira 4 Críticos em uma rolagem, ela se torna 6).
+	Precisão Certeira: Você recebe um bônus de + metade de seu nível de Atirador (Arr.↓) em seus ataques básicos.
+
+[Alcansar Maestrias de Atirador aumenta a quantidade de Alvos de Foco que pode ter de uma vez. Podendo gastar uma Ação Padrão para colocar dois alvos em Foco]."
+mechanicOptions = [ "Precisão Agressiva", "Precisão Certeira" ]
+criticPrecisionText = "Sobre esse alvo, seus Críticos são aumentados pela metade! [Isso não afeta sua chance de acerto!]"
+certainPrecisionText = "Sobre esse alvo, todos seus ataques são feitos com +$ em seus Ataques Básicos [Isso não afeta seus ganhos de críticos!]"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/MaeDaNatureza.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Mãe da Natureza"
+relatedWork = 14
+text = "[Cor Preta]
+Ao Quebrar as Regras da Reação em Cadeia, você é capaz de amenizar efeitos negativos de origem natural (Cegueira, Paralisia, Veneno, Queimadura, etc) em -N Dano / -2N Redução de Testes"
+baseMessage = "Caso esteja sobre alvo de um efeito negativo de origem natural, escolha entre:
+Receber -$ Dano dele
+Evitar perder $ em Testes que ele afete"
+cost = -1

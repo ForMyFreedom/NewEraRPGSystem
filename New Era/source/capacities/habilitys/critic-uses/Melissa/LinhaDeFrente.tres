@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Melissa/LinhaDeFrente.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Linha de Frente"
+relatedWork = 4
+text = "Proteger desde o princípio do combate. Caso use sua mecânica Proteger em um alvo no primeiro turno, você é capaz de conceder a ele N de Guarda até o final do combate (Apenas pode ser usado em um alvo por combate, dado que narrativamente, Melissa o protegerá indiretamente)."
+baseMessage = "Caso use sua mecânica Proteger em um alvo no primeiro turno, um alvo de sua escolha recebe +$ Guarda até o final do combate."
+cost = -1

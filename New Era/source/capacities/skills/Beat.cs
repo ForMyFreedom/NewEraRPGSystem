@@ -11,12 +11,6 @@ public class Beat : Skill
 
     protected static readonly string stressKey = "stress";
 
-
-    public override Array<string> GetTextOfMechanicButtons()
-    {
-        return new Array<string>() { "Frequencia Absoluta", "Meia Frequencia", "Fluxo", "Meia Pressao", "Pressao Absoluta" };
-    }
-
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         holdActionIndex = actionIndex;

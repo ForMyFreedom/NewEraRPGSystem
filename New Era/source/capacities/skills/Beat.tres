@@ -14,3 +14,4 @@ skillDescription = "Ordenar minha vontade com as batidas de meu sangue"
 notificationText = "Batimento: Você recebe +$ Dano e +$ Regeneração de Surto de Ação, ao custo de +$ de Stress [A sua próxima Queda valerá por $ Queda]"
 mechanicDescription = "Você possui um grupo de Fases Cardiacas que pode selecionar ou não no início dos seus Turnos. Essencialmente é tudo sobre a Pressão [Bônus de Dano] e a Frequência [Ganho de Surto] de seu Sangue.
 Cada fase tem um custo em Stress Cardiaco atrelado ao quão radical é o foco em um dos Fatores. Para cada valor maior que um na divisão de sua Força pelo seu Stress, você ganha um Nódo de Stress [Na próxima vez que Cair, você receberá +Nódos quedas a mais]"
+mechanicOptions = [ "Frequência Absoluta", "Meia Frequencia", "Fluxo", "Meia Pressão", "Pressão Absoluta" ]

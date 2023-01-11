@@ -48,6 +48,10 @@ Esc={
  ]
 }
 
+[mono]
+
+project/assembly_name="New Era"
+
 [physics]
 
 common/enable_pause_aware_picking=true

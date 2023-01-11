@@ -10,6 +10,7 @@ toDispendSurge = false
 canLimit = true
 techniqueName = "Porrada Ciborgue"
 relatedWorks = [ 12, 3 ]
+techniqueConcept = null
 criticUses = [  ]
 powerOfCritics = PoolIntArray(  )
 actionIndexOfCritics = PoolIntArray(  )
