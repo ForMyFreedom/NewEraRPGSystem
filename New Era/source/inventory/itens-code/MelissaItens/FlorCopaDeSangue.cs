@@ -7,7 +7,7 @@ public class FlorCopaDeSangue : ItemCode
     {
         int health = (int)(main.GetTotalLife() * 0.2f);
 
-        main.AddActualLife(health);
+        main.AddActualLife(health, true);
 
         item.RemoveQuantity();
         main.UpdateInventory();

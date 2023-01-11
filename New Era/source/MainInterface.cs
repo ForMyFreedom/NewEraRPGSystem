@@ -370,9 +370,13 @@ public class MainInterface : Control, CharacterDataBank
         GetFactorActualSpin(lifeFactorPath).Value = value;
     }
 
-    public void AddActualLife(int sum)
+    public void AddActualLife(int sum, bool limitedByTotal = false)
     {
-        GetFactorActualSpin(lifeFactorPath).Value += sum;
+        if (limitedByTotal && IsOverHeal(sum)) {
+            GetFactorActualSpin(lifeFactorPath).Value = GetTotalLife();
+        } else {
+            GetFactorActualSpin(lifeFactorPath).Value += sum;
+        }
     }
 
 
@@ -1190,5 +1194,9 @@ public class MainInterface : Control, CharacterDataBank
         }
     }
 
+    private bool IsOverHeal(int sum)
+    {
+        return GetActualLife() + sum > GetTotalLife();
+    }
 }
 
