@@ -4,10 +4,12 @@ using System;
 
 public class AquecimentoDeBatalha : CriticUse
 {
+    private int bonus;
+
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        int bonus = main.GetWorkNodeByEnum(relatedWork).GetLevel()/3;
-        main.AddActualSurge(-8);
+        bonus = main.GetWorkNodeByEnum(relatedWork).GetLevel()/2;
+        main.AddExtraDamage(bonus);
 
         return new MessageNotificationData(
             baseMessage, new object[] { bonus }, criticImage
@@ -16,6 +18,7 @@ public class AquecimentoDeBatalha : CriticUse
 
     public override void DoEndMechanicLogic()
     {
+        main.AddExtraDamage(-bonus);
     }
 
     public override int RequestCriticTest(MainInterface main)

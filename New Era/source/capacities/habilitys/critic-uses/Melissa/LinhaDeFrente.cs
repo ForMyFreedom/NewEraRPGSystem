@@ -2,12 +2,12 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public class Isshoni : CriticUse
+public class LinhaDeFrente : CriticUse
 {
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         return new MessageNotificationData(
-            baseMessage, null, criticImage
+            baseMessage, new object[] { critic }, criticImage
         );
     }
 
@@ -17,6 +17,6 @@ public class Isshoni : CriticUse
 
     public override int RequestCriticTest(MainInterface main)
     {
-        return cost;
+        return main.RequestWorkRoll(relatedWork) / 10;
     }
 }

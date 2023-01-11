@@ -9,34 +9,13 @@ toDispendSurge = true
 canLimit = false
 criticUseName = "Céu Negro"
 relatedWork = 14
-text = "Sendo detentor da não cor-negra, Koshukei, a cor mais fraca, você pode manifestar o Céu Negro contra usuários de Haki: Sempre for alvo de uma habilidade de Haki, você pode absorver as Cores do alvo como um buraco negro de cores que és... Você diminui -N/3 Críticos do Uso alvo e adquire essa quantidade em Pontos de Absorção, os quais devem ser imediatamente gastos com a aprovação do mestre [O ponto aqui, é se a habilidade original reflete um um pouco o bônus absorvido, escrito no próprio bônus como verá a seguir]: Para cada 1 Ponto de Absoção,
-	  + 2 Vida/Surto de Ação [Habilidades que deixariam o usuário mais vigoroso]
-	  + 3 Atributo/Ofício  [Habilidades que dariam um certo bonus ao usuário]
-	
-	  + 5 Defesa [Habilidades que deixariam o usuário mais defensivo]
-	  + 1 Guarda [Habilidades que deixariam o usuário mais defensivo]
-	
-	  + 5 Precisão [Habilidades que deixariam o usuário mais ofensivo]
-	  + 1 Dano [Habilidades que deixariam o usuário mais ofensivo]
-	
-	  + outro...?
+text = "[USO DE CRÍTICO TALENTOSO: KOSHUKEI]
+Sendo detentor da não-cor negra, Koshukei, você é capaz de revestir a sua Ambição com a densidade do seu Desespeiro: Sempre que usar um Uso de Crítico de Haki, você pode declará-lo como Desesperado, e aplicar um dos efeitos da seguinte lista:
+        - [Desespeiro Bruto]: Faça um Teste de Querer disputado com um alvo e anote os Críticos. Se você vencer, ele será consumido pelo desespeiro e terá -N Críticos em todas ações (Seu instinto base será fugir). O efeito acaba ou por sua vontade / ele conseguir vencê-lo nesse teste / o alvo sair de seu campo de visão.
+		- [Desespeiro Melâncólico]: Caso a Habilidade de Haki tenha sido em um Inimigo, você é capaz de colocá-lo em um poderoso estado de desespeiro em sua vida, aumentando a Melâncolia temporariamente... Role um Teste de Querer, esse Inimigo não poderá tomar ações em direção aos seus Quereres (Desejos, Vontades, Juizos e Ambições) enquanto não vencer o seu teste de vontade / sair do seu campo de visão.
+		- [Desespeiro Determinado]: Caso a Habilidade de Haki tenha sido em um Aliado, você é capaz de colocá-lo em um poderoso estado de desespeiro por sua vida, aumentando sua Determinação temporiariamente... Role um Teste de Querer, esse Aliado terá +N em todos seus Testes que envolvam movimentos básicos de sobrevivência, assim como ataques e técnicas
 
-[Todos os Bônus duram até o final do combate, sendo acumulativos...]
-[Em caso de Habilidades que tinham o intuito de ajudá-lo, o Céu Negro não surtirá efeitos por razões óbvias]
-[Por ser um Uso de Crítico reativo, você perderá seu próximo turno ao utilizá-lo]
-
-'Minha cor pode ser mesmo a fraca, mas a escuridão dela pode manchar a sua também!'"
-baseMessage = "Você diminui os Críticos da habilidade de Haki alvo em $
-Para cada 1 Ponto de Absorção equivalente:
-	  + 2 Vida/Surto de Ação [Habilidades que deixariam o usuário mais vigoroso]
-	  + 3 Atributo/Ofício  [Habilidades que dariam um certo bonus ao usuário]
-	
-	  + 5 Defesa [Habilidades que deixariam o usuário mais defensivo]
-	  + 1 Guarda [Habilidades que deixariam o usuário mais defensivo]
-	
-	  + 5 Precisão [Habilidades que deixariam o usuário mais ofensivo]
-	  + 1 Dano [Habilidades que deixariam o usuário mais ofensivo]
-	
-	  + outro...?"
-cost = -1
-endMessage = "Não esqueça de tirar os bônus da absorção no final do combate!"
+Porem, sempre que o fizer, você não poderá usar essa Habilidade até descansar."
+baseMessage = "Escolha um dos efeitos de desespeiro
+Teste de Querer rolado: $"
+cost = 100

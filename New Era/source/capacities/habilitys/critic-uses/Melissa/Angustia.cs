@@ -2,14 +2,15 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public class FerraoPassivo : CriticUse
+public class Angustia : CriticUse
 {
+
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        int dmgBonus = main.GetActualAgiDefense() / 8;
+        int test = main.RequestWorkRoll(relatedWork);
 
         return new MessageNotificationData(
-            baseMessage, new object[] {dmgBonus}, criticImage
+            baseMessage, new object[] { test }, criticImage
         );
     }
 
@@ -19,6 +20,6 @@ public class FerraoPassivo : CriticUse
 
     public override int RequestCriticTest(MainInterface main)
     {
-        return cost;
+        return main.RequestWorkRoll(relatedWork)/10;
     }
 }

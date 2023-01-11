@@ -2,12 +2,12 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public class Firmamento : CriticUse
+public class MaeDaNatureza : CriticUse
 {
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         return new MessageNotificationData(
-            baseMessage, new object[] {4*critic,3*critic}, criticImage
+            baseMessage, new object[]{ critic, 2*critic }, criticImage
         );
     }
 
@@ -15,8 +15,9 @@ public class Firmamento : CriticUse
     {
     }
 
+
     public override int RequestCriticTest(MainInterface main)
     {
-        return main.RequestWorkRoll(relatedWork)/10;
+        return main.RequestWorkRoll(relatedWork) / 10;
     }
 }

@@ -2,17 +2,21 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public class CeuNegro : HakiUse
+public class NoiteSemLuar : CriticUse
 {
+
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        int criticWant = main.RequestAtributeRoll(MyEnum.Atribute.VON) / 10;
+        int decimumHakiLevel = main.GetWorkNodeByEnum(relatedWork).GetLevel()/10;
+
         return new MessageNotificationData(
-            baseMessage, new object[] { criticWant }, criticImage
+            baseMessage, new object[] { decimumHakiLevel, decimumHakiLevel }, criticImage
         );
     }
 
-    public override void DoEndMechanicLogic() { }
+    public override void DoEndMechanicLogic()
+    {
+    }
 
     public override int RequestCriticTest(MainInterface main)
     {

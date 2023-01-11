@@ -9,7 +9,7 @@ toDispendSurge = true
 canLimit = false
 criticUseName = "Formas Mecânicas"
 relatedWork = 12
-text = "Você pode fazer um Teste de Akuma no Mi em uma Ação Padrão. Ganhando uma quantidade de Implementações igual à 2N (Uma Implementação aumenta em +1 um valor de seu Atributo/Ofício, pode-se colocar várias Implementações em um mesmo Atributo/Ofício, (Com o limite em um uníco fator sendo metade de seu nível em Akuma no Mi). Duram por um minuto e não podem ser removidas até esse tempo passar"
+text = "Você pode fazer um Teste de Flor em uma Ação Padrão. Ganhando uma quantidade de Implementações igual à 2N (Uma Implementação aumenta em +1 um valor de seu Atributo/Ofício, pode-se colocar várias Implementações em um mesmo Atributo/Ofício, (Com o limite em um uníco fator sendo metade de seu nível em Flor). Duram por um minuto e não podem ser removidas até esse tempo passar"
 baseMessage = "Você recebe $ Implementações [Aumente +1 Atributos/Oficios de sua escolhe a cada ponto gasto]
 Limite em um único fator: $
 Implementações duram um minuto e não podem ser alteradas nesse tempo"
