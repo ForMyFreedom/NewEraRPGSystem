@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/capacities/works/Enginer.cs" type="Script" id=1]
+[ext_resource path="res://source/capacities/skills/Craftsman.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+workName = "Engenheiro"
+pathDescription = "A cada 5, +2 Mente | +5 Engenharia
+A cada 10, +1 Uso de Crítico
+A cada 20, +10 Engenharia
+A cada 50, Bônus de Maestria"
+skills = [ ExtResource( 2 ) ]
+description = "Mestre na criação e reparo de maquinarias"
+maestryDescription = "NOT DEFINED"
+enumWork = 8
+workDetail = ""
