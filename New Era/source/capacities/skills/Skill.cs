@@ -14,13 +14,18 @@ public abstract class Skill : NotificationConsumer, IPlayerDataConsumer
     protected String notificationText;
     [Export(PropertyHint.MultilineText)]
     protected String mechanicDescription;
+    [Export]
+    private Array<string> mechanicOptions;
 
     private WayOfCalculeSkill wayOfLevelCalcule;
     protected SkillPlayerData skillPlayerData;
     protected Texture effectImage;
     protected int level;
 
-    public abstract Array<string> GetTextOfMechanicButtons();
+    public Array<string> GetTextOfMechanicButtons()
+    {
+        return mechanicOptions;
+    }
 
     public override abstract MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic=-1);
     public override abstract void DoEndMechanicLogic();

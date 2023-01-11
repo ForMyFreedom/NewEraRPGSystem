@@ -14,3 +14,4 @@ skillDescription = "Daremos cor a este mundo!!"
 notificationText = "Sendo um Usuário de Haki Puro, você é capaz de Colorir o Mundo com as Cores de sua Ambição, de modo permanente...!
 Algo marcado com sua Cor, possui a propriedade de manter uma habilidade de Haki ativa mesmo após a desativação do estado (Assim como outras modificações, ligadas a natureza das cores envolvidas)... Porem, o custo disso é um valor arbitrário de pontos de Haki [Regulado pelo mestre, oscilando entorno de 1 e 20, é relativo ao G.V]"
 mechanicDescription = "Você tinge a realidade com suas Cores... Apresente ao mestre sua proposta de pintura com a consequência de perder alguns pontos de Haki"
+mechanicOptions = null

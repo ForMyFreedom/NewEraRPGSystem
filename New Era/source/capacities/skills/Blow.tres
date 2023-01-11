@@ -25,3 +25,4 @@ Agilidade (Se o alvo falhar, ele é incapaz de se mover no próximo turno).
 Sentidos (Se o alvo falhar, ele tem -Nível de Lutador/2 Defesas no próx. turno).
 Caso você falhe em algum dos testes, nada acontece. Porem, você não pode
 mais declarar Pancada até ter dormido por bastante tempo [Alcansar Maestrias de Lutador aumentam a quantidade de falhas possíveis até se esgotar]."
+mechanicOptions = [ "Pancada de Força", "Pancada de Agilidade", "Pancada de Sentidos" ]

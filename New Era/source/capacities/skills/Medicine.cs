@@ -6,13 +6,6 @@ public class Medicine : Skill
 {
     int rollResult;
 
-    public override Array<string> GetTextOfMechanicButtons()
-    {
-        return new Array<string>() {"Medicina de Cura", "Medicina de Tratamento"};
-    }
-
-
-
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex=0, int critic = -1)
     {
         rollResult = main.RequestSkillRoll(skillName, critic);

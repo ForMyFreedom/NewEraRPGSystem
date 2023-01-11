@@ -4,11 +4,6 @@ using System;
 
 public class Piloting : Skill
 {
-    public override Array<string> GetTextOfMechanicButtons()
-    {
-        return new Array<string>() { "Tracar Mapa" };
-    }
-
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         int result = main.RequestSkillRoll(skillName, critic);

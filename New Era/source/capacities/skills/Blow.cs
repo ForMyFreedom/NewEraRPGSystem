@@ -4,11 +4,6 @@ using System;
 
 public class Blow : Skill
 {
-    public override Array<string> GetTextOfMechanicButtons()
-    {
-        return new Array<string>() { "Pancada de Forca", "Pancada de Agilidade", "Pancada de Sentidos" };
-    }
-
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         string message = "Se o alvo tirar menos de ";

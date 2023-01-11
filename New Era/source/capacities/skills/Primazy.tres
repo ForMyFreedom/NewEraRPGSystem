@@ -14,3 +14,4 @@ skillDescription = "Os Fundamentos estão acima de qualquer Lei"
 notificationText = "Ao ser alvo de uma Habilidade Ideológica, você diminui $ Críticos dela [Podendo potencialmente zerar!]"
 mechanicDescription = "Caso seja uma Entidade Terrena e possua tanto a Barreira como a Fenda, sendo usuário do Gensoku, você pode ativar essa Skill livremente para diminuir os Críticos de uma habilidade Ideológica [Haki ou Seirath] em [Primazia] pontos, podendo potencialmente zerar!
 A razão disso se dá na Primazia do Desejo: Ao tentar impor uma regra a uma aura transcendental, ao tentar quebrar uma regra de uma aura transcedental, os poderes ideológicos simplesmente falham por estar acima de qualquer regra, como um ego que precede a moral e a realidade"
+mechanicOptions = [ "Primazia" ]

@@ -7,11 +7,6 @@ public class TemporalArt : Skill
     [Export]
     private int aprimorationByExtraDay = 5;
 
-    public override Array<string> GetTextOfMechanicButtons()
-    {
-        return new Array<string>() { "Criar Performace" };
-    }
-
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
         int result = 0;

@@ -14,3 +14,4 @@ skillDescription = "Conhecimento através do mundo"
 notificationText = ""
 mechanicDescription = "Sempre que precisar investigar uma localidade e os mistérios que nela estão ocultos, você deve fazer um Teste de Exploração. Para isso,
 se faz um Teste Regular e compara com a Dificuldade estabelecida pelo Narrador (O qual leva em conta obscuridão [Se está mais visível ou escondido] dos pontos de interesse). Caso tenha sucesso, você descobre todos os pontos de interesse que a localidade possui. Do contrário, você apenas encontra um ponto, o considerado mais visível pelo Narrador (Se apenas existir um ponto de interesse você não encontra nada)."
+mechanicOptions = null

@@ -13,3 +13,4 @@ wayOfLevelCalculeScript = ExtResource( 2 )
 skillDescription = "Me tornarei um só com esse Mundo!"
 notificationText = null
 mechanicDescription = null
+mechanicOptions = [ "Se tornar um só com o mundo" ]
