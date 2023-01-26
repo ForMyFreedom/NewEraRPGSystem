@@ -8,7 +8,7 @@ public class CorPorCor : HakiUse
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        critic = GetHakisColorRollResult(main, new[] {HakiColors.MelissaBlack}, critic)/10;
+        critic = GetHakisColorRollResult(main, critic)/10;
 
         holdDamage = (int)(1.5f*critic);
         main.AddExtraDamage(holdDamage);
@@ -27,5 +27,10 @@ public class CorPorCor : HakiUse
     public override int RequestCriticTest(MainInterface main)
     {
         return main.RequestWorkRoll(relatedWork) / 10;
+    }
+
+    protected override HakiColors[] GetHakiUseColors()
+    {
+        return new[] { HakiColors.MelissaBlack };
     }
 }

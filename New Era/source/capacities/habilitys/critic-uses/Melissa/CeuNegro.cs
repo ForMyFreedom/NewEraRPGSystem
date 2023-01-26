@@ -18,4 +18,9 @@ public class CeuNegro : HakiUse
     {
         return cost;
     }
+
+    protected override HakiColors[] GetHakiUseColors()
+    {
+        return new[] { HakiColors.MelissaBlack };
+    }
 }

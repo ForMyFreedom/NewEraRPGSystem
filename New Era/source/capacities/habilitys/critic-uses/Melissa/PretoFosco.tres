@@ -10,7 +10,8 @@ toDispendSurge = true
 canLimit = false
 criticUseName = "Preto Fosco"
 relatedWork = 12
-text = "Você assume uma forma negra de pelagem incrivelmente densa. Perde-se -4N Defesa de Agilidade, porem você ganha e +2N Guarda enquanto continuar ativo"
+text = "Imagem: Uma Abelha sem Listras
+Você assume uma forma negra de pelagem incrivelmente densa. Perde-se -4N Defesa de Agilidade, porem você ganha e +2N Guarda enquanto continuar ativo"
 baseMessage = "Modo Fosco: $ Defesa de Agilidade, porem você recebe $ de Guarda"
 cost = -1
 customTexture = ExtResource( 2 )

@@ -10,12 +10,15 @@ canLimit = false
 criticUseName = "Céu Negro"
 relatedWork = 14
 text = "[USO DE CRÍTICO TALENTOSO: KOSHUKEI]
-Sendo detentor da não-cor negra, Koshukei, você é capaz de revestir a sua Ambição com a densidade do seu Desespeiro: Sempre que usar um Uso de Crítico de Haki, você pode declará-lo como Desesperado, e aplicar um dos efeitos da seguinte lista:
-        - [Desespeiro Bruto]: Faça um Teste de Querer disputado com um alvo e anote os Críticos. Se você vencer, ele será consumido pelo desespeiro e terá -N Críticos em todas ações (Seu instinto base será fugir). O efeito acaba ou por sua vontade / ele conseguir vencê-lo nesse teste / o alvo sair de seu campo de visão.
-		- [Desespeiro Melâncólico]: Caso a Habilidade de Haki tenha sido em um Inimigo, você é capaz de colocá-lo em um poderoso estado de desespeiro em sua vida, aumentando a Melâncolia temporariamente... Role um Teste de Querer, esse Inimigo não poderá tomar ações em direção aos seus Quereres (Desejos, Vontades, Juizos e Ambições) enquanto não vencer o seu teste de vontade / sair do seu campo de visão.
-		- [Desespeiro Determinado]: Caso a Habilidade de Haki tenha sido em um Aliado, você é capaz de colocá-lo em um poderoso estado de desespeiro por sua vida, aumentando sua Determinação temporiariamente... Role um Teste de Querer, esse Aliado terá +N em todos seus Testes que envolvam movimentos básicos de sobrevivência, assim como ataques e técnicas
+Sendo detentor da não-cor negra, Koshukei, a sua Ambição é revestida pela densidade do seu Desespero, e você não há nada que possa fazer contra isso...
+Sempre que usar um Uso de Crítico de Haki, você pode declará-lo como Desesperado, e aplicar um dos efeitos da seguinte lista:
+        - [Desespero Bruto]: Faça um Teste de Querer disputado com um alvo e anote os Críticos. Se você vencer, ele ganhará 2N Pontos de Desespero
+		* [Modificação Melâncolica]: Caso use Desespero Bruto em um Inimigo, ele terá o dobro de redução em Testes ligados a Poderes Senciêntes (Haki/Seirath/Gensoku/Shitsu)
+		* [Modificação Determinada]: Caso use Desespero Bruto em um Aliado, ele não irá desmaiar caso o Desespero ultrapasse seu Querer
 
-Porem, sempre que o fizer, você não poderá usar essa Habilidade até descansar."
-baseMessage = "Escolha um dos efeitos de desespeiro
+Pontos de Desespero: Para cada 2 deles, você tem -1 Críticos em todos os seus testes, com exceção de testes de caráter covarde, no qual você terá +1 Crítico... Já caso essa quantidade alcance o valor do seu Querer, você desmaia instantaneamente.
+
+\"Mas nunca se esqueça. O Desespero doentio é um mal tão grande quanto a Esperança doentia... Não é sobre mais sobre seus Quereres, logo você está condenado\""
+baseMessage = "Escolha um dos efeitos de desespero
 Teste de Querer rolado: $"
 cost = 100

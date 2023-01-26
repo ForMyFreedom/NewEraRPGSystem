@@ -8,15 +8,15 @@ resource_local_to_scene = true
 script = ExtResource( 1 )
 workName = "Haki"
 pathDescription = "A cada 5, +2 pontos em Querer
-A cada 10, +1 Uso de Crítico E +1 Cor
-A cada 20, +1 Técnica
+A cada 10, +1 Uso de Crítico
+A cada 20, +1 Técnica E +1 Cor
 A cada 50, Bônus de Maestria"
 skills = [ ExtResource( 2 ) ]
 description = "Minha Ambição está acima dessas regras malditas!"
 maestryDescription = "... Mistérios..."
 enumWork = 14
 workDetail = "Um Usuário de Haki, após expandir sua fenda, se vê livre com a capacidade de pressioná-la para ativamente tingir a Cor de sua Aura...
-Você possui uma quantidade de Cores da Ambição igual a [Haki/10  +1], as quais representam uma faceta da realidade a qual tens o desejo / necessidade de quebrá-la [Abolição|Quebra as regras ...], ou de sentimentos que anseia por manifestar [Manifestação|Manifesta o sentimento...]
+Você possui uma quantidade de Cores da Ambição igual a [Haki/20  +1], as quais representam uma faceta da realidade a qual tens o desejo / necessidade de quebrá-la [Abolição|Quebra as regras ...], ou de sentimentos que anseia por manifestar [Manifestação|Manifesta o sentimento...]
 
 [ Ex:
     Roxo Escuro [Quebra as regras das Propriedades]
@@ -33,7 +33,7 @@ Tabela dos Graus:
 	9-10		Muito Forte / Muito Genérico
 	 [Quantos mais tonalidades sua cor abrange, mais diluída é a tinta... Quanto mais forte suas cores vibram, mais tóxico o pigmento se torna...]
 
-Sempre que adquirir uma nova Cor da Ambição, você também pode escolher por investi-la em uma cor já existênte e ganhar um nível nela, o que se traduz em +5% de Haki nos Usos de Críticos que possuem essa cor [Números romanos são usados para representar o Nível da Ambição]
+Sempre que adquirir uma nova Cor da Ambição, você também pode escolher por investi-la em uma cor já existênte e ganhar um nível nela, o que se traduz em +5% de Haki nos Usos de Críticos que possuem essa cor [Números romanos são usados para representar o Nível da Ambição] {O Sistema automaticamente calcula isso!}
 
 Ex de diferentes usuários:
        Rosa II [Manifesta o prazer carnal]  (GT: 3| GV: 5)
@@ -43,9 +43,9 @@ Ex de diferentes usuários:
 
 Haki, diferente de todos outros Ofícios, tem a ativação e mantenimento dos seus Usos de Crítico restringido ao estado descrito a seguir: Sob as Cores da Ambição, você gasta uma Ação de Movimento para tingir sua fenda com uma quantidade de cores pessoais (Caso opte por trocar as Cores, uma outra Ação de Movimento é necessária. Já caso opte por sair do estado, é Ação Livre)
 Com estado ativo, você pode:
-    - Usar os Usos de Crítico ligados as Cores ativas no momento [Para Usos que contenham múltiplas cores em sua composição, todas as Cores devem estar ativadas conjuntamente para poder usá-la]. Porem, você é limitado a possuir uma combinação de cores na qual o somatório de todos os seus Graus de Tonalidade, não supere metade de seu nível de Haki
+    - Usar os Usos de Crítico ligados as Cores ativas no momento [Para Usos que contenham múltiplas cores em sua composição, todas as Cores devem estar ativadas conjuntamente para poder usá-la] [É IMPORTANTE TER CIÊNCIA DE QUAIS CORES ESTÃO ATIVADAS A TODO MOMENTO]
 	- Permite usar seu Haki para se defender de Habilidades de Seirath [Em duelos diretos e indiretos de Ordem vs Revolta]
 
 
 Mas, ao manter sua Ambição radiando, você tem a seguinte consequência:
-   -Sempre que tomar uma Ação que não seja de sua ideologia (Motivada por razões pessoais / pela vontade das outras pessoas) enquanto esta com esse poder ativado, você deve rolar um Teste de Querer de dificuldade variada com a situação, podendo potencialmente não se importar com essa questão se falhar no teste..."
+   -Sempre que tomar uma Ação que não seja de sua ideologia (Motivada por razões pessoais / pela vontade das outras pessoas) enquanto esta com esse poder ativado, você deve rolar um Teste de Querer -2*(G.V+G.T) de dificuldade variada com a situação, podendo potencialmente não se importar com essa questão se falhar no teste..."

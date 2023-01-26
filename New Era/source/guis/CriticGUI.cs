@@ -57,12 +57,12 @@ public class CriticGUI : WindowDialog
         MainInterface main = (MainInterface) GetTree().CurrentScene;
 
         int critic = -1;
-        int reachCritic = use.RequestCriticTest(main);
         if (isLimitedCritic)
             critic = criticLimit;
 
         if (use.GetCost() > critic) critic = use.GetCost();
-        if (critic > reachCritic) critic = reachCritic;
+        // int reachCritic = use.RequestCriticTest(main); // @ se pa nao faz sentido mais
+        // if (critic > reachCritic) critic = reachCritic;
 
         use.DoMechanic(main, 0, critic);
     }

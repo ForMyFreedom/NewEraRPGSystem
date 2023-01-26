@@ -6,7 +6,7 @@
 script = ExtResource( 1 )
 colorEnum = 0
 name = "Preto"
-description = "Do Limite Físico"
-level = -7
-tonalityDegree = 10
-vibranceDegree = 10
+description = "?????"
+level = 1
+tonalityDegree = 0
+vibranceDegree = 0

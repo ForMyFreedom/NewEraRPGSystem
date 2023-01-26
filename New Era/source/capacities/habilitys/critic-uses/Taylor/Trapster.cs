@@ -6,12 +6,11 @@ public class Trapster : CriticUse
 {
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        return new MessageNotificationData(baseMessage, new object[] {Math.Sqrt(50*critic)}, criticImage);
+        int result = 3 * critic + main.RequestSkillRoll(relatedWork, 0);
+        return new MessageNotificationData(baseMessage, new object[] { result }, criticImage);
     }
 
-    public override void DoEndMechanicLogic()
-    {
-    }
+    public override void DoEndMechanicLogic() { }
     
     
     public override int RequestCriticTest(MainInterface main)

@@ -9,6 +9,7 @@ toDispendSurge = true
 canLimit = false
 criticUseName = "Modo Turbo"
 relatedWork = 12
-text = "Você pode fazer um Teste de Flor e aumentar seu Deslocamento em combate em +3N. Assim como recebe um bônus de Dano igual à +N"
+text = "Imagem: Uma Turbina Cibernética
+Você pode fazer um Teste de Flor e aumentar seu Deslocamento em combate em +3N. Assim como recebe um bônus de Dano igual à +N"
 baseMessage = "Seu deslocamento aumenta em $ metros, assim como causa +$ Dano"
 cost = -1

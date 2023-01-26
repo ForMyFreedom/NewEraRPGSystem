@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/techniques/Technique.cs" type="Script" id=1]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Taylor/Ricochete.tres" type="Resource" id=2]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Taylor/PressionGun.tres" type="Resource" id=3]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+techniqueName = "Bala Ventaval"
+relatedWorks = [ 12, 2 ]
+techniqueConcept = "Gera uma corrente de vento poderosa QUE SE MANTEM NO AMBIENTE POR 3 TURNOS"
+criticUses = [ ExtResource( 3 ), ExtResource( 2 ) ]
+powerOfCritics = PoolIntArray( -1, -1 )
+actionIndexOfCritics = PoolIntArray( 0, 0 )
+modValue = 0

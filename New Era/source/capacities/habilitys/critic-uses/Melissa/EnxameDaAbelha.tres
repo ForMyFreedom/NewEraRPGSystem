@@ -9,6 +9,7 @@ toDispendSurge = true
 canLimit = false
 criticUseName = "Primeiro as Damas"
 relatedWork = 12
-text = "A primeira troca de forma em um combate não tem custo de Surto de Ação caso esteje lutando contra um homem"
+text = "Imagem: Abelhas operarias entrando na Colmeia
+A primeira troca de forma em um combate não tem custo de Surto de Ação caso esteje lutando contra um homem"
 baseMessage = "A primeira troca de forma em um combate não tem custo de Surto de Ação caso esteje lutando contra um homem"
 cost = 0

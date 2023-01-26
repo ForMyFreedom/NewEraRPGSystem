@@ -9,7 +9,7 @@ public class Beat : Skill
     private int stressNode = 0;
     private int holdActionIndex;
 
-    protected static readonly string stressKey = "stress";
+    public static readonly string stressKey = "stress";
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {

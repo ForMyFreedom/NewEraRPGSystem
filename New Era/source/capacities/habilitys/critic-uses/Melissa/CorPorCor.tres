@@ -10,7 +10,7 @@ canLimit = false
 criticUseName = "Cor da Guerra"
 relatedWork = 14
 text = "[Cor Preta]
-Você tinge uma tonalidade de preto que emana a sombra da morte da guerra... Intensifica o Dano do próximo ataque básico em +1.5N, perdendo um quinto desse valor em Surto de Ação a cada turno que manter essa tonalidade"
+Você tinge uma tonalidade de preto que emana \"A Cor da Morte na Guerra\".. Intensifica o Dano do próximo ataque básico em +1.5N, perdendo um quinto desse valor em Surto de Ação a cada turno que manter essa tonalidade"
 baseMessage = "Tonalidade da Sombra da Guerra
 +$ Dano [Ataque Básico] e -$ Surto de Ação por turno"
 cost = -1

@@ -11,7 +11,7 @@ criticUseName = "Angustia"
 relatedWork = 11
 text = "Com a Expressão da \"Noite sem Luar\" ativa, você pode aumentar a angustia do alvo através de suas palavras como personagem
 Em caso de sucesso tanto na interpretação quanto em um Teste Disputado de Oratória com Querer do alvo, você aumenta a duração do Noite sem Luar em N Turnos (Sendo esse valor a diferença de Críticos da rolagem /2)"
-baseMessage = "Com a Expressão da \"Noite sem Luar\" ativa, conceda ao alvo palavras de desespeiro
+baseMessage = "Com a Expressão da \"Noite sem Luar\" ativa, conceda ao alvo palavras de desespero
 Se mandou bem, Críticos Teste de Oratória: $ [Alvo disputa com Querer]
 Ele ficará + Diferença de Críticos / 2 Turnos no \"Noite sem Luar\" "
 cost = -1

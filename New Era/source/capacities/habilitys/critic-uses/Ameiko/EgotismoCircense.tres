@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Ameiko/EgotismoCircense.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Egotismo Circense"
+relatedWork = 15
+text = "Você aprendeu como impor sua presença sobre o mundo de uma forma puramente egoista, como afirmar para todos que \"Só você existe...\"
+E através disso, sempre que estiver realizando um Teste não Ofensivo (Como Dança ou Música), todos aqueles ao seu redor tem -3N para tentar contesta-la / interrompe-la."
+baseMessage = "Ego de Palco
+Se alquem tentar atrapalhar sua performace, ele terá -$ em seu Teste"
+cost = -1

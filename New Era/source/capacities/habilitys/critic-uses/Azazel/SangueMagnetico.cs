@@ -8,7 +8,7 @@ public class SangueMagnetico : CriticUse
 
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        dmg = 3 * critic;
+        dmg = 2 * critic;
         main.AddExtraDamage(dmg);
 
         return new MessageNotificationData(

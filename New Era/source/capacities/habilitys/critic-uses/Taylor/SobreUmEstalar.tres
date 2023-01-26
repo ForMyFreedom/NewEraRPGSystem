@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Taylor/SobreUmEstalar.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Sobre um Estalar de Dedos"
+relatedWork = 12
+text = "[Ressaltar Visual: A Imagem de um Gafanhoto estrelando os Dedos]
+Você é capaz de estourar rajadas de vento com seus dedos... Obrigando todos em um cone de dez metos de você a disputar um Teste de Força contra um Teste de Flor seu... Caso o alvo perca, você o empurra por N metros e causa N/3 tanto em Dano [Vida] / Cansaço [Surto de Ação]"
+baseMessage = "Sobre um estalar de dedos! Alvos em um cone devem superar $ com um Teste de Força
+Se falharem, se movem $ metros e sofrem $ Dano / Cansaço"
+cost = -1
