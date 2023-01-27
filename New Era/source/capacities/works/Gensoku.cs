@@ -3,12 +3,9 @@ using System;
 
 public class Gensoku : Work
 {
-    [Export]
-    private string firstUpText;
-
     public override void DoFirstUpStep(MainInterface gui)
     {
-        gui.CreateNewNotification(firstUpText, baseImage);
+        gui.AddDetermination(2);
     }
 
     public override void DoSecondUpStep(MainInterface gui)

@@ -10,7 +10,7 @@ canLimit = false
 criticUseName = "Fator Sanguineo"
 relatedWork = 14
 text = "[Cor Vinho] [Uma a cada 7 Sessões, pode adicionar um novo Fator]
-Você recebe uma quantidade de Mutações no sangue igual a N/4, podendo acioná-las apenas você:
+Sentindo o Gosto/Cheiro/Cor de um Sangue Mutado, você recebe uma quantidade de Mutações no sangue igual a N/4, podendo acioná-las apenas você:
   Solarium: -10% Vida ao sol, esse valor se torna 1.5*Bônus de Dano
   Solarium Mutado: Recupera 10% da vida máxima ao sol, esse valor se torna -1.5*Bônus de dano
   Lunarium: -10% Surto de Ação a lua, esse valor se torna 1.5*Guarda

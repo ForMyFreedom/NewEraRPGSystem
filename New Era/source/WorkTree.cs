@@ -46,6 +46,7 @@ public class WorkTree : Tree
 
         MakeBlankUnselected(itens);
         InjectWorkInAllCriticUse();
+        TestIfIThereIsNoBuggedCriticUse();
     }
 
 
@@ -102,7 +103,7 @@ public class WorkTree : Tree
         {
             foreach(Skill skill in work.GetSkillList())
             {
-                if(skill.GetSkillName() == skillName)
+                if (skill.GetSkillName() == skillName)
                 {
                     rollValue = skill.GetLevel();
                     sumValue = GetAtributeLevel(work.GetRelationedAtribute());
@@ -111,6 +112,23 @@ public class WorkTree : Tree
         }
 
         return RollCode.GetRandomAdvancedRoll(rollValue,sumValue,modValue);
+    }
+
+    public int RequestSkillRoll(MyEnum.Work workEnum, int skillIndex)
+    {
+        int rollValue = 0; int sumValue = 0;
+
+        foreach (Work work in works)
+        {
+            if (work.GetEnumWork() == workEnum)
+            {
+                Skill skill = work.GetSkillList()[skillIndex];
+                rollValue = skill.GetLevel();
+                sumValue = GetAtributeLevel(work.GetRelationedAtribute());
+                return RollCode.GetRandomAdvancedRoll(rollValue, sumValue);
+            }
+        }
+        return -1;
     }
 
 
@@ -448,5 +466,25 @@ public class WorkTree : Tree
         }
 
         return true;
+    }
+
+    private void TestIfIThereIsNoBuggedCriticUse()
+    {
+        MainInterface main = (MainInterface)GetTree().CurrentScene;
+        foreach (Array<CriticUse> arrayUses in criticUses)
+        {
+            foreach (CriticUse use in arrayUses)
+            {
+                if (
+                    use.GetCost() > 0 &&
+                    use.RequestCriticTest(main) != use.GetCost()
+                )
+                {
+                    GD.Print("O USO "+use.GetUseName()+" ESTA ERRADO");
+                    int c = 0;
+                    GD.Print(1 / c);
+                }
+            }
+        }
     }
 }

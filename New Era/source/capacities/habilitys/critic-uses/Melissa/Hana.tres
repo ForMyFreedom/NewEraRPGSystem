@@ -10,7 +10,7 @@ canLimit = false
 criticUseName = "Hana"
 relatedWork = 14
 text = "[Cor Negra, Quebra as Regras da Existência de Polêms]
-Cria 2N Polens Horrendos [Apenas podem ser usados na Forma Horrenda]. Melissa ficará em um estado incapaz de usar Haki o dia inteiro após consumir um desses polens."
+Sob um Cheiro Podre de Mel, você cria 2N Polens Horrendos [Apenas podem ser usados na Forma Horrenda]. Melissa ficará em um estado incapaz de usar Haki o dia inteiro após consumir um desses polens."
 baseMessage = "Você recebe $ Polens Horrendos
 [Você não pode usar haki esse dia inteiro]"
 cost = -1

@@ -9,7 +9,8 @@ toDispendSurge = true
 canLimit = false
 criticUseName = "Bateria Anã"
 relatedWork = 12
-text = "Você modifica seu corpo para que ele seja capaz de reter e liberar eletrecidade (Seja por estática ou cargas dinâmicas como relâmpagos), uma pequena pilha! [O limite de Marcadores de Eletrecidade é igual a metade do seu valor de sua Flor]
+text = "Imagem: Uma Bateria Cibernética
+Você modifica seu corpo para que ele seja capaz de reter e liberar eletrecidade (Seja por estática ou cargas dinâmicas como relâmpagos), uma pequena pilha! [O limite de Marcadores de Eletrecidade é igual a metade do seu valor de sua Flor]
 
 Alimentação Estática: A cada uma hora, você pode gastar 1 minuto concentrando toda a energia estática que adquiriu nesse tempo e ganhar 2d6 Marcadores de Eletrecidade.
 

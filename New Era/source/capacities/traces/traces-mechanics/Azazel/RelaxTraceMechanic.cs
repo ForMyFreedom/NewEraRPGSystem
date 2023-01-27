@@ -1,21 +1,20 @@
 using Godot;
-using Godot.Collections;
 using System;
 
-public class GlobalAim : CriticUse
+public class RelaxTraceMechanic : TraceMechanic
 {
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        return new MessageNotificationData(baseMessage, new object[] { 2*critic }, criticImage);
+        main.SetGameDataByKey(Beat.stressKey, 0);
+        return new MessageNotificationData(baseMessage, null, trace.GetTraceImage());
     }
 
     public override void DoEndMechanicLogic()
     {
     }
-    
-    
+
     public override int RequestCriticTest(MainInterface main)
     {
-        return main.RequestWorkRoll(relatedWork) / 10;
+        return 0;
     }
 }

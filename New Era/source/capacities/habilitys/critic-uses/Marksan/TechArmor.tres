@@ -10,7 +10,8 @@ toDispendSurge = true
 canLimit = false
 criticUseName = "T3ch-Arm0r"
 relatedWork = 12
-text = "Fortificando seu corpo com placas tecnológicas, você recebe +N de Força e +3N de Resistência a Venenos, com o custo de 2N Surto de Ação."
+text = "Imagem: Um Elmo Cibernético
+Fortificando seu corpo com placas tecnológicas, você recebe +N de Força e +3N de Resistência a Venenos, com o custo de 2N Surto de Ação."
 baseMessage = "Modo T3ch-Arm0r:
 +$ Força
 +$ Resistência a Venenos

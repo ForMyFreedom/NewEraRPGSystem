@@ -10,7 +10,8 @@ toDispendSurge = true
 canLimit = false
 criticUseName = "Princesa Abelha"
 relatedWork = 12
-text = "+N/1.5 em Agilidade. Limite de polem: 13"
+text = "Imagem: Uma Jovem Abelha Rainha
++N/1.5 em Agilidade. Limite de polem: 13"
 baseMessage = "Modo Ativado: Você se tornou mais rápido, +$ Agilidade. Podendo voar por 20 metros. Limite de Polem: 13"
 cost = -1
 customTexture = ExtResource( 2 )

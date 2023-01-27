@@ -6,7 +6,7 @@ public class Ricochete : CriticUse
 {
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        return new MessageNotificationData(baseMessage, new object[] {Math.Sqrt(50*critic)}, criticImage);
+        return new MessageNotificationData(baseMessage, new object[] { }, criticImage);
     }
 
     public override void DoEndMechanicLogic()
@@ -16,6 +16,6 @@ public class Ricochete : CriticUse
     
     public override int RequestCriticTest(MainInterface main)
     {
-        return main.RequestWorkRoll(relatedWork) / 10;
+        return cost;
     }
 }

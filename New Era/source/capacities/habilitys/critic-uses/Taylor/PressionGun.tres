@@ -8,7 +8,9 @@ isSingleton = true
 toDispendSurge = true
 canLimit = false
 criticUseName = "Arma de Pressão"
-relatedWork = 0
-text = "@@@"
-baseMessage = "@@@"
-cost = 0
+relatedWork = 12
+text = "[Ressaltar Visual: A Imagem de uma Bala]
+Você é capaz de usar das capacidades de sua Flor para realizar seus disparos... Ao empunhar uma Arma Modelo \"Vento\", você aumenta o Dano base em um terço do seu Nível de Flor"
+baseMessage = "Disparos de Vento
+Bônus de Dano: $"
+cost = 30

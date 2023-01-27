@@ -10,8 +10,8 @@ canLimit = false
 criticUseName = "Muteki"
 relatedWork = 14
 text = "[Cor Preta]
-Ao entrar na forma do preto fosco com sua Flor, sua  constituição fisica muda, fazendo com que seja possivel aprimorar ainda mais sua resistencia fisica com seu haki.  Caso esteje com o Haki e o Preto Fosco ativados, você pode ativar essa forma com um Teste de Querer e receber +2N de Guarda.
-Caso opte por esquivar (Considerar sua Defesa) de um ataque, a forma se dissipa. "
+Ao entrar na forma do preto fosco com sua Flor, sua constituição fisica muda, fazendo com que seja possivel aprimorar ainda mais sua resistencia fisica com seu Haki. Caso esteje com o Haki e o Preto Fosco ativados, você pode ativar essa forma com um Teste de Querer e receber +2N de Guarda... Caso opte por esquivar (Considerar sua Defesa) de um ataque, a forma se dissipa.
+[Com todos ao redor sentindo um Gosto de Pedra]"
 baseMessage = "Caso esteje com seu Haki e Preto Fosco ativados, você recebe +$ Guarda
 [Caso opte por considerar sua defesa em um ataque, desative esse crítico]"
 cost = 20

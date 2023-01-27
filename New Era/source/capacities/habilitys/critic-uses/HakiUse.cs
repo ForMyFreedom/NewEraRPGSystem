@@ -7,8 +7,11 @@ public abstract class HakiUse : CriticUse
 {
     const string hakiKey = "hakiColors";
 
-    protected int GetHakisColorRollResult(MainInterface main, HakiColors[] usedColors, int originalCritic)
+    protected abstract HakiColors[] GetHakiUseColors();
+
+    protected int GetHakisColorRollResult(MainInterface main, int originalCritic)
     {
+        HakiColors[] usedColors = GetHakiUseColors();
         IColorsData[] selectedColorsData = GetSelectedColorsData(main, usedColors);
         int originalLevel = main.GetWorkNodeByEnum(relatedWork).GetLevel();
         int levelMean = 0;
@@ -24,7 +27,6 @@ public abstract class HakiUse : CriticUse
 
         main.AddActualSurge(originalCritic/2-newResult/20);
         return newResult;
-
     }
 
     private IColorsData[] GetSelectedColorsData(MainInterface main, HakiColors[] usedColors)
@@ -37,6 +39,7 @@ public abstract class HakiUse : CriticUse
             if (usedColors.Contains(color.GetColorEnum()))
                 selectedColors.Add(color);
         }
+
         return selectedColors.ToArray();
     }
 }

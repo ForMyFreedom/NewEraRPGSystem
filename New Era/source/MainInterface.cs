@@ -90,6 +90,8 @@ public class MainInterface : Control, CharacterDataBank
 
     [Signal]
     public delegate void main_ready();
+    [Signal]
+    public delegate void technique_released();
 
     private Player player;
     private Color[] colors = new Color[2];
@@ -924,6 +926,11 @@ public class MainInterface : Control, CharacterDataBank
         GetNode<TechniquesTree>(techniquesTreePath).RemoveTechnique(tech);
     }
 
+    public void ActivateTechnique(int index)
+    {
+        GetNode<TechniquesTree>(techniquesTreePath).ExecuteTechnique(index);
+    }
+
 
     public CapacitiesPlayerData GetCapacitiesPlayerData()
     {
@@ -1038,6 +1045,11 @@ public class MainInterface : Control, CharacterDataBank
     public int RequestSkillRoll(String skillName, int modValue=0)
     {
         return GetNode<WorkTree>(worksTreePath).RequestSkillRoll(skillName, modValue);
+    }
+
+    public int RequestSkillRoll(MyEnum.Work workEnum, int skillIndex)
+    {
+        return GetNode<WorkTree>(worksTreePath).RequestSkillRoll(workEnum, skillIndex);
     }
 
     public void RequestSkillMechanic(MyEnum.Work work, int skillIndex, int modValue = 0, int actionIndex=0)

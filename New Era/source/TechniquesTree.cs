@@ -75,7 +75,21 @@ public class TechniquesTree : Tree
 
     private void ExecuteTechnique(Technique tech)
     {
-        tech.DoMechanic((MainInterface) GetTree().CurrentScene, 0, -1);
+        MainInterface main = (MainInterface)GetTree().CurrentScene;
+        main.EmitSignal(nameof(MainInterface.technique_released));
+        tech.DoMechanic(main, 0, -1);
+    }
+
+    public void ExecuteTechnique(int index)
+    {
+        MainInterface main = (MainInterface)GetTree().CurrentScene;
+        main.EmitSignal(nameof(MainInterface.technique_released));
+
+        Technique tech = techniques[index];
+        if (tech != null)
+        {
+            tech.DoMechanic(main, 0, -1);
+        }
     }
 
 

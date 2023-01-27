@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/techniques/Technique.cs" type="Script" id=1]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Taylor/Trapster.tres" type="Resource" id=2]
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Taylor/GlobalAim.tres" type="Resource" id=3]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+techniqueName = "Garras de Águia"
+relatedWorks = [ 8, 2 ]
+techniqueConcept = "Se um alvo ter pisado em sua Armadilha ao se mover no último turno,
+você pode gastar sua Ação de Movimento para realizar um Disparo"
+criticUses = [ ExtResource( 3 ), ExtResource( 2 ) ]
+powerOfCritics = PoolIntArray( -1, -1 )
+actionIndexOfCritics = PoolIntArray( 0, 0 )
+modValue = 0

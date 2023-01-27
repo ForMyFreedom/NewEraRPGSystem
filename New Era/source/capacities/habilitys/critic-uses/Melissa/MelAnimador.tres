@@ -9,7 +9,8 @@ toDispendSurge = true
 canLimit = false
 criticUseName = "Mel Animador"
 relatedWork = 12
-text = "Você pode fazer um Teste de Flor para curar uma quantidade de vida igual a N+3. Perde-se 2 Pólens"
+text = "Imagem: Uma Comeia Recheada
+Você pode fazer um Teste de Flor para curar uma quantidade de vida igual a N+3. Perde-se 2 Pólens"
 baseMessage = "Você cura uma quantidade de Vida igual a $
 Perde-se dois pôlens"
 cost = -1

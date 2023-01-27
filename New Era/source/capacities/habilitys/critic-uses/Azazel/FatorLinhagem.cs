@@ -6,7 +6,7 @@ public class FatorLinhagem : HakiUse
 {
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        critic = GetHakisColorRollResult(main, new[] { HakiColors.AzazelRed }, critic)/10;
+        critic = GetHakisColorRollResult(main, critic)/10;
         return new MessageNotificationData(
             baseMessage, new object[] { critic / 4 }, criticImage, critic
         );
@@ -20,5 +20,10 @@ public class FatorLinhagem : HakiUse
     public override int RequestCriticTest(MainInterface main)
     {
         return main.RequestWorkRoll(relatedWork) / 10;
+    }
+
+    protected override HakiColors[] GetHakiUseColors()
+    {
+        return new[] { HakiColors.AzazelRed };
     }
 }
