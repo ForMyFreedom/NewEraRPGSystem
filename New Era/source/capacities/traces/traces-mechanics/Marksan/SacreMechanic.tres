@@ -7,8 +7,7 @@ script = ExtResource( 1 )
 isSingleton = true
 toDispendSurge = true
 canLimit = true
-baseMessage = "Esperança: $
+baseMessage = "Esperança: +$ Críticos em todos os Testes | -$ Críticos em Testes de Querer Suicidas (Pedido pelo Mestre)
 Distorção Egótica: -$ Querer
-*2 Esperança -> +1 Críticos todos os Testes | -1 Críticos em Testes de Querer contra ações de caráter suicida (Pedido pelo mestre)
 *Caso a Esperança seja igual ou maior que seu valor de Querer, você entra em um estado vegetativo
 "
