@@ -19,7 +19,7 @@ public class SacreMechanic : TraceMechanic
         main.SetModDetermination(-distorcion);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { hope, distorcion }, trace.GetTraceImage()
+            baseMessage, new object[] { 2*hope, hope, distorcion }, trace.GetTraceImage()
         );
     }
 

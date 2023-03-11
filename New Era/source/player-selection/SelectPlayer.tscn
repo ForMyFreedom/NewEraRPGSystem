@@ -148,10 +148,10 @@ margin_right = 591.292
 margin_bottom = 190.294
 
 [node name="PlayerSelectButton4" parent="MajorVBOX/MarginContainer/VBoxContainer/MarginContainer/MarginContainer" instance=ExtResource( 3 )]
-margin_left = 357.56
-margin_top = 3.21819
-margin_right = 466.56
-margin_bottom = 117.218
+margin_left = 352.56
+margin_top = 12.2182
+margin_right = 461.56
+margin_bottom = 126.218
 
 [node name="PlayerSelectButton5" parent="MajorVBOX/MarginContainer/VBoxContainer/MarginContainer/MarginContainer" instance=ExtResource( 3 )]
 margin_left = 356.3
