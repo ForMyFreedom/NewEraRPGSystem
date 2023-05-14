@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Azazel/PrevisaoDeProjetil.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Previsão de Projétil"
+relatedWork = 6
+text = "Você calcula coisas como direção e velocidade do vento, peso e tipo de projétil, potência de lançamento para ter uma melhor idéia de onde o projétil irá acertar.
+Você pode ativar esse uso e aumentar sua Esquiva contra um projétil em 1.5N
+Ou você pode ativar esse uso para aumentar seu Ataque com projétis em 1.5N"
+baseMessage = "Escolha entre aumentar sua Esquiva ou seu Ataque com Projéteis em: $"
+cost = -1
