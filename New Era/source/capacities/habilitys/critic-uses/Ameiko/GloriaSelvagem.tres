@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Ameiko/GloriaSelvagem.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Gloria Selvagem"
+relatedWork = 17
+text = "No final do combate, caso tenha passado por uma batalha de vida ou morte com alguem que tinha o objetivo de te devorar, você recebe +8N Vida"
+baseMessage = "Glória Selvagem!
++$ Vida"
+cost = -1

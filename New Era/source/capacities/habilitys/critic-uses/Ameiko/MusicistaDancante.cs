@@ -2,27 +2,23 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public class SangueMagnetico : CriticUse
+public class MusicistaDancante : CriticUse
 {
-    int dmg;
-
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
-        dmg = (int) (1.5f * critic);
-        main.AddExtraDamage(dmg);
+        int roll = main.RequestWorkRoll(relatedWork);
 
         return new MessageNotificationData(
-            baseMessage, new object[] { dmg }, criticImage
+            baseMessage, new object[] { roll }, criticImage
         );
     }
 
     public override void DoEndMechanicLogic()
     {
-        main.AddExtraDamage(-dmg);
     }
 
     public override int RequestCriticTest(MainInterface main)
     {
-        return main.RequestWorkRoll(relatedWork) / 10;
+        return main.RequestWorkRoll(relatedWork)/10;
     }
 }

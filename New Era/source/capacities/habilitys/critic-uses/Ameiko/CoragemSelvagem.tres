@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Ameiko/CoragemSelvagem.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Coragem Selvagem"
+relatedWork = 17
+text = "No início do combate, caso esteje em uma batalha de vida ou morte contra alguem que anseia te devorar, você pode evocar sua Coragem Selvagem "
+baseMessage = null
+cost = -1

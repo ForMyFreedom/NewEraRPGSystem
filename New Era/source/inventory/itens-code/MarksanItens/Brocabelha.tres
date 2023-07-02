@@ -17,7 +17,7 @@ message = "Traços
 União
      - Mineração Polinária: Estando girando, pode perfurar objetos, recebendo +6 Críticos
 	 (-3 se for de uma Categoria Ermética, Haki/Seirath).
-     - Picada Cibernética: Estando girando, pode ser usada em combate, a qual concede
-	 +20 Dano e 25% de chance de injetar Bee.exe (Um código que rodará dentro da aura do alvo,
-	 atualmente sem nenhuma instrução...)."
+     - Picada Cibernética: Estando girando, pode ser usada em combate,
+	a qual concede +20 Dano e 25% de chance de injetar Bee.exe
+	(Um código que rodará dentro da aura do alvo, atualmente sem nenhuma instrução...)."
 image = ExtResource( 2 )

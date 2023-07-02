@@ -7,8 +7,6 @@ public interface IColorsData
     string GetName();
     string GetDescription();
     int GetLevel();
-    int GetTonalityDegree();
-    int GetVibranceDegree();
 }
 
 public class ColorsData : Resource, IColorsData
@@ -21,15 +19,10 @@ public class ColorsData : Resource, IColorsData
     protected string description;
     [Export]
     protected int level;
-    [Export]
-    protected int tonalityDegree;
-    [Export]
-    protected int vibranceDegree;
-
 
     public int GetColorfullHakiLevel(int haki)
     {
-        return (int)(haki * (1 + 0.05 * (level - 1)));
+        return (int)(haki * (1 + 0.10 * (level - 1)));
     }
 
 
@@ -52,17 +45,6 @@ public class ColorsData : Resource, IColorsData
     {
         return level;
     }
-
-    public int GetTonalityDegree()
-    {
-        return tonalityDegree;
-    }
-
-    public int GetVibranceDegree()
-    {
-        return vibranceDegree;
-    }
-
 }
 
 

@@ -14,7 +14,8 @@ A cada 50, Bônus de Maestria"
 skills = [ ExtResource( 3 ) ]
 description = "A força sanguinária de uma Linhagem respeitada"
 maestryDescription = "- Pulsação Sedenta +I: +1 Uso de Vampirismo por hora
-- Pulsação Lunar +I: +25% Dano sob o efeito do Talento 'Lua'
+- Pulsação Dolorosa +I: +25% Dano ao usar Pulsação
 - Pulsação Cardíaca +I: -50% do Stress da Mecânica Batimento"
 enumWork = 4
-workDetail = ""
+workDetail = "Os Escarlates possuem o Traço Racial Ordeiro da \"Dor\", por representarem o Medo das Dores Físicas...
+Essa Arte Marcial é tudo sobre usar esse Traço de forma ordeira para fazer o Sangue ser como um \"Componente Material\" da Dor, controlando o seu próprio sangue e o de seus oponentes"

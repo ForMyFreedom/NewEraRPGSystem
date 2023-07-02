@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/capacities/skills/JungleTreat.cs" type="Script" id=1]
+[ext_resource path="res://source/wayOfCalculeSkill/HalfWayOfCalculeSkill.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+skillName = "Cuidados"
+wayOfLevelCalculeScript = ExtResource( 2 )
+skillDescription = "Minha Vida é a sua Vida"
+notificationText = "Alvo cura 1/5 da Vida Máxima
+Mas recebe 1 Marcador de Tumor"
+mechanicDescription = "Você pode usar seu Fator de Cura Bestial em pessoas \"Da Sua Tribo\", curando 1/5 da Vida Máxima do Alvo [Porem, ele irá receber 1 Marcador de Tumor (Controlado pelo Mestre)...]"
+mechanicOptions = [ "Tratar Tribo" ]

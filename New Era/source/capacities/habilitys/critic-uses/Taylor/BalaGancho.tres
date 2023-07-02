@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Taylor/BalaGancho.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Bala Gancho"
+relatedWork = 8
+text = "Você desenvolveu um mecânismo para fazer com que suas balas sejam atreladas a uma corda e um gancho de sua arma modificada... Sempre que atacar com essas munições, caso tenha acertado o ataque, você perde todo o dano do disparo e adquire a seguinte lista de possibilidades (Com o gancho estando preso ao alvo): Você pode fazer um Teste de Força para tentar puxá-lo e
+    - Caso o alvo seja móvel, o alvo avança em sua direção X metros
+	- Caso o alvo seja fixo, você avança em direção ao alvo X metros
+Para X sendo um valor que varia tanto com o peso do objeto, quanto eventuais Testes disputados de força"
+baseMessage = "Você prende um gancho no alvo! Mas nenhum dano é realizado
+Teste de Força: $
+Caso o alvo seja móvel, o alvo avança em sua direção!
+Caso o alvo seja fixo, você avança em direção ao alvo!"
+cost = 0

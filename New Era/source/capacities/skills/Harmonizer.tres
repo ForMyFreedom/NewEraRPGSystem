@@ -1,0 +1,29 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/capacities/skills/Harmonizer.cs" type="Script" id=1]
+[ext_resource path="res://source/wayOfCalculeSkill/SameOfWorkWayOfCalculeSkill.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = true
+skillName = "Harmonizar"
+wayOfLevelCalculeScript = ExtResource( 2 )
+skillDescription = "Hora de dar Consonância as coisas!"
+notificationText = null
+mechanicDescription = "# Resolver
+ - Use seus usos para resolver Dissonâncias pelo bem do Mundo
+
+# Se Inspirar
+ - Use seus usos para gerar uma Nova Vida a partir de Lados não Consonantes
+
+# Reparar
+ - Use seus usos para reparar uma Vida desolada por dissonâncias"
+mechanicOptions = [ "Resolver", "Se Inspirar", "Reparar" ]
+solveText = "Trabalhando para resolver Dissonâncias pelo bem do Mundo,
+você tem $ Críticos para usar seus Usos de Crítico"
+inspirationText = "Trabalhando para gerar uma Nova Vida a partir de Lados não Consonantes,
+você tem $ Críticos para usar seus Usos de Crítico"
+repairText = "Trabalhando para reparar uma Vida desolada por dissonâncias,
+você tem $ Críticos para usar seus Usos de Crítico"

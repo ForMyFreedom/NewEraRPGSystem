@@ -1,14 +1,14 @@
 using Godot;
 using System;
 
-public class AkumaNoMi : Work
+public class Junglement : Work
 {
-    [Export]
-    private int baseDamage;
+    [Export(PropertyHint.MultilineText)]
+    public string firstUpText;
 
     public override void DoFirstUpStep(MainInterface gui)
     {
-        gui.AddAnAtributeLevel(relationedAtribute, 2);
+        gui.CreateNewNotification(firstUpText, baseImage);
     }
 
     public override void DoSecondUpStep(MainInterface gui)
@@ -29,6 +29,6 @@ public class AkumaNoMi : Work
 
     public override int GetBaseDamage(MainInterface gui, int weaponDamage = 0, int actionIndex = 0)
     {
-        return baseDamage + GetLevel()/2;
+        return weaponDamage + gui.GetTotalAtributeValue(relationedAtribute) / 2;
     }
 }

@@ -10,17 +10,14 @@ canLimit = false
 criticUseName = "Comprenssão Gradual de Combate"
 relatedWork = 7
 text = "Você conhece uma técnica de foco usada em batalha que te permite dividir parte da sua atenção com maestria para compreender e analisar os pontos fortes e fracos de um oponente através do tempo.
-Ao entrar em um \"Estado de Foco\" (-1/4 em suas Defesas caso esteja analisando um Ataque ou -1/4 em seu Ataque caso esteja analisando uma Defesa até sair desse estado), você é capaz de análisar ou um ataque do oponente (Ganhando +2.5N em suas Defesas contra ele para sempre) ou uma defesa do oponente (Ganhando +2.5N em seus Ataques contra ele para sempre).
+Ao entrar em um \"Estado de Foco\" (-1/4 em suas Defesas e Ataques), você é capaz de análisar o padrão de ataque e defesa do oponente (Ganhando +2.5N em suas Defesas e Ataques contra ele para sempre).
 
-O Bônus positivo é alcunhado de 'Aprendizado', seja um 'Aprendizado de Ataque' ou um 'Aprendizado de Defesa'
+O Bônus positivo é alcunhado de 'Aprendizado'
 O Aprendizado contra esse oponente se mantem após a saida do Estado de Foco.
 O Limite de cada um dos Aprendizados se limita ao triplo do seu valor de Mente.
 
 Caso o oponente troque de personalidade / estilo marcial, todo esse bônus contra o oponente é perdido até ele retornar ao estado que havia análisado."
-baseMessage = "Estado de Foco Ativo:
-  - Analizo um Padrão de Defesa (-1/4 Ataque até o começo do próximo turno)
-  - Analizo um Padrão de Ataque (-1/4 Defesa até o começo do próximo turno)
-
+baseMessage = "Estado de Foco Ativo: (-1/4 Ataque e Defesa até o começo do próximo turno)
 O seu \"Aprendizado\" foi de $ contra esse alvo (Anote até o limite de $)
 "
 cost = -1

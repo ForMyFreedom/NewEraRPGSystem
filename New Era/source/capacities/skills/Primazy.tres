@@ -11,7 +11,11 @@ canLimit = true
 skillName = "Primazia"
 wayOfLevelCalculeScript = ExtResource( 3 )
 skillDescription = "Os Fundamentos estão acima de qualquer Lei"
-notificationText = "Ao ser alvo de uma Habilidade Ideológica, você diminui $ Críticos dela [Podendo potencialmente zerar!]"
-mechanicDescription = "Caso seja uma Entidade Terrena e possua tanto a Barreira como a Fenda, sendo usuário do Gensoku, você pode ativar essa Skill livremente para diminuir os Críticos de uma habilidade Ideológica [Haki ou Seirath] em [Primazia] pontos, podendo potencialmente zerar!
-A razão disso se dá na Primazia do Desejo: Ao tentar impor uma regra a uma aura transcendental, ao tentar quebrar uma regra de uma aura transcedental, os poderes ideológicos simplesmente falham por estar acima de qualquer regra, como um ego que precede a moral e a realidade"
+notificationText = "Ao ser alvo de uma Habilidade Ideológica, você diminui $ Críticos dele.
+Ao ser alvo de um Ataque Ordinário, você diminui em $ o Dano dele.
+[Podendo potencialmente zerar ambos!]"
+mechanicDescription = "Caso possua tanto a Barreira como a Fenda Transcendidas, sendo usuário do Gensoku, você pode ativar essa Skill livremente para diminuir os Críticos de uma habilidade Ideológica [Haki ou Seirath] em [Primazia] pontos, podendo potencialmente zerar!
+A razão disso se dá na Primazia do Desejo: Ao tentar impor uma regra a uma aura transcendental, ao tentar quebrar uma regra de uma aura transcedental, os poderes ideológicos simplesmente falham por estar acima de qualquer regra, como um ego que precede a moral e a realidade.
+Além disso, Ataques Físicos [Desprovidos de Poderes Senciêntes] tambêm se encaixam na redução acima, devido a presênça de Impureza (A Mistura Ordinária entre Inocência, Egoismo e Radicalismo), com o Dano sendo reduzido em [Primazia/2]
+Mas quanto as Imagens [Coisas Paupáveis disprovidades de Impurezas, como as Flores e outros Poderes Mundialista. A Face Pura de um Mundo Impurto], por não serem Físicas, a Primazia nada pode fazer a respeito!"
 mechanicOptions = [ "Primazia" ]

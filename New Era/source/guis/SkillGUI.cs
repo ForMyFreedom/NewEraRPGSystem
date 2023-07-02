@@ -10,6 +10,8 @@ public class SkillGUI : BaseGUI
     [Export]
     private NodePath mechanicButtonArrayPath;
     [Export]
+    private NodePath mechanicImagePath;
+    [Export]
     private PackedScene mechanicButtonScene;
 
     
@@ -28,6 +30,7 @@ public class SkillGUI : BaseGUI
         GetNode<Label>(descriptionLabelPath).Text = skill.GetSkillDescription();
         GetNode<Label>(mechanicNameLabelPath).Text += skill.GetSkillName();
         GetNode<TextEdit>(mechanicDescriLabelPath).Text = skill.GetMechanicDescription();
+        GetNode<TextureRect>(mechanicImagePath).Texture = skill.GetEffectImage();
         CreateAllMechanicButtons();
         ConnectAllMechanicButtons();
     }

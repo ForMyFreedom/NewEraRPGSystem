@@ -10,7 +10,10 @@ toDispendSurge = true
 canLimit = true
 skillName = "Ego Mundis"
 wayOfLevelCalculeScript = ExtResource( 2 )
-skillDescription = "Me tornarei um só com esse Mundo!"
-notificationText = null
-mechanicDescription = null
-mechanicOptions = [ "Se tornar um só com o mundo" ]
+skillDescription = "A Virtude Mundial!"
+notificationText = "\"EGO, MUNDIS!\""
+mechanicDescription = "[Virtude do Mundo: Ego Mundis]
+Caso possua apenas Mundialismo como Poder Senciênte, através de sua visão mundana da realidade você adquire um novo estado ativável: Egos Mundis (Você pode se tornar um só com a Vontade dos seus arredores / das pessoas pela qual luta, e com isso, gerar um Outro Mundo!)
+   Ex: Um combate em um cemitério, o Mundialista ativa seu Ego Mundis e incorpora a Vontade dos Mortos: Cores frias e Formas podres propiciam a Imagem da Morte, O MUNDO DOS MORTOS!
+"
+mechanicOptions = [ "Mostrar um Outro Mundo" ]

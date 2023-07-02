@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/capacities/works/Junglement.cs" type="Script" id=1]
+[ext_resource path="res://source/capacities/skills/JungleTreat.tres" type="Resource" id=2]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+workName = "Fluogia"
+pathDescription = "A cada 5, +3 entre Sentidos/Agilidade/Querer
+A cada 10, +1 Uso de Crítico
+A cada 20, +1 Técnica
+A cada 50, Bônus de Maestria"
+skills = [ ExtResource( 2 ) ]
+description = "O Caos da Selva é a minha Vida!"
+maestryDescription = "[INDEFINIDO]"
+enumWork = 17
+workDetail = "Os Bestiais possuem o Traço Racial Caótico da \"Cura\", por representarem a Bravura contra as Dores Físicas...
+Essa Pseudo-Arte Marcial é tudo sobre usar esse Traço de forma caótica fazer o Suor ser como um \"Componente Material\" da Cura, controlando o seu próprio suor e o de seus aliados"
+firstUpText = "Distribua 3 pontos entre Sentidos/Agilidade/Querer"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Ameiko/VasoDeSol.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Vaso de Sol"
+relatedWork = 14
+text = "Mesmo distânte do sol, você ainda tem ele consigo ao tornar sua pele sempre-ensolarada.
+Você pode usar sua Cor Amarela em completa escuridão (Por ter armazenado raios do sol quando estava de dia), podendo igualmente enchergar no escuro e iluminar ambientes como se você fosse o próprio sol...
+Não só isso, ao iluminar como o sol, você recebe +Haki em todos os Testes de Querer para resistir a efeitos de Medo"
+baseMessage = "Reeceptáculo de Sol
+Ilumina o Ambiente e a si mesmo
+Resistência ao medo: $"
+cost = 30
