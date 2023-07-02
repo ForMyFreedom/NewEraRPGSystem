@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Ameiko/DancaDaCobra.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Dança da Cobra"
+relatedWork = 10
+text = "Imitando os movimentos do répetil, você desenvolveu uma dança encantadora onde todos que a testemunham tendem a entrar em estado de transe... Caso o alvo não vença com um Teste de Querer maior que 8N, ele ficará hiponotisado e não poderá mais agir até passar no Teste de Querer (A cada turno, um novo Teste de Querer recebe +1 Crítico acumulativo).
+Ser alvo de um ataque ou ação ofensiva desfaz a hipinose do alvo
+[Após cinco usos em um alvo, ele não mais é afetado por esse Uso de Crítico por já ter se acustumado]"
+baseMessage = "Dança da Cobra
+Se alvo não tirar mais que $ em Teste de Querer,
+ficará hipinotizado (Ser atacado desfaz a hipinose)"
+cost = -1

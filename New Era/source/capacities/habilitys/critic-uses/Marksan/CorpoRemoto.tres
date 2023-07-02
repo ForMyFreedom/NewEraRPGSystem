@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Marksan/CorpoRemoto.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Corpo Remoto"
+relatedWork = 12
+text = "Você é capaz de através de ondas de rádio, separar seu corpo em pedaços para controlá-los remotamente!
+Escolha um membro, você pode continuar agindo todas as articulações dele enquanto não ultrapassar uma distância de [Nível de Flor]*2 metros de você (A partir disso, ele apenas cairá, ficando inativo até o instante que a distância for menor que o limite)
+Ao separar uma parte do seu corpo, você pode faze-la sair com uma Modificação Interior [\"Como uma turbina que propulciona seu braço\"], o qual é simplesmente regulado de forma narrativa.
+Não há limites para a quantidade de partes separadas."
+baseMessage = "O SEU CORPO É REMOTO!
+Distância Máxima: $m"
+cost = 40

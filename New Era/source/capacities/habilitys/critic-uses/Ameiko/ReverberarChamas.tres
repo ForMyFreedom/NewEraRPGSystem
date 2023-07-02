@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Ameiko/ReverberarChamas.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Reverberar Chamas"
+relatedWork = 14
+text = "Sob sua ambição das chamas, você é capaz de repelir todo fogo que lhe alvejar.
+Sempre que for algo de alguma forma de calor, você pode ativar esse Uso de Crítico e repelir 2.5N Dano de volta (Em caso de superar o Dano original, ao invez de aumentar o Dano, você recupera esse valor em Surto de Ação)"
+baseMessage = "Você repele $ Dano
+Pergunte ao mestre o Dano original
+Em caso de ter superado, você recupera [Dano Original]-$ em Surto de Ação"
+cost = -1

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Ameiko/MusicistaDancante.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Musicista Dançante"
+relatedWork = 16
+text = "Você aprendeu a intuitivamente a unir em Harmonia a sua Dança com a sua Música. Duas formas de Vida agora alinhada pelo véu de sua Arte...
+Sempre que fizer um Teste que envolva Dança ou Música, enquanto estiver ao mesmo tempo Dançando/Tocando, você pode gerar um Efeito Narrativo [Isto é, aplicar um efeito que varia com a situação, música que se está tocando, dança que se está fazendo] Harmônico [Que seja sobre unir ambos os lados de sua Arte pessoal]"
+baseMessage = "Resultado: $
+Harmonizar minha Dança com minha Música!
+Efeito Narrativo Harmônico caso estiver fazendo os dois ao mesmo tempo"
+cost = -1

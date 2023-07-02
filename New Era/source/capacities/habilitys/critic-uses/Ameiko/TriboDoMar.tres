@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Ameiko/TriboDoMar.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Tribo do Mar"
+relatedWork = 17
+text = "Como (por enquanto) a sua Tribo Natal ficou para trás, e (por enquanto), sua nova Tribo é Tribo de Navio, todas suas habilidades de Fluogia que você utilizar em regiões oceânicas como navios ou praias, você recebe +2*Agilidade no Teste"
+baseMessage = "Ao usar sua Fluogia em regiões oceânicas, +$ no Teste"
+cost = 40

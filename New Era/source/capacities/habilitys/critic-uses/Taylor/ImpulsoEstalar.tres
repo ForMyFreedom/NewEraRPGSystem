@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Taylor/ImpulsoEstalar.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Impulso Estalar"
+relatedWork = 12
+text = "Você é capaz de estalar seus dedos de forma a propiciar um rápido avanço instantâneo, se movimentando de 1 a 2N metros em um único segundo e recebendo esse valor em sua Defesa de Agilidade pelo próximo turno"
+baseMessage = "Você avança de 1 a $ metros em um segundo
+Esse valor é somado a sua Defesa de Agilidade (Apenas pelo próximo turno)"
+cost = -1

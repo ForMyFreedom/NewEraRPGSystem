@@ -7,15 +7,13 @@
 resource_local_to_scene = true
 script = ExtResource( 1 )
 workName = "Flor da Era"
-pathDescription = "A cada 5, +3 Atributo relacionado
+pathDescription = "A cada 5, +2 Atributo relacionado
 A cada 10, +1 Uso de Crítico
 A cada 20, +1 Técnica
 A cada 50, Bônus de Maestria"
 skills = [ ExtResource( 2 ) ]
-description = "A força misteriosa, de um fruto qualquer..."
+description = "A força misteriosa, de uma Flor..."
 maestryDescription = "... Mistério ..."
 enumWork = 12
-workDetail = "[Domínio Solo: Mundialista]
-Caso possua apenas Flores de Poder Senciênte, através de sua visão mundana da realidade você adquire um novo estado ativável: Egos Mundis (Você pode se tornar um só com a Vontade dos seus arredores... Adquirindo capacidades temporárias ligados ao local/pessoas!)
-   Ex: Um combate em um cemitério, o Mundialista ativa seu Ego Mundis e incorpora a Vontade dos Mortos: Cores frias e Formas podres propiciam a Imagem da Morte, o que concede uma recuperação de vida [Em seus últimos momentos, os mortos tinham a Vontade de viver, e é isso você fará por eles!]"
+workDetail = ""
 baseDamage = 0

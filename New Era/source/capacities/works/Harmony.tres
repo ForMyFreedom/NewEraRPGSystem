@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://source/capacities/works/Harmony.cs" type="Script" id=1]
+[ext_resource path="res://source/capacities/skills/Harmonizer.tres" type="Resource" id=2]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+workName = "Harmonia"
+pathDescription = "A cada 5, +2 Querer
+A cada 10, +1 Uso de Crítico
+A cada 20, +1 Técnica
+A cada 50, Bônus de Maestria"
+skills = [ ExtResource( 2 ) ]
+description = "Farei desse Mundo, um lugar melhor!"
+maestryDescription = "[INDEFINIDO]"
+enumWork = 16
+workDetail = "A Harmonia é sobre a Multíleca da Vida (A qual se encaixa Árvores, Música, Pintura, etc…), a Aflição de Forças Desarmônicas;
+
+Ela pode ser usada de três formas primárias:
+   - Para gerar Vida com o intuito de resolver uma Dissonância Mundial (Seja na vida das pessoas ou no ambiente natural)
+   - Para gerar Vida através de uma Inspiração de coisas que naturalmente não são consonânte (Podendo até mesmo ser inimigas!), fazendo com que algo novo e conciliador dessas energias naça.
+   - Para reparar Vida que fora afliginda por Dissonâncias...
+
+"

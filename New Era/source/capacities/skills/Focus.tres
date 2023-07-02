@@ -10,7 +10,7 @@ toDispendSurge = true
 canLimit = true
 skillName = "Foco"
 wayOfLevelCalculeScript = ExtResource( 2 )
-skillDescription = "Foco! Você não tem infinitas balas!"
+skillDescription = "Foco! Você não tem infinitas chances!"
 notificationText = null
 mechanicDescription = "Você pode gastar sua Ação Padrão para escolher um alvo para ser o seu Foco. O que lhe permite sempre antes de disparar, escolher
 um dos dois bônus:

@@ -15,7 +15,7 @@ skills = [ ExtResource( 2 ) ]
 description = "Minha Ambição está acima dessas regras malditas!"
 maestryDescription = "... Mistérios..."
 enumWork = 14
-workDetail = "Um Usuário de Haki, após expandir sua fenda, se vê livre com a capacidade de pressioná-la para ativamente tingir a Cor de sua Aura...
+workDetail = "Um Usuário de Haki, após expandir sua fenda, se vê com a capacidade de pressioná-la para ativamente tingir a Cor de sua Aura...
 Você possui uma quantidade de Cores da Ambição igual a [Haki/20  +1], as quais representam uma faceta da realidade a qual tens o desejo / necessidade de quebrá-la [Abolição|Quebra as regras ...], ou de sentimentos que anseia por manifestar [Manifestação|Manifesta o sentimento...]
 
 [ Ex:
@@ -23,23 +23,7 @@ Você possui uma quantidade de Cores da Ambição igual a [Haki/20  +1], as quai
 	Rosa  [Manifesta o prazer carnal]
 ]
 
-Todas as Cores possuem um Grau de Tonalidade (GT) e um Grau de Vibração (GV) que vai de 0 à 10 em média, os quais determinam respectivamente, o nível de poder nativo em termos de generalidade, e em termos de força
-
-Tabela dos Graus:
-	0-1		Muito Fraco / Muito Específico
-	2-4		Um tanto Fraco / Um tanto Específico
-	5			Médio
-	6-8		Um tanto Forte / Um tanto Genérico
-	9-10		Muito Forte / Muito Genérico
-	 [Quantos mais tonalidades sua cor abrange, mais diluída é a tinta... Quanto mais forte suas cores vibram, mais tóxico o pigmento se torna...]
-
-Sempre que adquirir uma nova Cor da Ambição, você também pode escolher por investi-la em uma cor já existênte e ganhar um nível nela, o que se traduz em +5% de Haki nos Usos de Críticos que possuem essa cor [Números romanos são usados para representar o Nível da Ambição] {O Sistema automaticamente calcula isso!}
-
-Ex de diferentes usuários:
-       Rosa II [Manifesta o prazer carnal]  (GT: 3| GV: 5)
-       Roxo Escuro I [Quebra as regras das Propriedades]  (GT: 9 | GV: 9) 
-	   Vermelho I [Quebra as regras das Propriedades do Sangue] (GT: 4| GV: 7)
-
+Opcional) Sempre que puder adqurir uma nova cor, mas assim não desejar, você pode aumentar o nível de uma de suas cores existêntes (Para cada nível acima de 1, você recebe +10% Haki nessa cor) [Esse cálculo é automaticamente feito pela plataforma]
 
 Haki, diferente de todos outros Ofícios, tem a ativação e mantenimento dos seus Usos de Crítico restringido ao estado descrito a seguir: Sob as Cores da Ambição, você gasta uma Ação de Movimento para tingir sua fenda com uma quantidade de cores pessoais (Caso opte por trocar as Cores, uma outra Ação de Movimento é necessária. Já caso opte por sair do estado, é Ação Livre)
 Com estado ativo, você pode:
@@ -48,4 +32,14 @@ Com estado ativo, você pode:
 
 
 Mas, ao manter sua Ambição radiando, você tem a seguinte consequência:
-   -Sempre que tomar uma Ação que não seja de sua ideologia (Motivada por razões pessoais / pela vontade das outras pessoas) enquanto esta com esse poder ativado, você deve rolar um Teste de Querer -2*(G.V+G.T) de dificuldade variada com a situação, podendo potencialmente não se importar com essa questão se falhar no teste..."
+  No momento em que você ativar as suas cores da Ambição, escolha entre -2 Críticos em todos os Testes de Ofícios (Com exceção do Haki) OU +3 Radicalismo*
+  Esse efeito é acumulativo em Cenas / Combate contínuos até descansar proporcionalmente ao que deveria
+  [5 Minutos para cada momento acumulado]
+  Ex: Personagem ficou 3 Momentos com as Cores da Ambição tingindo a Aura sem parar
+  Combate 1  [-2 Críticos em Ofícios OU +3 Radicalismo]
+  Cena 1 [Combate 1 E (-2 Críticos em Ofícios OU +3 Radicalismo)]
+  Combate 2 [Cena 1 E (-2 Críticos em Ofícios OU +3 Radicalismo)]
+  No final, o personagem vai ter que descansar 15 Minutos pra poder voltar ao normal
+
+* Radicalismo) Enquanto possuir Radicalismo correndo em suas veias, caso deseje por tomar uma ação que seja irrelevante para sua Ideologia (Como algo egotista ou comunitário), você deverá passar em um Teste de Querer com Dificuldade Crítica baseado em sua quantidade de Radicalismo.
+"

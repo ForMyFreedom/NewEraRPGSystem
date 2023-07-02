@@ -2,12 +2,20 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public class CacaDaFruta : CriticUse
+public class VasoDeSol : HakiUse
 {
+    protected override HakiColors[] GetHakiUseColors()
+    {
+        return new HakiColors[] { HakiColors.AmeikoYellow };
+    }
+
     public override MessageNotificationData DoMechanicLogic(MainInterface main, int actionIndex = 0, int critic = -1)
     {
+        int roll = main.RequestAtributeRoll(MyEnum.Atribute.VON);
+        int level = injectedWork.GetLevel();
+
         return new MessageNotificationData(
-            baseMessage, new object[] { 2*critic }, criticImage
+            baseMessage, new object[] { roll+level }, criticImage
         );
     }
 
@@ -17,6 +25,6 @@ public class CacaDaFruta : CriticUse
 
     public override int RequestCriticTest(MainInterface main)
     {
-        return main.RequestWorkRoll(relatedWork) / 10;
+        return cost;
     }
 }

@@ -7,7 +7,7 @@
 resource_local_to_scene = true
 script = ExtResource( 4 )
 workName = "Gensoko"
-pathDescription = "A cada 5, +6 entre Nozo/Toiku/Tsukoi
+pathDescription = "A cada 5, +2 em Querer
 A cada 10, +1 Uso de Crítico
 A cada 20, +1 Técnica
 A cada 50, Bônus de Maestria"

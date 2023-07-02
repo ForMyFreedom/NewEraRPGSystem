@@ -1,11 +1,8 @@
 using Godot;
 using System;
 
-public class AkumaNoMi : Work
+public class Harmony : Work
 {
-    [Export]
-    private int baseDamage;
-
     public override void DoFirstUpStep(MainInterface gui)
     {
         gui.AddAnAtributeLevel(relationedAtribute, 2);
@@ -29,6 +26,6 @@ public class AkumaNoMi : Work
 
     public override int GetBaseDamage(MainInterface gui, int weaponDamage = 0, int actionIndex = 0)
     {
-        return baseDamage + GetLevel()/2;
+        return 0;
     }
 }

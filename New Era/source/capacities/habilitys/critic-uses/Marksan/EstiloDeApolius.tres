@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://source/capacities/habilitys/critic-uses/Marksan/EstiloDeApolius.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+isSingleton = true
+toDispendSurge = true
+canLimit = false
+criticUseName = "Estilo de Apolius"
+relatedWork = 3
+text = "Se inspirando nos contos do lendário lutador anão conhecido como Apolius, você desenvolveu uma forma de lutar perfeita para anões destruirem os gigantes.
+Caso seu oponente tenha pelo menos 60cm a mais que você, você recebe os seguintes benefícios ao entrar na Postura de Apolius:
+     - Pequenez Inalvejável: Saltos e movimentos dignos de insetos, +N Defesa de Agilidade para ataques que vem de cima
+     - A Arte da Queda: Força aliada é usar Força inimiga, +2N Dano Extra para Manobras de Derrubar
+
+\"Existem três tipos de gente: As Baixas, as Médias, e as que eu tenho que destruir...\""
+baseMessage = "Estilo de Apolius ativado
+     - Pequenez Inalvejável: +$ Defesa de Agilidade para ataques que vem de cima
+     - A Arte da Queda: +$ Dano Extra para Manobras de Derrubar"
+cost = -1
